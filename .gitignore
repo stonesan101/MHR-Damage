@@ -1,0 +1,12 @@
+/.vscode
+/babel.config.json
+/config-schema.js
+/editor.config
+/environments.js
+/jsconfig.json
+/magnamalo.jpg
+/node_modules
+/old-new.js
+/package-lock.json
+/package.json
+/target

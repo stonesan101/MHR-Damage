@@ -1,0 +1,4986 @@
+{
+  "GreatSword": {
+    "Combo Damage": {
+      "MV": 1,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "OverheardSlash": {
+      "MV": 48,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Side Blow": {
+      "MV": 16,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Kick": {
+      "MV": 5,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Charged Slash Lv1": {
+      "MV": 52.8,
+      "Type": "Sever",
+      "EleMV": 1.1
+    },
+    "Charged Slash Lv2": {
+      "MV": 92.4,
+      "Type": "Sever",
+      "EleMV": 1.2
+    },
+    "Charged Slash Lv3": {
+      "MV": 136.5,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Strong Charged Slash Lv0": {
+      "MV": 65,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Strong Charged Slash Lv1": {
+      "MV": 71.5,
+      "Type": "Sever",
+      "EleMV": 1.65
+    },
+    "Strong Charged Slash Lv2": {
+      "MV": 108,
+      "Type": "Sever",
+      "EleMV": 1.8
+    },
+    "Strong Charged Slash Lv3": {
+      "MV": 149.5,
+      "Type": "Sever",
+      "EleMV": 2.25
+    },
+    "True Charged Slash Lv0": {
+      "MV": 135,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "True Charged Slash Lv1": {
+      "MV": 148.5,
+      "Type": "Sever",
+      "EleMV": 2.4
+    },
+    "True Charged Slash Lv2": {
+      "MV": 242.4,
+      "Type": "Sever",
+      "EleMV": 2.5
+    },
+    "True Charged Slash Lv3": {
+      "MV": 302.9,
+      "Type": "Sever",
+      "EleMV": 2.7
+    },
+    "Power True Charged Slash Lv0": {
+      "MV": 174.9,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Power True Charged Slash Lv1": {
+      "MV": 174.9,
+      "Type": "Sever",
+      "EleMV": 2.4
+    },
+    "Power True Charged Slash Lv2": {
+      "MV": 276,
+      "Type": "Sever",
+      "EleMV": 2.5
+    },
+    "Power True Charged Slash Lv3": {
+      "MV": 371.8,
+      "Type": "Sever",
+      "EleMV": 2.8
+    },
+    "Rage Slash Lv0": {
+      "MV": 118,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Rage Slash Lv1": {
+      "MV": 129.8,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Rage Slash Lv2": {
+      "MV": 159.6,
+      "Type": "Sever",
+      "EleMV": 2
+    },
+    "Rage Slash Lv3": {
+      "MV": 206.7,
+      "Type": "Sever",
+      "EleMV": 3
+    },
+    "Tackle Lv0": {
+      "MV": 26,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Tackle Lv1": {
+      "MV": 30.8,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Tackle Lv2": {
+      "MV": 42,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Tackle Lv3": {
+      "MV": 62.4,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Guard Tackle Lv0": {
+      "MV": 34,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Guard Tackle Lv1": {
+      "MV": 40.7,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Guard Tackle Lv2": {
+      "MV": 55.2,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Guard Tackle Lv3": {
+      "MV": 80.6,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Rising Slash": {
+      "MV": 38,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Wide Sweep": {
+      "MV": 26,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Strong Wide Slash Lv0": {
+      "MV": 59,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Strong Wide Slash Lv1": {
+      "MV": 64.9,
+      "Type": "Sever",
+      "EleMV": 1.65
+    },
+    "Strong Wide Slash Lv2": {
+      "MV": 79.2,
+      "Type": "Sever",
+      "EleMV": 1.8
+    },
+    "Strong Wide Slash Lv3": {
+      "MV": 93.6,
+      "Type": "Sever",
+      "EleMV": 2.25
+    },
+    "Leaping Wide Slash Lv0": {
+      "MV": 70,
+      "Type": "Sever",
+      "EleMV": 1.65
+    },
+    "Leaping Wide Slash Lv1": {
+      "MV": 77,
+      "Type": "Sever",
+      "EleMV": 1.82
+    },
+    "Leaping Wide Slash Lv2": {
+      "MV": 49.5,
+      "Type": "Sever",
+      "EleMV": 1.65
+    },
+    "Leaping Wide Slash Lv3": {
+      "MV": 52,
+      "Type": "Sever",
+      "EleMV": 1.32
+    },
+    "Mid-Air Slash/Charged Slash Lv0": {
+      "MV": 70,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Mid-Air Charged Slash Lv1": {
+      "MV": 77,
+      "Type": "Sever",
+      "EleMV": 1.1
+    },
+    "Mid-Air Charged Slash Lv2": {
+      "MV": 110.4,
+      "Type": "Sever",
+      "EleMV": 1.2
+    },
+    "Mid-Air Charged Slash Lv3": {
+      "MV": 137.8,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Wire Jump Mid-Air Charged Slash Lv0": {
+      "MV": 70,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Wire Jump Mid-Air Charged Slash Lv1": {
+      "MV": 77,
+      "Type": "Sever",
+      "EleMV": 1.1
+    },
+    "Wire Jump Mid-Air Charged Slash Lv2": {
+      "MV": 110.4,
+      "Type": "Sever",
+      "EleMV": 1.2
+    },
+    "Wire Jump Mid-Air Charged Slash Lv3": {
+      "MV": 137.8,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Plunging Thrust": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Plunging Thrust Finisher": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Wire Jump Plunging Thrust": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Wire Jump Plunging Thrust Finisher": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Hunting Edge(First Rotation)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Hunting Edge(Second Rotation)": {
+      "MV": 80,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Hunting Edge(Landing)": {
+      "MV": 80,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Hunting Edge Mid-Air Charged Slash Lv0": {
+      "MV": 118,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Hunting Edge Mid-Air Charged Slash Lv1": {
+      "MV": 129.8,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Hunting Edge Mid-Air Charged Slash Lv2": {
+      "MV": 158.4,
+      "Type": "Sever",
+      "EleMV": 1.65
+    },
+    "Hunting Edge Mid-Air Charged Slash Lv3": {
+      "MV": 187.2,
+      "Type": "Sever",
+      "EleMV": 2
+    },
+    "Hunting Edge Plunging Thrust Lv0": {
+      "MV": 28,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Hunting Edge Plunging Thrust Lv1": {
+      "MV": 30.8,
+      "Type": "Sever",
+      "EleMV": 1.3
+    },
+    "Hunting Edge Plunging Thrust Lv2": {
+      "MV": 45.6,
+      "Type": "Sever",
+      "EleMV": 1.4
+    },
+    "Hunting Edge Plunging Thrust Lv3": {
+      "MV": 58.5,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Adamant Charged Slash Lv0": {
+      "MV": 78,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Adamant Charged Slash Lv1": {
+      "MV": 85.8,
+      "Type": "Sever",
+      "EleMV": 1.65
+    },
+    "Adamant Charged Slash Lv2": {
+      "MV": 129.6,
+      "Type": "Sever",
+      "EleMV": 1.8
+    }
+  },
+  "ChargeBlade": {
+    "Combo Damage": {
+      "MV": 1,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Sword: Forward Slash": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Weak Slash": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Return Stroke": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Spinning Slash": {
+      "MV": 28,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Charged Rising Slash": {
+      "MV": 13,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Charged Double Slash (1st Hit)": {
+      "MV": 27,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Charged Double Slash (2nd Hit)": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Fade Slash": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Condensed Element Slash": {
+      "MV": 75,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Shield Thrust (1st Hit)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Sword: Shield Thrust (2nd Hit)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Sword: Element Up Roundslash": {
+      "MV": 28,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword Morph Slash": {
+      "MV": 28,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Counter MorphSword Counter Morph Slash": {
+      "MV": 35,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe: Rising Slash": {
+      "MV": 35,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: Overhead Slash": {
+      "MV": 37,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: Dash Slam": {
+      "MV": 45,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: Element Discharge I": {
+      "MV": 21,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: Rushing Element Discharge I": {
+      "MV": 21,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: Element Discharge II (1st Hit)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: Element Discharge II (2nd Hit)": {
+      "MV": 46,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: Smash": {
+      "MV": 37,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe Morph Slash": {
+      "MV": 37,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Counter MorphAxe Counter Morph Slash": {
+      "MV": 44,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: Condensed Spinning Slash": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: Condensed Spinning Slash Ticks": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 0.3,
+      "TicsPer": 5,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: AED": {
+      "MV": 90,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: UED (1st Hit)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: UED (2nd Hit)*": {
+      "MV": 90,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: Impact UED (3rd Hit)": {
+      "MV": 72,
+      "Type": "Sever",
+      "EleMV": 0
+    },
+    "Counter Morph Impact Phial Smash (UED 3rd Hit)": {
+      "MV": 90,
+      "Type": "Sever",
+      "EleMV": 0
+    },
+    "Axe: Element UED (3rd Hit)": {
+      "MV": 72,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Counter Morph Element Phial Smash (UED 3rd Hit)": {
+      "MV": 90,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Impact Phial (ED)": {
+      "MV": 4,
+      "Type": "None",
+      "EleMV": 0,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Impact Phial (AED)": {
+      "MV": 7,
+      "Type": "None",
+      "EleMV": 0,
+      "TicsPer": 3,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Counter Morph Impact Phial (AED)": {
+      "MV": 9,
+      "Type": "None",
+      "EleMV": 0,
+      "TicsPer": 3,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Impact Phial (UED)": {
+      "MV": 20,
+      "Type": "None",
+      "EleMV": 0,
+      "TicsPer": 5
+    },
+    "Counter Morph Impact Phial (UED)": {
+      "MV": 25,
+      "Type": "None",
+      "EleMV": 0,
+      "TicsPer": 5
+    },
+    "Impact Phial (Charged Sword)": {
+      "MV": 4,
+      "Type": "None",
+      "EleMV": 0,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Impact Phial (Guard Point)": {
+      "MV": 5,
+      "Type": "None",
+      "EleMV": 0,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Impact Phial (Condensed Element Slash)": {
+      "MV": 4,
+      "Type": "None",
+      "EleMV": 0,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Element Phial (ED)": {
+      "MV": 1,
+      "Type": "None",
+      "EleMV": 2,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Element Phial (AED)": {
+      "MV": 1,
+      "Type": "None",
+      "EleMV": 5,
+      "TicsPer": 3,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Counter Morph Element Phial (AED)": {
+      "MV": 1,
+      "Type": "None",
+      "EleMV": 6.25,
+      "TicsPer": 3,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Element Phial (UED)": {
+      "MV": 1,
+      "Type": "None",
+      "EleMV": 7,
+      "TicsPer": 5
+    },
+    "Counter Morph Element Phial (UED)": {
+      "MV": 1,
+      "Type": "None",
+      "EleMV": 8.75,
+      "TicsPer": 5
+    },
+    "Element Phial (Charged Sword)": {
+      "MV": 1,
+      "Type": "None",
+      "EleMV": 1.5,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Element Phial (Guard Point)": {
+      "MV": 1,
+      "Type": "None",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Element Phial (Condensed Element Slash)": {
+      "MV": 1,
+      "Type": "None",
+      "EleMV": 2,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Sword: Jumping Slash": {
+      "MV": 22,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe: Jumping Slash": {
+      "MV": 46,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe: Axe Hopper": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe HopperPhials Axe: Midair AED": {
+      "MV": 100,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe HopperNoPhials Axe: Midair AED": {
+      "MV": 60,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe HopperPhials Axe: Midair UED": {
+      "MV": 150,
+      "Type": "Sever",
+      "EleMV": 2.5,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    },
+    "Axe HopperNoPhials Axe: Midair UED": {
+      "MV": 100,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["shieldChargeIMP", "shieldChargeEle", "savageAxe"]
+    }
+  },
+  "HeavyBowGun": {
+    "Normal 1": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 1,
+      "unique": "Normal"
+    },
+    "Normal 2": {
+      "MV": 20,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 1,
+      "unique": "Normal"
+    },
+    "Normal 3": {
+      "MV": 34,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 1,
+      "unique": "Normal"
+    },
+    "Pierce 1": {
+      "MV": 7,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 7,
+      "unique": "Pierce"
+    },
+    "Pierce 2": {
+      "MV": 7,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 7,
+      "unique": "Pierce"
+    },
+    "Pierce 3": {
+      "MV": 8,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 7,
+      "unique": "Pierce"
+    },
+    "Spread 1": {
+      "MV": 6,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 3,
+      "unique": "Spread"
+    },
+    "Spread 2": {
+      "MV": 7,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 4,
+      "unique": "Spread"
+    },
+    "Spread 3": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 5,
+      "unique": "Spread"
+    },
+    "Shrapnel 1": {
+      "MV": 5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 3
+    },
+    "Shrapnel 2": {
+      "MV": 5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 4
+    },
+    "Shrapnel 3": {
+      "MV": 5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 5
+    },
+    "Sticky 1": {
+      "MV": 12,
+      "Type": "Stickies",
+      "EleMV": 1,
+      "EleAmmoBase": 3,
+      "TicsPer": 1
+    },
+    "Sticky 2": {
+      "MV": 17,
+      "Type": "Stickies",
+      "EleMV": 1,
+      "EleAmmoBase": 5,
+      "TicsPer": 1
+    },
+    "Sticky 3": {
+      "MV": 24,
+      "Type": "Stickies",
+      "EleMV": 1,
+      "EleAmmoBase": 5,
+      "TicsPer": 1
+    },
+    "Cluster 1": {
+      "MV": 10,
+      "Type": "Cluster",
+      "EleMV": 1,
+      "EleAmmoBase": 5,
+      "TicsPer": 5
+    },
+    "Cluster 2": {
+      "MV": 15,
+      "Type": "Cluster",
+      "EleMV": 1,
+      "EleAmmoBase": 8,
+      "TicsPer": 5
+    },
+    "Cluster 3": {
+      "MV": 20,
+      "Type": "Cluster",
+      "EleMV": 1,
+      "EleAmmoBase": 10,
+      "TicsPer": 5
+    },
+    "Fire": {
+      "MV": 16,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 40,
+      "TicsPer": 1,
+      "EleAmmoType": "Fire"
+    },
+    "Piercing Fire": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 22,
+      "TicsPer": 7,
+      "EleAmmoType": "Fire"
+    },
+    "Water": {
+      "MV": 16,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 40,
+      "TicsPer": 1,
+      "EleAmmoType": "Water"
+    },
+    "Piercing Water": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 22,
+      "TicsPer": 7,
+      "EleAmmoType": "Water"
+    },
+    "Thunder": {
+      "MV": 16,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 40,
+      "TicsPer": 1,
+      "EleAmmoType": "Thunder"
+    },
+    "Piercing Thunder": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 22,
+      "TicsPer": 7,
+      "EleAmmoType": "Thunder"
+    },
+    "Ice": {
+      "MV": 16,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 40,
+      "TicsPer": 1,
+      "EleAmmoType": "Ice"
+    },
+    "Piercing Ice": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 22,
+      "TicsPer": 7,
+      "EleAmmoType": "Ice"
+    },
+    "Dragon": {
+      "MV": 48,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 80,
+      "TicsPer": 1,
+      "EleAmmoType": "Dragon"
+    },
+    "Piercing Dragon": {
+      "MV": 20,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 44,
+      "TicsPer": 7,
+      "EleAmmoType": "Dragon"
+    },
+    "Slicing": {
+      "MV": 17,
+      "Type": "Sever",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 3
+    },
+    "Wyvern": {
+      "MV": 80,
+      "Type": "Stickies",
+      "EleMV": 1,
+      "EleAmmoBase": 40,
+      "TicsPer": 1
+    },
+    "Wyvern Sub-Hit": {
+      "MV": 19,
+      "Type": "Stickies",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 1
+    },
+    "Wyvernheart": {
+      "MV": 978.272,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 1
+    }
+  },
+  "LightBowGun": {
+    "Normal 1": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 1,
+      "unique": "Normal"
+    },
+    "Normal 1 (RF+3)": {
+      "MV": 7,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 3,
+      "unique": ["Normal", "RF+"]
+    },
+    "Normal 2": {
+      "MV": 20,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 1,
+      "unique": "Normal"
+    },
+    "Normal 2 (RF+3)": {
+      "MV": 14,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 3,
+      "unique": ["Normal", "RF+"]
+    },
+    "Normal 3": {
+      "MV": 34,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 1,
+      "unique": "Normal"
+    },
+    "Pierce 1": {
+      "MV": 7,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 7,
+      "unique": "Pierce"
+    },
+    "Pierce 1 (RF+3)": {
+      "MV": 4.9,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 21,
+      "unique": ["RF+", "Pierce"]
+    },
+    "Pierce 2": {
+      "MV": 7,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 7,
+      "unique": "Pierce"
+    },
+    "Pierce 2 (RF+3)": {
+      "MV": 4.9,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 21,
+      "unique": ["RF+", "Pierce"]
+    },
+    "Pierce 3": {
+      "MV": 8,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 7,
+      "unique": "Pierce"
+    },
+    "Spread 1": {
+      "MV": 6,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 3,
+      "unique": "Spread"
+    },
+    "Spread 1 (RF+3)": {
+      "MV": 4.2,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 9,
+      "unique": ["RF+", "Spread"]
+    },
+    "Spread 2": {
+      "MV": 7,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 4,
+      "unique": "Spread"
+    },
+    "Spread 2 (RF+3)": {
+      "MV": 4.9,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 12,
+      "unique": ["RF+", "Spread"]
+    },
+    "Spread 3": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 5,
+      "unique": "Spread"
+    },
+    "Shrapnel 1": {
+      "MV": 5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 3
+    },
+    "Shrapnel 1 (RF+3)": {
+      "MV": 3.5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 9,
+      "unique": "RF+"
+    },
+    "Shrapnel 2": {
+      "MV": 5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 4
+    },
+    "Shrapnel 2 (RF+3)": {
+      "MV": 3.5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 12,
+      "unique": "RF+"
+    },
+    "Shrapnel 3": {
+      "MV": 5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 5
+    },
+    "Sticky 1": {
+      "MV": 12,
+      "Type": "Stickies",
+      "EleMV": 1,
+      "EleAmmoBase": 3,
+      "TicsPer": 1
+    },
+    "Sticky 1 (RF+2)": {
+      "MV": 8.4,
+      "Type": "Stickies",
+      "EleMV": 1,
+      "EleAmmoBase": 3,
+      "TicsPer": 2,
+      "unique": "RF+"
+    },
+    "Sticky 2": {
+      "MV": 17,
+      "Type": "Stickies",
+      "EleMV": 1,
+      "EleAmmoBase": 5,
+      "TicsPer": 1
+    },
+    "Sticky 3": {
+      "MV": 24,
+      "Type": "Stickies",
+      "EleMV": 1,
+      "EleAmmoBase": 5,
+      "TicsPer": 1
+    },
+    "Cluster 1": {
+      "MV": 10,
+      "Type": "Cluster",
+      "EleMV": 1,
+      "EleAmmoBase": 5,
+      "TicsPer": 5
+    },
+    "Cluster 2": {
+      "MV": 15,
+      "Type": "Cluster",
+      "EleMV": 1,
+      "EleAmmoBase": 8,
+      "TicsPer": 5
+    },
+    "Cluster 3": {
+      "MV": 20,
+      "Type": "Cluster",
+      "EleMV": 1,
+      "EleAmmoBase": 10,
+      "TicsPer": 5
+    },
+    "Fire": {
+      "MV": 16,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 40,
+      "TicsPer": 1,
+      "EleAmmoType": "Fire"
+    },
+    "Fire (RF+3)": {
+      "MV": 11.2,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 20,
+      "TicsPer": 3,
+      "unique": "RF+",
+      "EleAmmoType": "Fire"
+    },
+    "Piercing Fire": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 22,
+      "TicsPer": 7,
+      "EleAmmoType": "Fire",
+      "unique": "Pierce"
+    },
+    "Piercing Fire (RF+2)": {
+      "MV": 7,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 11,
+      "TicsPer": 14,
+      "unique": ["RF+", "Pierce"],
+      "EleAmmoType": "Fire"
+    },
+    "Water": {
+      "MV": 16,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 40,
+      "TicsPer": 1,
+      "EleAmmoType": "Water"
+    },
+    "Water (RF+3)": {
+      "MV": 11.2,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 20,
+      "TicsPer": 3,
+      "unique": "RF+",
+      "EleAmmoType": "Water"
+    },
+    "Piercing Water": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 22,
+      "TicsPer": 7,
+      "EleAmmoType": "Water",
+      "unique": "Pierce"
+    },
+    "Piercing Water (RF+2)": {
+      "MV": 7,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 11,
+      "TicsPer": 14,
+      "unique": ["RF+", "Pierce"],
+      "EleAmmoType": "Water"
+    },
+    "Thunder": {
+      "MV": 16,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 40,
+      "TicsPer": 1,
+      "EleAmmoType": "Thunder"
+    },
+    "Thunder (RF+3)": {
+      "MV": 11.2,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 20,
+      "TicsPer": 3,
+      "unique": "RF+",
+      "EleAmmoType": "Thunder"
+    },
+    "Piercing Thunder": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 22,
+      "TicsPer": 7,
+      "EleAmmoType": "Thunder",
+      "unique": "Pierce"
+    },
+    "Piercing Thunder (RF+2)": {
+      "MV": 7,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 11,
+      "TicsPer": 14,
+      "unique": ["RF+", "Pierce"],
+      "EleAmmoType": "Thunder"
+    },
+    "Ice": {
+      "MV": 16,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 40,
+      "TicsPer": 1,
+      "EleAmmoType": "Ice"
+    },
+    "Ice (RF+3)": {
+      "MV": 11.2,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 20,
+      "TicsPer": 3,
+      "unique": "RF+",
+      "EleAmmoType": "Ice"
+    },
+    "Piercing Ice": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 22,
+      "TicsPer": 7,
+      "EleAmmoType": "Ice",
+      "unique": "Pierce"
+    },
+    "Piercing Ice (RF+2)": {
+      "MV": 7,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 11,
+      "TicsPer": 14,
+      "unique": ["RF+", "Pierce"],
+      "EleAmmoType": "Ice"
+    },
+    "Dragon": {
+      "MV": 48,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 80,
+      "TicsPer": 1,
+      "EleAmmoType": "Dragon"
+    },
+    "Dragon (RF+2)": {
+      "MV": 33.6,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 40,
+      "TicsPer": 3,
+      "unique": "RF+",
+      "EleAmmoType": "Dragon"
+    },
+    "Piercing Dragon": {
+      "MV": 20,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 44,
+      "TicsPer": 7,
+      "EleAmmoType": "Dragon",
+      "unique": "Pierce"
+    },
+    "Piercing Dragon (RF+2)": {
+      "MV": 14,
+      "Type": "Shot",
+      "EleMV": 1,
+      "EleAmmoBase": 22,
+      "TicsPer": 14,
+      "unique": ["RF+", "Pierce"],
+      "EleAmmoType": "Dragon"
+    },
+    "Slicing": {
+      "MV": 17,
+      "Type": "Sever",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 3
+    },
+    "Slicing (RF+2)": {
+      "MV": 11.9,
+      "Type": "Sever",
+      "EleMV": 1,
+      "EleAmmoBase": 0,
+      "TicsPer": 6,
+      "unique": "RF+"
+    }
+  },
+  "Bow": {
+    "Combo Damage": {
+      "MV": 1,
+      "Type": "Shot",
+      "EleMV": 1
+    },
+    "1st Melee Attack": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "2nd Melee Attack": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Lunging Melee Attack": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Dodgebolt": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Jumping Melee Attack": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axerial Aim: Axerial Diving Melee Attack": {
+      "MV": 50,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Lv1:Rapid/Charge Lv1": {
+      "MV": 5.6,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Normal"
+    },
+    "Lv1:Rapid/Charge Lv2": {
+      "MV": 14,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Normal"
+    },
+    "Lv1:Rapid/Charge Lv3": {
+      "MV": 21,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Normal"
+    },
+    "Lv1:Rapid/Charge Lv4": {
+      "MV": 23.8,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Normal"
+    },
+    "Lv2:Rapid/Charge Lv1": {
+      "MV": 3.6,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Normal"
+    },
+    "Lv2:Rapid/Charge Lv2": {
+      "MV": 9,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Normal"
+    },
+    "Lv2:Rapid/Charge Lv3": {
+      "MV": 13.5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Normal"
+    },
+    "Lv2:Rapid/Charge Lv4": {
+      "MV": 15.3,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Normal"
+    },
+    "Lv3:Rapid/Charge Lv1": {
+      "MV": 4,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Normal"
+    },
+    "Lv3:Rapid/Charge Lv2": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Normal"
+    },
+    "Lv3:Rapid/Charge Lv3": {
+      "MV": 15,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Normal"
+    },
+    "Lv3:Rapid/Charge Lv4": {
+      "MV": 17,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Normal"
+    },
+    "Lv4:Rapid/Charge Lv1": {
+      "MV": 4,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Normal"
+    },
+    "Lv4:Rapid/Charge Lv2": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Normal"
+    },
+    "Lv4:Rapid/Charge Lv3": {
+      "MV": 15,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Normal"
+    },
+    "Lv4:Rapid/Charge Lv4": {
+      "MV": 17,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Normal"
+    },
+    "Lv5:Rapid/Charge Lv1": {
+      "MV": 4.4,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Normal"
+    },
+    "Lv5:Rapid/Charge Lv2": {
+      "MV": 11,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Normal"
+    },
+    "Lv5:Rapid/Charge Lv3": {
+      "MV": 16.5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Normal"
+    },
+    "Lv5:Rapid/Charge Lv4": {
+      "MV": 18.7,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Normal"
+    },
+    "Lv1:Spread/Charge Lv1": {
+      "MV": 2,
+      "Type": "Shot",
+      "EleMV": 0.7
+    },
+    "Lv1:Spread/Charge Lv2": {
+      "MV": 5,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Spread"
+    },
+    "Lv1:Spread/Charge Lv3": {
+      "MV": 7.5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Spread"
+    },
+    "Lv1:Spread/Charge Lv4": {
+      "MV": 8.5,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Spread"
+    },
+    "Lv2:Spread/Charge Lv1": {
+      "MV": 3.2,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Spread"
+    },
+    "Lv2:Spread/Charge Lv2": {
+      "MV": 8,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Spread"
+    },
+    "Lv2:Spread/Charge Lv3": {
+      "MV": 12,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Spread"
+    },
+    "Lv2:Spread/Charge Lv4": {
+      "MV": 13.6,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Spread"
+    },
+    "Lv3:Spread/Charge Lv1": {
+      "MV": 2.8,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Spread"
+    },
+    "Lv3:Spread/Charge Lv2": {
+      "MV": 7,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Spread"
+    },
+    "Lv3:Spread/Charge Lv3": {
+      "MV": 10.5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Spread"
+    },
+    "Lv3:Spread/Charge Lv4": {
+      "MV": 11.9,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Spread"
+    },
+    "Lv4:Spread/Charge Lv1": {
+      "MV": 3.6,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Spread"
+    },
+    "Lv4:Spread/Charge Lv2": {
+      "MV": 9,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Spread"
+    },
+    "Lv4:Spread/Charge Lv3": {
+      "MV": 13.5,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Spread"
+    },
+    "Lv4:Spread/Charge Lv4": {
+      "MV": 15.3,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Spread"
+    },
+    "Lv5:Spread/Charge Lv1": {
+      "MV": 4,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Spread"
+    },
+    "Lv5:Spread/Charge Lv2": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Spread"
+    },
+    "Lv5:Spread/Charge Lv3": {
+      "MV": 15,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Spread"
+    },
+    "Lv5:Spread/Charge Lv4": {
+      "MV": 17,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Spread"
+    },
+    "Lv1:Pierce/Charge Lv1": {
+      "MV": 1.6,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Spread"
+    },
+    "Lv1:Pierce/Charge Lv2": {
+      "MV": 4,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Pierce"
+    },
+    "Lv1:Pierce/Charge Lv3": {
+      "MV": 6,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Pierce"
+    },
+    "Lv1:Pierce/Charge Lv4": {
+      "MV": 6.8,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Pierce"
+    },
+    "Lv2:Pierce/Charge Lv1": {
+      "MV": 2.4,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Pierce"
+    },
+    "Lv2:Pierce/Charge Lv2": {
+      "MV": 6,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Pierce"
+    },
+    "Lv2:Pierce/Charge Lv3": {
+      "MV": 9,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Pierce"
+    },
+    "Lv2:Pierce/Charge Lv4": {
+      "MV": 10.2,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Pierce"
+    },
+    "Lv3:Pierce/Charge Lv1": {
+      "MV": 3.2,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Pierce"
+    },
+    "Lv3:Pierce/Charge Lv2": {
+      "MV": 8,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Pierce"
+    },
+    "Lv3:Pierce/Charge Lv3": {
+      "MV": 12,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Pierce"
+    },
+    "Lv3:Pierce/Charge Lv4": {
+      "MV": 13.6,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Pierce"
+    },
+    "Lv4:Pierce/Charge Lv1": {
+      "MV": 4,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Pierce"
+    },
+    "Lv4:Pierce/Charge Lv2": {
+      "MV": 10,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Pierce"
+    },
+    "Lv4:Pierce/Charge Lv3": {
+      "MV": 15,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Pierce"
+    },
+    "Lv4:Pierce/Charge Lv4": {
+      "MV": 17,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Pierce"
+    },
+    "Lv5:Pierce/Charge Lv1": {
+      "MV": 4.8,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": "Pierce"
+    },
+    "Lv5:Pierce/Charge Lv2": {
+      "MV": 12,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": "Pierce"
+    },
+    "Lv5:Pierce/Charge Lv3": {
+      "MV": 18,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": "Pierce"
+    },
+    "Lv5:Pierce/Charge Lv4": {
+      "MV": 20.4,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": "Pierce"
+    },
+    "Lv1:Dragon Piercer/Charge Lv1": {
+      "MV": 11.2,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv1:Dragon Piercer/Charge Lv2": {
+      "MV": 28,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv1:Dragon Piercer/Charge Lv3": {
+      "MV": 42,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv1:Dragon Piercer/Charge Lv4": {
+      "MV": 47.6,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv2:Dragon Piercer/Charge Lv1": {
+      "MV": 12,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv2:Dragon Piercer/Charge Lv2": {
+      "MV": 30,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv2:Dragon Piercer/Charge Lv3": {
+      "MV": 45,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv2:Dragon Piercer/Charge Lv4": {
+      "MV": 51,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv3:Dragon Piercer/Charge Lv1": {
+      "MV": 12.8,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv3:Dragon Piercer/Charge Lv2": {
+      "MV": 32,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv3:Dragon Piercer/Charge Lv3": {
+      "MV": 48,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv3:Dragon Piercer/Charge Lv4": {
+      "MV": 54.4,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv4:Dragon Piercer/Charge Lv1": {
+      "MV": 13.6,
+      "Type": "Shot",
+      "EleMV": 0.7,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv4:Dragon Piercer/Charge Lv2": {
+      "MV": 34,
+      "Type": "Shot",
+      "EleMV": 0.85,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv4:Dragon Piercer/Charge Lv3": {
+      "MV": 51,
+      "Type": "Shot",
+      "EleMV": 1,
+      "unique": ["Pierce", "specialAmmo"]
+    },
+    "Lv4:Dragon Piercer/Charge Lv4": {
+      "MV": 57.8,
+      "Type": "Shot",
+      "EleMV": 1.125,
+      "unique": ["Pierce", "specialAmmo"]
+    }
+  },
+  "SwordnShield": {
+    "Combo Damage": {
+      "MV": 1,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Chop": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Side Slash": {
+      "MV": 13,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword/Shield Combo(Shield)": {
+      "MV": 10,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Sword/Shield Combo(Sword)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Lateral Slash": {
+      "MV": 22,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Return Stroke": {
+      "MV": 21,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Spinning Rising Slash": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Shield Attack": {
+      "MV": 8,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Shield Bash": {
+      "MV": 20,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Hard Bash": {
+      "MV": 37,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Thrust": {
+      "MV": 22,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Drill Slash": {
+      "MV": 28,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Drill Slash Multi-Hit": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 0.8
+    },
+    "Rising Slash": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Guard Slash": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Advancing Slash": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sliding Slash": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sliding Rising Slash": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Round Slash": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Charged Slash": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Scaling Slash": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Falling Bash": {
+      "MV": 40,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Leaping Slash": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Perfect Rush I(1st Hit)": {
+      "MV": 10,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Perfect Rush I(2nd Hit)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Perfect Rush I(3rd Hit)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Perfect Rush II": {
+      "MV": 20,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Perfect Rush III": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Timed Perfect Rush I(1st Hit)": {
+      "MV": 25,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Timed Perfect Rush I(2nd Hit)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1.2
+    },
+    "Timed Perfect Rush I(3rd Hit)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1.2
+    },
+    "Timed Perfect Rush II": {
+      "MV": 40,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Timed Perfect Rush III": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1.2
+    },
+    "Spinning Reaper": {
+      "MV": 55,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Strong Falling Bash": {
+      "MV": 44,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Strong Falling Bash(Landing)": {
+      "MV": 39,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Plunging Thrust": {
+      "MV": 24,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Plunging Thrust Multi-Hit": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Jumping Slash": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Jumping Advancing Slash": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Jumping Rising Slash": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Falling Shadow(1st Hit)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Falling Shadow(2nd Hit)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Windmill": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Windmill(Finisher)": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Metsu Shoryugeki": {
+      "MV": 80,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Metsu Shoryugeki(Counter Main Hit)": {
+      "MV": 80,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Metsu Shoryugeki Counter Multi-Hit": {
+      "MV": 30,
+      "Type": "Blunt",
+      "EleMV": 0
+    }
+  },
+  "DualBlades": {
+    "Combo Damage": {
+      "MV": 1,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Double Slash(L)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Double Slash(R)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Double Slash Return Stroke(R)": {
+      "MV": 9,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Double Slash Return Stroke(L)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Circle Slash(R1)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Circle Slash(L)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Circle Slash(R2)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Lunging Strike(L1)": {
+      "MV": 3,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Lunging Strike(R1)": {
+      "MV": 3,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Lunging Strike(L2)": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Lunging Strike(R2)": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Lateral Lunging Strike(L)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Rising Slash": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Turn Slash(L)": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Turn Slash(R)": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Left Round Slash(L1)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Left Round Slash(R)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Left Round Slash(3rd Hit)": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Right Round Slash(R1)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Right Round Slash(L)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Right Round Slash(3rd Hit)": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Left Double Round Slash(L1)": {
+      "MV": 19,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Left Double Round Slash(R)": {
+      "MV": 11,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Left Double Round Slash(L2)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Right Double Round Slash(R1)": {
+      "MV": 19,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Right Double Round Slash(L)": {
+      "MV": 11,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Right Double Round Slash(R2)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flurry 1(R1)": {
+      "MV": 9,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flurry 1(L1)": {
+      "MV": 9,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flurry 1(R2)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flurry 1(L2)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flurry 1(R3)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flurry 1(L3)": {
+      "MV": 17,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flurry 2(L1)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flurry 2(R1)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flurry 2(L2)": {
+      "MV": 6,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flurry 2(R2)": {
+      "MV": 6,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flurry 2(L3)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flurry 2(R3)": {
+      "MV": 17,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flurry 3(R1)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flurry 3(L1)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flurry 3(R2)": {
+      "MV": 6,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flurry 3(R3)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flurry 3(L3)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Twofold Demon Slash(R)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Twofold Demon Slash(L)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sixfold Demon Slash(L1)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sixfold Demon Slash(R1)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sixfold Demon Slash(R2)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sixfold Demon Slash(L2)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sixfold Demon Slash(R3)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Sixfold Demon Slash(L3)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flurry Rush(L1)": {
+      "MV": 4,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flurry Rush(R1)": {
+      "MV": 4,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flurry Rush(L2)": {
+      "MV": 3,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flurry Rush(R2)": {
+      "MV": 3,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flurry Rush(L3)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flurry Rush(R3)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Flight(L)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Demon Flight(R)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Axerial Demon Flurry(R1)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axerial Demon Flurry(L1)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axerial Demon Flurry(R2)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Axerial Demon Flurry(L2)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Blade Dance": {
+      "MV": 135,
+      "Type": "Sever",
+      "EleMV": 15.4
+    },
+    "Blade Dance(L1)": {
+      "MV": 13,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Blade Dance(R1)": {
+      "MV": 13,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Blade Dance(L2)": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(R2)": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(L3)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(R3)": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(R4)": {
+      "MV": 6,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(L4)": {
+      "MV": 6,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(R5)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(L5)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(L6)": {
+      "MV": 6,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(R6)": {
+      "MV": 6,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(L7)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(R7)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(L8)": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Blade Dance(R8)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Feral Demon Mode Start(R1)": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Feral Demon Mode Start(L1)": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Feral Demon Mode Start(R2)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Feral Demon Mode Start(L2)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Mid-air Feral Demon Mode R": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Mid-air Feral Demon Mode L": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Mode Cancel(R)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Mode Cancel(L)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Slash Dodge(R)": {
+      "MV": 4,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Slash Dodge(L)": {
+      "MV": 4,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Jumping Double Slash(R)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Jumping Double Slash(L)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Midair Round Slash(R1)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Midair Round Slash(L1)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Midair Round Slash(R2)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Midair Round Slash(L2)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Midair Spinning Blade Dance Finisher(R1)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Midair Spinning Blade Dance Finisher(L1)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Midair Spinning Blade Dance Landing(R2)*": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Midair Spinning Blade Dance Landing(L2)*": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Heavenly Blade Dance Start(R)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Heavenly Blade Dance Start(L)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Heavenly Blade Dance Loop 1(R)*": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Heavenly Blade Dance Loop 1(L)*": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Heavenly Blade Dance Loop 2(R)*": {
+      "MV": 6,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Heavenly Blade Dance Loop 2(L)*": {
+      "MV": 6,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Heavenly Blade Dance Finisher(R)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Heavenly Blade Dance Finisher(L)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Heavenly Blade Dance Landing(R1)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Heavenly Blade Dance Landing(L1)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Heavenly Blade Dance Landing(R2)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Heavenly Blade Dance Landing(L2)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Shrouded Vault(R1)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Shrouded Vault(L1)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Shrouded Vault(R2)": {
+      "MV": 11,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Shrouded Vault(L2)": {
+      "MV": 11,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Mode Shrouded Vault(R1)": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Mode Shrouded Vault(L1)": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Mode Shrouded Vault(R2)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Mode Shrouded Vault(L2)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Double Slash": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Double Slash Return Stroke": {
+      "MV": 19,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Circle Slash": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 4
+    },
+    "Lunging Strike": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Lateral Lunging Strike": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Turn Slash": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Left Round Slash": {
+      "MV": 27,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Right Round Slash": {
+      "MV": 27,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Left Double Round Slash": {
+      "MV": 37,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Right Double Round Slash": {
+      "MV": 37,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flurry 1": {
+      "MV": 57,
+      "Type": "Sever",
+      "EleMV": 4.8
+    },
+    "Demon Flurry 2": {
+      "MV": 51,
+      "Type": "Sever",
+      "EleMV": 5.4
+    },
+    "Demon Flurry 3": {
+      "MV": 60,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Fangs": {
+      "MV": 11,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Twofold Demon Slash": {
+      "MV": 21,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sixfold Demon Slash": {
+      "MV": 60,
+      "Type": "Sever",
+      "EleMV": 5.4
+    },
+    "Demon Flurry Rush": {
+      "MV": 28,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Mode Rising Slash": {
+      "MV": 9,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Flight": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Axerial Demon Flurry": {
+      "MV": 44,
+      "Type": "Sever",
+      "EleMV": 5
+    },
+    "Feral Demon Mode Start": {
+      "MV": 26,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Mid-air Feral Demon Mode": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Mode Cancel": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Demon Slash Dodge": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Jumping Double Slash": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Midair Round Slash": {
+      "MV": 50,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Midair Spinning Blade Dance Finisher": {
+      "MV": 64,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Heavenly Blade Dance Start": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Heavenly Blade Dance Loop 1(R,L)*": {
+      "MV": 5,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Heavenly Blade Dance Loop 2(R,L)*": {
+      "MV": 6,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Heavenly Blade Dance Finisher": {
+      "MV": 32,
+      "Type": "Sever",
+      "EleMV": 1.5
+    },
+    "Heavenly Blade Dance Landing": {
+      "MV": 48,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Piercing Bind(Application)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 0
+    },
+    "Piercing Bind(Ticks)": {
+      "MV": 4,
+      "Type": "Sever",
+      "EleMV": 0
+    },
+    "Piercing Bind(Finisher)": {
+      "MV": 75,
+      "Type": "Sever",
+      "EleMV": 0
+    },
+    "Shrouded Vault": {
+      "MV": 46,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Demon Mode Shrouded Vault": {
+      "MV": 68,
+      "Type": "Sever",
+      "EleMV": 1
+    }
+  },
+  "LongSword": {
+    "Combo Damage": {
+      "MV": 1,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Step Slash": {
+      "MV": 26,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Overhead Slash": {
+      "MV": 26,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Drawn Double Slash(1st Hit)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Drawn Double Slash(2nd Hit)": {
+      "MV": 35,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Thrust": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Rising Slash": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Fade Slash": {
+      "MV": 24,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Lateral Fade Slash": {
+      "MV": 24,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Spirit Blade I": {
+      "MV": 28,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "No Spirit Spirit Blade I": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Spirit Blade II": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Spirit Blade III(1st Hit)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Spirit Blade III(2nd Hit)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Spirit Blade III(3rd Hit)": {
+      "MV": 34,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Spirit Round Slash": {
+      "MV": 42,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Dividing Slash": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Spirit Reckoning(1st Hit)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Spirit Reckoning(2nd Hit)": {
+      "MV": 60,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Foresight Slash": {
+      "MV": 27,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Spirit Jumping Slash": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "No Spirit Spirit Jumping Slash": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Iai Slash(1st)": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Iai Slash(2nd)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Iai Spirit Slash": {
+      "MV": 50,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Counter Iai Spirit Slash": {
+      "MV": 55,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Iai Spirit Slash Ticks": {
+      "MV": 35,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Jumping Slash": {
+      "MV": 26,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Jumping Spirit Blade": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "No Spirit Jumping Spirit Blade": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Jumping Spirit Blade II/III(1st Hit)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Jumping Spirit Blade II/III(2nd Hit)": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Jumping Spirit Blade III(3rd Hit)": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Jumping Spirit Blade II/III(Landing Swing)": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "No Spirit Jumping Spirit Blade II/III(1st Hit)": {
+      "MV": 9,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "No Spirit Jumping Spirit Blade II/III(2nd Hit)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "No Spirit Jumping Spirit Blade III(3rd Hit)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "NS Jumping Spirit Blade II/III(Landing Hit)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Soaring Kick": {
+      "MV": 5,
+      "Type": "None",
+      "EleMV": 0,
+      "unique": "spiritGauge"
+    },
+    "Soaring Kick Swing": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Plunging Thrust": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "spiritGauge"
+    },
+    "Spirit Helmbreaker*": {
+      "MV": 7,
+      "Type": "Sever",
+      "EleMV": 0.5,
+      "unique": "spiritGauge"
+    },
+    "Serene Pose*": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 3,
+      "unique": "spiritGauge"
+    },
+    "Silkbind Sakura Slash(1st)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["ulti", "spiritGauge"]
+    },
+    "Silkbind Sakura Slash(2nd)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": ["ulti", "spiritGauge"]
+    },
+    "Silkbind Sakura Slash 1st Hit tick": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 0.6,
+      "unique": ["ulti", "spiritGauge"]
+    },
+    "Silkbind Sakura Slash 2nd Hit tick": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 0.6,
+      "unique": ["ulti", "spiritGauge"]
+    }
+  },
+  "Hammer": {
+    "Combo Damage": {
+      "MV": 1,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Swing": {
+      "MV": 20,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Backswing(Follow-up)": {
+      "MV": 16,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Upswing": {
+      "MV": 86,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Overhead Smash I": {
+      "MV": 42,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Overhead Smash II": {
+      "MV": 23,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Side Smash": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Water Strike": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Water Strike Upswing": {
+      "MV": 100,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Big Bang I": {
+      "MV": 32,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Big Bang II": {
+      "MV": 45,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Big Bang III": {
+      "MV": 65,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Big Bang Finisher(1st Hit)": {
+      "MV": 28,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Big Bang Finisher(2nd Hit)": {
+      "MV": 28,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Big Bang Finisher(3rd Hit)": {
+      "MV": 100,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Charged Side Blow": {
+      "MV": 18,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Charged Follow-up": {
+      "MV": 25,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Charged Upswing": {
+      "MV": 38,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Spinning Bludgeon(1st Hit)": {
+      "MV": 26,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Spinning Bludgeon(Repeated Hits)": {
+      "MV": 18,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Spinning Side Smash": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Spinning Follow-up": {
+      "MV": 55,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Spinning Strong Upswing": {
+      "MV": 90,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Spinning Swing": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Charged Big Bang(1st Hit)": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Charged Big Bang(2nd Hit)": {
+      "MV": 76,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Strength Power Swing": {
+      "MV": 55,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Strength Charged Brutal Upswing": {
+      "MV": 45,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Strength Charged Brutal Big Bang(1st Hit)": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Strength Charged Brutal Big Bang(2nd Hit)": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Strength Charged Brutal Big Bang(3rd Hit)": {
+      "MV": 90,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Strength Step Smash(1st Hit)": {
+      "MV": 20,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Strength Step Smash(2nd Hit)": {
+      "MV": 80,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Courage Charged Side Blow": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 1.1
+    },
+    "Courage Additional Swing": {
+      "MV": 10,
+      "Type": "Blunt",
+      "EleMV": 1.1
+    },
+    "Courage Charged Upswing": {
+      "MV": 33,
+      "Type": "Blunt",
+      "EleMV": 1.2
+    },
+    "Courage Additional Upswing": {
+      "MV": 16,
+      "Type": "Blunt",
+      "EleMV": 1.2
+    },
+    "Courage Charged Hammer Down(1st Hit)": {
+      "MV": 10,
+      "Type": "Blunt",
+      "EleMV": 1.35
+    },
+    "Courage Charged Hammer Down(2nd Hit)": {
+      "MV": 65,
+      "Type": "Blunt",
+      "EleMV": 1.35
+    },
+    "Courage Additional Hammer Down": {
+      "MV": 35,
+      "Type": "Blunt",
+      "EleMV": 1.35
+    },
+    "Jumping Smash": {
+      "MV": 37,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Jumping Charged Attack": {
+      "MV": 55,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Jumping Charged Attack II": {
+      "MV": 60,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Jumping Charged Attack III": {
+      "MV": 70,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Wire Jump Jumping Smash": {
+      "MV": 37,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Wire Jump Jumping Charged Attack Lv1": {
+      "MV": 65,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Wire Jump Jumping Charged Attack Lv2": {
+      "MV": 70,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Wire Jump Jumping Charged Attack Lv3": {
+      "MV": 80,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Courage Jumping Charged Attack Lv1": {
+      "MV": 45,
+      "Type": "Blunt",
+      "EleMV": 1.1
+    },
+    "Courage Jumping Charged Attack Lv2": {
+      "MV": 50,
+      "Type": "Blunt",
+      "EleMV": 1.2
+    },
+    "Courage Jumping Charged Attack Lv3": {
+      "MV": 60,
+      "Type": "Blunt",
+      "EleMV": 1.35
+    },
+    "CWire Jump Jumping Charged Attack": {
+      "MV": 55,
+      "Type": "Blunt",
+      "EleMV": 1.1
+    },
+    "Midair Spinning Bludgeon(1st Hit)": {
+      "MV": 23,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Midair Spinning Bludgeon(Repeated Hits)": {
+      "MV": 23,
+      "Type": "Blunt",
+      "EleMV": 0.7
+    },
+    "Midair Spinning Bludgeon(Final Hit)": {
+      "MV": 100,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Silkbind Spinning Bludgeon(1st Hit)": {
+      "MV": 25,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Silkbind Spinning Bludgeon(Repeated Hits)": {
+      "MV": 25,
+      "Type": "Blunt",
+      "EleMV": 0.7
+    },
+    "Silkbind Spinning Bludgeon(Final Hit) Lv1": {
+      "MV": 80,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Silkbind Spinning Bludgeon(Final Hit) Lv2": {
+      "MV": 90,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Silkbind Spinning Bludgeon(Final Hit) Lv3": {
+      "MV": 100,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Dash Breaker Lv1": {
+      "MV": 50,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Dash Breaker Lv2": {
+      "MV": 60,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Dash Breaker Lv3": {
+      "MV": 70,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Impact Crater Spin(1st Hit)": {
+      "MV": 20,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Impact Crater Spin(2nd Hit)": {
+      "MV": 20,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Impact Crater(3rd Hit) Lv1": {
+      "MV": 80,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Impact Crater(3rd Hit) Lv2": {
+      "MV": 100,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Impact Crater(3rd Hit) Lv3": {
+      "MV": 150,
+      "Type": "Blunt",
+      "EleMV": 1
+    }
+  },
+  "SwitchAxe": {
+    "Combo Damage": {
+      "MV": 1,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Overhead Slash": {
+      "MV": 50,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Forward Overhead Slash": {
+      "MV": 56,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Side Slash/Axe Sword: Morph Slash": {
+      "MV": 23,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Rising Slash": {
+      "MV": 32,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Forward Slash": {
+      "MV": 19,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Wild Swing(Right Swing)": {
+      "MV": 22,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Wild Swing(Left Swing)": {
+      "MV": 22,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Wide Sweep(1st Hit)": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Wide Sweep(2nd Hit)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Wide Sweep(3rd Hit)": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Heavy Slam(1st Hit)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Heavy Slam(2nd Hit)": {
+      "MV": 55,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Fade Slash": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword Axe:Morph Rising Double Slash(1)": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword Axe:Morph Rising Double Slash(2)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Overhead Slash/Sword Axe:Morph Slash": {
+      "MV": 32,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Right Rising Slash": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Left Rising Slash": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Triple Slash(1st Hit)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Double Slash(1) /Triple Slash(2)": {
+      "MV": 28,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Double Slash(2) /Triple Slash(3)": {
+      "MV": 36,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Heavenward Flurry(1st Hit)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Heavenward Flurry(2nd Hit)": {
+      "MV": 38,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe Sword: Morph Double Slash(1st Hit)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe Sword: Morph Double Slash(2nd Hit)": {
+      "MV": 60,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe Sword: Downward Fade Slash": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Jumping Element Discharge(Thrust)": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Element Discharge(Thrust)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Elemental Discharge(Early Hits)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Elemental Discharge(Ending Hits)": {
+      "MV": 13,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Element Discharge Finisher": {
+      "MV": 100,
+      "Type": "None",
+      "EleMV": 1.5
+    },
+    "Element Discharge Early Finisher": {
+      "MV": 50,
+      "Type": "None",
+      "EleMV": 1
+    },
+    "Compressed Elemental Discharge Slash": {
+      "MV": 80,
+      "Type": "Sever",
+      "EleMV": 2
+    },
+    "Compressed Elemental Discharge Explosion": {
+      "MV": 52,
+      "Type": "None",
+      "EleMV": 1.5
+    },
+    "Zero Sum Discharge Thrust": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Zero Sum Discharge Ticks": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 0.7
+    },
+    "Zero Sum Discharge Finisher": {
+      "MV": 90,
+      "Type": "None",
+      "EleMV": 2
+    },
+    "Zero Sum Discharge Early Finisher": {
+      "MV": 40,
+      "Type": "None",
+      "EleMV": 1
+    },
+    "Amped Phial Burst": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Jumping Slash": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Sword: Jumping Slash": {
+      "MV": 32,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Wire Jump Sword: Jumping Slash": {
+      "MV": 32,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Invincible Gambit(1st Hit)": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Invincible Gambit(2nd Hit)": {
+      "MV": 32,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Invincible Gambit(3rd Hit)": {
+      "MV": 60,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Axe:Side Slash after Invincible Gambit": {
+      "MV": 50,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Soaring Wyvern Blade": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Advancing Slash": {
+      "MV": 33,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Advancing Slash Phial Burst": {
+      "MV": 70,
+      "Type": "None",
+      "EleMV": 2
+    }
+  },
+  "InsectGlaive": {
+    "Combo Damage": {
+      "MV": 1,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Thrust": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Rising Slash Combo(1st Hit)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Rising Slash Combo(2nd Hit)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Reaping Slash": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Double Slash(1st Hit)": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Double Slash(2nd Hit)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Leaping Slash": {
+      "MV": 26,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Advancing Round Slash(1st Hit)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Advancing Round Slash(2nd Hit)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Advancing Round Slash(3rd Hit)": {
+      "MV": 26,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Wide Sweep": {
+      "MV": 22,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Overhead Smash": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Dodge Slash": {
+      "MV": 17,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Thrust(1st Hit)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Thrust(2nd Hit)": {
+      "MV": 11,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Rising Slash Combo(1st Hit)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Rising Slash Combo(2nd Hit)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Rising Slash Combo(3rd Hit)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Reaping Slash(1st Hit)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Reaping Slash(2nd Hit)": {
+      "MV": 19,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Double Slash(1st Hit)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Double Slash(2nd Hit)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Double Slash(3rd Hit)": {
+      "MV": 28,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Wide Sweep(1st Hit)": {
+      "MV": 18,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Wide Sweep(2nd Hit)": {
+      "MV": 26,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Wide Sweep to Rising Slash Combo": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Tornado Slash(1st Hit)": {
+      "MV": 24,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Tornado Slash(2nd Hit)": {
+      "MV": 42,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Tetraseal Slash(1st Hit)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Tetraseal Slash(2nd Hit)": {
+      "MV": 5,
+      "Type": "Blunt",
+      "EleMV": 0,
+      "unique": "kinsectBuffid"
+    },
+    "Tetraseal Slash(3rd Hit)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Tetraseal Slash(4th Hit)": {
+      "MV": 36,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Improved Dodge Slash": {
+      "MV": 22,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Jumping Slash": {
+      "MV": 22,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Jumping Advancing Slash": {
+      "MV": 28,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Jumping Slash(Early Hits)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 0.7,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Jumping Slash(Late Hits)": {
+      "MV": 12,
+      "Type": "Sever",
+      "EleMV": 0.5,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Jumping Slash(Final Hit)": {
+      "MV": 26,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Jumping Advancing Slash(1st Hit)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Jumping Advancing Slash(2nd Hit)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Jumping Advancing Slash(3rd Hit)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Jumping Advancing Slash(4th Hit)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Jumping Advancing Slash(5th Hit)": {
+      "MV": 14,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Strong Jumping Advancing Slash(6th Hit)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Silkbind Vault": {
+      "MV": 26,
+      "Type": "Sever",
+      "EleMV": 1,
+      "unique": "kinsectBuffid"
+    },
+    "Diving Wyvern": {
+      "MV": 80,
+      "Type": "Sever",
+      "EleMV": 3,
+      "unique": "kinsectBuffid"
+    }
+  },
+  "Kinsect": {
+    "Kinsect: Mark Target": {
+      "MV": 5,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect: Fire": {
+      "MV": 1,
+      "Type": "None",
+      "EleMV": 0
+    },
+    "Dust Explosion(Blast)": {
+      "MV": 10,
+      "Type": "None",
+      "EleMV": 0
+    },
+    "Dust Explosion(Recovery)": {
+      "MV": 0,
+      "Type": "none",
+      "EleMV": 0
+    },
+    "Dust Explosion(Paralysis)": {
+      "MV": 3,
+      "Type": "None",
+      "EleMV": 0
+    },
+    "Dust Explosion(Poison)": {
+      "MV": 5,
+      "Type": "None",
+      "EleMV": 0
+    },
+    "Kinsect Attack(Sever)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Charge Attack(Sever)": {
+      "MV": 65,
+      "Type": "Sever",
+      "EleMV": 3
+    },
+    "Awakening Charge Attack(Sever)": {
+      "MV": 8,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Repeated Kinsect Attack(Sever)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Leaping Slash(Sever)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Dodge Slash(Sever)": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Advancing Round Slash 1st Hit(Sever)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Advancing Round Slash 2nd Hit(Sever)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Advancing Round Slash 3rd Hit(Sever)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Tornado Slash 1st Hit(Sever)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Tornado Slash 2nd Hit(Sever)": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Strong Double Slash 1st Hit(Sever)": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Strong Double Slash 2nd Hit(Sever)": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Strong Double Slash 3rd Hit(Sever)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Tetraseal Slash 1st Hit(Sever)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Tetraseal Slash 2nd Hit(Sever)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Tetraseal Slash 3rd Hit(Sever)": {
+      "MV": 16,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Tetraseal Slash 4th Hit(Sever)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Assist-Diving Wyvern(Sever)": {
+      "MV": 60,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Recall Kinsect(Sever)": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Kinsect Attack(Blunt)": {
+      "MV": 20,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Charge Attack(Blunt)": {
+      "MV": 65,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Awakening Charge Attack(Blunt)": {
+      "MV": 8,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Repeated Kinsect Attack(Blunt)": {
+      "MV": 20,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Leaping Slash(Blunt)": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Dodge Slash(Blunt)": {
+      "MV": 25,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Advancing Round Slash 1st Hit(Blunt)": {
+      "MV": 10,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Advancing Round Slash 2nd Hit(Blunt)": {
+      "MV": 20,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Advancing Round Slash 3rd Hit(Blunt)": {
+      "MV": 20,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Tornado Slash 1st Hit(Blunt)": {
+      "MV": 10,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Tornado Slash 2nd Hit(Blunt)": {
+      "MV": 25,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Strong Double Slash 1st Hit(Blunt)": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Strong Double Slash 2nd Hit(Blunt)": {
+      "MV": 20,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Strong Double Slash 3rd Hit(Blunt)": {
+      "MV": 30,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Tetraseal Slash 1st Hit(Blunt)": {
+      "MV": 10,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Tetraseal Slash 2nd Hit(Blunt)": {
+      "MV": 16,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Tetraseal Slash 3rd Hit(Blunt)": {
+      "MV": 16,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Tetraseal Slash 4th Hit(Blunt)": {
+      "MV": 30,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Kinsect Assist-Diving Wyvern(Blunt)": {
+      "MV": 60,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Recall Kinsect(Blunt)": {
+      "MV": 30,
+      "Type": "Blunt",
+      "EleMV": 0
+    }
+  },
+  "HuntingHorn": {
+    "Combo Damage": {
+      "MV": 1,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Left Swing": {
+      "MV": 32,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Multi-crush(1st Hit)": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Multi-crush(2nd Hit)": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Multi-crush(3rd Hit)": {
+      "MV": 24,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Forward Smash": {
+      "MV": 28,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Right Swing": {
+      "MV": 32,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Crush": {
+      "MV": 33,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Kick Up": {
+      "MV": 16,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Backwards Strike": {
+      "MV": 55,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Overhead Smash(1st Hit)": {
+      "MV": 6,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Overhead Smash(1st Hit from Crush)": {
+      "MV": 14,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Overhead Smash(2nd Hit)": {
+      "MV": 46,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Melodic Slap(1st Hit)": {
+      "MV": 10,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Melodic Slap(1st Hit from Crush)": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Melodic Slap(2nd Hit)": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Melodic Slap(3rd Hit)": {
+      "MV": 10,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Melodic Slap Shockwave": {
+      "MV": 10,
+      "Type": "None",
+      "EleMV": 0,
+      "Unique": "Cannot Crit"
+    },
+    "Double Swing(1st Hit)": {
+      "MV": 23,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Double Swing(2nd Hit)": {
+      "MV": 18,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Perform": {
+      "MV": 30,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Perform Shockwav,e": {
+      "MV": 18,
+      "Type": "None",
+      "EleMV": 0,
+      "Unique": "Cannot Crit"
+    },
+    "[Mode: Echo] Chord": {
+      "MV": 30,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "[Mode: Echo] Chord Shockwave": {
+      "MV": 18,
+      "Type": "None",
+      "EleMV": 0,
+      "Unique": "Cannot Crit"
+    },
+    "MagnifIcent Trio(1st Hit)": {
+      "MV": 13,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "MagnifIcent Trio(2nd Hit)": {
+      "MV": 11,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "MagnifIcent Trio(3rd Hit)": {
+      "MV": 18,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "MagnifIcent Trio(4th Hit)": {
+      "MV": 23,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "MagnifIcent Trio Shockwaves": {
+      "MV": 8,
+      "Type": "None",
+      "EleMV": 0,
+      "Unique": "Hits up to 4 times. Cannot Crit"
+    },
+    "Infernal Melody(1st Hit)": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Infernal Melody Shockwaves": {
+      "MV": 27,
+      "Type": "None",
+      "EleMV": 0,
+      "Unique": "Hits up to 3 times. Cannot Crit"
+    },
+    "Sonic Wave": {
+      "MV": 5,
+      "Type": "None",
+      "EleMV": 0,
+      "Unique": "Cannot Crit"
+    },
+    "Jumping Smash": {
+      "MV": 36,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Slide Beat(1st Hit)": {
+      "MV": 25,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Slide Beat(2nd Hit)": {
+      "MV": 30,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Slide Beat(3rd Hit)": {
+      "MV": 35,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Slide Beat Shockwave": {
+      "MV": 25,
+      "Type": "None",
+      "EleMV": 0,
+      "Unique": "Cannot Crit"
+    },
+    "Earthshaker Marking Hit": {
+      "MV": 90,
+      "Type": "Blunt",
+      "EleMV": 1
+    },
+    "Earthshaker Shockwave": {
+      "MV": 100,
+      "Type": "None",
+      "EleMV": 0,
+      "Unique": "Cannot Crit"
+    },
+    "Bead of Resonance Setup": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 0,
+      "Unique": "Hits up to 3 times. Cannot Crit"
+    },
+    "Bead of Resonance Shockwaves": {
+      "MV": 5,
+      "Type": "None",
+      "EleMV": 0,
+      "Unique": "Cannot Crit"
+    }
+  },
+  "Gunlance": {
+    "Combo Damage": {
+      "MV": 1,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Lunging Upthrust": {
+      "MV": 30,
+      "Type": "Sever"
+    },
+    "Lateral Thrust I/II/III": {
+      "MV": 24,
+      "Type": "Sever"
+    },
+    "Guard Thrust I/II/III": {
+      "MV": 18,
+      "Type": "Sever"
+    },
+    "Rising Slash": {
+      "MV": 30,
+      "Type": "Sever"
+    },
+    "Overhead Smash": {
+      "MV": 48,
+      "Type": "Sever"
+    },
+    "Wide Sweep": {
+      "MV": 68,
+      "Type": "Sever"
+    },
+    "Wyrmstake Cannon(1st Hit)": {
+      "MV": 28,
+      "Type": "Sever"
+    },
+    "Blast Dash Overhead Smash": {
+      "MV": 55,
+      "Type": "Sever"
+    },
+    "Jumping Thrust": {
+      "MV": 25,
+      "Type": "Sever"
+    },
+    "Jumping Smash": {
+      "MV": 44,
+      "Type": "Sever"
+    },
+    "Hail Cutter(1st Hit)": {
+      "MV": 30,
+      "Type": "Sever"
+    },
+    "Hail Cutter(2nd Hit)": {
+      "MV": 85,
+      "Type": "Sever"
+    },
+    "Ground Splitter": {
+      "MV": 68,
+      "Type": "Sever"
+    },
+    "[Normal] Shelling": {
+      "MV": {
+        "Lv1": 8,
+        "Lv2": 12,
+        "Lv3": 15,
+        "Lv4": 18,
+        "Lv5": 20
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 4,
+        "Lv2": 5,
+        "Lv3": 6,
+        "Lv4": 7,
+        "Lv5": 8
+      }
+    },
+    "[Normal] Charged Shelling": {
+      "MV": {
+        "Lv1": 12,
+        "Lv2": 18,
+        "Lv3": 23,
+        "Lv4": 27,
+        "Lv5": 30
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 6,
+        "Lv2": 8,
+        "Lv3": 9,
+        "Lv4": 11,
+        "Lv5": 12
+      }
+    },
+    "[Normal] Shelling Fullburst": {
+      "MV": {
+        "Lv1": 9,
+        "Lv2": 12,
+        "Lv3": 16,
+        "Lv4": 19,
+        "Lv5": 22
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 5,
+        "Lv2": 7,
+        "Lv3": 8,
+        "Lv4": 9,
+        "Lv5": 10
+      }
+    },
+    "[Normal] Wyrmstake(Ticks)": {
+      "MV": {
+        "Lv1": 8,
+        "Lv2": 11,
+        "Lv3": 14,
+        "Lv4": 16,
+        "Lv5": 18
+      },
+      "Tpe": "Sever",
+      "Unique": "Hits up to 13 times"
+    },
+    "[Normal] Wyrmstake(Explosion)": {
+      "MV": {
+        "Lv1": 60,
+        "Lv2": 68,
+        "Lv3": 76,
+        "Lv4": 83,
+        "Lv5": 90
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 15,
+        "Lv2": 17,
+        "Lv3": 19,
+        "Lv4": 20,
+        "Lv5": 21
+      }
+    },
+    "[Normal] WyvernFire": {
+      "MV": {
+        "Lv1": 54,
+        "Lv2": 60,
+        "Lv3": 65,
+        "Lv4": 70,
+        "Lv5": 74
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 15,
+        "Lv2": 17,
+        "Lv3": 19,
+        "Lv4": 20,
+        "Lv5": 21
+      },
+      "Uique": "Hits up to 3 times"
+    },
+    "[Long] Shelling": {
+      "MV": {
+        "Lv1": 12,
+        "Lv2": 17,
+        "Lv3": 22,
+        "Lv4": 26,
+        "Lv5": 29
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 9,
+        "Lv2": 11,
+        "Lv3": 13,
+        "Lv4": 15,
+        "Lv5": 16
+      }
+    },
+    "[Long] Charged Shelling": {
+      "MV": {
+        "Lv1": 18,
+        "Lv2": 26,
+        "Lv3": 33,
+        "Lv4": 39,
+        "Lv5": 44
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 14,
+        "Lv2": 17,
+        "Lv3": 20,
+        "Lv4": 22,
+        "Lv5": 24
+      }
+    },
+    "[Long] Shelling Fullburst": {
+      "MV": {
+        "Lv1": 12,
+        "Lv2": 17,
+        "Lv3": 22,
+        "Lv4": 26,
+        "Lv5": 29
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 9,
+        "Lv2": 11,
+        "Lv3": 13,
+        "Lv4": 15,
+        "Lv5": 16
+      }
+    },
+    "[Long] Wyrmstake(Ticks)": {
+      "MV": {
+        "Lv1": 8,
+        "Lv2": 11,
+        "Lv3": 14,
+        "Lv4": 16,
+        "Lv5": 18
+      },
+      "Tpe": "Sever",
+      "Unique": "Hits up to 15 times"
+    },
+    "[Long] Wyrmstake(Explosion)": {
+      "MV": {
+        "Lv1": 60,
+        "Lv2": 68,
+        "Lv3": 76,
+        "Lv4": 83,
+        "Lv5": 90
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 15,
+        "Lv2": 17,
+        "Lv3": 19,
+        "Lv4": 20,
+        "Lv5": 21
+      }
+    },
+    "[Long] WyvernFire": {
+      "MV": {
+        "Lv1": 54,
+        "Lv2": 60,
+        "Lv3": 65,
+        "Lv4": 70,
+        "Lv5": 74
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 15,
+        "Lv2": 17,
+        "Lv3": 19,
+        "Lv4": 20,
+        "Lv5": 21
+      },
+      "Uique": "Hits up to 4 times"
+    },
+    "[Wide] Shelling": {
+      "MV": {
+        "Lv1": 18,
+        "Lv2": 25,
+        "Lv3": 31,
+        "Lv4": 36,
+        "Lv5": 40
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 6,
+        "Lv2": 8,
+        "Lv3": 9,
+        "Lv4": 10,
+        "Lv5": 11
+      }
+    },
+    "[Wide] Charged Shelling": {
+      "MV": {
+        "Lv1": 25,
+        "Lv2": 35,
+        "Lv3": 43,
+        "Lv4": 50,
+        "Lv5": 56
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 8,
+        "Lv2": 11,
+        "Lv3": 12,
+        "Lv4": 14,
+        "Lv5": 15
+      }
+    },
+    "[Wide] Strong Charged Shelling": {
+      "MV": {
+        "Lv1": 35,
+        "Lv2": 49,
+        "Lv3": 60,
+        "Lv4": 70,
+        "Lv5": 78
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 11,
+        "Lv2": 15,
+        "Lv3": 17,
+        "Lv4": 19,
+        "Lv5": 21
+      }
+    },
+    "[Wide] Shelling Fullburst": {
+      "MV": {
+        "Lv1": 17,
+        "Lv2": 23,
+        "Lv3": 28,
+        "Lv4": 33,
+        "Lv5": 36
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 6,
+        "Lv2": 7,
+        "Lv3": 8,
+        "Lv4": 9,
+        "Lv5": 10
+      }
+    },
+    "[Wide] Wyrmstake(Tick)": {
+      "MV": {
+        "Lv1": 70,
+        "Lv2": 78,
+        "Lv3": 86,
+        "Lv4": 94,
+        "Lv5": 100
+      },
+      "Tpe": "Blunt"
+    },
+    "[Wide] Wyrmstake(Explosion)": {
+      "MV": {
+        "Lv1": 80,
+        "Lv2": 90,
+        "Lv3": 100,
+        "Lv4": 110,
+        "Lv5": 120
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 10,
+        "Lv2": 12,
+        "Lv3": 14,
+        "Lv4": 16,
+        "Lv5": 18
+      }
+    },
+    "[Wide] WyvernFire": {
+      "MV": {
+        "Lv1": 54,
+        "Lv2": 60,
+        "Lv3": 65,
+        "Lv4": 70,
+        "Lv5": 74
+      },
+      "Tpe": "None",
+      "EleMV": {
+        "Lv1": 15,
+        "Lv2": 17,
+        "Lv3": 19,
+        "Lv4": 20,
+        "Lv5": 21
+      },
+      "Uique": "Hits up to 3 times"
+    }
+  },
+  "Lance": {
+    "Combo Damage": {
+      "MV": 1,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Mid Thrust I/II": {
+      "MV": 20,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Mid Thrust III": {
+      "MV": 27,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "High Thrust I/II": {
+      "MV": 22,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "High Thrust III": {
+      "MV": 27,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Wide Sweep": {
+      "MV": 23,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Charged Wide Sweep I/II/III": {
+      "MV": 70,
+      "Type": "Sever",
+      "EleMV": 1.2
+    },
+    "Guard Thrust": {
+      "MV": 15,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Cancel Thrust": {
+      "MV": 22,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Counter-Thrust": {
+      "MV": 50,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Leaping Thrust(1st Hit)": {
+      "MV": 11,
+      "Type": "Sever",
+      "EleMV": 0.4
+    },
+    "Leaping Thrust Multi-Hit": {
+      "MV": 9,
+      "Type": "Sever",
+      "EleMV": 0.4
+    },
+    "Shield Attack": {
+      "MV": 15,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Insta-Block Cross Sweep(1st)": {
+      "MV": 25,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Insta-Block Cross Sweep(2nd)": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Dash Attack": {
+      "MV": 11,
+      "Type": "Sever",
+      "EleMV": 0.2
+    },
+    "Finishing Thrust/Shield Charge Leaping Thrust": {
+      "MV": 50,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Finishing Twin Thrust(1st Hit)": {
+      "MV": 35,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Finishing Twin Thrust(2nd Hit)": {
+      "MV": 60,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Reverse Attack": {
+      "MV": 50,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Shield Charge": {
+      "MV": 25,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Shield Charge Shield Attack": {
+      "MV": 40,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Airborne Shield Charge": {
+      "MV": 25,
+      "Type": "Blunt",
+      "EleMV": 0
+    },
+    "Jumping Thrust": {
+      "MV": 30,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Advancing Jump": {
+      "MV": 11,
+      "Type": "Sever",
+      "EleMV": 0.2
+    },
+    "Advancing Jump Jumping Thrust": {
+      "MV": 40,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Twin Vine start": {
+      "MV": 10,
+      "Type": "Sever",
+      "EleMV": 0
+    },
+    "Anchor Rage Thrust": {
+      "MV": 70,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Spiral Thrust(1st Hit)": {
+      "MV": 50,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Spiral Thrust(2nd Hit)": {
+      "MV": 80,
+      "Type": "Sever",
+      "EleMV": 1
+    },
+    "Spiral Thrust Leaping Thrust": {
+      "MV": 90,
+      "Type": "Sever",
+      "EleMV": 1
+    }
+  },
+  "version": 1.1
+}
