@@ -56,7 +56,7 @@ const weapRamp3 = $('#weapRamp3');
 const weapRamp4 = $('#weapRamp4');
 const weapRamp5 = $('#weapRamp5');
 let comboTracker = [];
-let previousEntranceCheck1 = [];
+let previousEntranceCheck1 = '';
 let previousEntranceCheck2 = 0;
 
 arg1 = false;
@@ -606,7 +606,7 @@ function meleeDPS() {
 		power.bAFF = rawHZV >= 45 ? power.bAFF + WEX : power.bAFF;
 
 		power.bAFF = Math.min(power.bAFF, 100) / 100;
-		let entranceCheck1 = [];
+		let entranceCheck1 = '';
 		let entranceCheck2 = 0;
 
 		$('.hitsOfSharp').each(function () {
@@ -621,7 +621,7 @@ function meleeDPS() {
 			(previousEntranceCheck1 === [] && previousEntranceCheck2 === 0 && c === 0)
 		) {
 			if (!/Bow/.test(weapType.val())) {
-				previousEntranceCheck1[0] = entranceCheck1[0];
+				previousEntranceCheck1 = entranceCheck1;
 				previousEntranceCheck2 = entranceCheck2 === 0 ? 1 : entranceCheck2;
 				hitsOfSharpness(power.bAFF);
 			}
