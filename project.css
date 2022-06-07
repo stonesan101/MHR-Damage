@@ -1,91 +1,159 @@
+@media only screen and (max-width: 780px) {
+  body {
+    background-position: center;
+  }
+
+  body div {
+    border: none;
+    align-items: baseline;
+  }
+
+  div#divComboAttacks {
+    grid-area: 3 / 2 / 4 / 3;
+    min-width: 5.2rem;
+  }
+
+
+  div#section1 {
+    grid-area: 2 / 1 / 3 / 2;
+
+  }
+
+
+  div#section2 {
+    grid-area: 3 / 1 / 4 / 2;
+    display: grid;
+    align-self: center;
+  }
+}
+
+tr,
+td,
+div,
+label {
+  font-size: 0.53rem;
+}
+
+html {
+  min-width: fit-content;
+}
+
+
+div#statsTableDiv {
+  grid-area: 1/3/2/6
+}
+
+section#section3 {
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+@media only screen and (min-width: 780px) {
+  section#section3 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  body {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+div#section1.contain {
+
+  grid-area: 2 / 1 / 3 / 2;
+  display: grid;
+}
+
+html div {
+  display: grid;
+}
+
+
+div#section1 {
+  min-width: max-content;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+*.contain {
+  gap: 0.25rem;
+  display: grid;
+}
+
 body {
   display: grid;
-  grid-template-columns: 1rem repeat(4, auto) 1rem;
-  gap: 1rem;
-  background-color: rgb(47, 43, 43);
-  color: rgb(25, 115, 157);
-  font-size: 13px;
-  font-weight: 400;
-  margin: 5px;
-  padding: 4px;
-  border-width: 4px;
-  background-image: url("https://img1.ak.crunchyroll.com/i/spire3/ce3bb561e78cb252af736272f55499131607715139_main.jpg");
+  color: rgb(229, 237, 240);
+  font-size: 0.55rem;
+  background-image: url('http://127.0.0.1:5500/background.jpg');
   background-size: cover;
-  border-style: ridge;
+  min-height: 100vh;
+  min-width: 100vh;
+  min-width: fit-content;
+  border-style: none;
   border-color: rgb(6, 6, 6);
+  align-items: start;
+  align-content: center;
+}
 
-justify-items: center;align-items: start;align-content: center;justify-content: center;}
-
-#monTable>tr:nth-child(1)>th:nth-child(1) {
+div#divComboAttacks {
   min-width: max-content;
 }
 
-#boxDiv {
-  max-height: 10px;
-}
-
-div#sharpContainer {
+div#sharpnessContainer {
   justify-content: start;
   background-color: rgb(10, 10, 10);
   border-style: ridge;
-  border-width: 5px;
-  grid-area: 4/2/5/4;
+  grid-area: 3 / 2 / 4 / 3;
   column-gap: 0px;
   grid-template-columns: repeat(6, auto);
-  width: max-content;
-  height: 1.25rem;
-  place-items: stretch center;
-
+  width: fit-content;
+  border-color: rgb(77, 67, 69);
 }
 
-div.sharp {
-  grid-row: 1/2;
+div.sharpness {
+  grid-row: 1 / 2;
   color: black;
   padding: 0px;
-
 }
 
 div#blue {
   color: white;
 }
 
+div#monContainer.contain {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  justify-items: stretch;
+  justify-content: center;
+  max-height: 11rem;
+  align-items: stretch;
+}
+
 .title {
-  grid-area: 1 / 1 / 1 / -1;
-  padding: 5px;
-  width: 98.7%;
-}
-
-body>div:nth-child(1)>div {
-  border-style: none;
-}
-
-
-.ammoTable {
-  border: none;
-}
-
-.rangedTable {
-  border-style: none;
-  min-width: max-content;
+  display: grid;
+  grid-area: 1 / 1 / 2 / -1;
+  place-items: stretch center;
+  place-content: center;
 }
 
 .rangedTable>tr>td.a {
-  border-style: outset;
   background-color: rgb(11, 11, 42);
-  min-width: max-content;
+  min-width: fit-content;
 }
 
 .meleeTable>tr>td.b {
-  background-color: rgb(11, 11, 42);
-  min-width: 100px;
-  font-size: 14px;
+  background-color: rgba(11, 11, 42, 0.792);
+  font-size: 0.6rem;
 }
 
-
-input.inputs, input#comboMultiplier {
-  background-color: rgba(211, 211, 211, 0.368);
+input.inputs,
+input#inputComboRepeat {
+  background-color: rgba(211, 211, 211, 0.37);
   color: rgb(6, 6, 24);
-  font-size: 13px;
+  font-size: 0.6rem;
   font-weight: bold;
 }
 
@@ -94,144 +162,236 @@ input.inputs, input#comboMultiplier {
   overflow: hidden scroll;
   max-height: 350px;
   border-style: none;
+  gap: 0;
+}
+
+tbody.dpsBody>tr>td:nth-child(2) {
+  width: 8rem;
+}
+
+tbody.meleeTable>tr>td#b0 {
+  width: 8rem;
+}
+
+tbody#dpsBody.meleeTable>tr {
+  height: 27px;
+}
+
+#forButtons {
+  gap: .25rem;
+  place-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+div#forButtonSelect {
+  gap: .25rem;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  grid-area: 2/1/3/4
+}
+
+#forButtonSelect>div:nth-child(1) {
+  grid-area: 1/1/2/2
+}
+
+#forButtonSelect>div:nth-child(2) {
+  grid-area: 1/2/2/3
 }
 
 #dpsTable {
   border: none;
   overflow: hidden scroll;
-  grid-column: 1 / 3;
-  min-width: max-content;
+  grid-column: 1 / 3/ 2/ 4;
+  min-width: fit-content;
   border-spacing: 0px;
   display: table-caption;
-  max-height: 350px;
+  max-height: 332px;
+}
+
+tr>td:nth-child(1) {
+  width: fit-content;
+  /* padding-left: 0.25rem; */
+}
+
+#dpsHead>tr>th:nth-child(1) {
+  width: max-content;
 }
 
 tr>th {
   top: 0px;
   position: sticky;
-  font-size: 14px;
+  font-size: 0.6rem;
   border-style: outset;
-  background-color: rgb(11, 11, 42);
+  background-color: rgba(11, 11, 42, 0.796);
   border-spacing: 0px;
-  min-width: 75px;
-}
-
-html {
-  display: contents;
   min-width: fit-content;
+  width: 3rem;
+  min-height: 1.2rem;
 }
 
-#meleeTable>tr>th:nth-child(2) {
-  min-width: 250px;
+table#ammoTable {
+  gap: 0;
+}
+
+table#ammoTable * {
+  width: max-content;
+  border-spacing: 0px;
+  gap: 0px;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+output.comboAttack {
+  border-color: rgb(77, 67, 69);
+  border-style: ridge;
+  border-width: 0.07rem;
+  border-collapse: collapse;
+  background-color: rgba(11, 11, 42, 0.796);
 }
 
 #ammoChange {
   grid-column: 3 / 4;
 }
 
-button {
-  background-color: rgb(0, 14, 94);
-  font-weight: bold;
-  grid-template-columns: auto auto auto;
+button#Butterflame {
+  grid-area: 5 / 2 / auto / auto;
 }
 
-#forButtons {
-  display: grid;
-  place-content: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: stretch;
+button#Palico\ Affinity {
+  grid-area: 3 / 3 / auto / auto;
 }
+
+button#WaterBlight {
+  grid-area: 5 / 3 / auto / auto;
+}
+
+button#Demon\ Seed {
+  grid-area: 2 / 2 / auto / auto;
+}
+
+button#Power\ Charm {
+  grid-area: 5 / 1 / auto / auto;
+}
+
+button#DemonAmmo {
+  grid-area: 4 / 3 / auto / auto;
+}
+
+button#MegaDemonDrug {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+button#huntingHornAffinity {
+  grid-area: 3 / 4 / auto / auto;
+}
+
+button#huntingHornElemental {
+  grid-area: 4 / 4 / auto / auto;
+}
+
+button#huntingHornAttack {
+  grid-area: 2 / 4 / auto / auto;
+}
+
+button#sleepWakeUp {
+  grid-area: 5 / 4 / auto / auto;
+}
+
+button#palicoAffinity {
+  grid-area: 3 / 3 / auto / auto;
+}
+
+button#Demon\ Seed {
+  grid-area: 2 / 2 / auto / auto;
+}
+
+button#Demon\ Powder {
+  grid-area: 3 / 2 / auto / auto;
+}
+
+button#DemonDrug {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+button#Power\ Talisman {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+button {
+  background-color: rgb(0, 14, 94);
+  font-weight: 600;
+  font-size: 0.55rem;
+}
+
+button.skillButton:hover {
+  background-color: black;
+}
+
+
 
 #monTable {
   border: none;
   overflow: hidden scroll;
   display: table-cell;
-  padding: 0px;
   border-spacing: 0px;
+  height: 6.25;
 }
 
 #section3>div:nth-child(2) {
-  display: grid;
-  grid-area: 2/2/3/4;
-}
-
-
-
-#section3>div:nth-child(2)>div:nth-child(2) {
-  grid-column: 2 / 3;
-}
-
-div#damageTable {
-
-  background-color: rgba(21, 15, 61, 0.255);
-  border-style: groove;
-  border-width: 6px;
-  grid-area: 5/1/6/-1;
-}
-
-tbody {
-  min-width: 30px;
-  border-width: 2px;
-}
-
-table#statsTable {
-  border-style: groove;
-  padding: 3px;
-  grid-column: 1 / 2;
-  margin: 0px;
-  background-color: rgba(11, 11, 42, 0.226);
+  grid-area: 2 / 1 / 2 / 2;
 }
 
 tr:nth-child(2n) {
-  background-color: rgb(77, 58, 58);
+  background-color: rgba(77, 58, 58, 0.67);
 }
 
-tr:nth-child(2n+1) {
-  background-color: rgb(77, 83, 126);
+tr:nth-child(2n + 1) {
+  background-color: rgba(77, 83, 126, 67%);
 }
 
 .rangedTable td:nth-child(1) {
   background-color: rgb(11, 11, 42);
-  min-width: 5px;
 }
 
-.rangedTable th:nth-child(n+1) {
+.rangedTable th:nth-child(n + 1) {
   background-color: rgb(11, 11, 42);
-  min-width: 20px;
-  max-width: 80px;
+  min-width: fit-content;
+  max-width: 2rem;
 }
 
-.statsTable td {
-  min-width: 45px;
+table#statsTable {
+  gap: 0;
+  border-spacing: 0;
 }
 
-#statsTable>tr:nth-child(n+2)>td:nth-child(1) {
+
+#statsTable>tr:nth-child(n + 2)>td:nth-child(1) {
   border-style: outset;
   background-color: rgb(7, 4, 69);
-  width: 60px;
-}
-
-td.b {
-  font-size: 15px;
+  min-width: fit-content;
 }
 
 #monTable>tr:nth-child(1)>th:nth-child(1) {
-  min-width: 105px;
+  min-width: fit-content;
+}
+
+td.a {
+  padding: 0;
 }
 
 output {
-  border-right-style: outset;
-  border-bottom-style: outset;
-  margin: 0px;
-  display: grid;
-  border-left: 0px;
+  width: 100%;
   height: 100%;
+  background-color: rgba(5, 3, 39, 0.373);
+  border-style: outset;
+  border-width: .15rem;
+  border-left: 0;
   align-items: center;
-  border-top: 0px;
 }
 
 td {
-  min-width: 55px;
   color: rgb(171, 217, 238);
   border-style: outset;
   font-weight: bold;
@@ -240,35 +400,39 @@ td {
 .a.rangedTable {
   border-style: outset;
   background-color: rgb(11, 11, 42);
-  font-size: 14px;
+  font-size: 0.6rem;
 }
 
 .b.meleeTable {
   border-style: outset;
   background-color: rgb(11, 11, 42);
-  font-size: 14px;
+  font-size: 0.6rem;
 }
 
-#statsBody>tr>td:nth-child(1) {
+div#statsTableDiv>table#statsTable>tbody#statsBody>tr>td:first-child {
   border-style: outset;
   background-color: rgb(11, 11, 42);
-  max-width: 55px;
+  height: 1.25rem;
+}
+
+body div {
+  display: grid;
+  align-items: baseline;
 }
 
 * {
-  font-family: 'Play', sans-serif;
-  border-width: 2px;
-  border-style: outset;
-
+  font-family: Play, sans-serif;
   text-align: center;
   border-color: rgb(77, 67, 69);
   color: rgb(171, 217, 238);
   box-sizing: border-box;
+  min-width: min-content;
 }
 
 #monTable>tr:nth-child(1) {
   position: sticky;
   top: 0px;
+  min-width: fit-content;
 }
 
 #raw>div:nth-child(4) {
@@ -278,7 +442,7 @@ td {
 .inputs {
   color: midnightblue;
   background-color: rgba(27, 25, 94, 0.71);
-  font-weight: "bold";
+  font-weight: bold;
 }
 
 #raw>div:nth-child(19) {
@@ -290,33 +454,32 @@ td {
 }
 
 table#monTable {
-  border-style: ridge;
-  border-width: 6px;
   border-color: rgb(77, 67, 69);
   margin: 0px;
-  grid-area: 2 / 1 / auto / 7;
-  height: 130px;
+  grid-area: 4 / 1 / auto / -1;
+  height: 6.3rem;
   font-weight: bold;
 }
 
-#boxes>div:nth-child(n+1) {
+#boxes>div:nth-child(n + 1) {
   display: grid;
   gap: 0.25rem;
-  max-height: 35px;
-  grid-template-columns: auto;
-  align-items: baseline;
 }
 
 #ele>div:nth-child(3) {
   grid-area: 3 / 1 / auto / 3;
   display: grid;
-  justify-items: stretch;
   align-content: center;
 }
 
 #ele>div:nth-child(3)>label {
   display: grid;
   grid-column: 1 / 3;
+}
+
+label.row1_span2 {
+  width: 100%;
+  grid-area: 1 / 1 / 2 / 3;
 }
 
 div#divEnrage {
@@ -332,60 +495,34 @@ div#divEnrage {
   grid-column: 3 / auto;
 }
 
-.row3_span2 {
-  grid-area: 4 / 1 / auto / 3;
-}
-
-.row2_span2 {
-  grid-area: 3 / 1 / auto / 3;
-}
-
-.grid_a {
-  max-height: min-content;
-}
-
 #monContainer>div:nth-child(2) {
   display: grid;
   grid-area: 3 / 2 / auto / 3;
   justify-content: center;
 }
 
-select#dropenraged {
-  grid-area: 2 / 1 / 2 / 2;
+select#dropEnraged {
+  grid-area: 2 / 1 / 3 / 2;
   border-right: 0px;
-  width: 100%;
 }
 
 div#forButtons {
-  grid-area: 2 /3/3/4;
-  gap: 0.25rem;
+  grid-area: 1 / 1 / 2 / 2;
+  border: none;
 }
 
 div#aff.contain {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-area: 5 / 2 / auto / 3;
-  border-style: ridge;
-  margin: 0%;
-  border-spacing: 0px;
-  border-width: 6px;
+  grid-template-columns: repeat(2, 1fr);
+  border-style: none;
+  grid-area: 5/ 1 / 6 / 3;
 }
 
 div#ele.contain {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-area: 5 / 3 / 6 / 4;
-  border-style: ridge;
-  border-width: 6px;
-  margin: 0%;
-}
-
-div {
-  background-color: rgba(11, 11, 42, 0.17);
-  /* border-width: 5px; */
-  color: rgb(206, 206, 206);
-  min-width: max-content;
-  /* display: grid; */
+  grid-area: 5 / 4 / 6 / 6;
+  justify-content: end;
 }
 
 #weaponSelect>div:nth-child(4)>div>div:nth-child(3) {
@@ -419,25 +556,13 @@ div {
   grid-area: 2 / 3 / auto / auto;
 }
 
-div#contain\ boxes {
-  grid-area: 4 / 1 / auto / auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
 #monContainer>div:nth-child(4) {
-
-  grid-area: 2 / 4 /4 / 5;
+  grid-area: 3 / 4 / 4 / 5;
 }
-
-
 
 div#weaponSelect.contain {
-  grid-area: 2 / 2 / 2 / 3;
-}
-
-div#skills.contain {
-  background-color: rgba(27, 25, 94, 0.49);
-  grid-area: 4 / 2 / 5 / 4;
+  grid-area: 1 / 1 / 3 / 3;
+  justify-items: stretch;
 }
 
 #monContainer>div:nth-child(5) {
@@ -446,35 +571,12 @@ div#skills.contain {
 
 #monContainer>div:nth-child(3) {
   grid-area: 3 / 3 / auto / 4;
-  min-width: 72px;
   margin: 0px;
-}
-
-#monContainer>div:nth-child(2)>div:nth-child(1) {
-  max-height: 170px;
-}
-
-#monContainer>div:nth-child(2)>div:nth-child(3) {
-  display: grid;
-  grid-template-areas: "a a a""b b c";
-  gap: 0px;
-  place-content: center;
-  grid-row: 1 / auto;
-  justify-items: center;
-  min-width: min-content;
 }
 
 #MonsterSelect>div>div:nth-child(1) {
   display: grid;
   grid-column: 1 / auto;
-}
-
-div#monContainer.contain {
-  display: grid;
-  grid-area: 2 / 4 / 3 / 5;
-  grid-template-columns: repeat(6, auto);
-  place-content: stretch space-around;
-  place-items: center stretch;
 }
 
 div#red {
@@ -487,232 +589,93 @@ div#green {
   font-weight: bold;
 }
 
-div#section3.contain {
-  grid-area: 3 / 4 / 6 / 5;
-  display: grid;
-  gap: 0.25rem;
-  max-width: 810px;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  background-color: rgba(255, 255, 255, 0.068);
+select {
+  font-size: 0.6rem;
 }
 
 select option {
   background-color: rgb(5, 5, 35);
   border-style: none;
-  max-width: fit-content;
-  min-width: fit-content;
-}
-
-div.contain {
-  border-style: outset;
-  padding: 4px;
+  min-width: max-content;
+  font-size: 0.55rem;
 }
 
 div#raw.contain {
-
-  gap: 0.25rem;
   display: grid;
-  grid-auto-columns: auto;
-  grid-area: 4 / 2 / 5 / 4;
-  border-style: ridge;
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: repeat(5, 1fr);
+  grid-area: 4 / 1 / 5 / 6;
+  border-style: none;
   padding: 0%;
-  background-color: rgba(27, 25, 94, 0.303);
-  /* flex-wrap: wrap; */
-  /* align-content: stretch; */
-  /* align-items: center; */
-  /* justify-content: space-evenly; */
-  /* flex-direction: column-reverse; */
 }
 
 div#boxes.contain {
   display: grid;
-  gap: 0.25rem;
   grid-template-columns: repeat(4, auto);
-  grid-area: 3 / 2 / 4/ 4;
-
+  grid-area: 3 / 1 / 4 / 6;
 }
 
 #dpsTable {
-  min-width: max-content;
+  min-width: fit-content;
 }
 
 #enrageDisplay {
-  background-color: rgb(11, 11, 42);
+  background-color: rgba(11, 11, 42, 0.38);
   border-style: outset;
-}
-
-div#MonsterSelect {
-  display: grid;
-  min-width: max-content;
-  grid-template-columns: repeat(5, 1fr);
-  grid-area: 2 / 4 / 3 / 5;
-
-
-}
-
-input#Booster {
-  grid-area: f / f / f / f;
-}
-
-input#Demondrug {
-  grid-area: b / b / b / b;
-}
-
-input#MegaDemondrug {
-  display: block;
-  grid-area: a / a / a / a;
-}
-
-.\33 -column.div {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: min-content;
-  border: none;
-}
-
-.\32 -column.div {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: min-content;
-  border: none;
-}
-
-div.row1_span2 {
-  grid-area: 1 / 1 / 1 / -1;
-}
-
-\32 -column.div.L {
-  grid-column: 2 / auto;
-  border-right: 0.5px;
-}
-
-\32 -column.div.R {
-  grid-column: 1 / auto;
-  border-left: 0.5px;
 }
 
 h1 {
-  margin: 0px;
-  padding: 0.2rem;
-  font-size: 19px;
-  grid-area: 1 / 1 / 1 / -1;
-  background-color: rgb(0, 14, 94);
+  font-size: 0.8rem;
+  margin: 0.25rem 0 0.25rem 0;
+  grid-area: 1 / 1 / 2 / -1;
+  background-color: rgba(0, 14, 94, 0.627);
   border-style: outset;
-  color: rgb(209, 222, 228);
+  color: rgb(243, 246, 247);
+}
+
+.sharpnessDropdown {
+  display: none;
 }
 
 select {
-  border-right-style: outset;
-  border-bottom-style: outset;
-  border-left-style: outset;
-  display: grid;
-  background-color: rgba(5, 3, 39, 0.371);
-  border-top: 0px;
+  background-color: rgba(5, 3, 39, 0.373);
+  border-style: outset;
+  border-width: .15rem;
 }
 
-select#dropmonsterSelection {
+select#dropMonster {
   position: sticky;
-  padding: 2px;
-  height: 100%;
+  display: grid;
   top: 0px;
-  border-style: outset;
-  padding: 4.5px;
+  margin: 0px;
+
+  min-width: fit-content;
+  place-content: center;
+  height: 1.1rem;
+  justify-items: center;
+  justify-content: center;
 }
 
 select#Elder_Essence {
   grid-column: 1 / 3;
+  border-right: 0;
 }
 
 label {
   font-weight: bold;
-  padding: 1px 10px;
-  border-top-style: outset;
-  border-right-style: outset;
-  border-left-style: outset;
-  background-color: rgba(12, 26, 105, 0.779);
+  min-width: max-content;
+  border-style: outset;
+  border-width: .15rem;
+  padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+  background-color: rgba(12, 26, 105, 0.85);
 }
 
 #weaponSelect>div:nth-child(4)>label {
   grid-column: 1 / -1;
 }
 
-
-
-
-
-
-
-label.row1_span2 {
-  grid-area: 1 / 1 / 1 / 3;
-}
-
-#monContainer>div:nth-child(2)>div:nth-child(3)>label {
-  grid-area: a / a / a / a;
-}
-
-#boxes>label:nth-child(13) {
-  grid-area: k / k / k / k;
-}
-
-#boxes>label:nth-child(10) {
-  grid-area: j / j / j / j;
-}
-
-#boxes>label:nth-child(6) {
-  grid-area: f / f / f / f;
-}
-
-#boxes>label:nth-child(5) {
-  grid-area: c / c / c / c;
-}
-
-#boxes>label:nth-child(4) {
-  grid-area: d / d / d / d;
-}
-
-#boxes>label:nth-child(2) {
-  grid-area: b / b / b / b;
-}
-
-#boxes>label:nth-child(3) {
-  grid-area: a / a / a / a;
-}
-
-#boxes>label:nth-child(9) {
-  grid-area: n / n / n / n;
-}
-
-#boxes>label:nth-child(12) {
-  grid-area: p / p / p / p;
-}
-
-#boxes>label:nth-child(16) {
-  grid-area: h / h / h / h;
-}
-
-#boxes>label:nth-child(11) {
-  grid-area: o / o / o / o;
-}
-
-#boxes>label:nth-child(7) {
-  grid-area: m / m / m / m;
-}
-
-#boxes>label:nth-child(15) {
-  grid-area: g / g / g / g;
-}
-
-#boxes>label:nth-child(8) {
-  grid-area: i / i / i / i;
-}
-
 #boxes>label:nth-child(7) {
   grid-area: l / l / l / l;
-}
-
-#boxes>label:nth-child(14) {
-  grid-area: e / e / e / e;
 }
 
 #MonsterSelect>label:nth-child(5) {
@@ -723,44 +686,44 @@ parent#shieldChargeIMPid {
   grid-column: 2 / 3;
 }
 
-#unique {
-  grid-area: 3 / 2 / auto / 4;
+div#unique {
+
   display: grid;
   height: fit-content;
-  place-items: stretch;
+
+  border: none;
 }
 
 #monTable td:nth-child(1) {
   border-style: outset;
-  background-color: rgb(11, 11, 42);
-  width: 98px;
+  background-color: rgba(11, 11, 42, 0.686);
 }
 
-.S:nth-child(n+2):nth-child(n-4) {
+.S:nth-child(n + 2):nth-child(n-4) {
   background-color: darkorange;
   color: rgb(0, 0, 0);
 }
 
-.A:nth-child(n+2), .A:nth-child(n-4) {
+.A:nth-child(n + 2),
+.A:nth-child(n-4) {
   background-color: rgb(255, 153, 0);
   color: rgb(44, 44, 44);
 }
 
-#monTable>tr:nth-child(n+1)>td:nth-child(n+2) {
-  border-width: medium;
-}
-
-.B:nth-child(n+2), .B:nth-child(n-4) {
+.B:nth-child(n + 2),
+.B:nth-child(n-4) {
   background-color: rgb(212, 153, 117);
   color: rgb(94, 94, 94);
 }
 
-.C:nth-child(n+2), .C:nth-child(n-4) {
+.C:nth-child(n + 2),
+.C:nth-child(n-4) {
   background-color: rgb(243, 156, 128);
   color: rgb(134, 134, 134);
 }
 
-.F:nth-child(n+2), .F:nth-child(n-4) {
+.F:nth-child(n + 2),
+.F:nth-child(n-4) {
   background-color: rgb(222, 170, 152);
   color: rgb(162, 162, 162);
 }
@@ -840,26 +803,32 @@ parent#shieldChargeIMPid {
   color: rgb(94, 94, 94);
 }
 
-select#weapRamp0 {
+select#weaponRampage0 {
   grid-column: 1 / auto;
 }
 
-select#weapRamp1 {
+select#weaponRampage1 {
   grid-column: 2 / 3;
 }
 
-select#weapRamp2 {
+select#weaponRampage2 {
   grid-column: 1 / auto;
 }
 
-select#weapRamp3 {
+select#weaponRampage3 {
   grid-column: 2 / 3;
 }
 
-select#weapRamp4 {
+select#weaponRampage4 {
   grid-column: 1 / auto;
 }
 
-select#weapRamp5 {
+select#weaponRampage5 {
   grid-column: 2 / 3;
+}
+
+@media only screen and (min-width: 900px) {
+  div#forButtons button {
+    min-width: max-content;
+  }
 }

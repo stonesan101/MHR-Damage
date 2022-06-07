@@ -1,7 +1,8 @@
 {
+	"version": 1.1,
 	"Stickies": [
 		"Attack_Boost",
-		"Dragonheart",
+		"DragonHeart",
 		"offensiveGuard",
 		"Fortify",
 		"Heroics",
@@ -13,8 +14,7 @@
 		"Counterstrike",
 		"Wall_Runner",
 		"Spiribird",
-		"Anti_Element_Blight",
-		"Silkbind_Boost",
+
 		"felineTemper",
 		"chargedShot",
 		"fanningManeuver",
@@ -22,7 +22,7 @@
 	],
 	"Clusters": [
 		"Attack_Boost",
-		"Dragonheart",
+		"DragonHeart",
 		"offensiveGuard",
 		"Fortify",
 		"Heroics",
@@ -33,24 +33,13 @@
 		"Peak_Performance",
 		"Counterstrike",
 		"Wall_Runner",
-		"Spiribird",
-		"Anti_Element_Blight",
-		"Silkbind_Boost"
+		"Spiribird"
 	],
-	"EleAED": [
-		"base_ele",
-		"Elemental_Attack",
-		"Elder_Essence",
-		"Valstrax_Soul",
-
-		"Critical_Element",
-		"Anti_Element_Blight",
-		"Silkbind_Boost"
-	],
+	"EleAED": ["base_ele", "Elemental_Attack", "Elder_Essence", "Critical_Element"],
 	"IMPAED": [
 		"Attack_Boost",
 
-		"Dragonheart",
+		"DragonHeart",
 		"offensiveGuard",
 		"Fortify",
 		"Heroics",
@@ -60,14 +49,14 @@
 		"Counterstrike",
 		"Wall_Runner",
 		"Spiribird",
-		"Silkbind_Boost",
+
 		"Felyne_Bombadier",
 		"Artillery"
 	],
 	"Gunner": [
 		"Elemental_Attack",
 		"Elder_Essence",
-		"Dragonheart",
+		"DragonHeart",
 		"offensiveGuard",
 		"Fortify",
 		"Resentment",
@@ -81,7 +70,7 @@
 		"Critical_Eye",
 		"Maximum_Might",
 		"Latent_Power",
-		"Bowid",
+		"BowId",
 		"felineTemper",
 		"chargedShot",
 		"fanningManeuver",
@@ -90,7 +79,7 @@
 	"Sever": [
 		"Elemental_Attack",
 		"Elder_Essence",
-		"Dragonheart",
+		"DragonHeart",
 		"offensiveGuard",
 		"Fortify",
 		"Resentment",
@@ -103,13 +92,11 @@
 		"Wall_Runner",
 		"Critical_Eye",
 		"Maximum_Might",
-		"Latent_Power",
-		"kinsectBuffid",
-		"spiritGauge"
+		"Latent_Power"
 	],
 	"Blunt": [
 		"Elder_Essence",
-		"Dragonheart",
+		"DragonHeart",
 		"offensiveGuard",
 		"Fortify",
 		"Resentment",
@@ -128,7 +115,7 @@
 	"AllSkills": [
 		"Elemental_Attack",
 		"Elder_Essence",
-		"Dragonheart",
+		"DragonHeart",
 		"offensiveGuard",
 		"Fortify",
 		"Resentment",
@@ -136,7 +123,6 @@
 		"Peak_Performance",
 		"Counterstrike",
 
-		"BrutalStrike",
 		"Heroics",
 		"Minds_Eye",
 		"Attack_Boost",
@@ -146,18 +132,19 @@
 		"Maximum_Might",
 		"Latent_Power"
 	],
-	"unique": ["Pierce", "Spread", "Normal", "specialAmmo", "Rapid"],
-	"rampageSkills": ["BrutalStrike", "Anti_Element_Blight", "Anti-Species", "kush_rampage", "Silkbind_Boost"],
+	"unique": ["Pierce", "Spread", "Normal", "specialAmmo", "Rapid", "Helmbreaker", "spiritGauge", "InsectGlaiveid"],
+	"rampageSkills": ["Anti_Element_Blight", "kush_rampage", "Silkbind_Boost"],
 	"uniquebuffs": [
 		"InsectGlaiveid",
 		"LongSwordid",
 		"LightBowGunid",
 		"ChargeBladeid",
 		"HeavyBowGunid",
-		"Bowid",
+		"BowId",
 		"Rangedid",
 		"BowGunid",
-		"Barrelid"
+		"Barrelid",
+		"Helmbreaker"
 	],
 	"Anti Aquatic Species": {
 		"PRM": 1.1,
