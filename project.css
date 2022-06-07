@@ -7,7 +7,6 @@ body {
   font-size: 13px;
   font-weight: 400;
   margin: 5px;
-  ;
   padding: 4px;
   border-width: 4px;
   background-image: url("https://img1.ak.crunchyroll.com/i/spire3/ce3bb561e78cb252af736272f55499131607715139_main.jpg");
@@ -15,7 +14,7 @@ body {
   border-style: ridge;
   border-color: rgb(6, 6, 6);
 
-}
+justify-items: center;align-items: start;align-content: center;justify-content: center;}
 
 #monTable>tr:nth-child(1)>th:nth-child(1) {
   min-width: max-content;
@@ -226,13 +225,13 @@ output {
   margin: 0px;
   display: grid;
   border-left: 0px;
-  height: 85%;
+  height: 100%;
   align-items: center;
   border-top: 0px;
 }
 
 td {
-  min-width: 50px;
+  min-width: 55px;
   color: rgb(171, 217, 238);
   border-style: outset;
   font-weight: bold;
@@ -258,9 +257,9 @@ td {
 
 * {
   font-family: 'Play', sans-serif;
-  border-width: 4px;
-  border-style: none;
-  color: rgb(206, 206, 206);
+  border-width: 2px;
+  border-style: outset;
+
   text-align: center;
   border-color: rgb(77, 67, 69);
   color: rgb(171, 217, 238);
@@ -358,14 +357,14 @@ select#dropenraged {
 }
 
 div#forButtons {
-  grid-area: 1 /2/2/4;
+  grid-area: 2 /3/3/4;
   gap: 0.25rem;
 }
 
 div#aff.contain {
   display: grid;
-  grid-area: 2 / 1 / auto / 1;
   grid-template-columns: 1fr 1fr;
+  grid-area: 5 / 2 / auto / 3;
   border-style: ridge;
   margin: 0%;
   border-spacing: 0px;
@@ -375,7 +374,7 @@ div#aff.contain {
 div#ele.contain {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-area: 2 / 2 / auto / auto;
+  grid-area: 5 / 3 / 6 / 4;
   border-style: ridge;
   border-width: 6px;
   margin: 0%;
@@ -386,7 +385,7 @@ div {
   /* border-width: 5px; */
   color: rgb(206, 206, 206);
   min-width: max-content;
-  display: grid;
+  /* display: grid; */
 }
 
 #weaponSelect>div:nth-child(4)>div>div:nth-child(3) {
@@ -472,7 +471,7 @@ div#skills.contain {
 
 div#monContainer.contain {
   display: grid;
-  grid-area: 2 / 4 / 4 / 5;
+  grid-area: 2 / 4 / 3 / 5;
   grid-template-columns: repeat(6, auto);
   place-content: stretch space-around;
   place-items: center stretch;
@@ -489,7 +488,7 @@ div#green {
 }
 
 div#section3.contain {
-  grid-area: 4 / 4 / 6 / 5;
+  grid-area: 3 / 4 / 6 / 5;
   display: grid;
   gap: 0.25rem;
   max-width: 810px;
@@ -498,26 +497,39 @@ div#section3.contain {
   background-color: rgba(255, 255, 255, 0.068);
 }
 
+select option {
+  background-color: rgb(5, 5, 35);
+  border-style: none;
+  max-width: fit-content;
+  min-width: fit-content;
+}
+
 div.contain {
   border-style: outset;
   padding: 4px;
 }
 
 div#raw.contain {
+
   gap: 0.25rem;
-  grid-template-columns: repeat(4, 1fr);
   display: grid;
-  grid-area: 5 / 3 / 6 / 4;
+  grid-auto-columns: auto;
+  grid-area: 4 / 2 / 5 / 4;
   border-style: ridge;
   padding: 0%;
   background-color: rgba(27, 25, 94, 0.303);
+  /* flex-wrap: wrap; */
+  /* align-content: stretch; */
+  /* align-items: center; */
+  /* justify-content: space-evenly; */
+  /* flex-direction: column-reverse; */
 }
 
 div#boxes.contain {
   display: grid;
   gap: 0.25rem;
   grid-template-columns: repeat(4, auto);
-  grid-area: 4 / 1 / 5 / 6;
+  grid-area: 3 / 2 / 4/ 4;
 
 }
 
@@ -534,7 +546,7 @@ div#MonsterSelect {
   display: grid;
   min-width: max-content;
   grid-template-columns: repeat(5, 1fr);
-  grid-area: 2 / 4 / 3 / 6;
+  grid-area: 2 / 4 / 3 / 5;
 
 
 }
@@ -614,7 +626,7 @@ select#Elder_Essence {
 
 label {
   font-weight: bold;
-  margin: 0px;
+  padding: 1px 10px;
   border-top-style: outset;
   border-right-style: outset;
   border-left-style: outset;
@@ -625,11 +637,11 @@ label {
   grid-column: 1 / -1;
 }
 
-#contain.boxDiv {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-area: 4 / 16 / auto / -1;
-}
+
+
+
+
+
 
 label.row1_span2 {
   grid-area: 1 / 1 / 1 / 3;

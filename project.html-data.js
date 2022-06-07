@@ -42,6 +42,9 @@ jQuery(($) => {
 		window.sharp = data;
 	});
 });
+let comboTracker = [];
+let previousEntranceCheck1 = '';
+let previousEntranceCheck2 = 0;
 const weapType = $('#dropWeaponTypeSelection');
 const weap = $('#dropWeaponSelection');
 const mon = $('#dropmonsterSelection');
@@ -55,9 +58,6 @@ const weapRamp2 = $('#weapRamp2');
 const weapRamp3 = $('#weapRamp3');
 const weapRamp4 = $('#weapRamp4');
 const weapRamp5 = $('#weapRamp5');
-let comboTracker = [];
-let previousEntranceCheck1 = '';
-let previousEntranceCheck2 = 0;
 
 arg1 = false;
 arg2 = false;
@@ -161,19 +161,20 @@ function DataCompile() {
 		const enrage = monEnrage.val() === 'Enraged' ? window.monster[mon.val()].Enrage / 100 : 1;
 		enrageDisplay.innerHTML = `${~~(enrage * 100)}%`;
 		if (/BowGun/.test(weapType.val())) {
-			rangedDPS();
+			RangedDPS();
 		} else {
-			meleeDPS();
+			MeleeDPS();
 
 			ComboDamage();
 		}
 	}
 }
-function rangedDPS() {
+function RangedDPS() {
 	let rangedDamage = [];
 	let allAmmo = [];
 	let stats = [];
 	const power = {};
+	const sharpnessModifier = [];
 
 	$.each(window[`ammo${weapType.val()}`][weap.val()].Ammo, (key) => {
 		const ammoType = key,
@@ -211,17 +212,13 @@ function rangedDPS() {
 		}
 		const ammoIncrease = window.spm.AmmoUp[ammoType][AmmoUPid.value];
 		const recoilSpeed =
-			window.spm.Recoil[ammoType][
-				Math.max(0, Math.min(5, power.recoil - Number(Recoilid.value) - JSON.parse(Barrelid.value).Silencer))
-			];
+			window.spm.Recoil[ammoType][Math.max(0, Math.min(5, power.recoil - Recoilid.value - JSON.parse(Barrelid.value).Silencer))];
 		const recoilFrames = window.spm.Recoil.frames[recoilSpeed];
 		const reloadSpeed =
-			window.spm.Reload[ammoType][
-				Math.max(0, Math.min(8, power.reload - Number(Reloadid.value) + JSON.parse(Barrelid.value).Reload))
-			];
+			window.spm.Reload[ammoType][Math.max(0, Math.min(8, power.reload - Reloadid.value + JSON.parse(Barrelid.value).Reload))];
 		const reloadFrames = window.spm.Reload.frames[reloadSpeed];
 		const clipSize = power.clip + ammoIncrease;
-		const spareShot = Number(SpareShotid.value) + Number(spareAdjust.value);
+		const spareShot = SpareShotid.value + spareAdjust.value;
 		const shotsPerMinBase = ~~(60 / (((100 / power.clip - 1) * reloadFrames + 100 * recoilFrames) / 30 / 100));
 		const shotsPerMin = ~~(60 / ((((100 - spareShot) / clipSize - 1) * reloadFrames + 100 * recoilFrames) / 30 / 100));
 		const shotsPerGain = `${Number.parseFloat((shotsPerMin / shotsPerMinBase - 1) * 100).toFixed(2)}%`;
@@ -412,7 +409,7 @@ function rangedDPS() {
 	});
 	const statsHeaders = ['Stat', 'Raw', 'Affinity', 'Ele Ammo'];
 
-	buildTableDamage(stats, statsHeaders, (id = 'stats'));
+	BuildTableDamage(stats, statsHeaders, (id = 'stats'));
 	const rangedHeaders = [
 		'Ammo Type',
 		'Raw',
@@ -426,7 +423,7 @@ function rangedDPS() {
 		'Seconds \n To Kill',
 	];
 
-	buildTableDamage(rangedDamage, rangedHeaders, (id = 'dps'));
+	BuildTableDamage(rangedDamage, rangedHeaders, (id = 'dps'));
 	const ammoStatsHeaders = [
 		'Ammo Type',
 		'rawMV',
@@ -438,17 +435,20 @@ function rangedDPS() {
 		'Shots \n Per Min',
 	];
 
-	buildTableDamage(allAmmo, ammoStatsHeaders, (id = 'ammo'));
+	BuildTableDamage(allAmmo, ammoStatsHeaders, (id = 'ammo'));
 }
 
-function meleeDPS() {
+function MeleeDPS() {
 	const power = {};
 	let DPS = [];
 	let stats = [];
 	let meleeDamage = [];
 	let attacks = [];
-
+	const sharpnessModifier = [];
 	let c = 0;
+	let rawMV;
+	let type;
+	let eleMV;
 	power.enrage = monEnrage.val() === 'Enraged' ? window.monster[mon.val()].Enrage / 100 : 1;
 	power.baseRaw = window.weapon[weapType.val()][weap.val()].Raw;
 	power.bAFF = window.weapon[weapType.val()][weap.val()].AFF;
@@ -494,7 +494,10 @@ function meleeDPS() {
 		const attackName = attacks[key];
 
 		const Attacks = window.attack[weapType.val()][attackName];
-		const { MV: rawMV, Type: type, EleMV: eleMV } = Attacks;
+
+		rawMV = Attacks.MV;
+		type = Attacks.Type;
+		eleMV = Attacks.EleMV;
 
 		let rawHZV = window.monster[mon.val()].HitZone[monHZ.val()][type];
 
@@ -544,12 +547,9 @@ function meleeDPS() {
 		if (Object.hasOwn(Attacks, 'unique')) {
 			getSkills = getSkills.concat(Attacks.unique);
 		}
-		getSkills =
-			~~(0.1 + 25 / JSON.parse(Sharpness.value).PRM) >= window.monster[mon.val()].HitZone[monHZ.val()][type]
-				? getSkills.concat(['Minds_Eye'])
-				: getSkills;
+
 		getSkills = monEnrage.val() === 'Enraged' ? getSkills.concat(['Agitator']) : getSkills;
-		getSkills = /(2)|(3)|(1)/.test(Sharpness.selectedIndex) ? getSkills.concat(['Bludgeoner']) : getSkills;
+
 		for (let i = 0; i < $('.skillButton').length; ++i) {
 			if (document.getElementsByClassName('skillButton')[i].style.background !== 'gray') {
 				const skills = JSON.parse($('.skillButton')[i].value);
@@ -608,24 +608,28 @@ function meleeDPS() {
 		power.bAFF = Math.min(power.bAFF, 100) / 100;
 		let entranceCheck1 = '';
 		let entranceCheck2 = 0;
-
 		$('.hitsOfSharp').each(function () {
 			entranceCheck1 += $(this).val();
 		});
 		$('.hitsOfSharpInputs').each(function () {
-			entranceCheck2 += Number($(this).val());
+			entranceCheck2 += $(this).val();
 		});
 		if (
 			(previousEntranceCheck1 !== entranceCheck1 && previousEntranceCheck2 === entranceCheck2) ||
 			(previousEntranceCheck1 === entranceCheck1 && previousEntranceCheck2 !== entranceCheck2 && previousEntranceCheck2 !== 0) ||
-			(previousEntranceCheck1 === [] && previousEntranceCheck2 === 0 && c === 0)
+			previousEntranceCheck1 === ''
 		) {
 			if (!/Bow/.test(weapType.val())) {
 				previousEntranceCheck1 = entranceCheck1;
 				previousEntranceCheck2 = entranceCheck2 === 0 ? 1 : entranceCheck2;
-				hitsOfSharpness(power.bAFF);
+				HitsOfSharpness(power.bAFF);
 			}
 		}
+		[sharpnessModifier.PRM, sharpnessModifier.PEM] = [JSON.parse(Sharpness.value).PRM, JSON.parse(Sharpness.value).PEM];
+		power.PRM *=
+			~~(0.1 + 25 / sharpnessModifier.PRM) >= window.monster[mon.val()].HitZone[monHZ.val()][type]
+				? json.parse(document.getElementById(['Minds_Eye']).value).PRM
+				: 1;
 		let critBoost = /(Sever)|(Blunt)|(Shot)/.test(type) ? JSON.parse($('#Critical_Boost').val()).PRM : 1;
 		let efrMulti = 1 + (critBoost - 1) * power.bAFF;
 		const brutalEFR = (power.bAFF - power.bAFF * 2) * 0.25 * 0.5 + (power.bAFF - power.bAFF * 2) * -0.25 * 0.75;
@@ -636,36 +640,36 @@ function meleeDPS() {
 		// Melee;
 		const raw = Math.min(power.baseRaw * power.BRM + power.BR, power.baseRaw * 3);
 		const rawFormula = (raw * power.PRM * augPRM * rawHZV * power.enrage * rawMV) / 10000;
-		const rawNon = rawFormula * JSON.parse(felineMarksmanid.value)[0];
-		const efr = rawFormula * efrMulti * JSON.parse(felineMarksmanid.value)[1];
-		const rawCrit = rawFormula * critBoost * JSON.parse(felineMarksmanid.value)[0];
+		power.rawNon = rawFormula * JSON.parse(felineMarksmanid.value)[0];
+		power.efr = rawFormula * efrMulti * JSON.parse(felineMarksmanid.value)[1];
+		power.rawCrit = rawFormula * critBoost * JSON.parse(felineMarksmanid.value)[0];
 		const ele = Math.min(power.baseEle * power.BEM + power.BE, power.baseEle * 3);
 		const efeMulti = 1 + (eleCritBoost - 1) * power.bAFF;
-		const eleFormula = (ele * power.PEM * eleHZV * power.enrage * JSON.parse(Sharpness.value).PEM * eleMV * augPEM) / 100;
-		const eleNon = eleFormula > 0 && eleFormula < 1 ? 1 : ~~(0.1 + eleFormula);
-		const efe = eleFormula * efeMulti > 0 && eleFormula * efeMulti < 1 ? 1 : ~~(0.1 + eleFormula * efeMulti);
-		const eleCrit = eleFormula * eleCritBoost > 0 && eleFormula * eleCritBoost < 1 ? 1 : ~~(0.1 + eleFormula * eleCritBoost);
+		const eleFormula = (ele * power.PEM * eleHZV * power.enrage * eleMV * augPEM) / 100;
+		power.eleNon = eleFormula > 0 && eleFormula < 1 ? 1 : ~~(0.1 + eleFormula);
+		power.efe = eleFormula * efeMulti > 0 && eleFormula * efeMulti < 1 ? 1 : ~~(0.1 + eleFormula * efeMulti);
+		power.eleCrit = eleFormula * eleCritBoost > 0 && eleFormula * eleCritBoost < 1 ? 1 : ~~(0.1 + eleFormula * eleCritBoost);
 		const ticsPer = Object.hasOwn(window.attack[weapType.val()][attackName], 'TicsPer')
 			? window.attack[weapType.val()][attackName].TicsPer
 			: 1;
-		const totalEffective = (efr + efe) * ticsPer;
-		const totalCrit = (rawCrit + eleCrit) * ticsPer;
-		const totalNon = (rawNon + eleNon) * ticsPer;
-		const rawBoth = [].concat(`${rawNon} / ${rawCrit}`);
-		const eleBoth = [].concat(`${eleNon} / ${eleCrit}`);
-		const totalDmg = [].concat(`${totalNon} / ${totalCrit}`);
+		// const totalEffective = (efr + efe) * ticsPer;
+		// const totalCrit = (rawCrit + eleCrit) * ticsPer;
+		// const totalNon = (rawNon + eleNon) * ticsPer;
+		// const rawBoth = [].concat(`${rawNon} / ${rawCrit}`);
+		// const eleBoth = [].concat(`${eleNon} / ${eleCrit}`);
+		// const totalDmg = [].concat(`${totalNon} / ${totalCrit}`);
 		const damage = {
 			'replaceME': 'replaceME',
 			'Attack Name': attackName,
 			'MV': rawMV,
-			'Raw': `${~~(0.1 + rawNon * JSON.parse(Sharpness.value).PRM)} / ${~~(0.1 + rawCrit * JSON.parse(Sharpness.value).PRM)}`,
-			'Ele': `${~~(0.1 + eleNon * JSON.parse(Sharpness.value).PEM)} / ${~~(0.1 + eleCrit * JSON.parse(Sharpness.value).PEM)}`,
-			'Total': `${~~(0.1 + rawNon * JSON.parse(Sharpness.value).PRM) + ~~(0.1 + eleNon * JSON.parse(Sharpness.value).PEM)} / ${
-				~~(0.1 + rawCrit * JSON.parse(Sharpness.value).PRM) + ~~(0.1 + eleCrit * JSON.parse(Sharpness.value).PEM)
+			'Raw': `${~~(0.1 + power.rawNon * sharpnessModifier.PRM)} / ${~~(0.1 + power.rawCrit * sharpnessModifier.PRM)}`,
+			'Ele': `${~~(0.1 + power.eleNon * sharpnessModifier.PEM)} / ${~~(0.1 + power.eleCrit * sharpnessModifier.PEM)}`,
+			'Total': `${~~(0.1 + power.rawNon * sharpnessModifier.PRM) + ~~(0.1 + power.eleNon * sharpnessModifier.PEM)} / ${
+				~~(0.1 + power.rawCrit * sharpnessModifier.PRM) + ~~(0.1 + power.eleCrit * sharpnessModifier.PEM)
 			}`,
-			'EFR': ~~(0.1 + efr * JSON.parse(Sharpness.value).PRM),
-			'EFE': ~~(0.1 + efe * JSON.parse(Sharpness.value).PEM),
-			'Effective': ~~(0.1 + efe * JSON.parse(Sharpness.value).PEM) + ~~(0.1 + efr * JSON.parse(Sharpness.value).PRM),
+			'EFR': ~~(0.1 + power.efr * sharpnessModifier.PRM),
+			'EFE': ~~(0.1 + power.efe * sharpnessModifier.PEM),
+			'Effective': ~~(0.1 + power.efe * sharpnessModifier.PEM) + ~~(0.1 + power.efr * sharpnessModifier.PRM),
 		};
 		// Melee
 
@@ -677,45 +681,63 @@ function meleeDPS() {
 				[
 					'Post Cap',
 
-					~~(raw * critBoost * power.PRM * power.enrage * augPRM * JSON.parse(felineMarksmanid.value)[0]),
+					~~(raw * critBoost * power.PRM * power.enrage * augPRM * JSON.parse(felineMarksmanid.value)[0] * sharpnessModifier.PRM),
 					~~(power.bAFF * 100),
-					~~(ele * eleCritBoost * power.PEM * power.enrage * augPEM),
+					~~(ele * eleCritBoost * power.PEM * power.enrage * augPEM * sharpnessModifier.PEM),
 				],
 				[
 					'Effective',
-					~~(raw * efrMulti * power.PRM * power.enrage * augEFR * JSON.parse(felineMarksmanid.value)[1]),
+					~~(raw * efrMulti * power.PRM * power.enrage * augEFR * JSON.parse(felineMarksmanid.value)[1] * sharpnessModifier.PRM),
 					~~(power.bAFF * 100),
-					~~(ele * efeMulti * power.PEM * augPEM * power.enrage * augEFR),
+					~~(ele * efeMulti * power.PEM * augPEM * power.enrage * augEFR * sharpnessModifier.PEM),
 				],
 			];
 		}
-		let comboSharp = [];
-		comboSharp.PRM = hitsOfSharpness();
+		let comboRawNon = 0;
+		let comboRawCrit = 0;
+		let comboEFR = 0;
+		let comboEFE = 0;
+		let comboEleNon = 0;
+		let comboEleCrit = 0;
+		const comboSharp = HitsOfSharpness();
+		if (Object.prototype.hasOwnProperty.call(comboSharp, 2) && c > 0) {
+			if (comboSharp[c].length > 0) {
+				for (let k = 0; k < 6; k++) {
+					comboRawNon += comboSharp[c][k][1] * ~~(0.1 + power.rawNon * comboSharp[c][k][0]);
+					comboRawCrit += ~~(0.1 + power.rawCrit * comboSharp[c][k][0]) * comboSharp[c][k][1];
+					comboEleNon += comboRawNon += comboSharp[c][k][1] * ~~(0.1 + power.eleNon * comboSharp[c][k][2]);
+					comboEleCrit += comboRawCrit += ~~(0.1 + power.eleCrit * comboSharp[c][k][2]) * comboSharp[c][k][1];
+					comboEFR += ~~(0.1 + power.efr * comboSharp[c][k][0]) * comboSharp[c][k][1];
+					comboEFE += ~~(0.1 + power.efe * comboSharp[c][k][2]) * comboSharp[c][k][1];
+				}
+			}
+		}
+		// : ;
+		++c;
 		const [...dps] = [
 			rawMV,
-			~~(0.1 + rawNon * comboSharp.PRM[c]),
-			~~(0.1 + rawCrit * comboSharp.PRM[c]),
-			eleNon,
-			eleCrit,
-			~~(0.1 + rawNon * comboSharp.PRM[c]) + eleNon,
-			~~(0.1 + rawCrit * comboSharp.PRM[c]) + eleCrit,
-			~~(0.1 + efr * comboSharp.PRM[c]),
-			efe,
-			~~(0.1 + efr * comboSharp.PRM[c]) + efe,
-			,
+			comboRawNon,
+			comboRawCrit,
+			comboEleNon,
+			comboEleCrit,
+			comboRawNon + comboEleNon,
+			comboRawCrit + comboEleCrit,
+			comboEFR,
+			comboEFE,
+			comboEFR + comboEFE,
 		];
-		++c;
+
 		DPS = DPS.concat([dps]);
 	});
 	const statsHeaders = ['Stat', 'Raw', 'Affinity', power.eleType];
 	const meleeHeaders = ['Combo', 'Attack Name', 'MV', 'Raw', 'Element', 'Total', 'EFR', 'EFE', 'Effective'];
 
-	buildTableDamage(stats, statsHeaders, (id = 'stats'));
-	buildTableDamage(meleeDamage, meleeHeaders, (id = 'dps'));
-
+	BuildTableDamage(stats, statsHeaders, (id = 'stats'));
+	BuildTableDamage(meleeDamage, meleeHeaders, (id = 'dps'));
+	console.table(DPS);
 	return DPS;
 }
-const buildTableDamage = (myDamage, headers, id) => {
+const BuildTableDamage = (myDamage, headers, id) => {
 	const inputs = document.querySelectorAll('.a');
 	let k = 0;
 
@@ -809,8 +831,8 @@ const buildTableDamage = (myDamage, headers, id) => {
 	}
 };
 
-function changeTypes() {
-	if (arg1 && arg2 && arg3 && arg4 && arg5 && arg6 && arg7 && arg7 && (redKeyCard || window.event.path[0] === weapType[0])) {
+function ChangeTypes() {
+	if (arg1 && arg2 && arg3 && arg4 && arg5 && arg6 && arg7 && (redKeyCard || window.event.path[0] === weapType[0])) {
 		for (let i = 0; i < $('.classSpecific').length; ++i) {
 			$('.classSpecific')[i].parentNode.style = 'display:none';
 			$('.classSpecific')[i].selectedIndex = 0;
@@ -874,23 +896,23 @@ function changeTypes() {
 	}
 }
 
-function maxSkills() {
-	if (arg1 && arg2 && arg3 && arg4 && arg5 && arg6 && arg7 && arg7) {
+function MaxSkills() {
+	if (arg1 && arg2 && arg3 && arg4 && arg5 && arg6 && arg7) {
 		for (let i = 0; i < $('.skill').length; ++i) {
 			$('.skill')[i].selectedIndex = $('.skill')[i].hidden ? 0 : Object.values($('.skill')[i]).length - 1;
 		}
 	}
 }
 
-function resetSkills() {
-	if (arg1 && arg2 && arg3 && arg4 && arg5 && arg6 && arg7 && arg7) {
+function ResetSkills() {
+	if (arg1 && arg2 && arg3 && arg4 && arg5 && arg6 && arg7) {
 		for (let i = 0; i < $('.skill').length; ++i) {
 			$('.skill')[i].selectedIndex = 0;
 		}
 	}
 }
 
-function monChart() {
+function MonChart() {
 	if (Object.hasOwn(window, 'monster')) {
 		const headers = [`${mon.val()}`, 'Sever', 'Blunt', 'Shot', 'Fire', 'Water', 'Thunder', 'Ice', 'Dragon'],
 			table = document.createElement('table'),
@@ -945,7 +967,7 @@ function monChart() {
 	}
 }
 
-function skillButtonToggle() {
+function SkillButtonToggle() {
 	if (window.event.target.style.background !== 'gray') {
 		window.event.target.style.background = 'gray';
 		window.event.target.style.color = 'midnightblue';
@@ -954,51 +976,12 @@ function skillButtonToggle() {
 		window.event.target.style.color = '';
 	}
 }
-function toggle() {
+function Toggle() {
 	dpsTable.style = dpsTable.style.display === 'block' ? 'display:none' : 'display:block';
 
 	ammoTable.style = dpsTable.style.display === 'block' ? 'display:none' : 'display:block';
 }
 
-function ComboDamage(DPS = meleeDPS()) {
-	if (arg1 && arg2 && arg3 && arg4 && arg5 && arg6 && arg7 && arg7) {
-		const comboResult = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-		let dmg = [];
-
-		for (let i = 1; i < DPS.length; ++i) {
-			dmg = [].concat(dmg, [DPS[i].map((item) => item * Number($(`#${[i]}`)[0].value) * Number(comboMultiplier.value))]);
-
-			// reduces the results from every attack/damage category
-
-			for (let j = 0; j < DPS[1].length; ++j) {
-				comboResult[j] += dmg[i - 1][j];
-			}
-		}
-		d0.innerHTML = `${comboResult[1]}/${comboResult[2]}`;
-		e0.innerHTML = `${comboResult[3]}/${comboResult[4]}`;
-		f0.innerHTML = `${comboResult[5]}/${comboResult[6]}`;
-		[, , , , , , , g0.innerHTML, h0.innerHTML, i0.innerHTML] = comboResult;
-
-		// Adds the ticsPer attack to the combo MV
-		c0.textContent = '';
-		let tempC = 0;
-
-		for (let i = 0; i < $('.inputs').length; ++i) {
-			if ($('.inputs')[i].value > 0) {
-				if (Object.prototype.hasOwnProperty.call(window.attack[weapType.val()][$('.b')[i].textContent], 'TicsPer')) {
-					tempC +=
-						Number($('.inputs')[i].value) *
-						Number($('.c')[i + 1].textContent) *
-						window.attack[weapType.val()][$('.b')[i].textContent].TicsPer *
-						comboMultiplier.value;
-				} else {
-					tempC += Number($('.inputs')[i].value) * Number($('.c')[i + 1].textContent) * comboMultiplier.value;
-				}
-			}
-		}
-		c0.textContent = tempC;
-	}
-}
 //resets the combo inputs to minimum values
 function ComboReset() {
 	if (window.event.path[0] === (resetCombo || weapType) || redKeyCard) {
@@ -1013,8 +996,8 @@ function ComboReset() {
 	f0.innerHTML = `${0}/${0}`;
 	[c0.innerHTML, , , , , , , g0.innerHTML, h0.innerHTML, i0.innerHTML] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 }
-// finds hitsOfSharpness per color as well as the total modifier to be used for the combo damage calculation
-function hitsOfSharpness(affinity) {
+// finds HitsOfSharpness per color as well as the total modifier to be used for the combo damage calculation
+function HitsOfSharpness(affinity) {
 	let comboCount = [];
 	const total = {};
 	let [whiteMin, whiteMax] = window.sharp[weapType.val()][weap.val()].Sharpness.white;
@@ -1049,8 +1032,8 @@ function hitsOfSharpness(affinity) {
 	let comboCheck = 0;
 	comboinputs = document.querySelectorAll('.inputs');
 	for (let i = 0; i < comboinputs.length; i++) {
-		if (Number(comboinputs[i].value) > 0) {
-			comboCheck += Number(comboinputs[i].value);
+		if (parseFloat(comboinputs[i].value) > 0) {
+			comboCheck += parseFloat(comboinputs[i].value);
 		}
 	}
 	if (comboTracker.length == comboCheck + 2) {
@@ -1107,46 +1090,78 @@ function hitsOfSharpness(affinity) {
 	} else if (redMin >= 0) {
 		Sharpness.selectedIndex = 1;
 	}
-	const hitsOf = {};
-	hitsOf.white = comboCount.splice(0, total.white);
-	hitsOf.blue = comboCount.splice(0, total.blue);
-	hitsOf.green = comboCount.splice(0, total.green);
-	hitsOf.yellow = comboCount.splice(0, total.yellow);
-	hitsOf.orange = comboCount.splice(0, total.orange);
-	hitsOf.red = comboCount.splice(0, total.red);
-
-	const sharpPRM = {};
-	let results = [0];
-
-	[sharpPRM.white, sharpPRM.blue, sharpPRM.green, sharpPRM.yellow, sharpPRM.orange, sharpPRM.red] = [
-		1.32, 1.2, 1.05, 1, 0.75, 0.5,
-	];
-
-	const sharpPEM = {};
-	[sharpPEM.white, sharpPEM.blue, sharpPEM.green, sharpPEM.yellow, sharpPEM.orange, sharpPEM.red] = [
-		1.15, 1.0625, 1, 0.75, 0.5, 0.25,
-	];
+	const hitsOfSharpUsed = {};
+	hitsOfSharpUsed.white = comboCount.splice(0, total.white);
+	hitsOfSharpUsed.blue = comboCount.splice(0, total.blue);
+	hitsOfSharpUsed.green = comboCount.splice(0, total.green);
+	hitsOfSharpUsed.yellow = comboCount.splice(0, total.yellow);
+	hitsOfSharpUsed.orange = comboCount.splice(0, total.orange);
+	hitsOfSharpUsed.red = comboCount.splice(0, total.red);
+	let attackID = 0;
+	let results = [];
+	results[0] = 0;
 
 	$('.inputs').each(function (index, element) {
-		let resultsLog = 0;
-		const attackID = Number(this.id);
-		const timesUsed =
-			this === window.event.path[0]
-				? Number(comboMultiplier.value) * (1 + Number(this.value))
-				: Number(comboMultiplier.value) * Number(this.value);
+		let totalMultiplier = [];
+		attackID = Number(this.id);
+		let totalHits = 0;
+		// this === window.event.path[0]
+		// ? comboMultiplier.value* (1 + this.value)
+		// : comboMultiplier.value * this.value;
 
 		if ($(this).val() > 0) {
-			$.each(Object.keys(hitsOf), (value, color) => {
-				resultsLog += +[(sharpPRM[color] * Number([hitsOf[color].filter((x) => Number(x) === attackID).length])) / timesUsed];
-			});
-		} else {
-			resultsLog = 0;
-		}
+			$.each(Object.keys(hitsOfSharpUsed), (value, color) => {
+				totalMultiplier = [].concat(totalMultiplier, [
+					[window.sharp.mod[color].PRM, hitsOfSharpUsed[color].filter((x) => x == attackID).length, window.sharp.mod[color].PEM],
+				]);
 
-		results = results.concat(resultsLog);
+				totalHits = [].concat();
+			});
+		}
+		// const resultsLog = totalMulttiplier / totalHits;
+		results = results.concat([totalMultiplier]);
 	});
+	console.table(results);
 	return results;
 }
+
+function ComboDamage(DPS = MeleeDPS()) {
+	if (arg1 && arg2 && arg3 && arg4 && arg5 && arg6 && arg7) {
+		const comboResult = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+		for (let i = 1; i < DPS.length; ++i) {
+			// reduces the results from every attack/damage category
+
+			for (let j = 0; j < DPS[1].length; ++j) {
+				comboResult[j] += DPS[i - 1][j];
+			}
+		}
+		d0.innerHTML = `${comboResult[1]}/${comboResult[2]}`;
+		e0.innerHTML = `${comboResult[3]}/${comboResult[4]}`;
+		f0.innerHTML = `${comboResult[5]}/${comboResult[6]}`;
+		[, , , , , , , g0.innerHTML, h0.innerHTML, i0.innerHTML] = comboResult;
+
+		// Adds the ticsPer attack to the combo MV
+		c0.textContent = '';
+		let tempC = 0;
+
+		for (let i = 0; i < $('.inputs').length; ++i) {
+			if ($('.inputs')[i].value > 0) {
+				if (Object.prototype.hasOwnProperty.call(window.attack[weapType.val()][$('.b')[i].textContent], 'TicsPer')) {
+					tempC +=
+						$('.inputs')[i].value *
+						$('.c')[i + 1].textContent *
+						window.attack[weapType.val()][$('.b')[i].textContent].TicsPer *
+						comboMultiplier.value;
+				} else {
+					tempC += $('.inputs')[i].value * $('.c')[i + 1].textContent * comboMultiplier.value;
+				}
+			}
+		}
+		c0.textContent = tempC;
+	}
+}
+
 // Event to fire when quest and monster data loaded successfully.
 $(document).ajaxSuccess(() => {
 	if (!arg1 || !arg2 || !arg3 || !arg4 || !arg5 || !arg6 || !arg7) {
@@ -1163,8 +1178,8 @@ $(document).ajaxSuccess(() => {
 			PartSelect();
 			QuestSelect();
 			HealthSelect();
-			monChart();
-			changeTypes((redKeyCard = true));
+			MonChart();
+			ChangeTypes((redKeyCard = true));
 			DataCompile();
 			ComboReset((redKeyCard = true));
 		}
