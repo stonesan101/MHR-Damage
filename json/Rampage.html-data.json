@@ -1380,16 +1380,16 @@
 			"baseEle": 10
 		},
 		"Affinity Boost I": {
-			"bAFF": 4
+			"aff": 4
 		},
 		"Affinity Boost II": {
-			"bAFF": 6
+			"aff": 6
 		},
 		"Affinity Boost III": {
-			"bAFF": 8
+			"aff": 8
 		},
 		"Affinity Boost IV": {
-			"bAFF": 10
+			"aff": 10
 		},
 		"Add: Normal Ammo I": {
 			"normal ammo": 2
@@ -1398,7 +1398,7 @@
 			"normal ammo": 2
 		},
 		"Affinity Surge": {
-			"bAFF": 20,
+			"aff": 20,
 			"baseRaw": -10
 		},
 		"Arc Shot: Affinity": ["Changes shot type to Affinity"],
@@ -1408,7 +1408,7 @@
 		"Attack Melody II": ["Enables attack-focused performances"],
 		"Attack Surge": {
 			"BR": 20,
-			"bAFF": -30
+			"aff": -30
 		},
 		"Blast I": {
 			"status": 10
@@ -1735,9 +1735,8 @@
 		"BE",
 		"baseEle",
 		"baseRaw",
-		"bAFF",
+		"aff",
 		"PEM",
-		"AFF",
 		"Ammo",
 		"Coating",
 		"Deviation",

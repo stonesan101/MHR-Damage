@@ -13,19 +13,22 @@
     min-width: 5.2rem;
   }
 
-
-  div#section1 {
-    grid-area: 2 / 1 / 3 / 2;
-
-  }
-
-
-  div#section2 {
-    grid-area: 3 / 1 / 4 / 2;
-    display: grid;
-    align-self: center;
-  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 tr,
 td,
@@ -40,7 +43,7 @@ html {
 
 
 div#statsTableDiv {
-  grid-area: 1/3/2/6
+  grid-area: 1/2/4/6
 }
 
 section#section3 {
@@ -72,11 +75,29 @@ html div {
   display: grid;
 }
 
+div#section1>h1 {
+  grid-area: 1 / 1 / 2 / 6;
 
-div#section1 {
-  min-width: max-content;
-  grid-template-columns: repeat(5, 1fr);
 }
+
+div#BowGunId,
+div.uniqueBow {
+  grid-area: 1/2
+}
+
+div#weaponSelect.contain {
+  grid-area: 2 / 1 / 3 /6;
+
+}
+
+
+
+div#section2 {
+  grid-area: 2/ 2 / 2 / 3;
+  display: grid;
+
+}
+
 
 *.contain {
   gap: 0.25rem;
@@ -94,12 +115,24 @@ body {
   min-width: fit-content;
   border-style: none;
   border-color: rgb(6, 6, 6);
-  align-items: start;
   align-content: center;
+  align-items: baseline;
+}
+
+#comboCountDisplay {
+  min-width: min-content;
+  max-width: 100px;
+  top: 0px;
+  margin: 0;
+  position: sticky;
+  font-size: 0.73rem;
+  gap: 0;
 }
 
 div#divComboAttacks {
-  min-width: max-content;
+  max-height: 550px;
+  max-width: 100px;
+  overflow-y: scroll;
 }
 
 div#sharpnessContainer {
@@ -416,8 +449,8 @@ div#statsTableDiv>table#statsTable>tbody#statsBody>tr>td:first-child {
 }
 
 body div {
-  display: grid;
-  align-items: baseline;
+  display: io;
+  /* justify-items: stretch; */
 }
 
 * {
@@ -477,7 +510,7 @@ table#monTable {
   grid-column: 1 / 3;
 }
 
-label.row1_span2 {
+label.row1span2 {
   width: 100%;
   grid-area: 1 / 1 / 2 / 3;
 }
@@ -529,28 +562,10 @@ div#ele.contain {
   grid-column: 2 / 2;
 }
 
-#weaponSelect>div:nth-child(4) {
-  grid-column: 1 / -1;
-  display: grid;
-  margin: 0px;
-}
 
-#weaponSelect>div:nth-child(6) {
-  grid-column: 1 / -1;
-}
 
-#weaponSelect>div:nth-child(5) {
-  grid-column: 1 / -1;
-  margin: 0px;
-}
 
-#weaponSelect>div:nth-child(3) {
-  grid-column: 1 / -1;
-}
 
-#weaponSelect>div:nth-child(2) {
-  grid-column: 1 / -1;
-}
 
 #raw>div:nth-child(14) {
   grid-area: 2 / 3 / auto / auto;
@@ -560,10 +575,8 @@ div#ele.contain {
   grid-area: 3 / 4 / 4 / 5;
 }
 
-div#weaponSelect.contain {
-  grid-area: 1 / 1 / 3 / 3;
-  justify-items: stretch;
-}
+
+
 
 #monContainer>div:nth-child(5) {
   grid-area: 3 / 5 / auto / 6;
@@ -648,7 +661,6 @@ select#dropMonster {
   display: grid;
   top: 0px;
   margin: 0px;
-
   min-width: fit-content;
   place-content: center;
   height: 1.1rem;
@@ -656,7 +668,7 @@ select#dropMonster {
   justify-content: center;
 }
 
-select#Elder_Essence {
+select#ElderEssence {
   grid-column: 1 / 3;
   border-right: 0;
 }
@@ -687,7 +699,6 @@ parent#shieldChargeIMPid {
 }
 
 div#unique {
-
   display: grid;
   height: fit-content;
 
@@ -699,7 +710,8 @@ div#unique {
   background-color: rgba(11, 11, 42, 0.686);
 }
 
-.S:nth-child(n + 2):nth-child(n-4) {
+.S:nth-child(n + 2),
+.S:nth-child(n-4) {
   background-color: darkorange;
   color: rgb(0, 0, 0);
 }
@@ -749,12 +761,12 @@ div#unique {
 }
 
 .C:nth-child(6) {
-  background-color: rgb(0, 64, 255);
+  background-color: rgb(35, 90, 255);
   color: rgb(168, 168, 168);
 }
 
 .F:nth-child(6) {
-  background-color: rgb(0, 89, 255);
+  background-color: rgb(59, 125, 247);
   color: rgb(48, 48, 48);
 }
 
@@ -764,12 +776,12 @@ div#unique {
 }
 
 .C:nth-child(7) {
-  background-color: yellow;
+  background-color: rgb(255, 255, 93);
   color: rgb(23, 22, 22);
 }
 
 .F:nth-child(7) {
-  background-color: lightgoldenrodyellow;
+  background-color: rgb(220, 231, 163);
   color: rgb(94, 94, 94);
 }
 
@@ -779,12 +791,12 @@ div#unique {
 }
 
 .C:nth-child(8) {
-  background-color: rgb(111, 189, 220);
+  background-color: rgb(46, 179, 231);
   color: rgb(23, 22, 22);
 }
 
 .F:nth-child(8) {
-  background-color: lightskyblue;
+  background-color: rgb(120, 197, 244);
   color: rgb(94, 94, 94);
 }
 
