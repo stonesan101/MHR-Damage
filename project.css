@@ -109,7 +109,7 @@ body {
   display: grid;
   color: rgb(229, 237, 240);
   font-size: 0.55rem;
-  background-image: url('http://127.0.0.1:5500/background.jpg');
+  background-image: url('https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/background.jpg');
   background-size: cover;
   min-height: 100vh;
   min-width: 100vh;
