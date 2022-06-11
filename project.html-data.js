@@ -1,13 +1,13 @@
-const URLAttack = "http://127.0.0.1:5500/json/Attacks.html-data.json";
-const URLMonster = "http://127.0.0.1:5500/json/Monster.html-data.json";
-const URLQuest = "http://127.0.0.1:5500/json/quest.html-data.json";
-const URLRampage = "http://127.0.0.1:5500/json/Rampage.html-data.json";
-const URLSharp = "http://127.0.0.1:5500/json/Sharpness.html-data.json";
-const URLType = "http://127.0.0.1:5500/json/catagory.html-data.json";
-const URLWeapon = "http://127.0.0.1:5500/json/Weapons.html-data.json";
-const URLSPM = "http://127.0.0.1:5500/json/shotsPerMin.html-data.json";
-const URLLight = "http://127.0.0.1:5500/json/AmmoLight.html-data.json";
-const URLHeavy = "http://127.0.0.1:5500/json/AmmoHeavy.html-data.json";
+const URLAttack = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/Attacks.html-data.json";
+const URLMonster = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/Monster.html-data.json";
+const URLQuest = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/quest.html-data.json";
+const URLRampage = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/Rampage.html-data.json";
+const URLSharp = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/Sharpness.html-data.json";
+const URLType = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/catagory.html-data.json";
+const URLWeapon = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/Weapons.html-data.json";
+const URLSPM = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/shotsPerMin.html-data.json";
+const URLLight = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/AmmoLight.html-data.json";
+const URLHeavy = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/AmmoHeavy.html-data.json";
 let comboTracker = [];
 
 $(document).ready(function () {
