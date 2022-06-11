@@ -10,3 +10,9 @@
 /package-lock.json
 /package.json
 /target
+/.eslintrc.json
+/.babalrc.json
+/.babel.config.json
+/test
+/rules
+/.csv

@@ -2037,7 +2037,7 @@
 			"reload": 6,
 			"Deviation": "LR Mi"
 		},
-		"Furious Flammengewehr": {
+		"Furious Flammenkanone": {
 			"Ammo": {
 				"Normal 1": { "rawMV": 10, "type": "Shot", "eleMV": 1, "Ele": ["Non", 0], "ticsPer": 1, "clip": 4 },
 				"Normal 1 (RF+3)": { "rawMV": 7, "type": "Shot", "eleMV": 1, "Ele": ["Non", 0], "ticsPer": 3, "clip": 4 },

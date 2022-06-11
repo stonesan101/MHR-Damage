@@ -93,6 +93,14 @@ function RangedDPS() {
 
       power = applyRampageSelections(power);
       power = GetSkills(power);
+
+      // adds Weakness Exploit
+      power.aff =
+        power.rawHZV >= 45
+          ? power.aff + JSON.parse($("#WeaknessExploit").val())
+          : power.aff;
+      power.aff = Math.min(power.aff, 100) / 100;
+
       power = GetRemainingSkills(power);
       power = DamageCalculations(power);
       const ammo = calculateAmmoFrames(power);
@@ -150,17 +158,12 @@ function RangedDPS() {
 
       const stats = [
         ["Stat", "Raw", "Affinity", "Ele Ammo"],
-        [
-          "Base",
-          ~~power.baseRaw,
-          window.weapon[$("#dropWeaponType").val()][$("#dropWeapon").val()].AFF,
-          11 * power.eleAmmo,
-        ],
+        ["Base", ~~power.baseRaw, power.baseAff, ~~(0.1 + 11 * power.eleAmmo)],
         [
           "Cap",
           ~~power.raw,
-          ~~(power.aff * 100),
-          ~~(0.1 + 11 * power.BEM + power.BE * (1 + power.raw / 100)),
+          power.aff * 100,
+          ~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo),
         ],
         [
           "Post Cap",
@@ -172,15 +175,15 @@ function RangedDPS() {
             power.augPRM *
             JSON.parse(felineMarksmanid.value)[0]
           ),
-          ~~(power.aff * 100),
+          power.aff * 100,
           ~~(
             0.1 +
             (11 * power.BEM + power.BE) *
+              power.eleAmmo *
               power.PEM *
               power.enrage *
-              power.eleAmmo *
               power.augPEM *
-              power.eleCrit
+              power.eleCritBoost
           ),
         ],
         [
@@ -193,14 +196,14 @@ function RangedDPS() {
             power.augPRM *
             JSON.parse(felineMarksmanid.value)[1]
           ),
-          ~~(power.aff * 100),
+          power.aff * 100,
           ~~(
             0.1 +
             (11 * power.BEM + power.BE) *
-              power.PEM *
-              power.augPEM *
-              power.enrage *
               power.eleAmmo *
+              power.PEM *
+              power.enrage *
+              power.augPEM *
               power.efeMulti
           ),
         ],
@@ -292,28 +295,13 @@ function MeleeDPS() {
         ? power.aff + JSON.parse($("#WeaknessExploit").val())
         : power.aff;
     power.aff = Math.min(power.aff, 100) / 100;
-    if (
-      !/Bow/.test(previousWeaponType.value) &&
-      !/Bow/.test($("#dropWeaponType").val()) &&
-      attackID === 0
-    ) {
+    if (!/Bow/.test($("#dropWeaponType").val()) && attackID === 0) {
       power = TotalHitsOfSharpUsed(power);
-    } else if (attackID === 0 && /Bow/.test($("#dropWeaponType").val())) {
+    } else if (attackID === 0 && !/BowGun/.test($("#dropWeaponType").val())) {
       UpdateComboTracker();
       UpdateComboDisplay();
     }
-    power = GetRemainingSkills(power, attackID);
-    if (
-      !/BowGun/.test(previousWeaponType.value) &&
-      !/BowGun/.test($("#dropWeaponType").val())
-    ) {
-      if (attackID === 0 && !/Bow/.test($("#dropWeaponType").val())) {
-        power = TotalHitsOfSharpUsed(power);
-      } else if (attackID === 0) {
-        UpdateComboTracker();
-        UpdateComboDisplay();
-      }
-    }
+    power = GetRemainingSkills(power);
     power = DamageCalculations(power);
 
     if (!/Bow/.test(dropWeaponType.value)) {
@@ -429,13 +417,7 @@ function MeleeDPS() {
     if (power.thisAttack === "Combo Damage") {
       const stats = [
         [["Stat"], ["Raw"], ["Affinity"], [power.eleType]],
-        [
-          "Base",
-          ~~power.baseRaw,
-
-          window.weapon[$("#dropWeaponType").val()][$("#dropWeapon").val()].AFF,
-          power.baseEle,
-        ],
+        ["Base", ~~power.baseRaw, power.baseAff, power.baseEle],
         ["Cap", ~~power.raw, ~~(power.aff * 100), ~~power.ele],
         [
           "Post Cap",
@@ -530,6 +512,7 @@ function applyRampageSelections(power) {
           )[0]
         : power.eleType;
   }
+  power.baseAff = power.aff;
   return power;
 }
 function AddDependantSkills() {
@@ -682,7 +665,8 @@ function GetSkills(power) {
       break;
   }
   // adds agitator to getSkills if enraged
-  let getSkills = window.skillCategories[power.skillType];
+  let getSkills = [];
+  getSkills = window.skillCategories[power.skillType];
   if ($("#dropEnraged").val() === "Enraged") {
     getSkills.push("Agitator");
   }
@@ -714,7 +698,7 @@ function GetSkills(power) {
 
   return power;
 }
-function GetRemainingSkills(power, c = 1) {
+function GetRemainingSkills(power) {
   [power.augEFR, power.augPRM, power.augPEM] = [1, 1, 1];
   /*
    * If an anti species type skill is selected it gets the list of monsters applicable and checks
@@ -748,7 +732,7 @@ function GetRemainingSkills(power, c = 1) {
       ? 1.3
       : 1;
   power.augPEM =
-    $("#weaponRampage0").value === "Valstrax Soul" && power.eleType === "Dragon"
+    $("#weaponRampage0").val() === "Valstrax Soul" && power.eleType === "Dragon"
       ? 1.2
       : power.augPEM;
   // applies Dulling Strike to Base raw depending on sharpness and if selected
@@ -811,29 +795,24 @@ function GetRemainingSkills(power, c = 1) {
   return power;
 }
 function UpdateComboTracker() {
-  // if value entered in the e.target combo input > amount stored in comboTracker global adds attack id to the end of the comboTracker until they are ===
-  let difference = event.target.value - TimesUsed(event.target.id);
-  if (event.target.id > 0) {
-    if (difference > 0) {
-      for (let i = 0; i < difference; i++) {
-        comboTracker.push(event.target.id);
-      }
-      // if value entered in the e.target combo input < amount stored in comboTracker global removes the last attack id from the comboTracker until they are ===
-    } else if (difference < 0) {
-      difference -= difference * 2;
-      for (let i = 0; i < difference; i++) {
-        const undo = comboTracker.lastIndexOf(event.target.id);
-        comboTracker.splice(undo, 1);
-      }
+  if (!Number.isNaN(+event.target.id)) {
+    // if value entered in the e.target combo input > amount stored in comboTracker [] adds attack id to the end of the comboTracker until they are ===
+    let difference = event.target.value - TimesUsed(event.target.id);
+    while (difference > 0) {
+      comboTracker.push(event.target.id);
+      --difference;
+    }
+    // if value entered in the e.target combo input < amount stored in comboTracker [] removes the last instance of this attack id from the comboTracker until they are ===
+    while (difference < 0) {
+      comboTracker.splice(comboTracker.lastIndexOf(event.target.id), 1);
+      ++difference;
     }
   }
 }
 function UpdateComboDisplay() {
-  // Updates the Listed Combo Attacks
   $(".comboAttack").hide();
 
   $(comboTracker).each(function (index, element) {
-    $(`#b${[element]}`).text();
     $(".comboAttack")[index].style = "display:''";
     $(".comboAttack")[index].textContent = $(`#b${[element]}`).text();
   });
@@ -845,8 +824,6 @@ function TotalHitsOfSharpUsed(power) {
 
   if (comboTracker !== []) {
     let listOfEachAttack = [];
-    const hitsOfSharpnessPerColor = {};
-
     const total = {};
     let [whiteMin, whiteMax] =
       window.sharpness[$("#dropWeaponType").val()][$("#dropWeapon").val()]
@@ -900,6 +877,13 @@ function TotalHitsOfSharpUsed(power) {
       listOfEachAttack = listOfEachAttack.concat(comboTracker);
     }
     let totalHitsOfSharpnessUsed = 0;
+    const hitsOfSharpnessPerColor = {};
+    hitsOfSharpnessPerColor.white = [];
+    hitsOfSharpnessPerColor.blue = [];
+    hitsOfSharpnessPerColor.green = [];
+    hitsOfSharpnessPerColor.yellow = [];
+    hitsOfSharpnessPerColor.orange = [];
+    hitsOfSharpnessPerColor.red = [];
 
     $(listOfEachAttack).each(function (index, eachAttack) {
       if (
@@ -907,58 +891,30 @@ function TotalHitsOfSharpUsed(power) {
         ($("#dropWeaponType").val() === "Gunlance" && eachAttack < 14)
       ) {
         for (let i = 0; i < power.ticsPer; i++) {
-          if (power.hitsOfSharp > 0) {
+          if (
+            window.attack[$("#dropWeaponType").val()][
+              $(`#b${eachAttack}`).text()
+            ].hitsOfSharp > 0
+          ) {
             ++totalHitsOfSharpnessUsed;
           }
         }
       } else if ($("#dropWeaponType").val() === "Gunlance" && eachAttack > 13) {
         ++totalHitsOfSharpnessUsed;
       }
-      if (totalHitsOfSharpnessUsed <= total.white) {
-        hitsOfSharpnessPerColor.white = [].concat(
-          hitsOfSharpnessPerColor.white,
-          [eachAttack]
-        );
-      } else if (totalHitsOfSharpnessUsed <= total.blue + total.white) {
-        hitsOfSharpnessPerColor.blue = [].concat(hitsOfSharpnessPerColor.blue, [
-          eachAttack,
-        ]);
-      } else if (
-        totalHitsOfSharpnessUsed <=
-        total.green + total.blue + total.white
-      ) {
-        hitsOfSharpnessPerColor.green = [].concat(
-          hitsOfSharpnessPerColor.green,
-          [eachAttack]
-        );
-      } else if (
-        totalHitsOfSharpnessUsed <=
-        total.yellow + total.green + total.blue + total.white
-      ) {
-        hitsOfSharpnessPerColor.yellow = [].concat(
-          hitsOfSharpnessPerColor.yellow,
-          [eachAttack]
-        );
-      } else if (
-        totalHitsOfSharpnessUsed <=
-        total.orange + total.yellow + total.green + total.blue + total.white
-      ) {
-        hitsOfSharpnessPerColor.orange = [].concat(
-          hitsOfSharpnessPerColor.orange,
-          [eachAttack]
-        );
-      } else if (
-        totalHitsOfSharpnessUsed <=
-        total.red +
-          total.orange +
-          total.yellow +
-          total.green +
-          total.blue +
-          total.white
-      ) {
-        hitsOfSharpnessPerColor.red = [].concat(hitsOfSharpnessPerColor.red, [
-          eachAttack,
-        ]);
+      let totalHits = 0;
+      if (totalHitsOfSharpnessUsed <= (totalHits += total.white)) {
+        hitsOfSharpnessPerColor.white.push(eachAttack);
+      } else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue)) {
+        hitsOfSharpnessPerColor.blue.push(eachAttack);
+      } else if (totalHitsOfSharpnessUsed <= (totalHits += total.green)) {
+        hitsOfSharpnessPerColor.green.push(eachAttack);
+      } else if (totalHitsOfSharpnessUsed <= (totalHits += total.yellow)) {
+        hitsOfSharpnessPerColor.yellow.push(eachAttack);
+      } else if (totalHitsOfSharpnessUsed <= (totalHits += total.orange)) {
+        hitsOfSharpnessPerColor.orange.push(eachAttack);
+      } else if (totalHitsOfSharpnessUsed <= (totalHits += total.red)) {
+        hitsOfSharpnessPerColor.red.push(eachAttack);
       }
     });
 
@@ -992,15 +948,15 @@ function TotalHitsOfSharpUsed(power) {
 
     white.parentNode.style = `display:''; width:${
       mTBonus *
-      0.8 *
+      0.6 *
       (whiteMax + blueMax + greenMax + yellowMax + orangeMax + redMax)
     }px`;
-    white.style.width = `${whiteMin * 0.8}px`;
-    blue.style.width = `${blueMin * 0.8}px`;
-    green.style.width = `${greenMin * 0.8}px`;
-    yellow.style.width = `${yellowMin * 0.8}px`;
-    orange.style.width = `${orangeMin * 0.8}px`;
-    red.style.width = `${redMin * 0.8}px`;
+    white.style.width = `${whiteMin * 0.6}px`;
+    blue.style.width = `${blueMin * 0.6}px`;
+    green.style.width = `${greenMin * 0.6}px`;
+    yellow.style.width = `${yellowMin * 0.6}px`;
+    orange.style.width = `${orangeMin * 0.6}px`;
+    red.style.width = `${redMin * 0.6}px`;
 
     white.innerHTML = whiteMin > 0 ? whiteMin : "";
     blue.innerHTML = blueMin > 0 ? blueMin : "";
@@ -1054,20 +1010,20 @@ function DamageCalculations(power) {
   power.ele =
     Math.min(power.baseEle * power.BEM + power.BE, power.baseEle * 3) *
     power.eleAmmo;
-  const efeMulti = 1 + (power.eleCritBoost - 1) * power.aff;
+  power.efeMulti = 1 + (power.eleCritBoost - 1) * power.aff;
   const eleFormula =
-    (power.ele *
-      power.PEM *
-      power.eleHZV *
-      power.enrage *
-      power.eleMV *
-      power.augPEM) /
-    100;
+    power.ele *
+    power.PEM *
+    (power.eleHZV / 100) *
+    power.enrage *
+    power.eleMV *
+    power.augPEM;
+
   power.eleNon = eleFormula > 0 && eleFormula < 1 ? 1 : ~~(0.1 + eleFormula);
   power.efe =
-    eleFormula * efeMulti > 0 && eleFormula * efeMulti < 1
+    eleFormula * power.efeMulti > 0 && eleFormula * power.efeMulti < 1
       ? 1
-      : ~~(0.1 + eleFormula * efeMulti);
+      : ~~(0.1 + eleFormula * power.efeMulti);
   power.eleCrit =
     eleFormula * power.eleCritBoost > 0 && eleFormula * power.eleCritBoost < 1
       ? 1

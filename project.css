@@ -10,7 +10,8 @@
 
   div#divComboAttacks {
     grid-area: 3 / 2 / 4 / 3;
-    min-width: 5.2rem;
+
+    min-width: 130px
   }
 
 }
@@ -39,6 +40,9 @@ label {
 
 html {
   min-width: fit-content;
+  display: grid;
+  justify-content: center;
+  gap: 3rem;
 }
 
 
@@ -50,8 +54,6 @@ section#section3 {
   display: grid;
   gap: 0.25rem;
   margin-top: 0.25rem;
-  align-items: center;
-  justify-content: center;
   justify-items: center;
 }
 
@@ -95,7 +97,6 @@ div#weaponSelect.contain {
 div#section2 {
   grid-area: 2/ 2 / 2 / 3;
   display: grid;
-
 }
 
 
@@ -117,11 +118,12 @@ body {
   border-color: rgb(6, 6, 6);
   align-content: center;
   align-items: baseline;
+  gap: 1rem;
 }
 
 #comboCountDisplay {
   min-width: min-content;
-  max-width: 100px;
+  max-width: 130px;
   top: 0px;
   margin: 0;
   position: sticky;
@@ -131,7 +133,7 @@ body {
 
 div#divComboAttacks {
   max-height: 550px;
-  max-width: 100px;
+  max-width: 130px;
   overflow-y: scroll;
 }
 
@@ -190,12 +192,13 @@ input#inputComboRepeat {
   font-weight: bold;
 }
 
-#ammoTable {
-  display: inline-block;
-  overflow: hidden scroll;
-  max-height: 350px;
-  border-style: none;
-  gap: 0;
+div>#ammoTable {
+  padding: .2rem;
+
+
+  min-width: fit-content;
+  border-spacing: 0px;
+  display: table-caption;
 }
 
 tbody.dpsBody>tr>td:nth-child(2) {
@@ -251,6 +254,7 @@ tr>td:nth-child(1) {
   width: max-content;
 }
 
+#statsTable>tr>th,
 tr>th {
   top: 0px;
   position: sticky;
@@ -263,17 +267,16 @@ tr>th {
   min-height: 1.2rem;
 }
 
-table#ammoTable {
-  gap: 0;
+tbody>tr>td {
+  padding: 0.05rem;
 }
 
 table#ammoTable * {
   width: max-content;
   border-spacing: 0px;
   gap: 0px;
-  border: none;
   margin: 0px;
-  padding: 0px;
+  padding: .1rem;
 }
 
 output.comboAttack {
@@ -459,7 +462,7 @@ body div {
   border-color: rgb(77, 67, 69);
   color: rgb(171, 217, 238);
   box-sizing: border-box;
-  min-width: min-content;
+  min-width: fit-content;
 }
 
 #monTable>tr:nth-child(1) {
