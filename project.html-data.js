@@ -1,13 +1,13 @@
-const URLAttack = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/Attacks.html-data.json";
-const URLMonster = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/Monster.html-data.json";
-const URLQuest = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/quest.html-data.json";
-const URLRampage = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/Rampage.html-data.json";
-const URLSharp = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/Sharpness.html-data.json";
-const URLType = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/catagory.html-data.json";
-const URLWeapon = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/Weapons.html-data.json";
-const URLSPM = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/shotsPerMin.html-data.json";
-const URLLight = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/AmmoLight.html-data.json";
-const URLHeavy = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/json/AmmoHeavy.html-data.json";
+const URLAttack = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/blob/master/json/Attacks.html-data.json";
+const URLMonster = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/blob/master/json/Monster.html-data.json";
+const URLQuest = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/blob/master/json/quest.html-data.json";
+const URLRampage = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/blob/master/json/Rampage.html-data.json";
+const URLSharp = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/blob/master/json/Sharpness.html-data.json";
+const URLType = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/blob/master/json/catagory.html-data.json";
+const URLWeapon = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/blob/master/json/Weapons.html-data.json";
+const URLSPM = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/blob/master/json/shotsPerMin.html-data.json";
+const URLLight = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/blob/master/json/AmmoLight.html-data.json";
+const URLHeavy = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/blob/master/json/AmmoHeavy.html-data.json";
 let comboTracker = [];
 
 $(document).ready(function () {
