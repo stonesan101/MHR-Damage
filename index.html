@@ -3,36 +3,17 @@
 
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <script type="text/javascript" rel="prefetch" href="http://127.0.0.1:5500/project.html-Data.js" as="Object" /> -->
-    <link type="json" defer rel="prefetch"
-          prefetch-url="https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Attacks.html-data.json"
-          as="Object" />
-    <link type="text/json" rel="prefetch"
-          prefetch-url="https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Weapons.html-data.json"
-          as="Object" />
-    <link type="text/json" rel="prefetch"
-          prefetch-url="https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Monster.html-data.json"
-          as="Object" />
-    <link type="text/json" rel="prefetch"
-          prefetch-url="https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/AmmoHeavy.html-data.json"
-          as="Object" />
-    <link type="text/json" rel="prefetch"
-          prefetch-url="https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/AmmoLight.html-data.json"
-          as="Object" />
-    <link type="text/json" rel="prefetch"
-          prefetch-url="https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/ShotsPerMin.html-data.json"
-          as="Object" />
-    <link type="text/json" rel="prefetch"
-          prefetch-url="https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/catagory.html-data.json"
-          as="Object" />
-    <link type="text/json" rel="prefetch"
-          prefetch-url="https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Rampage.html-data.json"
-          as="Object" />
-    <link type="text/json" rel="prefetch"
-          prefetch-url="https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Sharpness.html-data.json"
-          as="Object" />
+    <!-- <script type="text/javascript" rel="prefetch" href="http://127.0.0.1:5500/project.html-Data.js" as="fetch" /> -->
+    <link rel="prefetch" href="http://127.0.0.1:5500/json/Attacks.html-data.json" as="fetch" />
+    <link rel="prefetch" href="http://127.0.0.1:5500/json/Weapons.html-data.json" as="fetch" />
+    <link rel="prefetch" href="http://127.0.0.1:5500/json/Monster.html-data.json" as="fetch" />
+    <link rel="prefetch" href="http://127.0.0.1:5500/json/AmmoHeavy.html-data.json" as="fetch" />
+    <link rel="prefetch" href="http://127.0.0.1:5500/json/AmmoLight.html-data.json" as="fetch" />
+    <link rel="prefetch" href="http://127.0.0.1:5500/json/ShotsPerMin.html-data.json" as="fetch" />
+    <link rel="prefetch" href="http://127.0.0.1:5500/json/catagory.html-data.json" as="fetch" />
+    <link rel="prefetch" href="http://127.0.0.1:5500/json/Rampage.html-data.json" as="fetch" />
+    <link rel="prefetch" href="http://127.0.0.1:5500/json/Sharpness.html-data.json" as="fetch" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="project.css">
     <!-- <script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script> -->
     <!-- <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css" crossorigin="anonymous" /> -->
     <!-- <script type="text/javascript" src="https://cdn.Datatables.net/v/bs5/dt-1.11.5/af-2.3.7/sp-2.0.0/Datatables.min.js"></script> -->
@@ -92,7 +73,7 @@
             <select style="display:none" id="weaponRampage5" onchange="DataCompile()" name="weaponRampage5"></select>
           </div>
         </div>
-        <div class="sharpnessDropdown" style="display:none"><label for="Sharpness">Sharpness<label><select class="" onchange="DataCompile()"
+        <div class="sharpnessdropDown" style="display:none"><label for="Sharpness">Sharpness<label><select class="" onchange="DataCompile()"
                       name="Sharpness" id="Sharpness" hidden>
                 <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'>---</option>
                 <option value='{"BRM":1,"BR":0,"PRM":0.5,"BEM":1,"BE":0,"PEM":0.25,"Affinity":0}'>red</option>
@@ -128,37 +109,37 @@
       </div>
       <div class="contain" id="boxes">
         <h1>Consumables / Other</h1>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="DemonDrug" name="DemonDrug"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="DemonDrug" name="DemonDrug"
                 value='{"BRM":1,"BR":5,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'> DemonDrug </button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="Power Talisman" name="Power Talisman"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="Power Talisman" name="Power Talisman"
                 value='{"BRM":1,"BR":8,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'> Power Talisman </button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="powerDrum" name="Power Drum"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="powerDrum" name="Power Drum"
                 value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'> Power Drum</button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="DemonAmmo" name="Demon Ammo"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="DemonAmmo" name="Demon Ammo"
                 value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'> Demon Ammo </button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="MegaDemonDrug" name="MegaDemonDrug"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="MegaDemonDrug" name="MegaDemonDrug"
                 value='{"BRM":1,"BR":7,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'> Mega DemonDrug </button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="Power Charm" name="Power Charm"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="Power Charm" name="Power Charm"
                 value='{"BRM":1,"BR":7,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'> Power Charm </button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="huntingHornAttack" name="huntingHornAttack"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="huntingHornAttack" name="huntingHornAttack"
                 value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'> Hunting Horn Attack</button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="sleepWakeUp" name="Sleep Wake Up"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="sleepWakeUp" name="Sleep Wake Up"
                 value='{"BRM":1,"BR":0,"PRM":2,"BEM":1,"BE":0,"PEM":2,"Affinity":0}'> Sleep Wake Up </button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="Demon Powder" name="Demon Powder"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="Demon Powder" name="Demon Powder"
                 value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'>Demon Powder</button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="Booster" name="Booster"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="Booster" name="Booster"
                 value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'>Booster</button>
-        <button class="skillButton hitsOfSharp" style="background:gray; color:midnightblue" id="palicoAffinity" name="Palico Affinity"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton hitsOfSharp" id="palicoAffinity" name="Palico Affinity"
                 value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":40}'> Palico Affinity</button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="huntingHornElemental" name="Hunting Horn
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="huntingHornElemental" name="Hunting Horn
                     Elemental" value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"Affinity":0}'> Hunting Horn Elemental </button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="Demon Seed" name="Demon Seed"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="Demon Seed" name="Demon Seed"
                 value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'> Demon Seed </button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="Butterflame" name="ButterFlame"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="Butterflame" name="ButterFlame"
                 value='{"BRM":1,"BR":25,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'>ButterFlame</button>
-        <button class="skillButton crit hitsOfSharp" style="background:gray; color:midnightblue" id="huntingHornAffinity" name="huntingHornAffinity"
-                value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":20}'>Hunting Horn Affinity</button>
-        <button class="skillButton" style="background:gray; color:midnightblue" id="WaterBlight" name="Water Blight"
+        <button type="button" aria-pressed="false" class="toggle gray skillButton crit hitsOfSharp" id="huntingHornAffinity"
+                name="huntingHornAffinity" value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":20}'>Hunting Horn Affinity</button>
+        <button type="button" aria-pressed="false" class="toggle gray skillButton" id="WaterBlight" name="Water Blight"
                 value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'>Water Blight</button>
       </div>
       <div id="raw" class="contain">
@@ -611,11 +592,13 @@
       </div>
       <section class="contain" id="section3">
         <div id="forButtons">
-          <button type="button" class="skill melee" id="maxSkills" onclick="MaxSkills(); DataCompile()">Max Skills</button>
-          <button type="button" class="skill melee" id="resetSkills" onclick="ResetSkills();DataCompile()">Reset Skills</button>
-          <button type="button" class="skill melee Bow" id="resetCombo" onclick="ComboReset(true);DataCompile()">Reset Combo</button>
-          <button type="button" id="ammoChange" class="skill  classSpecific LightBowGun HeavyBowGun" onclick="ToggleAmmoTables()">Change Ammo
-            Table</button>
+          <button type="button" aria-pressed="false" class="blue skill melee" id="maxSkills" onclick="MaxSkills(); DataCompile()">Max Skills</button>
+          <button type="button" aria-pressed="false" class="blue skill melee" id="resetSkills" onclick="ResetSkills();DataCompile()">Reset
+            Skills</button>
+          <button type="button" aria-pressed="false" class="blue skill melee Bow" id="resetCombo" onclick="ComboReset(true);DataCompile()">Reset
+            Combo</button>
+          <button type="button" aria-pressed="false" class="blue skill  classSpecific LightBowGun HeavyBowGun" id="ammoChange"
+                  onclick="ToggleAmmoTables()">Change Ammo Table</button>
           <div id='forButtonSelect'>
             <div><label class="skill classSpecific LightBowGun HeavyBowGun" for="pierceAdjust">Pierce Dmg Mod</label><select id="pierceAdjust"
                       name="pierceAdjust" class="skill classSpecific LightBowGun HeavyBowGun" onchange="DataCompile()">
@@ -819,6 +802,7 @@
     </script>
   </body>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+  <link rel="stylesheet" type="text/css" href="project.css">
   <link href="https://cors-anywhere.herokuapp.com/https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/project.html-data.js/">
   <script src="project.html-data.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">

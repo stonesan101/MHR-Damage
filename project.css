@@ -10,26 +10,12 @@
 
   div#divComboAttacks {
     grid-area: 3 / 2 / 4 / 3;
-
-    min-width: 130px
   }
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+div#divComboAttacks {
+  min-width: 130px;
+}
 
 tr,
 td,
@@ -45,9 +31,8 @@ html {
   gap: 3rem;
 }
 
-
 div#statsTableDiv {
-  grid-area: 1/2/4/6
+  grid-area: 1/2/4/6;
 }
 
 section#section3 {
@@ -68,7 +53,7 @@ section#section3 {
 }
 
 div#section1.contain {
-
+  grid-template-columns: repeat(5, 1fr);
   grid-area: 2 / 1 / 3 / 2;
   display: grid;
 }
@@ -79,26 +64,21 @@ html div {
 
 div#section1>h1 {
   grid-area: 1 / 1 / 2 / 6;
-
 }
 
 div#BowGunId,
 div.uniqueBow {
-  grid-area: 1/2
+  grid-area: 1/2;
 }
 
 div#weaponSelect.contain {
   grid-area: 2 / 1 / 3 /6;
-
 }
-
-
 
 div#section2 {
   grid-area: 2/ 2 / 2 / 3;
   display: grid;
 }
-
 
 *.contain {
   gap: 0.25rem;
@@ -107,18 +87,18 @@ div#section2 {
 
 body {
   display: grid;
-  color: rgb(229, 237, 240);
-  font-size: 0.55rem;
-  background-image: url('https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/background.jpg');
+  color: white;
+  /* font-size: 0.55rem; */
+  background-image: url('http://127.0.0.1:5500/background.jpg');
   background-size: cover;
   min-height: 100vh;
-  min-width: 100vh;
+  /* min-width: 100vh; */
   min-width: fit-content;
   border-style: none;
   border-color: rgb(6, 6, 6);
   align-content: center;
   align-items: baseline;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 #comboCountDisplay {
@@ -193,8 +173,7 @@ input#inputComboRepeat {
 }
 
 div>#ammoTable {
-  padding: .2rem;
-
+  padding: 0.2rem;
 
   min-width: fit-content;
   border-spacing: 0px;
@@ -209,30 +188,26 @@ tbody.meleeTable>tr>td#b0 {
   width: 8rem;
 }
 
-tbody#dpsBody.meleeTable>tr {
-  height: 27px;
-}
-
 #forButtons {
-  gap: .25rem;
+  gap: 0.25rem;
   place-content: center;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
 div#forButtonSelect {
-  gap: .25rem;
+  gap: 0.25rem;
   display: grid;
   justify-items: center;
   justify-content: center;
-  grid-area: 2/1/3/4
+  grid-area: 2/1/3/4;
 }
 
 #forButtonSelect>div:nth-child(1) {
-  grid-area: 1/1/2/2
+  grid-area: 1/1/2/2;
 }
 
 #forButtonSelect>div:nth-child(2) {
-  grid-area: 1/2/2/3
+  grid-area: 1/2/2/3;
 }
 
 #dpsTable {
@@ -243,6 +218,26 @@ div#forButtonSelect {
   border-spacing: 0px;
   display: table-caption;
   max-height: 332px;
+}
+
+button.gray {
+  background-color: rgba(77, 58, 58, 0.848);
+  color: 'midnightblue';
+  font-weight: 600;
+  font-size: 0.55rem;
+  color: white;
+}
+
+button.blue {
+  background-color: rgb(0, 0, 125);
+  color: white;
+  font-weight: 600;
+  font-size: 0.55rem;
+}
+
+div>button.toggle:hover {
+  background-color: rgb(6, 6, 24);
+  color: rgb(167, 170, 192);
 }
 
 tr>td:nth-child(1) {
@@ -276,7 +271,7 @@ table#ammoTable * {
   border-spacing: 0px;
   gap: 0px;
   margin: 0px;
-  padding: .1rem;
+  padding: 0.1rem;
 }
 
 output.comboAttack {
@@ -355,18 +350,6 @@ button#Power\ Talisman {
   grid-area: 4 / 1 / 5 / 2;
 }
 
-button {
-  background-color: rgb(0, 14, 94);
-  font-weight: 600;
-  font-size: 0.55rem;
-}
-
-button.skillButton:hover {
-  background-color: black;
-}
-
-
-
 #monTable {
   border: none;
   overflow: hidden scroll;
@@ -402,7 +385,6 @@ table#statsTable {
   border-spacing: 0;
 }
 
-
 #statsTable>tr:nth-child(n + 2)>td:nth-child(1) {
   border-style: outset;
   background-color: rgb(7, 4, 69);
@@ -422,7 +404,7 @@ output {
   height: 100%;
   background-color: rgba(5, 3, 39, 0.373);
   border-style: outset;
-  border-width: .15rem;
+  border-width: 0.15rem;
   border-left: 0;
   align-items: center;
 }
@@ -460,7 +442,7 @@ body div {
   font-family: Play, sans-serif;
   text-align: center;
   border-color: rgb(77, 67, 69);
-  color: rgb(171, 217, 238);
+  color: white;
   box-sizing: border-box;
   min-width: fit-content;
 }
@@ -565,11 +547,6 @@ div#ele.contain {
   grid-column: 2 / 2;
 }
 
-
-
-
-
-
 #raw>div:nth-child(14) {
   grid-area: 2 / 3 / auto / auto;
 }
@@ -577,9 +554,6 @@ div#ele.contain {
 #monContainer>div:nth-child(4) {
   grid-area: 3 / 4 / 4 / 5;
 }
-
-
-
 
 #monContainer>div:nth-child(5) {
   grid-area: 3 / 5 / auto / 6;
@@ -593,16 +567,6 @@ div#ele.contain {
 #MonsterSelect>div>div:nth-child(1) {
   display: grid;
   grid-column: 1 / auto;
-}
-
-div#red {
-  color: white;
-  font-weight: bold;
-}
-
-div#green {
-  color: white;
-  font-weight: bold;
 }
 
 select {
@@ -646,17 +610,17 @@ h1 {
   grid-area: 1 / 1 / 2 / -1;
   background-color: rgba(0, 14, 94, 0.627);
   border-style: outset;
-  color: rgb(243, 246, 247);
+  color: white;
 }
 
-.sharpnessDropdown {
+.sharpnessdropDown {
   display: none;
 }
 
 select {
   background-color: rgba(5, 3, 39, 0.373);
   border-style: outset;
-  border-width: .15rem;
+  border-width: 0.15rem;
 }
 
 select#dropMonster {
@@ -680,7 +644,7 @@ label {
   font-weight: bold;
   min-width: max-content;
   border-style: outset;
-  border-width: .15rem;
+  border-width: 0.15rem;
   padding: 0.1rem 0.2rem 0.1rem 0.2rem;
   background-color: rgba(12, 26, 105, 0.85);
 }
@@ -842,7 +806,27 @@ select#weaponRampage5 {
   grid-column: 2 / 3;
 }
 
+@media only screen and (min-width: 1100) {
+  tbody#dpsBody.meleeTable>tr {
+    height: 27px;
+  }
+}
+
 @media only screen and (min-width: 900px) {
+  @media only screen and (max-width: 1100px) {
+    * {
+      font-size: 0.8rem;
+    }
+
+    tbody.meleeTable>tr>td:nth-child(2) {
+      width: 1rem;
+    }
+  }
+
+  output {
+    font-size: 0.68rem;
+  }
+
   div#forButtons button {
     min-width: max-content;
   }
