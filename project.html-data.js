@@ -1,13 +1,13 @@
-const URLAttack = "https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Attacks.html-data.json";
-const URLMonster = "https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Monster.html-data.json";
-const URLQuest = "https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/quest.html-data.json";
-const URLRampage = "https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Rampage.html-data.json";
-const URLSharp = "https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Sharpness.html-data.json";
-const URLType = "https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/catagory.html-data.json";
-const URLWeapon = "https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Weapons.html-data.json";
-const URLSPM = "https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/shotsPerMin.html-data.json";
-const URLLight = "https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/AmmoLight.html-data.json";
-const URLHeavy = "https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/AmmoHeavy.html-data.json";
+const URLAttack = "https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Attacks.html-data.json";
+const URLMonster = "https://cors-anywhere.herokuapp.com//Monster.html-data.json";
+const URLQuest = "https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/quest.html-data.json";
+const URLRampage = "https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Rampage.html-data.json";
+const URLSharp = "https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Sharpness.html-data.json";
+const URLType = "https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/catagory.html-data.json";
+const URLWeapon = "https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/Weapons.html-data.json";
+const URLSPM = "https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/shotsPerMin.html-data.json";
+const URLLight = "https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/AmmoLight.html-data.json";
+const URLHeavy = "https://cors-anywhere.herokuapp.com/https://github.com/stonesan101/MonsterHunterRiseDamageCalculator/blob/master/json/AmmoHeavy.html-data.json";
 let comboTracker = [];
 
 $(document).ready(function () {
