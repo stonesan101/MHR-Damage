@@ -1,13 +1,13 @@
-const URLAttack = "attacks.html-data.json";
-const URLMonster = "monster.html-data.json";
-const URLQuest = "quest.html-data.json";
-const URLRampage = "rampage.html-data.json";
-const URLSharp = "sharpness.html-data.json";
-const URLType = "catagory.html-data.json";
-const URLWeapon = "weapons.html-data.json";
-const URLSPM = "shotspermin.html-data.json";
-const URLLight = "ammolight.html-data.json";
-const URLHeavy = "ammoheavy.html-data.json";
+const URLAttack = "Attacks.html-data.json";
+const URLMonster = "Monster.html-data.json";
+const URLQuest = "Quest.html-data.json";
+const URLRampage = "Rampage.html-data.json";
+const URLSharp = "Sharpness.html-data.json";
+const URLType = "Catagory.html-data.json";
+const URLWeapon = "Weapons.html-data.json";
+const URLSPM = "ShotsFrameData.html-data.json";
+const URLLight = "AmmoLight.html-data.json";
+const URLHeavy = "AmmoHeavy.html-data.json";
 
 let comboTracker = [];
 
