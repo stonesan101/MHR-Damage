@@ -1,13 +1,13 @@
-const URLAttack = "http://127.0.0.1:5500/json/Attacks.html-data.json";
-const URLMonster = "http://127.0.0.1:5500/json/Monster.html-data.json";
-const URLQuest = "http://127.0.0.1:5500/json/quest.html-data.json";
-const URLRampage = "http://127.0.0.1:5500/json/Rampage.html-data.json";
-const URLSharp = "http://127.0.0.1:5500/json/Sharpness.html-data.json";
-const URLType = "http://127.0.0.1:5500/json/catagory.html-data.json";
-const URLWeapon = "http://127.0.0.1:5500/json/Weapons.html-data.json";
-const URLSPM = "http://127.0.0.1:5500/json/shotsPerMin.html-data.json";
-const URLLight = "http://127.0.0.1:5500/json/AmmoLight.html-data.json";
-const URLHeavy = "http://127.0.0.1:5500/json/AmmoHeavy.html-data.json";
+const URLAttack = "json/Attacks.html-data.json";
+const URLMonster = "json/Monster.html-data.json";
+const URLQuest = "json/quest.html-data.json";
+const URLRampage = "json/Rampage.html-data.json";
+const URLSharp = "json/Sharpness.html-data.json";
+const URLType = "json/catagory.html-data.json";
+const URLWeapon = "json/Weapons.html-data.json";
+const URLSPM = "json/shotsPerMin.html-data.json";
+const URLLight = "json/AmmoLight.html-data.json";
+const URLHeavy = "json/AmmoHeavy.html-data.json";
 
 let comboTracker = [];
 

@@ -89,7 +89,7 @@ body {
   display: grid;
   color: white;
   /* font-size: 0.55rem; */
-  background-image: url('http://127.0.0.1:5500/background.jpg');
+  background-image: url('background.jpg');
   background-size: cover;
   min-height: 100vh;
   /* min-width: 100vh; */
