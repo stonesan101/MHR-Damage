@@ -5,9 +5,9 @@ const URLRampage = "rampage.html-data.json";
 const URLSharp = "sharpness.html-data.json";
 const URLType = "catagory.html-data.json";
 const URLWeapon = "weapons.html-data.json";
-const URLSPM = "shotsPerMin.html-data.json";
-const URLLight = "ammoLight.html-data.json";
-const URLHeavy = "ammoHeavy.html-data.json";
+const URLSPM = "shotspermin.html-data.json";
+const URLLight = "ammolight.html-data.json";
+const URLHeavy = "ammoheavy.html-data.json";
 
 let comboTracker = [];
 
