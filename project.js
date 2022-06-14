@@ -1,13 +1,13 @@
-const URLAttack = "attacks.json";
-const URLMonster = "monsters.json";
-const URLQuest = "quest.json";
-const URLRampage = "rampage.json";
-const URLSharp = "sharpness.json";
-const URLType = "types.json";
-const URLWeapon = "weapons.json";
-const URLSPM = "frames.json";
-const URLLight = "lbg.json";
-const URLHeavy = "hbg.json";
+const URLAttack = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/attacks.json";
+const URLMonster = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/monsters.json";
+const URLQuest = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/quest.json";
+const URLRampage = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/rampage.json";
+const URLSharp = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/sharpness.json";
+const URLType = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/types.json";
+const URLWeapon = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/weapons.json";
+const URLSPM = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/frames.json";
+const URLLight = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/lbg.json";
+const URLHeavy = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/hbg.json";
 
 let comboTracker = [];
 
