@@ -1,13 +1,23 @@
-const URLAttack = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/attacks.json";
-const URLMonster = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/monsters.json";
-const URLQuest = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/quest.json";
-const URLRampage = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/rampage.json";
-const URLSharp = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/sharpness.json";
-const URLType = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/types.json";
-const URLWeapon = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/weapons.json";
-const URLSPM = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/frames.json";
-const URLLight = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/lbg.json";
-const URLHeavy = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/hbg.json";
+// const URLAttack = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/attacks.json";
+// const URLMonster = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/monsters.json";
+// const URLQuest = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/quest.json";
+// const URLRampage = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/rampage.json";
+// const URLSharp = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/sharpness.json";
+// const URLType = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/types.json";
+// const URLWeapon = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/weapons.json";
+// const URLSPM = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/frames.json";
+// const URLLight = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/lbg.json";
+// const URLHeavy = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/hbg.json";
+const URLAttack =  `${window.location.origin}/attacks.json`;
+const URLMonster = `${window.location.origin}/monsters.json`;
+const URLQuest =   `${window.location.origin}/quest.json`;
+const URLRampage = `${window.location.origin}/rampage.json`;
+const URLSharp =   `${window.location.origin}/sharpness.json`;
+const URLType =    `${window.location.origin}/types.json`;
+const URLWeapon  = `${window.location.origin}/weapons.json`;
+const URLSPM =     `${window.location.origin}/frames.json`;
+const URLLight   = `${window.location.origin}/lbg.json`;
+const URLHeavy   = `${window.location.origin}/hbg.json`;
 
 let check = [ 0, 0, 0, 0, 0, 0, 0 ];
 let comboTracker = [];
@@ -1312,9 +1322,7 @@ function HideAndRevealTypeSpecificElements( redKeyCard = false ) {
 function RangedElements() {
   // shows type specific common to Bow and BowGun
   ammoTable.style.display = "none";
-
   weaponId.append( dropWeaponType.value );
-  $(weaponId).show();
     $( `.${ dropWeaponType.value }` ).parent().show();
     $( ".Shot" ).parent().show();
   if ( /(BowGun)/.test( dropWeaponType.value ) ) {
