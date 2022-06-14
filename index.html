@@ -3,20 +3,16 @@
 
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <script type="text/javascript" rel="prefetch" href="project.html-Data.js" as="fetch" /> -->
-    <link rel="prefetch" href="https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/attacks.json" as="fetch" />
-    <link rel="prefetch" href="https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/weapons.json" as="fetch" />
-    <link rel="prefetch" href="https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/monsters.json" as="fetch" />
-    <link rel="prefetch" href="https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/hbg.json" as="fetch" />
-    <link rel="prefetch" href="https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/lbg.json" as="fetch" />
-    <link rel="prefetch" href="https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/frames.json" as="fetch" />
-    <link rel="prefetch" href="https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/types.json" as="fetch" />
-    <link rel="prefetch" href="https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/rampage.json" as="fetch" />
-    <link rel="prefetch" href="https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/sharpness.json" as="fetch" />
+    <link rel="prefetch" href="attacks.json" as="fetch" />
+    <link rel="prefetch" href="weapons.json" as="fetch" />
+    <link rel="prefetch" href="monsters.json" as="fetch" />
+    <link rel="prefetch" href="hbg.json" as="fetch" />
+    <link rel="prefetch" href="lbg.json" as="fetch" />
+    <link rel="prefetch" href="frames.json" as="fetch" />
+    <link rel="prefetch" href="types.json" as="fetch" />
+    <link rel="prefetch" href="rampage.json" as="fetch" />
+    <link rel="prefetch" href="sharpness.json" as="fetch" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script> -->
-    <!-- <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css" crossorigin="anonymous" /> -->
-    <!-- <script type="text/javascript" src="https://cdn.Datatables.net/v/bs5/dt-1.11.5/af-2.3.7/sp-2.0.0/Datatables.min.js"></script> -->
   </head>
 
   <body>
@@ -93,19 +89,6 @@
             </tbody>
           </table>
         </div>
-        <!-- <div> -->
-        <!-- <div style='grid-area:1/2/2/3'><label class="skill classSpecific Shot" for="felineTemper2">Feline Temper</label><select -->
-        <!-- onchange="DataCompile()" id="felineTemper2" name="Feline Temper2" class="skill classSpecific Bow"> -->
-        <!-- <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"Affinity":0}'>---</option> -->
-        <!-- <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1.05,"Affinity":0}'>Lv-1</option> -->
-        <!-- </select></div> -->
-        <!-- <div style='grid-area:1/1/2/4'><label class="skill classSpecific Shot" for="felineMarksmanid2">Feline Marksman</label><select
-        -->
-        <!-- onchange="DataCompile()" id="felineMarksmanid2" name="Feline Marksman2" class="skill classSpecific Bow"> -->
-        <!-- <option value=[1,1]>---</option> -->
-        <!-- <option value=[1.1,1.02]>Lv-1</option> -->
-        <!-- </select></div> -->
-        <!-- </div> -->
       </div>
       <div class="contain" id="boxes">
         <h1>Consumables / Other</h1>
@@ -319,8 +302,8 @@
             <option value=.40>Lv-2</option>
             <option value=.80>Lv-3</option>
           </select></div>
-        <div style='grid-area:5/1/6/2'><label for='mightyBowId'>Mighty Bow</label><select class="skill classSpecific
-            Bow" id="mightyBowId" name="MightyBow" onchange="DataCompile()"> Mighty Bow > <option value='false'>---</ option>
+        <div><label for='mightyBowId'>Mighty Bow</label><select class="skill classSpecific Bow" id="mightyBowId" name="MightyBow"
+                  onchange="DataCompile()"> Mighty Bow > <option value='false'>---</ option>
             <option value='true'>Lv-1</option>
           </select></div>
         <div><label class="skill classSpecific Shot" for="RF+">Rapid Fire UP</label><select onchange="DataCompile()" id="RF+" name="Rapid"
@@ -592,11 +575,10 @@
       </div>
       <section class="contain" id="section3">
         <div id="forButtons">
-          <button type="button" aria-pressed="false" class="blue skill melee" id="maxSkills" onclick="MaxSkills(); DataCompile()">Max Skills</button>
-          <button type="button" aria-pressed="false" class="blue skill melee" id="resetSkills" onclick="ResetSkills();DataCompile()">Reset
-            Skills</button>
-          <button type="button" aria-pressed="false" class="blue skill melee Bow" id="resetCombo" onclick="ComboReset(true);DataCompile()">Reset
-            Combo</button>
+          <button type="button" aria-pressed="false" class="blue skill" id="maxSkills" onclick="MaxSkills(); DataCompile()">Max Skills</button>
+          <button type="button" aria-pressed="false" class="blue skill" id="resetSkills" onclick="ResetSkills();DataCompile()">Reset Skills</button>
+          <button type="button" aria-pressed="false" class="blue skill classSpecific melee Bow" id="resetCombo"
+                  onclick="ComboReset(true);DataCompile()">Reset Combo</button>
           <button type="button" aria-pressed="false" class="blue skill  classSpecific LightBowGun HeavyBowGun" id="ammoChange"
                   onclick="ToggleAmmoTables()">Change Ammo Table</button>
           <div id='forButtonSelect'>
@@ -624,7 +606,7 @@
           <div class="sharpness" id="green" style="background-color:forestgreen; border-style: none;"></div>
           <div class="sharpness" id="blue" style="background-color:blue; border-style: none;"></div>
           <div class="sharpness" id="white" style="background-color:white; border-style: none;"></div>
-          <div style="display:none" class="sharpness" id="purple" style="background-color:purple;"></div>
+          <div style="display:none" class="sharpness skill classSpecific melee" id="purple" style="background-color:purple;"></div>
         </div>
         <div id="damageTable">
           <table id="dpsTable">
@@ -744,28 +726,14 @@
       <output class="comboAttack" style="display:none"></output>
       <output class="comboAttack" style="display:none"></output>
       <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
-      <output class="comboAttack" style="display:none"></output>
     </div>
     <div id='previousWeapon' value="initial" style="display:none"></div>
     <div id='previousWeaponType' value="initial" style="display:none"></div>
   </body>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <link rel="stylesheet" type="text/css" href="project.css">
-  <link href="https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/project.js/">
+  <link href="project.js/">
+  <!-- <link href="project.js/"> -->
   <script src="project.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
