@@ -9,6 +9,7 @@ const URLSPM = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/
 const URLLight = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/lbg.json";
 const URLHeavy = "https://stonesan101.github.io/MonsterHunterRiseDamageCalculator/hbg.json";
 
+let check = [ 0, 0, 0, 0, 0, 0, 0 ];
 let comboTracker = [];
 
 $( document ).ready( function () {
@@ -45,8 +46,6 @@ $( document ).ready( function () {
     window.sharpness = data;
   } );
 } );
-
-let check = [ 0, 0, 0, 0, 0, 0, 0 ];
 
 function DataCompile() {
   if ( check.every( ( keyCard ) => keyCard ) ) {
@@ -153,13 +152,13 @@ function RangedDPS() {
         [ "Stat", "Raw", "Affinity", "Ele Ammo" ],
         [ "Base", ~~power.baseRaw, power.baseAff, ~~( 0.1 + 11 * power.eleAmmo ) ],
         [
-          "Cap",
+          "Pre-Cap",
           ~~power.raw,
           power.aff * 100,
           ~~( 0.1 + ( 11 * power.BEM + power.BE ) * power.eleAmmo ),
         ],
         [
-          "Post Cap",
+          "Post-Cap",
           ~~(
             power.raw *
             power.critBoost *
@@ -245,8 +244,8 @@ function MeleeDPS() {
   ];
   let comboDamage = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
   let attackID = 0;
-
   let power = {};
+
   power.aff =
     window.weapon[ $( "#dropWeaponType" ).val() ][ $( "#dropWeapon" ).val() ].AFF;
   power.baseRaw =
@@ -254,11 +253,13 @@ function MeleeDPS() {
   [ power.eleType, power.baseEle ] =
     window.weapon[ $( "#dropWeaponType" ).val() ][ $( "#dropWeapon" ).val() ].Ele;
   power = applyRampageSelections( power );
+
+   //  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
   let attacks =
     $( "#dropWeaponType" ).val() === "Bow" ||
       $( "#dropWeaponType" ).val() === "ChargeBlade" ||
       $( "#dropWeaponType" ).val() === "Gunlance"
-      ? AddDependantSkills( power ) //  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
+      ? AddDependantSkills( power )
       : window.attack[ $( "#dropWeaponType" ).val() ];
 
   $.each( attacks, function ( key ) {
@@ -409,9 +410,9 @@ function MeleeDPS() {
       const stats = [
         [ [ "Stat" ], [ "Raw" ], [ "Affinity" ], [ power.eleType ] ],
         [ "Base", ~~power.baseRaw, power.baseAff, power.baseEle ],
-        [ "Cap", ~~power.raw, ~~( power.aff * 100 ), ~~power.ele ],
+        [ "Pre-Cap", ~~power.raw, ~~( power.aff * 100 ), ~~power.ele ],
         [
-          "Post Cap",
+          "Post-Cap",
 
           ~~(
             power.raw *
@@ -509,8 +510,7 @@ function applyRampageSelections( power ) {
 function AddDependantSkills() {
   if ( dropWeaponType.value === "ChargeBlade" ) {
     const phialType =
-      window.weapon[ $( "#dropWeaponType" ).val() ][ $( "#dropWeapon" ).val() ]
-        .Phial === "Impact Phial"
+      window.weapon[ $( "#dropWeaponType" ).val() ][ $( "#dropWeapon" ).val() ].Phial === "Impact Phial"
         ? "Element Phial"
         : "Impact Phial";
     const regexp = new RegExp( `${ phialType } ` );
@@ -519,9 +519,9 @@ function AddDependantSkills() {
       ( skill ) => !regexp.test( skill )
     );
     return attacks;
-
-    // adds Gunlance Shelling Attacks to attacks array
   }
+
+  // adds Gunlance Shelling Attacks to attacks array
   if ( $( "#dropWeaponType" ).val() === "Gunlance" ) {
     let attacks = window.attack[ $( "#dropWeaponType" ).val() ];
     $(
@@ -534,27 +534,26 @@ function AddDependantSkills() {
       attacks.push( element );
     } );
     return attacks;
-
-    //  filters bow attacks for only the usable attacks
   }
+
+  //  filters bow attacks for only the usable attacks
   if ( $( "#dropWeaponType" ).val() === "Bow" ) {
     let attacks = window.attack[ $( "#dropWeaponType" ).val() ];
-    let expression = `${ window.weapon.BowShotType[ $( "#dropWeapon" ).val() ].Inate[ 0 ]
-      }|${ window.weapon.BowShotType[ $( "#dropWeapon" ).val() ].Inate[ 1 ] }|${ window.weapon.BowShotType[ $( "#dropWeapon" ).val() ].Inate[ 2 ]
-      }`;
+    const shotType =  window.weapon.BowShotType[ $( "#dropWeapon" ).val() ]
+    let expression = `${ shotType.innate[ 0 ]}|${ shotType.innate[ 1 ] }|${ shotType.innate[ 2 ] }`;
     if (
       mightyBowId.selectedIndex === 1 &&
       Object.prototype.hasOwnProperty.call(
-        window.weapon.BowShotType[ $( "#dropWeapon" ).val() ],
+        shotType,
         "MightyBow"
       )
     ) {
-      expression += `|${ window.weapon.BowShotType[ $( "#dropWeapon" ).val() ].MightyBow[ 0 ]
+      expression += `|${ shotType.MightyBow[ 0 ]
         }`;
     } else if (
-      window.weapon.BowShotType[ $( "#dropWeapon" ).val() ].Inate.length > 3
+      shotType.innate.length > 3
     ) {
-      expression += `|${ window.weapon.BowShotType[ $( "#dropWeapon" ).val() ].Inate[ 3 ]
+      expression += `|${ shotType.innate[ 3 ]
         }`;
     }
     const regex = new RegExp( expression );
@@ -869,7 +868,8 @@ function TotalHitsOfSharpUsed( power ) {
     hitsOfSharpnessPerColor.orange = [];
     hitsOfSharpnessPerColor.red = [];
 
-    $( listOfEachAttack ).each( function ( index, eachAttack ) {
+    $( listOfEachAttack ).each( function () {
+      const eachAttack = this;
       if (
         $( "#dropWeaponType" ).val() !== "Gunlance" ||
         ( $( "#dropWeaponType" ).val() === "Gunlance" && eachAttack < 14 )
@@ -1248,28 +1248,25 @@ function MonChart() {
 
       for ( let j = 0; j < 9; ++j ) {
         const cell = document.createElement( "td" );
-        // adds demon ammo and waterblight to displayed HZV
+        // adds demon ammo and water blight to displayed HZV
         HZV[ j ] =
           $( DemonAmmo ).hasClass( 'blue' ) && ( j === 1 || j === 2 )
             ? ~~( HZV[ j ] *= 1.1 )
             : HZV[ j ];
         if (
-
           $( WaterBlight ).hasClass( 'blue' ) &&
           ( j === 1 || j === 2 || j === 3 ) &&
           HZV[ j ] < 60
         ) {
           HZV[ j ] += 25;
         } else if (
-          WaterBlight.style.background !== "gray" &&
-          ( j === 1 || j === 2 || j === 3 ) &&
-          HZV[ j ] >= 60
-        ) {
-          HZV[ j ] += 3;
-        }
+            $( WaterBlight ).hasClass( 'blue' ) &&
+             ( j === 1 || j === 2 || j === 3 ) &&
+          power.rawHZV >= 60 ) {
+           HZV[ j ] < 60
+        };
 
         const textNode = document.createTextNode( HZV[ j ] );
-
         if ( HZV[ j ] < 14 ) {
           cell.setAttribute( "class", "F" );
         } else if ( HZV[ j ] < 25 ) {
@@ -1295,17 +1292,14 @@ function MonChart() {
 function HideAndRevealTypeSpecificElements( redKeyCard = false ) {
   if (
     check.every( ( keyCard ) => keyCard ) &&
-    ( redKeyCard || window.event.path[ 0 ] === $( "#dropWeaponType" )[ 0 ] )
+    ( redKeyCard || window.event.path[ 0 ] === dropWeaponType )
   ) {
     comboTracker = [];
-    // hides all weaponType specific elements and sets selected index to 0
-    for ( let i = 0; i < $( ".classSpecific" ).length; ++i ) {
-      $( ".classSpecific" )[ i ].parentNode.style = "display:none";
-      $( ".classSpecific" )[ i ].selectedIndex = 0;
-      $( "#divComboAttacks" )[ 0 ].style = "display:''";
+    $( ".classSpecific" ).attr('selectedIndex',  0);
+    $( ".classSpecific" ).parent().hide();
+    $( "#divComboAttacks" ).hide();
       weaponId.innerHTML = "";
-    }
-    if ( /(Bow)/.test( $( "#dropWeaponType" ).val() ) ) {
+    if ( /(Bow)/.test( dropWeaponType.value )) {
       $( "#sharpnessContainer" ).hide();
       RangedElements();
       UniqueColumnsDisplay();
@@ -1317,25 +1311,16 @@ function HideAndRevealTypeSpecificElements( redKeyCard = false ) {
 }
 function RangedElements() {
   // shows type specific common to Bow and BowGun
-
-  $( "#sharpnessContainer" ).style = "display:none";
   ammoTable.style.display = "none";
 
-  weaponId.append( $( "#dropWeaponType" ).val() );
-  weaponId.style = "display:''";
-  for ( let i = 0; i < $( `.${ $( "#dropWeaponType" ).val() }` ).length; ++i ) {
-    $( `.${ $( "#dropWeaponType" ).val() }` )[ i ].parentNode.style = "display:''";
-  }
-  for ( let i = 0; i < $( ".Shot" ).length; ++i ) {
-    $( ".Shot" )[ i ].parentNode.style = "display:''";
-  }
-  if ( /(BowGun)/.test( $( "#dropWeaponType" ).val() ) ) {
-    // shows all type specific related to BowGun
-    $( "#divComboAttacks" )[ 0 ].style = "display:none";
+  weaponId.append( dropWeaponType.value );
+  $(weaponId).show();
+    $( `.${ dropWeaponType.value }` ).parent().show();
+    $( ".Shot" ).parent().show();
+  if ( /(BowGun)/.test( dropWeaponType.value ) ) {
     ammoChange.style = "display:''";
     resetCombo.style = "display:none";
   } else {
-    // shows all type specific related to Bow
     ammoChange.style = "display:none";
     resetCombo.style = "display:''";
     // hides Rapid Fire div
@@ -1419,14 +1404,12 @@ function ResetSkills() {
     }
   }
 }
-$( function () {
-  $( '.toggle' ).click( function ( e ) {
-    $( this ).toggleClass( 'gray' );
-    $( this ).toggleClass( 'blue' );
-    $( this ).attr( 'aria-pressed', ( $( this ).attr( 'aria-pressed' ) == "false" ? true : false ) );
-    DataCompile( e );
-    MonChart( e );
-  } );
+$( '.toggle' ).click( function ( e ) {
+  $( this ).toggleClass( 'gray' );
+  $( this ).toggleClass( 'blue' );
+  $( this ).attr( 'aria-pressed', ( $( this ).attr( 'aria-pressed' ) == "false" ? true : false ) );
+  DataCompile( e );
+  MonChart( e );
 } );
 function ToggleAmmoTables() {
   dpsTable.style =
@@ -1583,8 +1566,9 @@ function RampageSelect() {
 };
 
 function PartSelect() {
-  //  if ( check.every( ( keyCard ) => keyCard ) ) {
-  PopulateDropDowns( Object.keys( window.monster[ $( "#dropMonster" ).val() ].HitZone ), dropHZ );
+  if ( check.every( ( keyCard ) => keyCard ) ) {
+    PopulateDropDowns( Object.keys( window.monster[ $( "#dropMonster" ).val() ].HitZone ), dropHZ );
+  }
 }
 function QuestSelect() {
   $( "#dropQuest" ).empty();
