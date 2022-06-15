@@ -1199,6 +1199,7 @@ function MonChart() {
     });
 
     table.appendChild(headerRow);
+
     for (let i = 0; i < Object.keys(mons).length; ++i) {
       const row = document.createElement("tr");
       const HZV = [].concat(
@@ -1209,35 +1210,37 @@ function MonChart() {
       for (let j = 0; j < 9; ++j) {
         const cell = document.createElement("td");
         // adds demon ammo and water blight to displayed HZV
-        HZV[j] *=
-          $(DemonAmmo).hasClass('blue') && /1|2/.test(j)
-            ? 1.1
-            : 1;
-        HZV[j] +=
-          $(WaterBlight).hasClass('blue') &&
-            /1|2|3/.test(j) &&
-            HZV[j] < 60
-            ? 25
-            : 0;
-        HZV[j] +=
-          $(WaterBlight).hasClass('blue') &&
-            /1|2|3/.test(j) &&
-            HZV[j] >= 60
-            ? 3
-            : 0;
+        if (j !== 0) {
+          HZV[j] *=
+            $(DemonAmmo).hasClass('blue') && /1|2/.test(j)
+              ? 1.1
+              : 1;
+          HZV[j] +=
+            $(WaterBlight).hasClass('blue') &&
+              /1|2|3/.test(j) &&
+              HZV[j] < 60
+              ? 25
+              : 0;
+          HZV[j] +=
+            $(WaterBlight).hasClass('blue') &&
+              /1|2|3/.test(j) &&
+              HZV[j] >= 60
+              ? 3
+              : 0;
 
-        const textNode = document.createTextNode(~~(HZV[j]));
-        if (HZV[j] < 14) {
-          cell.setAttribute("class", "F");
-        } else if (HZV[j] < 25) {
-          cell.setAttribute("class", "C");
-        } else if (HZV[j] < 45) {
-          cell.setAttribute("class", "B");
-        } else if (HZV[j] < 70) {
-          cell.setAttribute("class", "A");
-        } else if (HZV[j] >= 70) {
-          cell.setAttribute("class", "S");
+              if (HZV[j] < 14) {
+                cell.setAttribute("class", "F");
+              } else if (HZV[j] < 25) {
+            cell.setAttribute("class", "C");
+          } else if (HZV[j] < 45) {
+            cell.setAttribute("class", "B");
+          } else if (HZV[j] < 70) {
+            cell.setAttribute("class", "A");
+          } else if (HZV[j] >= 70) {
+            cell.setAttribute("class", "S");
+          }
         }
+        const textNode = document.createTextNode(HZV[j]);
         cell.appendChild(textNode);
         row.appendChild(cell);
       }
@@ -1454,11 +1457,11 @@ function PopulateDropDowns(json, dropDown) {
 
 function WeaponTypeSelect() {
   PopulateDropDowns(Object.keys(window.weapon).filter((weapon) => !/Shot/.test(weapon)), dropWeaponType);
-}
+};
 
 function WeaponSelect() {
   PopulateDropDowns(Object.keys(window.weapon[$("#dropWeaponType").val()]), dropWeapon);
-}
+};
 function RampageSelect() {
   $(weaponRampage.children).text('');
   $(weaponRampage.children).hide();
@@ -1482,7 +1485,7 @@ function MonsterSelect() {
 
 function PartSelect() {
   PopulateDropDowns(Object.keys(window.monster[$("#dropMonster").val()].HitZone), dropHZ);
-}
+};
 
 function QuestSelect() {
   questList = [];
@@ -1497,4 +1500,4 @@ function QuestSelect() {
 
 function HealthSelect() {
   PopulateDropDowns(window.quest[$("#dropQuest").val()][$("#dropMonster").val()], dropHealth);
-}
+};
