@@ -1,13 +1,13 @@
-const URLAttack = "https://stonesan101.github.io/MHR-Damage/attacks.json";
-const URLMonster = "https://stonesan101.github.io/MHR-Damage/monsters.json";
-const URLQuest = "https://stonesan101.github.io/MHR-Damage/quest.json";
-const URLRampage = "https://stonesan101.github.io/MHR-Damage/rampage.json";
-const URLSharp = "https://stonesan101.github.io/MHR-Damage/sharpness.json";
-const URLType = "https://stonesan101.github.io/MHR-Damage/types.json";
-const URLWeapon = "https://stonesan101.github.io/MHR-Damage/weapons.json";
-const URLSPM = "https://stonesan101.github.io/MHR-Damage/frames.json";
-const URLLight = "https://stonesan101.github.io/MHR-Damage/lbg.json";
-const URLHeavy = "https://stonesan101.github.io/MHR-Damage/hbg.json";
+const URLAttack = "/MHR-Damage/attacks.json";
+const URLMonster = "/MHR-Damage/monsters.json";
+const URLQuest = "/MHR-Damage/quest.json";
+const URLRampage = "/MHR-Damage/rampage.json";
+const URLSharp = "/MHR-Damage/sharpness.json";
+const URLType = "/MHR-Damage/types.json";
+const URLWeapon = "/MHR-Damage/weapons.json";
+const URLSPM = "/MHR-Damage/frames.json";
+const URLLight = "/MHR-Damage/lbg.json";
+const URLHeavy = "/MHR-Damage/hbg.json";
 
 let check = [0, 0, 0, 0, 0, 0, 0];
 let comboTracker = [];
