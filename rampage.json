@@ -1987,8 +1987,7 @@
 		"Deviation",
 		"Reload",
 		"Recoil",
-		"status",
+		"Status",
 		"Ele Blight"
-	],
-	"version": 1.1
+	]
 }
