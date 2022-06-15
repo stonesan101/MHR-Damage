@@ -1,13 +1,13 @@
-const URLAttack = "/MHR-Damage/attacks.json";
-const URLMonster = "/MHR-Damage/monsters.json";
-const URLQuest = "/MHR-Damage/quest.json";
-const URLRampage = "/MHR-Damage/rampage.json";
-const URLSharp = "/MHR-Damage/sharpness.json";
-const URLType = "/MHR-Damage/types.json";
-const URLWeapon = "/MHR-Damage/weapons.json";
-const URLSPM = "/MHR-Damage/frames.json";
-const URLLight = "/MHR-Damage/lbg.json";
-const URLHeavy = "/MHR-Damage/hbg.json";
+const URLAttack =  `${window.location.href}attacks.json`;
+const URLMonster = `${window.location.href}monsters.json`;
+const URLQuest =   `${window.location.href}quest.json`;
+const URLRampage = `${window.location.href}rampage.json`;
+const URLSharp =   `${window.location.href}sharpness.json`;
+const URLType =    `${window.location.href}types.json`;
+const URLWeapon =  `${window.location.href}weapons.json`;
+const URLSPM =     `${window.location.href}frames.json`;
+const URLLight =   `${window.location.href}lbg.json`;
+const URLHeavy =   `${window.location.href}hbg.json`;
 
 let check = [0, 0, 0, 0, 0, 0, 0];
 let comboTracker = [];
