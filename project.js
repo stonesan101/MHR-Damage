@@ -58,7 +58,7 @@ function RangedDPS() {
 	let power = {};
 	$.each(window[`ammo${$('#dropWeaponType').val()}`][$('#dropWeapon').val()].Ammo, function (key) {
 		power = { ...this };
-		power.aff = window.weapon[$('#dropWeaponType').val()][$('#dropWeapon').val()].AFF;
+		power.aff = window.weapon[$('#dropWeaponType').val()][$('#dropWeapon').val()].aff;
 		power.baseRaw = window.weapon[$('#dropWeaponType').val()][$('#dropWeapon').val()].baseRaw;
 		[power.eleType, power.baseEle] = this.Ele;
 		power.recoil = window[`ammo${$('#dropWeaponType').val()}`][$('#dropWeapon').val()].recoil;
