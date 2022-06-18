@@ -5,7 +5,7 @@ const URLRampage = `${window.location.href}rampage.json`;
 const URLSharp = `${window.location.href}sharpness.json`;
 const URLType = `${window.location.href}types.json`;
 const URLWeapon = `${window.location.href}weapons.json`;
-const URLSPM = `${window.location.href}frames.json`;
+const URLFrames = `${window.location.href}frames.json`;
 const URLLight = `${window.location.href}lbg.json`;
 const URLHeavy = `${window.location.href}hbg.json`;
 
@@ -34,7 +34,7 @@ $.getJSON(URLHeavy, (data) => {
 $.getJSON(URLLight, (data) => {
 	window.ammoLightBowGun = data.LightBowGun;
 });
-$.getJSON(URLSPM, (data) => {
+$.getJSON(URLFrames, (data) => {
 	window.spm = data;
 });
 $.getJSON(URLRampage, (data) => {
@@ -163,14 +163,11 @@ function MeleeDPS() {
 	let meleeDamage = [['Combo', 'Attack Name', 'MV', 'Raw', 'Element', 'Total', 'EFR', 'EFE', 'Effective']];
 	let comboDamage = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 	let power = {};
-
 	power = { ...window.weapon[$('#dropWeaponType').val()][$('#dropWeapon').val()] };
 	//  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
 	power = ApplyRampageSelections(power);
 	power.attacks =
-		$('#dropWeaponType').val() === 'Bow' ||
-		$('#dropWeaponType').val() === 'ChargeBlade' ||
-		$('#dropWeaponType').val() === 'Gunlance'
+		$('#dropWeaponType').val() === 'Bow' || $('#dropWeaponType').val() === 'ChargeBlade'
 			? AddDependantSkills(power)
 			: window.attack[$('#dropWeaponType').val()];
 
@@ -199,13 +196,13 @@ function MeleeDPS() {
 			 * to later be used to update the comboDamage in the dpsTable
 			 */
 			if (attackID > 0 && $('.inputs').length > 0) {
-				$(Object.keys(power.hitsOfSharpnessPerColor)).each(function (index, color) {
-					if (TimesUsed(attackID, power.hitsOfSharpnessPerColor[color]) > 0) {
+				$(Object.keys(power.comboHitsBySharpnessUsed)).each(function (index, color) {
+					if (TimesUsed(attackID, power.comboHitsBySharpnessUsed[color]) > 0) {
 						const [sharpPRM, sharpPEM] =
 							power.skillType === ('Sever' || 'Blunt') && window.attack[$('#dropWeaponType').val()][power.thisAttack].hitsOfSharp > 0
 								? [window.sharpness.mod[color].PRM, window.sharpness.mod[color].PEM]
 								: [1, 1];
-						let hitsPerAttackPerSharpness = TimesUsed(attackID, power.hitsOfSharpnessPerColor[color]);
+						let hitsPerAttackPerSharpness = TimesUsed(attackID, power.comboHitsBySharpnessUsed[color]);
 						// combo=[rawMV,rawNon,rawCrit,eleNon,eleCrit,totalNon,TotalCrit,EFR,EFE,totalEffective]
 						comboDamage = [
 							(comboDamage[0] += Number(~~(0.5 + power.rawMV * hitsPerAttackPerSharpness * power.ticsPer))),
@@ -292,12 +289,14 @@ function MeleeDPS() {
 		}
 	});
 	if ($('#dropWeaponType').val() === 'Gunlance') {
-		GunlanceShelling(meleeDamage, comboDamage, attackID, power);
+		GunlanceShelling(meleeDamage, comboDamage);
 	} else {
+		if (!/Inputs/.test(event.target.className)) {
+			BuildDamageTable(meleeDamage, 'dps');
+		}
 		if ($('#dropWeaponType').val() === 'Bow') {
 			comboDamage = BowComboDamage();
 		}
-		BuildDamageTable(meleeDamage, 'dps');
 		[c0.innerHTML, g0.innerHTML, h0.innerHTML, i0.innerHTML] = [comboDamage[0], comboDamage[7], comboDamage[8], comboDamage[9]];
 		d0.innerHTML = `${comboDamage[1]} / ${comboDamage[2]}`;
 		e0.innerHTML = `${comboDamage[3]} / ${comboDamage[4]}`;
@@ -335,15 +334,6 @@ function AddDependantSkills() {
 		let attacks = Object.fromEntries(
 			Object.entries(window.attack[$('#dropWeaponType').val()]).filter((skill) => !regexp.test(skill)),
 		);
-		return attacks;
-	}
-
-	// adds Gunlance Shelling Attacks to attacks array
-	if ($('#dropWeaponType').val() === 'Gunlance') {
-		let attacks = {
-			...window.attack[$('#dropWeaponType').val()],
-			...Object.keys(window.attack.GunlanceShelling[window.weapon.GunlanceShelling[$('#dropWeapon').val()][0]]),
-		};
 		return attacks;
 	}
 
@@ -391,6 +381,7 @@ function GetSkills(power) {
 	// applies Water Blight if selected appropriate to the hzv
 	power.rawHZV += $(WaterBlight).hasClass('blue') && /(Sever|Blunt|Shot)/.test(power.type) && power.rawHZV < 60 ? 25 : 0;
 	power.rawHZV += $(WaterBlight).hasClass('blue') && /(Sever|Blunt|Shot)/.test(power.type) && power.rawHZV >= 60 ? 3 : 0;
+
 	$('.skillButton').each(function () {
 		if ($(this).hasClass('blue')) {
 			const skills = JSON.parse(this.value);
@@ -403,7 +394,7 @@ function GetSkills(power) {
 			power.aff += skills.aff;
 		}
 	});
-
+	Object.se;
 	power.getSkills = [];
 	switch (power.type) {
 		case 'Sever':
@@ -588,13 +579,13 @@ function TotalHitsOfSharpUsed(power) {
 			listOfEachAttack = listOfEachAttack.concat(comboTracker);
 		}
 		let totalHitsOfSharpnessUsed = 0;
-		const hitsOfSharpnessPerColor = {};
-		hitsOfSharpnessPerColor.white = [];
-		hitsOfSharpnessPerColor.blue = [];
-		hitsOfSharpnessPerColor.green = [];
-		hitsOfSharpnessPerColor.yellow = [];
-		hitsOfSharpnessPerColor.orange = [];
-		hitsOfSharpnessPerColor.red = [];
+		const comboHitsBySharpnessUsed = {};
+		comboHitsBySharpnessUsed.white = [];
+		comboHitsBySharpnessUsed.blue = [];
+		comboHitsBySharpnessUsed.green = [];
+		comboHitsBySharpnessUsed.yellow = [];
+		comboHitsBySharpnessUsed.orange = [];
+		comboHitsBySharpnessUsed.red = [];
 
 		$(listOfEachAttack).each(function () {
 			const eachAttack = this;
@@ -609,21 +600,21 @@ function TotalHitsOfSharpUsed(power) {
 			}
 			let totalHits = 0;
 			if (totalHitsOfSharpnessUsed <= (totalHits += total.white)) {
-				hitsOfSharpnessPerColor.white.push(eachAttack);
+				comboHitsBySharpnessUsed.white.push(eachAttack);
 			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue)) {
-				hitsOfSharpnessPerColor.blue.push(eachAttack);
+				comboHitsBySharpnessUsed.blue.push(eachAttack);
 			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.green)) {
-				hitsOfSharpnessPerColor.green.push(eachAttack);
+				comboHitsBySharpnessUsed.green.push(eachAttack);
 			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.yellow)) {
-				hitsOfSharpnessPerColor.yellow.push(eachAttack);
+				comboHitsBySharpnessUsed.yellow.push(eachAttack);
 			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.orange)) {
-				hitsOfSharpnessPerColor.orange.push(eachAttack);
+				comboHitsBySharpnessUsed.orange.push(eachAttack);
 			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.red)) {
-				hitsOfSharpnessPerColor.red.push(eachAttack);
+				comboHitsBySharpnessUsed.red.push(eachAttack);
 			}
 		});
 
-		console.log(hitsOfSharpnessPerColor);
+		console.log(comboHitsBySharpnessUsed);
 
 		let hits = totalHitsOfSharpnessUsed;
 		[whiteMin, hits] = hits - total.white > 0 ? [0, hits - total.white] : [total.white - hits, 0];
@@ -663,7 +654,7 @@ function TotalHitsOfSharpUsed(power) {
 		} else if (redMin >= 0) {
 			Sharpness.selectedIndex = 1;
 		}
-		power.hitsOfSharpnessPerColor = hitsOfSharpnessPerColor;
+		power.comboHitsBySharpnessUsed = comboHitsBySharpnessUsed;
 		return power;
 	}
 	if (event.target.path.length !== 0) {
@@ -711,7 +702,7 @@ function BowComboDamage() {
 	});
 	return comboDamage;
 }
-function GunlanceShelling(currentDamage, comboDamage, ID) {
+function GunlanceShelling(currentDamage, comboDamage) {
 	const shellingType = window.weapon.GunlanceShelling[$('#dropWeapon').val()][0];
 	const shellingLevel = window.weapon.GunlanceShelling[$('#dropWeapon').val()][1];
 	console.log(shellingType, shellingLevel);
@@ -733,7 +724,7 @@ function GunlanceShelling(currentDamage, comboDamage, ID) {
 			'Effective': (raw + ele) * ticsPer,
 		};
 
-		for (let i = 0; i < TimesUsed(ID); ++i) {
+		for (let i = 0; i < TimesUsed(index + 14); ++i) {
 			comboDamage[0] += 0;
 			comboDamage[1] += raw;
 			comboDamage[2] += raw;
@@ -746,11 +737,10 @@ function GunlanceShelling(currentDamage, comboDamage, ID) {
 			comboDamage[9] += (raw + ele) * ticsPer;
 		}
 		currentDamage.push(final);
-		++ID;
 	});
-
-	BuildDamageTable(currentDamage, 'dps');
-
+	if (!/Inputs/.test(event.target.className)) {
+		BuildDamageTable(currentDamage, 'dps');
+	}
 	c0.innerHTML = `${[comboDamage[0]]}`;
 	d0.innerHTML = `${[comboDamage[1]]} / ${[comboDamage[2]]}`;
 	e0.innerHTML = `${[comboDamage[3]]} / ${[comboDamage[4]]}`;

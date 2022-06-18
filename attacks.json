@@ -5267,59 +5267,101 @@
 			"rawMV": 1,
 			"type": "Sever",
 			"eleMV": 1,
+
+			"ticsPer": 1,
+
 			"hitsOfSharp": 1
 		},
 		"Lunging Upthrust": {
 			"rawMV": 30,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		},
 		"Lateral Thrust I/II/III": {
 			"rawMV": 24,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		},
 		"Guard Thrust I/II/III": {
 			"rawMV": 18,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		},
 		"Rising Slash": {
 			"rawMV": 30,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		},
 		"Overhead Smash": {
 			"rawMV": 48,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		},
 		"Wide Sweep": {
 			"rawMV": 68,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		},
 		"Wyrmstake Cannon(1st Hit)": {
 			"rawMV": 28,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		},
 		"Blast Dash Overhead Smash": {
 			"rawMV": 55,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		},
 		"Jumping Thrust": {
 			"rawMV": 25,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		},
 		"Jumping Smash": {
 			"rawMV": 44,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		},
 		"Hail Cutter(1st Hit)": {
 			"rawMV": 30,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		},
 		"Hail Cutter(2nd Hit)": {
 			"rawMV": 85,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		},
 		"Ground Splitter": {
 			"rawMV": 68,
-			"type": "Sever"
+			"type": "Sever",
+			"eleMV": 1,
+			"hitsOfSharp": 1,
+			"ticsPer": 1
 		}
 	},
 	"GunlanceShelling": {
