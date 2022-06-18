@@ -324,6 +324,10 @@ button#MegaDemonDrug {
   grid-area: 3 / 1 / 4 / 2;
 }
 
+button#Booster {
+  grid-area: 4 / 2 / 5 / 3;
+}
+
 button#huntingHornAffinity {
   grid-area: 3 / 4 / auto / auto;
 }
