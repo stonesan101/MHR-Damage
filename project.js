@@ -1,4 +1,5 @@
-const baseURL = window.location.origin === 'http://localhost:5500' ? 'http://localhost:5500' : 'https://stonesan101.github.io/MHR-Damage';
+const baseURL =
+	window.location.origin === 'http://localhost:5500' ? 'http://localhost:5500' : 'https://stonesan101.github.io/MHR-Damage';
 const URLAttack = `${baseURL}/attacks.json`;
 const URLMonster = `${baseURL}/monsters.json`;
 const URLQuest = `${baseURL}/quest.json`;
@@ -171,7 +172,9 @@ function MeleeDPS() {
 		$('#dropWeaponType').val() === 'Bow' || $('#dropWeaponType').val() === 'ChargeBlade'
 			? AddDependantSkills(power)
 			: window.attack[$('#dropWeaponType').val()];
-
+	if ($(filterCombo).hasClass('blue')) {
+		Object.fromEntries(Object.entries(power.attacks).filter(index => $('.inputs')[index].value > 0));
+	}
 	$(Object.keys(power.attacks)).each(function (attackID, eachAttack) {
 		power = { ...power, ...power.attacks[eachAttack] };
 		power.thisAttack = eachAttack;
@@ -858,9 +861,9 @@ function BuildDamageTable(myDamage, id) {
 		});
 	}
 
-	if ($('#filterCombo').hasClass('blue')) {
-		$('.a').hide();
-	}
+	$('.a').each(function (index) {
+		/display: none/.test($(this).attr('style')) ? $(index).hide() : $(index).show();
+	});
 }
 
 function MonChart() {
@@ -1064,17 +1067,15 @@ function ComboReset(redKeyCard = false) {
 	}
 }
 function FilterTableForComboAttacks() {
-	if (/blue/.test(filterCombo.className)) {
-		$('.inputs').each(function (index, element) {
-			if (element.value === '0') {
-				$(`.${index}`).hide();
-			}
-		});
-	} else {
-		DataCompile();
-		$('.a').show;
-	}
+	$('.inputs').each(function (index, element) {
+		if (/blue/.test(filterCombo.className) && element.value === '0') {
+			$(`.${index}`).hide();
+		} else {
+			$(`.${index}`).show();
+		}
+	});
 }
+
 function TimesUsed(ID, arr = comboTracker) {
 	return arr.filter(attackId => attackId == ID).length;
 }
@@ -1089,12 +1090,6 @@ function DecreaseComboCount() {
 		--$('.inputs')[event.target.id].value;
 	}
 }
-
-$('.inputButtons.inc').on('click', IncreaseComboCount);
-$('.inputButtons.dec').on('click', DecreaseComboCount);
-$('.inputs').on('click', function (e) {
-	DataCompile(e);
-});
 
 $(document).ajaxSuccess(() => {
 	if (check.some(keyCard => !keyCard)) {
