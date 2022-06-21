@@ -1,4 +1,4 @@
-const baseURL = window.location.origin === 'http://localhost:5500' ? 'http://localhost:5500' : 'http://localhost:5500/MHR-Damage';
+const baseURL = window.location.origin === 'http://localhost:5500' ? 'http://localhost:5500' : 'https://stonesan101.github.io/MHR-Damage';
 const URLAttack = `${baseURL}/attacks.json`;
 const URLMonster = `${baseURL}/monsters.json`;
 const URLQuest = `${baseURL}/quest.json`;
