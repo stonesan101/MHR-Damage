@@ -858,8 +858,8 @@ function BuildDamageTable(myDamage, id) {
 		});
 	}
 
-	if ($('#filterCombo').hasClass('gray')) {
-		$('.a').show();
+	if ($('#filterCombo').hasClass('blue')) {
+		$('.a').hide();
 	}
 }
 
