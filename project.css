@@ -9,7 +9,7 @@
   }
 
   div#section2 {
-    grid-area: 3/1/4/2
+    grid-area: 3/1/4/2;
   }
 
   div#divComboAttacks {
@@ -17,8 +17,74 @@
   }
 }
 
+output#label {
+  /* top: .3rem; */
+  pointer-events: none;
+  position: relative;
+  /* width: max-content; */
+  font-size: 0.55rem;
+  color: #ffffff;
+  font-weight: bold;
+  min-height: 1.32rem;
+  z-index: 10;
+  width: 100%;
+  display: grid;
+  border: none;
+  grid-area: 1/1/2/3;
+}
+
+div.inputContainer {
+  top: 0;
+  z-index: 30;
+  position: absolute;
+  grid-template-columns: 1fr 1fr;
+  min-height: 1.32rem;
+  display: grid;
+
+  color: #ffffff;
+
+  z-index: 15;
+}
+
+button.inputButton:hover {
+  color: #fcfcfc;
+  z-index: 20;
+  font-weight: 900;
+  font-size: 1rem;
+  background-color: rgba(11, 16, 42, 0.74);
+}
+
+button.dec.inputButton {
+  left: 0;
+  /* grid-area: 1/1/2/2; */
+}
+
+button.inc.inputButton {
+  justify-items: end;
+  right: 0;
+  grid-area: 1/2/2/3;
+  border-left: none;
+}
+
+td.b {
+  width: 10rem;
+}
+
+button.inputButton {
+  top: 0;
+  pointer-events: auto;
+  background-color: rgb(11 11 42 / 63%);
+  position: absolute;
+  color: #cd000000;
+  z-index: 5;
+  border: none;
+  width: 50%;
+  min-height: 1.32rem;
+  /* border-color: rgb(77, 67, 69); */
+}
+
 div#divComboAttacks {
-  min-width: 130px;
+  max-width: 130px;
 }
 
 tr,
@@ -32,7 +98,6 @@ html {
   min-width: fit-content;
   display: grid;
   justify-content: center;
-  gap: 3rem;
 }
 
 div#statsTableDiv {
@@ -40,6 +105,7 @@ div#statsTableDiv {
 }
 
 section#section3 {
+  grid-template-columns: repeat(3, 1fr);
   display: grid;
   gap: 0.25rem;
   margin-top: 0.25rem;
@@ -84,14 +150,10 @@ div#weaponSelect.contain {
   grid-area: 2 / 1 / 3 /6;
 }
 
-
-
-
-
-
 *.contain {
   gap: 0.25rem;
   display: grid;
+  box-sizing: border-box;
 }
 
 body {
@@ -130,11 +192,12 @@ div#sharpnessContainer {
   justify-content: start;
   background-color: rgb(10, 10, 10);
   border-style: ridge;
-  grid-area: 3 / 2 / 4 / 3;
+  grid-area: 2 / 1 / 3 / 4;
   column-gap: 0px;
   grid-template-columns: repeat(6, auto);
   width: fit-content;
   border-color: rgb(77, 67, 69);
+  justify-self: center;
 }
 
 div.sharpness {
@@ -173,9 +236,10 @@ div#monContainer.contain {
   min-width: fit-content;
 }
 
-.meleeTable>tr>td.b {
-  background-color: rgba(11, 11, 42, 0.792);
+.meleeTable>tr>.b {
+  background-color: rgb(11 11 42 / 0%);
   font-size: 0.6rem;
+  position: relative;
 }
 
 input.inputs,
@@ -199,14 +263,11 @@ tbody.dpsBody>tr>td:nth-child(2) {
   width: 8rem;
 }
 
-tbody.meleeTable>tr>td#b0 {
-  width: 8rem;
-}
-
 #forButtons {
+  grid-area: 1/1/2/4;
   gap: 0.25rem;
   place-content: center;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 div#forButtonSelect {
@@ -215,6 +276,10 @@ div#forButtonSelect {
   justify-items: center;
   justify-content: center;
   grid-area: 2/1/3/4;
+}
+
+button#filterCombo {
+  grid-area: 1/1/2/2;
 }
 
 #forButtonSelect>div:nth-child(1) {
@@ -228,7 +293,7 @@ div#forButtonSelect {
 #dpsTable {
   border: none;
   overflow: hidden scroll;
-  grid-column: 1 / 3/ 2/ 4;
+  grid-column: 3 / 1/ 4/ -1;
   min-width: fit-content;
   border-spacing: 0px;
   display: table-caption;
@@ -265,11 +330,12 @@ tr>th {
   position: sticky;
   font-size: 0.6rem;
   border-style: outset;
-  background-color: rgba(11, 11, 42, 0.796);
+  background-color: rgb(11 11 42);
   border-spacing: 0px;
   min-width: fit-content;
   width: 3rem;
   min-height: 1.2rem;
+  z-index: 50;
 }
 
 tbody>tr>td {
@@ -294,6 +360,10 @@ output.comboAttack {
 
 #ammoChange {
   grid-column: 3 / 4;
+}
+
+button#Booster {
+  grid-area: 4 / 2 / 5 / 3;
 }
 
 button#Butterflame {
@@ -329,7 +399,7 @@ button#Booster {
 }
 
 button#huntingHornAffinity {
-  grid-area: 3 / 4 / auto / auto;
+  grid-area: 3 / 4 / 4 / 5;
 }
 
 button#huntingHornElemental {
@@ -345,7 +415,7 @@ button#sleepWakeUp {
 }
 
 button#palicoAffinity {
-  grid-area: 3 / 3 / auto / auto;
+  grid-area: 3 / 3 / 4 / 4;
 }
 
 button#Demon\ Seed {
@@ -370,10 +440,6 @@ button#Power\ Talisman {
   display: table-cell;
   border-spacing: 0px;
   height: 6.25;
-}
-
-#section3>div:nth-child(2) {
-  grid-area: 2 / 1 / 2 / 2;
 }
 
 tr:nth-child(2n) {
@@ -433,6 +499,10 @@ td {
   border-style: outset;
   background-color: rgb(11, 11, 42);
   font-size: 0.6rem;
+}
+
+div#damageTable {
+  grid-area: 3/1/4/4;
 }
 
 .b.meleeTable {
@@ -525,17 +595,11 @@ div#divEnrage {
 #monContainer>div:nth-child(2) {
   display: grid;
   grid-area: 3 / 2 / auto / 3;
-
 }
 
 select#dropEnraged {
   grid-area: 2 / 1 / 3 / 2;
   border-right: 0px;
-}
-
-div#forButtons {
-  grid-area: 1 / 1 / 2 / 2;
-  border: none;
 }
 
 div#aff.contain {
@@ -700,7 +764,6 @@ div#unique {
   color: rgb(44, 44, 44);
 }
 
-
 .B:nth-child(2),
 .B:nth-child(3),
 .B:nth-child(4) {
@@ -708,14 +771,12 @@ div#unique {
   color: rgb(94, 94, 94);
 }
 
-
 .C:nth-child(2),
 .C:nth-child(3),
 .C:nth-child(4) {
   background-color: rgb(243, 156, 128);
   color: rgb(134, 134, 134);
 }
-
 
 .F:nth-child(2),
 .F:nth-child(3),

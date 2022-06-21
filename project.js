@@ -1,46 +1,47 @@
-const URLAttack = `${window.location.href}attacks.json`;
-const URLMonster = `${window.location.href}monsters.json`;
-const URLQuest = `${window.location.href}quest.json`;
-const URLRampage = `${window.location.href}rampage.json`;
-const URLSharp = `${window.location.href}sharpness.json`;
-const URLType = `${window.location.href}types.json`;
-const URLWeapon = `${window.location.href}weapons.json`;
-const URLFrames = `${window.location.href}frames.json`;
-const URLLight = `${window.location.href}lbg.json`;
-const URLHeavy = `${window.location.href}hbg.json`;
+const baseURL = window.location.origin === 'http://localhost:5500' ? 'http://localhost:5500' : 'http://localhost:5500/MHR-Damage';
+const URLAttack = `${baseURL}/attacks.json`;
+const URLMonster = `${baseURL}/monsters.json`;
+const URLQuest = `${baseURL}/quest.json`;
+const URLRampage = `${baseURL}/rampage.json`;
+const URLSharp = `${baseURL}/sharpness.json`;
+const URLType = `${baseURL}/types.json`;
+const URLWeapon = `${baseURL}/weapons.json`;
+const URLFrames = `${baseURL}/frames.json`;
+const URLLight = `${baseURL}/lbg.json`;
+const URLHeavy = `${baseURL}/hbg.json`;
 
 let check = [0, 0, 0, 0, 0, 0, 0];
 let comboTracker = [];
 
-$.getJSON(URLWeapon, (data) => {
+$.getJSON(URLWeapon, data => {
 	window.weapon = data;
 });
 
-$.getJSON(URLMonster, (data) => {
+$.getJSON(URLMonster, data => {
 	window.monster = data;
 });
-$.getJSON(URLQuest, (data) => {
+$.getJSON(URLQuest, data => {
 	window.quest = data;
 });
-$.getJSON(URLType, (data) => {
+$.getJSON(URLType, data => {
 	window.skillCategories = data;
 });
-$.getJSON(URLAttack, (data) => {
+$.getJSON(URLAttack, data => {
 	window.attack = data;
 });
-$.getJSON(URLHeavy, (data) => {
+$.getJSON(URLHeavy, data => {
 	window.ammoHeavyBowGun = data.HeavyBowGun;
 });
-$.getJSON(URLLight, (data) => {
+$.getJSON(URLLight, data => {
 	window.ammoLightBowGun = data.LightBowGun;
 });
-$.getJSON(URLFrames, (data) => {
+$.getJSON(URLFrames, data => {
 	window.spm = data;
 });
-$.getJSON(URLRampage, (data) => {
+$.getJSON(URLRampage, data => {
 	window.rampage = data;
 });
-$.getJSON(URLSharp, (data) => {
+$.getJSON(URLSharp, data => {
 	window.sharpness = data;
 });
 
@@ -332,7 +333,7 @@ function AddDependantSkills() {
 		const regexp = new RegExp(`${phialType} `);
 
 		let attacks = Object.fromEntries(
-			Object.entries(window.attack[$('#dropWeaponType').val()]).filter((skill) => !regexp.test(skill)),
+			Object.entries(window.attack[$('#dropWeaponType').val()]).filter(skill => !regexp.test(skill)),
 		);
 		return attacks;
 	}
@@ -352,7 +353,7 @@ function AddDependantSkills() {
 
 		attacks = {
 			...Object.fromEntries(Object.entries(attacksTemp).splice(0, 7)),
-			...Object.fromEntries(Object.entries(attacksTemp).filter((skill) => regex.test(skill))),
+			...Object.fromEntries(Object.entries(attacksTemp).filter(skill => regex.test(skill))),
 			...Object.fromEntries(Object.entries(attacksTemp).splice(60)),
 		};
 		return attacks;
@@ -427,7 +428,7 @@ function GetSkills(power) {
 		power.getSkills = power.getSkills.concat(power.unique);
 	}
 
-	power.getSkills.forEach((skill) => {
+	power.getSkills.forEach(skill => {
 		if (document.getElementById([skill]).selectedIndex > 0) {
 			const skills = JSON.parse(document.getElementById([skill]).value);
 
@@ -509,7 +510,7 @@ function GetRemainingSkills(power) {
 function UpdateComboTracker() {
 	if (!Number.isNaN(+event.target.id)) {
 		// if value entered in the e.target combo input > amount stored in comboTracker [] adds attack id to the end of the comboTracker until they are ===
-		let difference = event.target.value - TimesUsed(event.target.id);
+		let difference = $('.inputs')[event.target.id].value - TimesUsed(event.target.id);
 		while (difference > 0) {
 			comboTracker.push(event.target.id);
 			--difference;
@@ -527,7 +528,7 @@ function UpdateComboDisplay() {
 	$(comboTracker).each(function (index, element) {
 		comboHit = document.createElement('output');
 		comboHit.className = 'comboHits';
-		comboHit.textContent = $(`#b${[element]}`).text();
+		comboHit.textContent = $(`td#b${[element]}>output`).text();
 		$(comboCountDisplay).after(comboHit);
 	});
 }
@@ -591,7 +592,7 @@ function TotalHitsOfSharpUsed(power) {
 			const eachAttack = this;
 			if ($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 14)) {
 				for (let i = 0; i < power.ticsPer; i++) {
-					if (window.attack[$('#dropWeaponType').val()][$(`#b${eachAttack}`).text()].hitsOfSharp > 0) {
+					if (window.attack[$('#dropWeaponType').val()][$(`td#b${eachAttack}>output`).text()].hitsOfSharp > 0) {
 						++totalHitsOfSharpnessUsed;
 					}
 				}
@@ -657,7 +658,7 @@ function TotalHitsOfSharpUsed(power) {
 		power.comboHitsBySharpnessUsed = comboHitsBySharpnessUsed;
 		return power;
 	}
-	if (event.target.path.length !== 0) {
+	if (event.target.length !== 0) {
 		comboTracker = [event.target.id];
 	}
 }
@@ -694,7 +695,7 @@ function BowComboDamage() {
 			$(tableCell).each(function (index, letter) {
 				eachAttacksDamage = eachAttacksDamage.concat(`${$(`#${[letter + input.id]}`).text()}`.match(/\d+/g));
 			});
-			eachAttacksDamage = eachAttacksDamage.map((damage) => +damage * input.value * $('.inputComboRepeat ').val());
+			eachAttacksDamage = eachAttacksDamage.map(damage => +damage * input.value * $('.inputComboRepeat ').val());
 			$(eachAttacksDamage).each(function (index) {
 				comboDamage[index] += +eachAttacksDamage[index];
 			});
@@ -763,7 +764,7 @@ function BuildDamageTable(myDamage, id) {
 	const tBody = document.createElement('tbody');
 
 	const myHeaders = myDamage.splice(0, 1);
-	myHeaders[0].forEach((headerText) => {
+	myHeaders[0].forEach(headerText => {
 		const header = document.createElement('th');
 		const textNode = document.createTextNode(headerText);
 
@@ -773,17 +774,16 @@ function BuildDamageTable(myDamage, id) {
 
 	tHead.appendChild(headerRow);
 	myHeader.replaceWith(tHead);
-	myDamage.forEach((Attack) => {
+	myDamage.forEach(attack => {
 		const row = document.createElement('tr');
 
-		Object.values(Attack).forEach((text) => {
+		Object.values(attack).forEach(text => {
 			if (text === 'replaceME') {
 				if (
-					$('#previousWeaponType').val() === $('#dropWeaponType').val() &&
+					previousWeaponType.value === dropWeaponType.value &&
 					inputs.length > 0 &&
 					event.target.id !== 'mightyBowId' &&
-					(($('#dropWeaponType').val() === 'Bow' && previousWeapon.value === $('#dropWeapon').val()) ||
-						$('#dropWeaponType').val() !== 'Bow')
+					((dropWeaponType.value === 'Bow' && previousWeapon.value === dropWeapon.value) || dropWeaponType.value !== 'Bow')
 				) {
 					row.appendChild(inputs[k]);
 					++k;
@@ -794,7 +794,7 @@ function BuildDamageTable(myDamage, id) {
 					adjuster.setAttribute('type', 'Number');
 					adjuster.setAttribute('class', 'Combo skill');
 					adjuster.setAttribute('Max', 20);
-					if ($('#dropWeaponType').val() === 'Bow' && previousWeapon.value !== $('#dropWeapon').val()) {
+					if (dropWeaponType.value === 'Bow' && previousWeapon.value !== dropWeapon.value) {
 						comboTracker = [];
 						UpdateComboDisplay();
 					}
@@ -802,7 +802,7 @@ function BuildDamageTable(myDamage, id) {
 						adjuster.setAttribute('id', 'inputComboRepeat');
 						adjuster.setAttribute('Min', 1);
 						adjuster.setAttribute('value', 1);
-						adjuster.setAttribute('class', 'inputComboRepeat hitsOfSharpInputs');
+						adjuster.setAttribute('class', 'inputComboRepeat hitsOfSharpInputs inputs');
 					} else {
 						adjuster.setAttribute('id', k);
 						adjuster.setAttribute('class', 'inputs hitsOfSharpInputs');
@@ -842,15 +842,27 @@ function BuildDamageTable(myDamage, id) {
 		$('#previousWeaponType').val($('#dropWeaponType').val());
 		for (let i = 0; i < len; ++i) {
 			let j = 0;
-
-			column.forEach((letter) => {
-				$(`#${id}Body`)[0].children[i].children[j].className = `${letter} ${i}`;
+			column.forEach(letter => {
 				$(`#${id}Body`)[0].children[i].children[j].id = letter + i;
+				$(`#${id}Body`)[0].children[i].children[j].className = `${letter} ${i}`;
 				++j;
 			});
 		}
+		$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index, element) {
+			const cell = document.createElement('td');
+			cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputButton dec"
+			onclick="DecreaseComboCount(); DataCompile();">&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputButton inc" onclick="IncreaseComboCount(); DataCompile();">&#8679</button><output id="label">${element.textContent}</output>`;
+			$(cell).addClass(`b ${index} inputContainer`);
+			cell.id = `b${index}`;
+			this.replaceWith(cell);
+		});
+	}
+
+	if ($('#filterCombo').hasClass('gray')) {
+		$('.a').show();
 	}
 }
+
 function MonChart() {
 	if (Object.prototype.hasOwnProperty.call(window, 'monster')) {
 		const headers = [`${$('#dropMonster').val()}`, 'Sever', 'Blunt', 'Shot', 'Fire', 'Water', 'Thunder', 'Ice', 'Dragon'];
@@ -860,7 +872,7 @@ function MonChart() {
 		const myTable = document.querySelector('#monTable');
 		const headerRow = document.createElement('tr');
 
-		headers.forEach((headerText) => {
+		headers.forEach(headerText => {
 			const header = document.createElement('th');
 			const textNode = document.createTextNode(headerText);
 
@@ -975,16 +987,22 @@ function ResetSkills() {
 }
 
 $('#mightyBowId').change(function (e) {
-	ComboReset(e);
-	ComboReset(e);
-	UpdateComboDisplay(e);
+	ComboReset();
+	UpdateComboDisplay();
 });
 $('.toggle').click(function (e) {
 	$(this).toggleClass('gray');
 	$(this).toggleClass('blue');
 	$(this).attr('aria-pressed', $(this).attr('aria-pressed') == 'false' ? true : false);
-	DataCompile(e);
-	MonChart(e);
+	if (this !== filterCombo) {
+		DataCompile();
+		MonChart();
+	} else {
+		FilterTableForComboAttacks();
+		if ($('#filterCombo').hasClass('gray')) {
+			$('.a').show();
+		}
+	}
 });
 function ToggleAmmoTables() {
 	dpsTable.style = dpsTable.style.display !== 'none' ? 'display:none' : "display:''";
@@ -1045,21 +1063,50 @@ function ComboReset(redKeyCard = false) {
 		[c0.innerHTML, g0.innerHTML, h0.innerHTML, i0.innerHTML] = [0, 0, 0, 0];
 	}
 }
+function FilterTableForComboAttacks() {
+	if (/blue/.test(filterCombo.className)) {
+		$('.inputs').each(function (index, element) {
+			if (element.value === '0') {
+				$(`.${index}`).hide();
+			}
+		});
+	} else {
+		DataCompile();
+		$('.a').show;
+	}
+}
 function TimesUsed(ID, arr = comboTracker) {
-	return arr.filter((attackId) => attackId == ID).length;
+	return arr.filter(attackId => attackId == ID).length;
 }
 
-$(document).ajaxSuccess(() => {
-	if (check.some((keyCard) => !keyCard)) {
-		check[0] = window.event.target.responseURL === URLAttack || check[0];
-		check[1] = window.event.target.responseURL === URLMonster || check[1];
-		check[2] = window.event.target.responseURL === URLQuest || check[2];
-		check[3] = window.event.target.responseURL === URLRampage || check[3];
-		check[4] = window.event.target.responseURL === URLSharp || check[4];
-		check[5] = window.event.target.responseURL === URLType || check[5];
-		check[6] = window.event.target.responseURL === URLWeapon || check[6];
+function IncreaseComboCount() {
+	if ($('.inputs')[event.target.id].value !== '20') {
+		++$('.inputs')[event.target.id].value;
+	}
+}
+function DecreaseComboCount() {
+	if ($('.inputs')[event.target.id].value !== '0') {
+		--$('.inputs')[event.target.id].value;
+	}
+}
 
-		if (check.every((keyCard) => keyCard)) {
+$('.inputButtons.inc').on('click', IncreaseComboCount);
+$('.inputButtons.dec').on('click', DecreaseComboCount);
+$('.inputs').on('click', function (e) {
+	DataCompile(e);
+});
+
+$(document).ajaxSuccess(() => {
+	if (check.some(keyCard => !keyCard)) {
+		check[0] = event.target.responseURL === URLAttack || check[0];
+		check[1] = event.target.responseURL === URLMonster || check[1];
+		check[2] = event.target.responseURL === URLQuest || check[2];
+		check[3] = event.target.responseURL === URLRampage || check[3];
+		check[4] = event.target.responseURL === URLSharp || check[4];
+		check[5] = event.target.responseURL === URLType || check[5];
+		check[6] = event.target.responseURL === URLWeapon || check[6];
+
+		if (check.every(keyCard => keyCard)) {
 			WeaponTypeSelect();
 			WeaponSelect();
 			RampageSelect();
@@ -1084,7 +1131,7 @@ function PopulateDropDowns(json, dropDown) {
 
 function WeaponTypeSelect() {
 	PopulateDropDowns(
-		Object.keys(window.weapon).filter((weapon) => !/Shot|Shelling/.test(weapon)),
+		Object.keys(window.weapon).filter(weapon => !/Shot|Shelling/.test(weapon)),
 		dropWeaponType,
 	);
 }

@@ -35,7 +35,7 @@
 		"WallRunner",
 		"Spiribird"
 	],
-	"EleAED": ["baseele", "ElementalAttack", "ElderEssence", "CriticalElement"],
+	"EleAED": ["baseEle", "ElementalAttack", "ElderEssence", "CriticalElement"],
 	"IMPAED": [
 		"AttackBoost",
 
