@@ -16,3 +16,5 @@
 /test
 /rules
 /.csv
+.eslintrc
+.nodemonrc
