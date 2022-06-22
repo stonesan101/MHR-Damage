@@ -102,14 +102,17 @@ html {
 }
 
 input#taWikiSetBuilder {
-  grid-area: 3/2/4/6;
+  height: max-content;
+  grid-area: 4/2/5/6;
   background-color: gray;
 }
 
 div#statsTableDiv {
-  grid-area: 1/2/3/6;
+  grid-area: 1/2/4/6;
 }
-
+#weaponSelect > div:nth-child(3) {
+  grid-area: 3/1/5/2;
+}
 section#section3 {
   grid-template-columns: repeat(3, 1fr);
   display: grid;
