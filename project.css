@@ -185,7 +185,7 @@ body {
 div#divComboAttacks {
   max-height: 550px;
   min-width: 130px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 div#sharpnessContainer {
@@ -231,6 +231,16 @@ div#monContainer.contain {
   place-content: center;
 }
 
+div#damageTable.meleeContainer {
+  height: 57vh;
+  overflow: auto;
+
+}
+
+div#damageTable.rangedContainer {
+  max-height: 345px;
+}
+
 .rangedTable>tr>td.a {
   background-color: rgb(11, 11, 42);
   min-width: fit-content;
@@ -252,8 +262,8 @@ input#inputComboRepeat {
 
 div>#ammoTable {
   padding: 0.2rem;
-  max-height: 425px;
-  overflow-y: scroll;
+  max-height: 27rem;
+  overflow-y: auto;
   min-width: fit-content;
   border-spacing: 0px;
   display: table-caption;
@@ -263,11 +273,18 @@ tbody.dpsBody>tr>td:nth-child(2) {
   width: 8rem;
 }
 
+div#html {
+  display: grid;
+  overflow: hidden;
+  align-items: start;
+  gap: 1rem;
+  height: 100vh;
+}
+
 #forButtons {
   grid-area: 1/1/2/4;
   gap: 0.25rem;
   place-content: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 div#forButtonSelect {
@@ -292,12 +309,11 @@ button#filterCombo {
 
 #dpsTable {
   border: none;
-  overflow: hidden scroll;
+  overflow: auto;
   grid-column: 3 / 1/ 4/ -1;
   min-width: fit-content;
   border-spacing: 0px;
   display: table-caption;
-  max-height: 332px;
 }
 
 button.gray {
@@ -436,10 +452,9 @@ button#Power\ Talisman {
 
 #monTable {
   border: none;
-  overflow: hidden scroll;
+  overflow: auto;
   display: table-cell;
   border-spacing: 0px;
-  height: 6.25;
 }
 
 tr:nth-child(2n) {
@@ -493,6 +508,10 @@ td {
   color: rgb(171, 217, 238);
   border-style: outset;
   font-weight: bold;
+}
+
+tbody.rangedTable {
+  max-height: 27rem;
 }
 
 .a.rangedTable {
@@ -911,4 +930,24 @@ select#weaponRampage5 {
   div#forButtons button {
     min-width: max-content;
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

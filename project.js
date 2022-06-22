@@ -5,7 +5,6 @@ let comboTracker = [];
 $.getJSON(`${baseURL}/weapons.json`, data => {
 	window.weapon = data;
 });
-
 $.getJSON(`${baseURL}/monsters.json`, data => {
 	window.monster = data;
 });
@@ -152,9 +151,9 @@ function MeleeDPS() {
 	power = ApplyRampageSelections(power);
 	//  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
 	power.attacks =
-		$('#dropWeaponType').val() === 'Bow' || $('#dropWeaponType').val() === 'ChargeBlade'
+		dropWeaponType.value === 'Bow' || dropWeaponType.value === 'ChargeBlade'
 			? AddDependantSkills(power)
-			: window.attack[$('#dropWeaponType').val()];
+			: window.attack[dropWeaponType.value];
 
 	$(Object.keys(power.attacks)).each(function (attackID, eachAttack) {
 		power = { ...power, ...power.attacks[eachAttack] };
@@ -225,15 +224,20 @@ function MeleeDPS() {
 			power.thisAttack,
 			power.rawMV,
 			`${~~(0.1 + power.rawNon * sharpnessModifier.PRM)} / ${~~(0.1 + power.rawCrit * sharpnessModifier.PRM)}`,
+
 			`${~~(0.1 + power.eleNon * sharpnessModifier.PEM)} / ${~~(0.1 + power.eleCrit * sharpnessModifier.PEM)}`,
-			`${
-				~~(0.1 + power.rawNon * sharpnessModifier.PRM) * power.ticsPer +
-				~~(0.1 + power.eleNon * sharpnessModifier.PEM) * power.ticsPer
-			} / ${(~~(0.1 + power.rawCrit * sharpnessModifier.PRM) + ~~(0.1 + power.eleCrit * sharpnessModifier.PEM)) * power.ticsPer}`,
+
+			`${(~~(0.1 + power.rawNon * sharpnessModifier.PRM) + ~~(0.1 + power.eleNon * sharpnessModifier.PEM)) * power.ticsPer} / ${
+				(~~(0.1 + power.rawCrit * sharpnessModifier.PRM) + ~~(0.1 + power.eleCrit * sharpnessModifier.PEM)) * power.ticsPer
+			}`,
+
 			~~(0.1 + power.efr * sharpnessModifier.PRM),
+
 			~~(0.1 + power.efe * sharpnessModifier.PEM),
+
 			(~~(0.1 + power.efe * sharpnessModifier.PEM) + ~~(0.1 + power.efr * sharpnessModifier.PRM)) * power.ticsPer,
 		];
+
 		meleeDamage.push(damage);
 		// stats stores calculations to be used for the statsTable
 		if (power.thisAttack === 'Combo Damage') {
@@ -808,6 +812,7 @@ function BuildDamageTable(myDamage, id) {
 	tHead.setAttribute('id', `${id}Head`);
 	tBody.setAttribute('id', `${id}Body`);
 	tBody.className = /(BowGun)/.test($('#dropWeaponType').val()) ? 'rangedTable' : 'meleeTable';
+	damageTable.className = /(BowGun)/.test($('#dropWeaponType').val()) ? 'rangedContainer' : 'meleeContainer';
 
 	ammoTable.style.display = currentAmmoTableStyle;
 	dpsTable.style.display = currentDamageTableStyle;
@@ -945,6 +950,9 @@ function UniqueColumnsDisplay() {
 	$('#unique')[0].style = /BowGun/.test(dropWeaponType.value)
 		? 'grid-template-columns:repeat(4, 1fr); grid-area: 6 / 1 / 7 / 6;'
 		: 'grid-area: 5 / 3 / 6 / 4;';
+	forButtons.style = /BowGun/.test(dropWeaponType.value)
+		? 'grid-template-columns: repeat(3. 1fr)'
+		: 'grid-template-columns: repeat(4, 1fr)';
 }
 function MaxSkills() {
 	for (let i = 0; i < $('.skill').length; ++i) {
