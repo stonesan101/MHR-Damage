@@ -1,48 +1,36 @@
-const baseURL =
-	window.location.origin === 'http://localhost:5500' ? 'http://localhost:5500' : 'https://stonesan101.github.io/MHR-Damage';
-const URLAttack = `${baseURL}/attacks.json`;
-const URLMonster = `${baseURL}/monsters.json`;
-const URLQuest = `${baseURL}/quest.json`;
-const URLRampage = `${baseURL}/rampage.json`;
-const URLSharp = `${baseURL}/sharpness.json`;
-const URLType = `${baseURL}/types.json`;
-const URLWeapon = `${baseURL}/weapons.json`;
-const URLFrames = `${baseURL}/frames.json`;
-const URLLight = `${baseURL}/lbg.json`;
-const URLHeavy = `${baseURL}/hbg.json`;
-
+const baseURL = window.location.host === 'localhost:5500' ? 'http://localhost:5500' : 'https://stonesan101.github.io/MHR-Damage';
 let check = [0, 0, 0, 0, 0, 0, 0];
 let comboTracker = [];
 
-$.getJSON(URLWeapon, data => {
+$.getJSON(`${baseURL}/weapons.json`, data => {
 	window.weapon = data;
 });
 
-$.getJSON(URLMonster, data => {
+$.getJSON(`${baseURL}/monsters.json`, data => {
 	window.monster = data;
 });
-$.getJSON(URLQuest, data => {
+$.getJSON(`${baseURL}/quest.json`, data => {
 	window.quest = data;
 });
-$.getJSON(URLType, data => {
+$.getJSON(`${baseURL}/types.json`, data => {
 	window.skillCategories = data;
 });
-$.getJSON(URLAttack, data => {
+$.getJSON(`${baseURL}/attacks.json`, data => {
 	window.attack = data;
 });
-$.getJSON(URLHeavy, data => {
+$.getJSON(`${baseURL}/hbg.json`, data => {
 	window.ammoHeavyBowGun = data.HeavyBowGun;
 });
-$.getJSON(URLLight, data => {
+$.getJSON(`${baseURL}/lbg.json`, data => {
 	window.ammoLightBowGun = data.LightBowGun;
 });
-$.getJSON(URLFrames, data => {
+$.getJSON(`${baseURL}/frames.json`, data => {
 	window.spm = data;
 });
-$.getJSON(URLRampage, data => {
+$.getJSON(`${baseURL}/rampage.json`, data => {
 	window.rampage = data;
 });
-$.getJSON(URLSharp, data => {
+$.getJSON(`${baseURL}/sharpness.json`, data => {
 	window.sharpness = data;
 });
 
@@ -55,25 +43,19 @@ function DataCompile() {
 }
 
 function RangedDPS() {
-	let rangedDamage = {};
+	let rangedDamage = [];
 	let ammoFrameData = [];
 	let power = {};
 	$.each(window[`ammo${$('#dropWeaponType').val()}`][$('#dropWeapon').val()].Ammo, function (key) {
-		power = { ...this };
-		power.aff = window.weapon[$('#dropWeaponType').val()][$('#dropWeapon').val()].aff;
-		power.baseRaw = window.weapon[$('#dropWeaponType').val()][$('#dropWeapon').val()].baseRaw;
-		[power.eleType, power.baseEle] = this.Ele;
-		power.recoil = window[`ammo${$('#dropWeaponType').val()}`][$('#dropWeapon').val()].recoil;
-		power.reload = window[`ammo${$('#dropWeaponType').val()}`][$('#dropWeapon').val()].reload;
-		power.thisAttack = key;
+		power = { ...this, ...window.weapon[$('#dropWeaponType').val()][$('#dropWeapon').val()] };
+		[power.recoil, power.reload, power.thisAttack] = [
+			window[`ammo${dropWeaponType.value}`][dropWeapon.value].recoil,
+			window[`ammo${dropWeaponType.value}`][dropWeapon.value].reload,
+			key,
+		];
 
 		power = ApplyRampageSelections(power);
 		power = GetSkills(power);
-
-		// adds Weakness Exploit
-		power.aff = power.rawHZV >= 45 ? power.aff + JSON.parse($('#WeaknessExploit').val()) : power.aff;
-		power.aff = Math.min(power.aff, 100) / 100;
-
 		power = GetRemainingSkills(power);
 		power = DamageCalculations(power);
 		const ammo = calculateAmmoFrames(power);
@@ -89,31 +71,31 @@ function RangedDPS() {
 		const rawBoth = [].concat(`${~~power.rawNon} / ${~~power.rawCrit}`);
 		const eleBoth = [].concat(`${~~power.eleNon} / ${~~power.eleCrit}`);
 		const total = [].concat(`${totalNon} / ${totalCrit}`);
-		const damage = {
-			attack: power.thisAttack,
+		const damage = [
+			power.thisAttack,
 			rawBoth,
 			eleBoth,
 			total,
-			efr: [~~power.efr],
-			efe: [~~power.efe],
+			~~power.efr,
+			~~power.efe,
 			totalEffective,
-			shotsPerGain: [ammo.shotsPerGain],
+			ammo.shotsPerGain,
 			shotsToKill,
 			timeToKill,
-		};
+		];
 
-		rangedDamage = [].concat(rangedDamage, damage);
+		rangedDamage.push(damage);
 
-		const ammoStats = {
-			attack: power.thisAttack,
-			rawMV: [power.rawMV],
-			reloadSpeed: [ammo.reloadSpeed],
-			recoilSpeed: [ammo.recoilSpeed],
-			clipSize: [ammo.clipSize],
-			ticsPer: [power.ticsPer],
-			shotsPerMinBase: [ammo.shotsPerMinBase],
-			shotsPerMin: [ammo.shotsPerMin],
-		};
+		const ammoStats = [
+			power.thisAttack,
+			power.rawMV,
+			ammo.reloadSpeed,
+			ammo.recoilSpeed,
+			ammo.clipSize,
+			power.ticsPer,
+			ammo.shotsPerMinBase,
+			ammo.shotsPerMin,
+		];
 
 		ammoFrameData.push(ammoStats);
 
@@ -161,20 +143,19 @@ function RangedDPS() {
 	]);
 	BuildDamageTable(ammoFrameData, 'ammo');
 }
+
 function MeleeDPS() {
 	let meleeDamage = [['Combo', 'Attack Name', 'MV', 'Raw', 'Element', 'Total', 'EFR', 'EFE', 'Effective']];
 	let comboDamage = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 	let power = {};
 	power = { ...window.weapon[$('#dropWeaponType').val()][$('#dropWeapon').val()] };
-	//  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
 	power = ApplyRampageSelections(power);
+	//  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
 	power.attacks =
 		$('#dropWeaponType').val() === 'Bow' || $('#dropWeaponType').val() === 'ChargeBlade'
 			? AddDependantSkills(power)
 			: window.attack[$('#dropWeaponType').val()];
-	if ($(filterCombo).hasClass('blue')) {
-		Object.fromEntries(Object.entries(power.attacks).filter(index => $('.inputs')[index].value > 0));
-	}
+
 	$(Object.keys(power.attacks)).each(function (attackID, eachAttack) {
 		power = { ...power, ...power.attacks[eachAttack] };
 		power.thisAttack = eachAttack;
@@ -182,18 +163,18 @@ function MeleeDPS() {
 			power.ticsPer = power.hitsOfSharp === undefined ? 1 : power.hitsOfSharp;
 		}
 		power = GetSkills(power);
-		// adds Weakness Exploit
-		power.aff += power.rawHZV >= 45 ? JSON.parse($('#WeaknessExploit').val()) : 0;
-		power.aff = Math.min(power.aff, 100) / 100;
-		if (!/Bow/.test($('#dropWeaponType').val()) && attackID === 0) {
-			power = TotalHitsOfSharpUsed(power);
-		} else if (attackID === 0 && !/BowGun/.test($('#dropWeaponType').val())) {
+
+		if (/inputs|inputButton/.test(event.target.className) && attackID === 0 && !/BowGun/.test(dropWeaponType.value)) {
 			UpdateComboTracker();
 			UpdateComboDisplay();
 		}
+		if (attackID === 0 && comboTracker.length > 0) {
+			power = TotalHitsOfSharpUsed(power);
+		}
+
 		power = GetRemainingSkills(power);
 		power = DamageCalculations(power);
-		if (!/Bow/.test(dropWeaponType.value)) {
+		if (!/Bow/.test(dropWeaponType.value) && comboTracker.length > 0) {
 			/* goes through each color sharpness and filters the recorded attacks for the number of times this current attack was used
 			 * then applies the given sharpness modifier to the damage if damage type is sever or blunt then multiplies by the times used
 			 * saves results in the comboDamage var and += the totals for every sharpness of every attack
@@ -203,7 +184,7 @@ function MeleeDPS() {
 				$(Object.keys(power.comboHitsBySharpnessUsed)).each(function (index, color) {
 					if (TimesUsed(attackID, power.comboHitsBySharpnessUsed[color]) > 0) {
 						const [sharpPRM, sharpPEM] =
-							power.skillType === ('Sever' || 'Blunt') && window.attack[$('#dropWeaponType').val()][power.thisAttack].hitsOfSharp > 0
+							power.skillType === ('Sever' || 'Blunt') && window.attack[dropWeaponType.value][power.thisAttack].hitsOfSharp > 0
 								? [window.sharpness.mod[color].PRM, window.sharpness.mod[color].PEM]
 								: [1, 1];
 						let hitsPerAttackPerSharpness = TimesUsed(attackID, power.comboHitsBySharpnessUsed[color]);
@@ -239,21 +220,21 @@ function MeleeDPS() {
 		}
 		// damage/meleeDamage adds sharpness to the calculations and arranges them in the array to be used for the damageTable
 		const sharpnessModifier = power.hitsOfSharp > 0 ? JSON.parse(Sharpness.value) : { PRM: 1, PEM: 1 };
-		const damage = {
-			'replaceME': 'replaceME',
-			'Attack Name': power.thisAttack,
-			'MV': power.rawMV,
-			'Raw': `${~~(0.1 + power.rawNon * sharpnessModifier.PRM)} / ${~~(0.1 + power.rawCrit * sharpnessModifier.PRM)}`,
-			'Ele': `${~~(0.1 + power.eleNon * sharpnessModifier.PEM)} / ${~~(0.1 + power.eleCrit * sharpnessModifier.PEM)}`,
-			'Total': `${
+		const damage = [
+			'replaceME',
+			power.thisAttack,
+			power.rawMV,
+			`${~~(0.1 + power.rawNon * sharpnessModifier.PRM)} / ${~~(0.1 + power.rawCrit * sharpnessModifier.PRM)}`,
+			`${~~(0.1 + power.eleNon * sharpnessModifier.PEM)} / ${~~(0.1 + power.eleCrit * sharpnessModifier.PEM)}`,
+			`${
 				~~(0.1 + power.rawNon * sharpnessModifier.PRM) * power.ticsPer +
 				~~(0.1 + power.eleNon * sharpnessModifier.PEM) * power.ticsPer
 			} / ${(~~(0.1 + power.rawCrit * sharpnessModifier.PRM) + ~~(0.1 + power.eleCrit * sharpnessModifier.PEM)) * power.ticsPer}`,
-			'EFR': ~~(0.1 + power.efr * sharpnessModifier.PRM),
-			'EFE': ~~(0.1 + power.efe * sharpnessModifier.PEM),
-			'Effective': (~~(0.1 + power.efe * sharpnessModifier.PEM) + ~~(0.1 + power.efr * sharpnessModifier.PRM)) * power.ticsPer,
-		};
-		meleeDamage = [].concat(meleeDamage, damage);
+			~~(0.1 + power.efr * sharpnessModifier.PRM),
+			~~(0.1 + power.efe * sharpnessModifier.PEM),
+			(~~(0.1 + power.efe * sharpnessModifier.PEM) + ~~(0.1 + power.efr * sharpnessModifier.PRM)) * power.ticsPer,
+		];
+		meleeDamage.push(damage);
 		// stats stores calculations to be used for the statsTable
 		if (power.thisAttack === 'Combo Damage') {
 			const stats = [
@@ -398,7 +379,6 @@ function GetSkills(power) {
 			power.aff += skills.aff;
 		}
 	});
-	Object.se;
 	power.getSkills = [];
 	switch (power.type) {
 		case 'Sever':
@@ -425,6 +405,7 @@ function GetSkills(power) {
 	power.getSkills = window.skillCategories[power.skillType];
 	if ($('#dropEnraged').val() === 'Enraged') {
 		power.getSkills.push('Agitator');
+		enrageDisplay.textContent = window.monster[$('#dropMonster').val()].Enrage + '%';
 	}
 	// adds weapon unique skills to the getSkills array
 	if (power.unique !== undefined) {
@@ -444,6 +425,9 @@ function GetSkills(power) {
 			power.aff += skills.aff;
 		}
 	});
+	// adds Weakness Exploit
+	power.aff = power.rawHZV >= 45 ? power.aff + JSON.parse($('#WeaknessExploit').val()) : power.aff;
+	power.aff = Math.min(power.aff, 100) / 100;
 
 	return power;
 }
@@ -511,7 +495,7 @@ function GetRemainingSkills(power) {
 	return power;
 }
 function UpdateComboTracker() {
-	if (!Number.isNaN(+event.target.id)) {
+	if (!Number.isNaN(+event.target.id) && event.target.id !== '0') {
 		// if value entered in the e.target combo input > amount stored in comboTracker [] adds attack id to the end of the comboTracker until they are ===
 		let difference = $('.inputs')[event.target.id].value - TimesUsed(event.target.id);
 		while (difference > 0) {
@@ -539,131 +523,123 @@ function UpdateComboDisplay() {
 // finds HitsOfSharpness current sharpness as well as what combo hits were used how many times per color
 function TotalHitsOfSharpUsed(power) {
 	// all Sharpness values are currently stored at 20% of actual value. hence +2s and *5s
+	let listOfEachAttack = [];
+	const total = {};
 
-	if (comboTracker !== []) {
-		let listOfEachAttack = [];
-		const total = {};
-		let [whiteMin, whiteMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].white;
-		let [blueMin, blueMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].blue;
-		let [greenMin, greenMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].green;
-		let [yellowMin, yellowMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].yellow;
-		let [orangeMin, orangeMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].orange;
-		let [redMin, redMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].red;
-		// for each pont of handicraft checks if the current sharpness is < the max sharpness for that color. if so, adds 2 points to the total sharpness for that color.(the equivalent of a +10 sharpness)
-		for (let i = 0; i < handicraft.selectedIndex; ++i) {
-			if (redMin < redMax) {
-				yellowMin += 2;
-			} else if (orangeMin < orangeMax) {
-				greenMin += 2;
-			} else if (yellowMin < yellowMax) {
-				yellowMin += 2;
-			} else if (greenMin < greenMax) {
-				greenMin += 2;
-			} else if (blueMin < blueMax) {
-				blueMin += 2;
-			} else if (whiteMin < whiteMax) {
-				whiteMin += 2;
-			}
+	let [whiteMin, whiteMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].white;
+	let [blueMin, blueMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].blue;
+	let [greenMin, greenMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].green;
+	let [yellowMin, yellowMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].yellow;
+	let [orangeMin, orangeMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].orange;
+	let [redMin, redMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].red;
+	// for each pont of handicraft checks if the current sharpness is < the max sharpness for that color. if so, adds 2 points to the total sharpness for that color.(the equivalent of a +10 sharpness)
+	for (let i = 0; i < handicraft.selectedIndex; ++i) {
+		if (redMin < redMax) {
+			yellowMin += 2;
+		} else if (orangeMin < orangeMax) {
+			greenMin += 2;
+		} else if (yellowMin < yellowMax) {
+			yellowMin += 2;
+		} else if (greenMin < greenMax) {
+			greenMin += 2;
+		} else if (blueMin < blueMax) {
+			blueMin += 2;
+		} else if (whiteMin < whiteMax) {
+			whiteMin += 2;
 		}
-		// applies the extra hits of sharpness from the Masters Touch skill
-		const mTBonus = power.aff > 0 ? 5 * (1 + +MastersTouch.value * power.aff) : 5;
-		total.white = ~~(mTBonus * whiteMin);
-		total.blue = ~~(mTBonus * blueMin);
-		total.green = ~~(mTBonus * greenMin);
-		total.yellow = ~~(mTBonus * yellowMin);
-		total.orange = ~~(mTBonus * orangeMin);
-		total.red = ~~(mTBonus * redMin);
+	}
+	// applies the extra hits of sharpness from the Masters Touch skill; the * 5 brings it to the full value
+	const mTBonus = power.aff > 0 ? 5 * (1 + +MastersTouch.value * power.aff) : 5;
+	total.white = ~~(mTBonus * whiteMin);
+	total.blue = ~~(mTBonus * blueMin);
+	total.green = ~~(mTBonus * greenMin);
+	total.yellow = ~~(mTBonus * yellowMin);
+	total.orange = ~~(mTBonus * orangeMin);
+	total.red = ~~(mTBonus * redMin);
 
-		UpdateComboTracker();
-		UpdateComboDisplay();
+	const comboMulti = $('.inputComboRepeat').length > 0 ? $('.inputComboRepeat').val() : 1;
+	// for each pont in the comboMultiplier input, adds another comboTracker [] to the listOfEachAttack
+	for (let i = 0; i < comboMulti; i++) {
+		listOfEachAttack = listOfEachAttack.concat(comboTracker);
+	}
+	let totalHitsOfSharpnessUsed = 0;
+	const comboHitsBySharpnessUsed = {};
+	comboHitsBySharpnessUsed.white = [];
+	comboHitsBySharpnessUsed.blue = [];
+	comboHitsBySharpnessUsed.green = [];
+	comboHitsBySharpnessUsed.yellow = [];
+	comboHitsBySharpnessUsed.orange = [];
+	comboHitsBySharpnessUsed.red = [];
 
-		const comboMulti = $('.inputComboRepeat').length > 0 ? $('.inputComboRepeat').val() : 1;
-		// for each pont in the comboMultiplier input, adds another comboTracker [] to the listOfEachAttack
-		for (let i = 0; i < comboMulti; i++) {
-			listOfEachAttack = listOfEachAttack.concat(comboTracker);
-		}
-		let totalHitsOfSharpnessUsed = 0;
-		const comboHitsBySharpnessUsed = {};
-		comboHitsBySharpnessUsed.white = [];
-		comboHitsBySharpnessUsed.blue = [];
-		comboHitsBySharpnessUsed.green = [];
-		comboHitsBySharpnessUsed.yellow = [];
-		comboHitsBySharpnessUsed.orange = [];
-		comboHitsBySharpnessUsed.red = [];
-
-		$(listOfEachAttack).each(function () {
-			const eachAttack = this;
-			if ($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 14)) {
-				for (let i = 0; i < power.ticsPer; i++) {
-					if (window.attack[$('#dropWeaponType').val()][$(`td#b${eachAttack}>output`).text()].hitsOfSharp > 0) {
-						++totalHitsOfSharpnessUsed;
-					}
+	$(listOfEachAttack).each(function () {
+		const eachAttack = this;
+		if ($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 14)) {
+			for (let i = 0; i < power.ticsPer; i++) {
+				if (window.attack[$('#dropWeaponType').val()][$(`td#b${eachAttack}>output`).text()].hitsOfSharp > 0) {
+					++totalHitsOfSharpnessUsed;
 				}
-			} else if ($('#dropWeaponType').val() === 'Gunlance' && eachAttack > 13) {
-				++totalHitsOfSharpnessUsed;
 			}
-			let totalHits = 0;
-			if (totalHitsOfSharpnessUsed <= (totalHits += total.white)) {
-				comboHitsBySharpnessUsed.white.push(eachAttack);
-			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue)) {
-				comboHitsBySharpnessUsed.blue.push(eachAttack);
-			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.green)) {
-				comboHitsBySharpnessUsed.green.push(eachAttack);
-			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.yellow)) {
-				comboHitsBySharpnessUsed.yellow.push(eachAttack);
-			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.orange)) {
-				comboHitsBySharpnessUsed.orange.push(eachAttack);
-			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.red)) {
-				comboHitsBySharpnessUsed.red.push(eachAttack);
-			}
-		});
-
-		console.log(comboHitsBySharpnessUsed);
-
-		let hits = totalHitsOfSharpnessUsed;
-		[whiteMin, hits] = hits - total.white > 0 ? [0, hits - total.white] : [total.white - hits, 0];
-		[blueMin, hits] = hits > 0 && hits - total.blue > 0 ? [0, hits - total.blue] : [total.blue - hits, 0];
-		[greenMin, hits] = hits > 0 && hits - total.green > 0 ? [0, hits - total.green] : [total.green - hits, 0];
-		[yellowMin, hits] = hits > 0 && hits - total.yellow > 0 ? [0, hits - total.yellow] : [total.yellow - hits, 0];
-		[orangeMin, hits] = hits > 0 && hits - total.orange > 0 ? [0, hits - total.orange] : [total.orange - hits, 0];
-		[redMin, hits] = hits > 0 && hits - total.red > 0 ? [0, hits - total.red] : [total.red - hits, 0];
-
-		white.parentNode.style = `display:''; width:${
-			mTBonus * 0.6 * (whiteMax + blueMax + greenMax + yellowMax + orangeMax + redMax)
-		}px`;
-		white.style.width = `${whiteMin * 0.6}px`;
-		blue.style.width = `${blueMin * 0.6}px`;
-		green.style.width = `${greenMin * 0.6}px`;
-		yellow.style.width = `${yellowMin * 0.6}px`;
-		orange.style.width = `${orangeMin * 0.6}px`;
-		red.style.width = `${redMin * 0.6}px`;
-
-		white.innerHTML = whiteMin > 0 ? whiteMin : '';
-		blue.innerHTML = blueMin > 0 ? blueMin : '';
-		green.innerHTML = greenMin > 0 ? greenMin : '';
-		yellow.innerHTML = yellowMin > 0 ? yellowMin : '';
-		orange.innerHTML = orangeMin > 0 ? orangeMin : '';
-		red.innerHTML = redMin > 0 ? redMin : '';
-
-		if (whiteMin > 0) {
-			Sharpness.selectedIndex = 6;
-		} else if (blueMin > 0) {
-			Sharpness.selectedIndex = 5;
-		} else if (greenMin > 0) {
-			Sharpness.selectedIndex = 4;
-		} else if (yellowMin > 0) {
-			Sharpness.selectedIndex = 3;
-		} else if (orangeMin > 0) {
-			Sharpness.selectedIndex = 2;
-		} else if (redMin >= 0) {
-			Sharpness.selectedIndex = 1;
+		} else if ($('#dropWeaponType').val() === 'Gunlance' && eachAttack > 13) {
+			++totalHitsOfSharpnessUsed;
 		}
-		power.comboHitsBySharpnessUsed = comboHitsBySharpnessUsed;
-		return power;
+		let totalHits = 0;
+		if (totalHitsOfSharpnessUsed <= (totalHits += total.white)) {
+			comboHitsBySharpnessUsed.white.push(eachAttack);
+		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue)) {
+			comboHitsBySharpnessUsed.blue.push(eachAttack);
+		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.green)) {
+			comboHitsBySharpnessUsed.green.push(eachAttack);
+		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.yellow)) {
+			comboHitsBySharpnessUsed.yellow.push(eachAttack);
+		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.orange)) {
+			comboHitsBySharpnessUsed.orange.push(eachAttack);
+		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.red)) {
+			comboHitsBySharpnessUsed.red.push(eachAttack);
+		}
+	});
+
+	console.log(comboHitsBySharpnessUsed);
+
+	let hits = totalHitsOfSharpnessUsed;
+	[whiteMin, hits] = hits - total.white > 0 ? [0, hits - total.white] : [total.white - hits, 0];
+	[blueMin, hits] = hits > 0 && hits - total.blue > 0 ? [0, hits - total.blue] : [total.blue - hits, 0];
+	[greenMin, hits] = hits > 0 && hits - total.green > 0 ? [0, hits - total.green] : [total.green - hits, 0];
+	[yellowMin, hits] = hits > 0 && hits - total.yellow > 0 ? [0, hits - total.yellow] : [total.yellow - hits, 0];
+	[orangeMin, hits] = hits > 0 && hits - total.orange > 0 ? [0, hits - total.orange] : [total.orange - hits, 0];
+	[redMin, hits] = hits > 0 && hits - total.red > 0 ? [0, hits - total.red] : [total.red - hits, 0];
+
+	white.parentNode.style = `display:''; width:${
+		mTBonus * 0.6 * (whiteMax + blueMax + greenMax + yellowMax + orangeMax + redMax)
+	}px`;
+	white.style.width = `${whiteMin * 0.6}px`;
+	blue.style.width = `${blueMin * 0.6}px`;
+	green.style.width = `${greenMin * 0.6}px`;
+	yellow.style.width = `${yellowMin * 0.6}px`;
+	orange.style.width = `${orangeMin * 0.6}px`;
+	red.style.width = `${redMin * 0.6}px`;
+
+	white.innerHTML = whiteMin > 0 ? whiteMin : '';
+	blue.innerHTML = blueMin > 0 ? blueMin : '';
+	green.innerHTML = greenMin > 0 ? greenMin : '';
+	yellow.innerHTML = yellowMin > 0 ? yellowMin : '';
+	orange.innerHTML = orangeMin > 0 ? orangeMin : '';
+	red.innerHTML = redMin > 0 ? redMin : '';
+
+	if (whiteMin > 0) {
+		Sharpness.selectedIndex = 6;
+	} else if (blueMin > 0) {
+		Sharpness.selectedIndex = 5;
+	} else if (greenMin > 0) {
+		Sharpness.selectedIndex = 4;
+	} else if (yellowMin > 0) {
+		Sharpness.selectedIndex = 3;
+	} else if (orangeMin > 0) {
+		Sharpness.selectedIndex = 2;
+	} else if (redMin >= 0) {
+		Sharpness.selectedIndex = 1;
 	}
-	if (event.target.length !== 0) {
-		comboTracker = [event.target.id];
-	}
+	power.comboHitsBySharpnessUsed = comboHitsBySharpnessUsed;
+	return power;
 }
 function DamageCalculations(power) {
 	// final damage calculations first row limits raw to the 3x attack cap
@@ -716,17 +692,17 @@ function GunlanceShelling(currentDamage, comboDamage) {
 			: 1;
 		const raw = window.attack.GunlanceShelling[shellingType][element].rawMV[shellingLevel];
 		const ele = window.attack.GunlanceShelling[shellingType][element].eleMV[shellingLevel];
-		const final = {
-			'replaceME': 'replaceME',
-			'Attack Name': element,
-			'MV': 0,
-			'Raw': `${raw} / ${raw}`,
-			'Ele': `${ele} / ${ele}`,
-			'Total': `${(raw + ele) * ticsPer} / ${(raw + ele) * ticsPer}`,
-			'EFR': raw,
-			'EFE': ele,
-			'Effective': (raw + ele) * ticsPer,
-		};
+		const final = [
+			'replaceME',
+			element,
+			0,
+			`${raw} / ${raw}`,
+			`${ele} / ${ele}`,
+			`${(raw + ele) * ticsPer} / ${(raw + ele) * ticsPer}`,
+			raw,
+			ele,
+			(raw + ele) * ticsPer,
+		];
 
 		for (let i = 0; i < TimesUsed(index + 14); ++i) {
 			comboDamage[0] += 0;
@@ -757,7 +733,7 @@ function GunlanceShelling(currentDamage, comboDamage) {
 function BuildDamageTable(myDamage, id) {
 	const currentAmmoTableStyle = ammoTable.style.display;
 	const currentDamageTableStyle = dpsTable.style.display;
-	const inputs = document.querySelectorAll('.a');
+	const inputs = /gray/.test(filterCombo.className) ? document.querySelectorAll('.a') : document.querySelectorAll('.a:not(.gray)');
 	let k = 0;
 	const myHeader = document.querySelector(`#${id}Head`);
 	const myBody = document.querySelector(`#${id}Body`);
@@ -795,7 +771,7 @@ function BuildDamageTable(myDamage, id) {
 					const adjuster = document.createElement('input');
 
 					adjuster.setAttribute('type', 'Number');
-					adjuster.setAttribute('class', 'Combo skill');
+					adjuster.setAttribute('class', `Combo skill, k`);
 					adjuster.setAttribute('Max', 20);
 					if (dropWeaponType.value === 'Bow' && previousWeapon.value !== dropWeapon.value) {
 						comboTracker = [];
@@ -851,19 +827,24 @@ function BuildDamageTable(myDamage, id) {
 				++j;
 			});
 		}
-		$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index, element) {
-			const cell = document.createElement('td');
-			cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputButton dec"
+		if (!/BowGun/.test(dropWeaponType.value)) {
+			$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index, element) {
+				const cell = document.createElement('td');
+				cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputButton dec"
 			onclick="DecreaseComboCount(); DataCompile();">&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputButton inc" onclick="IncreaseComboCount(); DataCompile();">&#8679</button><output id="label">${element.textContent}</output>`;
-			$(cell).addClass(`b ${index} inputContainer`);
-			cell.id = `b${index}`;
-			this.replaceWith(cell);
+				$(cell).addClass(`b ${index} inputContainer`);
+				cell.id = `b${index}`;
+				this.replaceWith(cell);
+			});
+		}
+	}
+	if (/blue/.test(filterCombo.className)) {
+		$('.a').each(function (index) {
+			if ($(`.${index}`)[0].style.display === 'none') {
+				$(`.${index}`).hide();
+			}
 		});
 	}
-
-	$('.a').each(function (index) {
-		/display: none/.test($(this).attr('style')) ? $(index).hide() : $(index).show();
-	});
 }
 
 function MonChart() {
@@ -926,42 +907,33 @@ function HideAndRevealTypeSpecificElements(redKeyCard = false) {
 	if (redKeyCard || window.event.path[0] === dropWeaponType) {
 		comboTracker = [];
 		$('.classSpecific').attr('selectedIndex', 0);
+		$('.classSpecific').hide();
 		$('.classSpecific').parent().hide();
-		$('#divComboAttacks').show();
 		weaponId.innerHTML = '';
 		weaponId.innerHTML = $('#dropWeaponType').val();
-		$(weaponId).show();
-		ammoChange.style = 'display:none';
-		resetCombo.style = "display:''";
 		$(`.${dropWeaponType.value}`).parent().show();
-		if (/(Bow)/.test(dropWeaponType.value)) {
-			$('#sharpnessContainer').hide();
-			RangedElements();
+		$(`.${dropWeaponType.value}`).show();
+
+		if (/Bow/.test(dropWeaponType.value)) {
+			$('.Shot').parent().show();
+			$('.Shot').show();
+			$(ammoTable).hide();
 			UniqueColumnsDisplay();
 		} else {
 			MeleeElements();
 			UniqueColumnsDisplay();
 		}
 	}
+	console.log(comboTracker);
 }
-function RangedElements() {
-	$('.Shot').parent().show();
-	if (/(BowGun)/.test(dropWeaponType.value)) {
-		ammoChange.style = "display:''";
-		resetCombo.style = 'display:none';
-		$('#divComboAttacks').hide();
-		$(ammoTable).hide();
-	}
-}
+
 function MeleeElements() {
 	$('.melee').parent().show();
-	if (!/(InsectGlaive|ChargeBlade|LongSword)/.test(dropWeaponType.value)) {
-		$(weaponId).hide();
-	}
+	$('.melee').show();
 	if ($('#dropWeaponType').val() === 'ChargeBlade') {
 		if (window.weapon.ChargeBlade[$('#dropWeapon').val()].Phial === 'Impact Phial') {
-			shieldChargeEleid.parentNode.style = 'display:none';
 			shieldChargeIMPid.parentNode.style = "display:''";
+			shieldChargeEleid.parentNode.style = 'display:none';
 		} else if (window.weapon.ChargeBlade[$('#dropWeapon').val()].Phial === 'Element Phial') {
 			shieldChargeIMPid.parentNode.style = 'display:none';
 			shieldChargeEleid.parentNode.style = "display:''";
@@ -975,15 +947,12 @@ function UniqueColumnsDisplay() {
 		: 'grid-area: 5 / 3 / 6 / 4;';
 }
 function MaxSkills() {
-	// if ( check.every( ( keyCard ) => keyCard ) ) {
 	for (let i = 0; i < $('.skill').length; ++i) {
-		$('.skill')[i].selectedIndex = $('.skill')[i].hidden ? 0 : Object.values($('.skill')[i]).length - 1;
+		$('.skill')[i].selectedIndex = $('.skill')[i].hidden ? 0 : [$('.skill')[i].options.length - 1];
 	}
-	// }
 }
 
 function ResetSkills() {
-	// if ( check.every( ( keyCard ) => keyCard ) ) {
 	for (let i = 0; i < $('.skill').length; ++i) {
 		$('.skill')[i].selectedIndex = 0;
 	}
@@ -993,6 +962,7 @@ $('#mightyBowId').change(function (e) {
 	ComboReset();
 	UpdateComboDisplay();
 });
+
 $('.toggle').click(function (e) {
 	$(this).toggleClass('gray');
 	$(this).toggleClass('blue');
@@ -1000,18 +970,17 @@ $('.toggle').click(function (e) {
 	if (this !== filterCombo) {
 		DataCompile();
 		MonChart();
-	} else {
+	} else if (this === filterCombo) {
 		FilterTableForComboAttacks();
-		if ($('#filterCombo').hasClass('gray')) {
-			$('.a').show();
-		}
 	}
 });
+
 function ToggleAmmoTables() {
 	dpsTable.style = dpsTable.style.display !== 'none' ? 'display:none' : "display:''";
 
 	ammoTable.style = dpsTable.style.display !== 'none' ? 'display:none' : "display:''";
 }
+
 function calculateAmmoFrames(power) {
 	const ammo = {};
 	ammo.ammoIncrease = window.spm.AmmoUp[power.thisAttack][AmmoUPid.value];
@@ -1034,7 +1003,6 @@ function calculateAmmoFrames(power) {
 	 * ( ( ( ( ( 100 shots / clip size) -1  for times needed to reload) * frames used reloading) = total reload frames
 	 * + (100 * recoil frames) = total recoil frames ) / 30 frames per second)
 	 */
-
 	ammo.shotsPerMinBase = ~~(60 / (((100 / power.clip - 1) * ammo.reloadFrames + 100 * ammo.recoilFrames) / 30 / 100));
 	ammo.shotsPerMin = ~~(
 		60 /
@@ -1067,8 +1035,8 @@ function ComboReset(redKeyCard = false) {
 	}
 }
 function FilterTableForComboAttacks() {
-	$('.inputs').each(function (index, element) {
-		if (/blue/.test(filterCombo.className) && element.value === '0') {
+	$('.inputs').each((index, element) => {
+		if (/blue/.test(filterCombo.className) && (element.value === '0' || element.style === 'display: none;')) {
 			$(`.${index}`).hide();
 		} else {
 			$(`.${index}`).show();
@@ -1093,13 +1061,13 @@ function DecreaseComboCount() {
 
 $(document).ajaxSuccess(() => {
 	if (check.some(keyCard => !keyCard)) {
-		check[0] = event.target.responseURL === URLAttack || check[0];
-		check[1] = event.target.responseURL === URLMonster || check[1];
-		check[2] = event.target.responseURL === URLQuest || check[2];
-		check[3] = event.target.responseURL === URLRampage || check[3];
-		check[4] = event.target.responseURL === URLSharp || check[4];
-		check[5] = event.target.responseURL === URLType || check[5];
-		check[6] = event.target.responseURL === URLWeapon || check[6];
+		check[0] = event.target.responseURL === `${baseURL}/attacks.json` || check[0];
+		check[1] = event.target.responseURL === `${baseURL}/monsters.json` || check[1];
+		check[2] = event.target.responseURL === `${baseURL}/quest.json` || check[2];
+		check[3] = event.target.responseURL === `${baseURL}/rampage.json` || check[3];
+		check[4] = event.target.responseURL === `${baseURL}/sharpness.json` || check[4];
+		check[5] = event.target.responseURL === `${baseURL}/types.json` || check[5];
+		check[6] = event.target.responseURL === `${baseURL}/weapons.json` || check[6];
 
 		if (check.every(keyCard => keyCard)) {
 			WeaponTypeSelect();

@@ -901,9 +901,7 @@ select#weaponRampage5 {
       font-size: 0.8rem;
     }
 
-    tbody.meleeTable>tr>td:nth-child(2) {
-      width: 1rem;
-    }
+
   }
 
   output {
