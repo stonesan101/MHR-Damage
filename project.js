@@ -962,7 +962,7 @@ function MaxSkills() {
 	}
 }
 
-function ResetSkills(element = `.${skill}`) {
+function ResetSkills(element = '.skill') {
 	for (let i = 0; i < $(element).length; ++i) {
 		$(element)[i].selectedIndex = 0;
 	}
