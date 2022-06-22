@@ -162,7 +162,7 @@
 			"white": [0, 10],
 			"purple": [0, 0]
 		},
-		"Usurper's Firebolt I": {
+		"Usurpers Firebolt I": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [18, 18],
@@ -171,7 +171,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Usurper's Firebolt II": {
+		"Usurpers Firebolt II": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [14, 14],
@@ -180,7 +180,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Despot's Crookbolt": {
+		"Despots Crookbolt": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [20, 20],
@@ -297,7 +297,7 @@
 			"white": [0, 2],
 			"purple": [0, 0]
 		},
-		"Hunter's Knife I": {
+		"Hunters Knife I": {
 			"red": [16, 16],
 			"orange": [14, 14],
 			"yellow": [10, 18],
@@ -306,7 +306,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Hunter's Knife II": {
+		"Hunters Knife II": {
 			"red": [14, 14],
 			"orange": [10, 10],
 			"yellow": [16, 24],
@@ -342,7 +342,7 @@
 			"white": [0, 2],
 			"purple": [0, 0]
 		},
-		"Smithy's Pride": {
+		"Smithys Pride": {
 			"red": [16, 16],
 			"orange": [18, 18],
 			"yellow": [18, 18],
@@ -351,7 +351,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Soldier's Dagger I": {
+		"Soldiers Dagger I": {
 			"red": [30, 30],
 			"orange": [10, 10],
 			"yellow": [8, 8],
@@ -360,7 +360,7 @@
 			"white": [0, 4],
 			"purple": [0, 0]
 		},
-		"Soldier's Dagger II": {
+		"Soldiers Dagger II": {
 			"red": [32, 32],
 			"orange": [12, 12],
 			"yellow": [10, 10],
@@ -369,7 +369,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Commander's Dagger": {
+		"Commanders Dagger": {
 			"red": [32, 32],
 			"orange": [10, 10],
 			"yellow": [10, 10],
@@ -801,7 +801,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Chef's Knife": {
+		"Chefs Knife": {
 			"red": [20, 20],
 			"orange": [6, 6],
 			"yellow": [20, 20],
@@ -1062,7 +1062,7 @@
 			"white": [0, 2],
 			"purple": [0, 0]
 		},
-		"Abyssal Gale's Shredder": {
+		"Abyssal Gales Shredder": {
 			"red": [4, 4],
 			"orange": [4, 4],
 			"yellow": [16, 16],
@@ -1080,7 +1080,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Abyssal Storm's Sheadder": {
+		"Abyssal Storms Sheadder": {
 			"red": [4, 4],
 			"orange": [2, 2],
 			"yellow": [44, 44],
@@ -1098,7 +1098,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Daora's Razor": {
+		"Daoras Razor": {
 			"red": [16, 16],
 			"orange": [24, 24],
 			"yellow": [6, 6],
@@ -1107,7 +1107,7 @@
 			"white": [2, 12],
 			"purple": [0, 0]
 		},
-		"Teostra's Spada I": {
+		"Teostras Spada I": {
 			"red": [30, 30],
 			"orange": [4, 4],
 			"yellow": [16, 16],
@@ -1116,7 +1116,7 @@
 			"white": [0, 4],
 			"purple": [0, 0]
 		},
-		"Teostra's Emblem": {
+		"Teostras Emblem": {
 			"red": [32, 32],
 			"orange": [10, 10],
 			"yellow": [6, 6],
@@ -1370,7 +1370,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Usurper's Fulgur I": {
+		"Usurpers Fulgur I": {
 			"red": [12, 12],
 			"orange": [8, 8],
 			"yellow": [10, 10],
@@ -1379,7 +1379,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Usurper's Fulgur II": {
+		"Usurpers Fulgur II": {
 			"red": [12, 12],
 			"orange": [6, 6],
 			"yellow": [20, 20],
@@ -1388,7 +1388,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Despot's Blitz": {
+		"Despots Blitz": {
 			"red": [12, 12],
 			"orange": [8, 8],
 			"yellow": [24, 24],
@@ -1613,7 +1613,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Kulu's Peck I": {
+		"Kulus Peck I": {
 			"red": [16, 16],
 			"orange": [16, 16],
 			"yellow": [10, 10],
@@ -1622,7 +1622,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Kulu's Peck II": {
+		"Kulus Peck II": {
 			"red": [12, 12],
 			"orange": [12, 12],
 			"yellow": [14, 14],
@@ -1631,7 +1631,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Kulu's Lasher": {
+		"Kulus Lasher": {
 			"red": [12, 12],
 			"orange": [16, 16],
 			"yellow": [16, 16],
@@ -2207,7 +2207,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Daora's Hook": {
+		"Daoras Hook": {
 			"red": [18, 18],
 			"orange": [16, 16],
 			"yellow": [18, 18],
@@ -3595,7 +3595,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Daora's Raid": {
+		"Daoras Raid": {
 			"red": [20, 20],
 			"orange": [18, 18],
 			"yellow": [16, 16],
@@ -3748,7 +3748,7 @@
 			"white": [0, 4],
 			"purple": [0, 0]
 		},
-		"Kamura's Inheritance": {
+		"Kamuras Inheritance": {
 			"red": [14, 14],
 			"orange": [16, 16],
 			"yellow": [14, 14],
@@ -4218,7 +4218,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Iron Devil's Soul": {
+		"Iron Devils Soul": {
 			"red": [6, 6],
 			"orange": [6, 6],
 			"yellow": [40, 40],
@@ -4560,7 +4560,7 @@
 			"white": [0, 2],
 			"purple": [0, 0]
 		},
-		"Usurper's Thunder I": {
+		"Usurpers Thunder I": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [18, 18],
@@ -4569,7 +4569,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Usurper's Thunder II": {
+		"Usurpers Thunder II": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [14, 14],
@@ -4578,7 +4578,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Despot's Crackle": {
+		"Despots Crackle": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [20, 20],
@@ -4857,7 +4857,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Daora's Colossus": {
+		"Daoras Colossus": {
 			"red": [16, 16],
 			"orange": [22, 22],
 			"yellow": [14, 14],
@@ -4884,7 +4884,7 @@
 			"white": [0, 4],
 			"purple": [0, 0]
 		},
-		"Genie's Expanse I": {
+		"Genies Expanse I": {
 			"red": [20, 20],
 			"orange": [6, 6],
 			"yellow": [16, 16],
@@ -4893,7 +4893,7 @@
 			"white": [0, 10],
 			"purple": [0, 0]
 		},
-		"Diamalto's Dream": {
+		"Diamaltos Dream": {
 			"red": [14, 14],
 			"orange": [6, 6],
 			"yellow": [20, 20],
@@ -5246,7 +5246,7 @@
 			"white": [0, 2],
 			"purple": [0, 0]
 		},
-		"Usurper's Roar I": {
+		"Usurpers Roar I": {
 			"red": [16, 16],
 			"orange": [14, 14],
 			"yellow": [10, 10],
@@ -5255,7 +5255,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Usurper's Roar II": {
+		"Usurpers Roar II": {
 			"red": [12, 12],
 			"orange": [12, 12],
 			"yellow": [20, 20],
@@ -5264,7 +5264,7 @@
 			"white": [0, 2],
 			"purple": [0, 0]
 		},
-		"Despot's Phlogiston": {
+		"Despots Phlogiston": {
 			"red": [12, 12],
 			"orange": [18, 18],
 			"yellow": [24, 24],
@@ -5327,7 +5327,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Striker's Gunlance I": {
+		"Strikers Gunlance I": {
 			"red": [18, 18],
 			"orange": [14, 14],
 			"yellow": [8, 8],
@@ -5336,7 +5336,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Striker's Gunlance II": {
+		"Strikers Gunlance II": {
 			"red": [18, 18],
 			"orange": [16, 16],
 			"yellow": [12, 12],
@@ -5354,7 +5354,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"General's Arbalance I": {
+		"Generals Arbalance I": {
 			"red": [16, 16],
 			"orange": [14, 14],
 			"yellow": [14, 14],
@@ -5363,7 +5363,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"General's Arbalance II": {
+		"Generals Arbalance II": {
 			"red": [12, 12],
 			"orange": [14, 14],
 			"yellow": [14, 14],
@@ -5372,7 +5372,7 @@
 			"white": [0, 2],
 			"purple": [0, 0]
 		},
-		"Admiral's Arbalance": {
+		"Admirals Arbalance": {
 			"red": [18, 18],
 			"orange": [14, 14],
 			"yellow": [14, 14],
@@ -6128,7 +6128,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Daora's Brigia": {
+		"Daoras Brigia": {
 			"red": [16, 16],
 			"orange": [16, 16],
 			"yellow": [18, 18],
@@ -6688,7 +6688,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Gríðr's Landmaker": {
+		"Gríðrs Landmaker": {
 			"red": [18, 18],
 			"orange": [8, 8],
 			"yellow": [22, 22],
@@ -6697,7 +6697,7 @@
 			"white": [0, 4],
 			"purple": [0, 0]
 		},
-		"General's Strongaxe I": {
+		"Generals Strongaxe I": {
 			"red": [16, 16],
 			"orange": [16, 16],
 			"yellow": [14, 14],
@@ -6706,7 +6706,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"General's Strongaxe II": {
+		"Generals Strongaxe II": {
 			"red": [14, 14],
 			"orange": [14, 14],
 			"yellow": [14, 14],
@@ -7084,7 +7084,7 @@
 			"white": [0, 4],
 			"purple": [0, 0]
 		},
-		"Night's Crescent": {
+		"Nights Crescent": {
 			"red": [10, 10],
 			"orange": [14, 14],
 			"yellow": [20, 20],
@@ -7156,7 +7156,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Usurper's Downpour I": {
+		"Usurpers Downpour I": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [18, 18],
@@ -7165,7 +7165,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Usurper's Downpour II": {
+		"Usurpers Downpour II": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [32, 32],
@@ -7174,7 +7174,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Despot's Cloudburst": {
+		"Despots Cloudburst": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [24, 24],
@@ -7345,7 +7345,7 @@
 			"white": [0, 8],
 			"purple": [0, 0]
 		},
-		"Daora's Farasa I": {
+		"Daoras Farasa I": {
 			"red": [20, 20],
 			"orange": [16, 16],
 			"yellow": [16, 16],
@@ -7354,7 +7354,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Daora's Janah": {
+		"Daoras Janah": {
 			"red": [20, 20],
 			"orange": [14, 14],
 			"yellow": [16, 16],
@@ -7363,7 +7363,7 @@
 			"white": [2, 12],
 			"purple": [0, 0]
 		},
-		"Teostra's Arx I": {
+		"Teostras Arx I": {
 			"red": [20, 20],
 			"orange": [18, 18],
 			"yellow": [16, 16],
@@ -7372,7 +7372,7 @@
 			"white": [0, 2],
 			"purple": [0, 0]
 		},
-		"Teostra's Castle": {
+		"Teostras Castle": {
 			"red": [20, 20],
 			"orange": [18, 18],
 			"yellow": [16, 16],
@@ -7390,7 +7390,7 @@
 			"white": [0, 10],
 			"purple": [0, 0]
 		},
-		"Balor's Mirage": {
+		"Balors Mirage": {
 			"red": [10, 10],
 			"orange": [6, 6],
 			"yellow": [20, 20],
@@ -7716,7 +7716,7 @@
 			"white": [0, 8],
 			"purple": [0, 0]
 		},
-		"Usurper's Lightning I": {
+		"Usurpers Lightning I": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [18, 18],
@@ -7725,7 +7725,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Usurper's Lightning II": {
+		"Usurpers Lightning II": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [14, 14],
@@ -7734,7 +7734,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Despot's Thundergale": {
+		"Despots Thundergale": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [20, 20],
@@ -7797,7 +7797,7 @@
 			"white": [0, 4],
 			"purple": [0, 0]
 		},
-		"Titan's Vise": {
+		"Titans Vise": {
 			"red": [2, 2],
 			"orange": [28, 28],
 			"yellow": [8, 8],
@@ -7887,7 +7887,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"K. Captain's Blade I": {
+		"K. Captains Blade I": {
 			"red": [22, 22],
 			"orange": [14, 14],
 			"yellow": [12, 12],
@@ -7896,7 +7896,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"K. Captain's Blade II": {
+		"K. Captains Blade II": {
 			"red": [20, 20],
 			"orange": [14, 14],
 			"yellow": [10, 10],
@@ -8445,7 +8445,7 @@
 			"white": [0, 8],
 			"purple": [0, 0]
 		},
-		"Daora's Casca I": {
+		"Daoras Casca I": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [20, 20],
@@ -8454,7 +8454,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Daora's Thwartoise": {
+		"Daoras Thwartoise": {
 			"red": [16, 16],
 			"orange": [20, 20],
 			"yellow": [14, 14],
@@ -8463,7 +8463,7 @@
 			"white": [2, 12],
 			"purple": [0, 0]
 		},
-		"Teostra's Striker I": {
+		"Teostras Striker I": {
 			"red": [30, 30],
 			"orange": [4, 4],
 			"yellow": [14, 14],
@@ -8472,7 +8472,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Teostra's Nova": {
+		"Teostras Nova": {
 			"red": [32, 32],
 			"orange": [8, 8],
 			"yellow": [6, 6],
@@ -9392,7 +9392,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Despot's Twinbolt": {
+		"Despots Twinbolt": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [22, 22],
@@ -9662,7 +9662,7 @@
 			"white": [0, 8],
 			"purple": [0, 0]
 		},
-		"Daora's Entom I": {
+		"Daoras Entom I": {
 			"red": [10, 10],
 			"orange": [20, 20],
 			"yellow": [22, 22],
@@ -9671,7 +9671,7 @@
 			"white": [0, 8],
 			"purple": [0, 0]
 		},
-		"Daora's Tethidine": {
+		"Daoras Tethidine": {
 			"red": [10, 10],
 			"orange": [20, 20],
 			"yellow": [18, 18],
@@ -9680,7 +9680,7 @@
 			"white": [0, 10],
 			"purple": [0, 0]
 		},
-		"Caster's Rod I": {
+		"Casters Rod I": {
 			"red": [12, 12],
 			"orange": [26, 26],
 			"yellow": [8, 8],
@@ -10627,7 +10627,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Usurper's Storm I": {
+		"Usurpers Storm I": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [10, 10],
@@ -10636,7 +10636,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Usurper's Storm II": {
+		"Usurpers Storm II": {
 			"red": [12, 12],
 			"orange": [6, 6],
 			"yellow": [20, 20],
@@ -10645,7 +10645,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Despot's Blackstorm": {
+		"Despots Blackstorm": {
 			"red": [12, 12],
 			"orange": [8, 8],
 			"yellow": [24, 24],
@@ -10816,7 +10816,7 @@
 			"white": [0, 4],
 			"purple": [0, 0]
 		},
-		"Daora's Decimator": {
+		"Daoras Decimator": {
 			"red": [16, 16],
 			"orange": [24, 24],
 			"yellow": [14, 14],
@@ -10879,7 +10879,7 @@
 			"white": [18, 28],
 			"purple": [0, 0]
 		},
-		"Wyvern's Perch I": {
+		"Wyverns Perch I": {
 			"red": [4, 4],
 			"orange": [6, 6],
 			"yellow": [30, 40],
@@ -10888,7 +10888,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Wyvern's Perch II": {
+		"Wyverns Perch II": {
 			"red": [6, 6],
 			"orange": [8, 8],
 			"yellow": [34, 34],
@@ -10987,7 +10987,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Cat's Soul I": {
+		"Cats Soul I": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [10, 10],
@@ -10996,7 +10996,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Cat's Soul II": {
+		"Cats Soul II": {
 			"red": [10, 10],
 			"orange": [14, 14],
 			"yellow": [16, 16],
@@ -11005,7 +11005,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Cat's Curse": {
+		"Cats Curse": {
 			"red": [8, 8],
 			"orange": [12, 12],
 			"yellow": [16, 16],
@@ -11160,7 +11160,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Bombadgy's Cry": {
+		"Bombadgys Cry": {
 			"red": [18, 18],
 			"orange": [12, 12],
 			"yellow": [12, 12],
@@ -11313,7 +11313,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Teostra's Orphée": {
+		"Teostras Orphée": {
 			"red": [12, 12],
 			"orange": [14, 14],
 			"yellow": [14, 14],
@@ -11322,7 +11322,7 @@
 			"white": [0, 4],
 			"purple": [0, 0]
 		},
-		"Teostra's Tiple I": {
+		"Teostras Tiple I": {
 			"red": [12, 12],
 			"orange": [14, 14],
 			"yellow": [16, 16],
@@ -11331,7 +11331,7 @@
 			"white": [0, 2],
 			"purple": [0, 0]
 		},
-		"Daora's Baphophone": {
+		"Daoras Baphophone": {
 			"red": [10, 10],
 			"orange": [14, 14],
 			"yellow": [26, 26],
@@ -11340,7 +11340,7 @@
 			"white": [2, 12],
 			"purple": [0, 0]
 		},
-		"Daora's Taus I": {
+		"Daoras Taus I": {
 			"red": [10, 10],
 			"orange": [12, 12],
 			"yellow": [26, 26],
@@ -11718,7 +11718,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Native's Horn": {
+		"Natives Horn": {
 			"red": [30, 30],
 			"orange": [24, 24],
 			"yellow": [4, 4],
@@ -11727,7 +11727,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Hunter's Horn I": {
+		"Hunters Horn I": {
 			"red": [16, 16],
 			"orange": [14, 14],
 			"yellow": [12, 12],
@@ -12141,7 +12141,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Despot's Thunderclap": {
+		"Despots Thunderclap": {
 			"red": [12, 12],
 			"orange": [8, 8],
 			"yellow": [24, 24],
@@ -12150,7 +12150,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Usurper's Growl II": {
+		"Usurpers Growl II": {
 			"red": [12, 12],
 			"orange": [6, 6],
 			"yellow": [20, 20],
@@ -12159,7 +12159,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Usurper's Growl I": {
+		"Usurpers Growl I": {
 			"red": [12, 12],
 			"orange": [8, 8],
 			"yellow": [10, 10],
@@ -12503,7 +12503,7 @@
 			"white": [0, 6],
 			"purple": [0, 0]
 		},
-		"Teostra's Roar": {
+		"Teostras Roar": {
 			"red": [30, 30],
 			"orange": [10, 10],
 			"yellow": [6, 6],
@@ -12512,7 +12512,7 @@
 			"white": [0, 10],
 			"purple": [0, 0]
 		},
-		"Teostra's Howl I": {
+		"Teostras Howl I": {
 			"red": [30, 30],
 			"orange": [4, 4],
 			"yellow": [14, 14],
@@ -12521,7 +12521,7 @@
 			"white": [0, 10],
 			"purple": [0, 0]
 		},
-		"Daora's Fang": {
+		"Daoras Fang": {
 			"red": [16, 16],
 			"orange": [22, 22],
 			"yellow": [14, 14],
@@ -12683,7 +12683,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Despot's Cacophony": {
+		"Despots Cacophony": {
 			"red": [12, 12],
 			"orange": [8, 8],
 			"yellow": [20, 20],
@@ -12692,7 +12692,7 @@
 			"white": [0, 8],
 			"purple": [0, 0]
 		},
-		"Usurper's Coming II": {
+		"Usurpers Coming II": {
 			"red": [12, 12],
 			"orange": [10, 10],
 			"yellow": [20, 20],
@@ -12701,7 +12701,7 @@
 			"white": [0, 0],
 			"purple": [0, 0]
 		},
-		"Usurper's Coming I": {
+		"Usurpers Coming I": {
 			"red": [14, 14],
 			"orange": [8, 8],
 			"yellow": [10, 10],

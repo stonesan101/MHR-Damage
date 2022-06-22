@@ -1203,7 +1203,7 @@
 			"reload": 8,
 			"Deviation": "LR Severe"
 		},
-		"Hunter's Rifle I": {
+		"Hunters Rifle I": {
 			"Ammo": {
 				"Normal 1": { "rawMV": 10, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 1, "clip": 4 },
 				"Normal 1 (RF+3)": { "rawMV": 7, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 3, "clip": 4 },
@@ -1241,7 +1241,7 @@
 			"reload": 5,
 			"Deviation": "None"
 		},
-		"Hunter's Rifle II": {
+		"Hunters Rifle II": {
 			"Ammo": {
 				"Normal 1": { "rawMV": 10, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 1, "clip": 5 },
 				"Normal 1 (RF+3)": { "rawMV": 7, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 3, "clip": 5 },
@@ -1473,7 +1473,7 @@
 			"reload": 5,
 			"Deviation": "None"
 		},
-		"Usurper's Crime I": {
+		"Usurpers Crime I": {
 			"Ammo": {
 				"Normal 1": { "rawMV": 10, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 1, "clip": 7 },
 				"Normal 1 (RF+3)": { "rawMV": 7, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 3, "clip": 7 },
@@ -1519,7 +1519,7 @@
 			"reload": 5,
 			"Deviation": "None"
 		},
-		"Usurper's Crime II": {
+		"Usurpers Crime II": {
 			"Ammo": {
 				"Normal 1": { "rawMV": 10, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 1, "clip": 8 },
 				"Normal 1 (RF+3)": { "rawMV": 7, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 3, "clip": 8 },
@@ -1565,7 +1565,7 @@
 			"reload": 5,
 			"Deviation": "None"
 		},
-		"Despot's Wildfire": {
+		"Despots Wildfire": {
 			"Ammo": {
 				"Normal 1": { "rawMV": 10, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 1, "clip": 9 },
 				"Normal 1 (RF+3)": { "rawMV": 7, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 3, "clip": 9 },
@@ -4155,7 +4155,7 @@
 			"reload": 5,
 			"Deviation": "LR Mi"
 		},
-		"Teostra's Dart I": {
+		"Teostras Dart I": {
 			"Ammo": {
 				"Normal 1": { "rawMV": 10, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 1, "clip": 6 },
 				"Normal 1 (RF+3)": { "rawMV": 7, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 3, "clip": 6 },
@@ -4203,7 +4203,7 @@
 			"reload": 6,
 			"Deviation": "L Seve"
 		},
-		"Teostra's Flamebolt": {
+		"Teostras Flamebolt": {
 			"Ammo": {
 				"Normal 1": { "rawMV": 10, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 1, "clip": 8 },
 				"Normal 1 (RF+3)": { "rawMV": 7, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 3, "clip": 8 },
@@ -4291,7 +4291,7 @@
 			"reload": 6,
 			"Deviation": "LR Mi"
 		},
-		"Daora's Hornet": {
+		"Daoras Hornet": {
 			"Ammo": {
 				"Normal 1": { "rawMV": 10, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 1, "clip": 9 },
 				"Normal 1 (RF+3)": { "rawMV": 7, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 3, "clip": 9 },
@@ -4739,7 +4739,7 @@
 			"reload": 6,
 			"Deviation": "LR Mi"
 		},
-		"Watchdog's Howl": {
+		"Watchdogs Howl": {
 			"Ammo": {
 				"Normal 1": { "rawMV": 10, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 1, "clip": 8 },
 				"Normal 1 (RF+3)": { "rawMV": 7, "type": "Shot", "eleMV": 1, "eleType": "Non", "baseEle": 0, "ticsPer": 3, "clip": 8 },

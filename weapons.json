@@ -574,14 +574,14 @@
 			"aff": -20,
 			"Rampage": ["Affinity Boost II", "Fire Boost III", "Brutal Strike"]
 		},
-		"Usurper's Storm I": {
+		"Usurpers Storm I": {
 			"baseRaw": 120,
 			"eleType": "Thunder",
 			"baseEle": 30,
 			"aff": 0,
 			"Rampage": ["Attack Boost I", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Usurper's Storm II": {
+		"Usurpers Storm II": {
 			"baseRaw": 170,
 			"eleType": "Thunder",
 			"baseEle": 35,
@@ -707,14 +707,14 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Defense Boost III", "Chameleos Soul"]
 		},
-		"Wyvern's Perch I": {
+		"Wyverns Perch I": {
 			"baseRaw": 100,
 			"eleType": "Poison",
 			"baseEle": 30,
 			"aff": 0,
 			"Rampage": ["Poison Boost I", "Dulling Strike", "Spiribird Doubled"]
 		},
-		"Wyvern's Perch II": {
+		"Wyverns Perch II": {
 			"baseRaw": 180,
 			"eleType": "Poison",
 			"baseEle": 32,
@@ -791,21 +791,21 @@
 			"aff": 0,
 			"Rampage": ["Defense Boost III", "Dragon Boost III", "Dragon Exploit"]
 		},
-		"Cat's Soul I": {
+		"Cats Soul I": {
 			"baseRaw": 100,
 			"eleType": "Paralysis",
 			"baseEle": 36,
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Dulling Strike", "Buddy Rally"]
 		},
-		"Cat's Soul II": {
+		"Cats Soul II": {
 			"baseRaw": 130,
 			"eleType": "Paralysis",
 			"baseEle": 40,
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Dulling Strike", "Buddy Rally"]
 		},
-		"Cat's Curse": {
+		"Cats Curse": {
 			"baseRaw": 150,
 			"eleType": "Paralysis",
 			"baseEle": 45,
@@ -925,7 +925,7 @@
 			"aff": 15,
 			"Rampage": ["Attack Boost III", "Affinity Boost II", "Water Boost II"]
 		},
-		"Despot's Blackstorm": {
+		"Despots Blackstorm": {
 			"baseRaw": 200,
 			"eleType": "Thunder",
 			"baseEle": 38,
@@ -946,7 +946,7 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Anti-Aerial Species", "Narwa Soul"]
 		},
-		"Daora's Decimator": {
+		"Daoras Decimator": {
 			"baseRaw": 190,
 			"eleType": "Ice",
 			"baseEle": 45,
@@ -1299,21 +1299,21 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Poison Boost I", "Small Monster Exploit"]
 		},
-		"Grior's Landmaker": {
+		"Griors Landmaker": {
 			"baseRaw": 210,
 			"eleType": "Poison",
 			"baseEle": 25,
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Poison Boost I", "Small Monster Exploit"]
 		},
-		"General's Strongaxe I": {
+		"Generals Strongaxe I": {
 			"baseRaw": 150,
 			"eleType": "Non",
 			"baseEle": 0,
 			"aff": 0,
 			"Rampage": ["Affinity Boost I", "Boost Equipped Coating", "Silkbind Boost"]
 		},
-		"General's Strongaxe II": {
+		"Generals Strongaxe II": {
 			"baseRaw": 170,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -1607,7 +1607,7 @@
 			"aff": 40,
 			"Rampage": ["Attack Boost III", "Affinity Boost I", "Boost Equipped Coating"]
 		},
-		"Night's Crescent": {
+		"Nights Crescent": {
 			"baseRaw": 180,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -1663,21 +1663,21 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Water Boost II", "Waterblight Exploit"]
 		},
-		"Usurper's Downpour I": {
+		"Usurpers Downpour I": {
 			"baseRaw": 110,
 			"eleType": "Thunder",
 			"baseEle": 25,
 			"aff": 0,
 			"Rampage": ["Attack Boost I", "Thunder Boost I", "Anti-aquatic Species"]
 		},
-		"Usurper's Downpour II": {
+		"Usurpers Downpour II": {
 			"baseRaw": 180,
 			"eleType": "Thunder",
 			"baseEle": 28,
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Thunder Boost I", "Anti-aquatic Species"]
 		},
-		"Despot's Cloudburst": {
+		"Despots Cloudburst": {
 			"baseRaw": 200,
 			"eleType": "Thunder",
 			"baseEle": 32,
@@ -1789,14 +1789,14 @@
 			"aff": -15,
 			"Rampage": ["Defense Boost II", "Blast Boost II", "Brutal Strike"]
 		},
-		"Daora's Farasa I": {
+		"Daoras Farasa I": {
 			"baseRaw": 180,
 			"eleType": "Ice",
 			"baseEle": 39,
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Affinity Boost II", "Kushala Daora Soul"]
 		},
-		"Teostra's Arx I": {
+		"Teostras Arx I": {
 			"baseRaw": 190,
 			"eleType": "Blast",
 			"baseEle": 31,
@@ -2043,14 +2043,14 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Anti-Aerial Species", "Narwa Soul"]
 		},
-		"Balor's Mirage": {
+		"Balors Mirage": {
 			"baseRaw": 190,
 			"eleType": "Poison",
 			"baseEle": 28,
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Defense Boost III", "Chameleos Soul"]
 		},
-		"Daora's Janah": {
+		"Daoras Janah": {
 			"baseRaw": 190,
 			"eleType": "Ice",
 			"baseEle": 41,
@@ -2064,7 +2064,7 @@
 			"aff": 15,
 			"Rampage": ["Affinity Boost II", "Thunder Boost II", "Dulling Strike"]
 		},
-		"Teostra's Castle": {
+		"Teostras Castle": {
 			"baseRaw": 210,
 			"eleType": "Blast",
 			"baseEle": 36,
@@ -2447,7 +2447,7 @@
 				"Purple": 0
 			}
 		},
-		"Usurper's Lightning I": {
+		"Usurpers Lightning I": {
 			"baseRaw": 120,
 			"eleType": "Thunder",
 			"baseEle": 20,
@@ -2473,7 +2473,7 @@
 				"Purple": 0
 			}
 		},
-		"Usurper's Lightning II": {
+		"Usurpers Lightning II": {
 			"baseRaw": 190,
 			"eleType": "Thunder",
 			"baseEle": 23,
@@ -2499,7 +2499,7 @@
 				"Purple": 0
 			}
 		},
-		"Despot's Thundergale": {
+		"Despots Thundergale": {
 			"baseRaw": 210,
 			"eleType": "Thunder",
 			"baseEle": 26,
@@ -2681,7 +2681,7 @@
 				"Purple": 0
 			}
 		},
-		"Titan's Vise": {
+		"Titans Vise": {
 			"baseRaw": 200,
 			"eleType": "Poison",
 			"baseEle": 29,
@@ -2941,7 +2941,7 @@
 				"Purple": 0
 			}
 		},
-		"K. Captain's Blade I": {
+		"K. Captains Blade I": {
 			"baseRaw": 150,
 			"eleType": "Thunder",
 			"baseEle": 29,
@@ -2967,7 +2967,7 @@
 				"Purple": 0
 			}
 		},
-		"K. Captain's Blade II": {
+		"K. Captains Blade II": {
 			"baseRaw": 160,
 			"eleType": "Thunder",
 			"baseEle": 33,
@@ -4553,7 +4553,7 @@
 				"Purple": 0
 			}
 		},
-		"Daora's Casca I": {
+		"Daoras Casca I": {
 			"baseRaw": 180,
 			"eleType": "Ice",
 			"baseEle": 30,
@@ -4579,7 +4579,7 @@
 				"Purple": 0
 			}
 		},
-		"Daora's Thwartoise": {
+		"Daoras Thwartoise": {
 			"baseRaw": 190,
 			"eleType": "Ice",
 			"baseEle": 36,
@@ -4605,7 +4605,7 @@
 				"Purple": 0
 			}
 		},
-		"Teostra's Striker I": {
+		"Teostras Striker I": {
 			"baseRaw": 180,
 			"eleType": "Blast",
 			"baseEle": 38,
@@ -4631,7 +4631,7 @@
 				"Purple": 0
 			}
 		},
-		"Teostra's Nova": {
+		"Teostras Nova": {
 			"baseRaw": 190,
 			"eleType": "Blast",
 			"baseEle": 43,
@@ -5915,7 +5915,7 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Thunder Boost II", "Anti-Aquatic Species"]
 		},
-		"Despot's Twinbolt": {
+		"Despots Twinbolt": {
 			"baseRaw": 200,
 			"eleType": "Thunder",
 			"baseEle": 25,
@@ -6104,14 +6104,14 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Anti-Aerial Species", "Narwa Soul"]
 		},
-		"Daora's Entom I": {
+		"Daoras Entom I": {
 			"baseRaw": 170,
 			"eleType": "Ice",
 			"baseEle": 34,
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Ice Boost I", "Kushala Daora Soul"]
 		},
-		"Caster's Rod I": {
+		"Casters Rod I": {
 			"baseRaw": 180,
 			"eleType": "Poison",
 			"baseEle": 35,
@@ -6325,7 +6325,7 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Anti-Aerial Species", "Narwa Soul"]
 		},
-		"Daora's Tethidine": {
+		"Daoras Tethidine": {
 			"baseRaw": 180,
 			"eleType": "Ice",
 			"baseEle": 36,
@@ -6439,19 +6439,19 @@
 			"Special Ammo": "Wyvernsnipe",
 			"Rampage": ["Defense Boost II", "Cluster Effect II", "Waterblight Exploit"]
 		},
-		"Queen's Longfire I": {
+		"Queens Longfire I": {
 			"baseRaw": 120,
 			"aff": 0,
 			"Special Ammo": "Wyvernsnipe",
 			"Rampage": ["Attack Boost I", "Spread Effect I", "Small Monster Exploit"]
 		},
-		"Queen's Longfire II": {
+		"Queens Longfire II": {
 			"baseRaw": 190,
 			"aff": 0,
 			"Special Ammo": "Wyvernsnipe",
 			"Rampage": ["Attack Boost II", "Spread Effect I", "Small Monster Exploit"]
 		},
-		"Queen's Farflier": {
+		"Queens Farflier": {
 			"baseRaw": 210,
 			"aff": 0,
 			"Special Ammo": "Wyvernsnipe",
@@ -6487,19 +6487,19 @@
 			"Special Ammo": "Wyvernsnipe",
 			"Rampage": ["Attack Boost II", "Defense Boost II", "Small Monster Exploit"]
 		},
-		"Usurper's Tremor I": {
+		"Usurpers Tremor I": {
 			"baseRaw": 140,
 			"aff": 10,
 			"Special Ammo": "Wyvernheart",
 			"Rampage": ["Attack Boost I", "Affinity Boost I", "Anti-Aquatic Species"]
 		},
-		"Usurper's Tremor II": {
+		"Usurpers Tremor II": {
 			"baseRaw": 200,
 			"aff": 10,
 			"Special Ammo": "Wyvernheart",
 			"Rampage": ["Attack Boost II", "Affinity Boost I", "Anti-Aquatic Species"]
 		},
-		"Despot's Paroxysm": {
+		"Despots Paroxysm": {
 			"baseRaw": 220,
 			"aff": 10,
 			"Special Ammo": "Wyvernheart",
@@ -6523,13 +6523,13 @@
 			"Special Ammo": "Wyvernheart",
 			"Rampage": ["Attack Boost II", "Affinity Boost I", "Defense Boost II"]
 		},
-		"Striker's Bowgun I": {
+		"Strikers Bowgun I": {
 			"baseRaw": 170,
 			"aff": 0,
 			"Special Ammo": "Wyvernheart",
 			"Rampage": ["Attack Boost II", "Defense Boost II", "Silkbind Boost"]
 		},
-		"Striker's Bowgun II": {
+		"Strikers Bowgun II": {
 			"baseRaw": 190,
 			"aff": 0,
 			"Special Ammo": "Wyvernheart",
@@ -6793,7 +6793,7 @@
 			"Special Ammo": "Wyvernsnipe",
 			"Rampage": ["Attack Boost II", "Shrapnel Effect I", "Silkbind Boost"]
 		},
-		"Bishaten's Grace": {
+		"Bishatens Grace": {
 			"baseRaw": 180,
 			"aff": 0,
 			"Special Ammo": "Wyvernsnipe",
@@ -6847,7 +6847,7 @@
 			"Special Ammo": "Wyvernsnipe",
 			"Rampage": ["Normal Effect I", "Sticky Effect I", "Brutal Strike"]
 		},
-		"Rajang's Rage": {
+		"Rajangs Rage": {
 			"baseRaw": 230,
 			"aff": -20,
 			"Special Ammo": "Wyvernsnipe",
@@ -7078,13 +7078,13 @@
 			"Special Ammo": "Wyvernsnipe",
 			"Rampage": ["Defense Boost II", "Spread Effect I", "Chameleos Soul"]
 		},
-		"Teostra's Artillery I": {
+		"Teostras Artillery I": {
 			"baseRaw": 210,
 			"aff": 5,
 			"Special Ammo": "Wyvernsnipe",
 			"Rampage": ["Sticky Effect I", "Fire Blight Exploit", "Teostra Soul"]
 		},
-		"Daora's Delphinidae": {
+		"Daoras Delphinidae": {
 			"baseRaw": 210,
 			"aff": 10,
 			"Special Ammo": "Wyvernsnipe",
@@ -7208,7 +7208,7 @@
 				"Ice Effect II"
 			]
 		},
-		"Teostra's Flames": {
+		"Teostras Flames": {
 			"baseRaw": 230,
 			"aff": 5,
 			"Special Ammo": "Wyvernsnipe",
@@ -7402,13 +7402,13 @@
 			"Special Ammo": "Wyvernblast",
 			"Rampage": ["Affinity Boost I", "Pierce Effect II", "Brutal Strike"]
 		},
-		"Hunter's Rifle I": {
+		"Hunters Rifle I": {
 			"baseRaw": 70,
 			"aff": 0,
 			"Special Ammo": "Wyvernblast",
 			"Rampage": ["Attack Boost I", "Affinity Boost I", "Defense Boost II"]
 		},
-		"Hunter's Rifle II": {
+		"Hunters Rifle II": {
 			"baseRaw": 90,
 			"aff": 0,
 			"Special Ammo": "Wyvernblast",
@@ -7438,19 +7438,19 @@
 			"Special Ammo": "Wyvernblast",
 			"Rampage": ["Attack Boost III", "Defense Boost III", "Dragon Exploit"]
 		},
-		"Usurper's Crime I": {
+		"Usurpers Crime I": {
 			"baseRaw": 120,
 			"aff": 10,
 			"Special Ammo": "Wyvernblast",
 			"Rampage": ["Attack Boost I", "Affinity Boost I", "Anti-Aquatic Species"]
 		},
-		"Usurper's Crime II": {
+		"Usurpers Crime II": {
 			"baseRaw": 170,
 			"aff": 10,
 			"Special Ammo": "Wyvernblast",
 			"Rampage": ["Attack Boost II", "Affinity Boost I", "Anti-Aquatic Species"]
 		},
-		"Despot's Wildfire": {
+		"Despots Wildfire": {
 			"baseRaw": 190,
 			"aff": 10,
 			"Special Ammo": "Wyvernblast",
@@ -7786,7 +7786,7 @@
 			"Special Ammo": "Wyvernblast",
 			"Rampage": ["Attack Boost II", "Affinity Boost II", "Kushala Daora Soul"]
 		},
-		"Teostra's Dart I": {
+		"Teostras Dart I": {
 			"baseRaw": 190,
 			"aff": 5,
 			"Special Ammo": "Wyvernblast",
@@ -7810,7 +7810,7 @@
 			"Special Ammo": "Wyvernblast",
 			"Rampage": ["Attack Boost I", "Master Rider", "Buddy Rally"]
 		},
-		"Watchdog's Howl": {
+		"Watchdogs Howl": {
 			"baseRaw": 170,
 			"aff": 0,
 			"Special Ammo": "Wyvernblast",
@@ -7986,7 +7986,7 @@
 			"Special Ammo": "Wyvernablast",
 			"Rampage": ["Attack Boost III", "Defense Boost III", "Chameleos Soul"]
 		},
-		"Daora's Hornet": {
+		"Daoras Hornet": {
 			"baseRaw": 200,
 			"aff": 10,
 			"Rampage": ["Attack Boost III", "Affinity Boost III", "Kushala Daora Soul"]
@@ -8003,7 +8003,7 @@
 			"Special Ammo": "Wyvernablast",
 			"Rampage": ["Affinity Boost II", "Brutal Strike", "Master Rider"]
 		},
-		"Teostra's Flamebolt": {
+		"Teostras Flamebolt": {
 			"baseRaw": 200,
 			"aff": 5,
 			"Special Ammo": "Wyvernablast",
@@ -8129,7 +8129,7 @@
 			"Coatings": ["Close-range Coating", "Power Coating", "Poison Coating", "Para Coating"],
 			"Rampage": ["Attack Boost II", "LastingArcShot", "Silkbind Boost"]
 		},
-		"Summit's Grand Glow": {
+		"Summits Grand Glow": {
 			"baseRaw": 180,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -8255,7 +8255,7 @@
 			"Coatings": ["Close-range Coating", "Power Coating", "Poison Coating", "Sleep Coating"],
 			"Rampage": ["Affinity Boost II", "LastingArcShot", "Buddy Rally"]
 		},
-		"Hoodwinker's Revolver": {
+		"Hoodwinkers Revolver": {
 			"baseRaw": 160,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -8311,7 +8311,7 @@
 			"Coatings": ["Close-range Coating", "Power Coating"],
 			"Rampage": ["Attack Boost II", "Affinity Boost I", "Defense Boost II"]
 		},
-		"Hunter's Stoutbow I": {
+		"Hunters Stoutbow I": {
 			"baseRaw": 140,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -8319,7 +8319,7 @@
 			"Coatings": ["Close-range Coating", "Power Coating"],
 			"Rampage": ["Attack Boost II", "Defense Boost II", "Silkbind Boost"]
 		},
-		"Hunter's Stoutbow II": {
+		"Hunters Stoutbow II": {
 			"baseRaw": 170,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -8327,7 +8327,7 @@
 			"Coatings": ["Close-range Coating", "Power Coating"],
 			"Rampage": ["Attack Boost II", "Defense Boost III", "Silkbind Boost"]
 		},
-		"Hunter's Prodbow": {
+		"Hunters Prodbow": {
 			"baseRaw": 190,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -8351,7 +8351,7 @@
 			"Coatings": ["Close-range Coating", "Power Coating"],
 			"Rampage": ["Attack Boost II", "Affinity Boost II", "Master Rider"]
 		},
-		"Herald's Battlebow": {
+		"Heralds Battlebow": {
 			"baseRaw": 220,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -8375,7 +8375,7 @@
 			"Coatings": ["Close-range Coating", "Power Coating"],
 			"Rampage": ["Attack Boost III", "Ice Boost I", "Elemental Exploit"]
 		},
-		"Heaven's Glaze": {
+		"Heavens Glaze": {
 			"baseRaw": 190,
 			"eleType": "Ice",
 			"baseEle": 50,
@@ -8422,7 +8422,7 @@
 			"Coatings": ["Close-range Coating", "Poison Coating", "Para Coating"],
 			"Rampage": ["Attack Boost II", "Fire Boost I", "Small Monster Exploit"]
 		},
-		"Queen's Melody": {
+		"Queens Melody": {
 			"baseRaw": 180,
 			"eleType": "Fire",
 			"baseEle": 16,
@@ -8454,7 +8454,7 @@
 			"Coatings": ["Close-range Coating", "Power Coating", "Poison Coating", "Para Coating"],
 			"Rampage": ["Attack Boost III", "Fire Boost I", "Elemental Exploit"]
 		},
-		"Kulu's Flight I": {
+		"Kulus Flight I": {
 			"baseRaw": 110,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -8462,7 +8462,7 @@
 			"Coatings": ["Close-range Coating", "Para Coating", "Sleep Coating", "Blast Coating"],
 			"Rampage": ["Attack Boost I", "Sleep Coating Boost", "SpiribirdDoubled"]
 		},
-		"Kulu's Flight II": {
+		"Kulus Flight II": {
 			"baseRaw": 130,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -8526,7 +8526,7 @@
 			"Coatings": ["Close-range Coating", "Poison Coating", "Blast Coating", "Exhaust Coating"],
 			"Rampage": ["Attack Boost II", "Affinity Boost II", "Defense Boost I"]
 		},
-		"Hunter's Bow I": {
+		"Hunters Bow I": {
 			"baseRaw": 150,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -8534,7 +8534,7 @@
 			"Coatings": ["Close-range Coating", "Poison Coating", "Blast Coating", "Exhaust Coating"],
 			"Rampage": ["Attack Boost II", "Affinity Boost II", "Poison Coating Boost"]
 		},
-		"Hunter's Bow II": {
+		"Hunters Bow II": {
 			"baseRaw": 180,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -8542,7 +8542,7 @@
 			"Coatings": ["Close-range Coating", "Poison Coating", "Blast Coating", "Exhaust Coating"],
 			"Rampage": ["Attack Boost III", "Affinity Boost II", "Poison Coating Boost"]
 		},
-		"Master Hunter's Bow": {
+		"Master Hunters Bow": {
 			"baseRaw": 200,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -8590,7 +8590,7 @@
 			"Coatings": ["Close-range Coating", "Exhaust Coating"],
 			"Rampage": ["Affinity Boost II", "Defense Boost I", "LastingArcShot"]
 		},
-		"Usurper's Rumble I": {
+		"Usurpers Rumble I": {
 			"baseRaw": 120,
 			"eleType": "Thunder",
 			"baseEle": 14,
@@ -8598,7 +8598,7 @@
 			"Coatings": ["Close-range Coating", "Power Coating", "Poison Coating", "Para Coating", "Exhaust Coating"],
 			"Rampage": ["Attack Boost I", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Usurper's Rumble II": {
+		"Usurpers Rumble II": {
 			"baseRaw": 190,
 			"eleType": "Thunder",
 			"baseEle": 18,
@@ -8606,7 +8606,7 @@
 			"Coatings": ["Close-range Coating", "Power Coating", "Poison Coating", "Para Coating", "Exhaust Coating"],
 			"Rampage": ["Attack Boost II", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Despot's Earlybolt": {
+		"Despots Earlybolt": {
 			"baseRaw": 210,
 			"eleType": "Thunder",
 			"baseEle": 20,
@@ -8938,7 +8938,7 @@
 			"Coatings": ["Close-range Coating", "Power Coating", "Sleep Coating"],
 			"Rampage": ["Attack Boost II", "Fire Blight Exploit", "Teostra Soul"]
 		},
-		"Genie's Grimoire I": {
+		"Genies Grimoire I": {
 			"baseRaw": 220,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -9078,10 +9078,10 @@
 	"BowShotType": {
 		"Dawn Ray Bow I": { "innate": ["Lv1:Pierce", "Lv2:Rapid", "Lv3:Rapid", "Lv3:Pierce"] },
 		"Dawn Ray Bow II": { "innate": ["Lv2:Pierce", "Lv3:Rapid", "Lv3:Rapid", "Lv4:Pierce"] },
-		"Summit's Grand Glow": { "innate": ["Lv3:Pierce", "Lv4:Rapid", "Lv4:Rapid", "Lv4:Pierce"] },
+		"Summits Grand Glow": { "innate": ["Lv3:Pierce", "Lv4:Rapid", "Lv4:Rapid", "Lv4:Pierce"] },
 		"Yekla Arc I": { "innate": ["Lv2:Spread", "Lv2:Spread", "Lv3:Rapid", "Lv4:Rapid"] },
 		"Yekla Arc II": { "innate": ["Lv2:Spread", "Lv3:Spread", "Lv3:Rapid", "Lv4:Rapid"] },
-		"Herald's Battlebow": { "innate": ["Lv3:Spread", "Lv3:Spread", "Lv3:Rapid", "Lv4:Rapid"] },
+		"Heralds Battlebow": { "innate": ["Lv3:Spread", "Lv3:Spread", "Lv3:Rapid", "Lv4:Rapid"] },
 		"Diablos Coilbender I": { "innate": ["Lv2:Rapid", "Lv2:Rapid", "Lv3:Pierce", "Lv3:Pierce"] },
 		"Diablos Coilbender II": { "innate": ["Lv2:Rapid", "Lv3:Rapid", "Lv3:Pierce", "Lv4:Pierce"] },
 		"Tyrant Bow": { "innate": ["Lv2:Rapid", "Lv4:Rapid", "Lv4:Pierce", "Lv4:Pierce"] },
@@ -9100,7 +9100,7 @@
 		"Araknatorch": { "innate": ["Lv3:Spread", "Lv4:Pierce", "Lv5:Pierce"], "MightyBow": ["Lv5:Pierce"] },
 		"Blessed Rain I": { "innate": ["Lv2:Rapid", "Lv2:Rapid", "Lv4:Rapid"], "MightyBow": ["Lv4:Rapid"] },
 		"Blessed Rain II": { "innate": ["Lv2:Rapid", "Lv3:Rapid", "Lv4:Rapid"], "MightyBow": ["Lv4:Rapid"] },
-		"Heaven's Manna": { "innate": ["Lv3:Rapid", "Lv3:Rapid", "Lv4:Rapid"], "MightyBow": ["Lv5:Rapid"] },
+		"Heavens Manna": { "innate": ["Lv3:Rapid", "Lv3:Rapid", "Lv4:Rapid"], "MightyBow": ["Lv5:Rapid"] },
 		"Hidden Bow I": { "innate": ["Lv1:Pierce", "Lv2:Pierce", "Lv3:Pierce"], "MightyBow": ["Lv3:Pierce"] },
 		"Hidden Bow II": { "innate": ["Lv2:Pierce", "Lv2:Pierce", "Lv3:Pierce"], "MightyBow": ["Lv4:Pierce"] },
 		"Night Flight": { "innate": ["Lv2:Pierce", "Lv3:Pierce", "Lv4:Pierce"], "MightyBow": ["Lv5:Pierce"] },
@@ -9114,30 +9114,30 @@
 		"Edelweiss": { "innate": ["Lv3:Rapid", "Lv3:Rapid", "Lv3:Spread"], "MightyBow": ["Lv3:Spread"] },
 		"Wroggi Revolver I": { "innate": ["Lv2:Pierce", "Lv2:Rapid", "Lv3:Rapid"], "MightyBow": ["Lv3:Rapid"] },
 		"Wroggi Revolver II": { "innate": ["Lv2:Pierce", "Lv3:Rapid", "Lv3:Rapid"], "MightyBow": ["Lv3:Rapid"] },
-		"Hoodwinker's Revolver": { "innate": ["Lv2:Pierce", "Lv3:Rapid", "Lv4:Rapid"], "MightyBow": ["Lv4:Rapid"] },
+		"Hoodwinkers Revolver": { "innate": ["Lv2:Pierce", "Lv3:Rapid", "Lv4:Rapid"], "MightyBow": ["Lv4:Rapid"] },
 		"Arzuros Bow I": { "innate": ["Lv3:Spread", "Lv2:Spread", "Lv1:Spread"], "MightyBow": ["Lv3:Spread"] },
 		"Arzuros Bow II": { "innate": ["Lv4:Spread", "Lv3:Spread", "Lv1:Spread"], "MightyBow": ["Lv3:Spread"] },
 		"Arzuros' Honeypot": { "innate": ["Lv5:Spread", "Lv4:Spread", "Lv2:Spread"], "MightyBow": ["Lv4:Spread"] },
 		"Iron Bow I": { "innate": ["Lv1:Pierce", "Lv1:Pierce", "Lv2:Pierce"], "MightyBow": ["Lv2:Spread"] },
 		"Iron Bow II": { "innate": ["Lv1:Pierce", "Lv2:Pierce", "Lv2:Pierce"], "MightyBow": ["Lv2:Spread"] },
 		"Steel Bow": { "innate": ["Lv1:Pierce", "Lv2:Pierce", "Lv3:Pierce"], "MightyBow": ["Lv3:Spread"] },
-		"Hunter's Stoutbow I": { "innate": ["Lv2:Pierce", "Lv2:Pierce", "Lv3:Pierce"], "MightyBow": ["Lv3:Spread"] },
-		"Hunter's Stoutbow II": { "innate": ["Lv2:Pierce", "Lv3:Pierce", "Lv3:Pierce"], "MightyBow": ["Lv4:Spread"] },
-		"Hunter's Proudbow": { "innate": ["Lv2:Pierce", "Lv3:Pierce", "Lv4:Pierce"], "MightyBow": ["Lv4:Spread"] },
+		"Hunters Stoutbow I": { "innate": ["Lv2:Pierce", "Lv2:Pierce", "Lv3:Pierce"], "MightyBow": ["Lv3:Spread"] },
+		"Hunters Stoutbow II": { "innate": ["Lv2:Pierce", "Lv3:Pierce", "Lv3:Pierce"], "MightyBow": ["Lv4:Spread"] },
+		"Hunters Proudbow": { "innate": ["Lv2:Pierce", "Lv3:Pierce", "Lv4:Pierce"], "MightyBow": ["Lv4:Spread"] },
 		"Crystalline Flower I": { "innate": ["Lv1:Rapid", "Lv1:Rapid", "Lv3:Rapid"], "MightyBow": ["Lv3:Rapid"] },
 		"Crystalline Flower II": { "innate": ["Lv1:Rapid", "Lv2:Rapid", "Lv3:Rapid"], "MightyBow": ["Lv3:Rapid"] },
-		"Heaven's Glaze": { "innate": ["Lv2:Rapid", "Lv2:Rapid", "Lv3:Rapid"], "MightyBow": ["Lv3:Rapid"] },
+		"Heavens Glaze": { "innate": ["Lv2:Rapid", "Lv2:Rapid", "Lv3:Rapid"], "MightyBow": ["Lv3:Rapid"] },
 		"Mud Shot I": { "innate": ["Lv1:Spread", "Lv3:Spread"], "MightyBow": ["Lv5:Spread"] },
 		"Mud Shot II": { "innate": ["Lv1:Spread", "Lv3:Spread"], "MightyBow": ["Lv5,pread"] },
 		"Hail of Mud": { "innate": ["Lv1:Spread", "Lv4:Spread"], "MightyBow": ["Lv5,pread"] },
 		"Queen Blaster I": { "innate": ["Lv2:Rapid", "Lv2:Rapid", "Lv3:Spread"], "MightyBow": ["Lv3:Spread"] },
 		"Queen Blaster II": { "innate": ["Lv2:Rapid", "Lv3:Rapid", "Lv3:Spread"], "MightyBow": ["Lv3:Spread"] },
-		"Queen's Melody": { "innate": ["Lv3:Rapid", "Lv3:Rapid", "Lv3:Spread"], "MightyBow": ["Lv3:Spread"] },
+		"Queens Melody": { "innate": ["Lv3:Rapid", "Lv3:Rapid", "Lv3:Spread"], "MightyBow": ["Lv3:Spread"] },
 		"Prominence Bow I": { "innate": ["Lv4:Rapid", "Lv3:Rapid", "Lv3:Spread"], "MightyBow": ["Lv3:Spread"] },
 		"Prominence Bow II": { "innate": ["Lv4:Rapid", "Lv4:Rapid", "Lv3:Spread"], "MightyBow": ["Lv3:Spread"] },
 		"Dark Filament": { "innate": ["Lv4:Rapid", "Lv4:Rapid", "Lv4:Spread"], "MightyBow": ["Lv3:Spread"] },
-		"Kulu's Flight I": { "innate": ["Lv1:Pierce", "Lv2:Rapid", "Lv2:Rapid"], "MightyBow": ["Lv3:Spread"] },
-		"Kulu's Flight II": { "innate": ["Lv2:Pierce", "Lv2:Rapid", "Lv3:Rapid"], "MightyBow": ["Lv3:Spread"] },
+		"Kulus Flight I": { "innate": ["Lv1:Pierce", "Lv2:Rapid", "Lv2:Rapid"], "MightyBow": ["Lv3:Spread"] },
+		"Kulus Flight II": { "innate": ["Lv2:Pierce", "Lv2:Rapid", "Lv3:Rapid"], "MightyBow": ["Lv3:Spread"] },
 		"Kulu Piercer": { "innate": ["Lv2:Pierce", "Lv3:Rapid", "Lv4:Rapid"], "MightyBow": ["Lv3:Spread"] },
 		"Khezu Bow I": { "innate": ["Lv2:Spread", "Lv2:Spread", "Lv2:Spread"], "MightyBow": ["Lv3:Spread"] },
 		"Khezu Bow II": { "innate": ["Lv2:Spread", "Lv3:Spread", "Lv3:Spread"], "MightyBow": ["Lv3:Spread"] },
@@ -9145,15 +9145,15 @@
 		"Bone Gun I": { "innate": ["Lv1:Spread", "Lv1:Spread", "Lv2:Spread"], "MightyBow": ["Lv2:Rapid"] },
 		"Bone Gun II": { "innate": ["Lv1:Spread", "Lv2:Spread", "Lv2:Spread"], "MightyBow": ["Lv2:Rapid"] },
 		"Hyper Bone Gun": { "innate": ["Lv1:Spread", "Lv2:Spread", "Lv3:Spread"], "MightyBow": ["Lv3:Rapid"] },
-		"Hunter's Bow I": { "innate": ["Lv2:Spread", "Lv2:Spread", "Lv3:Spread"], "MightyBow": ["Lv3:Rapid"] },
-		"Hunter's Bow II": { "innate": ["Lv2:Spread", "Lv3:Spread", "Lv3:Spread"], "MightyBow": ["Lv4:Rapid"] },
-		"Master Hunter's Bow": { "innate": ["Lv2:Spread", "Lv3:Spread", "Lv4:Spread"], "MightyBow": ["Lv4:Rapid"] },
+		"Hunters Bow I": { "innate": ["Lv2:Spread", "Lv2:Spread", "Lv3:Spread"], "MightyBow": ["Lv3:Rapid"] },
+		"Hunters Bow II": { "innate": ["Lv2:Spread", "Lv3:Spread", "Lv3:Spread"], "MightyBow": ["Lv4:Rapid"] },
+		"Master Hunters Bow": { "innate": ["Lv2:Spread", "Lv3:Spread", "Lv4:Spread"], "MightyBow": ["Lv4:Rapid"] },
 		"Tigrex Archer I": { "innate": ["Lv1:Rapid", "Lv2:Rapid", "Lv3:Rapid"], "MightyBow": ["Lv3:Spread"] },
 		"Tigrex Archer II": { "innate": ["Lv2:Rapid", "Lv3:Rapid", "Lv4:Rapid"], "MightyBow": ["Lv3:Spread"] },
 		"Tigrex Whisker": { "innate": ["Lv2:Rapid", "Lv3:Rapid", "Lv5:Rapid"], "MightyBow": ["Lv3:Spread"] },
-		"Usurper's Rumble I": { "innate": ["Lv2:Rapid", "Lv2:Rapid", "Lv3:Pierce"], "MightyBow": ["Lv4:Pierce"] },
-		"Usurper's Rumble II": { "innate": ["Lv2:Rapid", "Lv3:Rapid", "Lv4:Pierce"], "MightyBow": ["Lv4:Pierce"] },
-		"Despot's Earlybolt": { "innate": ["Lv2:Rapid", "Lv4:Rapid", "Lv4:Pierce"], "MightyBow": ["Lv4:Pierce"] },
+		"Usurpers Rumble I": { "innate": ["Lv2:Rapid", "Lv2:Rapid", "Lv3:Pierce"], "MightyBow": ["Lv4:Pierce"] },
+		"Usurpers Rumble II": { "innate": ["Lv2:Rapid", "Lv3:Rapid", "Lv4:Pierce"], "MightyBow": ["Lv4:Pierce"] },
+		"Despots Earlybolt": { "innate": ["Lv2:Rapid", "Lv4:Rapid", "Lv4:Pierce"], "MightyBow": ["Lv4:Pierce"] },
 		"Pukei Bow I": { "innate": ["Lv2:Rapid", "Lv1:Pierce", "Lv3:Pierce"], "MightyBow": ["Lv2:Pierce"] },
 		"Pukei Bow II": { "innate": ["Lv3:Rapid", "Lv2:Pierce", "Lv3:Pierce"], "MightyBow": ["Lv3:Pierce"] },
 		"Venomtongue Strike": { "innate": ["Lv4:Rapid", "Lv3:Pierce", "Lv4:Pierce"], "MightyBow": ["Lv3:Pierce"] },
@@ -9197,11 +9197,11 @@
 		"Thunderbolt Bow I": { "innate": ["Lv1:Rapid", "Lv2:Spread", "Lv3:Spread"], "MightyBow": ["Lv5:Pierce"] },
 		"Abyssal Storm Bow": { "innate": ["Lv2:Rapid", "Lv3:Spread", "Lv4:Spread"], "MightyBow": ["Lv5:Pierce"] },
 		"Icesteel Bow I": { "innate": ["Lv2:Rapid", "Lv3:Pierce", "Lv4:Pierce"], "MightyBow": ["Lv5:Pierce"] },
-		"Daora's Sagittarii": { "innate": ["Lv3:Rapid", "Lv3:Pierce", "Lv5:Pierce"], "MightyBow": ["Lv5:Pierce"] },
+		"Daoras Sagittarii": { "innate": ["Lv3:Rapid", "Lv3:Pierce", "Lv5:Pierce"], "MightyBow": ["Lv5:Pierce"] },
 		"Bow of Hope & Valor I": { "innate": ["Lv2:Pierce", "Lv3:Pierce", "Lv3:Rapid"], "MightyBow": ["Lv4:Rapid"] },
 		"Bow of Light & Courage": { "innate": ["Lv2:Pierce", "Lv4:Pierce", "Lv4:Rapid"], "MightyBow": ["Lv5:Rapid"] },
-		"Genie's Grimoire I": { "innate": ["Lv2:Spread", "Lv2:Rapid", "Lv4:Spread"], "MightyBow": ["Lv4:Spread"] },
-		"Demon's Guidance": { "innate": ["Lv2:Spread", "Lv2:Rapid", "Lv4:Spread"], "MightyBow": ["Lv5:Spread"] },
+		"Genies Grimoire I": { "innate": ["Lv2:Spread", "Lv2:Rapid", "Lv4:Spread"], "MightyBow": ["Lv4:Spread"] },
+		"Demons Guidance": { "innate": ["Lv2:Spread", "Lv2:Rapid", "Lv4:Spread"], "MightyBow": ["Lv5:Spread"] },
 		"Redwing Bow I": { "innate": ["Lv2:Pierce", "Lv2:Spread", "Lv3:Spread"], "MightyBow": ["Lv4:Spread"] },
 		"Reddnaught Dragon Arc": { "innate": ["Lv2:Pierce", "Lv3:Spread", "Lv4:Spread"], "MightyBow": ["Lv5:Spread"] },
 		"Morsel Bowfish I": { "innate": ["Lv1:Rapid", "Lv2:Spread", "Lv2:Spread"], "MightyBow": ["Lv3:Rapid"] },
@@ -9333,21 +9333,21 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Anti-Aerial Species", "Silkbind Boost"]
 		},
-		"Usurper's Fire Bolt I": {
+		"Usurpers Fire Bolt I": {
 			"baseRaw": 120,
 			"eleType": "Thunder",
 			"baseEle": 15,
 			"aff": 0,
 			"Rampage": ["Attack Boost I", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Usurper's Fire Bolt II": {
+		"Usurpers Fire Bolt II": {
 			"baseRaw": 180,
 			"eleType": "Thunder",
 			"baseEle": 24,
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Despot's Crookbolt": {
+		"Despots Crookbolt": {
 			"baseRaw": 200,
 			"eleType": "Thunder",
 			"baseEle": 27,
@@ -9438,14 +9438,14 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Dulling Strike", "Elemental Exploit"]
 		},
-		"Hunter's Knife I": {
+		"Hunters Knife I": {
 			"baseRaw": 80,
 			"eleType": "Non",
 			"baseEle": 0,
 			"aff": 0,
 			"Rampage": ["Attack Boost I", "Affinity Boost I", "Defense Boost II"]
 		},
-		"Hunter's Knife II": {
+		"Hunters Knife II": {
 			"baseRaw": 100,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -9473,28 +9473,28 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Defense Boost III", "Silkbind Boost"]
 		},
-		"Smithy's Pride": {
+		"Smithys Pride": {
 			"baseRaw": 200,
 			"eleType": "Non",
 			"baseEle": 0,
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Defense Boost III", "Silkbind Boost"]
 		},
-		"Soldier's Dagger I": {
+		"Soldiers Dagger I": {
 			"baseRaw": 190,
 			"eleType": "Non",
 			"baseEle": 0,
 			"aff": 0,
 			"Rampage": ["Affinity Boost II", "Defense Boost III", "Dulling Strike"]
 		},
-		"Soldier's Dagger II": {
+		"Soldiers Dagger II": {
 			"baseRaw": 200,
 			"eleType": "Non",
 			"baseEle": 0,
 			"aff": 0,
 			"Rampage": ["Affinity Boost II", "Defense Boost III", "Dulling Strike"]
 		},
-		"Commander's Dagger": {
+		"Commanders Dagger": {
 			"baseRaw": 220,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -9830,7 +9830,7 @@
 			"aff": -15,
 			"Rampage": ["Affinity Boost I", "Ice Boost II", "Brutal Strike"]
 		},
-		"Chef's Knife": {
+		"Chefs Knife": {
 			"baseRaw": 230,
 			"eleType": "Ice",
 			"baseEle": 14,
@@ -10034,7 +10034,7 @@
 			"aff": 5,
 			"Rampage": ["Attack Boost II", "Affinity Boost II", "Kushala Daora Soul"]
 		},
-		"Teostra's Spada I": {
+		"Teostras Spada I": {
 			"baseRaw": 180,
 			"eleType": "Blast",
 			"baseEle": 36,
@@ -10228,14 +10228,14 @@
 			"aff": -10,
 			"Rampage": ["Affinity Boost II", "Thunder Boost II", "Dulling Strike"]
 		},
-		"Daora's Razor": {
+		"Daoras Razor": {
 			"baseRaw": 180,
 			"eleType": "Ice",
 			"baseEle": 36,
 			"aff": 10,
 			"Rampage": ["Attack Boost III", "Affinity Boost III", "Kushala Daora Soul"]
 		},
-		"Teostra's Emblem": {
+		"Teostras Emblem": {
 			"baseRaw": 190,
 			"eleType": "Blast",
 			"baseEle": 39,
@@ -10343,21 +10343,21 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Water Boost II", "Elemental Exploit"]
 		},
-		"Usurper's Fulgur I": {
+		"Usurpers Fulgur I": {
 			"baseRaw": 120,
 			"eleType": "Thunder",
 			"baseEle": 20,
 			"aff": 0,
 			"Rampage": ["Attack Boost I", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Usurper's Fulgur II": {
+		"Usurpers Fulgur II": {
 			"baseRaw": 180,
 			"eleType": "Thunder",
 			"baseEle": 20,
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Despot's Blitz": {
+		"Despots Blitz": {
 			"baseRaw": 200,
 			"eleType": "Thunder",
 			"baseEle": 25,
@@ -10531,21 +10531,21 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Fire Boost II", "Fire Blight Exploit"]
 		},
-		"Kulu's Peck I": {
+		"Kulus Peck I": {
 			"baseRaw": 100,
 			"eleType": "Non",
 			"baseEle": 0,
 			"aff": 15,
 			"Rampage": ["Attack Boost I", "Affinity Boost II", "Spiribird Doubled"]
 		},
-		"Kulu's Peck II": {
+		"Kulus Peck II": {
 			"baseRaw": 110,
 			"eleType": "Non",
 			"baseEle": 0,
 			"aff": 15,
 			"Rampage": ["Attack Boost II", "Affinity Boost II", "Spiribird Doubled"]
 		},
-		"Kulu's Lasher": {
+		"Kulus Lasher": {
 			"baseRaw": 160,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -11267,7 +11267,7 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Anti-Aerial Species", "Narwa Soul"]
 		},
-		"Daora's Hook": {
+		"Daoras Hook": {
 			"baseRaw": 170,
 			"eleType": "Ice",
 			"baseEle": 32,
@@ -12315,7 +12315,7 @@
 			"aff": -10,
 			"Rampage": ["Affinity Boost II", "Thunder Boost II", "Dulling Strike"]
 		},
-		"Kamura's Inheritance": {
+		"Kamuras Inheritance": {
 			"baseRaw": 190,
 			"eleType": "Fire",
 			"baseEle": 15,
@@ -12358,7 +12358,7 @@
 			"aff": -10,
 			"Rampage": ["Defense Boost II", "Blast Boost III", "Brutal Strike"]
 		},
-		"Daora's Raid": {
+		"Daoras Raid": {
 			"baseRaw": 190,
 			"eleType": "Ice",
 			"baseEle": 45,
@@ -13022,21 +13022,21 @@
 			"aff": 25,
 			"Rampage": ["Affinity Boost III", "Master Rider", "Spiribird Doubled"]
 		},
-		"Usurper's Coming I": {
+		"Usurpers Coming I": {
 			"baseRaw": 120,
 			"eleType": "Thunder",
 			"baseEle": 17,
 			"aff": 0,
 			"Rampage": ["Attack Boost I", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Usurper's Coming II": {
+		"Usurpers Coming II": {
 			"baseRaw": 190,
 			"eleType": "Thunder",
 			"baseEle": 21,
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Despot's Cacophony": {
+		"Despots Cacophony": {
 			"baseRaw": 200,
 			"eleType": "Thunder",
 			"baseEle": 29,
@@ -13155,7 +13155,7 @@
 			"aff": 10,
 			"Rampage": ["Attack Boost II", "Affinity Boost II", "Kushala Daora Soul"]
 		},
-		"Teostra's Howl I": {
+		"Teostras Howl I": {
 			"baseRaw": 190,
 			"eleType": "Blast",
 			"baseEle": 27,
@@ -13359,7 +13359,7 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Anti-Aerial Species", "Narwa Soul"]
 		},
-		"Daora's Fang": {
+		"Daoras Fang": {
 			"baseRaw": 190,
 			"eleType": "Ice",
 			"baseEle": 36,
@@ -13380,7 +13380,7 @@
 			"aff": -15,
 			"Rampage": ["Attack Boost III", "Affinity Boost II", "Brutal Strike"]
 		},
-		"Teostra's Roar": {
+		"Teostras Roar": {
 			"baseRaw": 200,
 			"eleType": "Blast",
 			"baseEle": 32,
@@ -13523,21 +13523,21 @@
 			"aff": 0,
 			"Rampage": ["Defense Boost II", "Fire Boost III", "Dulling Strike"]
 		},
-		"Usurper's Growl I": {
+		"Usurpers Growl I": {
 			"baseRaw": 110,
 			"eleType": "Thunder",
 			"baseEle": 20,
 			"aff": 0,
 			"Rampage": ["Attack Boost I", "Thunder Boost I", "Anti-aquatic Species"]
 		},
-		"Usurper's Growl II": {
+		"Usurpers Growl II": {
 			"baseRaw": 160,
 			"eleType": "Thunder",
 			"baseEle": 24,
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Thunder Boost I", "Anti-aquatic Species"]
 		},
-		"Despot's Thunderclap": {
+		"Despots Thunderclap": {
 			"baseRaw": 180,
 			"eleType": "Thunder",
 			"baseEle": 28,
@@ -13859,14 +13859,14 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Affinity Boost II", "Defense Boost I"]
 		},
-		"Hunter's Horn I": {
+		"Hunters Horn I": {
 			"baseRaw": 170,
 			"eleType": "Non",
 			"baseEle": 0,
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Affinity Boost II", "Dulling Strike"]
 		},
-		"Native's Horn": {
+		"Natives Horn": {
 			"baseRaw": 210,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -14132,14 +14132,14 @@
 			"aff": -10,
 			"Rampage": ["Defense Boost II", "Blast Boost III", "Maximum Volume"]
 		},
-		"Daora's Taus I": {
+		"Daoras Taus I": {
 			"baseRaw": 170,
 			"eleType": "Ice",
 			"baseEle": 32,
 			"aff": 10,
 			"Rampage": ["Attack Boost II", "Affinity Boost II", "Kushala Daora Soul"]
 		},
-		"Teostra's Tiple I": {
+		"Teostras Tiple I": {
 			"baseRaw": 190,
 			"eleType": "Blast",
 			"baseEle": 40,
@@ -14237,7 +14237,7 @@
 			"aff": 0,
 			"Rampage": ["Defense Boost II", "Blast Boost II", "Dulling Strike"]
 		},
-		"Bombadgy's Cry": {
+		"Bombadgys Cry": {
 			"baseRaw": 170,
 			"eleType": "Blast",
 			"baseEle": 15,
@@ -14397,7 +14397,7 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Defense Boost III", "Chameleos Soul"]
 		},
-		"Daora's Baphophone": {
+		"Daoras Baphophone": {
 			"baseRaw": 180,
 			"eleType": "Ice",
 			"baseEle": 35,
@@ -14418,7 +14418,7 @@
 			"aff": -15,
 			"Rampage": ["Affinity Boost III", "Defense Boost II", "Brutal Strike"]
 		},
-		"Teostra's Orphee": {
+		"Teostras Orphee": {
 			"baseRaw": 200,
 			"eleType": "Blast",
 			"baseEle": 42,
@@ -14567,21 +14567,21 @@
 			"aff": 0,
 			"Rampage": ["Affinity Boost III", "Defense Boost II", "Small Monster Exploit"]
 		},
-		"Usurper's Roar I": {
+		"Usurpers Roar I": {
 			"baseRaw": 120,
 			"eleType": "Thunder",
 			"baseEle": 28,
 			"aff": 0,
 			"Rampage": ["Attack Boost I", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Usurper's Roar II": {
+		"Usurpers Roar II": {
 			"baseRaw": 180,
 			"eleType": "Thunder",
 			"baseEle": 30,
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Despot's Phlogiston": {
+		"Despots Phlogiston": {
 			"baseRaw": 210,
 			"eleType": "Thunder",
 			"baseEle": 32,
@@ -14630,14 +14630,14 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Affinity Boost I", "Defense Boost II"]
 		},
-		"Striker's GGunlance I": {
+		"Strikers GGunlance I": {
 			"baseRaw": 130,
 			"eleType": "Non",
 			"baseEle": 0,
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Defense Boost II", "Silkbind Boost"]
 		},
-		"Striker's GGunlance II": {
+		"Strikers GGunlance II": {
 			"baseRaw": 160,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -14651,14 +14651,14 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Defense Boost III", "Silkbind Boost"]
 		},
-		"General's Arbalance I": {
+		"Generals Arbalance I": {
 			"baseRaw": 150,
 			"eleType": "Non",
 			"baseEle": 0,
 			"aff": 10,
 			"Rampage": ["Attack Boost III", "Dragon Exploit", "Wyrmstake Boost"]
 		},
-		"General's Arbalance II": {
+		"Generals Arbalance II": {
 			"baseRaw": 170,
 			"eleType": "Non",
 			"baseEle": 0,
@@ -15439,7 +15439,7 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Anti-Aerial Species", "Narwa Soul"]
 		},
-		"Daora's Brigia": {
+		"Daoras Brigia": {
 			"baseRaw": 170,
 			"eleType": "Ice",
 			"baseEle": 44,
@@ -15516,21 +15516,21 @@
 		"Delex Harpoon I": ["Wide", "Lv1"],
 		"Delex Harpoon II": ["Wide", "Lv2"],
 		"Sand Blaster Gunlance": ["Wide", "Lv2"],
-		"Usurper's Roar I": ["Normal", "Lv2"],
-		"Usurper's Roar II": ["Normal", "Lv3"],
-		"Despot's Phlogiston": ["Normal", "Lv4"],
+		"Usurpers Roar I": ["Normal", "Lv2"],
+		"Usurpers Roar II": ["Normal", "Lv3"],
+		"Despots Phlogiston": ["Normal", "Lv4"],
 		"Twinfang I": ["Wide", "Lv2"],
 		"Twinfang II": ["Wide", "Lv4"],
 		"Ambermarch": ["Wide", "Lv4"],
 		"Iron Gunlance I": ["Normal", "Lv1"],
 		"Iron Gunlance II": ["Normal", "Lv1"],
 		"Eizenlitter": ["Normal", "Lv2"],
-		"Striker's Gunlance I": ["Normal", "Lv2"],
-		"Striker's Gunlance II": ["Normal", "Lv3"],
+		"Strikers Gunlance I": ["Normal", "Lv2"],
+		"Strikers Gunlance II": ["Normal", "Lv3"],
 		"Imperial Guardlance": ["Normal", "Lv4"],
-		"General's Arbalance I": ["Wide", "Lv3"],
-		"General's Arbalance II": ["Wide", "Lv3"],
-		"Admiral's Arbalance": ["Wide", "Lv4"],
+		"Generals Arbalance I": ["Wide", "Lv3"],
+		"Generals Arbalance II": ["Wide", "Lv3"],
+		"Admirals Arbalance": ["Wide", "Lv4"],
 		"Pukei Gunlance I": ["Wide", "Lv3"],
 		"Pukei Gunlance II": ["Wide", "Lv4"],
 		"Datura Gunlance": ["Wide", "Lv4"],
@@ -15614,7 +15614,7 @@
 		"Thunderbolt Gunlance I": ["Normal", "Lv4"],
 		"Abyssal Storm Gunlance": ["Normal", "Lv4"],
 		"Icesteel Gunlance I": ["Long", "Lv5"],
-		"Daora's Brigia": ["Long", "Lv5"],
+		"Daoras Brigia": ["Long", "Lv5"],
 		"Venomous Cologne I": ["Long", "Lv3"],
 		"Venomous Attar": ["Long", "Lv3"],
 		"Redwing Gunlance I": ["Long", "Lv4"],
@@ -15967,7 +15967,7 @@
 			"aff": 0,
 			"Rampage": ["Affinity Boost III", "Paralysis Boost II", "Anti-Aquatic Species"]
 		},
-		"Iron Devil's Soul": {
+		"Iron Devils Soul": {
 			"baseRaw": 220,
 			"eleType": "Paralysis",
 			"baseEle": 17,
@@ -16226,21 +16226,21 @@
 			"aff": -15,
 			"Rampage": ["Affinity Boost I", "Ice Boost III", "Brutal Strike"]
 		},
-		"Usurper's Thunder I": {
+		"Usurpers Thunder I": {
 			"baseRaw": 120,
 			"eleType": "Thunder",
 			"baseEle": 25,
 			"aff": 0,
 			"Rampage": ["Attack Boost I", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Usurper's Thunder II": {
+		"Usurpers Thunder II": {
 			"baseRaw": 190,
 			"eleType": "Thunder",
 			"baseEle": 28,
 			"aff": 0,
 			"Rampage": ["Attack Boost II", "Thunder Boost I", "Anti-Aquatic Species"]
 		},
-		"Despot's Crackle": {
+		"Despots Crackle": {
 			"baseRaw": 210,
 			"eleType": "Thunder",
 			"baseEle": 33,
@@ -16443,7 +16443,7 @@
 			"aff": 5,
 			"Rampage": ["Attack Boost II", "Fire Blight Exploit", "Teostra Soul"]
 		},
-		"Genie's Expanse I": {
+		"Genies Expanse I": {
 			"baseRaw": 190,
 			"eleType": "Poison",
 			"baseEle": 28,
@@ -16647,7 +16647,7 @@
 			"aff": 0,
 			"Rampage": ["Attack Boost III", "Anti-Aerial Species", "Narwa Soul"]
 		},
-		"Daora's Colossus": {
+		"Daoras Colossus": {
 			"baseRaw": 190,
 			"eleType": "Ice",
 			"baseEle": 42,
@@ -16661,7 +16661,7 @@
 			"aff": -25,
 			"Rampage": ["Affinity Boost III", "Defense Boost II", "Brutal Strike"]
 		},
-		"Diamalto's Dream": {
+		"Diamaltos Dream": {
 			"baseRaw": 200,
 			"eleType": "Poison",
 			"baseEle": 32,

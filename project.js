@@ -332,7 +332,7 @@ function AddDependantSkills() {
 		let attacks = [];
 		const shotType = window.weapon.BowShotType[$('#dropWeapon').val()];
 		let expression = `${shotType.innate[0]}|${shotType.innate[1]}|${shotType.innate[2]}`;
-		if (mightyBowId.selectedIndex === 1 && Object.prototype.hasOwnProperty.call(shotType, 'MightyBow')) {
+		if (BowChargePlus.selectedIndex === 1 && Object.prototype.hasOwnProperty.call(shotType, 'MightyBow')) {
 			expression += `|${shotType.MightyBow[0]}`;
 		} else if (shotType.innate.length > 3) {
 			expression += `|${shotType.innate[3]}`;
@@ -392,6 +392,8 @@ function GetSkills(power) {
 		case 'Shot':
 			power.skillType = 'Gunner';
 			break;
+		case 'ignore':
+		case 'ignoreHZV':
 		case 'None':
 		case 'Stickies':
 		case 'IMPAED':
@@ -478,7 +480,7 @@ function GetRemainingSkills(power) {
 			: [1, 1];
 	power.PRM *=
 		~~(0.1 + 25 / sharpnessModifier.PRM) >= window.monster[$('#dropMonster').val()].HitZone[$('#dropHZ').val()][power.type]
-			? JSON.parse(document.getElementById(['MindsEye']).value).PRM
+			? JSON.parse(document.getElementById([`MindsEye`]).value).PRM
 			: 1;
 	power.critBoost = /(Sever|Blunt|Shot)/.test(power.type) ? JSON.parse($('#CriticalBoost').val()).PRM : 1;
 
@@ -536,8 +538,8 @@ function TotalHitsOfSharpUsed(power) {
 	let [yellowMin, yellowMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].yellow;
 	let [orangeMin, orangeMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].orange;
 	let [redMin, redMax] = window.sharpness[$('#dropWeaponType').val()][$('#dropWeapon').val()].red;
-	// for each pont of handicraft checks if the current sharpness is < the max sharpness for that color. if so, adds 2 points to the total sharpness for that color.(the equivalent of a +10 sharpness)
-	for (let i = 0; i < handicraft.selectedIndex; ++i) {
+	// for each pont of Handicraft checks if the current sharpness is < the max sharpness for that color. if so, adds 2 points to the total sharpness for that color.(the equivalent of a +10 sharpness)
+	for (let i = 0; i < Handicraft.selectedIndex; ++i) {
 		if (redMin < redMax) {
 			yellowMin += 2;
 		} else if (orangeMin < orangeMax) {
@@ -765,7 +767,7 @@ function BuildDamageTable(myDamage, id) {
 				if (
 					previousWeaponType.value === dropWeaponType.value &&
 					inputs.length > 0 &&
-					event.target.id !== 'mightyBowId' &&
+					event.target.id !== 'BowChargePlus' &&
 					((dropWeaponType.value === 'Bow' && previousWeapon.value === dropWeapon.value) || dropWeaponType.value !== 'Bow')
 				) {
 					row.appendChild(inputs[k]);
@@ -960,13 +962,13 @@ function MaxSkills() {
 	}
 }
 
-function ResetSkills() {
-	for (let i = 0; i < $('.skill').length; ++i) {
-		$('.skill')[i].selectedIndex = 0;
+function ResetSkills(element = `.${skill}`) {
+	for (let i = 0; i < $(element).length; ++i) {
+		$(element)[i].selectedIndex = 0;
 	}
 }
 
-$('#mightyBowId').change(function (e) {
+$('#BowChargePlus').change(function (e) {
 	ComboReset();
 	UpdateComboDisplay();
 });
@@ -991,20 +993,20 @@ function ToggleAmmoTables() {
 
 function calculateAmmoFrames(power) {
 	const ammo = {};
-	ammo.ammoIncrease = window.spm.AmmoUp[power.thisAttack][AmmoUPid.value];
+	ammo.ammoIncrease = window.spm.AmmoUp[power.thisAttack][AmmoUp.value];
 	// converts to number to find frames used while staying within possible parameters
 	ammo.recoilSpeed =
 		window.spm.recoil[power.thisAttack][
-			Math.max(0, Math.min(5, power.recoil - JSON.parse(RecoilId.value) - JSON.parse(BarrelId.value).Silencer))
+			Math.max(0, Math.min(5, power.recoil - JSON.parse(RecoilDown.value) - JSON.parse(BarrelId.value).Silencer))
 		];
 	ammo.recoilFrames = window.spm.recoil.frames[ammo.recoilSpeed];
 	ammo.reloadSpeed =
 		window.spm.reload[power.thisAttack][
-			Math.max(0, Math.min(8, power.reload - JSON.parse(ReloadId.value) + JSON.parse(BarrelId.value).reload))
+			Math.max(0, Math.min(8, power.reload - JSON.parse(ReloadSpeed.value) + JSON.parse(BarrelId.value).reload))
 		];
 	ammo.reloadFrames = window.spm.reload.frames[ammo.reloadSpeed];
 	ammo.clipSize = power.clip + ammo.ammoIncrease;
-	ammo.spareShot = +SpareShotid.value + +spareAdjust.value;
+	ammo.spareShot = +SpareShot.value + +spareAdjust.value;
 	/*
 	 * finds time needed to shoot 100 shots as a base for calculations
 	 * 60 seconds /
@@ -1021,7 +1023,7 @@ function calculateAmmoFrames(power) {
 	ammo.ticsAdjust = power.ticsPer > 0 ? Number(power.ticsPer) : 1;
 	// Reduces total damage from pierce attacks displayed depending on selection
 	// top is for piercing attacks, bottom is for elemental piercing attacks(elemental pierce is reduced by a higher percentage)
-	if (/Pierce/.test(power.thisAttack)) {
+	if (/PierceUp/.test(power.thisAttack)) {
 		ammo.ticsAdjust = power.ticsPer * JSON.parse(pierceAdjust.value)[0];
 	} else if (/Pierc/.test(power.thisAttack)) {
 		ammo.ticsAdjust = power.ticsPer * JSON.parse(pierceAdjust.value)[1];
@@ -1062,7 +1064,9 @@ function IncreaseComboCount() {
 	}
 }
 function DecreaseComboCount() {
-	if ($('.inputs')[event.target.id].value !== '0') {
+	if (event.target.id === '0' && $('.inputs')[event.target.id].value !== '1') {
+		--$('.inputs')[event.target.id].value;
+	} else if (event.target.id !== '0' && $('.inputs')[event.target.id].value !== '0') {
 		--$('.inputs')[event.target.id].value;
 	}
 }
@@ -1092,7 +1096,36 @@ $(document).ajaxSuccess(() => {
 		}
 	}
 });
-
+$('input#taWikiSetBuilder').click(function (e) {
+	if (this.value === 'Paste TA Wiki Set Builder Link Here') {
+		this.value = '';
+	}
+});
+$('input#taWikiSetBuilder').change(function (e) {
+	if (/mhrise.wiki-db.com/.test(this.value)) {
+		decodeURL();
+	}
+});
+function decodeURL() {
+	let decode = decodeURIComponent(taWikiSetBuilder.value);
+	let skills = decode.match('(?<=skills=)(.*?)(?=&)')[0].split(',');
+	ResetSkills(document.querySelectorAll(`.thisSkill:not(.${dropWeaponType.value})`));
+	$.each(skills, function (index, value) {
+		let thisSkill = value.split('Lv');
+		thisSkill[0] = thisSkill[0].replace(/(\s)|(\/)/g, '');
+		thisSkill[0] = thisSkill[0].replace(/'s/g, 's');
+		thisSkill[0] = /Fire|Water|Wind|Ice|Dragon/.test(thisSkill[0]) ? 'ElementalAttack' : thisSkill[0];
+		thisSkill[0] = /Kush|Teos|Storm|Thunder|Wind/.test(thisSkill[0]) ? 'ElderEssence' : thisSkill[0];
+		if (
+			document.querySelector(`#${thisSkill[0]}`) !== null &&
+			document.querySelector(`#${thisSkill[0]}`).style.display !== 'none'
+		) {
+			document.querySelector(`#${thisSkill[0]}`).selectedIndex = thisSkill[1];
+		}
+	});
+	$('input#taWikiSetBuilder')[0].value = '';
+	$('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
+}
 function PopulateDropDowns(json, dropDown) {
 	$(dropDown).empty();
 	$.each(json, (key, value) => {
@@ -1129,6 +1162,7 @@ function RampageSelect() {
 
 function MonsterSelect() {
 	PopulateDropDowns(Object.keys(window.monster), dropMonster);
+	dropMonster.selectedIndex = '42';
 }
 
 function PartSelect() {

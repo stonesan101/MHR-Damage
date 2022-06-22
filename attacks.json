@@ -827,7 +827,7 @@
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 7,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Pierce 2": {
 			"rawMV": 7,
@@ -836,7 +836,7 @@
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 7,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Pierce 3": {
 			"rawMV": 8,
@@ -845,34 +845,34 @@
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 7,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
-		"Spread 1": {
+		"SpecialAmmoBoost 1": {
 			"rawMV": 6,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 3,
 			"ticsPer": 3,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Spread 2": {
+		"SpecialAmmoBoost 2": {
 			"rawMV": 7,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 4,
 			"ticsPer": 4,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Spread 3": {
+		"SpecialAmmoBoost 3": {
 			"rawMV": 10,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 5,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
 		"Shrapnel 1": {
 			"rawMV": 5,
@@ -1079,14 +1079,14 @@
 			"ticsPer": 1,
 			"unique": "Normal"
 		},
-		"Normal 1 (RF+3)": {
+		"Normal 1 (RapidFireUp3)": {
 			"rawMV": 7,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 3,
 			"ticsPer": 3,
-			"unique": ["Normal", "RF+"]
+			"unique": ["Normal", "RapidFireUp"]
 		},
 		"Normal 2": {
 			"rawMV": 20,
@@ -1097,14 +1097,14 @@
 			"ticsPer": 1,
 			"unique": "Normal"
 		},
-		"Normal 2 (RF+3)": {
+		"Normal 2 (RapidFireUp3)": {
 			"rawMV": 14,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 3,
 			"ticsPer": 3,
-			"unique": ["Normal", "RF+"]
+			"unique": ["Normal", "RapidFireUp"]
 		},
 		"Normal 3": {
 			"rawMV": 34,
@@ -1122,16 +1122,16 @@
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 7,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
-		"Pierce 1 (RF+3)": {
+		"Pierce 1 (RapidFireUp3)": {
 			"rawMV": 4.9,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 2,
 			"ticsPer": 21,
-			"unique": ["RF+", "Pierce"]
+			"unique": ["RapidFireUp", "PierceUp"]
 		},
 		"Pierce 2": {
 			"rawMV": 7,
@@ -1140,16 +1140,16 @@
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 7,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
-		"Pierce 2 (RF+3)": {
+		"Pierce 2 (RapidFireUp3)": {
 			"rawMV": 4.9,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 2,
 			"ticsPer": 21,
-			"unique": ["RF+", "Pierce"]
+			"unique": ["RapidFireUp", "PierceUp"]
 		},
 		"Pierce 3": {
 			"rawMV": 8,
@@ -1158,52 +1158,52 @@
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 7,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
-		"Spread 1": {
+		"SpecialAmmoBoost 1": {
 			"rawMV": 6,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 3,
 			"ticsPer": 3,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Spread 1 (RF+3)": {
+		"SpecialAmmoBoost 1 (RapidFireUp3)": {
 			"rawMV": 4.2,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 9,
 			"ticsPer": 9,
-			"unique": ["RF+", "Spread"]
+			"unique": ["RapidFireUp", "SpecialAmmoBoost"]
 		},
-		"Spread 2": {
+		"SpecialAmmoBoost 2": {
 			"rawMV": 7,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 4,
 			"ticsPer": 4,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Spread 2 (RF+3)": {
+		"SpecialAmmoBoost 2 (RapidFireUp3)": {
 			"rawMV": 4.9,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 2,
 			"EleAmmoBase": 1,
 			"ticsPer": 12,
-			"unique": ["RF+", "Spread"]
+			"unique": ["RapidFireUp", "SpecialAmmoBoost"]
 		},
-		"Spread 3": {
+		"SpecialAmmoBoost 3": {
 			"rawMV": 10,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 5,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
 		"Shrapnel 1": {
 			"rawMV": 5,
@@ -1213,14 +1213,14 @@
 			"EleAmmoBase": 0,
 			"ticsPer": 3
 		},
-		"Shrapnel 1 (RF+3)": {
+		"Shrapnel 1 (RapidFireUp3)": {
 			"rawMV": 3.5,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 9,
 			"ticsPer": 9,
-			"unique": "RF+"
+			"unique": "RapidFireUp"
 		},
 		"Shrapnel 2": {
 			"rawMV": 5,
@@ -1230,14 +1230,14 @@
 			"EleAmmoBase": 0,
 			"ticsPer": 4
 		},
-		"Shrapnel 2 (RF+3)": {
+		"Shrapnel 2 (RapidFireUp3)": {
 			"rawMV": 3.5,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 2,
 			"EleAmmoBase": 1,
 			"ticsPer": 12,
-			"unique": "RF+"
+			"unique": "RapidFireUp"
 		},
 		"Shrapnel 3": {
 			"rawMV": 5,
@@ -1255,14 +1255,14 @@
 			"EleAmmoBase": 3,
 			"ticsPer": 1
 		},
-		"Sticky 1 (RF+2)": {
+		"Sticky 1 (RapidFireUp2)": {
 			"rawMV": 8.4,
 			"type": "Stickies",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 2,
 			"ticsPer": 2,
-			"unique": "RF+"
+			"unique": "RapidFireUp"
 		},
 		"Sticky 2": {
 			"rawMV": 17,
@@ -1313,14 +1313,14 @@
 			"ticsPer": 1,
 			"EleAmmoType": "Fire"
 		},
-		"Fire (RF+3)": {
+		"Fire (RapidFireUp3)": {
 			"rawMV": 11.2,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 3,
 			"EleAmmoBase": 2,
 			"ticsPer": 3,
-			"unique": "RF+",
+			"unique": "RapidFireUp",
 			"EleAmmoType": "Fire"
 		},
 		"Piercing Fire": {
@@ -1331,16 +1331,16 @@
 			"EleAmmoBase": 2,
 			"ticsPer": 7,
 			"EleAmmoType": "Fire",
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
-		"Piercing Fire (RF+2)": {
+		"Piercing Fire (RapidFireUp2)": {
 			"rawMV": 7,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 4,
 			"ticsPer": 14,
-			"unique": ["RF+", "Pierce"],
+			"unique": ["RapidFireUp", "PierceUp"],
 			"EleAmmoType": "Fire"
 		},
 		"Water": {
@@ -1352,14 +1352,14 @@
 			"ticsPer": 1,
 			"EleAmmoType": "Water"
 		},
-		"Water (RF+3)": {
+		"Water (RapidFireUp3)": {
 			"rawMV": 11.2,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 3,
 			"EleAmmoBase": 2,
 			"ticsPer": 3,
-			"unique": "RF+",
+			"unique": "RapidFireUp",
 			"EleAmmoType": "Water"
 		},
 		"Piercing Water": {
@@ -1370,16 +1370,16 @@
 			"EleAmmoBase": 2,
 			"ticsPer": 7,
 			"EleAmmoType": "Water",
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
-		"Piercing Water (RF+2)": {
+		"Piercing Water (RapidFireUp2)": {
 			"rawMV": 7,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 4,
 			"ticsPer": 14,
-			"unique": ["RF+", "Pierce"],
+			"unique": ["RapidFireUp", "PierceUp"],
 			"EleAmmoType": "Water"
 		},
 		"Thunder": {
@@ -1391,14 +1391,14 @@
 			"ticsPer": 1,
 			"EleAmmoType": "Thunder"
 		},
-		"Thunder (RF+3)": {
+		"Thunder (RapidFireUp3)": {
 			"rawMV": 11.2,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 3,
 			"EleAmmoBase": 2,
 			"ticsPer": 3,
-			"unique": "RF+",
+			"unique": "RapidFireUp",
 			"EleAmmoType": "Thunder"
 		},
 		"Piercing Thunder": {
@@ -1409,16 +1409,16 @@
 			"EleAmmoBase": 2,
 			"ticsPer": 7,
 			"EleAmmoType": "Thunder",
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
-		"Piercing Thunder (RF+2)": {
+		"Piercing Thunder (RapidFireUp2)": {
 			"rawMV": 7,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 4,
 			"ticsPer": 14,
-			"unique": ["RF+", "Pierce"],
+			"unique": ["RapidFireUp", "PierceUp"],
 			"EleAmmoType": "Thunder"
 		},
 		"Ice": {
@@ -1430,14 +1430,14 @@
 			"ticsPer": 1,
 			"EleAmmoType": "Ice"
 		},
-		"Ice (RF+3)": {
+		"Ice (RapidFireUp3)": {
 			"rawMV": 11.2,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 3,
 			"EleAmmoBase": 2,
 			"ticsPer": 3,
-			"unique": "RF+",
+			"unique": "RapidFireUp",
 			"EleAmmoType": "Ice"
 		},
 		"Piercing Ice": {
@@ -1448,16 +1448,16 @@
 			"EleAmmoBase": 2,
 			"ticsPer": 7,
 			"EleAmmoType": "Ice",
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
-		"Piercing Ice (RF+2)": {
+		"Piercing Ice (RapidFireUp2)": {
 			"rawMV": 7,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 4,
 			"ticsPer": 14,
-			"unique": ["RF+", "Pierce"],
+			"unique": ["RapidFireUp", "PierceUp"],
 			"EleAmmoType": "Ice"
 		},
 		"Dragon": {
@@ -1469,14 +1469,14 @@
 			"ticsPer": 1,
 			"EleAmmoType": "Dragon"
 		},
-		"Dragon (RF+2)": {
+		"Dragon (RapidFireUp2)": {
 			"rawMV": 33.6,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 3,
 			"EleAmmoBase": 4,
 			"ticsPer": 3,
-			"unique": "RF+",
+			"unique": "RapidFireUp",
 			"EleAmmoType": "Dragon"
 		},
 		"Piercing Dragon": {
@@ -1487,16 +1487,16 @@
 			"EleAmmoBase": 4,
 			"ticsPer": 7,
 			"EleAmmoType": "Dragon",
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
-		"Piercing Dragon (RF+2)": {
+		"Piercing Dragon (RapidFireUp2)": {
 			"rawMV": 14,
 			"type": "Shot",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 4,
 			"ticsPer": 14,
-			"unique": ["RF+", "Pierce"],
+			"unique": ["RapidFireUp", "PierceUp"],
 			"EleAmmoType": "Dragon"
 		},
 		"Slicing": {
@@ -1507,14 +1507,14 @@
 			"EleAmmoBase": 0,
 			"ticsPer": 3
 		},
-		"Slicing (RF+2)": {
+		"Slicing (RapidFireUp2)": {
 			"rawMV": 11.9,
 			"type": "Sever",
 			"eleMV": 1,
 			"hitsOfSharp": 1,
 			"EleAmmoBase": 6,
 			"ticsPer": 6,
-			"unique": "RF+"
+			"unique": "RapidFireUp"
 		}
 	},
 	"Bow": {
@@ -1700,396 +1700,396 @@
 			"ticsPer": 7,
 			"unique": "Normal"
 		},
-		"Lv1:Spread/Charge Lv1": {
+		"Lv1:SpecialAmmoBoost/Charge Lv1": {
 			"rawMV": 2,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"hitsOfSharp": 1
 		},
-		"Lv1:Spread/Charge Lv2": {
+		"Lv1:SpecialAmmoBoost/Charge Lv2": {
 			"rawMV": 5,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 7,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv1:Spread/Charge Lv3": {
+		"Lv1:SpecialAmmoBoost/Charge Lv3": {
 			"rawMV": 7.5,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 7,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv1:Spread/Charge Lv4": {
+		"Lv1:SpecialAmmoBoost/Charge Lv4": {
 			"rawMV": 8.5,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 7,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv2:Spread/Charge Lv1": {
+		"Lv2:SpecialAmmoBoost/Charge Lv1": {
 			"rawMV": 3.2,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 7,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv2:Spread/Charge Lv2": {
+		"Lv2:SpecialAmmoBoost/Charge Lv2": {
 			"rawMV": 8,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 7,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv2:Spread/Charge Lv3": {
+		"Lv2:SpecialAmmoBoost/Charge Lv3": {
 			"rawMV": 12,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 7,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv2:Spread/Charge Lv4": {
+		"Lv2:SpecialAmmoBoost/Charge Lv4": {
 			"rawMV": 13.6,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 7,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv3:Spread/Charge Lv1": {
+		"Lv3:SpecialAmmoBoost/Charge Lv1": {
 			"rawMV": 2.8,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv3:Spread/Charge Lv2": {
+		"Lv3:SpecialAmmoBoost/Charge Lv2": {
 			"rawMV": 7,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv3:Spread/Charge Lv3": {
+		"Lv3:SpecialAmmoBoost/Charge Lv3": {
 			"rawMV": 10.5,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv3:Spread/Charge Lv4": {
+		"Lv3:SpecialAmmoBoost/Charge Lv4": {
 			"rawMV": 11.9,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv4:Spread/Charge Lv1": {
+		"Lv4:SpecialAmmoBoost/Charge Lv1": {
 			"rawMV": 3.6,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv4:Spread/Charge Lv2": {
+		"Lv4:SpecialAmmoBoost/Charge Lv2": {
 			"rawMV": 9,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv4:Spread/Charge Lv3": {
+		"Lv4:SpecialAmmoBoost/Charge Lv3": {
 			"rawMV": 13.5,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv4:Spread/Charge Lv4": {
+		"Lv4:SpecialAmmoBoost/Charge Lv4": {
 			"rawMV": 15.3,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv5:Spread/Charge Lv1": {
+		"Lv5:SpecialAmmoBoost/Charge Lv1": {
 			"rawMV": 4,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv5:Spread/Charge Lv2": {
+		"Lv5:SpecialAmmoBoost/Charge Lv2": {
 			"rawMV": 10,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv5:Spread/Charge Lv3": {
+		"Lv5:SpecialAmmoBoost/Charge Lv3": {
 			"rawMV": 15,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
-		"Lv5:Spread/Charge Lv4": {
+		"Lv5:SpecialAmmoBoost/Charge Lv4": {
 			"rawMV": 17,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 5,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
 		"Lv1:Pierce/Charge Lv1": {
 			"rawMV": 1.6,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 7,
-			"unique": "Spread"
+			"unique": "SpecialAmmoBoost"
 		},
 		"Lv1:Pierce/Charge Lv2": {
 			"rawMV": 4,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv1:Pierce/Charge Lv3": {
 			"rawMV": 6,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv1:Pierce/Charge Lv4": {
 			"rawMV": 6.8,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv2:Pierce/Charge Lv1": {
 			"rawMV": 2.4,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv2:Pierce/Charge Lv2": {
 			"rawMV": 6,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv2:Pierce/Charge Lv3": {
 			"rawMV": 9,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv2:Pierce/Charge Lv4": {
 			"rawMV": 10.2,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv3:Pierce/Charge Lv1": {
 			"rawMV": 3.2,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv3:Pierce/Charge Lv2": {
 			"rawMV": 8,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv3:Pierce/Charge Lv3": {
 			"rawMV": 12,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv3:Pierce/Charge Lv4": {
 			"rawMV": 13.6,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv4:Pierce/Charge Lv1": {
 			"rawMV": 4,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv4:Pierce/Charge Lv2": {
 			"rawMV": 10,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv4:Pierce/Charge Lv3": {
 			"rawMV": 15,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv4:Pierce/Charge Lv4": {
 			"rawMV": 17,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv5:Pierce/Charge Lv1": {
 			"rawMV": 4.8,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv5:Pierce/Charge Lv2": {
 			"rawMV": 12,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv5:Pierce/Charge Lv3": {
 			"rawMV": 18,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv5:Pierce/Charge Lv4": {
 			"rawMV": 20.4,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 7,
-			"unique": "Pierce"
+			"unique": "PierceUp"
 		},
 		"Lv1:Dragon Piercer/Charge Lv1": {
 			"rawMV": 11.2,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv1:Dragon Piercer/Charge Lv2": {
 			"rawMV": 28,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv1:Dragon Piercer/Charge Lv3": {
 			"rawMV": 42,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv1:Dragon Piercer/Charge Lv4": {
 			"rawMV": 47.6,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv2:Dragon Piercer/Charge Lv1": {
 			"rawMV": 12,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv2:Dragon Piercer/Charge Lv2": {
 			"rawMV": 30,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv2:Dragon Piercer/Charge Lv3": {
 			"rawMV": 45,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv2:Dragon Piercer/Charge Lv4": {
 			"rawMV": 51,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv3:Dragon Piercer/Charge Lv1": {
 			"rawMV": 12.8,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv3:Dragon Piercer/Charge Lv2": {
 			"rawMV": 32,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv3:Dragon Piercer/Charge Lv3": {
 			"rawMV": 48,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv3:Dragon Piercer/Charge Lv4": {
 			"rawMV": 54.4,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv4:Dragon Piercer/Charge Lv1": {
 			"rawMV": 13.6,
 			"type": "Shot",
 			"eleMV": 0.7,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv4:Dragon Piercer/Charge Lv2": {
 			"rawMV": 34,
 			"type": "Shot",
 			"eleMV": 0.85,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv4:Dragon Piercer/Charge Lv3": {
 			"rawMV": 51,
 			"type": "Shot",
 			"eleMV": 1,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		},
 		"Lv4:Dragon Piercer/Charge Lv4": {
 			"rawMV": 57.8,
 			"type": "Shot",
 			"eleMV": 1.125,
 			"ticsPer": 7,
-			"unique": ["Pierce", "specialAmmo"]
+			"unique": ["PierceUp", "SpecialAmmoBoost"]
 		}
 	},
 	"SwordNShield": {

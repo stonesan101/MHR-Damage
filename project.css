@@ -97,11 +97,17 @@ label {
 html {
   min-width: fit-content;
   display: grid;
+  gap: 1rem;
   justify-content: center;
 }
 
+input#taWikiSetBuilder {
+  grid-area: 3/2/4/6;
+  background-color: gray;
+}
+
 div#statsTableDiv {
-  grid-area: 1/2/4/6;
+  grid-area: 1/2/3/6;
 }
 
 section#section3 {
@@ -238,7 +244,7 @@ div#damageTable.meleeContainer {
 }
 
 div#damageTable.rangedContainer {
-  max-height: 345px;
+  max-height: 70vh;
 }
 
 .rangedTable>tr>td.a {
@@ -325,7 +331,7 @@ button.gray {
 }
 
 button.blue {
-  background-color: rgb(0, 0, 125);
+  background-color: rgba(12, 26, 105, 1);
   color: white;
   font-weight: 600;
   font-size: 0.55rem;
@@ -772,115 +778,115 @@ div#unique {
 .S:nth-child(2),
 .S:nth-child(3),
 .S:nth-child(4) {
-  background-color: darkorange;
+  background-color: #ea580c;
   color: rgb(0, 0, 0);
 }
 
 .A:nth-child(2),
 .A:nth-child(3),
 .A:nth-child(4) {
-  background-color: rgb(255, 153, 0);
+  background-color: #f97316;
   color: rgb(44, 44, 44);
 }
 
 .B:nth-child(2),
 .B:nth-child(3),
 .B:nth-child(4) {
-  background-color: rgb(212, 153, 117);
+  background-color: #fb923c;
   color: rgb(94, 94, 94);
 }
 
 .C:nth-child(2),
 .C:nth-child(3),
 .C:nth-child(4) {
-  background-color: rgb(243, 156, 128);
+  background-color: #fdba74;
   color: rgb(134, 134, 134);
 }
 
 .F:nth-child(2),
 .F:nth-child(3),
 .F:nth-child(4) {
-  background-color: rgb(222, 170, 152);
+  background-color: #fed7aa;
   color: rgb(162, 162, 162);
 }
 
 .A:nth-child(5),
 .B:nth-child(5) {
-  background-color: firebrick;
+  background-color: #991b1b;
   color: rgb(252, 252, 252);
 }
 
 .C:nth-child(5) {
-  background-color: rgb(237, 59, 59);
-  color: rgb(190, 190, 190);
+  background-color: #ef4444;
+  color: rgb(224, 224, 224);
 }
 
 .F:nth-child(5) {
-  background-color: rgb(237, 59, 59);
+  background-color: #f87171;
   color: rgb(94, 94, 94);
 }
 
 .A:nth-child(6),
 .B:nth-child(6) {
-  background-color: blue;
+  background-color: #1d4ed8;
   color: rgb(248, 248, 248);
 }
 
 .C:nth-child(6) {
-  background-color: rgb(35, 90, 255);
-  color: rgb(168, 168, 168);
+  background-color: #2563eb;
+  color: rgb(216, 216, 216);
 }
 
 .F:nth-child(6) {
-  background-color: rgb(59, 125, 247);
+  background-color: #3b82f6;
   color: rgb(48, 48, 48);
 }
 
 .A:nth-child(7),
 .B:nth-child(7) {
-  background-color: gold;
+  background-color: #facc15;
   color: rgb(7, 7, 7);
 }
 
 .C:nth-child(7) {
-  background-color: rgb(255, 255, 93);
+  background-color: #fde047;
   color: rgb(23, 22, 22);
 }
 
 .F:nth-child(7) {
-  background-color: rgb(220, 231, 163);
+  background-color: #fef9c3;
   color: rgb(94, 94, 94);
 }
 
 .A:nth-child(8),
 .B:nth-child(8) {
-  background-color: rgb(63, 165, 205);
+  background-color: #0284c7;
   color: rgb(0, 0, 0);
 }
 
 .C:nth-child(8) {
-  background-color: rgb(46, 179, 231);
+  background-color: #0ea5e9;
   color: rgb(23, 22, 22);
 }
 
 .F:nth-child(8) {
-  background-color: rgb(120, 197, 244);
+  background-color: #38bdf8;
   color: rgb(94, 94, 94);
 }
 
 .A:nth-child(9),
 .B:nth-child(9) {
-  background-color: purple;
+  background-color: #5b21b6;
   color: rgb(0, 0, 0);
 }
 
 .C:nth-child(9) {
-  background-color: darkviolet;
+  background-color: #7c3aed;
   color: rgb(23, 22, 22);
 }
 
 .F:nth-child(9) {
-  background-color: violet;
+  background-color: #8b5cf6;
   color: rgb(94, 94, 94);
 }
 

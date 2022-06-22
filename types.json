@@ -2,11 +2,11 @@
 	"version": 1.1,
 	"Stickies": [
 		"AttackBoost",
-		"DragonHeart",
-		"offensiveGuard",
+		"Dragonheart",
+		"OffensiveGuard",
 		"Fortify",
 		"Heroics",
-		"FelyneBombadier",
+		"Bombardier",
 		"Artillery",
 		"Resentment",
 		"Resuscitate",
@@ -22,11 +22,11 @@
 	],
 	"Clusters": [
 		"AttackBoost",
-		"DragonHeart",
-		"offensiveGuard",
+		"Dragonheart",
+		"OffensiveGuard",
 		"Fortify",
 		"Heroics",
-		"FelyneBombadier",
+		"Bombardier",
 		"Artillery",
 		"Resentment",
 		"Resuscitate",
@@ -39,8 +39,8 @@
 	"IMPAED": [
 		"AttackBoost",
 
-		"DragonHeart",
-		"offensiveGuard",
+		"Dragonheart",
+		"OffensiveGuard",
 		"Fortify",
 		"Heroics",
 		"Resentment",
@@ -50,14 +50,14 @@
 		"WallRunner",
 		"Spiribird",
 
-		"FelyneBombadier",
+		"Bombardier",
 		"Artillery"
 	],
 	"Gunner": [
 		"ElementalAttack",
 		"ElderEssence",
-		"DragonHeart",
-		"offensiveGuard",
+		"Dragonheart",
+		"OffensiveGuard",
 		"Fortify",
 		"Resentment",
 		"Resuscitate",
@@ -79,8 +79,8 @@
 	"Sever": [
 		"ElementalAttack",
 		"ElderEssence",
-		"DragonHeart",
-		"offensiveGuard",
+		"Dragonheart",
+		"OffensiveGuard",
 		"Fortify",
 		"Resentment",
 		"Resuscitate",
@@ -96,8 +96,8 @@
 	],
 	"Blunt": [
 		"ElderEssence",
-		"DragonHeart",
-		"offensiveGuard",
+		"Dragonheart",
+		"OffensiveGuard",
 		"Fortify",
 		"Resentment",
 		"Resuscitate",
@@ -115,8 +115,8 @@
 	"AllSkills": [
 		"ElementalAttack",
 		"ElderEssence",
-		"DragonHeart",
-		"offensiveGuard",
+		"Dragonheart",
+		"OffensiveGuard",
 		"Fortify",
 		"Resentment",
 		"Resuscitate",
@@ -132,7 +132,16 @@
 		"MaximumMight",
 		"LatentPower"
 	],
-	"unique": ["Pierce", "Spread", "Normal", "specialAmmo", "Rapid", "Helmbreaker", "spiritGauge", "InsectGlaiveId"],
+	"unique": [
+		"PierceUp",
+		"SpecialAmmoBoost",
+		"NormalRapidUp",
+		"SpecialAmmoBoost",
+		"Rapid",
+		"Helmbreaker",
+		"spiritGauge",
+		"InsectGlaiveId"
+	],
 	"rampageSkills": ["AntiElementBlight", "KushRampage", "SilkbindBoost"],
 	"uniquebuffs": [
 		"InsectGlaiveId",
