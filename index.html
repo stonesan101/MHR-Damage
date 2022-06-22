@@ -20,24 +20,26 @@
     <div id="section1" class="contain">
       <h1> Weapon Selection</H1>
       <div class="contain" id="weaponSelect">
-        <div><label for="dropWeaponType">Weapon Type</label><select class='searchselectbox' aria-autocomplete="both" class="skillinput hitsOfSharp"
-                  Data-myAttribute="weaponType" contenteditable="true" id="dropWeaponType" name="weaponTypeSelection"
-                  onchange="WeaponSelect(); RampageSelect(); HideAndRevealTypeSpecificElements(true);  DataCompile(); ComboReset(true)">
-          </select></div>
-        <div class="uniqueBow" display="border:none"><label class="Bow BowId classSpecific" for="BowCoationg">Bow Coatings</label><select
-                  id='bowCoating' class="Bow classSpecific" onchange="DataCompile()" name="Bow Coatings">
-            <option value='{"BRM": 1,"BR": 0,"PRM": 1,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>---</option>
-            <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Close</option>
-            <option value='{"BRM": 1,"BR": 0,"PRM": 1.35,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Power</option>
-            <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 0,"aff":0}'>Status</option>
-          </select></div>
-        <div id='BowGunId'> <label class="LightBowGun HeavyBowGun classSpecific" for="BarrelId">Gunner Barrel</label><select
-                  class="LightBowGun HeavyBowGun classSpecific" id="BarrelId" name="BarrelSelection" onchange="DataCompile()">
-            <option value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>Barrel</option>
-            <option value='{"Element":1,"Power":1.07,"Silencer":0,"reload":0}'>Power Barrel</option>
-            <option value='{"Element":1,"Power":1,"Silencer":1,"reload":1}'>Silencer</option>
-            <option value='{"Element":1.1,"Power":1,"Silencer":0,"reload":2}'>Elemental Reload</option>
-          </select></div>
+        <div style='display:content;'>
+          <div><label for="dropWeaponType">Weapon Type</label><select class='searchselectbox' aria-autocomplete="both" class="skillinput hitsOfSharp"
+                    Data-myAttribute="weaponType" contenteditable="true" id="dropWeaponType" name="weaponTypeSelection"
+                    onchange="WeaponSelect(); RampageSelect(); HideAndRevealTypeSpecificElements(true);  DataCompile(); ComboReset(true)">
+            </select></div>
+          <div class="uniqueBow" display="border:none"><label class="Bow BowId classSpecific" for="BowCoationg">Bow Coatings</label><select
+                    id='bowCoating' class="Bow classSpecific" onchange="DataCompile()" name="Bow Coatings">
+              <option value='{"BRM": 1,"BR": 0,"PRM": 1,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>---</option>
+              <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Close</option>
+              <option value='{"BRM": 1,"BR": 0,"PRM": 1.35,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Power</option>
+              <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 0,"aff":0}'>Status</option>
+            </select></div>
+          <div id='BowGunId'> <label class="LightBowGun HeavyBowGun classSpecific" for="BarrelId">Gunner Barrel</label><select
+                    class="LightBowGun HeavyBowGun classSpecific" id="BarrelId" name="BarrelSelection" onchange="DataCompile()">
+              <option value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>Barrel</option>
+              <option value='{"Element":1,"Power":1.07,"Silencer":0,"reload":0}'>Power Barrel</option>
+              <option value='{"Element":1,"Power":1,"Silencer":1,"reload":1}'>Silencer</option>
+              <option value='{"Element":1.1,"Power":1,"Silencer":0,"reload":2}'>Elemental Reload</option>
+            </select></div>
+        </div>
         <div><label for="dropWeapon">Weapon</label><select id="dropWeapon" class="skillinput hitsOfSharp" name="weaponSelection"
                   Data-myAttribute="weapon" onchange="RampageSelect(), DataCompile()">
             <option value="Kamura Cleaver I">Kamura Cleaver I</option>
