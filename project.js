@@ -168,7 +168,7 @@ function MeleeDPS() {
 			UpdateComboTracker();
 			UpdateComboDisplay();
 		}
-		if (attackID === 0 && comboTracker.length > 0) {
+		if (attackID === 0) {
 			power = TotalHitsOfSharpUsed(power);
 		}
 
