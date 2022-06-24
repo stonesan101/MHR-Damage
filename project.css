@@ -110,9 +110,11 @@ input#taWikiSetBuilder {
 div#statsTableDiv {
   grid-area: 1/2/4/6;
 }
-#weaponSelect > div:nth-child(3) {
+
+#weaponSelect>div:nth-child(3) {
   grid-area: 3/1/5/2;
 }
+
 section#section3 {
   grid-template-columns: repeat(3, 1fr);
   display: grid;
@@ -169,7 +171,7 @@ body {
   display: grid;
   color: white;
   /* font-size: 0.55rem; */
-  background-image: url('background.jpg');
+  background-image: url('background.webp');
   background-size: cover;
   min-height: 100vh;
   /* min-width: 100vh; */
@@ -582,7 +584,7 @@ table#monTable {
   border-color: rgb(77, 67, 69);
   margin: 0px;
   grid-area: 4 / 1 / auto / -1;
-  height: 6.3rem;
+  height: 6.6rem;
   font-weight: bold;
 }
 

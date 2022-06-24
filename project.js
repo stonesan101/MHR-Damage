@@ -1,7 +1,6 @@
 const baseURL = window.location.host === 'localhost:5500' ? 'http://localhost:5500' : 'https://stonesan101.github.io/MHR-Damage';
 let check = [0, 0, 0, 0, 0, 0, 0];
 let comboTracker = [];
-
 $.getJSON(`${baseURL}/weapons.json`, data => {
 	window.weapon = data;
 });
@@ -28,6 +27,9 @@ $.getJSON(`${baseURL}/frames.json`, data => {
 });
 $.getJSON(`${baseURL}/rampage.json`, data => {
 	window.rampage = data;
+});
+$.getJSON(`${baseURL}/ChargeBlade.json`, data => {
+	window.chargeBlade = data;
 });
 $.getJSON(`${baseURL}/sharpness.json`, data => {
 	window.sharpness = data;
@@ -100,19 +102,22 @@ function RangedDPS() {
 
 		const stats = [
 			['Stat', 'Raw', 'Affinity', 'Ele Ammo'],
-			['Base', ~~power.baseRaw, power.baseAff, ~~(0.1 + 11 * power.eleAmmo)],
-			['Pre-Cap', ~~power.raw, power.aff * 100, ~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo)],
+			['Base', ~~power.baseRaw, power.baseAff, ~~(Math.fround(0.1) + 11 * power.eleAmmo)],
+			['Pre-Cap', ~~power.raw, power.aff * 100, ~~(Math.fround(0.1) + (11 * power.BEM + power.BE) * power.eleAmmo)],
 			[
 				'Post-Cap',
 				~~(power.raw * power.critBoost * power.PRM * power.enrage * power.augPRM * JSON.parse(felineMarksmanid.value)[0]),
 				power.aff * 100,
-				~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo * power.PEM * power.enrage * power.augPEM * power.eleCritBoost),
+				~~(
+					Math.fround(0.1) +
+					(11 * power.BEM + power.BE) * power.eleAmmo * power.PEM * power.enrage * power.augPEM * power.eleCritBoost
+				),
 			],
 			[
 				'Effective',
 				~~(power.raw * power.efrMulti * power.PRM * power.enrage * power.augPRM * JSON.parse(felineMarksmanid.value)[1]),
 				power.aff * 100,
-				~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo * power.PEM * power.enrage * power.augPEM * power.efeMulti),
+				~~(Math.fround(0.1) + (11 * power.BEM + power.BE) * power.eleAmmo * power.PEM * power.enrage * power.augPEM * power.efeMulti),
 			],
 		];
 		BuildDamageTable(stats, 'stats');
@@ -147,19 +152,22 @@ function MeleeDPS() {
 	let meleeDamage = [['Combo', 'Attack Name', 'MV', 'Raw', 'Element', 'Total', 'EFR', 'EFE', 'Effective']];
 	let comboDamage = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 	let power = {};
-	power = { ...window.weapon[$('#dropWeaponType').val()][$('#dropWeapon').val()] };
-	power = ApplyRampageSelections(power);
-	//  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
-	power.attacks =
-		dropWeaponType.value === 'Bow' || dropWeaponType.value === 'ChargeBlade'
-			? AddDependantSkills(power)
-			: window.attack[dropWeaponType.value];
-
+	function initiatePower() {
+		power = { ...window.weapon[$('#dropWeaponType').val()][$('#dropWeapon').val()] };
+		power = ApplyRampageSelections(power);
+		//  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
+		power.attacks =
+			dropWeaponType.value === 'Bow' || dropWeaponType.value === 'ChargeBlade'
+				? AddDependantSkills(power)
+				: window.attack[dropWeaponType.value];
+		return power;
+	}
+	power = initiatePower();
 	$(Object.keys(power.attacks)).each(function (attackID, eachAttack) {
-		power = { ...power, ...power.attacks[eachAttack] };
+		power = { ...initiatePower(), ...power.attacks[eachAttack] };
 		power.thisAttack = eachAttack;
 		if (power.ticsPer === undefined) {
-			power.ticsPer = power.hitsOfSharp === undefined ? 1 : power.hitsOfSharp;
+			power.ticsPer = power.hitsOfSharp === undefined ? [1] : power.hitsOfSharp;
 		}
 		power = GetSkills(power);
 
@@ -190,25 +198,25 @@ function MeleeDPS() {
 						// combo=[rawMV,rawNon,rawCrit,eleNon,eleCrit,totalNon,TotalCrit,EFR,EFE,totalEffective]
 						comboDamage = [
 							(comboDamage[0] += Number(~~(0.5 + power.rawMV * hitsPerAttackPerSharpness * power.ticsPer))),
-							(comboDamage[1] += Number(~~(0.1 + power.rawNon * sharpPRM) * hitsPerAttackPerSharpness)),
-							(comboDamage[2] += Number(~~(0.1 + power.rawCrit * sharpPRM) * hitsPerAttackPerSharpness)),
-							(comboDamage[3] += Number(~~(0.1 + power.eleNon * sharpPEM) * hitsPerAttackPerSharpness)),
-							(comboDamage[4] += Number(~~(0.1 + power.eleCrit * sharpPEM) * hitsPerAttackPerSharpness)),
+							(comboDamage[1] += Number(~~(Math.fround(0.1) + power.rawNon * sharpPRM) * hitsPerAttackPerSharpness)),
+							(comboDamage[2] += Number(~~(Math.fround(0.1) + power.rawCrit * sharpPRM) * hitsPerAttackPerSharpness)),
+							(comboDamage[3] += Number(~~(Math.fround(0.1) + power.eleNon * sharpPEM) * hitsPerAttackPerSharpness)),
+							(comboDamage[4] += Number(~~(Math.fround(0.1) + power.eleCrit * sharpPEM) * hitsPerAttackPerSharpness)),
 							(comboDamage[5] += Number(
-								(~~(0.1 + power.rawNon * sharpPRM) * hitsPerAttackPerSharpness +
-									~~(0.1 + power.eleNon * sharpPEM) * hitsPerAttackPerSharpness) *
+								(~~(Math.fround(0.1) + power.rawNon * sharpPRM) * hitsPerAttackPerSharpness +
+									~~(Math.fround(0.1) + power.eleNon * sharpPEM) * hitsPerAttackPerSharpness) *
 									power.ticsPer,
 							)),
 							(comboDamage[6] += Number(
-								(~~(0.1 + power.rawCrit * sharpPRM) * hitsPerAttackPerSharpness +
-									~~(0.1 + power.eleCrit * sharpPEM) * hitsPerAttackPerSharpness) *
+								(~~(Math.fround(0.1) + power.rawCrit * sharpPRM) * hitsPerAttackPerSharpness +
+									~~(Math.fround(0.1) + power.eleCrit * sharpPEM) * hitsPerAttackPerSharpness) *
 									power.ticsPer,
 							)),
-							(comboDamage[7] += Number(~~(0.1 + power.efr * sharpPRM) * hitsPerAttackPerSharpness)),
-							(comboDamage[8] += Number(~~(0.1 + power.efe * sharpPEM) * hitsPerAttackPerSharpness)),
+							(comboDamage[7] += Number(~~(Math.fround(0.1) + power.efr * sharpPRM) * hitsPerAttackPerSharpness)),
+							(comboDamage[8] += Number(~~(Math.fround(0.1) + power.efe * sharpPEM) * hitsPerAttackPerSharpness)),
 							(comboDamage[9] += Number(
-								(~~(0.1 + power.efr * sharpPRM) * hitsPerAttackPerSharpness +
-									~~(0.1 + power.efe * sharpPEM) * hitsPerAttackPerSharpness) *
+								(~~(Math.fround(0.1) + power.efr * sharpPRM) * hitsPerAttackPerSharpness +
+									~~(Math.fround(0.1) + power.efe * sharpPEM) * hitsPerAttackPerSharpness) *
 									power.ticsPer,
 							)),
 						];
@@ -223,19 +231,31 @@ function MeleeDPS() {
 			'replaceME',
 			power.thisAttack,
 			power.rawMV,
-			`${~~(0.1 + power.rawNon * sharpnessModifier.PRM)} / ${~~(0.1 + power.rawCrit * sharpnessModifier.PRM)}`,
+			`${~~(Math.fround(0.1) + power.rawNon * sharpnessModifier.PRM)} / ${~~(
+				Math.fround(0.1) +
+				power.rawCrit * sharpnessModifier.PRM
+			)}`,
 
-			`${~~(0.1 + power.eleNon * sharpnessModifier.PEM)} / ${~~(0.1 + power.eleCrit * sharpnessModifier.PEM)}`,
+			`${~~(Math.fround(0.1) + power.eleNon * sharpnessModifier.PEM)} / ${~~(
+				Math.fround(0.1) +
+				power.eleCrit * sharpnessModifier.PEM
+			)}`,
 
-			`${(~~(0.1 + power.rawNon * sharpnessModifier.PRM) + ~~(0.1 + power.eleNon * sharpnessModifier.PEM)) * power.ticsPer} / ${
-				(~~(0.1 + power.rawCrit * sharpnessModifier.PRM) + ~~(0.1 + power.eleCrit * sharpnessModifier.PEM)) * power.ticsPer
+			`${
+				(~~(Math.fround(0.1) + power.rawNon * sharpnessModifier.PRM) + ~~(Math.fround(0.1) + power.eleNon * sharpnessModifier.PEM)) *
+				power.ticsPer
+			} / ${
+				(~~(Math.fround(0.1) + power.rawCrit * sharpnessModifier.PRM) +
+					~~(Math.fround(0.1) + power.eleCrit * sharpnessModifier.PEM)) *
+				power.ticsPer
 			}`,
 
-			~~(0.1 + power.efr * sharpnessModifier.PRM),
+			~~(Math.fround(0.1) + power.efr * sharpnessModifier.PRM),
 
-			~~(0.1 + power.efe * sharpnessModifier.PEM),
+			~~(Math.fround(0.1) + power.efe * sharpnessModifier.PEM),
 
-			(~~(0.1 + power.efe * sharpnessModifier.PEM) + ~~(0.1 + power.efr * sharpnessModifier.PRM)) * power.ticsPer,
+			(~~(Math.fround(0.1) + power.efe * sharpnessModifier.PEM) + ~~(Math.fround(0.1) + power.efr * sharpnessModifier.PRM)) *
+				power.ticsPer,
 		];
 
 		meleeDamage.push(damage);
@@ -366,10 +386,12 @@ function GetSkills(power) {
 			? 100
 			: window.monster[$('#dropMonster').val()].HitZone[$('#dropHZ').val()][power.type];
 	// applies Demon Ammo if selected and damage type is sever or blunt
-	power.rawHZV *= $(DemonAmmo).hasClass('blue') && /(Sever|Blunt)/.test(power.type) ? 1.1 : 1;
+	power.PRM *= $(DemonAmmo).hasClass('blue') && /(Sever|Blunt)/.test(power.type) ? Math.fround(1.1) : 1;
 	// applies Water Blight if selected appropriate to the hzv
-	power.rawHZV += $(WaterBlight).hasClass('blue') && /(Sever|Blunt|Shot)/.test(power.type) && power.rawHZV < 60 ? 25 : 0;
-	power.rawHZV += $(WaterBlight).hasClass('blue') && /(Sever|Blunt|Shot)/.test(power.type) && power.rawHZV >= 60 ? 3 : 0;
+	power.rawHZV =
+		$(WaterBlight).hasClass('blue') && /(Sever|Blunt|Shot)/.test(power.type)
+			? Math.min(100, ~~(Math.max(power.rawHZV, power.rawHZV * 0.63 + 22.2) + 3))
+			: power.rawHZV;
 
 	$('.skillButton').each(function () {
 		if ($(this).hasClass('blue')) {
@@ -408,7 +430,7 @@ function GetSkills(power) {
 			break;
 	}
 	// adds agitator to getSkills if enraged
-	power.getSkills = window.skillCategories[power.skillType];
+	[...power.getSkills] = window.skillCategories[power.skillType];
 	if ($('#dropEnraged').val() === 'Enraged') {
 		power.getSkills.push('Agitator');
 		enrageDisplay.textContent = window.monster[$('#dropMonster').val()].Enrage + '%';
@@ -422,13 +444,13 @@ function GetSkills(power) {
 		if (document.getElementById([skill]).selectedIndex > 0) {
 			const skills = JSON.parse(document.getElementById([skill]).value);
 
-			power.BRM *= skills.BRM;
-			power.BR += skills.BR;
-			power.PRM *= skills.PRM;
-			power.BEM *= skills.BEM;
-			power.BE += skills.BE;
-			power.PEM *= skills.PEM;
-			power.aff += skills.aff;
+			power.BRM *= Math.fround(skills.BRM);
+			power.BR += Math.fround(skills.BR);
+			power.PRM *= Math.fround(skills.PRM);
+			power.BEM *= Math.fround(skills.BEM);
+			power.BE += Math.fround(skills.BE);
+			power.PEM *= Math.fround(skills.PEM);
+			power.aff += Math.fround(skills.aff);
 		}
 	});
 	// adds Weakness Exploit
@@ -468,8 +490,8 @@ function GetRemainingSkills(power) {
 	// applies Bludgeoner to Base raw depending on sharpness and selectedIndex
 	if (Sharpness.selectedIndex > 0) {
 		power.BRM *= Bludgeoner.selectedIndex === 1 && Sharpness.selectedIndex < 4 ? [1.05] : [1];
-		power.BRM *= Bludgeoner.selectedIndex === 2 && Sharpness.selectedIndex < 4 ? [1.1] : [1];
-		power.BRM *= Bludgeoner.selectedIndex === 3 && Sharpness.selectedIndex < 5 ? [1.1] : [1];
+		power.BRM *= Bludgeoner.selectedIndex === 2 && Sharpness.selectedIndex < 4 ? [Math.fround(1.1)] : [1];
+		power.BRM *= Bludgeoner.selectedIndex === 3 && Sharpness.selectedIndex < 5 ? [Math.fround(1.1)] : [1];
 	}
 
 	// applies sharpnessModifier to sever and blunt type attacks that use at least one hit of sharpness. This makes sure attacks like tackle or Bow skills don't get a sharpness modifier.
@@ -479,7 +501,8 @@ function GetRemainingSkills(power) {
 			? [JSON.parse(Sharpness.value).PRM, JSON.parse(Sharpness.value).PEM]
 			: [1, 1];
 	power.PRM *=
-		~~(0.1 + 25 / sharpnessModifier.PRM) >= window.monster[$('#dropMonster').val()].HitZone[$('#dropHZ').val()][power.type]
+		~~(Math.fround(0.1) + 25 / sharpnessModifier.PRM) >=
+		window.monster[$('#dropMonster').val()].HitZone[$('#dropHZ').val()][power.type]
 			? JSON.parse(document.getElementById([`MindsEye`]).value).PRM
 			: 1;
 	power.critBoost = /(Sever|Blunt|Shot)/.test(power.type) ? JSON.parse($('#CriticalBoost').val()).PRM : 1;
@@ -649,7 +672,7 @@ function TotalHitsOfSharpUsed(power) {
 }
 function DamageCalculations(power) {
 	// final damage calculations first row limits raw to the 3x attack cap
-	power.raw = Math.min(power.baseRaw * power.BRM + power.BR, power.baseRaw * 3);
+	power.raw = Math.min(power.baseRaw * power.BRM + power.BR, 2600);
 	const rawFormula = (power.raw * power.PRM * power.augPRM * power.rawHZV * power.enrage * power.rawMV) / 10000;
 	power.rawNon = rawFormula * JSON.parse(felineMarksmanid.value)[0];
 	power.efr = rawFormula * power.efrMulti * JSON.parse(felineMarksmanid.value)[1];
@@ -661,10 +684,13 @@ function DamageCalculations(power) {
 	power.efeMulti = 1 + (power.eleCritBoost - 1) * power.aff;
 	const eleFormula = power.ele * power.PEM * (power.eleHZV / 100) * power.enrage * power.eleMV * power.augPEM;
 
-	power.eleNon = eleFormula > 0 && eleFormula < 1 ? 1 : ~~(0.1 + eleFormula);
-	power.efe = eleFormula * power.efeMulti > 0 && eleFormula * power.efeMulti < 1 ? 1 : ~~(0.1 + eleFormula * power.efeMulti);
+	power.eleNon = eleFormula > 0 && eleFormula < 1 ? 1 : ~~(Math.fround(0.1) + eleFormula);
+	power.efe =
+		eleFormula * power.efeMulti > 0 && eleFormula * power.efeMulti < 1 ? 1 : ~~(Math.fround(0.1) + eleFormula * power.efeMulti);
 	power.eleCrit =
-		eleFormula * power.eleCritBoost > 0 && eleFormula * power.eleCritBoost < 1 ? 1 : ~~(0.1 + eleFormula * power.eleCritBoost);
+		eleFormula * power.eleCritBoost > 0 && eleFormula * power.eleCritBoost < 1
+			? 1
+			: ~~(Math.fround(0.1) + eleFormula * power.eleCritBoost);
 	return power;
 }
 function BowComboDamage() {
@@ -881,9 +907,8 @@ function MonChart() {
 				const cell = document.createElement('td');
 				// adds demon ammo and water blight to displayed HZV
 				if (j !== 0) {
-					HZV[j] *= $(DemonAmmo).hasClass('blue') && /1|2/.test(j) ? 1.1 : 1;
-					HZV[j] += $(WaterBlight).hasClass('blue') && /1|2|3/.test(j) && HZV[j] < 60 ? 25 : 0;
-					HZV[j] += $(WaterBlight).hasClass('blue') && /1|2|3/.test(j) && HZV[j] >= 60 ? 3 : 0;
+					HZV[j] =
+						$(WaterBlight).hasClass('blue') && /1|2|3/.test(j) ? Math.min(100, ~~(Math.max(HZV[j], HZV[j] * 0.63 + 22.2) + 3)) : HZV[j];
 
 					if (HZV[j] < 14) {
 						cell.setAttribute('class', 'F');
@@ -974,9 +999,19 @@ $('#BowChargePlus').change(function (e) {
 });
 
 $('.toggle').click(function (e) {
-	$(this).toggleClass('gray');
-	$(this).toggleClass('blue');
-	$(this).attr('aria-pressed', $(this).attr('aria-pressed') == 'false' ? true : false);
+	if (
+		/DemonDrug/.test(e.target.id) &&
+		/gray/.test(e.target.className) &&
+		[DemonDrug.className, MegaDemonDrug.className].some(x => /blue/.test(x))
+	) {
+		$('#DemonDrug').toggleClass('gray');
+		$('#DemonDrug').toggleClass('blue');
+		$('#MegaDemonDrug').toggleClass('blue');
+		$('#MegaDemonDrug').toggleClass('gray');
+	} else {
+		$(e.target).toggleClass('gray');
+		$(e.target).toggleClass('blue');
+	}
 	if (this !== filterCombo) {
 		DataCompile();
 		MonChart();
