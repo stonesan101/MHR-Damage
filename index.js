@@ -432,7 +432,7 @@ function GetSkills(power) {
 	power.getSkills = [].concat(info.types[power.skillType]);
 	if ($('#dropEnraged').val() === 'Enraged') {
 		power.getSkills.push('Agitator');
-		enrageDisplay.textContent = info.monster.enrage[dropMonster.selectedIndex]['Player Dmg'] * 100 + '%';
+		enrageDisplay.textContent = ~~(info.monster.enrage[dropMonster.selectedIndex]['Player Dmg'] * 100) + '%';
 	}
 
 	// applies RF/Normal/Pierce/Spread up bonuses to bow and bowgun
