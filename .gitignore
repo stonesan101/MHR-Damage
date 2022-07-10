@@ -18,3 +18,7 @@
 /.csv
 .eslintrc
 .nodemonrc
+.quokka
+external/jquery/jquery.js
+*.png
+requires.js

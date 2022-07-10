@@ -1,6 +1,6 @@
 @media only screen and (max-width: 780px) {
   body {
-    background-position: center;
+    background-position: center center;
   }
 
   body div {
@@ -8,46 +8,72 @@
     align-items: baseline;
   }
 
-  div#section2 {
-    grid-area: 3/1/4/2;
+  combo {
+    width: 100%;
+  }
+
+  section#section2 {
+    grid-area: 3 / 1 / 4 / 3;
+    overflow: hidden;
+  }
+
+  .title {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  section#section1.contain {
+    justify-self: start;
+    justify-content: start;
   }
 
   div#divComboAttacks {
+    width: 15rem;
     grid-area: 2 / 2 / 4 / 3;
   }
 }
 
+@media only screen and (min-width: 781px) {
+  section#section2 {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+
+  .title {
+    grid-area: 1 / 1 / 2 / 4;
+  }
+}
+
+li ul {
+  display: none;
+}
+
+li:hover>ul {
+  display: block;
+}
+
 output#label {
-  /* top: .3rem; */
   pointer-events: none;
   position: relative;
-  /* width: max-content; */
-  font-size: 0.55rem;
-  color: #ffffff;
-  font-weight: bold;
+  color: rgb(255, 255, 255);
   min-height: 1.32rem;
   z-index: 10;
   width: 100%;
   display: grid;
   border: none;
-  grid-area: 1/1/2/3;
+  grid-area: 1 / 1 / 2 / 3;
 }
 
 div.inputContainer {
-  top: 0;
-  z-index: 30;
+  top: 0px;
   position: absolute;
   grid-template-columns: 1fr 1fr;
   min-height: 1.32rem;
   display: grid;
-
-  color: #ffffff;
-
+  color: rgb(255, 255, 255);
   z-index: 15;
 }
 
 button.inputButton:hover {
-  color: #fcfcfc;
+  color: rgb(252, 252, 252);
   z-index: 20;
   font-weight: 900;
   font-size: 1rem;
@@ -55,113 +81,85 @@ button.inputButton:hover {
 }
 
 button.dec.inputButton {
-  left: 0;
-  /* grid-area: 1/1/2/2; */
+  left: 0px;
 }
 
 button.inc.inputButton {
   justify-items: end;
-  right: 0;
-  grid-area: 1/2/2/3;
+  right: 0px;
+  grid-area: 1 / 2 / 2 / 3;
   border-left: none;
 }
 
-td.b {
-  width: 10rem;
-}
-
 button.inputButton {
-  top: 0;
+  top: 0px;
   pointer-events: auto;
-  background-color: rgb(11 11 42 / 63%);
+  background-color: rgba(11, 11, 42, 0.63);
   position: absolute;
-  color: #cd000000;
+  color: rgba(205, 0, 0, 0);
   z-index: 5;
   border: none;
   width: 50%;
+  height: 100%;
   min-height: 1.32rem;
-  /* border-color: rgb(77, 67, 69); */
-}
-
-div#divComboAttacks {
-  max-width: 130px;
-}
-
-tr,
-td,
-div,
-label {
-  font-size: 0.53rem;
 }
 
 html {
   min-width: fit-content;
   display: grid;
-  gap: 1rem;
-  justify-content: center;
+  gap: 5rem;
 }
 
 input#taWikiSetBuilder {
   height: max-content;
-  grid-area: 4/2/5/6;
+  grid-area: 4 / 2 / 5 / 6;
   background-color: gray;
 }
 
 div#statsTableDiv {
-  grid-area: 1/2/4/6;
+  grid-area: 1 / 2 / 4 / 6;
 }
 
 #weaponSelect>div:nth-child(3) {
-  grid-area: 3/1/5/2;
+  grid-area: 3 / 1 / 5 / 2;
 }
 
-section#section3 {
-  grid-template-columns: repeat(3, 1fr);
+section#section2 {
   display: grid;
-  gap: 0.25rem;
-  margin-top: 0.25rem;
-  justify-items: center;
-}
+  height: 100vh;
+  align-content: start;
+  gap: .5rem;
+  /* gap: inherit; */
+  grid-template-columns: repeat(8, 1fr) auto;
 
-@media only screen and (min-width: 780px) {
-  section#section3 {
-    grid-area: 2 / 1 / 3 / 2;
-  }
-
-  div#section2 {
-    grid-area: 2/ 2 / 2 / 3;
-    display: grid;
-  }
-
-  body {
-    grid-template-columns: repeat(3, auto);
-  }
+  justify-items: stretch;
+  align-items: start;
 }
 
 html div {
   display: grid;
+  align-content: start;
 }
 
-div#section1.contain {
+section#section1.contain {
+  align-items: start;
+  align-content: start;
   grid-template-columns: repeat(5, 1fr);
   grid-area: 2 / 1 / 3 / 2;
-}
-
-div#section1>h1 {
-  grid-area: 1 / 1 / 2 / 6;
+  gap: 0.6rem;
 }
 
 div#BowGunId,
 div.uniqueBow {
-  grid-area: 1/2;
+  grid-area: 1 / 2 / auto / auto;
 }
 
 div#weaponSelect.contain {
   grid-template-columns: repeat(2, 1fr);
-  grid-area: 2 / 1 / 3 /6;
+  grid-area: 2 / 1 / 3 / 6;
 }
 
-*.contain {
+.contain {
   gap: 0.25rem;
   display: grid;
   box-sizing: border-box;
@@ -170,40 +168,44 @@ div#weaponSelect.contain {
 body {
   display: grid;
   color: white;
-  /* font-size: 0.55rem; */
-  background-image: url('background.webp');
+  background-image: url("background.webp");
   background-size: cover;
   min-height: 100vh;
-  /* min-width: 100vh; */
   min-width: fit-content;
   border-style: none;
   border-color: rgb(6, 6, 6);
-  align-content: center;
-  align-items: baseline;
-  gap: 0.5rem;
+  gap: 1rem;
+  border-spacing: 0px;
 }
 
 #comboCountDisplay {
   min-width: min-content;
-  max-width: 130px;
+  width: 15rem;
+  overflow: auto;
+}
+
+#comboCountContainer {
+  min-width: min-content;
+  grid-area: 2 / 2 / 2 / 3;
   top: 0px;
-  margin: 0;
+  margin: 0px;
+  display: grid;
   position: sticky;
-  font-size: 0.73rem;
-  gap: 0;
+  width: 15rem;
+  gap: 0px;
+  align-items: start;
 }
 
 div#divComboAttacks {
   max-height: 550px;
-  min-width: 130px;
-  overflow-y: auto;
+  overflow: auto;
 }
 
 div#sharpnessContainer {
   justify-content: start;
   background-color: rgb(10, 10, 10);
   border-style: ridge;
-  grid-area: 2 / 1 / 3 / 4;
+  grid-area: 5 / 1 / 6 / 10;
   column-gap: 0px;
   grid-template-columns: repeat(6, auto);
   width: fit-content;
@@ -227,29 +229,39 @@ div#blue {
 }
 
 div#monContainer.contain {
+  grid-area: 3 / 1 / 10 / 4;
   display: grid;
   grid-template-columns: repeat(7, auto);
-  justify-items: stretch;
+  place-items: stretch;
   justify-content: center;
   max-height: 11rem;
-  align-items: stretch;
+  overflow: auto;
 }
 
 .title {
   display: grid;
-  grid-area: 1 / 1 / 2 / -1;
-  place-items: stretch center;
   place-content: center;
 }
 
-div#damageTable.meleeContainer {
-  height: 57vh;
+div#monTableContainer {
+  grid-area: 3 / 1 / 4 / -1;
+  height: 20.8vh;
   overflow: auto;
+  display: grid;
+  justify-items: stretch;
+
 
 }
 
+div#damageTable.meleeContainer {
+  height: vh;
+  overflow: auto;
+  display: grid;
+  width: 100%;
+}
+
 div#damageTable.rangedContainer {
-  max-height: 70vh;
+  height: 45vh;
 }
 
 .rangedTable>tr>td.a {
@@ -258,8 +270,7 @@ div#damageTable.rangedContainer {
 }
 
 .meleeTable>tr>.b {
-  background-color: rgb(11 11 42 / 0%);
-  font-size: 0.6rem;
+  background-color: rgba(11, 11, 42, 0);
   position: relative;
 }
 
@@ -267,8 +278,6 @@ input.inputs,
 input#inputComboRepeat {
   background-color: rgba(211, 211, 211, 0.37);
   color: rgb(6, 6, 24);
-  font-size: 0.6rem;
-  font-weight: bold;
 }
 
 div>#ammoTable {
@@ -280,8 +289,17 @@ div>#ammoTable {
   display: table-caption;
 }
 
-tbody.dpsBody>tr>td:nth-child(2) {
-  width: 8rem;
+tbody.meleeTable>tr:nth-child(1) {
+  position: sticky;
+  top: 24px;
+  z-index: 20;
+  opacity: 100;
+  border-spacing: 0px;
+  background-color: rgb(55, 65, 103);
+}
+
+tbody.meleeTable.a.rangedTable>tr>td:nth-child(2) {
+  width: 16.5rem;
 }
 
 div#html {
@@ -293,53 +311,60 @@ div#html {
 }
 
 #forButtons {
-  grid-area: 1/1/2/4;
+  grid-area: 4 / 1 / 5 / -1;
   gap: 0.25rem;
   place-content: center;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+div#forButtonSelect>div:nth-child(2) {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+div#forButtonSelect>div:nth-child(1) {
+  grid-area: 1 / 2 / 2 / 3;
 }
 
 div#forButtonSelect {
   gap: 0.25rem;
+  grid-template-columns: repeat(4, 1fr);
   display: grid;
   justify-items: center;
   justify-content: center;
-  grid-area: 2/1/3/4;
+  grid-area: 2 / 2 / 3 / 5;
 }
 
 button#filterCombo {
-  grid-area: 1/1/2/2;
+  grid-area: 1 / 2 / 2 / 3;
 }
 
-#forButtonSelect>div:nth-child(1) {
-  grid-area: 1/1/2/2;
+button#resetCombo {
+  grid-area: 1 / 5 / 2 / 6;
 }
 
-#forButtonSelect>div:nth-child(2) {
-  grid-area: 1/2/2/3;
+button#resetSkills {
+  grid-area: 1 / 4 / 2 / 5;
+}
+
+button#maxSkills {
+  grid-area: 1 / 3 / 2 / 4;
 }
 
 #dpsTable {
   border: none;
   overflow: auto;
-  grid-column: 3 / 1/ 4/ -1;
   min-width: fit-content;
-  border-spacing: 0px;
-  display: table-caption;
+  width: 100%;
 }
 
 button.gray {
-  background-color: rgba(77, 58, 58, 0.848);
-  color: 'midnightblue';
-  font-weight: 600;
-  font-size: 0.55rem;
+  background-color: rgba(77, 58, 58, 0.847);
   color: white;
 }
 
 button.blue {
-  background-color: rgba(12, 26, 105, 1);
+  background-color: rgb(12, 26, 105);
   color: white;
-  font-weight: 600;
-  font-size: 0.55rem;
 }
 
 div>button.toggle:hover {
@@ -351,22 +376,23 @@ div>button.toggle:hover {
   width: max-content;
 }
 
+output#enrageDisplay,
+output.comboHits,
+div>select,
+select#dropMonster,
 #statsTable>tr>th,
 tr>th {
   top: 0px;
   position: sticky;
-  font-size: 0.6rem;
+  margin: 0px;
+  place-content: center;
+  justify-items: center;
   border-style: outset;
-  background-color: rgb(11 11 42);
+  background-color: rgb(18, 18, 51);
   border-spacing: 0px;
   min-width: fit-content;
-  width: 3rem;
   min-height: 1.2rem;
   z-index: 50;
-}
-
-tbody>tr>td {
-  padding: 0.05rem;
 }
 
 table#ammoTable * {
@@ -386,7 +412,7 @@ output.comboAttack {
 }
 
 #ammoChange {
-  grid-column: 3 / 4;
+  grid-area: 1 / 2 / 2 / 3;
 }
 
 button#Booster {
@@ -466,32 +492,33 @@ button#Power\ Talisman {
   overflow: auto;
   display: table-cell;
   border-spacing: 0px;
+
 }
 
 tr:nth-child(2n) {
   background-color: rgba(77, 58, 58, 0.67);
 }
 
-tr:nth-child(2n + 1) {
-  background-color: rgba(77, 83, 126, 67%);
+tr:nth-child(2n+1) {
+  background-color: rgba(77, 83, 126, 0.67);
 }
 
 .rangedTable td:nth-child(1) {
   background-color: rgb(11, 11, 42);
 }
 
-.rangedTable th:nth-child(n + 1) {
+.rangedTable th:nth-child(n+1) {
   background-color: rgb(11, 11, 42);
   min-width: fit-content;
   max-width: 2rem;
 }
 
 table#statsTable {
-  gap: 0;
-  border-spacing: 0;
+  gap: 0px;
+  border-spacing: 0px;
 }
 
-#statsTable>tr:nth-child(n + 2)>td:nth-child(1) {
+#statsTable>tr:nth-child(n+2)>td:nth-child(1) {
   border-style: outset;
   background-color: rgb(7, 4, 69);
   min-width: fit-content;
@@ -502,23 +529,25 @@ table#statsTable {
 }
 
 td.a {
-  padding: 0;
+  padding: 0px;
 }
 
 output {
   width: 100%;
   height: 100%;
   background-color: rgba(5, 3, 39, 0.373);
-  border-style: outset;
-  border-width: 0.15rem;
-  border-left: 0;
+  border-top-style: outset;
+  border-right-style: outset;
+  border-bottom-style: outset;
+  border-width: 0.15rem 0.15rem 0.15rem 0px;
+  border-left-style: initial;
+  border-left-color: initial;
   align-items: center;
 }
 
 td {
-  color: rgb(171, 217, 238);
+  color: rgb(255, 255, 255);
   border-style: outset;
-  font-weight: bold;
 }
 
 tbody.rangedTable {
@@ -528,17 +557,23 @@ tbody.rangedTable {
 .a.rangedTable {
   border-style: outset;
   background-color: rgb(11, 11, 42);
-  font-size: 0.6rem;
+}
+
+div#monDropDowns {
+  grid-area: 2 / 1 / 3 / -1;
+  display: grid;
+  align-items: start;
 }
 
 div#damageTable {
-  grid-area: 3/1/4/4;
+  grid-area: 6 / 1 / 7 / -1;
 }
+
+div#damageTable {}
 
 .b.meleeTable {
   border-style: outset;
   background-color: rgb(11, 11, 42);
-  font-size: 0.6rem;
 }
 
 div#statsTableDiv>table#statsTable>tbody#statsBody>tr>td:first-child {
@@ -547,13 +582,39 @@ div#statsTableDiv>table#statsTable>tbody#statsBody>tr>td:first-child {
   height: 1.25rem;
 }
 
+output#enrageDisplay {
+  display: grid;
+  align-content: space-around;
+}
+
+div#monDropDowns>select {
+  height: 100%;
+}
+
+div#monDropDowns>div {
+  display: grid;
+  align-items: stretch;
+  grid-template-rows: 1fr 1fr;
+}
+
+html div {
+  gap: 0px;
+}
+
+div,
+input,
+select,
+label,
 * {
-  font-family: Play, sans-serif;
+  border-spacing: 0px;
+  /* font-family: Play, sans-serif; */
   text-align: center;
   border-color: rgb(77, 67, 69);
   color: white;
   box-sizing: border-box;
   min-width: fit-content;
+  /* font-size: 0.8rem; */
+  font-weight: 300;
 }
 
 #monTable>tr:nth-child(1) {
@@ -569,7 +630,6 @@ div#statsTableDiv>table#statsTable>tbody#statsBody>tr>td:first-child {
 .inputs {
   color: midnightblue;
   background-color: rgba(27, 25, 94, 0.71);
-  font-weight: bold;
 }
 
 #raw>div:nth-child(19) {
@@ -583,12 +643,12 @@ div#statsTableDiv>table#statsTable>tbody#statsBody>tr>td:first-child {
 table#monTable {
   border-color: rgb(77, 67, 69);
   margin: 0px;
-  grid-area: 4 / 1 / auto / -1;
-  height: 6.6rem;
-  font-weight: bold;
+  display: inline-table;
+  grid-area: 3 / 1 / 4 / -1;
+  height: 10rem;
 }
 
-#boxes>div:nth-child(n + 1) {
+#boxes>div:nth-child(n+1) {
   display: grid;
   gap: 0.25rem;
 }
@@ -611,7 +671,7 @@ label.row1span2 {
 
 div#divEnrage {
   display: grid;
-  grid-area: 2 / 5 / auto / 5;
+  grid-area: 1 / 5 / auto / 5;
   align-items: center;
   align-content: center;
   margin: 0px;
@@ -636,13 +696,13 @@ div#aff.contain {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-style: none;
-  grid-area: 5/ 1 / 6 / 3;
+  grid-area: 6 / 1 / 7 / 3;
 }
 
 div#ele.contain {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-area: 5 / 4 / 6 / 6;
+  grid-area: 6 / 4 / 7 / 6;
   justify-content: end;
 }
 
@@ -672,15 +732,10 @@ div#ele.contain {
   grid-column: 1 / auto;
 }
 
-select {
-  font-size: 0.6rem;
-}
-
 select option {
   background-color: rgb(5, 5, 35);
   border-style: none;
   min-width: max-content;
-  font-size: 0.55rem;
 }
 
 div#raw.contain {
@@ -702,14 +757,25 @@ div#boxes.contain {
   min-width: fit-content;
 }
 
+table>tbody>tr>td {
+  font-size: 0.8rem;
+}
+
+tr>th,
+table>thead>tr>th {
+  font-size: 1rem;
+  min-width: 5rem;
+}
+
 #enrageDisplay {
   background-color: rgba(11, 11, 42, 0.38);
   border-style: outset;
 }
 
 h1 {
-  font-size: 0.8rem;
-  margin: 0.25rem 0 0.25rem 0;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  margin: 0.25rem 0px;
   grid-area: 1 / 1 / 2 / -1;
   background-color: rgba(0, 14, 94, 0.627);
   border-style: outset;
@@ -726,29 +792,16 @@ select {
   border-width: 0.15rem;
 }
 
-select#dropMonster {
-  position: sticky;
-  display: grid;
-  top: 0px;
-  margin: 0px;
-  min-width: fit-content;
-  place-content: center;
-  height: 1.1rem;
-  justify-items: center;
-  justify-content: center;
-}
-
 select#ElderEssence {
   grid-column: 1 / 3;
-  border-right: 0;
+  border-right: 0px;
 }
 
 label {
-  font-weight: bold;
   min-width: max-content;
   border-style: outset;
   border-width: 0.15rem;
-  padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+
   background-color: rgba(12, 26, 105, 0.85);
 }
 
@@ -771,7 +824,6 @@ parent#shieldChargeIMPid {
 div#unique {
   display: grid;
   height: fit-content;
-
   border: none;
 }
 
@@ -783,115 +835,115 @@ div#unique {
 .S:nth-child(2),
 .S:nth-child(3),
 .S:nth-child(4) {
-  background-color: #ea580c;
+  background-color: rgb(234, 88, 12);
   color: rgb(0, 0, 0);
 }
 
 .A:nth-child(2),
 .A:nth-child(3),
 .A:nth-child(4) {
-  background-color: #f97316;
+  background-color: rgb(249, 115, 22);
   color: rgb(44, 44, 44);
 }
 
 .B:nth-child(2),
 .B:nth-child(3),
 .B:nth-child(4) {
-  background-color: #fb923c;
+  background-color: rgb(251, 146, 60);
   color: rgb(94, 94, 94);
 }
 
 .C:nth-child(2),
 .C:nth-child(3),
 .C:nth-child(4) {
-  background-color: #fdba74;
+  background-color: rgb(253, 186, 116);
   color: rgb(134, 134, 134);
 }
 
 .F:nth-child(2),
 .F:nth-child(3),
 .F:nth-child(4) {
-  background-color: #fed7aa;
+  background-color: rgb(254, 215, 170);
   color: rgb(162, 162, 162);
 }
 
 .A:nth-child(5),
 .B:nth-child(5) {
-  background-color: #991b1b;
+  background-color: rgb(153, 27, 27);
   color: rgb(252, 252, 252);
 }
 
 .C:nth-child(5) {
-  background-color: #ef4444;
+  background-color: rgb(239, 68, 68);
   color: rgb(224, 224, 224);
 }
 
 .F:nth-child(5) {
-  background-color: #f87171;
+  background-color: rgb(248, 113, 113);
   color: rgb(94, 94, 94);
 }
 
 .A:nth-child(6),
 .B:nth-child(6) {
-  background-color: #1d4ed8;
+  background-color: rgb(29, 78, 216);
   color: rgb(248, 248, 248);
 }
 
 .C:nth-child(6) {
-  background-color: #2563eb;
+  background-color: rgb(37, 99, 235);
   color: rgb(216, 216, 216);
 }
 
 .F:nth-child(6) {
-  background-color: #3b82f6;
+  background-color: rgb(59, 130, 246);
   color: rgb(48, 48, 48);
 }
 
 .A:nth-child(7),
 .B:nth-child(7) {
-  background-color: #facc15;
+  background-color: rgb(250, 204, 21);
   color: rgb(7, 7, 7);
 }
 
 .C:nth-child(7) {
-  background-color: #fde047;
+  background-color: rgb(253, 224, 71);
   color: rgb(23, 22, 22);
 }
 
 .F:nth-child(7) {
-  background-color: #fef9c3;
+  background-color: rgb(254, 249, 195);
   color: rgb(94, 94, 94);
 }
 
 .A:nth-child(8),
 .B:nth-child(8) {
-  background-color: #0284c7;
+  background-color: rgb(2, 132, 199);
   color: rgb(0, 0, 0);
 }
 
 .C:nth-child(8) {
-  background-color: #0ea5e9;
+  background-color: rgb(14, 165, 233);
   color: rgb(23, 22, 22);
 }
 
 .F:nth-child(8) {
-  background-color: #38bdf8;
+  background-color: rgb(56, 189, 248);
   color: rgb(94, 94, 94);
 }
 
 .A:nth-child(9),
 .B:nth-child(9) {
-  background-color: #5b21b6;
+  background-color: rgb(91, 33, 182);
   color: rgb(0, 0, 0);
 }
 
 .C:nth-child(9) {
-  background-color: #7c3aed;
+  background-color: rgb(124, 58, 237);
   color: rgb(23, 22, 22);
 }
 
 .F:nth-child(9) {
-  background-color: #8b5cf6;
+  background-color: rgb(139, 92, 246);
   color: rgb(94, 94, 94);
 }
 
@@ -919,7 +971,7 @@ select#weaponRampage5 {
   grid-column: 2 / 3;
 }
 
-@media only screen and (min-width: 1100) {
+@media not all {
   tbody#dpsBody.meleeTable>tr {
     height: 27px;
   }
@@ -930,12 +982,6 @@ select#weaponRampage5 {
     * {
       font-size: 0.8rem;
     }
-
-
-  }
-
-  output {
-    font-size: 0.68rem;
   }
 
   div#forButtons button {
@@ -943,22 +989,124 @@ select#weaponRampage5 {
   }
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: rgb(241, 241, 241);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgb(136, 136, 136);
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgb(85, 85, 85);
+}
+
+@media (min-width: 768px) {
+  li[data-sm-horizontal-sub] {
+    position: static;
+  }
+
+  li[data-sm-horizontal-sub]>ul {
+    left: 0px !important;
+    right: 0px !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    width: auto !important;
+    min-width: 0px !important;
+    max-width: none !important;
+  }
+
+  li[data-sm-horizontal-sub]>ul>li {
+    float: left;
+  }
+
+  li[data-sm-horizontal-sub]>.scroll-up,
+  li[data-sm-horizontal-sub]>.scroll-down {
+    display: none !important;
+  }
+}
+
+.main-menu-btn {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  text-indent: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.main-menu-btn-icon,
+.main-menu-btn-icon::before,
+.main-menu-btn-icon::after {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  height: 2px;
+  width: 24px;
+  background: rgb(187, 187, 187);
+  transition: all 0.25s ease 0s;
+}
+
+.main-menu-btn-icon::before {
+  content: "";
+  top: -7px;
+  left: 0px;
+}
+
+.main-menu-btn-icon::after {
+  content: "";
+  top: 7px;
+  left: 0px;
+}
+
+#main-menu-state:checked~.main-menu-btn .main-menu-btn-icon {
+  height: 0px;
+  background: transparent;
+}
+
+#main-menu-state:checked~.main-menu-btn .main-menu-btn-icon::before {
+  top: 0px;
+  transform: rotate(-45deg);
+}
+
+#main-menu-state:checked~.main-menu-btn .main-menu-btn-icon::after {
+  top: 0px;
+  transform: rotate(45deg);
+}
+
+#main-menu-state {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0px;
+  padding: 0px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+#main-menu-state:not(:checked)~#main-menu {
+  display: none;
+}
+
+#main-menu-state:checked~#main-menu {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .main-menu-btn {
+    position: absolute;
+    top: -99999px;
+  }
+
+  #main-menu-state:not(:checked)~#main-menu {
+    display: block;
+  }
 }
