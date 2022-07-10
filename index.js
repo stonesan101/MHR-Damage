@@ -332,11 +332,7 @@ function ApplyRampageSelections(power) {
 
 function AddDependantSkills(power) {
 	if (dropWeaponType.value === 'InsectGlaive') {
-		let attacks = Object.fromEntries(
-			Object.entries(info.InsectGlaive.attacks).filter(skill => {
-				/Kinsect|Dust|Powder|Mark/.test(skill);
-			}),
-		);
+		let attacks = Object.fromEntries(Object.entries(info.InsectGlaive.attacks).filter(skill => !/Kinsect|Dust|Powder|Mark/.test(skill)));
 		return attacks;
 	} else if (dropWeaponType.value === 'ChargeBlade') {
 		const phialType = info.ChargeBlade.weapons[$('#dropWeapon').val()].phialType === 'Impact Phial' ? 'Element Phial' : 'Impact Phial';
