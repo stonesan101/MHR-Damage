@@ -922,7 +922,7 @@ function BuildDamageTable(myDamage, id) {
 }
 function MonChart() {
 	if (Object.prototype.hasOwnProperty.call(info, 'monster')) {
-		const headers = [`area ${info.monster[dropMonster.value]}`, 'Sever', 'Blunt', 'Shot', 'Fire', 'Water', 'Thunder', 'Ice', 'Dragon'];
+		const headers = [`Spawn Area ${info.quest[dropQuest.value].Spawn}`, 'Sever', 'Blunt', 'Shot', 'Fire', 'Water', 'Thunder', 'Ice', 'Dragon'];
 		const table = document.createElement('table');
 		const myTable = document.querySelector('#monTable');
 		const headerRow = document.createElement('tr');
@@ -1188,23 +1188,35 @@ function WeaponSelect() {
 	});
 }
 function RampageSelect() {
-	$(weaponRampage.children).html('');
-	$(weaponRampage.children).hide();
-	// if (/Rampage/.test(info[dropWeaponType.value].weapons[dropWeapon.value].weapon)) {
-	// // // $(info.rampage[info[dropWeaponType.value].weapons[dropWeapon.value].weapon].Rampage).each(function (index, rampageSection) {
-	// $(weaponRampage).children([index]).show();
-	//
-	// $(rampageSection[index]).each(function (inc, rampageSkill) {?????????????
-	// console.log(rampageSection, index);
-	// PopulateDropDowns(Object.values(rampageSection), weaponRampage.children[index]);
-	// // $(weaponRampage).children([index]).append($('<option></option>').attr('value', rampageSection).text());
-	// });
-	// });
-	// } else {
-	$(weaponRampage0).show();
-	$(info[dropWeaponType.value].weapons[dropWeapon.value].rampage).each(function (index, rampageSkill) {
-		$(weaponRampage0).append($('<option></option>').attr('value', info.rampage.keys2[this]).text(info.rampage.keys2[this]));
-	});
+	if (Object.prototype.hasOwnProperty.call(info[dropWeaponType.value].weapons[dropWeapon.value], 'rampageSlots')) {
+		usableDecos = [];
+		$(Object.keys(info.rampage.rampageDecos)).each(function (index, element) {
+			// element == this
+			let deco = element;
+			if (this.match(`[1-${info[dropWeaponType.value].weapons[dropWeapon.value].rampageSlots}]`) !== null) {
+				usableDecos.push(info.rampage.rampageDecos[this.match(`[1-${info[dropWeaponType.value].weapons[dropWeapon.value].rampageSlots}]`).input]);
+			}
+		});
+		PopulateDropDowns(usableDecos, weaponRampage0);
+	} else {
+		$(weaponRampage.children).html('');
+		$(weaponRampage.children).hide();
+		// if (/Rampage/.test(info[dropWeaponType.value].weapons[dropWeapon.value].weapon)) {
+		// // // $(info.rampage[info[dropWeaponType.value].weapons[dropWeapon.value].weapon].Rampage).each(function (index, rampageSection) {
+		// $(weaponRampage).children([index]).show();
+		//
+		// $(rampageSection[index]).each(function (inc, rampageSkill) {?????????????
+		// console.log(rampageSection, index);
+		// PopulateDropDowns(Object.values(rampageSection), weaponRampage.children[index]);
+		// // $(weaponRampage).children([index]).append($('<option></option>').attr('value', rampageSection).text());
+		// });
+		// });
+		// } else {
+		$(weaponRampage0).show();
+		$(info[dropWeaponType.value].weapons[dropWeapon.value].rampage).each(function (index, rampageSkill) {
+			$(weaponRampage0).append($('<option></option>').attr('value', info.rampage.keys2[this]).text(info.rampage.keys2[this]));
+		});
+	}
 }
 
 function MonsterSelect() {
@@ -1221,8 +1233,8 @@ function PartSelect() {
 
 function QuestSelect() {
 	let questList = [];
-	questList = Object.entries(info.quest).filter(x => x[1].Monster === dropMonster.value);
-	PopulateDropDowns(questList[0], dropQuest);
+	questList = Object.keys(Object.fromEntries(Object.entries(info.quest).filter(x => x[1].Monster === dropMonster.value)));
+	PopulateDropDowns(questList, dropQuest);
 }
 function HealthSelect() {
 	let questList = [];

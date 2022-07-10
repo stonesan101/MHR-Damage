@@ -1,10 +1,6 @@
 {
 	"Rampage Cleaver I": {
-		"Rampage": [
-			["Attack Boost I", "Affinity Boost I", "Defense Boost I"],
-			["Fire I", "Water I", "Thunder I", "Ice I"],
-			["Attack Surge"]
-		]
+		"Rampage": [["Attack Boost I", "Affinity Boost I", "Defense Boost I"], ["Fire I", "Water I", "Thunder I", "Ice I"], ["Attack Surge"]]
 	},
 	"Rampage Cleaver II": {
 		"Rampage": [
@@ -16,18 +12,7 @@
 	"Rampage Cleaver III": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I"],
-			[
-				"Non-elemental Boost",
-				"Fire II",
-				"Water II",
-				"Thunder II",
-				"Ice II",
-				"Dragon II",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire II", "Water II", "Thunder II", "Ice II", "Dragon II", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge"]
 		]
 	},
@@ -51,15 +36,7 @@
 	},
 	"Rampage Cleaver V": {
 		"Rampage": [
-			[
-				"Attack Boost III",
-				"Elemental Boost II",
-				"Affinity Boost III",
-				"Defense Boost III",
-				"Sharpness Type I",
-				"Sharpness Type II",
-				"Sharpness Type III"
-			],
+			["Attack Boost III", "Elemental Boost II", "Affinity Boost III", "Defense Boost III", "Sharpness Type I", "Sharpness Type II", "Sharpness Type III"],
 			[
 				"Non-elemental Boost",
 				"Fire III",
@@ -103,11 +80,7 @@
 		]
 	},
 	"Rampage Sword I": {
-		"Rampage": [
-			["Attack Boost I", "Affinity Boost I", "Defense Boost I"],
-			["Fire I", "Water I", "Thunder I", "Ice I"],
-			["Attack Surge"]
-		]
+		"Rampage": [["Attack Boost I", "Affinity Boost I", "Defense Boost I"], ["Fire I", "Water I", "Thunder I", "Ice I"], ["Attack Surge"]]
 	},
 	"Rampage Sword II": {
 		"Rampage": [
@@ -119,50 +92,20 @@
 	"Rampage Sword III": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I"],
-			[
-				"Non-elemental Boost",
-				"Fire I",
-				"Water I",
-				"Thunder I",
-				"Ice I",
-				"Dragon I",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire I", "Water I", "Thunder I", "Ice I", "Dragon I", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge"]
 		]
 	},
 	"Rampage Sword IV": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I", "Sharpness Type II"],
-			[
-				"Non-elemental Boost",
-				"Fire II",
-				"Water II",
-				"Thunder II",
-				"Ice II",
-				"Dragon II",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire II", "Water II", "Thunder II", "Ice II", "Dragon II", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge"]
 		]
 	},
 	"Rampage Sword V": {
 		"Rampage": [
-			[
-				"Attack Boost III",
-				"Elemental Boost I",
-				"Affinity Boost III",
-				"Defense Boost III",
-				"Sharpness Type I",
-				"Sharpness Type II",
-				"Sharpness Type III"
-			],
+			["Attack Boost III", "Elemental Boost I", "Affinity Boost III", "Defense Boost III", "Sharpness Type I", "Sharpness Type II", "Sharpness Type III"],
 			[
 				"Non-elemental Boost",
 				"Fire III",
@@ -206,11 +149,7 @@
 		]
 	},
 	"Rampage Twinblades I": {
-		"Rampage": [
-			["Attack Boost I", "Affinity Boost I", "Defense Boost I"],
-			["Fire I", "Water I", "Thunder I", "Ice I"],
-			["Attack Surge"]
-		]
+		"Rampage": [["Attack Boost I", "Affinity Boost I", "Defense Boost I"], ["Fire I", "Water I", "Thunder I", "Ice I"], ["Attack Surge"]]
 	},
 	"Rampage Twinblades II": {
 		"Rampage": [
@@ -222,66 +161,20 @@
 	"Rampage Twinblades III": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I"],
-			[
-				"Non-elemental Boost",
-				"Fire I",
-				"Water I",
-				"Thunder I",
-				"Ice I",
-				"Dragon I",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
-			[
-				"Attack Surge",
-				"Affinity Surge",
-				"Secondary: Fire I",
-				"Secondary: Water I",
-				"Secondary: Thunder I",
-				"Secondary: Ice I",
-				"Secondary: Dragon I"
-			]
+			["Non-elemental Boost", "Fire I", "Water I", "Thunder I", "Ice I", "Dragon I", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
+			["Attack Surge", "Affinity Surge", "Secondary: Fire I", "Secondary: Water I", "Secondary: Thunder I", "Secondary: Ice I", "Secondary: Dragon I"]
 		]
 	},
 	"Rampage Twinblades IV": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I", "Sharpness Type II"],
-			[
-				"Non-elemental Boost",
-				"Fire II",
-				"Water II",
-				"Thunder II",
-				"Ice II",
-				"Dragon II",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
-			[
-				"Attack Surge",
-				"Affinity Surge",
-				"Secondary: Fire II",
-				"Secondary: Water II",
-				"Secondary: Thunder II",
-				"Secondary: Ice II",
-				"Secondary: Dragon II"
-			]
+			["Non-elemental Boost", "Fire II", "Water II", "Thunder II", "Ice II", "Dragon II", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
+			["Attack Surge", "Affinity Surge", "Secondary: Fire II", "Secondary: Water II", "Secondary: Thunder II", "Secondary: Ice II", "Secondary: Dragon II"]
 		]
 	},
 	"Rampage Twinblades V": {
 		"Rampage": [
-			[
-				"Attack Boost III",
-				"Elemental Boost I",
-				"Affinity Boost III",
-				"Defense Boost III",
-				"Sharpness Type I",
-				"Sharpness Type II",
-				"Sharpness Type III"
-			],
+			["Attack Boost III", "Elemental Boost I", "Affinity Boost III", "Defense Boost III", "Sharpness Type I", "Sharpness Type II", "Sharpness Type III"],
 			[
 				"Non-elemental Boost",
 				"Fire III",
@@ -343,11 +236,7 @@
 		]
 	},
 	"Rampage Blade I": {
-		"Rampage": [
-			["Attack Boost I", "Affinity Boost I", "Defense Boost I"],
-			["Fire I", "Water I", "Thunder I", "Ice I"],
-			["Attack Surge"]
-		]
+		"Rampage": [["Attack Boost I", "Affinity Boost I", "Defense Boost I"], ["Fire I", "Water I", "Thunder I", "Ice I"], ["Attack Surge"]]
 	},
 	"Rampage Blade II": {
 		"Rampage": [
@@ -359,50 +248,20 @@
 	"Rampage Blade III": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I"],
-			[
-				"Non-elemental Boost",
-				"Fire I",
-				"Water I",
-				"Thunder I",
-				"Ice I",
-				"Dragon I",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire I", "Water I", "Thunder I", "Ice I", "Dragon I", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge"]
 		]
 	},
 	"Rampage Blade IV": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost II", "Affinity Boost II", "Defense Boost II", "Sharpness Type I", "Sharpness Type II"],
-			[
-				"Non-elemental Boost",
-				"Fire II",
-				"Water II",
-				"Thunder II",
-				"Ice II",
-				"Dragon II",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire II", "Water II", "Thunder II", "Ice II", "Dragon II", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge"]
 		]
 	},
 	"Rampage Blade V": {
 		"Rampage": [
-			[
-				"Attack Boost III",
-				"Elemental Boost II",
-				"Affinity Boost III",
-				"Defense Boost III",
-				"Sharpness Type I",
-				"Sharpness Type II",
-				"Sharpness Type III"
-			],
+			["Attack Boost III", "Elemental Boost II", "Affinity Boost III", "Defense Boost III", "Sharpness Type I", "Sharpness Type II", "Sharpness Type III"],
 			[
 				"Non-elemental Boost",
 				"Fire III",
@@ -446,11 +305,7 @@
 		]
 	},
 	"Rampage Hammer I": {
-		"Rampage": [
-			["Attack Boost I", "Affinity Boost I", "Defense Boost I"],
-			["Fire I", "Water I", "Thunder I", "Ice I"],
-			["Attack Surge"]
-		]
+		"Rampage": [["Attack Boost I", "Affinity Boost I", "Defense Boost I"], ["Fire I", "Water I", "Thunder I", "Ice I"], ["Attack Surge"]]
 	},
 	"Rampage Hammer II": {
 		"Rampage": [
@@ -462,18 +317,7 @@
 	"Rampage Hammer III": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I"],
-			[
-				"Non-elemental Boost",
-				"Fire II",
-				"Water II",
-				"Thunder II",
-				"Ice II",
-				"Dragon II",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire II", "Water II", "Thunder II", "Ice II", "Dragon II", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge"]
 		]
 	},
@@ -497,15 +341,7 @@
 	},
 	"Rampage Hammer V": {
 		"Rampage": [
-			[
-				"Attack Boost III",
-				"Elemental Boost II",
-				"Affinity Boost III",
-				"Defense Boost III",
-				"Sharpness Type I",
-				"Sharpness Type II",
-				"Sharpness Type III"
-			],
+			["Attack Boost III", "Elemental Boost II", "Affinity Boost III", "Defense Boost III", "Sharpness Type I", "Sharpness Type II", "Sharpness Type III"],
 			[
 				"Non-elemental Boost",
 				"Fire III",
@@ -549,11 +385,7 @@
 		]
 	},
 	"Rampage Agitato I": {
-		"Rampage": [
-			["Attack Boost I", "Affinity Boost I", "Defense Boost I"],
-			["Fire I", "Water I", "Thunder I", "Ice I"],
-			["Attack Surge"]
-		]
+		"Rampage": [["Attack Boost I", "Affinity Boost I", "Defense Boost I"], ["Fire I", "Water I", "Thunder I", "Ice I"], ["Attack Surge"]]
 	},
 	"Rampage Agitato II": {
 		"Rampage": [
@@ -565,18 +397,7 @@
 	"Rampage Agitato III": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I"],
-			[
-				"Non-elemental Boost",
-				"Fire II",
-				"Water II",
-				"Thunder II",
-				"Ice II",
-				"Dragon II",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire II", "Water II", "Thunder II", "Ice II", "Dragon II", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge", "Attack Melody I", "Defensive Melody I", "Healing Melody I", "Resilient Melody I"]
 		]
 	},
@@ -600,15 +421,7 @@
 	},
 	"Rampage Agitato V": {
 		"Rampage": [
-			[
-				"Attack Boost III",
-				"Elemental Boost II",
-				"Affinity Boost III",
-				"Defense Boost III",
-				"Sharpness Type I",
-				"Sharpness Type II",
-				"Sharpness Type III"
-			],
+			["Attack Boost III", "Elemental Boost II", "Affinity Boost III", "Defense Boost III", "Sharpness Type I", "Sharpness Type II", "Sharpness Type III"],
 			[
 				"Non-elemental Boost",
 				"Fire III",
@@ -621,15 +434,7 @@
 				"Sleep Boost  II",
 				"Blast Boost II"
 			],
-			[
-				"Attack Surge",
-				"Elemental Surge",
-				"Affinity Surge",
-				"Attack Melody II",
-				"Defensive Melody II",
-				"Healing Melody II",
-				"Resilient Melody II"
-			]
+			["Attack Surge", "Elemental Surge", "Affinity Surge", "Attack Melody II", "Defensive Melody II", "Healing Melody II", "Resilient Melody II"]
 		]
 	},
 	"Rampage Agitato S": {
@@ -644,34 +449,12 @@
 				"Sharpness Type III",
 				"Sharpness Type IV"
 			],
-			[
-				"Non-elemental Boost",
-				"Fire IV",
-				"Water IV",
-				"Thunder IV",
-				"Ice IV",
-				"Dragon IV",
-				"Paralysis Boost III",
-				"Sleep Boost  III",
-				"Blast Boost III"
-			],
-			[
-				"Attack Surge",
-				"Elemental Surge",
-				"Affinity Surge",
-				"Attack Melody II",
-				"Defensive Melody II",
-				"Healing Melody II",
-				"Resilient Melody II"
-			]
+			["Non-elemental Boost", "Fire IV", "Water IV", "Thunder IV", "Ice IV", "Dragon IV", "Paralysis Boost III", "Sleep Boost  III", "Blast Boost III"],
+			["Attack Surge", "Elemental Surge", "Affinity Surge", "Attack Melody II", "Defensive Melody II", "Healing Melody II", "Resilient Melody II"]
 		]
 	},
 	"Rampage Spear I": {
-		"Rampage": [
-			["Attack Boost I", "Affinity Boost I", "Defense Boost I"],
-			["Fire I", "Water I", "Thunder I", "Ice I"],
-			["Attack Surge"]
-		]
+		"Rampage": [["Attack Boost I", "Affinity Boost I", "Defense Boost I"], ["Fire I", "Water I", "Thunder I", "Ice I"], ["Attack Surge"]]
 	},
 	"Rampage Spear II": {
 		"Rampage": [
@@ -683,50 +466,20 @@
 	"Rampage Spear III": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I"],
-			[
-				"Non-elemental Boost",
-				"Fire I",
-				"Water I",
-				"Thunder I",
-				"Ice I",
-				"Dragon I",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire I", "Water I", "Thunder I", "Ice I", "Dragon I", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge"]
 		]
 	},
 	"Rampage Spear IV": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost II", "Affinity Boost II", "Defense Boost II", "Sharpness Type I", "Sharpness Type II"],
-			[
-				"Non-elemental Boost",
-				"Fire II",
-				"Water II",
-				"Thunder II",
-				"Ice II",
-				"Dragon II",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire II", "Water II", "Thunder II", "Ice II", "Dragon II", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge"]
 		]
 	},
 	"Rampage Spear V": {
 		"Rampage": [
-			[
-				"Attack Boost III",
-				"Elemental Boost II",
-				"Affinity Boost III",
-				"Defense Boost III",
-				"Sharpness Type I",
-				"Sharpness Type II",
-				"Sharpness Type III"
-			],
+			["Attack Boost III", "Elemental Boost II", "Affinity Boost III", "Defense Boost III", "Sharpness Type I", "Sharpness Type II", "Sharpness Type III"],
 			[
 				"Non-elemental Boost",
 				"Fire III",
@@ -770,11 +523,7 @@
 		]
 	},
 	"Rampage Gunlance I": {
-		"Rampage": [
-			["Attack Boost I", "Affinity Boost I", "Defense Boost I"],
-			["Fire I", "Water I", "Thunder I", "Ice I"],
-			["Attack Surge"]
-		]
+		"Rampage": [["Attack Boost I", "Affinity Boost I", "Defense Boost I"], ["Fire I", "Water I", "Thunder I", "Ice I"], ["Attack Surge"]]
 	},
 	"Rampage Gunlance II": {
 		"Rampage": [
@@ -786,18 +535,7 @@
 	"Rampage Gunlance III": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I"],
-			[
-				"Non-elemental Boost",
-				"Fire II",
-				"Water II",
-				"Thunder II",
-				"Ice II",
-				"Dragon II",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire II", "Water II", "Thunder II", "Ice II", "Dragon II", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge", "Shelling: Normal I", "Shelling: Long I", "Shelling: Wide I"]
 		]
 	},
@@ -821,15 +559,7 @@
 	},
 	"Rampage Gunlance V": {
 		"Rampage": [
-			[
-				"Attack Boost III",
-				"Elemental Boost II",
-				"Affinity Boost III",
-				"Defense Boost III",
-				"Sharpness Type I",
-				"Sharpness Type II",
-				"Sharpness Type III"
-			],
+			["Attack Boost III", "Elemental Boost II", "Affinity Boost III", "Defense Boost III", "Sharpness Type I", "Sharpness Type II", "Sharpness Type III"],
 			[
 				"Non-elemental Boost",
 				"Fire III",
@@ -889,66 +619,20 @@
 	"Rampage Slicer III": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I"],
-			[
-				"Non-elemental Boost",
-				"Fire I",
-				"Water I",
-				"Thunder I",
-				"Ice I",
-				"Dragon I",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
-			[
-				"Attack Surge",
-				"Affinity Surge",
-				"Phial: Element",
-				"Phial: Poison Boost I",
-				"Phial: Paralysis Boost I",
-				"Phial: Dragon I",
-				"Phial: Exhaust I"
-			]
+			["Non-elemental Boost", "Fire I", "Water I", "Thunder I", "Ice I", "Dragon I", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
+			["Attack Surge", "Affinity Surge", "Phial: Element", "Phial: Poison Boost I", "Phial: Paralysis Boost I", "Phial: Dragon I", "Phial: Exhaust I"]
 		]
 	},
 	"Rampage Slicer IV": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost II", "Affinity Boost II", "Defense Boost II", "Sharpness Type I", "Sharpness Type II"],
-			[
-				"Non-elemental Boost",
-				"Fire II",
-				"Water II",
-				"Thunder II",
-				"Ice II",
-				"Dragon II",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
-			[
-				"Attack Surge",
-				"Affinity Surge",
-				"Phial: Element",
-				"Phial: Poison Boost II",
-				"Phial: Paralysis Boost II",
-				"Phial: Dragon II",
-				"Phial: Exhaust II"
-			]
+			["Non-elemental Boost", "Fire II", "Water II", "Thunder II", "Ice II", "Dragon II", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
+			["Attack Surge", "Affinity Surge", "Phial: Element", "Phial: Poison Boost II", "Phial: Paralysis Boost II", "Phial: Dragon II", "Phial: Exhaust II"]
 		]
 	},
 	"Rampage Slicer V": {
 		"Rampage": [
-			[
-				"Attack Boost III",
-				"Elemental Boost II",
-				"Affinity Boost III",
-				"Defense Boost III",
-				"Sharpness Type I",
-				"Sharpness Type II",
-				"Sharpness Type III"
-			],
+			["Attack Boost III", "Elemental Boost II", "Affinity Boost III", "Defense Boost III", "Sharpness Type I", "Sharpness Type II", "Sharpness Type III"],
 			[
 				"Non-elemental Boost",
 				"Fire III",
@@ -1026,50 +710,20 @@
 	"Rampage C. Blade III": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I"],
-			[
-				"Non-elemental Boost",
-				"Fire I",
-				"Water I",
-				"Thunder I",
-				"Ice I",
-				"Dragon I",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire I", "Water I", "Thunder I", "Ice I", "Dragon I", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge", "Phial: Element"]
 		]
 	},
 	"Rampage C. Blade IV": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost II", "Affinity Boost II", "Defense Boost II", "Sharpness Type I", "Sharpness Type II"],
-			[
-				"Non-elemental Boost",
-				"Fire II",
-				"Water II",
-				"Thunder II",
-				"Ice II",
-				"Dragon II",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire II", "Water II", "Thunder II", "Ice II", "Dragon II", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge", "Phial: Element"]
 		]
 	},
 	"Rampage C. Blade V": {
 		"Rampage": [
-			[
-				"Attack Boost III",
-				"Elemental Boost II",
-				"Affinity Boost III",
-				"Defense Boost III",
-				"Sharpness Type I",
-				"Sharpness Type II",
-				"Sharpness Type III"
-			],
+			["Attack Boost III", "Elemental Boost II", "Affinity Boost III", "Defense Boost III", "Sharpness Type I", "Sharpness Type II", "Sharpness Type III"],
 			[
 				"Non-elemental Boost",
 				"Fire III",
@@ -1113,11 +767,7 @@
 		]
 	},
 	"Rampage Glaive I": {
-		"Rampage": [
-			["Attack Boost I", "Affinity Boost I", "Defense Boost I"],
-			["Fire I", "Water I", "Thunder I", "Ice I"],
-			["Attack Surge"]
-		]
+		"Rampage": [["Attack Boost I", "Affinity Boost I", "Defense Boost I"], ["Fire I", "Water I", "Thunder I", "Ice I"], ["Attack Surge"]]
 	},
 	"Rampage Glaive II": {
 		"Rampage": [
@@ -1129,50 +779,20 @@
 	"Rampage Glaive III": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I"],
-			[
-				"Non-elemental Boost",
-				"Fire I",
-				"Water I",
-				"Thunder I",
-				"Ice I",
-				"Dragon I",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire I", "Water I", "Thunder I", "Ice I", "Dragon I", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge", "Kinsect Level Boost I"]
 		]
 	},
 	"Rampage Glaive IV": {
 		"Rampage": [
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II", "Sharpness Type I", "Sharpness Type II"],
-			[
-				"Non-elemental Boost",
-				"Fire II",
-				"Water II",
-				"Thunder II",
-				"Ice II",
-				"Dragon II",
-				"Poison Boost I",
-				"Paralysis Boost I",
-				"Sleep Boost I",
-				"Blast Boost I"
-			],
+			["Non-elemental Boost", "Fire II", "Water II", "Thunder II", "Ice II", "Dragon II", "Poison Boost I", "Paralysis Boost I", "Sleep Boost I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge", "Kinsect Level Boost II"]
 		]
 	},
 	"Rampage Glaive V": {
 		"Rampage": [
-			[
-				"Attack Boost III",
-				"Elemental Boost I",
-				"Affinity Boost III",
-				"Defense Boost III",
-				"Sharpness Type I",
-				"Sharpness Type II",
-				"Sharpness Type III"
-			],
+			["Attack Boost III", "Elemental Boost I", "Affinity Boost III", "Defense Boost III", "Sharpness Type I", "Sharpness Type II", "Sharpness Type III"],
 			[
 				"Non-elemental Boost",
 				"Fire III",
@@ -1240,22 +860,8 @@
 			["Attack Boost II", "Elemental Boost I", "Affinity Boost II", "Defense Boost II"],
 			["Non-elemental Boost", "Fire I", "Water I", "Thunder I", "Ice I", "Dragon I", "Blast Boost I"],
 			["Attack Surge", "Affinity Surge", "Firing: Rapid", "Firing: Pierce", "Firing: Spread"],
-			[
-				"Use Power Coating",
-				"Use Poison Coating I",
-				"Use Para Coating I",
-				"Use Sleep Coating I",
-				"Use Blast Coating",
-				"Use Exhaust Coating"
-			],
-			[
-				"Use Power Coating",
-				"Use Poison Coating I",
-				"Use Para Coating I",
-				"Use Sleep Coating I",
-				"Use Blast Coating",
-				"Use Exhaust Coating"
-			],
+			["Use Power Coating", "Use Poison Coating I", "Use Para Coating I", "Use Sleep Coating I", "Use Blast Coating", "Use Exhaust Coating"],
+			["Use Power Coating", "Use Poison Coating I", "Use Para Coating I", "Use Sleep Coating I", "Use Blast Coating", "Use Exhaust Coating"],
 			["Arc Shot: Recovery", "Arc Shot: Affinity", "Arc Shot: Anti-shock"]
 		]
 	},
@@ -1315,16 +921,7 @@
 		"Rampage": [
 			["Attack Boost IV", "Elemental Boost I", "Affinity Boost IV", "Defense Boost III"],
 			["Non-elemental Boost", "Fire III", "Water III", "Thunder III", "Ice III", "Dragon III", "Blast Boost II"],
-			[
-				"Attack Surge",
-				"Elemental Surge",
-				"Affinity Surge",
-				"Firing: Rapid",
-				"Firing: Pierce",
-				"Firing: Spread",
-				"Firing: Charge",
-				"Firing: Swift"
-			],
+			["Attack Surge", "Elemental Surge", "Affinity Surge", "Firing: Rapid", "Firing: Pierce", "Firing: Spread", "Firing: Charge", "Firing: Swift"],
 			[
 				"Close-range Coating Boost",
 				"Use Power Coating",
@@ -1360,15 +957,7 @@
 			["Attack Boost I", "Affinity Boost I", "Defense Boost I", "recoil Down Boost", "reload Speed Boost", "Steadiness Boost"],
 			["Attack Surge"],
 			["Add: Normal Ammo I", "Pierce Effect I", "Spread Effect I", "Shrapnel Effect I", "Sticky/Cluster Effect I"],
-			[
-				"Fire Effect I",
-				"Water Effect I",
-				"Thunder Effect I",
-				"Ice Effect I",
-				"Dragon Effect I",
-				"Poison Effect I",
-				"Exhaust Effect I"
-			],
+			["Fire Effect I", "Water Effect I", "Thunder Effect I", "Ice Effect I", "Dragon Effect I", "Poison Effect I", "Exhaust Effect I"],
 			["Special: Wyvernheart", "Special: Wyvernsnipe"]
 		]
 	},
@@ -1462,15 +1051,7 @@
 			["Attack Boost I", "Affinity Boost I", "Defense Boost I", "recoil Down Boost", "reload Speed Boost", "Steadiness Boost"],
 			["Attack Surge"],
 			["Add: Normal Ammo I", "Pierce Effect I", "Spread Effect I", "Shrapnel Effect I", "Sticky/Cluster Effect I"],
-			[
-				"Fire Effect I",
-				"Water Effect I",
-				"Thunder Effect I",
-				"Ice Effect I",
-				"Dragon Effect I",
-				"Poison Effect I",
-				"Exhaust Effect I"
-			],
+			["Fire Effect I", "Water Effect I", "Thunder Effect I", "Ice Effect I", "Dragon Effect I", "Poison Effect I", "Exhaust Effect I"],
 			["Rapid Fire (Normal)", "Rapid Fire (Piercing)", "Rapid Fire (Spread)", "Rapid Fire (Shrapnel)"]
 		]
 	},
@@ -1978,27 +1559,9 @@
 			"BR": -10
 		},
 		"Wyrmstake Boost": ["Raises the Wyrmstake Cannons damage level by 1"],
-		"Wyvern Exploit (Dragon Exploit)": [
-			"Increases damage to Bird, Flying, Brute, Piscine, and Fanged Wyverns,baseEle +Leviathans (+5%)"
-		]
+		"Wyvern Exploit (Dragon Exploit)": ["Increases damage to Bird, Flying, Brute, Piscine, and Fanged Wyverns,baseEle +Leviathans (+5%)"]
 	},
-	"Keys": [
-		"BRM",
-		"BR",
-		"PRM",
-		"BEM",
-		"BE",
-		"baseEle",
-		"baseRaw",
-		"aff",
-		"PEM",
-		"Ammo",
-		"Coating",
-		"Deviation",
-		"Reload",
-		"Recoil",
-		"Ele Blight"
-	],
+	"Keys": ["BRM", "BR", "PRM", "BEM", "BE", "baseEle", "baseRaw", "aff", "PEM", "Ammo", "Coating", "Deviation", "Reload", "Recoil", "Ele Blight"],
 	"keys2": [
 		"",
 		"Attack Boost I",
@@ -2260,5 +1823,34 @@
 		"Non-elemental Boost",
 		"Anti-Aerial Species",
 		"Anti-Aquatic Species"
-	]
+	],
+	"rampageDecos": {
+		"Brutal Jewel 2": "Brutal Strike",
+		"Elembane Jewel 3": "Element Exploit",
+		"Defense Edge Jewel 1": "Defense Grinder I",
+		"Defense Master Jewel 3": "Defense Grinder II",
+		"Raging Jewel 3": "Hellion Mode",
+		"Doot Range Jewel 2": "Maximum Volume",
+		"Switcher Jewel 3": "Phial Switch Boost",
+		"Arc Jewel 2": "Lasting Arc Shot",
+		"Wyrmstake Jewel 3": "Wyrmstake Boost",
+		"Anti-Dragon Jewel 2": "Wyvern Exploit",
+		"Anti-Aerial Jewel 2": "Anti-Aerial Species",
+		"Anti-Aquatic Jewel 2": "Anti-Aquatic Species",
+		"Small Monster Jewel 1": "Small Monster Exploit",
+		"Fireblight Jewel 1": "Fireblight Exploit",
+		"Waterblight Jewel 1": "Waterblight Exploit",
+		"Thunderblight Jewel 1": "Thunderblight Exploit",
+		"Iceblight Jewel 1": "Iceblight Exploit",
+		"Magna Soul Jewel 2": "Magnamalo Soul",
+		"Valstrax Soul Jewel 2": "Valstrax Soul",
+		"Chameleos Soul Jewel 2": "Chameleos Soul",
+		"Daora Soul Jewel 3": "Kushala Daora Soul",
+		"Teostra Soul Jewel 2": "Teostra Soul",
+		"Ibushi Soul Jewel 2": "Ibushi Soul",
+		"Narwa Soul Jewel 2": "Narwa Soul",
+		"Rally Jewel 1": "Buddy Rally",
+		"Spiribird Jewel 1": "Spiribird Doubled",
+		"Fanged Exploit Jewel 2": "Fanged Exploit"
+	}
 }
