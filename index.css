@@ -293,6 +293,40 @@ div>#ammoTable {
   display: table-caption;
 }
 
+#monDropDowns>div:nth-child(3)>div>label:nth-child(1),
+#monDropDowns>div:nth-child(3)>div>label:nth-child(3) {
+  background-color: rgb(12, 26, 105);
+
+}
+
+select#dropQuest>option:nth-child(n+1):not(#dropQuest) {
+  display: none;
+  background-color: #ffffff00;
+  z-index: -100;
+}
+
+select.menu {
+  min-height: 1.5rem;
+}
+
+label.menu {
+  background-color: rgb(12, 26, 105)
+}
+
+div#divMR {
+  padding-top: 2px;
+  margin-top: 3px;
+
+}
+
+#monDropDowns>div:nth-child(3)>div>label:nth-child(1),
+#monDropDowns>div:nth-child(3)>div>label:nth-child(3),
+select#MR,
+select#HR {
+  z-index: 10;
+  width: 100%;
+}
+
 tbody.meleeTable>tr:nth-child(1) {
   position: sticky;
   top: 24px;
@@ -389,6 +423,7 @@ select.players {
   width: max-content;
 }
 
+
 select.players,
 .menu li a,
 output#enrageDisplay,
@@ -397,6 +432,7 @@ div>select,
 select#dropMonster,
 #statsTable>tr>th,
 tr>th {
+  max-height: 25px;
   top: 0px;
   position: sticky;
   margin: 0px;
@@ -844,6 +880,7 @@ div#unique {
   border: none;
 }
 
+
 #monTable td:nth-child(1) {
   border-style: outset;
   background-color: rgba(11, 11, 42, 0.686);
@@ -1121,10 +1158,7 @@ div#forButtons button {
   }
 } */
 
-*,
-html,
-body,
-div,
+
 dl,
 dt,
 dd,
@@ -1146,6 +1180,7 @@ p,
 blockquote,
 th,
 td {
+  max-height: 30px;
   margin: 0;
 
 }

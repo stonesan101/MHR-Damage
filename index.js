@@ -51,8 +51,12 @@ const weaponTypes = [
 const jsons = [['monster'], ['types'], ['rampage'], ['ammo'], ['quest']];
 $([].concat(jsons, weaponTypes)).each(function () {
 	$.getJSON(`${baseURL}/json/${this}.json`, data => {
+		++count;
 		info[this] = data;
 		Object.seal(info[this]);
+		if (count === 19) {
+			deepSeal(info);
+		}
 		if (/monster|types|rampage|quest|GreatSword|ammo/.test(this)) {
 			++check[this];
 			jsonsLoaded();
@@ -923,7 +927,7 @@ function BuildDamageTable(myDamage, id) {
 }
 function MonChart() {
 	if (Object.prototype.hasOwnProperty.call(info, 'monster')) {
-		const headers = [`Spawn Area ${info.quest[dropQuest.value].Spawn}`, 'Sever', 'Blunt', 'Shot', 'Fire', 'Water', 'Thunder', 'Ice', 'Dragon'];
+		const headers = [`Spawn Area ${info.quest[dropQuest.value].spawn}`, 'Sever', 'Blunt', 'Shot', 'Fire', 'Water', 'Thunder', 'Ice', 'Dragon'];
 		const table = document.createElement('table');
 		const myTable = document.querySelector('#monTable');
 		const headerRow = document.createElement('tr');
@@ -1078,22 +1082,6 @@ function ToggleAmmoTables() {
 
 	ammoTable.style = dpsTable.style.display !== 'none' ? 'display:none' : "display:''";
 }
-function testing() {
-	let time = 0;
-	let shots = 0;
-	while (time < 60) {
-		for (let i = 0; i < 6; ++i) {
-			if (time + 0.6 < 60) {
-				time += 0.6;
-				++shots;
-			}
-		}
-		if (time + 0.9666666666666667 < 60) {
-			time += 0.9666666666666667;
-		}
-	}
-	return shots;
-}
 function calculateAmmoFrames(power, ammoID) {
 	const ammo = {};
 	ammo.ammoIncrease = info.ammo.AmmoUp[power.attackName][AmmoUp.selectedIndex];
@@ -1166,7 +1154,6 @@ function DecreaseComboCount() {
 }
 function jsonsLoaded() {
 	if (Object.values(check).every(keyCard => keyCard)) {
-		Object.seal(info);
 		WeaponTypeSelect();
 		WeaponSelect();
 		RampageSelect();
@@ -1258,11 +1245,8 @@ function RampageSelect() {
 }
 
 function MonsterSelect() {
-	let monsters = [];
-	Object.values(info.quest).forEach(x => monsters.push(x.monster));
-	monsters = monsters.filter(onlyUnique).sort();
-	PopulateDropDowns(monsters, dropMonster);
-	dropMonster.selectedIndex = monsters.indexOf('Toadversary');
+	PopulateDropDowns(Object.keys(info.monster.hzv), dropMonster);
+	dropMonster.selectedIndex = Object.keys(info.monster.hzv).indexOf('Toadversary');
 }
 
 function PartSelect() {
@@ -1270,26 +1254,43 @@ function PartSelect() {
 }
 
 function QuestSelect() {
-	$(dropQuest).empty();
-	Object.entries(info.quest)
-		.filter(x => x[1].monster === dropMonster.value)
-		.forEach(quest => {
-			$(dropQuest).append($('<option></option>').attr('value', quest[0]).text(quest[1].quest));
-		});
+	$('#HR').empty();
+	$('#MR').empty();
+	$('#dropQuest').empty();
+	let questMR = Object.entries(info.quest).filter(x => x[1].monster === dropMonster.value && x[1].rank === 'MR');
+	let questHR = Object.entries(info.quest).filter(x => x[1].monster === dropMonster.value && x[1].rank === 'HR');
+	questHR.forEach(quest => {
+		$('#HR').append($('<option></option>').attr('value', quest[0]).text(quest[1].quest));
+	});
+	questMR.forEach(quest => {
+		$('#MR').append($('<option></option>').attr('value', quest[0]).text(quest[1].quest));
+	});
+	if (questMR.length > 0) {
+		$('#dropQuest').append($('<option></option>').attr('value', questMR[0][0]).text(questMR[0][1].quest));
+	} else {
+		$('#dropQuest').append($('<option></option>').attr('value', questHR[0][0]).text(questHR[0][1].quest));
+		$('#MR').hide();
+	}
+	('select#dropQuest>option');
 }
-
+function showMenu() {
+	$('.menu').show();
+	$('select#HR>option').length > 0 ? $('#divHR').show() : $('#divHR').hide();
+	$('select#MR>option').length > 0 ? $('#divMR').show() : $('#divMR').hide();
+}
 function HealthSelect() {
 	$(health).empty();
 	$.each(getHealthPools(), (key, value) => {
 		$(health).append($('<option></option>').attr('value', value).text(value));
 	});
 }
-$('div.menu>select.players>option').click(function (e) {
-	PopulateDropDowns([event.target.value], $('#players'));
-	$('div.menu').hide();
-});
-function updateMonHP() {
-	PopulateDropDowns([event.target.value], $('#players'));
+// $('div.menu>select.players>option').click(function (e) {
+// PopulateDropDowns([event.target.value], $('#players'));
+// $('div.menu').hide();
+// });
+function updateQuest() {
+	$('#dropQuest').empty();
+	$('#dropQuest').append($('<option></option>').attr('value', event.target.value).text([event.target[event.target.selectedIndex].text]));
 	$('div.menu').hide();
 }
 // function showHideMenu() {
@@ -1304,34 +1305,35 @@ function emptyContainer() {
 function onlyUnique(value, index, self) {
 	return self.indexOf(value) === index;
 }
-// $(document).ready(function () {
-// var touch = $('#resp-menu');
-// var menu = $('.menu');
+$(document).ready(function () {
+	var touch = $('#resp-menu');
+	var menu = $('.menu');
 
-// $(touch).on('click', function (e) {
-// e.preventDefault();
-// menu.slideToggle();
-// });
+	$(touch).on('click', function (e) {
+		e.preventDefault();
+		menu.slideToggle();
+	});
 
-// $(window).resize(function () {
-// var w = $(window).width();
-// if (w > 767 && menu.is(':hidden')) {
-// menu.removeAttr('style');
-// }
-// });
-// 1});
+	$(window).resize(function () {
+		var w = $(window).width();
+		if (w > 767 && menu.is(':hidden')) {
+			menu.removeAttr('style');
+		}
+	});
+	1;
+});
 function deepSeal(obj1) {
 	Object.keys(obj1).forEach(property => {
 		if (typeof obj1[property] === 'object' && !Object.isSealed(obj1[property])) deepSeal(obj1[property]);
 	});
 	return Object.seal(obj1);
 }
-// $(document).click(function (event) {
-// var $target = $(event.target);
-// if ((!$target.closest('#health').length && $('#health').is(':visible')) || $target.closest('div.menu>select>option').length) {
-// $('div.menu').hide();
-// }
-// });
+$(document).click(function (event) {
+	var $target = $(event.target);
+	if (!$target.closest('.menu').length && !$target.closest(dropQuest).length && $('.menu').is(':visible')) {
+		$('.menu').hide();
+	}
+});
 function shotsCheck(recoil, reload, clipSize, maxTime = 60, spareShot = 0) {
 	let spareShotAccumulator = 0;
 	spareShotAccumulator += spareShot;
