@@ -53,10 +53,6 @@ $([].concat(jsons, weaponTypes)).each(function () {
 	$.getJSON(`${baseURL}/json/${this}.json`, data => {
 		++count;
 		info[this] = data;
-		// Object.seal(info[this]);
-		if (count === 20) {
-			// deepSeal(info);
-		}
 		if (/monster|types|rampage|quest|GreatSword|ammo/.test(this)) {
 			++check[this];
 			jsonsLoaded();
