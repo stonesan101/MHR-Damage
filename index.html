@@ -34,7 +34,7 @@
             </select></div>
           <div id='BowGunId'> <label class="LightBowGun HeavyBowGun classSpecific" for="BarrelId">Gunner Barrel</label><select
                     class="LightBowGun HeavyBowGun classSpecific" id="BarrelId" name="BarrelSelection" onchange="DataCompile()">
-              <option value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>Barrel</option>
+              <option aria-selected='false' value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>Barrel</option>
               <option value='{"Element":1,"Power":1.07,"Silencer":0,"reload":0}'>Power Barrel</option>
               <option value='{"Element":1,"Power":1,"Silencer":1,"reload":1}'>Silencer</option>
               <option value='{"Element":1.1,"Power":1,"Silencer":0,"reload":2}'>Elemental Reload</option>
@@ -481,13 +481,43 @@
     <section id="section2">
       <h1> Monster Selection</h1>
       <div id='monDropDowns'>
-        <div><label for="dropMonster">Monster</label><select id="dropMonster" name="monsterSelection"
+        <div id='dropHeight'><label for="dropMonster">Monster</label><select id="dropMonster" name="monsterSelection"
                   onchange="MonChart(), PartSelect(), QuestSelect(), HealthSelect(), DataCompile()"></select></div>
         <div><label for="dropHZ">Hit Zone</label><select id="dropHZ" name="hzSelection" onchange="DataCompile()">
             <option value=1>Head</option>
           </select></div>
         <div><label for="Quest">Quest</label><select id="dropQuest" name="Quest" onchange="HealthSelect(), DataCompile()"></select></div>
-        <div><label for="dropHealth">Total Health</label><select id="dropHealth" name="health" onchange="DataCompile()"></select></div>
+        <div class="twoColumn div"><label class="row1span2" for="dropEnraged">Total Health</label><select onchange='HealthSelect(); DataCompile()' id="players">
+            <option value="1p">1P</option>
+            <option value="2p">2P</option>
+            <option value="3p">3P</option>
+            <option value="4p">4P</option>
+          </select><select id="health" onchange="DataCompile()">Health </select>
+        </div>
+        <!-- <div id='health'><label for="1p Health">Total Health</label> -->
+        <!-- <select onclick="showHideMenu()" id="players"> -->
+        <!-- <option style='display: none;' value="ugh">Health</option> -->
+        <!-- </select> -->
+        <!-- <ul style='z-index: 60;' class="sub-menu"> -->
+        <!-- <div style='z-index: 60;   display: none;' class="menu" style='display: contents;'> -->
+        <!-- <div> -->
+        <!-- <h1 class='players'>1 Player</h1> -->
+        <!-- <select id="1Player" onchange='updateMonHP()' class='players' name="health" onchange="DataCompile()"></select> -->
+        <!-- </div> -->
+        <!-- <div> -->
+        <!-- <h1 class='players'>2 Players</h1> -->
+        <!-- <select id="2Players" onchange='updateMonHP()' class='players' name="health" onchange="DataCompile()"></select> -->
+        <!-- </div> -->
+        <!-- <div> -->
+        <!-- <h1 class='players'>3 Players</h1> -->
+        <!-- <select id="3Players" onchange='updateMonHP()' class='players' name="health" onchange="DataCompile()"></select> -->
+        <!-- </div> -->
+        <!-- <div> -->
+        <!-- <h1 class='players'>4 Players</h1> -->
+        <!-- <select id="4Players" onchange='updateMonHP()' class='players' name="health" onchange="DataCompile()"></select> -->
+        <!-- </div> -->
+        <!-- </ul> -->
+        <!-- </div> -->
         <div class="twoColumn div" id="divEnrage"><label class="row1span2" for="dropEnraged">Enrage Modifier</label><select id="dropEnraged" name="Enrage"
                   onchange="DataCompile()">
             <option value=1>Normal</option>
@@ -585,7 +615,7 @@
   </body>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <link href="/MHR-Damage/index.js/">
-  <script src="/MHR-Damage/index.js"></script>
+  <script src="/index.js"></script>
   <link rel="stylesheet" type="text/css" href="/MHR-Damage/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

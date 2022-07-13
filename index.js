@@ -52,6 +52,7 @@ const jsons = [['monster'], ['types'], ['rampage'], ['ammo'], ['quest']];
 $([].concat(jsons, weaponTypes)).each(function () {
 	$.getJSON(`${baseURL}/json/${this}.json`, data => {
 		info[this] = data;
+		Object.seal(info[this]);
 		if (/monster|types|rampage|quest|GreatSword|ammo/.test(this)) {
 			++check[this];
 			jsonsLoaded();
@@ -99,7 +100,7 @@ function RangedDPS() {
 		const totalCrit = ~~(0.1 + power.rawCrit + power.eleCrit) * ammo.ticsAdjust;
 		const totalNon = ~~(0.1 + power.rawNon + power.eleNon) * ammo.ticsAdjust;
 
-		const shotsToKill = ~~(1 + JSON.parse($('#dropHealth').val()) / totalEffective);
+		const shotsToKill = ~~(1 + $('#health').val() / totalEffective);
 		const timeToKill = /(Sticky|Slicing)/.test(power.attackName)
 			? 5 + ~~(0.1 + (60 / ammo.shotsPerMin) * shotsToKill) // Adds delay time for stickies/ slicing;
 			: ~~(0.1 + (60 / ammo.shotsPerMin) * shotsToKill);
@@ -355,7 +356,7 @@ function AddDependantSkills(power) {
 				usableKeys += `|Lv${element.match('[1-5]')[0]} ${element.match('Normal|Rapid|Pierce|Spread')[0]}`;
 			}
 		});
-		let regex = new RegExp([usableKeys.slice(1)]);
+		let regex = new RegExp([usableKeys.sl0ice(1)]);
 		return {
 			...Object.fromEntries(Object.entries(attacksTemp).splice(0, 1)),
 			...Object.fromEntries(Object.entries(attacksTemp).filter(skill => regex.test(skill))),
@@ -452,7 +453,7 @@ function GetSkills(power) {
 		}
 	}
 
-	if (dropWeaponType.value === 'LongSword' && !/Helm Breaker|Serene/.test(power.attackName)) {
+	if (dropWeaponType.value === 'LongSword' && !/Helm B0reaker|Serene/.test(power.attackName)) {
 		power.getSkills.push('spiritGauge');
 		return power.getSkills;
 	} else if (dropWeaponType.value === 'LongSword') {
@@ -992,10 +993,22 @@ function HideAndRevealTypeSpecificElements() {
 			UniqueColumnsDisplay();
 		}
 		if ($(window).width() > 850) {
-			$('#monTableContainer').height($('#weaponSelect').height() + 15);
-			$('#damageTable').height($('#raw').height() + 15);
-			$('#monTableContainer').width($('#damageTable').width());
-			$('#section2').width($('#damageTable').width());
+			if (/BowGun/.test(dropWeaponType.value)) {
+				$('#damageTable').height($('#raw').height() - $('section#section1>h1').height());
+				$('#section2').width($('#damageTable').width());
+				$('#monTableContainer').height($('#weaponSelect').height() + $('#section1>h1').height());
+				$('#monTableContainer').width($('#damageTable').width());
+				$('#comboCountContainer').height($('#statsTableDiv').height() + $('#weaponSelect').height() + $('#raw').height() + $('#section1>h1').height() * 3);
+				$('#monDropDowns').height($('#dropHeight').height());
+			} else {
+				$('#section2').height($('#statsTableDiv').height() + $('#weaponSelect').height() + $('#raw').height() + $('#section1>h1').height() * 3);
+				$('#section2').width($('#damageTable').width());
+				$('#monTableContainer').height($('#weaponSelect').height());
+				$('#monTableContainer').width($('#damageTable').width());
+				$('#monDropDowns').height($('#dropHeight').height());
+				$('#damageTable').height($('#raw').height() - $('#section1>h1').height() * 2);
+				$('#comboCountContainer').height($('#statsTableDiv').height() + $('#weaponSelect').height() + $('#raw').height());
+			}
 		}
 	}
 }
@@ -1031,9 +1044,11 @@ function ResetSkills(element = '.skill') {
 }
 $(window).resize(function () {
 	if ($(window).width() > 850) {
-		$('#monTableContainer').height($('#weaponSelect').height() + 15);
-		$('#damageTable').height($('#raw').height() + 15);
+		$('#monTableContainer').height($('#weaponSelect').height() + $('#section1>h1').height());
+		$('#damageTable').height($('#raw').height() + $('#section1>h1').height());
 		$('#monTableContainer').width($('#damageTable').width());
+		$('#section2').width($('#damageTable').width());
+		$('#comboCountContainer').height($('#statsTableDiv').height() + $('#weaponSelect').height() + $('#raw').height() + $('#section1>h1').height() * 3);
 	}
 });
 $('#BowChargePlus').change(function (e) {
@@ -1063,7 +1078,22 @@ function ToggleAmmoTables() {
 
 	ammoTable.style = dpsTable.style.display !== 'none' ? 'display:none' : "display:''";
 }
-
+function testing() {
+	let time = 0;
+	let shots = 0;
+	while (time < 60) {
+		for (let i = 0; i < 6; ++i) {
+			if (time + 0.6 < 60) {
+				time += 0.6;
+				++shots;
+			}
+		}
+		if (time + 0.9666666666666667 < 60) {
+			time += 0.9666666666666667;
+		}
+	}
+	return shots;
+}
 function calculateAmmoFrames(power, ammoID) {
 	const ammo = {};
 	ammo.ammoIncrease = info.ammo.AmmoUp[power.attackName][AmmoUp.selectedIndex];
@@ -1074,20 +1104,22 @@ function calculateAmmoFrames(power, ammoID) {
 	ammo.reloadFrames = info.ammo.reload.frames[ammo.reloadSpeed];
 	ammo.clipSize = power.clipSize[power.isUsed] + ammo.ammoIncrease;
 	ammo.spareShot = +SpareShot.value + +spareAdjust.value;
+
 	/*
-	 * finds time needed to shoot 100 shots as a base for calculations
-	 * 60 seconds /
-	 * ( ( ( ( ( 100 shots / clip size) -1  for times needed to reload) * frames used reloading) = total reload frames
-	 * + (100 * recoil frames) = total recoil frames ) / 30 frames per second)
-	 */
-	ammo.shotsPerMinBase = ~~(60 / (((100 / power.clipSize[power.isUsed] - 1) * ammo.reloadFrames + 100 * ammo.recoilFrames) / 30 / 100));
-	ammo.shotsPerMin = ~~(60 / ((((100 - ammo.spareShot) / ammo.clipSize - 1) * ammo.reloadFrames + 100 * ammo.recoilFrames) / 30 / 100));
+		* finds time needed to shoot 100 shots as a base for calculations
+		*                  ( (        actual shots consumed    times reloaded    for total frames spent reloading) + (total recoil frames) for total frames used / 30 frames for total second / 100 shots = seconds per shot)
+			60 seconds / ( ( ( ( ( 100 shots-Spare Shot percent) / clip size -1 for inital clip) * frames per reload ) + (100 * recoil frames )) / 30 frames per second / 100 shots )
+		*/
+
+	let shotsPerTimeLimit = /Stic|Slic/.test(power.attackName) ? 55 : 60;
+	ammo.shotsPerMinBase = shotsCheck(ammo.recoilFrames / 30, ammo.reloadFrames / 30, power.clipSize[power.isUsed], shotsPerTimeLimit);
+	ammo.shotsPerMin = shotsCheck(ammo.recoilFrames / 30, ammo.reloadFrames / 30, ammo.clipSize, shotsPerTimeLimit, 100 / ammo.spareShot);
 	ammo.shotsPerGain = `${Number.parseFloat((ammo.shotsPerMin / ammo.shotsPerMinBase - 1) * 100).toFixed(2)}%`;
 
 	ammo.ticsAdjust = power.ticsPer + 1 > 0 ? Number(power.ticsPer + 1) : 1;
 	// Reduces total damage from pierce attacks displayed depending on selection
 	// top is for piercing attacks, bottom is for elemental piercing attacks(elemental pierce is reduced by a higher percentage)
-	if (/PierceUp/.test(power.attackName)) {
+	if (/PierceUp/.test(power.ammoName)) {
 		ammo.ticsAdjust = (power.ticsPer + 1) * JSON.parse(pierceAdjust.value)[0];
 	} else if (/Pierc/.test(power.attackName)) {
 		ammo.ticsAdjust = (power.ticsPer + 1) * JSON.parse(pierceAdjust.value)[1];
@@ -1134,6 +1166,7 @@ function DecreaseComboCount() {
 }
 function jsonsLoaded() {
 	if (Object.values(check).every(keyCard => keyCard)) {
+		Object.seal(info);
 		WeaponTypeSelect();
 		WeaponSelect();
 		RampageSelect();
@@ -1142,10 +1175,15 @@ function jsonsLoaded() {
 		QuestSelect();
 		HealthSelect();
 		MonChart();
-		HideAndRevealTypeSpecificElements(true);
+		HideAndRevealTypeSpecificElements();
 		DataCompile();
-		$('#monTableContainer').height($('#weaponSelect').height() + 15);
-		$('#damageTable').height($('#raw').height() + 15);
+		$('#section2').height($('#statsTableDiv').height() + $('#weaponSelect').height() + $('#raw').height() + $('#section1>h1').height() * 3);
+		$('#section2').width($('#damageTable').width());
+		$('#monTableContainer').height($('#weaponSelect').height());
+		$('#monTableContainer').width($('#damageTable').width());
+		$('#monDropDowns').height($('#dropHeight').height());
+		$('#damageTable').height($('#raw').height() + $('#section1>h1').height() * 0.75);
+		$('#comboCountContainer').height($('#statsTableDiv').height() + $('#weaponSelect').height() + $('#raw').height());
 	}
 }
 
@@ -1220,11 +1258,11 @@ function RampageSelect() {
 }
 
 function MonsterSelect() {
-	PopulateDropDowns(
-		Object.keys(info.monster.hzv).filter(monster => !/Kush|Thunder Serpent Narwa|Shagaru Magala/.test(monster)),
-		dropMonster,
-	);
-	dropMonster.selectedIndex = '56';
+	let monsters = [];
+	Object.values(info.quest).forEach(x => monsters.push(x.monster));
+	monsters = monsters.filter(onlyUnique).sort();
+	PopulateDropDowns(monsters, dropMonster);
+	dropMonster.selectedIndex = monsters.indexOf('Toadversary');
 }
 
 function PartSelect() {
@@ -1232,28 +1270,106 @@ function PartSelect() {
 }
 
 function QuestSelect() {
-	let questList = [];
-	questList = Object.keys(Object.fromEntries(Object.entries(info.quest).filter(x => x[1].Monster === dropMonster.value)));
-	PopulateDropDowns(questList, dropQuest);
+	$(dropQuest).empty();
+	Object.entries(info.quest)
+		.filter(x => x[1].monster === dropMonster.value)
+		.forEach(quest => {
+			$(dropQuest).append($('<option></option>').attr('value', quest[0]).text(quest[1].quest));
+		});
 }
+
 function HealthSelect() {
-	let questList = [];
-
-	questList = Object.entries(info.quest).filter(x => x[1].Monster == dropMonster.value && x[0] == dropQuest.value);
-	PopulateDropDowns([[questList[0][1]['1p']], [questList[0][1]['2p']], [questList[0][1]['3p']], [questList[0][1]['4p']]], dropHealth);
+	$(health).empty();
+	$.each(getHealthPools(), (key, value) => {
+		$(health).append($('<option></option>').attr('value', value).text(value));
+	});
 }
-
+$('div.menu>select.players>option').click(function (e) {
+	PopulateDropDowns([event.target.value], $('#players'));
+	$('div.menu').hide();
+});
+function updateMonHP() {
+	PopulateDropDowns([event.target.value], $('#players'));
+	$('div.menu').hide();
+}
+// function showHideMenu() {
+// $('#1pHealth');
+// $('.menu')[0].style.display == 'none' ? $('.menu').show() : $('.menu').hide();
+// }
 function emptyContainer() {
 	if (this.value === 'Paste TA Wiki Set Builder Link Here') {
 		$(this).empty();
 	}
 }
+function onlyUnique(value, index, self) {
+	return self.indexOf(value) === index;
+}
+// $(document).ready(function () {
+// var touch = $('#resp-menu');
+// var menu = $('.menu');
 
+// $(touch).on('click', function (e) {
+// e.preventDefault();
+// menu.slideToggle();
+// });
+
+// $(window).resize(function () {
+// var w = $(window).width();
+// if (w > 767 && menu.is(':hidden')) {
+// menu.removeAttr('style');
+// }
+// });
+// 1});
+function deepSeal(obj1) {
+	Object.keys(obj1).forEach(property => {
+		if (typeof obj1[property] === 'object' && !Object.isSealed(obj1[property])) deepSeal(obj1[property]);
+	});
+	return Object.seal(obj1);
+}
+// $(document).click(function (event) {
+// var $target = $(event.target);
+// if ((!$target.closest('#health').length && $('#health').is(':visible')) || $target.closest('div.menu>select>option').length) {
+// $('div.menu').hide();
+// }
+// });
+function shotsCheck(recoil, reload, clipSize, maxTime = 60, spareShot = 0) {
+	let spareShotAccumulator = 0;
+	spareShotAccumulator += spareShot;
+	let time = 0;
+	let shots = 0;
+	while (time <= maxTime) {
+		for (let i = 0; i < clipSize; i++) {
+			time += recoil;
+			shots += time <= maxTime ? 1 : 0;
+			if (shots >= spareShotAccumulator && spareShot !== 0 && spareShot !== Infinity) {
+				--i;
+				spareShotAccumulator += spareShot;
+			}
+		}
+		time += reload;
+	}
+	return shots;
+}
+function getHealthPools() {
+	const healthMod =
+		~~(0.1 + info.quest[dropQuest.value][players.value] * ((info.quest[dropQuest.value].min / info.quest[dropQuest.value]['1p'] - 1) * -1)) /
+		info.quest[dropQuest.value].HPScale;
+	let healthPool = [info.quest[dropQuest.value][$('#players').val()]];
+	if (info.quest[dropQuest.value].HPScale === 0) {
+		return healthPool;
+	} else if (info.quest[dropQuest.value].HPScale === 1) {
+		healthPool = [[healthPool[0] - healthMod], [healthPool[0]], [healthPool[0] + healthMod]];
+		return healthPool;
+	} else {
+		healthPool = [[healthPool[0] - healthMod * 2], [healthPool[0] - healthMod], [healthPool[0]], [healthPool[0] + healthMod], [healthPool[0] + healthMod * 2]];
+		return healthPool;
+	}
+}
 /**function getMenu() {
 		if (Object.values(check).every(keyCard => keyCard)) {
 			// $(weaponTypes).each(function (index, weaponType) {
 			const weaponList = [];
-			$(info.ChargeBlade.weapons).each(function (index, element) {
+			$(info.ChargeBlade.weapons).each (function (index, element) {
 				weaponList.push(this.weapon);
 			});
 			let { ...myJSON } = weaponList;
