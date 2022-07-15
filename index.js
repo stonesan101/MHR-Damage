@@ -31,7 +31,6 @@ const sharpnessMod = {
 		PEM: 0.25,
 	},
 };
-// const $ = require('jquery');
 const weaponTypes = [
 	['GreatSword'],
 	['SwitchAxe'],
@@ -1171,7 +1170,7 @@ function jsonsLoaded() {
 }
 
 function decodeURL() {
-	if (/mhrise\.wiki-db\.com/.test(this.value)) {
+	if (/mhrise\.wiki-db\.com/.test(taWikiSetBuilder.value)) {
 		let decode = decodeURIComponent(taWikiSetBuilder.value);
 		let skills = decode.match('(?<=skills=)(.*?)(?=&)')[0].split(',');
 		ResetSkills(document.querySelectorAll(`.thisSkill:not(.${dropWeaponType.value})`));
@@ -1330,23 +1329,23 @@ $(document).click(function (event) {
 		$('.menu').hide();
 	}
 });
-function shotsCheck(recoil, reload, clipSize, maxTime = 60, spareShot = 0) {
+function shotsCheck(convertedRecoilFrames, convertedReloadFrames, clipSize, maxTime = 60, spareShot = 0) {
 	let spareShotAccumulator = 0;
 	spareShotAccumulator += spareShot;
-	let time = 0;
-	let shots = 0;
-	while (time <= maxTime) {
-		for (let i = 0; i < clipSize; i++) {
-			time += recoil;
-			shots += time <= maxTime ? 1 : 0;
-			if (shots >= spareShotAccumulator && spareShot !== 0 && spareShot !== Infinity) {
+	let timeUsed = 0;
+	let totalShots = 0;
+	while (timeUsed <= maxTime) {
+		for (let i = 0; i < clipSize; ++i) {
+			timeUsed += convertedRecoilFrames;
+			totalShots += timeUsed <= maxTime ? 1 : 0;
+			if (totalShots >= spareShotAccumulator && spareShot !== 0 && spareShot !== Infinity) {
 				--i;
 				spareShotAccumulator += spareShot;
 			}
 		}
-		time += reload;
+		timeUsed += convertedReloadFrames;
 	}
-	return shots;
+	return totalShots;
 }
 function getHealthPools() {
 	const healthMod =
