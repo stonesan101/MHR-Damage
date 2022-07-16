@@ -1293,8 +1293,8 @@ function updateQuest() {
 // $('.menu')[0].style.display == 'none' ? $('.menu').show() : $('.menu').hide();
 // }
 function emptyContainer() {
-	if (this.value === 'Paste TA Wiki Set Builder Link Here') {
-		$(this).empty();
+	if ($(event.target).val() == 'Paste TA Wiki Set Builder Link Here') {
+		$(event.target).val('');
 	}
 }
 function onlyUnique(value, index, self) {
