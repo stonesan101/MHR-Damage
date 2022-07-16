@@ -4,7 +4,7 @@ let count = 0;
 let comboTracker = [];
 let tempAmmo = {};
 const info = {};
-
+const weaponType = document.getElementById('dropWeaponType');
 const sharpnessMod = {
 	white: {
 		PRM: 1.32,
@@ -59,7 +59,7 @@ $([].concat(jsons, weaponTypes)).each(function () {
 	});
 });
 function DataCompile() {
-	if (/BowGun/.test(dropWeaponType.value)) {
+	if (/BowGun/.test($(weaponType).val())) {
 		RangedDPS();
 	} else {
 		MeleeDPS();
@@ -75,19 +75,19 @@ function RangedDPS() {
 	$(
 		Object.keys(
 			Object.fromEntries(
-				Object.entries(info.ammo).filter(x => info[dropWeaponType.value].weapons[dropWeapon.value].usableAmmo[x[1].isUsed] > 0 && !/RF\+/.test(x[1].attackName)),
+				Object.entries(info.ammo).filter(x => info[$(weaponType).val()].weapons[dropWeapon.value].usableAmmo[x[1].isUsed] > 0 && !/RF\+/.test(x[1].attackName)),
 			),
 		),
 	).each(function (index, skill) {
 		let ammoID = skill;
-		if (dropWeaponType.value === 'LightBowGun') {
-			info[dropWeaponType.value].weapons[dropWeapon.value].isRapidFire.forEach(ammoType => {
+		if ($(weaponType).val() === 'LightBowGun') {
+			info[$(weaponType).val()].weapons[dropWeapon.value].isRapidFire.forEach(ammoType => {
 				if (ammoType === info.ammo[ammoID].isUsed) {
 					ammoID = info.ammo.keys[info.ammo[ammoID].isUsed - 1][1];
 				}
 			});
 		}
-		power = { ...info[dropWeaponType.value].weapons[dropWeapon.value], ...info.ammo[ammoID] };
+		power = { ...info[$(weaponType).val()].weapons[dropWeapon.value], ...info.ammo[ammoID] };
 		power = ApplyRampageSelections(power);
 		power = GetSkills(power);
 		power = GetRemainingSkills(power);
@@ -170,36 +170,33 @@ function MeleeDPS() {
 	let power = {};
 	let firstRun = 0;
 
-	power = { ...info[dropWeaponType.value].weapons[dropWeapon.value] };
+	power = { ...info[$(weaponType).val()].weapons[dropWeapon.value] };
 	power = ApplyRampageSelections(power);
 	//  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
-
-	if (
-		dropWeaponType.value === 'Bow' ||
-		dropWeaponType.value === 'ChargeBlade' ||
-		dropWeaponType.value === 'InsectGlaive' ||
-		dropWeaponType.value === 'Gunlance'
-	) {
+	// console.log(power, 'ramp');
+	if ($(weaponType).val() === 'Bow' || $(weaponType).val() === 'ChargeBlade' || $(weaponType).val() === 'InsectGlaive' || $(weaponType).val() === 'Gunlance') {
 		power.attacks = AddDependantSkills(power);
 	} else {
-		power.attacks = info[dropWeaponType.value].attacks;
+		power.attacks = info[$(weaponType).val()].attacks;
 	}
 	$(Object.keys(power.attacks)).each(function (attackID, eachAttack) {
-		power = { ...power, ...info[dropWeaponType.value].attacks[eachAttack] };
+		power = { ...power, ...info[$(weaponType).val()].attacks[eachAttack] };
+		// console.log(power, 'init2');
 		power = GetSkills(power);
+		// console.log(power, 'getskills');
 
-		if (/inputs|inputButton/.test(event.target.className) && firstRun === 0 && !/BowGun/.test(dropWeaponType.value)) {
+		if (/inputs|inputButton/.test(event.target.className) && firstRun === 0 && !/BowGun/.test($(weaponType).val())) {
 			UpdateComboTracker();
 			UpdateComboDisplay();
 		}
 
-		power = firstRun === 0 && power.comboHitsPerColor === undefined && dropWeaponType.value !== 'Bow' ? TotalHitsOfSharpUsed(power) : power;
+		power = firstRun === 0 && power.comboHitsPerColor === undefined && $(weaponType).val() !== 'Bow' ? TotalHitsOfSharpUsed(power) : power;
 
 		power = GetRemainingSkills(power);
 
 		power = DamageCalculations(power);
 
-		if (!/Bow/.test(dropWeaponType.value) && comboTracker.length > 0) {
+		if (!/Bow/.test($(weaponType).val()) && comboTracker.length > 0) {
 			/* goes through each color sharpness and filters the recorded attacks for the number of times this current attack was used
 			 * then applies the given sharpness modifier to the damage if damage type is sever or blunt then multiplies by the times used
 			 * saves results in the comboDamage var and += the totals for every sharpness of every attack
@@ -310,31 +307,33 @@ function MeleeDPS() {
 }
 
 function ApplyRampageSelections(power) {
-	// applies rampage any bonuses that effect base stats
-	$(weaponRampage.children).each(function (index, element) {
-		const rampageSkill = info.rampage['Rampage-Up Skill'][element.value];
-		if (rampageSkill !== undefined) {
-			for (let i = 0; i < Object.keys(rampageSkill).length; i++) {
-				const stat = Object.keys(rampageSkill)[i];
-				power[stat] += rampageSkill[stat];
+	if (info[$(weaponType).val()].weapons[dropWeapon.value].rampageSlots === 0) {
+		// applies rampage any bonuses that effect base stats
+		$(weaponRampage.children).each(function (index, element) {
+			const rampageSkill = info.rampage['Rampage-Up Skill'][element.value];
+			if (rampageSkill !== undefined) {
+				for (let i = 0; i < Object.keys(rampageSkill).length; i++) {
+					const stat = Object.keys(rampageSkill)[i];
+					power[stat] += rampageSkill[stat];
+				}
 			}
+		});
+		// for skills that change the base element
+		if (!/BowGun/.test($('#dropWeaponType').val())) {
+			power.eleType = /Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/.test(weaponRampage.children[1].value)
+				? weaponRampage.children[1].value.match(/Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/)[0]
+				: power.eleType;
 		}
-	});
-	// for skills that change the base element
-	if (!/BowGun/.test($('#dropWeaponType').val())) {
-		power.eleType = /Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/.test(weaponRampage.children[1].value)
-			? weaponRampage.children[1].value.match(/Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/)[0]
-			: power.eleType;
 	}
 	power.baseAff = power.aff;
 	return power;
 }
 
 function AddDependantSkills(power) {
-	if (dropWeaponType.value === 'InsectGlaive') {
+	if ($(weaponType).val() === 'InsectGlaive') {
 		let attacks = Object.fromEntries(Object.entries(info.InsectGlaive.attacks).filter(skill => !/Kinsect|Dust|Powder|Mark/.test(skill)));
 		return attacks;
-	} else if (dropWeaponType.value === 'ChargeBlade') {
+	} else if ($(weaponType).val() === 'ChargeBlade') {
 		const phialType = info.ChargeBlade.weapons[$('#dropWeapon').val()].phialType === 'Impact Phial' ? 'Element Phial' : 'Impact Phial';
 		const regexp = new RegExp(`${phialType}`);
 
@@ -343,7 +342,7 @@ function AddDependantSkills(power) {
 
 		//  filters bow attacks for only the usable attacks
 	} else if ($('#dropWeaponType').val() === 'Bow') {
-		let attacksTemp = info[dropWeaponType.value].attacks;
+		let attacksTemp = info[$(weaponType).val()].attacks;
 		let attacks = [];
 		let usableKeys = '';
 		const totalKeys =
@@ -355,13 +354,13 @@ function AddDependantSkills(power) {
 				usableKeys += `|Lv${element.match('[1-5]')[0]} ${element.match('Normal|Rapid|Pierce|Spread')[0]}`;
 			}
 		});
-		let regex = new RegExp([usableKeys.sl0ice(1)]);
+		let regex = new RegExp([usableKeys.slice(1)]);
 		return {
 			...Object.fromEntries(Object.entries(attacksTemp).splice(0, 1)),
 			...Object.fromEntries(Object.entries(attacksTemp).filter(skill => regex.test(skill))),
 			...Object.fromEntries(Object.entries(attacksTemp).splice(137)),
 		};
-	} else if (dropWeaponType.value === 'Gunlance') {
+	} else if ($(weaponType).val() === 'Gunlance') {
 		return Object.fromEntries(Object.entries(info.Gunlance.attacks).splice(0, 28));
 	}
 }
@@ -436,7 +435,7 @@ function GetSkills(power) {
 	}
 
 	// applies RF/Normal/Pierce/Spread up bonuses to bow and bowgun
-	if (/Bow/.test(dropWeaponType.value)) {
+	if (/Bow/.test($(weaponType).val())) {
 		if (/Pierc/.test(power.attackName)) {
 			power.getSkills.push('PierceUp');
 		} else if (/Spread/.test(power.attackName)) {
@@ -452,19 +451,18 @@ function GetSkills(power) {
 		}
 	}
 
-	if (dropWeaponType.value === 'LongSword' && !/Helm B0reaker|Serene/.test(power.attackName)) {
+	if ($(weaponType).val() === 'LongSword' && !/Helm Breaker|Serene/.test(power.attackName)) {
 		power.getSkills.push('spiritGauge');
-		return power.getSkills;
-	} else if (dropWeaponType.value === 'LongSword') {
+	} else if ($(weaponType).val() === 'LongSword') {
 		power.getSkills.push('Helmbreaker');
 	}
-	if (dropWeaponType.value === 'GreatSword' && /(?<=Lv)1|2|3/.test(power.attackName)) {
+	if ($(weaponType).val() === 'GreatSword' && /(?<=Lv)1|2|3/.test(power.attackName)) {
 		// applies GreatSwords Charge Level Bonus
 		power.rawMV *= Number('1.' + power.attackName.match('(?<=Lv)1|2|3')[0]);
 		power.rawMV = power.rawMV.toFixed(1);
 	}
 	//applies ChargeBlade specific abilities
-	if (dropWeaponType.value === 'ChargeBlade') {
+	if ($(weaponType).val() === 'ChargeBlade') {
 		if (!/3rd|(?<!Midair |Axe: )UED|(?<!Charged )Sword(?!.*Shield)/.test(power.attackName)) {
 			power.getSkills.push('savageAxe');
 		}
@@ -640,10 +638,10 @@ function TotalHitsOfSharpUsed(power) {
 		if ($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 28)) {
 			for (let i = 0; i < power.ticsPer + 1; i++) {
 				// applies DualBlades Sharpness Reduction
-				if (dropWeaponType.value === 'DualBlades') {
-					totalHitsOfSharpnessUsed += info[dropWeaponType.value].attacks[attackKeys[eachAttack]].hitsOfSharp / 3;
+				if ($(weaponType).val() === 'DualBlades') {
+					totalHitsOfSharpnessUsed += info[$(weaponType).val()].attacks[attackKeys[eachAttack]].hitsOfSharp / 3;
 				} else {
-					totalHitsOfSharpnessUsed += info[dropWeaponType.value].attacks[attackKeys[eachAttack]].hitsOfSharp;
+					totalHitsOfSharpnessUsed += info[$(weaponType).val()].attacks[attackKeys[eachAttack]].hitsOfSharp;
 				}
 			}
 		} else if ($('#dropWeaponType').val() === 'Gunlance' && eachAttack > 27) {
@@ -827,10 +825,10 @@ function BuildDamageTable(myDamage, id) {
 		Object.values(attack).forEach(text => {
 			if (text === 'replaceME') {
 				if (
-					previousWeaponType.value === dropWeaponType.value &&
+					$(previousWeaponType).val() === $(weaponType).val() &&
 					inputs.length > 0 &&
 					event.target.id !== 'BowChargePlus' &&
-					((dropWeaponType.value === 'Bow' && previousWeapon.value === dropWeapon.value) || dropWeaponType.value !== 'Bow')
+					(($(weaponType).val() === 'Bow' && previousWeapon.value === dropWeapon.value) || $(weaponType).val() !== 'Bow')
 				) {
 					row.appendChild(inputs[k]);
 					++k;
@@ -841,7 +839,7 @@ function BuildDamageTable(myDamage, id) {
 					adjuster.setAttribute('type', 'Number');
 					adjuster.setAttribute('class', `Combo skill, k`);
 					adjuster.setAttribute('Max', 20);
-					if (dropWeaponType.value === 'Bow' && previousWeapon.value !== dropWeapon.value) {
+					if ($(weaponType).val() === 'Bow' && previousWeapon.value !== dropWeapon.value) {
 						comboTracker = [];
 						UpdateComboDisplay();
 					}
@@ -886,9 +884,9 @@ function BuildDamageTable(myDamage, id) {
 			? [k, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 			: [k, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
 
-		if (/BowGun/.test(dropWeaponType.value) && !/BowGun/.test(previousWeaponType.value)) {
+		if (/BowGun/.test($(weaponType).val()) && !/BowGun/.test($(previousWeaponType).val())) {
 			$('#comboCountContainer').hide();
-		} else if (!/BowGun/.test(dropWeaponType.value) && /BowGun/.test(previousWeaponType.value)) {
+		} else if (!/BowGun/.test($(weaponType).val()) && /BowGun/.test($(previousWeaponType).val())) {
 			$('#comboCountContainer').show();
 		}
 		$('#previousWeapon').val($('#dropWeapon').val());
@@ -901,7 +899,7 @@ function BuildDamageTable(myDamage, id) {
 				++j;
 			});
 		}
-		if (!/BowGun/.test(dropWeaponType.value)) {
+		if (!/BowGun/.test($(weaponType).val())) {
 			$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index, element) {
 				const cell = document.createElement('td');
 				cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputButton dec"
@@ -979,10 +977,12 @@ function HideAndRevealTypeSpecificElements() {
 		$('.classSpecific').parent().hide();
 		weaponId.innerHTML = '';
 		weaponId.innerHTML = $('#dropWeaponType').val();
-		$(`.${dropWeaponType.value}`).parent().show();
-		$(`.${dropWeaponType.value}`).show();
+		$(`.${$(weaponType).val()}`)
+			.parent()
+			.show();
+		$(`.${$(weaponType).val()}`).show();
 
-		if (/Bow/.test(dropWeaponType.value)) {
+		if (/Bow/.test($(weaponType).val())) {
 			$('.Shot').parent().show();
 			$('.Shot').show();
 			$(ammoTable).hide();
@@ -992,7 +992,7 @@ function HideAndRevealTypeSpecificElements() {
 			UniqueColumnsDisplay();
 		}
 		if ($(window).width() > 850) {
-			if (/BowGun/.test(dropWeaponType.value)) {
+			if (/BowGun/.test($(weaponType).val())) {
 				$('#damageTable').height($('#raw').height() - $('section#section1>h1').height());
 				$('#section2').width($('#damageTable').width());
 				$('#monTableContainer').height($('#weaponSelect').height() + $('#section1>h1').height());
@@ -1027,8 +1027,8 @@ function MeleeElements() {
 }
 
 function UniqueColumnsDisplay() {
-	$('#unique')[0].style = /BowGun/.test(dropWeaponType.value) ? 'grid-template-columns:repeat(4, 1fr); grid-area: 7 / 1 / 8 / 6;' : 'grid-area: 6 / 3 / 7 / 4;';
-	forButtons.style = /BowGun/.test(dropWeaponType.value) ? 'grid-template-columns: repeat(10. 1fr)' : 'grid-template-columns: repeat(6, 1fr)';
+	$('#unique')[0].style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns:repeat(4, 1fr); grid-area: 7 / 1 / 8 / 6;' : 'grid-area: 6 / 3 / 7 / 4;';
+	forButtons.style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns: repeat(10. 1fr)' : 'grid-template-columns: repeat(6, 1fr)';
 }
 function MaxSkills() {
 	$('.skill').each(function (index, element) {
@@ -1112,7 +1112,7 @@ function calculateAmmoFrames(power, ammoID) {
 
 function ComboReset() {
 	// resets the combo inputs to default values
-	if (!/BowGun/.test(previousWeaponType.value) && previousWeaponType.value !== '') {
+	if (!/BowGun/.test($(previousWeaponType).val()) && $(previousWeaponType).val() !== '') {
 		$('.comboHits').remove();
 		$('.0:nth-child(n+ 3)').val(0);
 		$('.inputs').val(0);
@@ -1173,7 +1173,7 @@ function decodeURL() {
 	if (/mhrise\.wiki-db\.com/.test(taWikiSetBuilder.value)) {
 		let decode = decodeURIComponent(taWikiSetBuilder.value);
 		let skills = decode.match('(?<=skills=)(.*?)(?=&)')[0].split(',');
-		ResetSkills(document.querySelectorAll(`.thisSkill:not(.${dropWeaponType.value})`));
+		ResetSkills(document.querySelectorAll(`.thisSkill:not(.${$(weaponType).val()})`));
 		$.each(skills, function (index, value) {
 			let thisSkill = value.split('Lv');
 			thisSkill[0] = thisSkill[0].replace(/(\s)|(\/)/g, '');
@@ -1196,33 +1196,36 @@ function PopulateDropDowns(json, dropDown) {
 }
 
 function WeaponTypeSelect() {
-	PopulateDropDowns(weaponTypes, dropWeaponType);
+	PopulateDropDowns(weaponTypes, weaponType);
 }
 
 function WeaponSelect() {
 	$(dropWeapon).empty();
-	$(info[dropWeaponType.value].weapons).each((index, weapon) => {
+	$(info[$(weaponType).val()].weapons).each((index, weapon) => {
 		if (weapon.weapon !== 'Unknown') {
 			$('#dropWeapon').append($('<option></option>').attr('value', index).text(weapon.weapon));
 		}
 	});
 }
 function RampageSelect() {
-	if (Object.prototype.hasOwnProperty.call(info[dropWeaponType.value].weapons[dropWeapon.value], 'rampageSlots')) {
-		usableDecos = [];
+	if (info[$(weaponType).val()].weapons[dropWeapon.value].rampageSlots !== 0) {
+		let usableDecos = [];
 		$(Object.keys(info.rampage.rampageDecos)).each(function (index, element) {
 			// element == this
 			let deco = element;
-			if (this.match(`[1-${info[dropWeaponType.value].weapons[dropWeapon.value].rampageSlots}]`) !== null) {
-				usableDecos.push(info.rampage.rampageDecos[this.match(`[1-${info[dropWeaponType.value].weapons[dropWeapon.value].rampageSlots}]`).input]);
+			if (
+				info[$(weaponType).val()].weapons[dropWeapon.value].rampageSlots > 0 &&
+				this.match(`[1-${info[$(weaponType).val()].weapons[dropWeapon.value].rampageSlots}]`) !== null
+			) {
+				usableDecos.push(info.rampage.rampageDecos[this.match(`[1-${info[$(weaponType).val()].weapons[dropWeapon.value].rampageSlots}]`).input]);
 			}
 		});
 		PopulateDropDowns(usableDecos, weaponRampage0);
 	} else {
 		$(weaponRampage.children).html('');
 		$(weaponRampage.children).hide();
-		// if (/Rampage/.test(info[dropWeaponType.value].weapons[dropWeapon.value].weapon)) {
-		// // // $(info.rampage[info[dropWeaponType.value].weapons[dropWeapon.value].weapon].Rampage).each(function (index, rampageSection) {
+		// if (/Rampage/.test(info[$(weaponType).val()].weapons[dropWeapon.value].weapon)) {
+		// // // $(info.rampage[info[$(weaponType).val()].weapons[dropWeapon.value].weapon].Rampage).each(function (index, rampageSection) {
 		// $(weaponRampage).children([index]).show();
 		//
 		// $(rampageSection[index]).each(function (inc, rampageSkill) {?????????????
@@ -1233,7 +1236,7 @@ function RampageSelect() {
 		// });
 		// } else {
 		$(weaponRampage0).show();
-		$(info[dropWeaponType.value].weapons[dropWeapon.value].rampage).each(function (index, rampageSkill) {
+		$(info[$(weaponType).val()].weapons[dropWeapon.value].rampage).each(function (index, rampageSkill) {
 			$(weaponRampage0).append($('<option></option>').attr('value', info.rampage.keys2[this]).text(info.rampage.keys2[this]));
 		});
 	}
@@ -1268,11 +1271,6 @@ function QuestSelect() {
 	}
 	('select#dropQuest>option');
 }
-function showMenu() {
-	$('.menu').show();
-	$('select#HR>option').length > 0 ? $('#divHR').show() : $('#divHR').hide();
-	$('select#MR>option').length > 0 ? $('#divMR').show() : $('#divMR').hide();
-}
 function HealthSelect() {
 	$(health).empty();
 	$.each(getHealthPools(), (key, value) => {
@@ -1283,11 +1281,6 @@ function HealthSelect() {
 // PopulateDropDowns([event.target.value], $('#players'));
 // $('div.menu').hide();
 // });
-function updateQuest() {
-	$('#dropQuest').empty();
-	$('#dropQuest').append($('<option></option>').attr('value', event.target.value).text([event.target[event.target.selectedIndex].text]));
-	$('div.menu').hide();
-}
 // function showHideMenu() {
 // $('#1pHealth');
 // $('.menu')[0].style.display == 'none' ? $('.menu').show() : $('.menu').hide();
@@ -1323,9 +1316,26 @@ function deepSeal(obj1) {
 	});
 	return Object.seal(obj1);
 }
+function showMenu() {
+	$('.menu').show();
+	document.querySelector('#MR').children.length > 0 ? $('#divMR').show() : $('#divMR').hide();
+	if (document.querySelector('#HR').children.length > 0) {
+		$('#divHR').show();
+		$('div.menu').css('top', '-50%');
+	}
+	if (document.querySelector('#HR').children.length === 0) {
+		$('#divHR').hide();
+		$('div.menu').css('top', '-100%');
+	}
+}
+function updateQuest() {
+	$('#dropQuest').empty();
+	$('#dropQuest').append($('<option></option>').attr('value', event.target.value).text([event.target[event.target.selectedIndex].text]));
+	$('div.menu').hide();
+}
 $(document).click(function (event) {
 	var $target = $(event.target);
-	if (!$target.closest('.menu').length && !$target.closest(dropQuest).length && $('.menu').is(':visible')) {
+	if (!$target.closest(questButton).length && !$target.closest('.menu').length && !$target.closest(dropQuest).length && $('.menu').is(':visible')) {
 		$('.menu').hide();
 	}
 });
