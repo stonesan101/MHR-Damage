@@ -383,9 +383,11 @@ function GetSkills(power) {
 		Number.isNaN(power.baseEle) ||
 		elementType === undefined
 			? 0
-			: info.monster.hzv[dropMonster.value][dropHZ.value][elementType.toLowerCase()];
+			: info.monster.hzv[dropMonster.value][dropHZ.selectedIndex][elementType.toLowerCase()];
 	// removes HZV for attacks like stickies and phials
-	power.rawHZV = /(None|ignore|Stick|Clust|IgnoreHZV)/.test(power.type) ? 100 : info.monster.hzv[dropMonster.value][dropHZ.value][damageType.toLowerCase()];
+	power.rawHZV = /(None|ignore|Stick|Clust|IgnoreHZV)/.test(power.type)
+		? 100
+		: info.monster.hzv[dropMonster.value][dropHZ.selectedIndex][damageType.toLowerCase()];
 	// applies Demon Ammo if selected and damage type is sever or blunt
 	power.PRM *= $(DemonAmmo).hasClass('blue') && /(sever|blunt)/.test(power.type) ? 1.1 : 1;
 	1;
@@ -527,7 +529,7 @@ function GetRemainingSkills(power) {
 	const sharpnessModifier = [];
 	[sharpnessModifier.PRM, sharpnessModifier.PEM] = power.noSharpMod === false ? [JSON.parse(Sharpness.value).PRM, JSON.parse(Sharpness.value).PEM] : [1, 1];
 	power.PRM *=
-		~~(0.1 + 25 / sharpnessModifier.PRM) >= info.monster.hzv[$('#dropMonster').val()][$('#dropHZ').val()][power.type]
+		~~(0.1 + 25 / sharpnessModifier.PRM) >= info.monster.hzv[$('#dropMonster').val()][dropHZ.selectedIndex][power.type]
 			? JSON.parse(document.getElementById([`MindsEye`]).value).PRM
 			: 1;
 	power.critBoost = power.Crit === true ? JSON.parse($('#CriticalBoost').val()).PRM : 1;
@@ -1254,7 +1256,11 @@ function MonsterSelect() {
 }
 
 function PartSelect() {
-	PopulateDropDowns(Object.keys(info.monster.hzv[dropMonster.value]), dropHZ);
+	let parts = [];
+	info.monster.hzv[dropMonster.value].forEach(hitzone => {
+		parts.push(hitzone.part);
+	});
+	PopulateDropDowns(parts, dropHZ);
 }
 
 function QuestSelect() {
