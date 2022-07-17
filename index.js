@@ -492,22 +492,24 @@ function GetSkills(power) {
 }
 function GetRemainingSkills(power) {
 	[power.augEFR, power.augPRM, power.augPEM] = [1, 1, 1];
+	const regex = new RegExp();
 	/*
 	 * If an anti species type skill is selected it gets the list of monsters applicable and checks
 	 *if the selected monster is in the list.If true, it applies the skill.
 	 */
 	if (
+		info[$(weaponType).val()].weapons[dropWeapon.value].rampageDecos === 0 &&
 		Object.prototype.hasOwnProperty.call(info.types, $('#weaponRampage0').value) &&
 		Object.prototype.hasOwnProperty.call(info.types[$('#weaponRampage0').value].Monsters, $('#dropMonster').val())
 	) {
 		[power.augPRM, power.augPEM] = info.types[$('#weaponRampage0').value];
-	}
-	if (/BowGun/.test($('#dropWeaponType').val())) {
-		// Elemental Reload
-		power.BEM *= JSON.parse(BarrelId.value).Element;
-		// Power Barrel
-		power.BRM *= JSON.parse(BarrelId.value).Power;
-	}
+	} else if (info[$(weaponType).val()].weapons[dropWeapon.value].rampageDecos > 0 && info.keys(info.types[dropMonster.value]))
+		if (/BowGun/.test($('#dropWeaponType').val())) {
+			// Elemental Reload
+			power.BEM *= JSON.parse(BarrelId.value).Element;
+			// Power Barrel
+			power.BRM *= JSON.parse(BarrelId.value).Power;
+		}
 	// If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
 	power.PEM *=
 		$('#weaponRampage0').value === 'Elemental Exploit' && info.monster[$('#dropMonster').val()].HitZone[$('#dropHZ').val()][power.eleType] >= 25 ? 1.3 : 1;
@@ -936,7 +938,7 @@ function MonChart() {
 
 		Object.entries(info.monster.hzv[dropMonster.value]).forEach(element => {
 			const row = document.createElement('tr');
-			let HZV = [element[0]].concat(Object.values(element[1]).splice(2, 8));
+			let HZV = [`${element[1].part} ${element[1].state}`].concat(Object.values(element[1]).splice(3, 8));
 
 			for (let j = 0; j < 9; ++j) {
 				const cell = document.createElement('td');
@@ -1321,15 +1323,14 @@ function showMenu() {
 	document.querySelector('#MR').children.length > 0 ? $('#divMR').show() : $('#divMR').hide();
 	if (document.querySelector('#HR').children.length > 0) {
 		$('#divHR').show();
-		$('div.menu').css('top', '-50%');
+		$('div.menu').css('top', '-46%');
 	}
 	if (document.querySelector('#HR').children.length === 0) {
 		$('#divHR').hide();
-		$('div.menu').css('top', '-100%');
+		$('div.menu').css('top', '-93%');
 	}
 }
 function updateQuest() {
-	$('#dropQuest').empty();
 	$('#dropQuest').append($('<option></option>').attr('value', event.target.value).text([event.target[event.target.selectedIndex].text]));
 	$('div.menu').hide();
 }
@@ -1371,6 +1372,36 @@ function getHealthPools() {
 		healthPool = [[healthPool[0] - healthMod * 2], [healthPool[0] - healthMod], [healthPool[0]], [healthPool[0] + healthMod], [healthPool[0] + healthMod * 2]];
 		return healthPool;
 	}
+}
+function json(arr) {
+	let headers = arr.splice(0, 1);
+	let newobj = {};
+	let newjson = {};
+	let i = 0;
+	let ugh = [];
+	let ugh2 = [];
+	let check = '';
+	arr.forEach(function (part, index) {
+		if (check !== '' && check !== part[0]) {
+			newjson[arr[index - 1][0]] = ugh;
+
+			ugh = [];
+			i = 0;
+		}
+		ugh[i] = {};
+		$(part).each(function (index, element) {
+			if (index > 0) {
+				if (/[1-9]/.test(element)) {
+					ugh[i][headers[0][index]] = Number(element);
+				} else {
+					ugh[i][headers[0][index]] = element;
+				}
+			}
+		});
+		++i;
+		check = part[0];
+	});
+	console.log(newjson);
 }
 /**function getMenu() {
 		if (Object.values(check).every(keyCard => keyCard)) {
