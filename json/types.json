@@ -87,7 +87,7 @@
   "Coalescence",
   "Bloodlust",
   "Dereliction",
-  "Chain Crit"
+  "ChainCrit"
  ],
  "Sever": [
   "ElementalAttack",
@@ -109,7 +109,7 @@
   "Coalescence",
   "Bloodlust",
   "Dereliction",
-  "Chain Crit"
+  "ChainCrit"
  ],
  "Blunt": [
   "ElderEssence",
@@ -130,7 +130,7 @@
   "ElementalAttack",
   "Coalescence",
   "Bloodlust",
-  "Chain Crit",
+  "ChainCrit",
   "Dereliction"
  ],
  "AllSkills": [
@@ -154,7 +154,7 @@
   "Coalescence",
   "Bloodlust",
   "Dereliction",
-  "Chain Crit"
+  "ChainCrit"
  ],
  "unique": [
   "PierceUp",
