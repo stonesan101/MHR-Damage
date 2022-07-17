@@ -1258,7 +1258,7 @@ function MonsterSelect() {
 function PartSelect() {
 	let parts = [];
 	info.monster.hzv[dropMonster.value].forEach(hitzone => {
-		parts.push(hitzone.part);
+		parts.push([`${hitzone.part} ${hitzone.state}`]);
 	});
 	PopulateDropDowns(parts, dropHZ);
 }
