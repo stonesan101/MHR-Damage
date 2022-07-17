@@ -79,7 +79,8 @@
             </tbody>
           </table>
         </div>
-        <input id='taWikiSetBuilder' onclick="emptyContainer()" onchange='decodeURL()' value='Paste TA Wiki Set Builder Link Here'></input>
+        <input id='taWikiSetBuilder' onpaste='paste(); emptyContainer()' onclick="emptyContainer()" onchange='decodeURL()'
+               value='Paste TA Wiki Set Builder Link Here'></input>
       </div>
       <div class="contain" id="boxes">
         <h1>Consumables / Other</h1>

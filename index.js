@@ -1170,10 +1170,14 @@ function jsonsLoaded() {
 		$('#comboCountContainer').height($('#statsTableDiv').height() + $('#weaponSelect').height() + $('#raw').height());
 	}
 }
-
-function decodeURL() {
-	if (/mhrise\.wiki-db\.com/.test(taWikiSetBuilder.value)) {
-		let decode = decodeURIComponent(taWikiSetBuilder.value);
+function paste() {
+	let pasteurl = (event.clipboardData || window.clipboardData).getData('text');
+	decodeURL(pasteurl);
+	$(taWikiSetBuilder).text(document.createTextNode('Paste TA Wiki Set Builder Link Here'));
+}
+function decodeURL(url = taWikiSetBuilder.value) {
+	if (/mhrise\.wiki-db\.com/.test(url)) {
+		let decode = decodeURIComponent(url);
 		let skills = decode.match('(?<=skills=)(.*?)(?=&)')[0].split(',');
 		ResetSkills(document.querySelectorAll(`.thisSkill:not(.${$(weaponType).val()})`));
 		$.each(skills, function (index, value) {
