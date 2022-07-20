@@ -14,14 +14,16 @@
 		"Counterstrike",
 		"WallRunner",
 		"Spiribird",
-		"felineTemper",
+		"DangoTemper",
 		"chargedShot",
 		"fanningManeuver",
 		"evadeHop",
 		"Coalescence",
 		"Dereliction",
 		"MailofHellfire",
+		"Adrenaline",
 		"Booster",
+		"Foray",
 		"Bloodlust"
 	],
 	"Clusters": [
@@ -41,11 +43,13 @@
 		"Coalescence",
 		"Dereliction",
 		"MailofHellfire",
+		"Adrenaline",
 		"Booster",
 		"Bloodlust",
+		"Foray",
 		"Spiribird"
 	],
-	"EleAED": ["baseEle", "ElementalAttack", "ElderEssence", "MailofHellfire", "CriticalElement"],
+	"EleAED": ["baseEle", "Adrenaline", "ElementalAttack", "ElderEssence", "MailofHellfire", "CriticalElement"],
 	"IMPAED": [
 		"AttackBoost",
 		"Dragonheart",
@@ -65,6 +69,8 @@
 		"MailofHellfire",
 		"Booster",
 		"ChainCrit",
+		"Foray",
+		"Adrenaline",
 		"Bloodlust"
 	],
 	"Gunner": [
@@ -85,7 +91,7 @@
 		"MaximumMight",
 		"LatentPower",
 		"bowCoating",
-		"felineTemper",
+		"DangoTemper",
 		"chargedShot",
 		"fanningManeuver",
 		"evadeHop",
@@ -93,6 +99,8 @@
 		"Bloodlust",
 		"Dereliction",
 		"MailofHellfire",
+		"Foray",
+		"Adrenaline",
 		"Booster",
 		"ChainCrit"
 	],
@@ -118,6 +126,9 @@
 		"MailofHellfire",
 		"Dereliction",
 		"Booster",
+		"Grinder",
+		"Foray",
+		"Adrenaline",
 		"ChainCrit"
 	],
 	"Blunt": [
@@ -141,6 +152,8 @@
 		"Bloodlust",
 		"ChainCrit",
 		"MailofHellfire",
+		"Foray",
+		"Adrenaline",
 		"Booster",
 		"Dereliction"
 	],
@@ -165,6 +178,7 @@
 		"Coalescence",
 		"Bloodlust",
 		"MailofHellfire",
+		"Adrenaline",
 		"Booster",
 		"Dereliction",
 		"ChainCrit"

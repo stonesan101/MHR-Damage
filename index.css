@@ -182,9 +182,9 @@ body {
 #comboCountDisplay {
   min-width: min-content;
   width: 15rem;
-  overflow: auto;
+
   display: grid;
-  position: absolute;
+
   z-index: 55;
   background-color: rgb(0, 14, 94);
 }
@@ -615,6 +615,7 @@ div#monDropDowns {
 }
 
 div#damageTable {
+  overflow: auto;
   grid-area: 6 / 1 / 7 / -1;
 }
 
@@ -680,17 +681,15 @@ label,
   background-color: rgba(27, 25, 94, 0.71);
 }
 
-#raw>div:nth-child(19) {
-  grid-column: 3 / auto;
-}
 
-#raw>div:nth-child(20) {
-  grid-column: 4 / auto;
-}
 
-#raw>div:nth-child(21) {
-  grid-column: 5 / auto;
-}
+
+
+
+
+
+
+
 
 table#monTable {
   border-color: rgb(77, 67, 69);

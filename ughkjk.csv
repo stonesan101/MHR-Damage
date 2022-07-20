@@ -1,65 +1,118 @@
-	Wyvern-Exploit	Anti-Aerial	Anti-Aquatic	Fanged-Exploit
-Aknosom	TRUE	TRUE	FALSE	FALSE
-Almudron	TRUE	FALSE	TRUE	FALSE
-Anjanath	TRUE	FALSE	FALSE	FALSE
-Apex Arzuros	FALSE	FALSE	FALSE	FALSE
-Apex Diablos	FALSE	FALSE	FALSE	FALSE
-Apex Mizutsune	FALSE	FALSE	FALSE	FALSE
-Apex Rathalos	FALSE	FALSE	FALSE	FALSE
-Apex Rathian	FALSE	FALSE	FALSE	FALSE
-Apex Zinogre	FALSE	FALSE	FALSE	FALSE
-Arzuros	FALSE	FALSE	FALSE	TRUE
-Astalos	TRUE	TRUE	FALSE	FALSE
-Aurora Somnacanth	TRUE	FALSE	TRUE	FALSE
-Barioth	TRUE	TRUE	FALSE	FALSE
-Barroth	TRUE	FALSE	FALSE	FALSE
-Basarios	TRUE	TRUE	FALSE	FALSE
-Bazelgeuse	TRUE	TRUE	FALSE	FALSE
-Bishaten	FALSE	FALSE	FALSE	TRUE
-Blood Orange Bishaten	FALSE	FALSE	FALSE	TRUE
-Chameleos	FALSE	TRUE	FALSE	FALSE
-Crimson Glow Valstrax	FALSE	TRUE	FALSE	FALSE
-Daimyo Hermitaur	FALSE	FALSE	TRUE	FALSE
-Diablos	TRUE	TRUE	FALSE	FALSE
-Espinas	TRUE	TRUE	FALSE	FALSE
-Furious Rajang	FALSE	FALSE	FALSE	TRUE
-Gaismagorm	FALSE	FALSE	FALSE	FALSE
-Garangolm	FALSE	FALSE	FALSE	TRUE
-Gore Magala	FALSE	TRUE	FALSE	FALSE
-Goss Harag	FALSE	FALSE	FALSE	TRUE
-Great Baggi	TRUE	FALSE	FALSE	FALSE
-Great Izuchi	TRUE	FALSE	FALSE	FALSE
-Great Wroggi	TRUE	FALSE	FALSE	FALSE
-Jyuratodus	TRUE	FALSE	TRUE	FALSE
-Khezu	TRUE	TRUE	FALSE	FALSE
-Kulu-Ya-Ku	TRUE	FALSE	FALSE	FALSE
-Kushala Daora	FALSE	TRUE	FALSE	FALSE
-Lagombi	FALSE	FALSE	FALSE	TRUE
-Lunagaron	TRUE	FALSE	FALSE	FALSE
-Magma Almudron	TRUE	FALSE	TRUE	FALSE
-Magnamalo	TRUE	FALSE	FALSE	FALSE
-Malzeno	FALSE	TRUE	FALSE	FALSE
-Mizutsune	TRUE	FALSE	TRUE	FALSE
-Nargacuga	TRUE	TRUE	FALSE	FALSE
-Narwa The Allmother	FALSE	TRUE	FALSE	FALSE
-Pukei-Pukei	TRUE	TRUE	FALSE	FALSE
-Pyre Rakna-Kadaki	FALSE	FALSE	FALSE	FALSE
-Rajang	FALSE	FALSE	FALSE	TRUE
-Rakna-Kadaki	FALSE	FALSE	FALSE	FALSE
-Rathalos	TRUE	TRUE	FALSE	FALSE
-Rathian	TRUE	TRUE	FALSE	FALSE
-Royal Ludroth	TRUE	FALSE	TRUE	FALSE
-Scorned Magnamalo	TRUE	FALSE	FALSE	FALSE
-Seregios	TRUE	TRUE	FALSE	FALSE
-Shagaru Magala	FALSE	TRUE	FALSE	FALSE
-Shogun Ceanataur	FALSE	FALSE	TRUE	FALSE
-Somnacanth	TRUE	FALSE	TRUE	FALSE
-Teostra	FALSE	TRUE	FALSE	FALSE
-Tetranadon	FALSE	FALSE	TRUE	FALSE
-Thunder Serpent Narwa	FALSE	TRUE	FALSE	FALSE
-Tigrex	TRUE	TRUE	FALSE	FALSE
-Toadversary	FALSE	FALSE	FALSE	FALSE
-Tobi-Kadachi	TRUE	FALSE	FALSE	FALSE
-Volvidon	FALSE	FALSE	FALSE	TRUE
-Wind Serpent Ibushi	FALSE	TRUE	FALSE	FALSE
-Zinogre	TRUE	FALSE	FALSE	FALSE
+ugh=[#Affinity Slidingm,
+#Agitatorm,
+#Ammo Upm,
+#Artillerym,
+#Attack Boostm,
+#Ballisticsm,
+#Bladescale Honem,
+#Blast Attackm,
+#Blast Resistancem,
+#Blight Resistancem,
+#Blood Ritem,
+#Bloodlustm,
+#Bludgeonerm,
+#Bombardierm,
+#Botanistm,
+#Bow Charge Plusm,
+#Bubbly Dancem,
+#Capture Masterm,
+#Carving Masterm,
+#Carving Prom,
+#Chain Critm,
+#Chameleos Blessingm,
+#Charge Masterm,
+#Coalescencem,
+#Constitutionm,
+#Counterstrikem,
+#Critical Boostm,
+#Critical Drawm,
+#Critical Elementm,
+#Critical Eyem,
+#Defense Boostm,
+#Derelictionm,
+#Diversionm,
+#Divine Blessingm,
+#Dragon Attackm,
+#Dragon Resistancem,
+#Dragonheartm,
+#Earplugsm,
+#Evade Extenderm,
+#Evade Windowm,
+#Fire Attackm,
+#Fire Resistancem,
+#Flinch Freem,
+#Focusm,
+#Foraym,
+#Fortifym,
+#Free Mealm,
+#Furiousm,
+#Geologistm,
+#Good Luckm,
+#Grinder (S)m,
+#Guardm,
+#Guard Upm,
+#Handicraftm,
+#Hellfire Cloakm,
+#Heroicsm,
+#Horn Maestrom,
+#Hunger Resistancem,
+#Ice Attackm,
+#Ice Resistancem,
+#Item Prolongerm,
+#Jump Masterm,
+#Kushala Blessingm,
+#LV1 Slot Skillm,
+#LV2 Slot Skillm,
+#LV3 Slot Skillm,
+#LV4 Slot Skillm,
+#Latent Powerm,
+#Leap of Faithm,
+#Load Shellsm,
+#Mail of Hellfirem,
+#Marathon Runnerm,
+#Master Mounterm,
+#Master's Touchm,
+#Maximum Mightm,
+#Mind's Eyem,
+#Muck Resistancem,
+#Mushroomancerm,
+#Normal/Rapid Upm,
+#Offensive Guardm,
+#Paralysis Attackm,
+#Paralysis Resistancem,
+#Partbreakerm,
+#Peak Performancem,
+#Pierce Upm,
+#Poison Attackm,
+#Poison Resistancem,
+#Power Prolongerm,
+#Protective Polishm,
+#Punishing Drawm,
+#Quick Breathm,
+#Quick Sheathem,
+#Rapid Fire Upm,
+#Rapid Morphm,
+#Razor Sharpm,
+#Recoil Downm,
+#Recovery Speedm,
+#Recovery Upm,
+#Redirectionm,
+#Reload Speedm,
+#Resentmentm,
+#Resuscitatem,
+#Sleep Attackm,
+#Spare Shotm,
+#Special Ammo Boostm,
+#Spread Upm,
+#Steadinessm,
+#Stormsoulm,
+#Teostra Blessingm,
+#Thunder Alignmentm,
+#Thunder Attackm,
+#Tune-Upm,
+#Wall Runnerm,
+#Water Attackm,
+#Weakness Exploit]
+
+
+
