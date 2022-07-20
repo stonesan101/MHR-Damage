@@ -748,13 +748,13 @@ div#aff.contain {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-style: none;
-  grid-area: 7 / 1 / 8 / 3;
+  grid-area: 8 / 1 / 9 / 3;
 }
 
 div#ele.contain {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-area: 7 / 4 / 8 / 6;
+  grid-area: 8 / 4 / 9 / 6;
   justify-content: end;
 }
 
@@ -1192,7 +1192,7 @@ td {
 
 }
 
-.menu,
+/* .menu,
 article,
 aside,
 figure,
@@ -1201,7 +1201,7 @@ header,
 hgroup,
 nav {
   display: block;
-}
+} */
 
 * {
   -webkit-box-sizing: border-box;
@@ -1241,10 +1241,7 @@ nav {
 
 .menu li a {
   font-weight: 600;
-
-
   display: grid;
-
   transition: all 0.2s ease-in-out 0s;
 }
 

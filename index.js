@@ -4,6 +4,7 @@ let count = 0;
 let comboTracker = [];
 let tempAmmo = {};
 const info = {};
+
 const weaponType = document.getElementById('dropWeaponType');
 const sharpnessMod = {
 	white: {
@@ -50,7 +51,6 @@ const weaponTypes = [
 const jsons = [['monster'], ['types'], ['rampage'], ['ammo'], ['quest']];
 $([].concat(jsons, weaponTypes)).each(function () {
 	$.getJSON(`${baseURL}/json/${this}.json`, data => {
-		++count;
 		info[this] = data;
 		if (/monster|types|rampage|quest|GreatSword|ammo/.test(this)) {
 			++check[this];
@@ -123,21 +123,21 @@ function RangedDPS() {
 		];
 
 		ammoFrameData.push(ammoStats);
-		if (pass1 === true) {
+		if (pass1) {
 			const stats = [
 				['Stat', 'Raw', 'Affinity', 'Ele Ammo'],
-				['Base', ~~power.baseRaw, power.baseAff, ~~(0.1 + 11 * power.eleAmmo)],
+				['Base', ~~power.baseRaw, ~~power.baseAff, ~~(0.1 + 11 * power.eleAmmo)],
 				['Pre-Cap', ~~power.raw, power.aff * 100, ~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo)],
 				[
 					'Post-Cap',
 					~~(power.raw * power.critBoost * power.PRM * power.enrage * power.augPRM * JSON.parse(felineMarksmanid.value)[0]),
-					power.aff * 100,
+					~~(power.aff * 100),
 					~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo * power.PEM * power.enrage * power.augPEM * power.eleCritBoost),
 				],
 				[
 					'Effective',
 					~~(power.raw * power.efrMulti * power.PRM * power.enrage * power.augPRM * JSON.parse(felineMarksmanid.value)[1]),
-					power.aff * 100,
+					~~(power.aff * 100),
 					~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo * power.PEM * power.enrage * power.augPEM * power.efeMulti),
 				],
 			];
@@ -168,30 +168,29 @@ function MeleeDPS() {
 	let meleeDamage = [['Combo', 'Attack Name', 'MV', 'Raw', 'Element', 'Total', 'EFR', 'EFE', 'Effective']];
 	let comboDamage = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 	let power = {};
-	let firstRun = 0;
-
-	power = { ...info[$(weaponType).val()].weapons[dropWeapon.value] };
-	power = ApplyRampageSelections(power);
+	let firstRun = true;
 	//  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
-	// console.log(power, 'ramp');
+	//
 	if ($(weaponType).val() === 'Bow' || $(weaponType).val() === 'ChargeBlade' || $(weaponType).val() === 'InsectGlaive' || $(weaponType).val() === 'Gunlance') {
-		power.attacks = AddDependantSkills(power);
+		power.attacks = { ...AddDependantSkills(power) };
 	} else {
-		power.attacks = info[$(weaponType).val()].attacks;
+		power.attacks = { ...getAttacks() };
 	}
 	$(Object.keys(power.attacks)).each(function (attackID, eachAttack) {
-		power = { ...power, ...info[$(weaponType).val()].attacks[eachAttack] };
-		// console.log(power, 'init2');
+		power = { ...power, ...info[$(weaponType).val()].attacks[eachAttack], ...getWeapon() };
+		power = { ...ApplyRampageSelections(power) };
+		//
 		power = GetSkills(power);
-		// console.log(power, 'getskills');
+		//
 
-		if (/inputs|inputButton/.test(event.target.className) && firstRun === 0 && !/BowGun/.test($(weaponType).val())) {
+		if (/inputs|inputButton/.test(event.target.className) && firstRun && !/BowGun/.test($(weaponType).val())) {
 			UpdateComboTracker();
 			UpdateComboDisplay();
 		}
 
-		power = firstRun === 0 && power.comboHitsPerColor === undefined && $(weaponType).val() !== 'Bow' ? TotalHitsOfSharpUsed(power) : power;
-
+		if (firstRun && power.comboHitsPerColor === undefined && $(weaponType).val() !== 'Bow') {
+			power = TotalHitsOfSharpUsed(power);
+		}
 		power = GetRemainingSkills(power);
 
 		power = DamageCalculations(power);
@@ -253,7 +252,7 @@ function MeleeDPS() {
 
 		meleeDamage.push(damage);
 		// stats stores calculations to be used for the statsTable
-		if (firstRun === 0) {
+		if (firstRun) {
 			const stats = [
 				[['Stat'], ['Raw'], ['Affinity'], [power.eleType]],
 				['Base', ~~power.baseRaw, power.baseAff, power.baseEle],
@@ -271,8 +270,8 @@ function MeleeDPS() {
 					~~(power.ele * power.efeMulti * power.PEM * power.augPEM * power.enrage * power.augEFR * sharpnessModifier.PEM),
 				],
 			];
-			++firstRun;
 			BuildDamageTable(stats, 'stats');
+			firstRun = false;
 		}
 	});
 	if ($('#dropWeaponType').val() === 'Gunlance') {
@@ -326,18 +325,21 @@ function ApplyRampageSelections(power) {
 		}
 	}
 	power.baseAff = power.aff;
-	return power;
+
+	return { ...power };
 }
 
 function AddDependantSkills(power) {
 	if ($(weaponType).val() === 'InsectGlaive') {
 		let attacks = Object.fromEntries(Object.entries(info.InsectGlaive.attacks).filter(skill => !/Kinsect|Dust|Powder|Mark/.test(skill)));
+
 		return attacks;
 	} else if ($(weaponType).val() === 'ChargeBlade') {
 		const phialType = info.ChargeBlade.weapons[$('#dropWeapon').val()].phialType === 'Impact Phial' ? 'Element Phial' : 'Impact Phial';
 		const regexp = new RegExp(`${phialType}`);
 
 		let attacks = Object.fromEntries(Object.entries(info.ChargeBlade.attacks).filter(skill => !regexp.test(skill)));
+
 		return attacks;
 
 		//  filters bow attacks for only the usable attacks
@@ -355,6 +357,7 @@ function AddDependantSkills(power) {
 			}
 		});
 		let regex = new RegExp([usableKeys.slice(1)]);
+
 		return {
 			...Object.fromEntries(Object.entries(attacksTemp).splice(0, 1)),
 			...Object.fromEntries(Object.entries(attacksTemp).filter(skill => regex.test(skill))),
@@ -367,6 +370,7 @@ function AddDependantSkills(power) {
 function GetSkills(power) {
 	const damageType = power.type;
 	const elementType = power.eleType;
+	power.baseRaw += power.Draw === true ? +PunishingDraw.value : 0;
 	power.BR = 0;
 	power.BRM = 1;
 	power.PRM = 1;
@@ -458,8 +462,8 @@ function GetSkills(power) {
 	} else if ($(weaponType).val() === 'LongSword') {
 		power.getSkills.push('Helmbreaker');
 	}
+	// applies GreatSwords Charge Level Bonus
 	if ($(weaponType).val() === 'GreatSword' && /(?<=Lv)1|2|3/.test(power.attackName)) {
-		// applies GreatSwords Charge Level Bonus
 		power.rawMV *= Number('1.' + power.attackName.match('(?<=Lv)1|2|3')[0]);
 		power.rawMV = power.rawMV.toFixed(1);
 	}
@@ -470,6 +474,7 @@ function GetSkills(power) {
 		}
 		info.ChargeBlade.weapons[dropWeapon.value].phialType === 'Impact Phial' ? power.getSkills.push('impShieldCharge') : power.getSkills.push('eleShieldCharge');
 	}
+	power.aff += weaponRampage0.value === 'Hellion Mode' && weaponType.value === 'DualBlades' ? 20 : 0;
 
 	power.getSkills.forEach(skill => {
 		if (document.getElementById([skill]).selectedIndex > 0) {
@@ -490,63 +495,7 @@ function GetSkills(power) {
 	power.aff = power.rawHZV >= 45 ? power.aff + JSON.parse($('#WeaknessExploit').val()) : power.aff;
 	power.aff = Math.min(power.aff, 100) / 100;
 
-	return power;
-}
-function GetRemainingSkills(power) {
-	[power.augEFR, power.augPRM, power.augPEM] = [1, 1, 1];
-	const regex = new RegExp();
-	/*
-	 * If an anti species type skill is selected it gets the list of monsters applicable and checks
-	 *if the selected monster is in the list.If true, it applies the skill.
-	 */
-	if (
-		info[$(weaponType).val()].weapons[dropWeapon.value].rampageDecos === 0 &&
-		Object.prototype.hasOwnProperty.call(info.types, $('#weaponRampage0').value) &&
-		Object.prototype.hasOwnProperty.call(info.types[$('#weaponRampage0').value].Monsters, $('#dropMonster').val())
-	) {
-		[power.augPRM, power.augPEM] = info.types[$('#weaponRampage0').value];
-	} else if (info[$(weaponType).val()].weapons[dropWeapon.value].rampageDecos > 0 && info.keys(info.types[dropMonster.value]))
-		if (/BowGun/.test($('#dropWeaponType').val())) {
-			// Elemental Reload
-			power.BEM *= JSON.parse(BarrelId.value).Element;
-			// Power Barrel
-			power.BRM *= JSON.parse(BarrelId.value).Power;
-		}
-	// If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
-	power.PEM *=
-		$('#weaponRampage0').value === 'Elemental Exploit' && info.monster[$('#dropMonster').val()].HitZone[$('#dropHZ').val()][power.eleType] >= 25 ? 1.3 : 1;
-	power.augPEM = $('#weaponRampage0').val() === 'Valstrax Soul' && power.eleType === 'Dragon' ? 1.2 : power.augPEM;
-	// applies Dulling Strike to Base raw depending on sharpness and if selected
-	[power.augEFR, power.augPRM] = $('#weaponRampage0').value === 'Dulling Strike' && Sharpness.selectedIndex < 5 ? [1.02, 1.2] : [1, 1];
-	// applies Bludgeoner to Base raw depending on sharpness and selectedIndex
-	if (Sharpness.selectedIndex > 0) {
-		power.BRM *= Bludgeoner.selectedIndex === 1 && Sharpness.selectedIndex < 4 ? [1.05] : [1];
-		power.BRM *= Bludgeoner.selectedIndex === 2 && Sharpness.selectedIndex < 4 ? [1.1] : [1];
-		power.BRM *= Bludgeoner.selectedIndex === 3 && Sharpness.selectedIndex < 5 ? [1.1] : [1];
-	}
-	// applies sharpnessModifier to sever and blunt type attacks that use at least one hit of sharpness. This makes sure attacks like tackle or Bow skills don't get a sharpness modifier.
-
-	const sharpnessModifier = [];
-	[sharpnessModifier.PRM, sharpnessModifier.PEM] = power.noSharpMod === false ? [JSON.parse(Sharpness.value).PRM, JSON.parse(Sharpness.value).PEM] : [1, 1];
-	power.PRM *=
-		~~(0.1 + 25 / sharpnessModifier.PRM) >= info.monster.hzv[$('#dropMonster').val()][dropHZ.selectedIndex][power.type]
-			? JSON.parse(document.getElementById([`MindsEye`]).value).PRM
-			: 1;
-	power.critBoost = power.Crit === true ? JSON.parse($('#CriticalBoost').val()).PRM : 1;
-
-	power.efrMulti = 1 + (power.critBoost - 1) * power.aff;
-
-	/*
-	 * Brutal Strike
-	 * Converts -Aff to a positive then * chance to proc * dmg modifier then
-	 * adds the -dps to the +dps gain to find overall dps difference
-	 */
-	power.brutalEFR = (power.aff - power.aff * 2) * 0.25 * 0.1 + (power.aff - power.aff * 2) * -0.25 * 0.75;
-	[power.efrMulti, power.critBoost] =
-		$('#weaponRampage0').value === 'Brutal Strike' && power.aff < 0 ? [1 + power.brutalEFR, 1.5] : [power.efrMulti, power.critBoost];
-
-	power.eleCritBoost = power.Crit === true ? JSON.parse($('#CriticalElement').val()).PEM : 1;
-	return power;
+	return { ...power };
 }
 function UpdateComboTracker() {
 	if (!Number.isNaN(+event.target.id) && event.target.id !== '0') {
@@ -706,15 +655,102 @@ function TotalHitsOfSharpUsed(power) {
 		Sharpness.selectedIndex = 1;
 	}
 
-	return power;
+	return { ...power };
 }
-function DamageCalculations(power) {
-	power.raw = power.Raw === false ? 0 : Math.min(power.baseRaw * power.BRM + power.BR, 2600);
-	const rawFormula = power.Raw === false ? 0 : (power.raw * power.PRM * power.augPRM * power.rawHZV * power.enrage * power.rawMV) / 10000;
-	power.rawNon = power.Raw === false ? 0 : rawFormula * JSON.parse(felineMarksmanid.value)[0];
-	power.efr = power.Raw === false ? 0 : rawFormula * power.efrMulti * JSON.parse(felineMarksmanid.value)[1];
-	power.rawCrit = power.Raw === false ? 0 : rawFormula * power.critBoost * JSON.parse(felineMarksmanid.value)[0];
+function GetRemainingSkills(power) {
+	[power.augEFR, power.augPRM, power.augPEM] = [1, 1, 1];
 
+	/*
+	 * If an anti species type skill is selected it gets the list of monsters applicable and checks
+	 *if the selected monster is in the list.If true, it applies the skill.
+	 */
+	if (
+		info[$(weaponType).val()].weapons[dropWeapon.value].rampageSlots === 0 &&
+		Object.prototype.hasOwnProperty.call(info.types, $('#weaponRampage0').val()) &&
+		Object.prototype.hasOwnProperty.call(info.types[$('#weaponRampage0').val()].Monsters, $('#dropMonster').val())
+	) {
+		[power.augPRM, power.augPEM] = info.types[$('#weaponRampage0').val()];
+	} else if (
+		dropMonster.value !== 'Toadversary' &&
+		getWeapon().rampageSlots > 0 &&
+		Object.entries(info.types[dropMonster.value]).filter(isSpecies => isSpecies[1] && weaponRampage0.value.match(isSpecies[0])).length > 0
+	) {
+		power.PRM *= 1.05;
+		power.PEM *= 1.05;
+	}
+	if (/blight Exploit/.test(weaponRampage0.value)) {
+		power.PRM *= 1.1;
+		power.PEM *= 1.1;
+	}
+	if (/BowGun/.test($('#dropWeaponType').val())) {
+		// Elemental Reload
+		power.BEM *= JSON.parse(BarrelId.value).Element;
+		// Power Barrel
+		if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BarrelId.options[BarrelId.selectedIndex].text === 'Power Barrel') {
+			power.baseRaw = ~~(power.baseRaw * 1.125);
+		} else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Power Barrel') {
+			power.baseRaw = ~~(power.baseRaw * 1.15);
+		}
+		if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BarrelId.options[BarrelId.selectedIndex].text === 'Long Barrel') {
+			power.baseRaw = ~~(power.baseRaw * 1.05);
+		} else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Long Barrel') {
+			power.baseRaw = ~~(power.baseRaw * 1.075);
+		}
+	}
+	// If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
+	power.PEM *=
+		getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Elemental Exploit' && getHZ()[lower(getWeapon().eleType)] >= 25
+			? 1.3
+			: (power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Element Exploit' && getHZ()[lower(getWeapon().eleType)] >= 25 ? 1.15 : 1);
+	power.augPEM = $('#weaponRampage0').val() === 'Valstrax Soul' && power.eleType === 'Dragon' ? 1.2 : power.augPEM;
+	// applies Dulling Strike to Base raw depending on sharpness and if selected
+	[power.augEFR, power.augPRM] = $('#weaponRampage0').val() === 'Dulling Strike' && Sharpness.selectedIndex < 5 ? [1.02, 1.2] : [1, 1];
+	// applies Bludgeoner to Base raw depending on sharpness and selectedIndex
+	if (Sharpness.selectedIndex > 0) {
+		power.BRM *= Bludgeoner.selectedIndex === 1 && Sharpness.selectedIndex < 4 ? [1.05] : [1];
+		power.BRM *= Bludgeoner.selectedIndex === 2 && Sharpness.selectedIndex < 4 ? [1.1] : [1];
+		power.BRM *= Bludgeoner.selectedIndex === 3 && Sharpness.selectedIndex < 5 ? [1.1] : [1];
+	}
+	// applies sharpnessModifier to sever and blunt type attacks that use at least one hit of sharpness. This makes sure attacks like tackle or Bow skills don't get a sharpness modifier.
+
+	const sharpnessModifier = [];
+	[sharpnessModifier.PRM, sharpnessModifier.PEM] = power.noSharpMod === false ? [JSON.parse(Sharpness.value).PRM, JSON.parse(Sharpness.value).PEM] : [1, 1];
+	power.PRM *=
+		~~(0.1 + 25 / sharpnessModifier.PRM) >= info.monster.hzv[$('#dropMonster').val()][dropHZ.selectedIndex][power.type]
+			? JSON.parse(document.getElementById([`MindsEye`]).value).PRM
+			: 1;
+	power.critBoost = power.Crit === true ? JSON.parse($('#CriticalBoost').val()).PRM : 1;
+
+	power.efrMulti = 1 + (power.critBoost - 1) * power.aff;
+
+	/*
+	 * Brutal Strike
+	 * Converts -Aff to a positive then * chance to proc * dmg modifier then
+	 * adds the -dps to the +dps gain to find overall dps difference
+	 */
+
+	if (getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Brutal Strike' && power.aff < 0) {
+		power.efrMulti = 1 + power.aff * -1 * 0.2 * 1.5 - power.aff * -1 * 0.8 * 0.75;
+		power.critBoost = 1.5;
+	} else if (getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Brutal Strike' && power.aff < 0) {
+		power.efrMulti = 1 + power.aff * -1 * 0.25 * 2 - power.aff * -1 * 0.75 * 0.75;
+		power.critBoost = 1.5;
+	}
+	power.eleCritBoost = power.Crit === true ? JSON.parse($('#CriticalElement').val()).PEM : 1;
+
+	return { ...power };
+}
+
+function DamageCalculations(power) {
+	if (power.Raw === false) {
+		[power.raw, power.rawNon, power.efr, power.rawCrit] = [0, 0, 0, 0];
+	} else {
+		power.raw = Math.min(power.baseRaw * power.BRM + power.BR, 2600);
+		const rawFormula = (power.raw * power.PRM * power.augPRM * power.rawHZV * power.enrage * power.rawMV) / 10000;
+		power.rawNon = rawFormula * JSON.parse(felineMarksmanid.value)[0];
+		power.efr = rawFormula * power.efrMulti * power.augEFR * JSON.parse(felineMarksmanid.value)[1];
+		power.rawCrit = rawFormula * power.critBoost * JSON.parse(felineMarksmanid.value)[0];
+	}
 	power.eleAmmo =
 		power.Ele === false ? 0 : /BowGun/.test($('#dropWeaponType').val()) && /(Ice|Fire|Water|Dragon|Thunder)/.test(power.eleType) ? 1 + power.raw / 100 : 1;
 	power.ele = power.Ele === false ? 0 : Math.min(power.baseEle * power.BEM + power.BE, 365) * power.eleAmmo;
@@ -739,7 +775,8 @@ function DamageCalculations(power) {
 			: eleFormula * power.eleCritBoost > 0 && eleFormula * power.eleCritBoost < 1
 			? 1
 			: ~~(0.1 + eleFormula * power.eleCritBoost);
-	return power;
+
+	return { ...power };
 }
 function BowComboDamage() {
 	/*
@@ -760,6 +797,7 @@ function BowComboDamage() {
 			});
 		}
 	});
+
 	return comboDamage;
 }
 function GunlanceShelling(currentDamage, comboDamage, power) {
@@ -1031,7 +1069,7 @@ function MeleeElements() {
 }
 
 function UniqueColumnsDisplay() {
-	$('#unique')[0].style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns:repeat(4, 1fr); grid-area: 7 / 1 / 8 / 6;' : 'grid-area: 6 / 3 / 7 / 4;';
+	$('#unique')[0].style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns:repeat(4, 1fr); grid-area: 9 / 1 / 10 / 6;' : 'grid-area: 8 / 3 / 9 / 4;';
 	forButtons.style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns: repeat(10. 1fr)' : 'grid-template-columns: repeat(6, 1fr)';
 }
 function MaxSkills() {
@@ -1085,9 +1123,30 @@ function calculateAmmoFrames(power, ammoID) {
 	const ammo = {};
 	ammo.ammoIncrease = info.ammo.AmmoUp[power.attackName][AmmoUp.selectedIndex];
 	// converts to number to find frames used while staying within possible parameters
-	ammo.recoilSpeed = info.ammo.recoil[power.attackName][Math.max(0, Math.min(5, power.recoil - RecoilDown.selectedIndex - JSON.parse(BarrelId.value).Silencer))];
+	ammo.recoilSpeed =
+		info.ammo.recoil[power.attackName][
+			Math.max(
+				0,
+				Math.min(
+					5,
+					power.recoil - RecoilDown.selectedIndex - [JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex + JSON.parse(BarrelId.value).Silencer : 0][0],
+				),
+			)
+		];
 	ammo.recoilFrames = info.ammo.recoil.frames[ammo.recoilSpeed];
-	ammo.reloadSpeed = info.ammo.reload[power.attackName][Math.max(0, Math.min(8, power.reload - ReloadSpeed.selectedIndex + JSON.parse(BarrelId.value).reload))];
+	ammo.reloadSpeed =
+		info.ammo.reload[power.attackName][
+			Math.max(
+				0,
+				Math.min(
+					8,
+					power.reload -
+						ReloadSpeed.selectedIndex -
+						JSON.parse(BarrelId.value).reload -
+						[BarrelId.options[BarrelId.selectedIndex].text === 'None' && TuneUp.selectedIndex > 0 ? 1 : 0][0],
+				),
+			)
+		];
 	ammo.reloadFrames = info.ammo.reload.frames[ammo.reloadSpeed];
 	ammo.clipSize = power.clipSize[power.isUsed] + ammo.ammoIncrease;
 	ammo.spareShot = +SpareShot.value + +spareAdjust.value;
@@ -1111,6 +1170,7 @@ function calculateAmmoFrames(power, ammoID) {
 	} else if (/Pierc/.test(power.attackName)) {
 		ammo.ticsAdjust = (power.ticsPer + 1) * JSON.parse(pierceAdjust.value)[1];
 	}
+
 	return ammo;
 }
 
@@ -1221,11 +1281,8 @@ function RampageSelect() {
 		$(Object.keys(info.rampage.rampageDecos)).each(function (index, element) {
 			// element == this
 			let deco = element;
-			if (
-				info[$(weaponType).val()].weapons[dropWeapon.value].rampageSlots > 0 &&
-				this.match(`[1-${info[$(weaponType).val()].weapons[dropWeapon.value].rampageSlots}]`) !== null
-			) {
-				usableDecos.push(info.rampage.rampageDecos[this.match(`[1-${info[$(weaponType).val()].weapons[dropWeapon.value].rampageSlots}]`).input]);
+			if (+deco.slice(-1) <= getWeapon().rampageSlots) {
+				usableDecos.push(info.rampage.rampageDecos[deco]);
 			}
 		});
 		PopulateDropDowns(usableDecos, weaponRampage0);
@@ -1253,6 +1310,19 @@ function RampageSelect() {
 function MonsterSelect() {
 	PopulateDropDowns(Object.keys(info.monster.hzv), dropMonster);
 	dropMonster.selectedIndex = Object.keys(info.monster.hzv).indexOf('Toadversary');
+}
+function getHZ(part = dropHZ.value.slice(-1) === ' ' ? dropHZ.value.slice(0, dropHZ.value.length - 1) : dropHZ.value) {
+	return info.monster.hzv[dropMonster.value].filter(hitzone => hitzone.part === part)[0];
+}
+
+function getAttacks() {
+	let attacks = { ...info[weaponType.value].attacks };
+
+	return { ...attacks };
+}
+function getWeapon() {
+	let weapon = { ...info[weaponType.value].weapons[dropWeapon.value] };
+	return { ...weapon };
 }
 
 function PartSelect() {
@@ -1305,29 +1375,23 @@ function emptyContainer() {
 function onlyUnique(value, index, self) {
 	return self.indexOf(value) === index;
 }
-$(document).ready(function () {
-	var touch = $('#resp-menu');
-	var menu = $('.menu');
+// $(document).ready(function () {
+// var touch = $('#resp-menu');
+// var menu = $('.menu');
+//
+// $(touch).on('click', function (e) {
+// e.preventDefault();
+// menu.slideToggle();
+// });
 
-	$(touch).on('click', function (e) {
-		e.preventDefault();
-		menu.slideToggle();
-	});
-
-	$(window).resize(function () {
-		var w = $(window).width();
-		if (w > 767 && menu.is(':hidden')) {
-			menu.removeAttr('style');
-		}
-	});
-	1;
-});
-function deepSeal(obj1) {
-	Object.keys(obj1).forEach(property => {
-		if (typeof obj1[property] === 'object' && !Object.isSealed(obj1[property])) deepSeal(obj1[property]);
-	});
-	return Object.seal(obj1);
-}
+// $(window).resize(function () {
+// var w = $(window).width();
+// if (w > 767 && menu.is(':hidden')) {
+// menu.removeAttr('style');
+// }
+// });
+// 1;
+// });
 function showMenu() {
 	$('.menu').show();
 	document.querySelector('#MR').children.length > 0 ? $('#divMR').show() : $('#divMR').hide();
@@ -1350,6 +1414,12 @@ $(document).click(function (event) {
 		$('.menu').hide();
 	}
 });
+function capital(str) {
+	return str[0].toUpperCase() + str.slice(1);
+}
+function lower(str) {
+	return str[0].toLowerCase() + str.slice(1);
+}
 function shotsCheck(convertedRecoilFrames, convertedReloadFrames, clipSize, maxTime = 60, spareShot = 0) {
 	let spareShotAccumulator = 0;
 	spareShotAccumulator += spareShot;
@@ -1366,8 +1436,10 @@ function shotsCheck(convertedRecoilFrames, convertedReloadFrames, clipSize, maxT
 		}
 		timeUsed += convertedReloadFrames;
 	}
+
 	return totalShots;
 }
+
 function getHealthPools() {
 	const healthMod =
 		~~(0.1 + info.quest[dropQuest.value][players.value] * ((info.quest[dropQuest.value].min / info.quest[dropQuest.value]['1p'] - 1) * -1)) /
@@ -1377,9 +1449,11 @@ function getHealthPools() {
 		return healthPool;
 	} else if (info.quest[dropQuest.value].HPScale === 1) {
 		healthPool = [[healthPool[0] - healthMod], [healthPool[0]], [healthPool[0] + healthMod]];
+
 		return healthPool;
 	} else {
 		healthPool = [[healthPool[0] - healthMod * 2], [healthPool[0] - healthMod], [healthPool[0]], [healthPool[0] + healthMod], [healthPool[0] + healthMod * 2]];
+
 		return healthPool;
 	}
 }
@@ -1413,6 +1487,7 @@ function json(arr) {
 	});
 	console.log(newjson);
 }
+
 /**function getMenu() {
 		if (Object.values(check).every(keyCard => keyCard)) {
 			// $(weaponTypes).each(function (index, weaponType) {
@@ -1427,12 +1502,14 @@ function json(arr) {
 			function renderList(obj) {
 				// cosmetic utility function for capitalizing text
 				function capitalize(str) {
-					return str[0].toUpperCase() + str.slice(1);
+					console.log(power,this);
+return str[0].toUpperCase() + str.slice(1);
 				}
 				// cosmetic utility for formatting the price
 				// function formatPrice(str) {
 				// if (parseFloat(str) < 1) result += '0';
-				// return result + str;
+				// console.log(power,this);
+return result + str;
 				// }
 				// for every level of our JSON object, we create a ul element
 				var result = document.createElement('ul');
@@ -1455,7 +1532,8 @@ function json(arr) {
 					// add our completed li to the ul
 					result.appendChild(list);
 				}
-				return result;
+				console.log(power,this);
+return result;
 			}
 		}
 	}
