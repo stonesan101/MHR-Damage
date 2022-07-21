@@ -399,7 +399,7 @@ function GetSkills(power) {
 	// applies Demon Ammo if selected and damage type is sever or blunt
 	power.PRM *= $(DemonAmmo).hasClass('blue') && /(sever|blunt)/.test(power.type) ? 1.1 : 1;
 	1;
-	$('.skillButton').each(function () {
+	$('.skillButton:not(button#ProtectivePolish)').each(function () {
 		if ($(this).hasClass('blue')) {
 			const skills = JSON.parse(this.value);
 			power.BRM *= skills.BRM;
@@ -565,8 +565,8 @@ function TotalHitsOfSharpUsed(power) {
 		});
 	}
 
-	// applies the extra hits of sharpness from the Masters Touch skill; the * 5 brings it to the full value
-	const mTBonus = power.aff > 0 ? 1 + +MastersTouch.value * power.aff : 1;
+	// applies the extra hits of sharpness from the Masters Touch skill;
+	const mTBonus = power.aff > 0 && MastersTouch.selectedIndex > 0 ? (1 + +MastersTouch.value * power.aff) * (1 + +RazorSharp.value) : 1 + +RazorSharp.value;
 	total.white = ~~(mTBonus * power.hitsOfSharpness.white);
 	total.blue = ~~(mTBonus * power.hitsOfSharpness.blue);
 	total.green = ~~(mTBonus * power.hitsOfSharpness.green);
@@ -590,18 +590,20 @@ function TotalHitsOfSharpUsed(power) {
 
 	$(power.listOfEachAttack).each(function () {
 		const eachAttack = this;
-		attackKeys = Object.keys(power.attacks);
-		if ($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 28)) {
-			for (let i = 0; i < power.ticsPer + 1; i++) {
-				// applies DualBlades Sharpness Reduction
-				if ($(weaponType).val() === 'DualBlades') {
-					totalHitsOfSharpnessUsed += info[$(weaponType).val()].attacks[attackKeys[eachAttack]].hitsOfSharp / 3;
-				} else {
-					totalHitsOfSharpnessUsed += info[$(weaponType).val()].attacks[attackKeys[eachAttack]].hitsOfSharp;
+		let attackKeys = Object.keys(power.attacks);
+		if ($(ProtectivePolish).hasClass('gray')) {
+			if ($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 28)) {
+				for (let i = 0; i < power.ticsPer + 1; i++) {
+					// applies DualBlades Sharpness Reduction
+					if ($(weaponType).val() === 'DualBlades') {
+						totalHitsOfSharpnessUsed += info[$(weaponType).val()].attacks[attackKeys[eachAttack]].hitsOfSharp / 3;
+					} else {
+						totalHitsOfSharpnessUsed += info[$(weaponType).val()].attacks[attackKeys[eachAttack]].hitsOfSharp;
+					}
 				}
+			} else if ($('#dropWeaponType').val() === 'Gunlance' && eachAttack > 27) {
+				++totalHitsOfSharpnessUsed;
 			}
-		} else if ($('#dropWeaponType').val() === 'Gunlance' && eachAttack > 27) {
-			++totalHitsOfSharpnessUsed;
 		}
 		let totalHits = 0;
 		if (totalHitsOfSharpnessUsed <= (totalHits += total.white)) {
