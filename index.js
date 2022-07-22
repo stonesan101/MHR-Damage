@@ -75,9 +75,7 @@ function RangedDPS() {
 	let ammo = {};
 	let pass1 = true;
 	$(
-		Object.keys(
-			Object.fromEntries(Object.entries(info.ammo).filter(eachAmmo => getWeapon().usableAmmo[eachAmmo[1].isUsed] > 0 && !/RF\+/.test(eachAmmo[1].attackName))),
-		),
+		Object.keys(Object.fromEntries(Object.entries(info.ammo).filter(eachAmmo => getWeapon().usableAmmo[eachAmmo[1].isUsed] > 0 && !/RF\+/.test(eachAmmo[0])))),
 	).each(function (index, skill) {
 		let ammoID = skill;
 		if ($(weaponType).val() === 'LightBowGun') {
@@ -372,8 +370,6 @@ function AddDependantSkills(power) {
 	}
 }
 function GetSkills(power) {
-	const damageType = power.type;
-	const elementType = power.eleType;
 	power.baseRaw += power.Draw === true ? +PunishingDraw.value : 0;
 	power.BR = 0;
 	power.BRM = 1;
@@ -384,18 +380,16 @@ function GetSkills(power) {
 	power.enrage = $('#dropEnraged').val() === 'Enraged' ? info.monster.enrage[dropMonster.selectedIndex]['Player Dmg'] : 1;
 	// For non ele Weapons
 	power.eleHZV =
-		elementType === undefined ||
-		elementType.toLowerCase() === 'ignorehzv' ||
-		elementType.toLowerCase() === 'non' ||
-		elementType.toLowerCase() === 'none' ||
+		lower(power.eleType) === undefined ||
+		lower(power.eleType) === 'ignorehzv' ||
+		lower(power.eleType) === 'non' ||
+		lower(power.eleType) === 'none' ||
 		Number.isNaN(power.baseEle) ||
-		elementType === undefined
+		lower(power.eleType) === undefined
 			? 0
-			: info.monster.hzv[dropMonster.value][dropHZ.selectedIndex][elementType.toLowerCase()];
+			: info.monster.hzv[dropMonster.value][dropHZ.selectedIndex][lower(power.eleType)];
 	// removes HZV for attacks like stickies and phials
-	power.rawHZV = /(None|ignore|Stick|Clust|IgnoreHZV)/.test(power.type)
-		? 100
-		: info.monster.hzv[dropMonster.value][dropHZ.selectedIndex][damageType.toLowerCase()];
+	power.rawHZV = /(None|ignore|Stick|Clust|IgnoreHZV)/.test(power.type) ? 100 : info.monster.hzv[dropMonster.value][dropHZ.selectedIndex][lower(power.type)];
 	// applies Demon Ammo if selected and damage type is sever or blunt
 	power.PRM *= $(DemonAmmo).hasClass('blue') && /(sever|blunt)/.test(power.type) ? 1.1 : 1;
 	1;
@@ -545,7 +539,7 @@ function TotalHitsOfSharpUsed(power) {
 	// gets handicraft.selectedIndex & figures out which color power.handicraft actually applies to then add the extra points appropriately.
 	if ($('.hitsOfSharp')[4].selectedIndex > 0) {
 		if (power.hitsOfSharpness.purple > 0) {
-			increase = 'purple';
+			increase = ['purple'];
 		} else if (power.hitsOfSharpness.white > 0) {
 			increase = ['white', 'purple'];
 		} else if (power.hitsOfSharpness.blue > 0) {
@@ -553,7 +547,7 @@ function TotalHitsOfSharpUsed(power) {
 		} else if (power.hitsOfSharpness.green > 0) {
 			increase = ['green', 'blue', 'white', 'purple'];
 		} else if (power.hitsOfSharpness.yellow > 0) {
-			increas = ['yellow', 'green', 'blue', 'white'];
+			increase = ['yellow', 'green', 'blue', 'white'];
 		}
 		let pointsOfHandicraft = $('.hitsOfSharp')[4].selectedIndex;
 		$(power.handicraft).each(function (index, element) {
@@ -567,6 +561,7 @@ function TotalHitsOfSharpUsed(power) {
 
 	// applies the extra hits of sharpness from the Masters Touch skill;
 	const mTBonus = power.aff > 0 && MastersTouch.selectedIndex > 0 ? (1 + +MastersTouch.value * power.aff) * (1 + +RazorSharp.value) : 1 + +RazorSharp.value;
+	total.purple = ~~(mTBonus * power.hitsOfSharpness.purple);
 	total.white = ~~(mTBonus * power.hitsOfSharpness.white);
 	total.blue = ~~(mTBonus * power.hitsOfSharpness.blue);
 	total.green = ~~(mTBonus * power.hitsOfSharpness.green);
@@ -581,6 +576,7 @@ function TotalHitsOfSharpUsed(power) {
 		--comboMulti;
 	}
 	power.comboHitsPerColor = [];
+	power.comboHitsPerColor.purple = [];
 	power.comboHitsPerColor.white = [];
 	power.comboHitsPerColor.blue = [];
 	power.comboHitsPerColor.green = [];
@@ -606,13 +602,15 @@ function TotalHitsOfSharpUsed(power) {
 			}
 		}
 		let totalHits = 0;
-		if (totalHitsOfSharpnessUsed <= (totalHits += total.white)) {
+		if (totalHitsOfSharpnessUsed <= (totalHits += total.purple) && power.hitsOfSharpness.purple > 0) {
+			power.comboHitsPerColor.purple.push(eachAttack);
+		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue) && power.hitsOfSharpness.white > 0) {
 			power.comboHitsPerColor.white.push(eachAttack);
-		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue)) {
+		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue) && power.hitsOfSharpness.blue > 0) {
 			power.comboHitsPerColor.blue.push(eachAttack);
-		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.green)) {
+		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.green) && power.hitsOfSharpness.green > 0) {
 			power.comboHitsPerColor.green.push(eachAttack);
-		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.yellow)) {
+		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.yellow) && power.hitsOfSharpness.yellow > 0) {
 			power.comboHitsPerColor.yellow.push(eachAttack);
 		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.orange)) {
 			power.comboHitsPerColor.orange.push(eachAttack);
@@ -1106,7 +1104,7 @@ function ResetAllSkills(element = '.skill') {
 	}
 	$('button').each(function () {
 		if (/blue/.test(this.className)) {
-			$(this).toggleClass('blue gray');
+			$(this);
 		}
 	});
 }
@@ -1126,13 +1124,11 @@ $('#BowChargePlus').change(function (e) {
 });
 $('.toggle').click(function (e) {
 	if (/DemonDrug/.test(e.target.id) && /gray/.test(e.target.className) && [DemonDrug.className, MegaDemonDrug.className].some(x => /blue/.test(x))) {
-		$('#DemonDrug').toggleClass('gray');
-		$('#DemonDrug').toggleClass('blue');
-		$('#MegaDemonDrug').toggleClass('blue');
-		$('#MegaDemonDrug').toggleClass('gray');
+		$('#DemonDrug').toggleClass('gray blue');
+
+		$('#MegaDemonDrug').toggleClass('gray blue');
 	} else {
-		$(e.target).toggleClass('gray');
-		$(e.target).toggleClass('blue');
+		$(e.target).toggleClass('gray blue');
 	}
 	if (this !== filterCombo) {
 		DataCompile();
@@ -1261,6 +1257,7 @@ function paste() {
 	let pasteurl = (event.clipboardData || window.clipboardData).getData('text');
 	decodeURL(pasteurl);
 	$(taWikiSetBuilder).text(document.createTextNode('Paste TA Wiki Set Builder Link Here'));
+	DataCompile();
 }
 function decodeURL(url = taWikiSetBuilder.value) {
 	if (/mhrise\.wiki-db\.com/.test(url)) {
@@ -1528,7 +1525,32 @@ function setHeight() {
 	$(comboCountContainer).css('height', +getComputedStyle(document.querySelector('#section2')).height.match(/\d.\d+?/)[0]);
 	$('#monDropDowns').height($('#dropHeight').height());
 }
-
+function saveState() {
+	let ugh = [];
+	$('select.skill').each(function (index, element) {
+		ugh.push($(this)[0].selectedIndex);
+	});
+	$('button.skillButton').each(function (index, element) {
+		ugh.push($(element).hasClass('blue'));
+	});
+	let copyText = document.createElement('input');
+	copyText.setAttribute('value', JSON.stringify(ugh));
+	copyText.select();
+	copyText.setSelectionRange(0, 99999); /* For mobile devices */
+	navigator.clipboard.writeText(copyText.value);
+	return ugh;
+}
+function loadState(ugh) {
+	let ugh2 = ugh.splice(-16);
+	$('select').each(function (index, element) {
+		$(this)[0].selectedIndex = ugh[index];
+	});
+	$('button.skillButton').each((index, element) => {
+		if (ugh2[index]) {
+			$(element).toggleClass('blue gray');
+		}
+	});
+}
 /**function getMenu() {
 		if (Object.values(check).every(keyCard => keyCard)) {
 			// $(weaponTypes).each(function (index, weaponType) {
