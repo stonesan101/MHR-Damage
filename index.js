@@ -1153,7 +1153,10 @@ function calculateAmmoFrames(power, ammoID) {
 				0,
 				Math.min(
 					5,
-					power.recoil - RecoilDown.selectedIndex - [JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex + JSON.parse(BarrelId.value).Silencer : 0][0],
+					power.recoil -
+						1 -
+						RecoilDown.selectedIndex -
+						[JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex - JSON.parse(BarrelId.value).Silencer : 0][0],
 				),
 			)
 		];
@@ -1165,6 +1168,7 @@ function calculateAmmoFrames(power, ammoID) {
 				Math.min(
 					8,
 					power.reload -
+						1 -
 						ReloadSpeed.selectedIndex -
 						JSON.parse(BarrelId.value).reload -
 						[BarrelId.options[BarrelId.selectedIndex].text === 'None' && TuneUp.selectedIndex > 0 ? 1 : 0][0],
