@@ -9,6 +9,10 @@ const info = {};
 
 const weaponType = document.getElementById('dropWeaponType');
 const sharpnessMod = {
+	purple: {
+		PRM: 1.39,
+		PEM: 1.25,
+	},
 	white: {
 		PRM: 1.32,
 		PEM: 1.15,
@@ -454,7 +458,7 @@ function GetSkills(power) {
 			power.getSkills.push('SpecialAmmoBoost');
 		}
 	}
-
+	// power.getSkills.push('dropDereliction');
 	if ($(weaponType).val() === 'LongSword' && !/Helm Breaker|Serene/.test(power.attackName)) {
 		power.getSkills.push('spiritGauge');
 	} else if ($(weaponType).val() === 'LongSword') {
@@ -475,7 +479,7 @@ function GetSkills(power) {
 	power.aff += weaponRampage0.value === 'Hellion Mode' && weaponType.value === 'DualBlades' ? 20 : 0;
 
 	power.getSkills.forEach(skill => {
-		if (document.getElementById([skill]).selectedIndex > 0 && skill !== 'Bombardier') {
+		if ((document.getElementById([skill]).selectedIndex > 0 && skill !== 'Bombardier') || skill === 'dropDereliction') {
 			const skills = JSON.parse(document.getElementById([skill]).value);
 			power.BRM *= skills.BRM;
 			power.BR += skills.BR;
@@ -1153,10 +1157,7 @@ function calculateAmmoFrames(power, ammoID) {
 				0,
 				Math.min(
 					5,
-					power.recoil -
-						1 -
-						RecoilDown.selectedIndex -
-						[JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex - JSON.parse(BarrelId.value).Silencer : 0][0],
+					power.recoil - RecoilDown.selectedIndex - [JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex - JSON.parse(BarrelId.value).Silencer : 0][0],
 				),
 			)
 		];
@@ -1278,9 +1279,11 @@ function decodeURL(url = taWikiSetBuilder.value) {
 				document.querySelector(`#${thisSkill[0]}`).selectedIndex = thisSkill[1];
 			}
 		});
-		$('input#taWikiSetBuilder')[0].value = '';
-		$('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
+	} else if (JSON.parse(url).length === 4) {
+		loadState(url);
 	}
+	$('input#taWikiSetBuilder')[0].value = '';
+	$('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
 }
 function PopulateDropDowns(json, dropDown) {
 	$(dropDown).empty();
@@ -1430,10 +1433,31 @@ function showMenu() {
 		$('div.menu').css('top', '-93%');
 	}
 }
-function updateQuest() {
-	$('#dropQuest').append($('<option></option>').attr('value', event.target.value).text([event.target[event.target.selectedIndex].text]));
-	$('div.menu').hide();
+function updateDereliction() {
+	$('select#dropDereliction').empty();
+	$('select#dropDereliction').append($('<option></option>').attr('value', event.target.value).text([event.target[event.target.selectedIndex].text]));
+	$('div#scrollDiv').hide();
+	DataCompile();
 }
+
+function updateQuest() {
+	$('select#dropQuest').empty();
+	$('select#dropQuest').append($('<option></option>').attr('value', event.target.value).text([event.target[event.target.selectedIndex].text]));
+	$('div.menu').hide();
+	DataCompile();
+}
+$(document).click(function (event) {
+	var $target = $(event.target);
+	if (
+		!$target.closest(DerelictionButton).length &&
+		!$target.closest('.derelictionMenu').length &&
+		!$target.closest(dropDereliction).length &&
+		$('#scrollDiv').is(':visible')
+	) {
+		$('#scrollDiv').hide();
+	}
+});
+
 $(document).click(function (event) {
 	var $target = $(event.target);
 	if (!$target.closest(questButton).length && !$target.closest('.menu').length && !$target.closest(dropQuest).length && $('.menu').is(':visible')) {
@@ -1512,6 +1536,7 @@ function json(arr) {
 	console.log(newjson);
 }
 function setHeight() {
+	$(derelictionMenu).height($(scrollHeight).height() * 0.667);
 	const height =
 		+$(section1)
 			.css('row-gap')
@@ -1530,13 +1555,18 @@ function setHeight() {
 	$('#monDropDowns').height($('#dropHeight').height());
 }
 function saveState() {
-	let ugh = [];
-	$('select.skill').each(function (index, element) {
-		ugh.push($(this)[0].selectedIndex);
+	let ugh = [[], [], [], []];
+
+	$('select').each(function (index, element) {
+		ugh[0].push($(this)[0].selectedIndex);
 	});
 	$('button.skillButton').each(function (index, element) {
-		ugh.push($(element).hasClass('blue'));
+		ugh[1].push($(element).hasClass('blue'));
 	});
+	$('.inputs').each(function () {
+		ugh[2].push(this.value);
+	});
+	ugh[3].push(comboTracker[0]);
 	let copyText = document.createElement('input');
 	copyText.setAttribute('value', JSON.stringify(ugh));
 	copyText.select();
@@ -1545,15 +1575,33 @@ function saveState() {
 	return ugh;
 }
 function loadState(ugh) {
-	let ugh2 = ugh.splice(-16);
+	ugh = JSON.parse(ugh);
+
+	comboTracker = ugh[3];
+	ugh2 = document.querySelectorAll('select');
+
+	ugh2[0].selectedIndex = ugh[0][0];
+	WeaponSelect();
+
+	ugh2[3].selectedIndex = ugh[0][3];
+	RampageSelect();
 	$('select').each(function (index, element) {
-		$(this)[0].selectedIndex = ugh[index];
+		$(this)[0].selectedIndex = ugh[0][index];
 	});
 	$('button.skillButton').each((index, element) => {
-		if (ugh2[index]) {
+		if (ugh[1][index]) {
 			$(element).toggleClass('blue gray');
 		}
 	});
+	$('.inputs').each((index, input) => {
+		input.value = ugh[2][index];
+	});
+	QuestSelect();
+	PartSelect();
+	HealthSelect();
+	DataCompile();
+	$('input#taWikiSetBuilder')[0].value = '';
+	$('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
 }
 /**function getMenu() {
 		if (Object.values(check).every(keyCard => keyCard)) {
