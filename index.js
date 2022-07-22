@@ -1168,7 +1168,7 @@ function calculateAmmoFrames(power, ammoID) {
 				Math.min(
 					8,
 					power.reload -
-						1 -
+						2 -
 						ReloadSpeed.selectedIndex -
 						JSON.parse(BarrelId.value).reload -
 						[BarrelId.options[BarrelId.selectedIndex].text === 'None' && TuneUp.selectedIndex > 0 ? 1 : 0][0],
