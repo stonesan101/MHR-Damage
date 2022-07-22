@@ -1282,9 +1282,12 @@ function decodeURL(url = taWikiSetBuilder.value) {
 	} else if (JSON.parse(url).length === 4) {
 		loadState(url);
 	}
+}
+function resetWikiText() {
 	$('input#taWikiSetBuilder')[0].value = '';
 	$('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
 }
+
 function PopulateDropDowns(json, dropDown) {
 	$(dropDown).empty();
 	$.each(json, (key, value) => {
@@ -1600,8 +1603,8 @@ function loadState(ugh) {
 	PartSelect();
 	HealthSelect();
 	DataCompile();
-	$('input#taWikiSetBuilder')[0].value = '';
-	$('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
+	// $('input#taWikiSetBuilder')[0].value = '';
+	// $('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
 }
 /**function getMenu() {
 		if (Object.values(check).every(keyCard => keyCard)) {
