@@ -717,12 +717,14 @@
         </table>
       </div>
       <div id="forButtons">
-        <button type="button" aria-pressed="false" class="blue" id="resetSkills" onclick="ResetSkills(); DataCompile()">Reset Skills</button>
-        <button type="button" aria-pressed="false" class="blue" id="Save State" onclick="saveState()">Save Selections</button>
-        <button type="button" aria-pressed="false" class="blue classSpecific melee Bow" id="resetCombo" onclick="ComboReset()">Reset Combo</button>
+        <button type="button" aria-pressed="false" class="blue" id="resetSkills" onclick="ResetSkills(); DataCompile()"> Reset Skills </button>
+        <button type="button" aria-pressed="false" class="blue" id="Save State" onclick="saveState()"> Save Selections </button>
+        <button type="button" aria-pressed="false" class="blue classSpecific melee Bow" id="resetCombo" onclick="ComboReset()"> Reset Combo </button>
+        <button type="button" aria-pressed="false" class="gray toggle classSpecific LightBowGun" id="CriticalFirePower" onclick='DataCompile()'>
+          CriticalFirePower </button>
         <button type="button" aria-pressed="false" class="gray toggle classSpecific melee Bow" id="filterCombo"> Combo Attack Filter</button>
-        <button type="button" aria-pressed="false" class="blue classSpecific LightBowGun HeavyBowGun" id="ammoChange" onclick="ToggleAmmoTables()">Change Ammo
-          Table</button>
+        <button type="button" aria-pressed="false" class="blue classSpecific LightBowGun HeavyBowGun" id="ammoChange" onclick="ToggleAmmoTables()"> Change Ammo
+          Table </button>
         <div id='forButtonSelect'>
           <div><label class="classSpecific LightBowGun HeavyBowGun" for="pierceAdjust">Pierce Dmg Adjust</label><select id="pierceAdjust" name="pierceAdjust"
                     class="classSpecific LightBowGun HeavyBowGun" onchange="DataCompile()">

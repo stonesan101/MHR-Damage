@@ -689,7 +689,19 @@ function GetRemainingSkills(power) {
 		power.PRM *= 1.1;
 		power.PEM *= 1.1;
 	}
-	if (/BowGun/.test($('#dropWeaponType').val())) {
+	if (/BowGun/.test(weaponType.value)) {
+		if (dropWeaponType.value === 'LightBowGun' && /Pierce|Spread|Normal/.test(power.attackName) && $(CriticalFirePower).hasClass('blue')) {
+			if (/Normal/.test(power.attackName)) {
+				power.PRM *= 1.3;
+				power.augEFR *= 1.3;
+			} else if (/Spread/.test(power.attackName)) {
+				power.PRM *= 1.2;
+				power.augEFR *= 1.2;
+			} else if (/Pierce/.test(power.attackName)) {
+				power.PRM *= 1.1;
+				power.augEFR *= 1.1;
+			}
+		}
 		// Elemental Reload
 		power.BEM *= JSON.parse(BarrelId.value).Element;
 		// Power Barrel
@@ -1157,7 +1169,10 @@ function calculateAmmoFrames(power, ammoID) {
 				0,
 				Math.min(
 					5,
-					power.recoil - RecoilDown.selectedIndex - [JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex - JSON.parse(BarrelId.value).Silencer : 0][0],
+					power.recoil -
+						RecoilDown.selectedIndex -
+						(JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex - JSON.parse(BarrelId.value).Silencer : 0) +
+						($(CriticalFirePower).hasClass('blue') ? 2 : 0),
 				),
 			)
 		];
