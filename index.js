@@ -1309,13 +1309,17 @@ function PopulateDropDowns(json, dropDown) {
 		$(dropDown).append($('<option></option>').attr('value', value).text(value));
 	});
 }
+
 function WeaponTypeSelect() {
 	PopulateDropDowns(weaponTypes, weaponType);
 }
+
 function WeaponSelect() {
 	$(dropWeapon).empty();
 	$(info[$(weaponType).val()].weapons).each((index, weapon) => {
-		$('#dropWeapon').append($('<option></option>').attr('value', index).text(weapon.weapon));
+		if (weapon.weapon !== 'Unknown') {
+			$('#dropWeapon').append($('<option></option>').attr('value', index).text(weapon.weapon));
+		}
 	});
 }
 function RampageSelect() {
@@ -1472,7 +1476,7 @@ $(document).click(function (event) {
 	}
 });
 
-$(document).on('click', function (event) {
+$(document).click(function (event) {
 	var $target = $(event.target);
 	if (!$target.closest(questButton).length && !$target.closest('.menu').length && !$target.closest(dropQuest).length && $('.menu').is(':visible')) {
 		$('.menu').hide();
