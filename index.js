@@ -235,10 +235,10 @@ function MeleeDPS() {
 			}
 		}
 		// damage/meleeDamage adds sharpness to the calculations and arranges them in the array to be used for the damageTable
-	let sharpnessModifier = power.noSharpMod === false ? JSON.parse(Sharpness.value) : { PRM: 1, PEM: 1 };
-	sharpnessModifier = weaponType.value === 'Bow' && bowCoating[bowCoating.selectedIndex].text === 'Power' ? 1.35 : sharpnessModifier;
+		let sharpnessModifier = power.noSharpMod === false ? JSON.parse(Sharpness.value) : { PRM: 1, PEM: 1 };
+		sharpnessModifier = weaponType.value === 'Bow' && bowCoating[bowCoating.selectedIndex].text === 'Power' ? 1.35 : sharpnessModifier;
 		sharpnessModifier = weaponType.value === 'Bow' && bowCoating[bowCoating.selectedIndex].text === 'Close Range' ? 1.32 : sharpnessModifier;
-	sharpnessModifier = weaponType.value === 'Bow' && bowCoating[bowCoating.selectedIndex].text === 'Close Range+' ? 1.39 : sharpnessModifier;
+		sharpnessModifier = weaponType.value === 'Bow' && bowCoating[bowCoating.selectedIndex].text === 'Close Range+' ? 1.39 : sharpnessModifier;
 		const damage = [
 			'replaceME',
 			power.attackName,
@@ -347,19 +347,16 @@ function AddDependantSkills(power) {
 		const phialType = getWeapon().phialType === 'Impact Phial' ? 'Element Phial| Elemental Phial' : 'Impact Phial';
 		const regexp = new RegExp(`${phialType}`);
 
-	let attacks = Object.fromEntries(Object.entries(getAttacks()).filter(skill => !regexp.test(skill)));
+		let attacks = Object.fromEntries(Object.entries(getAttacks()).filter(skill => !regexp.test(skill)));
 
 		return attacks;
 
 		//  filters bow attacks for only the usable attacks
 	} else if ($('#dropWeaponType').val() === 'Bow') {
-		let attacksTemp =getAttacks();
+		let attacksTemp = getAttacks();
 		let attacks = [];
 		let usableKeys = '';
-		const totalKeys =
-			BowChargePlus.selectedIndex === 1 && getWeapon().baseCharge < 4
-				? getWeapon().baseCharge + 1
-				: getWeapon().baseCharge;
+		const totalKeys = BowChargePlus.selectedIndex === 1 && getWeapon().baseCharge < 4 ? getWeapon().baseCharge + 1 : getWeapon().baseCharge;
 		$(getWeapon().bowShot).each(function (index, element) {
 			if (index < totalKeys) {
 				usableKeys += `|Lv${element.match('[1-5]')[0]} ${element.match('Normal|Rapid|Pierce|Spread')[0]}`;
@@ -480,9 +477,8 @@ function GetSkills(power) {
 		getWeapon().phialType === 'Impact Phial' ? power.getSkills.push('impShieldCharge') : power.getSkills.push('eleShieldCharge');
 	}
 	power.aff += weaponRampage0.value === 'Hellion Mode' && weaponType.value === 'DualBlades' ? 20 : 0;
-		if (weaponType.value === 'Bow' && /Stake/.test(power.attackName)) {
-		power.getSkills = power.getSkills.filter((/** @type {string} */ skill)
-=> skill !== 'bowCoating');
+	if (weaponType.value === 'Bow' && /Stake/.test(power.attackName)) {
+		power.getSkills = power.getSkills.filter((/** @type {string} */ skill) => skill !== 'bowCoating');
 	}
 
 	power.getSkills.forEach(skill => {
@@ -1145,7 +1141,7 @@ $('#BowChargePlus').change(function (e) {
 	ComboReset();
 	UpdateComboDisplay();
 });
-$('.toggle').on("click",function (e) {
+$('.toggle').on('click', function (e) {
 	if (/DemonDrug/.test(e.target.id) && /gray/.test(e.target.className) && [DemonDrug.className, MegaDemonDrug.className].some(x => /blue/.test(x))) {
 		$('#DemonDrug').toggleClass('gray blue');
 
@@ -1324,7 +1320,7 @@ function WeaponTypeSelect() {
 function WeaponSelect() {
 	$(dropWeapon).empty();
 	$(info[$(weaponType).val()].weapons).each((index, weapon) => {
-			$('#dropWeapon').append($('<option></option>').attr('value', index).text(weapon.weapon));
+		$('#dropWeapon').append($('<option></option>').attr('value', index).text(weapon.weapon));
 	});
 }
 function RampageSelect() {
@@ -1469,7 +1465,7 @@ function updateQuest() {
 	$('div.menu').hide();
 	DataCompile();
 }
-$(document).on("click",function (event) {
+$(document).on('click', function (event) {
 	var $target = $(event.target);
 	if (
 		!$target.closest(DerelictionButton).length &&
@@ -1481,7 +1477,7 @@ $(document).on("click",function (event) {
 	}
 });
 
-$(document).on("click",function (event) {
+$(document).on('click', function (event) {
 	var $target = $(event.target);
 	if (!$target.closest(questButton).length && !$target.closest('.menu').length && !$target.closest(dropQuest).length && $('.menu').is(':visible')) {
 		$('.menu').hide();
