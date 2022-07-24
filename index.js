@@ -706,6 +706,7 @@ function GetRemainingSkills(power) {
 		power.PRM *= 1.1;
 		power.PEM *= 1.1;
 	}
+<<<<<<< HEAD
 	if (/bg/.test(weaponType.value)) {
 		if (dropWeaponType.value === 'lbg' && /Pierce|Spread|Normal/.test(power.attackName) && $(CriticalFirePower).hasClass('blue')) {
 			if (/Normal/.test(power.attackName)) {
@@ -719,6 +720,9 @@ function GetRemainingSkills(power) {
 				power.augEFR *= 1.1;
 			}
 		}
+=======
+	if (/BowGun/.test($('#dropWeaponType').val())) {
+>>>>>>> parent of b6ef4b3 (Critical Firepower)
 		// Elemental Reload
 		power.BEM *= JSON.parse(BarrelId.value).Element;
 		// Power Barrel
@@ -1206,6 +1210,7 @@ function calculateAmmoFrames(power, ammoID) {
 						RecoilDown.selectedIndex -
 						(JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex - JSON.parse(BarrelId.value).Silencer : 0) +
 						($(CriticalFirePower).hasClass('blue') ? 2 : 0),
+					power.recoil - RecoilDown.selectedIndex - [JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex - JSON.parse(BarrelId.value).Silencer : 0][0],
 				),
 			)
 		];
