@@ -1206,10 +1206,6 @@ function calculateAmmoFrames(power, ammoID) {
 				0,
 				Math.min(
 					5,
-					power.recoil -
-						RecoilDown.selectedIndex -
-						(JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex - JSON.parse(BarrelId.value).Silencer : 0) +
-						($(CriticalFirePower).hasClass('blue') ? 2 : 0),
 					power.recoil - RecoilDown.selectedIndex - [JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex - JSON.parse(BarrelId.value).Silencer : 0][0],
 				),
 			)
