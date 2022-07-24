@@ -43,63 +43,66 @@
     <section id="section1" class="contain">
       <h1> Weapon Selection</H1>
       <div class="contain" id="weaponSelect">
-        <div class="uniqueBow" display="border:none"><label class="bow BowId classSpecific skill" for="BowCoationg">Bow Coatings</label><select id='bowCoating'
-                  class="bow classSpecific" onchange="DataCompile()" name="Bow Coatings"> Data-myAttribute="weaponType" contenteditable="true"
-            id="dropWeaponType" name="weaponTypeSelection" onchange="WeaponSelect(); RampageSelect(); HideAndRevealTypeSpecificElements(true); DataCompile();
-            ComboReset(true)"> </select></div>
-        <div class="uniqueBow" display="border:none"><label class="bow BowId classSpecific skill" for="BowCoationg">Bow Coatings</label><select id='bowCoating'
-                  class="bow classSpecific" onchange="DataCompile()" name="Bow Coatings">
-            <option value='{"BRM": 1,"BR": 0,"PRM": 1,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>---</option>
-            <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Close</option>
-            <option value='{"BRM": 1,"BR": 0,"PRM": 1.35,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Power</option>
-            <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 0,"aff":0}'>Status</option>
-          </select></div>
-        <div id='BowGunId'> <label class="LightBowGun HeavyBowGun classSpecific skill" for="BarrelId">Gunner Barrel</label><select
-                  class="LightBowGun HeavyBowGun classSpecific" id="BarrelId" name="BarrelSelection" onchange="DataCompile()">
-            <option aria-selected='false' value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>None</option>
-            <option value='{"Element":1,"Power":1.05,"Silencer":0,"reload":0}'>Long Barrel</option>
-            <option value='{"Element":1,"Power":1.125,"Silencer":0,"reload":0}'>Power Barrel</option>
-            <option value='{"Element":1,"Power":1,"Silencer":1,"reload":1}'>Silencer</option>
-            <option value='{"Element":1.1,"Power":1,"Silencer":0,"reload":2}'>Elemental Reload</option>
-          </select></div>
-      </div>
-      <div><label for="dropWeapon">Weapon</label><select id="dropWeapon" class="skillinput hitsOfSharp skill" name="weaponSelection" Data-myAttribute="weapon"
-                onchange="RampageSelect(), DataCompile()">
-          <option value="Kamura Cleaver I">Kamura Cleaver I</option>
-        </select></div>
-      <div>
-        <label for="weaponRampage0" name="weaponRampage">Rampage Skill</label>
-        <div id="weaponRampage" style="border-style:none; margin:0">
-          <select class="skillhitsOfSharp" id="weaponRampage0" onchange="DataCompile()" name="weaponRampage0"></select>
-          <select style="display:none" id="weaponRampage1" onchange="DataCompile()" name="weaponRampage1"></select>
-          <select style="display:none" id="weaponRampage2" onchange="DataCompile()" name="weaponRampage2"></select>
-          <select style="display:none" id="weaponRampage3" onchange="DataCompile()" name="weaponRampage3"></select>
-          <select style="display:none" id="weaponRampage4" onchange="DataCompile()" name="weaponRampage4"></select>
-          <select style="display:none" id="weaponRampage5" onchange="DataCompile()" name="weaponRampage5"></select>
+        <div style='display:content;'>
+          <div><label for="dropWeaponType">Weapon Type</label><select class='searchselectbox skill' aria-autocomplete="both" class="skillinput
+      hitsOfSharp" Data-myAttribute="weaponType" contenteditable="true" id="dropWeaponType" name="weaponTypeSelection" onchange="WeaponSelect(); RampageSelect();
+      HideAndRevealTypeSpecificElements(true);  DataCompile();
+      ComboReset(true)">
+            </select></div>
+          <div class="uniqueBow" display="border:none"><label class="Bow BowId
+      classSpecific skill" for="BowCoationg">Bow Coatings</label><select id='bowCoating' class="Bow classSpecific" onchange="DataCompile()"
+                    name="Bow Coatings">
+              <option value='{"BRM": 1,"BR": 0,"PRM": 1,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>---</option>
+              <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Close</option>
+              <option value='{"BRM": 1,"BR": 0,"PRM": 1.35,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Power</option>
+              <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 0,"aff":0}'>Status</option>
+            </select></div>
+          <div id='BowGunId'> <label class="LightBowGun HeavyBowGun classSpecific skill" for="BarrelId">Gunner Barrel</label><select
+                    class="LightBowGun HeavyBowGun classSpecific" id="BarrelId" name="BarrelSelection" onchange="DataCompile()">
+              <option aria-selected='false' value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>None</option>
+              <option value='{"Element":1,"Power":1.05,"Silencer":0,"reload":0}'>Long Barrel</option>
+              <option value='{"Element":1,"Power":1.125,"Silencer":0,"reload":0}'>Power Barrel</option>
+              <option value='{"Element":1,"Power":1,"Silencer":1,"reload":1}'>Silencer</option>
+              <option value='{"Element":1.1,"Power":1,"Silencer":0,"reload":2}'>Elemental Reload</option>
+            </select></div>
         </div>
-      </div>
-      <div class="sharpnessdropDown" style="display:none"><label for="Sharpness">Sharpness<label><select class="skill" onchange="DataCompile()" name="Sharpness"
-                    id="Sharpness" hidden>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1,"BR":0,"PRM":0.5,"BEM":1,"BE":0,"PEM":0.25,"aff":0}'>red</option>
-              <option value='{"BRM":1,"BR":0,"PRM":0.75,"BEM":1,"BE":0,"PEM":0.5,"aff":0}'>Orange</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":0.75,"aff":0}'>Yellow</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Green</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1.0625,"aff":0}'>Blue</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1.32,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>White</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1.39,"BEM":1,"BE":0,"PEM":1.25,"aff":0}'>Purple</option>
-            </select>
-      </div>
-      <div id="statsTableDiv">
-        <table id="statsTable">
-          <thead id="statsHead">
-          </thead>
-          <tbody id="statsBody">
-          </tbody>
-        </table>
-      </div>
-      <input id='taWikiSetBuilder' onpaste='paste(); emptyContainer()' onclick="emptyContainer()" onchange='resetWikiText()'
-             value='Paste TA Wiki Set Builder Link Here'></input>
+        <div><label for="dropWeapon">Weapon</label><select id="dropWeapon" class="skillinput hitsOfSharp skill" name="weaponSelection" Data-myAttribute="weapon"
+                  onchange="RampageSelect(), DataCompile()">
+            <option value="Kamura Cleaver I">Kamura Cleaver I</option>
+          </select></div>
+        <div>
+          <label for="weaponRampage0" name="weaponRampage">Rampage Skill</label>
+          <div id="weaponRampage" style="border-style:none; margin:0">
+            <select class="skillhitsOfSharp" id="weaponRampage0" onchange="DataCompile()" name="weaponRampage0"></select>
+            <select style="display:none" id="weaponRampage1" onchange="DataCompile()" name="weaponRampage1"></select>
+            <select style="display:none" id="weaponRampage2" onchange="DataCompile()" name="weaponRampage2"></select>
+            <select style="display:none" id="weaponRampage3" onchange="DataCompile()" name="weaponRampage3"></select>
+            <select style="display:none" id="weaponRampage4" onchange="DataCompile()" name="weaponRampage4"></select>
+            <select style="display:none" id="weaponRampage5" onchange="DataCompile()" name="weaponRampage5"></select>
+          </div>
+        </div>
+        <div class="sharpnessdropDown" style="display:none"><label for="Sharpness">Sharpness<label><select class="skill" onchange="DataCompile()"
+                      name="Sharpness" id="Sharpness" hidden>
+                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+                <option value='{"BRM":1,"BR":0,"PRM":0.5,"BEM":1,"BE":0,"PEM":0.25,"aff":0}'>red</option>
+                <option value='{"BRM":1,"BR":0,"PRM":0.75,"BEM":1,"BE":0,"PEM":0.5,"aff":0}'>Orange</option>
+                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":0.75,"aff":0}'>Yellow</option>
+                <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Green</option>
+                <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1.0625,"aff":0}'>Blue</option>
+                <option value='{"BRM":1,"BR":0,"PRM":1.32,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>White</option>
+                <option value='{"BRM":1,"BR":0,"PRM":1.39,"BEM":1,"BE":0,"PEM":1.25,"aff":0}'>Purple</option>
+              </select>
+        </div>
+        <div id="statsTableDiv">
+          <table id="statsTable">
+            <thead id="statsHead">
+            </thead>
+            <tbody id="statsBody">
+            </tbody>
+          </table>
+        </div>
+        <input id='taWikiSetBuilder' onpaste='paste(); emptyContainer()' onclick="emptyContainer()" onchange='resetWikiText()'
+               value='Paste TA Wiki Set Builder Link Here'></input>
       </div>
       <div class="contain" id="boxes">
         <h1>Consumables / Other</h1>
@@ -256,35 +259,26 @@
             <option value='{"BRM":1,"BR":18,"PRM":1,"BEM":1,"BE":4,"PEM":1,"aff":0}'>Lv-3</option>
           </select></div>
         <div><label for="CriticalBoost">Critical Boost</label><select id="CriticalBoost" name="Critical Boost" onchange="DataCompile()" class="skill Crit">
-            <option class='classSpecific melee' value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":15,"PEM":1,"aff":0}'>Lv-3</option>
-            <option class='classSpecific DualBlades' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":6,"PEM":1
-                  ,"aff":0}'>Lv-1</option>
-            <option class='classSpecific DualBlades' value='{"BRM":1,"BR":12,"PRM":1,"BEM":1,"BE":8,"PEM":1
-                  ,"aff":0}'>Lv-2</option>
-            <option class='classSpecific DualBlades' value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":12,"PEM":
-                  1,"aff":0}'>Lv-3</option>
-            <option class='classSpecific LightBowGun HeavyBowGun' value='{"BRM":1,"BR":8,"PRM":1,"BEM":1,"BE":6,"PEM":1,
-                  "aff":0}'>Lv-1</option>
-            <option class='classSpecific LightBowGun HeavyBowGun' value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":7,"PEM":1,
-                  "aff":0}'>Lv-2</option>
-            <option class='classSpecific LightBowGun HeavyBowGun' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":8,"PEM":1
-                  ,"aff":0}'>Lv-3</option>
-            <option class='classSpecific Bow' value='{"BRM":1,"BR":8,"PRM":1,"BEM":1,"BE":6,"PEM":1,
-                  "aff":0}'>Lv-1</option>
-            <option class='classSpecific Bow' value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":8,"PEM":1,
-                  "aff":0}'>Lv-2</option>
-            <option class='classSpecific Bow' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":10,"PEM":
-                  1,"aff":0}'>Lv-3</option>
-            <option class='classSpecific lbg hbg' value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":7,"PEM":1,"aff":0}'>Lv-2</option>
-            <option class='classSpecific lbg hbg' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":8,"PEM":1,"aff":0}'>Lv-3</option>
-            <option class='classSpecific bow' value='{"BRM":1,"BR":8,"PRM":1,"BEM":1,"BE":6,"PEM":1,"aff":0}'>Lv-1</option>
-            <option class='classSpecific bow' value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":8,"PEM":1,"aff":0}'>Lv-2</option>
-            <option class='classSpecific bow' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":10,"PEM":1,"aff":0}'>Lv-3</option>
-            <option class='classSpecific lbg hbg' value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":7,"PEM":1,"aff":0}'>Lv-2</option>
-            <option class='classSpecific lbg hbg' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":8,"PEM":1,"aff":0}'>Lv-3</option>
-            <option class='classSpecific bow' value='{"BRM":1,"BR":8,"PRM":1,"BEM":1,"BE":6,"PEM":1,"aff":0}'>Lv-1</option>
-            <option class='classSpecific bow' value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":8,"PEM":1,"aff":0}'>Lv-2</option>
-            <option class='classSpecific bow' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":10,"PEM":1,"aff":0}'>Lv-3</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.25,"BEM":1,"BE":0,"PEM":1,"aff":0}'>-- -</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.3,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv- 1</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.35,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv- 2</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.4,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv- 3</option>
+          </select></div>
+        <div><label for="ChainCrit">Chain Crit</label><select id="ChainCrit" name="ChainCrit" onchange="DataCompile()" class="skill">
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>--- </option>
+            <option value='{"BRM":1,"BR":5,"PRM":1,"BEM":1,"BE":5,"PEM":1,"aff":0}'>Base Bonus</option>
+            <option class='classSpecific melee' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":8,"PEM":1,"aff":0}'>Lv- 1</option>
+            <option class='classSpecific melee' value='{"BRM":1,"BR":12,"PRM":1,"BEM":1,"BE":10,"PEM":1,"aff":0}'>Lv- 2</option>
+            <option class='classSpecific melee' value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":15,"PEM":1,"aff":0}'>Lv- 3</option>
+            <option class='classSpecific DualBlades' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":6,"PEM":1,"aff":0}'>Lv- 1</option>
+            <option class='classSpecific DualBlades' value='{"BRM":1,"BR":12,"PRM":1,"BEM":1,"BE":8,"PEM":1,"aff":0}'>Lv- 2</option>
+            <option class='classSpecific DualBlades' value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":12,"PEM":1,"aff":0}'>Lv- 3</option>
+            <option class='classSpecific LightBowGun HeavyBowGun' value='{"BRM":1,"BR":8,"PRM":1,"BEM":1,"BE":6,"PEM":1,"aff":0}'>Lv-1</option>
+            <option class='classSpecific LightBowGun HeavyBowGun' value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":7,"PEM":1,"aff":0}'>Lv-2</option>
+            <option class='classSpecific LightBowGun HeavyBowGun' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":8,"PEM":1,"aff":0}'>Lv-3</option>
+            <option class='classSpecific Bow' value='{"BRM":1,"BR":8,"PRM":1,"BEM":1,"BE":6,"PEM":1,"aff":0}'>Lv-1</option>
+            <option class='classSpecific Bow' value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":8,"PEM":1,"aff":0}'>Lv-2</option>
+            <option class='classSpecific Bow' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":10,"PEM":1,"aff":0}'>Lv-3</option>
           </select></div>
         <div><label for="Counterstrike">Counterstrike</label><select id="Counterstrike" name="Counterstrike" onchange="DataCompile()" class="skill">
             <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
@@ -425,272 +419,247 @@
             <option value='{"BRM":1,"BR":12,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
             <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
           </select></div>
-        <div><label for="Bombardier">Dango Bombardier</label><select id="Bombardier" name="Bombardier" onchange="DataCompile()"
-                  class="skill UAED Sticky Shelling classSpecific cb hbg lbg gl">
-            <option class='classSpecific cb gl' value=[1,1]>---</option>
-            <option class='classSpecific cb' value=[1.1,1.15]>Lv-1</option>
-            <option class='classSpecific cb' value=[1.15,1.15]>Lv-2</option>
-            <option class='classSpecific cb' value=[1.2,1.16]>Lv-3</option>
-            <option class='classSpecific cb' value=[1.25,1.17]>Lv-4</option>
-            <option class='classSpecific gl' value=[1.05,1.05]>Lv-1</option>
-            <option class='classSpecific gl' value=[1.1,1.1]>Lv-2</option>
-            <option class='classSpecific gl' value=[1.15,1.11]>Lv-3</option>
-            <option class='classSpecific gl' value=[1.2,1.12]>Lv-4</option>
-            <option class='classSpecific lbg hbg bombardier' value='{"wyvern":[1,1,1],"sticky":[1,1,1]}'>---</option>
-            <option class='classSpecific lbg hbg bombardier' value='{"wyvern":[1.1,1.1,1],"sticky":[1.1,1.1,1]}'>Lv-1</option>
-            <option class='classSpecific lbg hbg bombardier' value='{"wyvern":[1.15,1.15,1],"sticky":[1.1,1.1,1]}'>Lv-2</option>
-            <option class='classSpecific lbg hbg bombardier' value='{"wyvern":[1.20,1.16,1],"sticky":[1.2,1.16,1]}'>Lv-3</option>
-            <option class='classSpecific lbg hbg bombardier' value='{"wyvern":[1.25,1.17,1.1],"sticky":[1.25,1.17,1.1]}'>Lv-4</option>
+        <div><label for="Bombardier">Dango Bombardier</label><select id="Bombardier" name="Bombardier" onchange="DataCompile()" class="skill UAED Sticky Shelling classSpecific ChargeBlade HeavyBowGun
+          LightBowGun Gunlance">
+            <option class='classSpecific ChargeBlade Gunlance' value=[1,1]>---</option>
+            <option class='classSpecific ChargeBlade' value=[1.1,1.15]>Lv-1</option>
+            <option class='classSpecific ChargeBlade' value=[1.15,1.15]>Lv-2</option>
+            <option class='classSpecific ChargeBlade' value=[1.2,1.16]>Lv-3</option>
+            <option class='classSpecific ChargeBlade' value=[1.25,1.17]>Lv-4</option>
+            <option class='classSpecific Gunlance' value=[1.05,1.05]>Lv-1</option>
+            <option class='classSpecific Gunlance' value=[1.1,1.1]>Lv-2</option>
+            <option class='classSpecific Gunlance' value=[1.15,1.11]>Lv-3</option>
+            <option class='classSpecific Gunlance' value=[1.2,1.12]>Lv-4</option>
+            <option class='classSpecific LightBowGun HeavyBowGun bombardier' value='{"wyvern":[1,1,1],"sticky":[1,1,1]}'>---</option>
+            <option class='classSpecific LightBowGun HeavyBowGun bombardier' value='{"wyvern":[1.1,1.1,1],"sticky":[1.1,1.1,1]}'>Lv-1</option>
+            <option class='classSpecific LightBowGun HeavyBowGun bombardier' value='{"wyvern":[1.15,1.15,1],"sticky":[1.1,1.1,1]}'>Lv-2</option>
+            <option class='classSpecific LightBowGun HeavyBowGun bombardier' value='{"wyvern":[1.20,1.16,1],"sticky":[1.2,1.16,1]}'>Lv-3</option>
+            <option class='classSpecific LightBowGun HeavyBowGun bombardier' value='{"wyvern":[1.25,1.17,1.1],"sticky":[1.25,1.17,1.1]}'>Lv-4</option>
           </select></div>
         <div><label for="WallRunner">Wall Runner</label><select id="WallRunner" name="Wall Runner" onchange="DataCompile()" class="skill">
-            <div><label for="TuneUp">Tune-Up</label><select id="TuneUp" class="skill classSpecific lbg hbg" onchange="DataCompile()">
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-                <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-              </select></div>
-            <div><label for="TuneUp">Tune-Up</label><select id="TuneUp" class="skill classSpecific lbg hbg" onchange="DataCompile()">
-                <!-- <option>---</option> -->
-                <!-- <option>Lv-1</option> -->
-                <!-- <option>Lv-2</option> -->
-                <!-- </select></div> -->
-                <div><label for="TuneUp">Tune-Up</label><select id="TuneUp" class="skill classSpecific lbg hbg" onchange="DataCompile()">
-                    <option>---</option>
-                    <option>Lv-1</option>
-                    <div><label for='BowChargePlus'>Mighty Bow</label><select class="skill classSpecific bow" id="BowChargePlus" name="MightyBow"
-                              onchange="DataCompile()">
-                      </select></div>
-                    <div><label for="Artillery">Artillery</label><select id="Artillery" name="Artillery" onchange="DataCompile()" class="skill UAED
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+            <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+          </select></div>
+        <!-- <div><label for="ChargeMaster"> Charge Master </label><select
+        id="ChargeMaster" class="skill" onchange="DataCompile()"> -->
+        <!-- <option>---</option> -->
+        <!-- <option>Lv-1</option> -->
+        <!-- <option>Lv-2</option> -->
+        <!-- </select></div> -->
+        <div><label for="TuneUp">Tune-Up</label><select id="TuneUp" class="skill classSpecific LightBowGun HeavyBowGun" onchange="DataCompile()">
+            <option>---</option>
+            <option>Lv-1</option>
+            <option>Lv-2</option>
+          </select></div>
+        <div><label for="Artillery">Artillery</label><select id="Artillery" name="Artillery" onchange="DataCompile()" class="skill UAED
                   Sticky Shelling">
-                        <div><label for="RapidFireUp">Rapid Fire Up</label><select onchange="DataCompile()" id="RapidFireUp" name="Rapid"
-                                  class="skill classSpecific lbg hbg">
-                            <option value='{"BRM":1.13,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-                            <option value='{"BRM":1.3,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-                            <option value='{"BRM":1.5,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-                            <div><label for="RapidFireUp">Rapid Fire Up</label><select onchange="DataCompile()" id="RapidFireUp" name="Rapid"
-                                      class="skill classSpecific lbg hbg"> Mighty Bow > <option value='false'>---</ option>
-                                <option value='true'>Lv-1</option>
-                              </select></div>
-                            <div><label for="RapidFireUp">Rapid Fire Up</label><select onchange="DataCompile()" id="RapidFireUp" name="Rapid"
-                                      class="skill classSpecific lbg hbg">
-                                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-                              </select></div>
-                            <div><label class="classSpecific Shot" for="PierceUp">Pierce Up</label><select onchange="DataCompile()" id="PierceUp"
-                                      name="PierceUp" class="skill classSpecific Shot">
-                                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-                              </select></div>
-                            <div><label class="classSpecific Shot" for="SpreadUp">Spread Up</label><select onchange="DataCompile()" id="SpreadUp"
-                                      name="SpreadUp" class="skill classSpecific Shot">
-                                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-                              </select></div>
-                            <div><label class="classSpecific Shot" for="NormalRapidUp">Normal/Rapid Up</label><select onchange="DataCompile()"
-                                      id="NormalRapidUp" name="NormalRapidUp" class="skill classSpecific Shot">
-                                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-                              </select></div>
-                            <div><label class="classSpecific Shot" for="SpecialAmmoBoost">Special Ammo Up</label><select onchange="DataCompile()"
-                                      id="SpecialAmmoBoost" name="Special Ammo" class="skill classSpecific Shot">
-                                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-                                <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-                              </select></div>
-                            <div class="contain" id="ele">
-                              <h1>Elemental</h1>
-                              <div><label for="ElementalAttack">ElementalAttack</label><select id="ElementalAttack" name="Elemental Attack"
-                                        onchange="DataCompile()" class="skill">
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":2,"PEM":1,"aff":0}'>Lv-1</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":3,"PEM":1,"aff":0}'>Lv-2</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.05,"BE":4,"PEM":1,"aff":0}'>Lv-3</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.1,"BE":4,"PEM":1,"aff":0}'>Lv-4</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.2,"BE":4,"PEM":1,"aff":0}'>Lv-5</option>
-                                </select></div>
-                              <div><label for="ElderEssence">Elder Dragon Set Bonus</label><select class="skill" id="ElderEssence" name="Elder Essence"
-                                        onchange="DataCompile()" class="skill setBonus">
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.05,"BE":0,"PEM":1,"aff":0}'>Lv-1 </option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.15,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.15,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.15,"BE":0,"PEM":1,"aff":0}'>Lv-5</option>
-                                </select></div>
-                              <div><label for="CriticalElement">Critical Element</label><select id="CriticalElement" name="Critical Element"
-                                        onchange="DataCompile()" class="skill">
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-1</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>Lv-2</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>Lv-3</option>
-                                </select></div>
-                            </div>
-                            <div class="contain" id="aff">
-                              <h1>Affinity</h1>
-                              <div><label for="WeaknessExploit">Weakness Exploit</label><select class="skillhitsOfSharp skill" id="WeaknessExploit"
-                                        name="Weakness Exploit" onchange="DataCompile()" class="skill hitsOfSharp">
-                                  <option value=0>---</option>
-                                  <option value=15>Lv-1</option>
-                                  <option value=30>Lv-2</option>
-                                  <option value=50>Lv-3</option>
-                                </select></div>
-                              <div><label for="CriticalEye">Critical Eye</label><select id="CriticalEye" name="Critical Eye" onchange="DataCompile()"
-                                        class="skill hitsOfSharp ">
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":5}'>Lv-1</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":10}'>Lv-2</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":15}'>Lv-3</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'>Lv-4</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":25}'>Lv-5</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":30}'>Lv-6</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":40}'>Lv-7</option>
-                                </select></div>
-                              <div><label for="MaximumMight">Maximum Might</label><select id="MaximumMight" name="Maximum Might" onchange="DataCompile()"
-                                        class="skill hitsOfSharp">
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":10}'>Lv-1</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'>Lv-2</option>
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":30}'>Lv-3</option>
-                                </select></div>
-                              <div><label for="LatentPower">Latent Power</label><select id="LatentPower" name="Latent Power" onchange="DataCompile()"
-                                        class="skill hitsOfSharp">
-                                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                  <h1 class='classSpecific bow cb ig lbg hbg ls SwitchAxe' id='weaponId'></h1>
-                                  <div><label class="classSpecific ig" for="Kinsect Buff">Kinsect Buff</label><select onchange="DataCompile()"
-                                            id="kinsectBuffId" name="Kinsect Buff" class="skill classSpecific ig">
-                                      <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":45}'>Lv-4</option>
-                                      <h1 class='classSpecific bow cb ig lbg hbg ls SwitchAxe' id='weaponId'></h1>
-                                      <div><label class="classSpecific ig" for="Kinsect Buff">Kinsect Buff</label><select onchange="DataCompile()"
-                                                id="kinsectBuffId" name="Kinsect Buff" class="skill classSpecific ig">
-                                          <div class="contain" id="unique">
-                                            <div><label class="classSpecific ls" for="SpiritGauge">Spirit Gauge</label><select onchange="DataCompile()"
-                                                      id="spiritGauge" name="SpiritGauge" class="skill classSpecific ls"> class="skill classSpecific ig">
-                                                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                                <div><label class="classSpecific ls" for="SpiritGauge">Spirit Gauge</label><select onchange="DataCompile()"
-                                                          id="spiritGauge" name="SpiritGauge" class="skill classSpecific ls">
-                                                    <option value='{"BRM":1.15,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Triple</option>
-                                                    <div><label class="classSpecific ls" for="Helmbreaker">Serene/HelmBreaker</label><select id="Helmbreaker"
-                                                              name="ls" onchange="DataCompile()" class="skill classSpecific ls"> class="skill classSpecific ls">
-                                                        <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                                        <div><label class="classSpecific ls" for="Helmbreaker">Serene/HelmBreaker</label><select
-                                                                  id="Helmbreaker" name="ls" onchange="DataCompile()" class="skill classSpecific ls">
-                                                            <option value='{"BRM":1.2,"BR":0,"PRM":1,"BEM":1.2,"BE":0,"PEM":1,"aff":0}'>Red</option>
-                                                            <div><label class="classSpecific cb" for="savageAxe">Savage Axe</label><select
-                                                                      onchange="DataCompile()" id="savageAxe" name="Savage Axe" class="skill classSpecific cb">
-                                                                class="skill classSpecific ls"> <option
-                                                                        value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                                                <div><label class="classSpecific cb" for="savageAxe">Savage Axe</label><select
-                                                                          onchange="DataCompile()" id="savageAxe" name="Savage Axe" <div><label
-                                                                           onchange="DataCompile()" class=" classSpecific cb" for="impShieldCharge">Shield
-                                                                      Charge</label><select onchange="DataCompile()" id="impShieldCharge" name="impShieldCharge"
-                                                                            class="skill classSpecific cb">
-                                                                    </select></div>
-                                                                <div><label class="classSpecific cb" for="savageAxe">Savage Axe</label><select
-                                                                          onchange="DataCompile()" id="savageAxe" name="Savage Axe" <div><label
-                                                                           onchange="DataCompile()" class=" classSpecific cb" for="impShieldCharge">Shield
-                                                                      Charge</label><select onchange="DataCompile()" <div><label onchange="DataCompile()"
-                                                                             class=" classSpecific cb" for="eleShieldCharge">Shield Charge Ele</label><select
-                                                                              onchange="DataCompile()" id="eleShieldCharge" name="eleShieldCharge"
-                                                                              class="skill classSpecific cb">
-                                                                      </select></div>
-                                                                <div><label onchange="DataCompile()" class=" classSpecific cb" for="impShieldCharge">Shield
-                                                                    Charge</label><select onchange="DataCompile()" <div><label onchange="DataCompile()"
-                                                                           class=" classSpecific cb" for="eleShieldCharge">Shield Charge Ele</label><select
-                                                                            onchange="DataCompile()" <div><label class="classSpecific lbg" for="evadeHop">Evade
-                                                                        Hop</label><select onchange="DataCompile()" id="evadeHop" name="Evade Hop"
-                                                                              class="skill classSpecific lbg">
-                                                                      </select></div>
-                                                                <div><label onchange="DataCompile()" class=" classSpecific cb" for="eleShieldCharge">Shield
-                                                                    Charge Ele</label><select onchange="DataCompile()" <div><label class="classSpecific lbg"
-                                                                           for="evadeHop">Evade Hop</label><select onchange="DataCompile()" id="evadeHop"
-                                                                            name="Evade Hop" <div><label class="classSpecific lbg" for="fanningManeuver">Fanning
-                                                                        Maneuver</label><select onchange="DataCompile()" id="fanningManeuver"
-                                                                              name="Fanning Maneuver" class="skill classSpecific lbg">
-                                                                      </select></div>
-                                                                <div><label class="classSpecific lbg" for="evadeHop">Evade Hop</label><select
-                                                                          onchange="DataCompile()" id="evadeHop" name="Evade Hop" <div><label
-                                                                           class="classSpecific lbg" for="fanningManeuver">Fanning Maneuver</label><select
-                                                                            onchange="DataCompile()" id="fanningManeuver" <div><label class="classSpecific hbg"
-                                                                             for="chargedShot">Charged Shot</label><select onchange="DataCompile()"
-                                                                              id="chargedShot" name="Charged Shot" class="skill classSpecific hbg">
-                                                                      </select></div>
-                                                                <div><label class="classSpecific lbg" for="fanningManeuver">Fanning Maneuver</label><select
-                                                                          onchange="DataCompile()" id="fanningManeuver" <div><label class="classSpecific hbg"
-                                                                           for="chargedShot">Charged Shot</label><select onchange="DataCompile()"
-                                                                            id="chargedShot" name="Charged Shot" class="skill classSpecific hbg">
-                                                                      <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>Lv-1</option>
-                                                                    </select></div>
-                                                                <div><label class="classSpecific hbg" for="chargedShot">Charged Shot</label><select
-                                                                          onchange="DataCompile()" id="chargedShot" name="Charged Shot"
-                                                                          class="skill classSpecific hbg">
-                                                                    <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                                                    <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1.1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-                                                                    <option value='{"BRM":1.2,"BR":0,"PRM":1,"BEM":1.2,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-                                                                    <option value='{"BRM":1.3,"BR":0,"PRM":1,"BEM":1.3,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-                                                                  </select></div>
-                                                                <div><label class="classSpecific Shot" for="DangoTemper">Dango Temper</label><select
-                                                                          onchange="DataCompile()" id="DangoTemper" name="Dango Temper"
-                                                                          class="skill classSpecific Shot">
-                                                                    <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                                                                    <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-1</option>
-                                                                    <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-2</option>
-                                                                    <option value='{"BRM":1,"BR":0,"PRM":1.075,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-3</option>
-                                                                    <option value='{"BRM":1,"BR":0,"PRM":1.075,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-4</option>
-                                                                  </select></div>
-                                                                <div><label class="classSpecific lbg hbg" for="SpareShot">Spare Shot</label><select
-                                                                          onchange="DataCompile()" id="SpareShot" name="Spare Shot"
-                                                                          class="skill classSpecific lbg hbg">
-                                                                    <option value=[1,1]>---</option>
-                                                                    <option value=[1.05,1.015]>Lv-1</option>
-                                                                    <div><label class="classSpecific lbg hbg" for="SpareShot">Spare Shot</label><select
-                                                                              onchange="DataCompile()" id="SpareShot" name="Spare Shot"
-                                                                              class="skill classSpecific lbg hbg">
-                                                                        <option value=[1.1,1.06]>Lv-4</option>
-                                                                        <div><label class="classSpecific lbg hbg" for="AmmoUp">Ammo Up</label><select
-                                                                                  onchange="DataCompile()" id="AmmoUp" name="AmmoUp"
-                                                                                  class="skill classSpecific lbg hbg"> class="skill classSpecific lbg hbg">
-                                                                            <option value=0>---</option>
-                                                                            <div><label class="classSpecific lbg hbg" for="AmmoUp">Ammo Up</label><select
-                                                                                      onchange="DataCompile()" id="AmmoUp" name="AmmoUp"
-                                                                                      class="skill classSpecific lbg hbg">
-                                                                                <option value=20>Lv-3</option>
-                                                                                <div><label class="classSpecific lbg hbg" for="RecoilDown">Recoil</label><select
-                                                                                          onchange="DataCompile()" id="RecoilDown" name="Recoil"
-                                                                                          class="skill classSpecific lbg hbg"> class="skill classSpecific lbg
-                                                                                    hbg"> <option value=0>---</option>
-                                                                                    <div><label class="classSpecific lbg hbg"
-                                                                                             for="RecoilDown">Recoil</label><select onchange="DataCompile()"
-                                                                                              id="RecoilDown" name="Recoil" class="skill classSpecific lbg hbg">
-                                                                                        <option value=3>Lv-3</option>
-                                                                                        <div><label class="classSpecific lbg hbg"
-                                                                                                 for="ReloadSpeed">Reload</label><select
-                                                                                                  onchange="DataCompile()" id="ReloadSpeed" name="Reload"
-                                                                                                  class="skill classSpecific lbg hbg"> class="skill
-                                                                                            classSpecific lbg hbg"> <option value=0>---</option>
-                                                                                            <div><label class="classSpecific lbg hbg"
-                                                                                                     for="ReloadSpeed">Reload</label><select
-                                                                                                      onchange="DataCompile()" id="ReloadSpeed" name="Reload"
-                                                                                                      class="skill classSpecific lbg hbg">
-                                                                                                <option value=3>Lv-3</option>
-                                                                                              </select></div>
-                                                                                            <div><label class="classSpecific lbg hbg"
-                                                                                                     for="ReloadSpeed">Reload</label><select
-                                                                                                      onchange="DataCompile()" id="ReloadSpeed" name="Reload"
-                                                                                                      class="skill classSpecific lbg hbg">
-                                                                                                <option value=0>---</option>
-                                                                                                <option value=1>Lv-1</option>
-                                                                                                <option value=2>Lv-2</option>
-                                                                                                <option value=3>Lv-3</option>
-                                                                                              </select></div>
-                                                                                        </div>
-                                                                                    </div>
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,
+                          "PEM":1,"aff":0}'>---</option>
+            <option value='{"BRM":1.13,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+            <option value='{"BRM":1.3,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+            <option value='{"BRM":1.5,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+          </select></div>
+        <div><label for='BowChargePlus'>Mighty Bow</label><select class="skill
+              classSpecific Bow" id="BowChargePlus" name="MightyBow" onchange="DataCompile()"> Mighty Bow > <option value='false'>---</ option>
+            <option value='true'>Lv-1</option>
+          </select></div>
+        <div><label for="RapidFireUp">Rapid Fire Up</label><select onchange="DataCompile()" id="RapidFireUp" name="Rapid"
+                  class="skill classSpecific LightBowGun HeavyBowGun">
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+          </select></div>
+        <div><label class="classSpecific Shot" for="PierceUp">Pierce Up</label><select onchange="DataCompile()" id="PierceUp" name="PierceUp"
+                  class="skill classSpecific Shot">
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+          </select></div>
+        <div><label class="classSpecific Shot" for="SpreadUp">Spread Up</label><select onchange="DataCompile()" id="SpreadUp" name="SpreadUp"
+                  class="skill classSpecific Shot">
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+          </select></div>
+        <div><label class="classSpecific Shot" for="NormalRapidUp">Normal/Rapid Up</label><select onchange="DataCompile()" id="NormalRapidUp"
+                  name="NormalRapidUp" class="skill classSpecific Shot">
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+          </select></div>
+        <div><label class="classSpecific Shot" for="SpecialAmmoBoost">Special Ammo Up</label><select onchange="DataCompile()" id="SpecialAmmoBoost"
+                  name="Special Ammo" class="skill classSpecific Shot">
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+          </select></div>
+        <div class="contain" id="ele">
+          <h1>Elemental</h1>
+          <div><label for="ElementalAttack">ElementalAttack</label><select id="ElementalAttack" name="Elemental Attack" onchange="DataCompile()" class="skill">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":2,"PEM":1,"aff":0}'>Lv-1</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":3,"PEM":1,"aff":0}'>Lv-2</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.05,"BE":4,"PEM":1,"aff":0}'>Lv-3</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.1,"BE":4,"PEM":1,"aff":0}'>Lv-4</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.2,"BE":4,"PEM":1,"aff":0}'>Lv-5</option>
+            </select></div>
+          <div><label for="ElderEssence">Elder Dragon Set Bonus</label><select class="skill" id="ElderEssence" name="Elder Essence" onchange="DataCompile()"
+                    class="skill setBonus">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.05,"BE":0,"PEM":1,"aff":0}'>Lv-1 </option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.15,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.15,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.15,"BE":0,"PEM":1,"aff":0}'>Lv-5</option>
+            </select></div>
+          <div><label for="CriticalElement">Critical Element</label><select id="CriticalElement" name="Critical Element" onchange="DataCompile()" class="skill">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-1</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>Lv-2</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>Lv-3</option>
+            </select></div>
+        </div>
+        <div class="contain" id="aff">
+          <h1>Affinity</h1>
+          <div><label for="WeaknessExploit">Weakness Exploit</label><select class="skillhitsOfSharp skill" id="WeaknessExploit" name="Weakness Exploit"
+                    onchange="DataCompile()" class="skill hitsOfSharp">
+              <option value=0>---</option>
+              <option value=15>Lv-1</option>
+              <option value=30>Lv-2</option>
+              <option value=50>Lv-3</option>
+            </select></div>
+          <div><label for="CriticalEye">Critical Eye</label><select id="CriticalEye" name="Critical Eye" onchange="DataCompile()" class="skill hitsOfSharp ">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":5}'>Lv-1</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":10}'>Lv-2</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":15}'>Lv-3</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'>Lv-4</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":25}'>Lv-5</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":30}'>Lv-6</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":40}'>Lv-7</option>
+            </select></div>
+          <div><label for="MaximumMight">Maximum Might</label><select id="MaximumMight" name="Maximum Might" onchange="DataCompile()" class="skill hitsOfSharp">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":10}'>Lv-1</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'>Lv-2</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":30}'>Lv-3</option>
+            </select></div>
+          <div><label for="LatentPower">Latent Power</label><select id="LatentPower" name="Latent Power" onchange="DataCompile()" class="skill hitsOfSharp">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":10}'>Lv-1</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'>Lv-2</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":30}'>Lv-3</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":45}'>Lv-4</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":50}'>Lv-5</option>
+            </select></div>
+        </div>
+        <div class="contain" id="unique">
+          <h1 class='classSpecific Bow ChargeBlade InsectGlaive LightBowGun HeavyBowGun LongSword SwitchAxe' id='weaponId'></h1>
+          <div><label class="classSpecific InsectGlaive" for="Kinsect Buff">Kinsect Buff</label><select onchange="DataCompile()" id="kinsectBuffId"
+                    name="Kinsect Buff" class="skill classSpecific InsectGlaive">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Red</option>
+              <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Red & White</option>
+              <option value='{"BRM":1.15,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Triple</option>
+            </select></div>
+          <div><label class="classSpecific LongSword" for="SpiritGauge">Spirit Gauge</label><select onchange="DataCompile()" id="spiritGauge" name="SpiritGauge"
+                    class="skill classSpecific LongSword">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1.05,"BE":0,"PEM":1,"aff":0}'>White</option>
+              <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1.1,"BE":0,"PEM":1,"aff":0}'>Yellow</option>
+              <option value='{"BRM":1.2,"BR":0,"PRM":1,"BEM":1.2,"BE":0,"PEM":1,"aff":0}'>Red</option>
+            </select></div>
+          <div><label class="classSpecific LongSword" for="Helmbreaker">Serene/HelmBreaker</label><select id="Helmbreaker" name="LongSword"
+                    onchange="DataCompile()" class="skill classSpecific LongSword">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1.5,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>White</option>
+              <option value='{"BRM":1,"BR":0,"PRM":2,"BEM":1,"BE":0,"PEM":1.2,"aff":0}'>yellow</option>
+              <option value='{"BRM":1,"BR":0,"PRM":3.2,"BEM":1,"BE":0,"PEM":1.3,"aff":0}'>Red</option>
+            </select></div>
+          <div><label class="classSpecific ChargeBlade" for="savageAxe">Savage Axe</label><select onchange="DataCompile()" id="savageAxe" name="Savage Axe"
+                    class="skill classSpecific ChargeBlade">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+            </select></div>
+          <div><label onchange="DataCompile()" class=" classSpecific ChargeBlade" for="impShieldCharge">Shield Charge</label><select onchange="DataCompile()"
+                    id="impShieldCharge" name="impShieldCharge" class="skill classSpecific ChargeBlade">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1.2,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+            </select></div>
+          <div><label onchange="DataCompile()" class=" classSpecific ChargeBlade" for="eleShieldCharge">Shield Charge Ele</label><select
+                    onchange="DataCompile()" id="eleShieldCharge" name="eleShieldCharge" class="skill classSpecific ChargeBlade">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.3,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+            </select></div>
+          <div><label class="classSpecific LightBowGun" for="evadeHop">Evade Hop</label><select onchange="DataCompile()" id="evadeHop" name="Evade Hop"
+                    class="skill classSpecific LightBowGun">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>Lv-1</option>
+            </select></div>
+          <div><label class="classSpecific LightBowGun" for="fanningManeuver">Fanning Maneuver</label><select onchange="DataCompile()" id="fanningManeuver"
+                    name="Fanning Maneuver" class="skill classSpecific LightBowGun">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>Lv-1</option>
+            </select></div>
+          <div><label class="classSpecific HeavyBowGun" for="chargedShot">Charged Shot</label><select onchange="DataCompile()" id="chargedShot"
+                    name="Charged Shot" class="skill classSpecific HeavyBowGun">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1.1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+              <option value='{"BRM":1.2,"BR":0,"PRM":1,"BEM":1.2,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+              <option value='{"BRM":1.3,"BR":0,"PRM":1,"BEM":1.3,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+            </select></div>
+          <div><label class="classSpecific Shot" for="DangoTemper">Dango Temper</label><select onchange="DataCompile()" id="DangoTemper" name="Dango Temper"
+                    class="skill classSpecific Shot">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-1</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-2</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1.075,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-3</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1.075,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-4</option>
+            </select></div>
+          <div><label class="classSpecific Shot" for="DangoMarksmanid">Dango Marksman</label><select onchange="DataCompile()" id="DangoMarksmanid"
+                    name="Dango Marksman" class="skill classSpecific Shot">
+              <option value=[1,1]>---</option>
+              <option value=[1.05,1.015]>Lv-1</option>
+              <option value=[1.1,1.03]>Lv-2</option>
+              <option value=[1.05,1.045]>Lv-3</option>
+              <option value=[1.1,1.06]>Lv-4</option>
+            </select></div>
+          <div><label class="classSpecific LightBowGun HeavyBowGun" for="SpareShot">Spare Shot</label><select onchange="DataCompile()" id="SpareShot"
+                    name="Spare Shot" class="skill classSpecific LightBowGun HeavyBowGun">
+              <option value=0>---</option>
+              <option value=5>Lv-1</option>
+              <option value=10>Lv-2</option>
+              <option value=20>Lv-3</option>
+            </select></div>
+          <div><label class="classSpecific LightBowGun HeavyBowGun" for="AmmoUp">Ammo Up</label><select onchange="DataCompile()" id="AmmoUp" name="AmmoUp"
+                    class="skill classSpecific LightBowGun HeavyBowGun">
+              <option value=0>---</option>
+              <option value=1>Lv-1</option>
+              <option value=2>Lv-2</option>
+              <option value=3>Lv-3</option>
+            </select></div>
+          <div><label class="classSpecific LightBowGun HeavyBowGun" for="RecoilDown">Recoil</label><select onchange="DataCompile()" id="RecoilDown"
+                    name="Recoil" class="skill classSpecific LightBowGun HeavyBowGun">
+              <option value=0>---</option>
+              <option value=1>Lv-1</option>
+              <option value=2>Lv-2</option>
+              <option value=3>Lv-3</option>
+            </select></div>
+          <div><label class="classSpecific LightBowGun HeavyBowGun" for="ReloadSpeed">Reload</label><select onchange="DataCompile()" id="ReloadSpeed"
+                    name="Reload" class="skill classSpecific LightBowGun HeavyBowGun">
+              <option value=0>---</option>
+              <option value=1>Lv-1</option>
+              <option value=2>Lv-2</option>
+              <option value=3>Lv-3</option>
+            </select></div>
+        </div>
+      </div>
     </section>
     <section id="section2">
       <h1> Monster Selection</h1>
@@ -753,101 +722,75 @@
       <div id='monTableContainer'>
         <table id="monTable">
           <tr>
-            <<<<<<< HEAD <<<<<<< HEAD <th>
-              </th>
+            <th></th>
           </tr>
-          <button type="button" aria-pressed="false" class="blue classSpecific melee bow" id="resetCombo" onclick="ComboReset()"> Reset Combo </button>
+          <tr>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div id="forButtons">
+        <button type="button" aria-pressed="false" class="blue" id="resetSkills" onclick="ResetSkills(); DataCompile()"> Reset Skills </button>
+        <button type="button" aria-pressed="false" class="blue" id="Save State" onclick="saveState()"> Save Selections </button>
+        <button type="button" aria-pressed="false" class="blue classSpecific melee Bow" id="resetCombo" onclick="ComboReset()"> Reset Combo </button>
+        <button type="button" aria-pressed="false" class="gray toggle classSpecific
+         LightBowGun" id="CriticalFirePower" onclick='DataCompile()'> CriticalFirePower </button>
+        <button type="button" aria-pressed="false" class="gray toggle classSpecific melee
+      Bow" id="filterCombo"> Combo Attack Filter</button>
+        <button type="button" aria-pressed="false" class="blue classSpecific LightBowGun
+      HeavyBowGun" id="ammoChange" onclick="ToggleAmmoTables()"> Change Ammo Table </button>
+        <div id='forButtonSelect'>
           <button type="button" aria-pressed="false" class="gray toggle classSpecific bow skillButton"
                   value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}' id="HerculesDraw" onclick='DataCompile()'> Hercules Draw </button>
           <button type="button" aria-pressed="false" class="gray toggle classSpecific bow skillButton"
                   value='{"BRM":1,"BR":0,"PRM":1.15,"BEM":1,"BE":0,"PEM":1.1,"aff":0}' id="UpperCrit" onclick='DataCompile()'> Upper Critical Distance </button>
           <button type="button" aria-pressed="false" class="gray toggle classSpecific lbg" id="CriticalFirePower" onclick='DataCompile()'> Critical FirePower
           </button>
-          <button type="button" aria-pressed="false" class="gray toggle classSpecific melee bow" id="filterCombo"> Combo Attack Filter</button>
-          <button type="button" aria-pressed="false" class="blue classSpecific lbg hbg" id="ammoChange" onclick="ToggleAmmoTables()"> Change Ammo Table
-          </button> ======= ======= >>>>>>> parent of b6ef4b3 (Critical Firepower) <button type="button" aria-pressed="false" class="blue" id="resetSkills"
-                  onclick="ResetSkills(); DataCompile()">Reset Skills</button>
-          <button type="button" aria-pressed="false" class="blue" id="Save State" onclick="saveState()">Save Selections</button>
-          <button type="button" aria-pressed="false" class="blue classSpecific melee Bow" id="resetCombo" onclick="ComboReset()">Reset Combo</button>
-          </tr>
-          <button type="button" aria-pressed="false" class="blue classSpecific LightBowGun HeavyBowGun" id="ammoChange" onclick="ToggleAmmoTables()">Change Ammo
-            Table</button>
-          <<<<<<< HEAD>>>>>>> parent of b6ef4b3 (Critical Firepower) ======= >>>>>>> parent of b6ef4b3 (Critical Firepower) <button type="button"
-                    aria-pressed="false" class="gray toggle classSpecific bow skillButton" <div><label class="classSpecific lbg hbg" for="pierceAdjust">Pierce
-                Dmg Adjust</label><select id="pierceAdjust" name="pierceAdjust" class="classSpecific lbg hbg" onchange="DataCompile()">
-                value='{"BRM":1,"BR":0,"PRM":1.15,"BEM":1,"BE":0,"PEM":1.1,"aff":0}' id="UpperCrit" onclick='DataCompile()'> Upper Critical Distance </button>
-            <button type="button" aria-pressed="false" class="gray toggle classSpecific lbg" id="CriticalFirePower" onclick='DataCompile()'> Critical FirePower
-            </button>
-            <button type="button" aria-pressed="false" class="gray toggle classSpecific melee bow" id="filterCombo"> Combo Attack Filter</button>
-            <button type="button" aria-pressed="false" class="blue classSpecific lbg hbg" id="ammoChange" onclick="ToggleAmmoTables()"> Change Ammo Table
-            </button> ======= <div><label class="classSpecific lbg hbg" for="spareAdjust">Spare Shot Adjust</label><select id="spareAdjust" name="spareAdjust"
-                      class="classSpecific lbg hbg" onchange="DataCompile()">
-                <button type="button" aria-pressed="false" class="blue classSpecific melee Bow" id="resetCombo" onclick="ComboReset()">Reset Combo</button>
-                <button type="button" aria-pressed="false" class="blue" id="resetSkills" onclick="ResetSkills(); DataCompile()"> Reset Skills </button>
-                <button type="button" aria-pressed="false" class="blue classSpecific LightBowGun HeavyBowGun" id="ammoChange"
-                        onclick="ToggleAmmoTables()">Change Ammo Table</button> >>>>>>> parent of b6ef4b3 (Critical Firepower) <button type="button"
-                        aria-pressed="false" class="gray toggle classSpecific bow skillButton" <div><label class="classSpecific lbg hbg"
-                         for="pierceAdjust">Pierce Dmg Adjust</label><select id="pierceAdjust" name="pierceAdjust" class="classSpecific lbg hbg"
-                          onchange="DataCompile()"> value='{"BRM":1,"BR":0,"PRM":1.15,"BEM":1,"BE":0,"PEM":1.1,"aff":0}' id="UpperCrit" onclick='DataCompile()'>
-                    Upper Critical Distance </button>
-                <button type="button" aria-pressed="false" class="gray toggle classSpecific lbg" id="CriticalFirePower" onclick='DataCompile()'> Critical
-                  FirePower </button>
-                <button type="button" aria-pressed="false" class="gray toggle classSpecific melee bow" id="filterCombo"> Combo Attack Filter</button>
-                <button type="button" aria-pressed="false" class="blue classSpecific lbg hbg" id="ammoChange" onclick="ToggleAmmoTables()"> Change Ammo Table
-                </button> ======= <div><label class="classSpecific lbg hbg" for="spareAdjust">Spare Shot Adjust</label><select id="spareAdjust"
-                          name="spareAdjust" class="classSpecific lbg hbg" onchange="DataCompile()">
-                    <button type="button" aria-pressed="false" class="blue classSpecific melee Bow" id="resetCombo" onclick="ComboReset()">Reset Combo</button>
-                    <button type="button" aria-pressed="false" class="gray toggle classSpecific melee Bow" id="filterCombo"> Combo Attack Filter</button>
-                    <button type="button" aria-pressed="false" class="blue classSpecific LightBowGun HeavyBowGun" id="ammoChange"
-                            onclick="ToggleAmmoTables()">Change Ammo Table</button> >>>>>>> parent of b6ef4b3 (Critical Firepower) <div id='forButtonSelect'>
-                      <div><label class="classSpecific lbg hbg" for="pierceAdjust">Pierce Dmg Adjust</label><select id="pierceAdjust" name="pierceAdjust"
-                                class="classSpecific lbg hbg" onchange="DataCompile()">
-                          <option value=[1,1]>Max Deeps</option>
-                          <option value=[0.85,0.72]>Legendary</option>
-                          <option value=[0.77,0.6428]>SpeedRun</option>
-                          <option value=[0.70,0.57]>Average</option>
-                          <option value=[0.62,0.5]>Casual</option>
-                        </select></div>
-                      <div><label class="classSpecific lbg hbg" for="spareAdjust">Spare Shot Adjust</label><select id="spareAdjust" name="spareAdjust"
-                                class="classSpecific lbg hbg" onchange="DataCompile()">
-                          <option value=0>---</option>
-                          <option value=-5>-5%</option>
-                          <option value=5>+5%</option>
-                          <option value=10>+10%</option>
-                        </select></div>
-                    </div>
-                </div>
-                <div id="sharpnessContainer">
-                  <div class="sharpness" id="red" style="background-color:red; border-style: none;"></div>
-                  <div class="sharpness" id="orange" style="background-color:orange; border-style: none;"></div>
-                  <div class="sharpness" id="yellow" style="background-color:gold; border-style: none;"></div>
-                  <div class="sharpness" id="green" style="background-color:forestgreen; border-style: none;"></div>
-                  <div class="sharpness" id="blue" style="background-color:blue; border-style: none;"></div>
-                  <div class="sharpness" id="white" style="background-color:white; border-style: none;"></div>
-                  <div style="display:none" class="sharpness classSpecific melee" id="purple" style="background-color:purple;"></div>
-                </div>
-                <div id="damageTable">
-                  <table id="dpsTable">
-                    <thead id="dpsHead">
-                      <tr>
-                      </tr>
-                    </thead>
-                    <tbody id="dpsBody" class="dpsBody">
-                      <tr>
-                        <td id="inputComboRepeat" name="inputComboRepeat" value="1" class="a 0"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <table id="ammoTable">
-                    <!-- <link href="/index.js/"> -->
-                    <!-- <script src="/index.js"></script> -->
-                    <!-- <link rel="stylesheet" type="text/css" href="/index.css"> -->
-                    <thead id="ammoHead">
-                    </thead>
-                    <tbody id="ammoBody">
-                </div>
-                </tbody>
+          <div><label class="classSpecific LightBowGun HeavyBowGun" for="pierceAdjust">Pierce Dmg Adjust</label><select id="pierceAdjust" name="pierceAdjust"
+                    class="classSpecific LightBowGun HeavyBowGun" onchange="DataCompile()">
+              <option value=[1,1]>Max Deeps</option>
+              <option value=[0.85,0.72]>Legendary</option>
+              <option value=[0.77,0.6428]>SpeedRun</option>
+              <option value=[0.70,0.57]>Average</option>
+              <option value=[0.62,0.5]>Casual</option>
+            </select></div>
+          <div><label class="classSpecific LightBowGun HeavyBowGun" for="spareAdjust">Spare Shot Adjust</label><select id="spareAdjust" name="spareAdjust"
+                    class="classSpecific LightBowGun HeavyBowGun" onchange="DataCompile()">
+              <option value=0>---</option>
+              <option value=-5>-5%</option>
+              <option value=5>+5%</option>
+              <option value=10>+10%</option>
+            </select></div>
+        </div>
+      </div>
+      <div id="sharpnessContainer">
+        <div class="sharpness" id="red" style="background-color:red; border-style: none;"></div>
+        <div class="sharpness" id="orange" style="background-color:orange; border-style: none;"></div>
+        <div class="sharpness" id="yellow" style="background-color:gold; border-style: none;"></div>
+        <div class="sharpness" id="green" style="background-color:forestgreen; border-style: none;"></div>
+        <div class="sharpness" id="blue" style="background-color:blue; border-style: none;"></div>
+        <div class="sharpness" id="white" style="background-color:white; border-style: none;"></div>
+        <div style="display:none" class="sharpness classSpecific melee" id="purple" style="background-color:purple;"></div>
+      </div>
+      <div id="damageTable">
+        <table id="dpsTable">
+          <thead id="dpsHead">
+            <tr>
+            </tr>
+          </thead>
+          <tbody id="dpsBody" class="dpsBody">
+            <tr>
+              <td id="inputComboRepeat" name="inputComboRepeat" value="1" class="a 0"></td>
+            </tr>
+          </tbody>
         </table>
+        <table id="ammoTable">
+          <thead id="ammoHead">
+          </thead>
+          <tbody id="ammoBody">
+      </div>
+      </tbody>
+      </table>
     </section>
     </div>
     <div>
@@ -858,9 +801,6 @@
     </div>
     <!-- <div id="target"></div> -->
     <!-- <ul id="main-menu" class="sm sm-blue"> -->
-    <!-- <link href="/index.js/"> -->
-    <!-- <script src="/index.js"></script> -->
-    <!-- <link rel="stylesheet" type="text/css" href="/index.css"> -->
     <!-- <li><a href="#">Item 1</a></li> -->
     <!-- <li><a href="#">Item 2</a> -->
     <!-- <ul> -->
