@@ -235,7 +235,10 @@ function MeleeDPS() {
 			}
 		}
 		// damage/meleeDamage adds sharpness to the calculations and arranges them in the array to be used for the damageTable
-		const sharpnessModifier = power.noSharpMod === false ? JSON.parse(Sharpness.value) : { PRM: 1, PEM: 1 };
+	let sharpnessModifier = power.noSharpMod === false ? JSON.parse(Sharpness.value) : { PRM: 1, PEM: 1 };
+	sharpnessModifier = weaponType.value === 'Bow' && bowCoating[bowCoating.selectedIndex].text === 'Power' ? 1.35 : sharpnessModifier;
+		sharpnessModifier = weaponType.value === 'Bow' && bowCoating[bowCoating.selectedIndex].text === 'Close Range' ? 1.32 : sharpnessModifier;
+	sharpnessModifier = weaponType.value === 'Bow' && bowCoating[bowCoating.selectedIndex].text === 'Close Range+' ? 1.39 : sharpnessModifier;
 		const damage = [
 			'replaceME',
 			power.attackName,
@@ -341,23 +344,23 @@ function AddDependantSkills(power) {
 
 		return attacks;
 	} else if ($(weaponType).val() === 'ChargeBlade') {
-		const phialType = info.ChargeBlade.weapons[$('#dropWeapon').val()].phialType === 'Impact Phial' ? 'Element Phial| Elemental Phial' : 'Impact Phial';
+		const phialType = getWeapon().phialType === 'Impact Phial' ? 'Element Phial| Elemental Phial' : 'Impact Phial';
 		const regexp = new RegExp(`${phialType}`);
 
-		let attacks = Object.fromEntries(Object.entries(info.ChargeBlade.attacks).filter(skill => !regexp.test(skill)));
+	let attacks = Object.fromEntries(Object.entries(getAttacks()).filter(skill => !regexp.test(skill)));
 
 		return attacks;
 
 		//  filters bow attacks for only the usable attacks
 	} else if ($('#dropWeaponType').val() === 'Bow') {
-		let attacksTemp = info[$(weaponType).val()].attacks;
+		let attacksTemp =getAttacks();
 		let attacks = [];
 		let usableKeys = '';
 		const totalKeys =
-			BowChargePlus.selectedIndex === 1 && info.Bow.weapons[dropWeapon.value].baseCharge < 4
-				? info.Bow.weapons[dropWeapon.value].baseCharge + 1
-				: info.Bow.weapons[dropWeapon.value].baseCharge;
-		$(info.Bow.weapons[dropWeapon.value].bowShot).each(function (index, element) {
+			BowChargePlus.selectedIndex === 1 && getWeapon().baseCharge < 4
+				? getWeapon().baseCharge + 1
+				: getWeapon().baseCharge;
+		$(getWeapon().bowShot).each(function (index, element) {
 			if (index < totalKeys) {
 				usableKeys += `|Lv${element.match('[1-5]')[0]} ${element.match('Normal|Rapid|Pierce|Spread')[0]}`;
 			}
@@ -370,7 +373,7 @@ function AddDependantSkills(power) {
 			...Object.fromEntries(Object.entries(attacksTemp).splice(137)),
 		};
 	} else if ($(weaponType).val() === 'Gunlance') {
-		return Object.fromEntries(Object.entries(info.Gunlance.attacks).splice(0, 28));
+		return Object.fromEntries(Object.entries(getAttacks()).splice(0, 28));
 	}
 }
 function GetSkills(power) {
@@ -477,6 +480,10 @@ function GetSkills(power) {
 		getWeapon().phialType === 'Impact Phial' ? power.getSkills.push('impShieldCharge') : power.getSkills.push('eleShieldCharge');
 	}
 	power.aff += weaponRampage0.value === 'Hellion Mode' && weaponType.value === 'DualBlades' ? 20 : 0;
+		if (weaponType.value === 'Bow' && /Stake/.test(power.attackName)) {
+		power.getSkills = power.getSkills.filter((/** @type {string} */ skill)
+=> skill !== 'bowCoating');
+	}
 
 	power.getSkills.forEach(skill => {
 		if ((document.getElementById([skill]).selectedIndex > 0 && skill !== 'Bombardier') || skill === 'dropDereliction') {
@@ -834,7 +841,7 @@ function GunlanceShelling(currentDamage, comboDamage, power) {
 	let regex = new RegExp(`${getWeapon().shellingType} ${getWeapon().shellingLevel}`);
 	const Raw = 1;
 	const EFR = 1;
-	$(Object.entries(info.Gunlance.attacks).filter(attack => regex.test(attack))).each(function (index) {
+	$(Object.entries(getAttacks()).filter(attack => regex.test(attack))).each(function (index) {
 		const Raw = ~~(this[1].rawMV * JSON.parse(Bombardier.value)[0] * JSON.parse(Artillery.value).BRM);
 		const EFR = ~~(this[1].rawMV * JSON.parse(Bombardier.value)[1] * JSON.parse(Artillery.value).BRM);
 		const final = [
@@ -1080,10 +1087,10 @@ function MeleeElements() {
 	$('.melee').parent().show();
 	$('.melee').show();
 	if ($('#dropWeaponType').val() === 'ChargeBlade') {
-		if (info.ChargeBlade.weapons[$('#dropWeapon').val()].phialType === 'Impact Phial') {
+		if (getWeapon().phialType === 'Impact Phial') {
 			impShieldCharge.parentNode.style = "display:''";
 			eleShieldCharge.parentNode.style = 'display:none';
-		} else if (info.ChargeBlade.weapons[$('#dropWeapon').val()].phialType === 'Element Phial') {
+		} else if (getWeapon().phialType === 'Element Phial') {
 			impShieldCharge.parentNode.style = 'display:none';
 			eleShieldCharge.parentNode.style = "display:''";
 		}
@@ -1138,7 +1145,7 @@ $('#BowChargePlus').change(function (e) {
 	ComboReset();
 	UpdateComboDisplay();
 });
-$('.toggle').click(function (e) {
+$('.toggle').on("click",function (e) {
 	if (/DemonDrug/.test(e.target.id) && /gray/.test(e.target.className) && [DemonDrug.className, MegaDemonDrug.className].some(x => /blue/.test(x))) {
 		$('#DemonDrug').toggleClass('gray blue');
 
@@ -1317,9 +1324,7 @@ function WeaponTypeSelect() {
 function WeaponSelect() {
 	$(dropWeapon).empty();
 	$(info[$(weaponType).val()].weapons).each((index, weapon) => {
-		if (weapon.weapon !== 'Unknown') {
 			$('#dropWeapon').append($('<option></option>').attr('value', index).text(weapon.weapon));
-		}
 	});
 }
 function RampageSelect() {
@@ -1406,7 +1411,7 @@ function HealthSelect() {
 		$(health).append($('<option></option>').attr('value', value).text(value));
 	});
 }
-// $('div.menu>select.players>option').click(function (e) {
+// $('div.menu>select.players>option').on("click",function (e) {
 // PopulateDropDowns([event.target.value], $('#players'));
 // $('div.menu').hide();
 // });
@@ -1464,7 +1469,7 @@ function updateQuest() {
 	$('div.menu').hide();
 	DataCompile();
 }
-$(document).click(function (event) {
+$(document).on("click",function (event) {
 	var $target = $(event.target);
 	if (
 		!$target.closest(DerelictionButton).length &&
@@ -1476,7 +1481,7 @@ $(document).click(function (event) {
 	}
 });
 
-$(document).click(function (event) {
+$(document).on("click",function (event) {
 	var $target = $(event.target);
 	if (!$target.closest(questButton).length && !$target.closest('.menu').length && !$target.closest(dropQuest).length && $('.menu').is(':visible')) {
 		$('.menu').hide();
@@ -1596,7 +1601,7 @@ function loadState(ugh) {
 	ugh = JSON.parse(ugh);
 
 	comboTracker = ugh[3];
-	ugh2 = document.querySelectorAll('select');
+	let ugh2 = document.querySelectorAll('select');
 
 	ugh2[0].selectedIndex = ugh[0][0];
 	WeaponSelect();
