@@ -148,9 +148,9 @@ function RangedDPS() {
 			const stats = [
 				['Stat', 'Raw', 'Affinity', 'Ele Ammo'],
 				['Base', ~~power.baseRaw, ~~power.baseAff, ~~(0.1 + 11 * power.eleAmmo)],
-				['Pre-Cap', ~~power.raw, power.aff * 100, ~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo)],
+				['Total Attack', ~~power.raw, power.aff * 100, ~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo)],
 				[
-					'Post-Cap',
+					'Total Damage',
 					~~(power.raw * power.critBoost * power.PRM * power.enrage * power.augPRM * JSON.parse(DangoMarksmanid.value)[0]),
 					~~(power.aff * 100),
 					~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo * power.PEM * power.enrage * power.augPEM * power.eleCritBoost),
@@ -281,9 +281,9 @@ function MeleeDPS() {
 			const stats = [
 				[['Stat'], ['Raw'], ['Affinity'], [power.eleType]],
 				['Base', ~~power.baseRaw, power.baseAff, power.baseEle],
-				['Pre-Cap', ~~power.raw, ~~(power.aff * 100), ~~ele],
+				['Total Attack', ~~power.raw, ~~(power.aff * 100), ~~ele],
 				[
-					'Post-Cap',
+					'Total Damage',
 					~~(power.raw * power.critBoost * power.PRM * power.enrage * power.augPRM * JSON.parse(DangoMarksmanid.value)[0] * sharpnessModifier.PRM),
 					~~(power.aff * 100),
 					~~(ele * power.eleCritBoost * power.PEM * power.enrage * power.augPEM * sharpnessModifier.PEM),
@@ -1759,14 +1759,15 @@ function populateSelectOptions() {
 	if (Object.values(check).every(keyCard => keyCard)) {
 		let ugh = {};
 		$(Object.entries(info.skills)).each(function () {
-			if (this[0] !== 'dropDereliction') {
-				let ugh10 = document.createElement('option');
-				let ugh2 = this[0];
+			let ugh2 = this[0];
+			if (ugh2 !== 'dropDereliction') {
+				$(`#${ugh2}`).empty();
 				// let ugh15 = `<div><label for="${ugh2}">${ugh2}</label><select id="${ugh2}" name="${ugh2}" onchange="DataCompile()" class="skill">`;
 
 				// console.log(ugh2);
 				ugh[ugh2] = [];
 				$(this[1]).each(function (index) {
+					let option = document.createElement('option');
 					if (index !== 0) {
 						let raw = '';
 						if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
@@ -1775,10 +1776,12 @@ function populateSelectOptions() {
 								raw += ' +' + this.BR;
 							}
 							if (this.BRM > 1) {
-								raw += ' +' + ((this.BRM - 1) * 100).toFixed(1) + '%';
+								let brm = /\.[1-8]/.test((this.BRM - 1) * 100) ? ((this.BRM - 1) * 100).toFixed(1) : ((this.BRM - 1) * 100).toFixed(0);
+								raw += ' +' + brm + '%';
 							}
 							if (this.PRM > 1) {
-								raw += ' +' + ((this.PRM - 1) * 100).toFixed(1) + '%';
+								let prm = /\.[1-8]/.test((this.PRM - 1) * 100) ? ((this.PRM - 1) * 100).toFixed(1) : ((this.PRM - 1) * 100).toFixed(0);
+								raw += ' +' + prm + '%';
 							}
 						}
 						let ele = '';
@@ -1788,20 +1791,23 @@ function populateSelectOptions() {
 								ele += ' +' + this.BE;
 							}
 							if (this.BEM > 1) {
-								ele += ' +' + ((this.BEM - 1) * 100).toFixed(1) + '%';
+								let bem = /\.[1-8]/.test((this.BEM - 1) * 100) ? ((this.BEM - 1) * 100).toFixed(1) : ((this.BEM - 1) * 100).toFixed(0);
+								ele += ' +' + bem + '%';
 							}
 							if (this.PEM > 1) {
-								ele += ' +' + ((this.PEM - 1) * 100).toFixed(1) + '%';
+								let pem = /\.[1-8]/.test((this.PEM - 1) * 100) ? ((this.PEM - 1) * 100).toFixed(1) : ((this.PEM - 1) * 100).toFixed(0);
+								ele += ' +' + pem + '%';
 							}
 						}
 						const aff = this.aff > 0 ? 'Aff +' + this.aff : '';
-						ugh[ugh2][index] = `<option value=${JSON.stringify(this)}>Lv${index} ${[raw, ele, aff].join(' ')}</option>`;
+						option.value = JSON.stringify(this);
+						option.textContent = index + ': ' + [raw, ele, aff].join(' ');
 					} else {
-						ugh[ugh2][index] = `<option value=${JSON.stringify(this)}>${ugh2}</option>`;
+						option.value = JSON.stringify(this);
+						option.textContent = ugh2;
 					}
+					$(`#${ugh2}`)[0].appendChild(option);
 				});
-				ugh10.innerHTML = ugh[ugh2];
-				$(`#${ugh2}`).children().replaceWith(ugh10);
 			}
 		});
 	}
