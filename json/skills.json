@@ -1020,16 +1020,32 @@
   }
  ],
  "MastersTouch": [
-  {},
-  {},
-  {},
-  {}
+  {
+   "Sharp": 0
+  },
+  {
+   "Sharp": 0.2
+  },
+  {
+   "Sharp": 0.4
+  },
+  {
+   "Sharp": 0.8
+  }
  ],
  "RazorSharp": [
-  {},
-  {},
-  {},
-  {}
+  {
+   "Sharp": 0
+  },
+  {
+   "Sharp": 0.1
+  },
+  {
+   "Sharp": 0.25
+  },
+  {
+   "Sharp": 0.5
+  }
  ],
  "Adrenaline": [
   {

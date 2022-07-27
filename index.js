@@ -585,8 +585,8 @@ function TotalHitsOfSharpUsed(power) {
 	// applies the extra hits of sharpness from the Masters Touch skill;
 	const mTBonus =
 		power.aff > 0 && MastersTouch.selectedIndex > 0
-			? sharpnessReduction(+MastersTouch.value * power.aff) * sharpnessReduction(+RazorSharp.value)
-			: sharpnessReduction(+RazorSharp.value);
+			? sharpnessReduction(JSON.parse(+MastersTouch.value).Sharp * power.aff) * sharpnessReduction(JSON.parse(RazorSharp.value).Sharp)
+			: sharpnessReduction(JSON.parse(RazorSharp.value).Sharp);
 	total.purple = ~~(mTBonus * power.hitsOfSharpness.purple);
 	total.white = ~~(mTBonus * power.hitsOfSharpness.white);
 	total.blue = ~~(mTBonus * power.hitsOfSharpness.blue);
@@ -1815,7 +1815,10 @@ function populateSelectOptions() {
 								ele += ' +' + pem + '%';
 							}
 						}
-						const aff = this.aff > 0 ? 'Aff +' + this.aff : '';
+						const aff = this.aff > 0 ? 'Aff +' + this.aff + '%' : '';
+						raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp < 1 ? `Sharp +${this.Sharp * 100}%` : raw;
+						raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp > 1 ? `Sharp +${this.Sharp}` : raw;
+						raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
 						option.value = JSON.stringify(this);
 						option.textContent = index + ': ' + [raw, ele, aff].join(' ');
 					} else {
