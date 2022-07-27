@@ -643,6 +643,7 @@ function TotalHitsOfSharpUsed(power) {
 	});
 
 	let hits = totalHitsOfSharpnessUsed;
+	[power.hitsOfSharpness.purple, hits] = hits - total.purple > 0 ? [0, hits - total.purple] : [total.purple - hits, 0];
 	[power.hitsOfSharpness.white, hits] = hits - total.white > 0 ? [0, hits - total.white] : [total.white - hits, 0];
 	[power.hitsOfSharpness.blue, hits] = hits > 0 && hits - total.blue > 0 ? [0, hits - total.blue] : [total.blue - hits, 0];
 	[power.hitsOfSharpness.green, hits] = hits > 0 && hits - total.green > 0 ? [0, hits - total.green] : [total.green - hits, 0];
@@ -652,14 +653,16 @@ function TotalHitsOfSharpUsed(power) {
 
 	$('#white')
 		.parent()
-		.css('width', `${(total.white + total.blue + total.green + total.yellow + total.orange + total.red) * 0.8}px`);
-	white.style.width = `${power.hitsOfSharpness.white * 0.8}px`;
-	blue.style.width = `${power.hitsOfSharpness.blue * 0.8}px`;
-	green.style.width = `${power.hitsOfSharpness.green * 0.8}px`;
-	yellow.style.width = `${power.hitsOfSharpness.yellow * 0.8}px`;
-	orange.style.width = `${power.hitsOfSharpness.orange * 0.8}px`;
-	red.style.width = `${power.hitsOfSharpness.red * 0.8}px`;
+		.css('width', `${(total.white + total.blue + total.green + total.yellow + total.orange + total.red) * 0.7}px`);
+	purple.style.width = `${power.hitsOfSharpness.purple * 0.7}px`;
+	white.style.width = `${power.hitsOfSharpness.white * 0.7}px`;
+	blue.style.width = `${power.hitsOfSharpness.blue * 0.7}px`;
+	green.style.width = `${power.hitsOfSharpness.green * 0.7}px`;
+	yellow.style.width = `${power.hitsOfSharpness.yellow * 0.7}px`;
+	orange.style.width = `${power.hitsOfSharpness.orange * 0.7}px`;
+	red.style.width = `${power.hitsOfSharpness.red * 0.7}px`;
 
+	purple.innerHTML = power.hitsOfSharpness.purple > 0 ? ~~(power.hitsOfSharpness.purple + 0.7) : '';
 	white.innerHTML = power.hitsOfSharpness.white > 0 ? ~~(power.hitsOfSharpness.white + 0.7) : '';
 	blue.innerHTML = power.hitsOfSharpness.blue > 0 ? ~~(power.hitsOfSharpness.blue + 0.7) : '';
 	green.innerHTML = power.hitsOfSharpness.green > 0 ? ~~(power.hitsOfSharpness.green + 0.7) : '';
@@ -667,7 +670,9 @@ function TotalHitsOfSharpUsed(power) {
 	orange.innerHTML = power.hitsOfSharpness.orange > 0 ? ~~(power.hitsOfSharpness.orange + 0.7) : '';
 	red.innerHTML = power.hitsOfSharpness.red > 0 ? ~~(power.hitsOfSharpness.red + 0.7) : '';
 
-	if (power.hitsOfSharpness.white > 0) {
+	if (power.hitsOfSharpness.purple > 0) {
+		Sharpness.selectedIndex = 7;
+	} else if (power.hitsOfSharpness.white > 0) {
 		Sharpness.selectedIndex = 6;
 	} else if (power.hitsOfSharpness.blue > 0) {
 		Sharpness.selectedIndex = 5;
