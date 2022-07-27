@@ -572,7 +572,7 @@ function TotalHitsOfSharpUsed(power) {
 		} else if (power.hitsOfSharpness.yellow > 0) {
 			increase = ['yellow', 'green', 'blue', 'white'];
 		}
-		let pointsOfHandicraft = $('.hitsOfSharp')[4].selectedIndex;
+		let pointsOfHandicraft = Handicraft.selectedIndex;
 		$(power.handicraft).each(function (index, element) {
 			while (element > 0 && pointsOfHandicraft > 0) {
 				power.hitsOfSharpness[increase[index]] += 10;
