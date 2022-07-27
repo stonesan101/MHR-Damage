@@ -583,7 +583,10 @@ function TotalHitsOfSharpUsed(power) {
 	}
 
 	// applies the extra hits of sharpness from the Masters Touch skill;
-	const mTBonus = power.aff > 0 && MastersTouch.selectedIndex > 0 ? (1 + +MastersTouch.value * power.aff) * (1 + +RazorSharp.value) : 1 + +RazorSharp.value;
+	const mTBonus =
+		power.aff > 0 && MastersTouch.selectedIndex > 0
+			? sharpnessReduction(+MastersTouch.value * power.aff) * sharpnessReduction(+RazorSharp.value)
+			: sharpnessReduction(+RazorSharp.value);
 	total.purple = ~~(mTBonus * power.hitsOfSharpness.purple);
 	total.white = ~~(mTBonus * power.hitsOfSharpness.white);
 	total.blue = ~~(mTBonus * power.hitsOfSharpness.blue);
@@ -641,7 +644,6 @@ function TotalHitsOfSharpUsed(power) {
 			power.comboHitsPerColor.red.push(eachAttack);
 		}
 	});
-
 	let hits = totalHitsOfSharpnessUsed;
 	[power.hitsOfSharpness.purple, hits] = hits - total.purple > 0 ? [0, hits - total.purple] : [total.purple - hits, 0];
 	[power.hitsOfSharpness.white, hits] = hits - total.white > 0 ? [0, hits - total.white] : [total.white - hits, 0];
@@ -650,17 +652,16 @@ function TotalHitsOfSharpUsed(power) {
 	[power.hitsOfSharpness.yellow, hits] = hits > 0 && hits - total.yellow > 0 ? [0, hits - total.yellow] : [total.yellow - hits, 0];
 	[power.hitsOfSharpness.orange, hits] = hits > 0 && hits - total.orange > 0 ? [0, hits - total.orange] : [total.orange - hits, 0];
 	[power.hitsOfSharpness.red, hits] = hits > 0 && hits - total.red > 0 ? [0, hits - total.red] : [total.red - hits, 0];
-
-	$('#white')
-		.parent()
-		.css('width', `${(total.white + total.blue + total.green + total.yellow + total.orange + total.red) * 0.7}px`);
-	purple.style.width = `${power.hitsOfSharpness.purple * 0.7}px`;
-	white.style.width = `${power.hitsOfSharpness.white * 0.7}px`;
-	blue.style.width = `${power.hitsOfSharpness.blue * 0.7}px`;
-	green.style.width = `${power.hitsOfSharpness.green * 0.7}px`;
-	yellow.style.width = `${power.hitsOfSharpness.yellow * 0.7}px`;
-	orange.style.width = `${power.hitsOfSharpness.orange * 0.7}px`;
-	red.style.width = `${power.hitsOfSharpness.red * 0.7}px`;
+	let width = total.purple + total.white + total.blue + total.green + total.yellow + total.orange + total.red;
+	let finalWidth = Math.min(width, $(section2).width());
+	$('#white').parent().css('width', `${finalWidth}px`);
+	purple.style.width = `${(power.hitsOfSharpness.purple / width) * finalWidth}px`;
+	white.style.width = `${(power.hitsOfSharpness.white / width) * finalWidth}px`;
+	blue.style.width = `${(power.hitsOfSharpness.blue / width) * finalWidth}px`;
+	green.style.width = `${(power.hitsOfSharpness.green / width) * finalWidth}px`;
+	yellow.style.width = `${(power.hitsOfSharpness.yellow / width) * finalWidth}px`;
+	orange.style.width = `${(power.hitsOfSharpness.orange / width) * finalWidth}px`;
+	red.style.width = `${(power.hitsOfSharpness.red / width) * finalWidth}px`;
 
 	purple.innerHTML = power.hitsOfSharpness.purple > 0 ? ~~(power.hitsOfSharpness.purple + 0.7) : '';
 	white.innerHTML = power.hitsOfSharpness.white > 0 ? ~~(power.hitsOfSharpness.white + 0.7) : '';
@@ -853,6 +854,16 @@ function BowComboDamage() {
 	});
 
 	return comboDamage;
+}
+
+function sharpnessReduction(reduction) {
+	let total = 0;
+	let hits = 1;
+	while (hits > 0.0001) {
+		total += hits;
+		hits *= reduction;
+	}
+	return total / 1 + 0.001;
 }
 function GunlanceShelling(currentDamage, comboDamage, power) {
 	let regex = new RegExp(`${getWeapon().shellingType} ${getWeapon().shellingLevel}`);
