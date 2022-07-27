@@ -96,7 +96,7 @@ function RangedDPS() {
 		Object.keys(
 			Object.fromEntries(
 				Object.entries(info.ammo).filter(
-					eachAmmo => (getWeapon().usableAmmo[eachAmmo[1].isUsed] > 0 && !/RF\+/.test(eachAmmo[0])) || /Wyvernblast/.test(eachAmmo[0]),
+					eachAmmo => (getWeapon().usableAmmo[eachAmmo[1].isUsed] > 0 && !/RF\+/.test(eachAmmo[0])) || (/Wyvernblast/.test(eachAmmo[0]) && weaponType.value === lbg),
 				),
 			),
 		),
@@ -120,9 +120,9 @@ function RangedDPS() {
 		if (/(?<!snipe.*)explosion|sub-Lv/.test(power.attackName)) {
 			[power.efe, power.eleCrit, power.eleNon] = [power.baseEle, power.baseEle, power.baseEle];
 		}
-		const totalEffective = ~~(0.1 + power.efr + power.efe) * ammo.ticsAdjust;
-		const totalCrit = ~~(0.1 + power.rawCrit + power.eleCrit) * ammo.ticsAdjust;
-		const totalNon = ~~(0.1 + power.rawNon + power.eleNon) * ammo.ticsAdjust;
+		const totalEffective = ~~(~~(0.1 + power.efr + power.efe) * ammo.ticsAdjust);
+		const totalCrit = ~~(~~(0.1 + power.rawCrit + power.eleCrit) * ammo.ticsAdjust);
+		const totalNon = ~~(~~(0.1 + power.rawNon + power.eleNon) * ammo.ticsAdjust);
 
 		const shotsToKill = ~~(0.999 + $('#health').val() / totalEffective);
 		// const timeToKill = /(Sticky|Slicing)/.test(power.attackName)
@@ -154,7 +154,7 @@ function RangedDPS() {
 			const stats = [
 				['Stat', 'Raw', 'Affinity', 'Ele Ammo'],
 				['Base', ~~power.baseRaw, ~~power.baseAff, ~~(0.1 + 11 * power.eleAmmo)],
-				['Total Attack', ~~power.raw, power.aff * 100, ~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo)],
+				['Total Attack', ~~power.raw, ~~(0.1 + power.aff * 100), ~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo)],
 				[
 					'Total Damage',
 					~~(power.raw * power.critBoost * power.PRM * power.enrage * power.augPRM * JSON.parse(DangoMarksmanid.value)[0]),
@@ -1090,35 +1090,48 @@ function classChange() {
 		if (previousWeaponType.textContent !== '') {
 			ComboReset();
 		}
-		// let ugh = [];
-		// if (weaponType.value === db) {
-		// ugh = [
-		// "<option value='{BRM:1,BR:10,PRM:1,BEM:1,BE:6,PEM:1,aff:0}'>Lv-1 Raw 10 Ele 6</option>",
-		// "<option value='{BRM:1,BR:12,PRM:1,BEM:1,BE:8,PEM:1,aff:0}'>Lv-2 Raw 12 Ele 8</option>",
-		// "<option value='{BRM:1,BR:15,PRM:1,BEM:1,BE:12,PEM:1,aff:0}'>Lv-3 Raw 15 Ele 12</option>",
-		// ];
-		// } else if (weaponType.value === bow) {
-		// ugh = [
-		// "<option value='{BRM:1,BR:8,PRM:1,BEM:1,BE:6,PEM:1,aff:0}'>Lv-1</option>",
-		// "<option value='{BRM:1,BR:9,PRM:1,BEM:1,BE:8,PEM:1,aff:0}'>Lv-2</option>",
-		// "<option value='{BRM:1,BR:10,PRM:1,BEM:1,BE:10,PEM:1,aff:0}'>Lv-3</option>",
-		// ];
-		// } else if (weaponType.value === lbg || weaponType.value === hbg) {
-		// ugh = [
-		// "<option value='{BRM:1,BR:8,PRM:1,BEM:1,BE:6,PEM:1,aff:0}'>Lv-1</option>",
-		// "<option value='{BRM:1,BR:9,PRM:1,BEM:1,BE:7,PEM:1,aff:0}'>Lv-2</option>",
-		// "<option value='{BRM:1,BR:10,PRM:1,BEM:1,BE:8,PEM:1,aff:0}'>Lv-3</option>",
-		// ];
-		// } else {
-		// ugh = [
-		// "<option value='{BRM:1,BR:10,PRM:1,BEM:1,BE:8,PEM:1,aff:0}'>Lv-1</option>",
-		// "<option value='{BRM:1,BR:12,PRM:1,BEM:1,BE:10,PEM:1,aff:0}'>Lv-2</option>",
-		// "<option value='{BRM:1,BR:15,PRM:1,BEM:1,BE:15,PEM:1,aff:0}'>Lv-3</option>",
-		// ];
+		$(ChainCrit).empty();
+		let ugh = [];
+		if (weaponType.value === db) {
+			ugh = [
+				'{BRM:1,BR:0,PRM:1,BEM:1,BE:0,PEM:1,aff:0}',
+				'{BRM:1,BR:5,PRM:1,BEM:1,BE:5,PEM:1,aff:0}',
+				'{BRM:1,BR:10,PRM:1,BEM:1,BE:6,PEM:1,aff:0}',
+				'{BRM:1,BR:12,PRM:1,BEM:1,BE:8,PEM:1,aff:0}',
+				'{BRM:1,BR:15,PRM:1,BEM:1,BE:12,PEM:1,aff:0}',
+			];
+		} else if (weaponType.value === bow) {
+			ugh = [
+				'{BRM:1,BR:0,PRM:1,BEM:1,BE:0,PEM:1,aff:0}',
+				'{BRM:1,BR:5,PRM:1,BEM:1,BE:5,PEM:1,aff:0}',
+				'{BRM:1,BR:8,PRM:1,BEM:1,BE:6,PEM:1,aff:0}',
+				'{BRM:1,BR:9,PRM:1,BEM:1,BE:8,PEM:1,aff:0}',
+				'{BRM:1,BR:10,PRM:1,BEM:1,BE:10,PEM:1,aff:0}',
+			];
+		} else if (weaponType.value === lbg || weaponType.value === hbg) {
+			ugh = [
+				'{BRM:1,BR:0,PRM:1,BEM:1,BE:0,PEM:1,aff:0}',
+				'{BRM:1,BR:5,PRM:1,BEM:1,BE:5,PEM:1,aff:0}',
+				'{BRM:1,BR:8,PRM:1,BEM:1,BE:6,PEM:1,aff:0}',
+				'{BRM:1,BR:9,PRM:1,BEM:1,BE:7,PEM:1,aff:0}',
+				'{BRM:1,BR:10,PRM:1,BEM:1,BE:8,PEM:1,aff:0}',
+			];
+		} else {
+			ugh = [
+				'{BRM:1,BR:0,PRM:1,BEM:1,BE:0,PEM:1,aff:0}',
+				'{BRM:1,BR:5,PRM:1,BEM:1,BE:5,PEM:1,aff:0}',
+				'{BRM:1,BR:10,PRM:1,BEM:1,BE:8,PEM:1,aff:0}',
+				'{BRM:1,BR:12,PRM:1,BEM:1,BE:10,PEM:1,aff:0}',
+				'{BRM:1,BR:15,PRM:1,BEM:1,BE:15,PEM:1,aff:0}',
+			];
+		}
+		$(ugh).each(function (index) {
+			let opt = document.createElement('option');
+			opt.value = this;
+			opt.textcontent = index === 0 ? '---' : 'Lv' + index;
+			ChainCrit.appendChild(opt);
+		});
 	}
-	// for (let i = 2; i < 5; i++) {
-	// $(ChainCrit.options[i]).innerHTML = ugh[i - 2];
-	// }
 	$('.classSpecific').attr('selectedIndex', 0);
 	$('.classSpecific').hide();
 	$('.classSpecific').parent().hide();
@@ -1269,10 +1282,10 @@ function calculateAmmoFrames(power, ammoID) {
 	}
 
 	/*
-		* finds time needed to shoot 100 shots as a base for calculations
-		*                  ( (        actual shots consumed    times reloaded    for total frames spent reloading) + (total recoil frames) for total frames used / 30 frames for total second / 100 shots = seconds per shot)
-			60 seconds / ( ( ( ( ( 100 shots-Spare Shot percent) / clip size -1 for inital clip) * frames per reload ) + (100 * recoil frames )) / 30 frames per second / 100 shots )
-		*/
+			* finds time needed to shoot 100 shots as a base for calculations
+			*                  ( (        actual shots consumed    times reloaded    for total frames spent reloading) + (total recoil frames) for total frames used / 30 frames for total second / 100 shots = seconds per shot)
+				60 seconds / ( ( ( ( ( 100 shots-Spare Shot percent) / clip size -1 for inital clip) * frames per reload ) + (100 * recoil frames )) / 30 frames per second / 100 shots )
+			*/
 
 	let shotsPerTimeLimit = 60;
 	ammo.shotsPerMinBase = shotsCheck(ammo.recoilFrames / 30, ammo.reloadFrames / 30, power.clipSize[power.isUsed], shotsPerTimeLimit);
@@ -1282,10 +1295,10 @@ function calculateAmmoFrames(power, ammoID) {
 	ammo.ticsAdjust = power.ticsPer + 1 > 0 ? Number(power.ticsPer + 1) : 1;
 	// Reduces total damage from pierce attacks displayed depending on selection
 	// top is for piercing attacks, bottom is for elemental piercing attacks(elemental pierce is reduced by a higher percentage)
-	if (/Pierce \d/.test(power.ammoName)) {
-		ammo.ticsAdjust = ~~((power.ticsPer + 1) * JSON.parse(pierceAdjust.value)[0]);
+	if (/Pierce Lv|Pierce [1-3]/.test(power.attackName)) {
+		ammo.ticsAdjust = (power.ticsPer + 1) * JSON.parse(pierceAdjust.value)[0];
 	} else if (/Pierc/.test(power.attackName)) {
-		ammo.ticsAdjust = ~~((power.ticsPer + 1) * JSON.parse(pierceAdjust.value)[1]);
+		ammo.ticsAdjust = (power.ticsPer + 1) * JSON.parse(pierceAdjust.value)[1];
 	}
 
 	return ammo;
@@ -1690,92 +1703,92 @@ function loadState(ugh) {
 	// $('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
 }
 /**function getMenu() {
-		if (Object.values(check).every(keyCard => keyCard)) {
-			// $(weaponTypes).each(function (index, weaponType) {
-			const weaponList = [];
-			$(info.ChargeBlade.weapons).each (function (index, element) {
-				weaponList.push(this.weapon);
-			});
-			let { ...myJSON } = weaponList;
-			var myTarget = document.getElementById('target');
-			myTarget.replaceWith(renderList(myJSON));
-			//
-			function renderList(obj) {
-				// cosmetic utility function for capitalizing text
-				function capitalize(str) {
-					console.log(power,this);
-return str[0].toUpperCase() + str.slice(1);
-				}
-				// cosmetic utility for formatting the price
-				// function formatPrice(str) {
-				// if (parseFloat(str) < 1) result += '0';
-				// console.log(power,this);
-return result + str;
-				// }
-				// for every level of our JSON object, we create a ul element
-				var result = document.createElement('ul');
-				// for every key in the object
-				Object.values(myJSON).each(function (index, weapon) {
-
-
-					// create a li element and create/add a capitalized copy of the key
-					var list = document.createElement('li');
-					var textnode = document.createTextNode(capitalize(weapon));
-					list.appendChild(textnode);
-					// if there's another level to the object, recursively call our function
-					// this will create a new ul which we'll add after our text
-					// if (typeof obj[key] === 'object') {
-					list.appendChild(renderList(obj[weapon]));
-					// } else {
-					// otherwise it must be a price. add ': ' and the value to the text
-					// textnode.textContent += ': ' + formatPrice(obj[key]);
+			if (Object.values(check).every(keyCard => keyCard)) {
+				// $(weaponTypes).each(function (index, weaponType) {
+				const weaponList = [];
+				$(info.ChargeBlade.weapons).each (function (index, element) {
+					weaponList.push(this.weapon);
+				});
+				let { ...myJSON } = weaponList;
+				var myTarget = document.getElementById('target');
+				myTarget.replaceWith(renderList(myJSON));
+				//
+				function renderList(obj) {
+					// cosmetic utility function for capitalizing text
+					function capitalize(str) {
+						console.log(power,this);
+	return str[0].toUpperCase() + str.slice(1);
+					}
+					// cosmetic utility for formatting the price
+					// function formatPrice(str) {
+					// if (parseFloat(str) < 1) result += '0';
+					// console.log(power,this);
+	return result + str;
 					// }
-					// add our completed li to the ul
-					result.appendChild(list);
+					// for every level of our JSON object, we create a ul element
+					var result = document.createElement('ul');
+					// for every key in the object
+					Object.values(myJSON).each(function (index, weapon) {
+
+
+						// create a li element and create/add a capitalized copy of the key
+						var list = document.createElement('li');
+						var textnode = document.createTextNode(capitalize(weapon));
+						list.appendChild(textnode);
+						// if there's another level to the object, recursively call our function
+						// this will create a new ul which we'll add after our text
+						// if (typeof obj[key] === 'object') {
+						list.appendChild(renderList(obj[weapon]));
+						// } else {
+						// otherwise it must be a price. add ': ' and the value to the text
+						// textnode.textContent += ': ' + formatPrice(obj[key]);
+						// }
+						// add our completed li to the ul
+						result.appendChild(list);
+					}
+					console.log(power,this);
+	return result;
 				}
-				console.log(power,this);
-return result;
 			}
 		}
-	}
 
-	// weaps = [
-	// ['GreatSword'],
-	// ['SwitchAxe'],
-	// ['ChargeBlade'],
-	// ['InsectGlaive'],
-	// ['HeavyBowGun'],
-	//
-	// ['SwordNShield'],
-	// ['DualBlades'],
-	// ['LongSword'],
-	// ['Lance'],
-	// ['HuntingHorn'],
-	// ['Gunlance'],
-	// ['Hammer'],
-	// ];
-	// i = 1;
-	//
-	// contain = document.createElement('ul');
-	// $(contain).css('id:main-menu class:sm sm-blue');
-	// $(weaps).each(function (index, element) {
-	// thisWeapon = element;
-	// catagories = document.createElement('ul');
-	// ugh1 = document.createElement('li');
-	// ugh1.innerHTML = `<a href="#">${thisWeapon}</a>`;
-	// $(catagories).append(ugh1);
-	// console.log(this);
-	// ugh2 = [];
-	// $(info.Hammer.weapons).each(function (index, element) {
-	// ugh2 = document.createElement('li');
-	// ugh2.innerHTML = `<a href="#">${element.weapon}</a>`;
-	// $(catagories).append(ugh2);
-	// });
-	// console.log(catagories);
-	// $(contain).append(catagories);
-	// });
-	//
-	**/
+		// weaps = [
+		// ['GreatSword'],
+		// ['SwitchAxe'],
+		// ['ChargeBlade'],
+		// ['InsectGlaive'],
+		// ['HeavyBowGun'],
+		//
+		// ['SwordNShield'],
+		// ['DualBlades'],
+		// ['LongSword'],
+		// ['Lance'],
+		// ['HuntingHorn'],
+		// ['Gunlance'],
+		// ['Hammer'],
+		// ];
+		// i = 1;
+		//
+		// contain = document.createElement('ul');
+		// $(contain).css('id:main-menu class:sm sm-blue');
+		// $(weaps).each(function (index, element) {
+		// thisWeapon = element;
+		// catagories = document.createElement('ul');
+		// ugh1 = document.createElement('li');
+		// ugh1.innerHTML = `<a href="#">${thisWeapon}</a>`;
+		// $(catagories).append(ugh1);
+		// console.log(this);
+		// ugh2 = [];
+		// $(info.Hammer.weapons).each(function (index, element) {
+		// ugh2 = document.createElement('li');
+		// ugh2.innerHTML = `<a href="#">${element.weapon}</a>`;
+		// $(catagories).append(ugh2);
+		// });
+		// console.log(catagories);
+		// $(contain).append(catagories);
+		// });
+		//
+		**/
 // $(Object.entries(info.skills)).each(function () {
 function populateSelectOptions() {
 	if (Object.values(check).every(keyCard => keyCard)) {
