@@ -591,8 +591,8 @@ function TotalHitsOfSharpUsed(power) {
 	// applies the extra hits of sharpness from the Masters Touch skill;
 	const mTBonus =
 		power.aff > 0 && MastersTouch.selectedIndex > 0
-			? sharpnessReduction(JSON.parse(MastersTouch.value).Sharp * power.aff) * sharpnessReduction(JSON.parse(RazorSharp.value).Sharp)
-			: sharpnessReduction(JSON.parse(RazorSharp.value).Sharp);
+			? +MastersTouch.value * power.aff) * +RazorSharp.value)
+			: +RazorSharp.value;
 	total.purple = ~~(mTBonus * power.hitsOfSharpness.purple);
 	total.white = ~~(mTBonus * power.hitsOfSharpness.white);
 	total.blue = ~~(mTBonus * power.hitsOfSharpness.blue);
