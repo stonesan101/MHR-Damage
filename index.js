@@ -93,7 +93,13 @@ function RangedDPS() {
 	let ammo = {};
 	let pass1 = true;
 	$(
-		Object.keys(Object.fromEntries(Object.entries(info.ammo).filter(eachAmmo => getWeapon().usableAmmo[eachAmmo[1].isUsed] > 0 && !/RF\+/.test(eachAmmo[0])))),
+		Object.keys(
+			Object.fromEntries(
+				Object.entries(info.ammo).filter(
+					eachAmmo => (getWeapon().usableAmmo[eachAmmo[1].isUsed] > 0 && !/RF\+/.test(eachAmmo[0])) || /Wyvernblast/.test(eachAmmo[0]),
+				),
+			),
+		),
 	).each(function (index, skill) {
 		let ammoID = skill;
 		if ($(weaponType).val() === 'LightBowGun') {
