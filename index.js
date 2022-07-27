@@ -1,12 +1,25 @@
 const baseURL = /localhost/.test(window.location.host) ? 'http://localhost:5500' : 'https://stonesan101.github.io/MHR-Damage';
-let check = { GreatSword: 0, rampage: 0, quest: 0, monster: 0, types: 0, ammo: 0 };
+let check = { GreatSword: 0, rampage: 0, quest: 0, monster: 0, types: 0, ammo: 0, skills: 0 };
 let count = 0;
 let keyUp = 0;
 let keyDown = 0;
 let comboTracker = [];
 let tempAmmo = {};
 const info = {};
-
+const gs = 'GreatSword';
+const sa = 'SwitchAxe';
+const cb = 'ChargeBlade';
+const ig = 'InsectGlaive';
+const hbg = 'HeavyBowGun';
+const lbg = 'LightBowGun';
+const bow = 'Bow';
+const sns = 'SwordNShield';
+const db = 'DualBlades';
+const ls = 'LongSword';
+const lance = 'Lance';
+const hh = 'HuntingHorn';
+const gl = 'Gunlance';
+const ham = 'Hammer';
 const weaponType = document.getElementById('dropWeaponType');
 const sharpnessMod = {
 	purple: {
@@ -54,16 +67,17 @@ const weaponTypes = [
 	['Gunlance'],
 	['Hammer'],
 ];
-const jsons = [['monster'], ['types'], ['rampage'], ['ammo'], ['quest']];
+const jsons = [['monster'], ['types'], ['rampage'], ['ammo'], ['quest'], ['skills']];
 $([].concat(jsons, weaponTypes)).each(function () {
 	$.getJSON(`${baseURL}/json/${this}.json`, data => {
 		info[this] = data;
-		if (/monster|types|rampage|quest|GreatSword|ammo/.test(this)) {
+		if (/monster|types|rampage|quest|GreatSword|ammo|skills/.test(this)) {
 			++check[this];
 			jsonsLoaded();
 		}
 	});
 });
+document.createElement('tagName');
 function DataCompile() {
 	if (/BowGun/.test($(weaponType).val())) {
 		RangedDPS();
@@ -104,11 +118,13 @@ function RangedDPS() {
 		const totalCrit = ~~(0.1 + power.rawCrit + power.eleCrit) * ammo.ticsAdjust;
 		const totalNon = ~~(0.1 + power.rawNon + power.eleNon) * ammo.ticsAdjust;
 
-		const shotsToKill = ~~(1 + $('#health').val() / totalEffective);
+		const shotsToKill = ~~(0.999 + $('#health').val() / totalEffective);
 		// const timeToKill = /(Sticky|Slicing)/.test(power.attackName)
 		// ? 5 + ~~(0.1 + (60 / ammo.shotsPerMin) * shotsToKill) // Adds delay time for stickies/ slicing;
 		// : ~~(0.1 + (60 / ammo.shotsPerMin) * shotsToKill);
-		const timeToKill = ~~(0.1 + (60 / ammo.shotsPerMin) * shotsToKill);
+		const timeToKill = /Stic|Slic/.test(power.attackName)
+			? 5 + ~~(0.999 + (60 / ammo.shotsPerMin) * shotsToKill)
+			: ~~(0.999 + (60 / ammo.shotsPerMin) * shotsToKill);
 		const rawBoth = [`${~~power.rawNon} / ${~~power.rawCrit}`];
 		const eleBoth = [`${~~power.eleNon} / ${~~power.eleCrit}`];
 		const total = [`${totalNon} / ${totalCrit}`];
@@ -544,7 +560,7 @@ function TotalHitsOfSharpUsed(power) {
 	power.hitsOfSharpness.red = power.sharpness.red;
 
 	// gets handicraft.selectedIndex & figures out which color power.handicraft actually applies to then add the extra points appropriately.
-	if ($('.hitsOfSharp')[4].selectedIndex > 0) {
+	if (Handicraft.selectedIndex > 0) {
 		if (power.hitsOfSharpness.purple > 0) {
 			increase = ['purple'];
 		} else if (power.hitsOfSharpness.white > 0) {
@@ -978,6 +994,7 @@ function BuildDamageTable(myDamage, id) {
 				++j;
 			});
 		}
+
 		if (!/BowGun/.test($(weaponType).val())) {
 			$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index, element) {
 				const cell = document.createElement('td');
@@ -1046,36 +1063,64 @@ function MonChart() {
 		myTable.replaceWith(table);
 	}
 }
-function HideAndRevealTypeSpecificElements() {
+function classChange() {
 	if (Object.values(check).every(keyCard => keyCard)) {
 		if (previousWeaponType.textContent !== '') {
 			ComboReset();
 		}
-		$('.classSpecific').attr('selectedIndex', 0);
-		$('.classSpecific').hide();
-		$('.classSpecific').parent().hide();
-		weaponId.innerHTML = '';
-		weaponId.innerHTML = $('#dropWeaponType').val();
-		$(`.${$(weaponType).val()}`)
-			.parent()
-			.show();
-		$(`.${$(weaponType).val()}`).show();
+		// let ugh = [];
+		// if (weaponType.value === db) {
+		// ugh = [
+		// "<option value='{BRM:1,BR:10,PRM:1,BEM:1,BE:6,PEM:1,aff:0}'>Lv-1 Raw 10 Ele 6</option>",
+		// "<option value='{BRM:1,BR:12,PRM:1,BEM:1,BE:8,PEM:1,aff:0}'>Lv-2 Raw 12 Ele 8</option>",
+		// "<option value='{BRM:1,BR:15,PRM:1,BEM:1,BE:12,PEM:1,aff:0}'>Lv-3 Raw 15 Ele 12</option>",
+		// ];
+		// } else if (weaponType.value === bow) {
+		// ugh = [
+		// "<option value='{BRM:1,BR:8,PRM:1,BEM:1,BE:6,PEM:1,aff:0}'>Lv-1</option>",
+		// "<option value='{BRM:1,BR:9,PRM:1,BEM:1,BE:8,PEM:1,aff:0}'>Lv-2</option>",
+		// "<option value='{BRM:1,BR:10,PRM:1,BEM:1,BE:10,PEM:1,aff:0}'>Lv-3</option>",
+		// ];
+		// } else if (weaponType.value === lbg || weaponType.value === hbg) {
+		// ugh = [
+		// "<option value='{BRM:1,BR:8,PRM:1,BEM:1,BE:6,PEM:1,aff:0}'>Lv-1</option>",
+		// "<option value='{BRM:1,BR:9,PRM:1,BEM:1,BE:7,PEM:1,aff:0}'>Lv-2</option>",
+		// "<option value='{BRM:1,BR:10,PRM:1,BEM:1,BE:8,PEM:1,aff:0}'>Lv-3</option>",
+		// ];
+		// } else {
+		// ugh = [
+		// "<option value='{BRM:1,BR:10,PRM:1,BEM:1,BE:8,PEM:1,aff:0}'>Lv-1</option>",
+		// "<option value='{BRM:1,BR:12,PRM:1,BEM:1,BE:10,PEM:1,aff:0}'>Lv-2</option>",
+		// "<option value='{BRM:1,BR:15,PRM:1,BEM:1,BE:15,PEM:1,aff:0}'>Lv-3</option>",
+		// ];
+	}
+	// for (let i = 2; i < 5; i++) {
+	// $(ChainCrit.options[i]).innerHTML = ugh[i - 2];
+	// }
+	$('.classSpecific').attr('selectedIndex', 0);
+	$('.classSpecific').hide();
+	$('.classSpecific').parent().hide();
+	weaponId.innerHTML = '';
+	weaponId.innerHTML = $('#dropWeaponType').val();
+	$(`.${$(weaponType).val()}`)
+		.parent()
+		.show();
+	$(`.${$(weaponType).val()}`).show();
 
-		if (/BowGun/.test($(weaponType).val())) {
-			Bombardier.selectedIndex = 9;
-		}
-		if (/Bow/.test($(weaponType).val())) {
-			$('.Shot').parent().show();
-			$('.Shot').show();
-			$(ammoTable).hide();
-			UniqueColumnsDisplay();
-		} else {
-			MeleeElements();
-			UniqueColumnsDisplay();
-		}
-		if ($(window).width() > 850) {
-			setHeight();
-		}
+	if (/BowGun/.test($(weaponType).val())) {
+		Bombardier.selectedIndex = 9;
+	}
+	if (/Bow/.test($(weaponType).val())) {
+		$('.Shot').parent().show();
+		$('.Shot').show();
+		$(ammoTable).hide();
+		UniqueColumnsDisplay();
+	} else {
+		MeleeElements();
+		UniqueColumnsDisplay();
+	}
+	if ($(window).width() > 850) {
+		setHeight();
 	}
 }
 
@@ -1207,7 +1252,7 @@ function calculateAmmoFrames(power, ammoID) {
 			60 seconds / ( ( ( ( ( 100 shots-Spare Shot percent) / clip size -1 for inital clip) * frames per reload ) + (100 * recoil frames )) / 30 frames per second / 100 shots )
 		*/
 
-	let shotsPerTimeLimit = /Stic|Slic/.test(power.attackName) ? 55 : 60;
+	let shotsPerTimeLimit = 60;
 	ammo.shotsPerMinBase = shotsCheck(ammo.recoilFrames / 30, ammo.reloadFrames / 30, power.clipSize[power.isUsed], shotsPerTimeLimit);
 	ammo.shotsPerMin = shotsCheck(ammo.recoilFrames / 30, ammo.reloadFrames / 30, ammo.clipSize, shotsPerTimeLimit, 100 / ammo.spareShot);
 	ammo.shotsPerGain = `${Number.parseFloat((ammo.shotsPerMin / ammo.shotsPerMinBase - 1) * 100).toFixed(2)}%`;
@@ -1215,7 +1260,7 @@ function calculateAmmoFrames(power, ammoID) {
 	ammo.ticsAdjust = power.ticsPer + 1 > 0 ? Number(power.ticsPer + 1) : 1;
 	// Reduces total damage from pierce attacks displayed depending on selection
 	// top is for piercing attacks, bottom is for elemental piercing attacks(elemental pierce is reduced by a higher percentage)
-	if (/PierceUp/.test(power.ammoName)) {
+	if (/Pierce \d/.test(power.ammoName)) {
 		ammo.ticsAdjust = ~~((power.ticsPer + 1) * JSON.parse(pierceAdjust.value)[0]);
 	} else if (/Pierc/.test(power.attackName)) {
 		ammo.ticsAdjust = ~~((power.ticsPer + 1) * JSON.parse(pierceAdjust.value)[1]);
@@ -1271,7 +1316,7 @@ function jsonsLoaded() {
 		QuestSelect();
 		HealthSelect();
 		MonChart();
-		HideAndRevealTypeSpecificElements();
+		classChange();
 		DataCompile();
 		setHeight();
 	}
@@ -1709,3 +1754,56 @@ return result;
 	// });
 	//
 	**/
+// $(Object.entries(info.skills)).each(function () {
+function populateSelectOptions() {
+	if (Object.values(check).every(keyCard => keyCard)) {
+		let ugh = {};
+		$(Object.entries(info.skills)).each(function () {
+			if (this[0] !== 'dropDereliction') {
+				let ugh10 = document.createElement('option');
+				let ugh2 = this[0];
+				// let ugh15 = `<div><label for="${ugh2}">${ugh2}</label><select id="${ugh2}" name="${ugh2}" onchange="DataCompile()" class="skill">`;
+
+				// console.log(ugh2);
+				ugh[ugh2] = [];
+				$(this[1]).each(function (index) {
+					if (index !== 0) {
+						let raw = '';
+						if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
+							raw = 'Raw';
+							if (this.BR > 0) {
+								raw += ' +' + this.BR;
+							}
+							if (this.BRM > 1) {
+								raw += ' +' + ((this.BRM - 1) * 100).toFixed(1) + '%';
+							}
+							if (this.PRM > 1) {
+								raw += ' +' + ((this.PRM - 1) * 100).toFixed(1) + '%';
+							}
+						}
+						let ele = '';
+						if (this.BE > 0 || this.PEM > 1 || this.BEM > 1) {
+							ele = 'Ele';
+							if (this.BE > 0) {
+								ele += ' +' + this.BE;
+							}
+							if (this.BEM > 1) {
+								ele += ' +' + ((this.BEM - 1) * 100).toFixed(1) + '%';
+							}
+							if (this.PEM > 1) {
+								ele += ' +' + ((this.PEM - 1) * 100).toFixed(1) + '%';
+							}
+						}
+						const aff = this.aff > 0 ? 'Aff +' + this.aff : '';
+						ugh[ugh2][index] = `<option value=${JSON.stringify(this)}>Lv${index} ${[raw, ele, aff].join(' ')}</option>`;
+					} else {
+						ugh[ugh2][index] = `<option value=${JSON.stringify(this)}>${ugh2}</option>`;
+					}
+				});
+				ugh10.innerHTML = ugh[ugh2];
+				$(`#${ugh2}`).children().replaceWith(ugh10);
+			}
+		});
+	}
+}
+// });

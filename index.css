@@ -178,7 +178,7 @@ body {
   color: white;
   /* background-image: url("background.webp"); */
   background-image: url("Untitled.jpg");
-  background-size: contain;
+  background-size: cover;
   min-height: 100vh;
   min-width: fit-content;
   border-style: none;
