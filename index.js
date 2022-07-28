@@ -1412,21 +1412,17 @@ function RampageSelect() {
 	} else {
 		$(weaponRampage.children).html('');
 		$(weaponRampage.children).hide();
-		// if (/Rampage/.test(getWeapon().weapon)) {
-		// // // $(info.rampage[getWeapon().weapon].Rampage).each(function (index, rampageSection) {
-		// $(weaponRampage).children([index]).show();
-		//
-		// $(rampageSection[index]).each(function (inc, rampageSkill) {?????????????
-		// console.log(rampageSection, index);
-		// PopulateDropDowns(Object.values(rampageSection), weaponRampage.children[index]);
-		// // $(weaponRampage).children([index]).append($('<option></option>').attr('value', rampageSection).text());
-		// });
-		// });
-		// } else {
-		$(weaponRampage0).show();
-		$(getWeapon().rampage).each(function (index, rampageSkill) {
-			$(weaponRampage0).append($('<option></option>').attr('value', info.rampage.keys2[this]).text(info.rampage.keys2[this]));
-		});
+		if (/Rampage/.test(getWeapon().weapon)) {
+			$(info.rampage[getWeapon().weapon].Rampage).each(function (index, rampageSection) {
+				$(weaponRampage.children[index]).show();
+				PopulateDropDowns(Object.values(this), weaponRampage.children[index]);
+			});
+		} else {
+			$(weaponRampage0).show();
+			$(getWeapon().rampage).each(function (index, rampageSkill) {
+				$(weaponRampage0).append($('<option></option>').attr('value', info.rampage.keys2[this]).text(info.rampage.keys2[this]));
+			});
+		}
 	}
 }
 
