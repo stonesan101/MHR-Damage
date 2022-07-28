@@ -588,11 +588,10 @@ function TotalHitsOfSharpUsed(power) {
 		});
 	}
 	let razorSharp = info.skills.RazorSharp[RazorSharp.selectedIndex].Sharp;
+	let MT = info.skills.MastersTouch[MastersTouch.selectedIndex].Sharp;
+	MT *= power.aff;
 	// applies the extra hits of sharpness from the Masters Touch skill;
-	const mTBonus =
-		power.aff > 0 && MastersTouch.selectedIndex > 0
-			? sharpnessReduction(info.skills.MastersTouch[MastersTouch.selectedIndex].Sharp * power.aff) * sharpnessReduction(razorSharp)
-			: sharpnessReduction(razorSharp);
+	const mTBonus = power.aff > 0 && MastersTouch.selectedIndex > 0 ? sharpnessReduction(MT) * sharpnessReduction(razorSharp) : sharpnessReduction(razorSharp);
 	total.purple = ~~(mTBonus * power.hitsOfSharpness.purple);
 	total.white = ~~(mTBonus * power.hitsOfSharpness.white);
 	total.blue = ~~(mTBonus * power.hitsOfSharpness.blue);
@@ -1090,46 +1089,42 @@ function classChange() {
 		if (previousWeaponType.textContent !== '') {
 			ComboReset();
 		}
-		$(ChainCrit).empty();
 		let ugh = [];
 		if (weaponType.value === db) {
 			ugh = [
-				'{BRM:1,BR:0,PRM:1,BEM:1,BE:0,PEM:1,aff:0}',
-				'{BRM:1,BR:5,PRM:1,BEM:1,BE:5,PEM:1,aff:0}',
-				'{BRM:1,BR:10,PRM:1,BEM:1,BE:6,PEM:1,aff:0}',
-				'{BRM:1,BR:12,PRM:1,BEM:1,BE:8,PEM:1,aff:0}',
-				'{BRM:1,BR:15,PRM:1,BEM:1,BE:12,PEM:1,aff:0}',
+				{ BRM: 1, BR: 0, PRM: 1, BEM: 1, BE: 0, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 5, PRM: 1, BEM: 1, BE: 5, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 10, PRM: 1, BEM: 1, BE: 6, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 12, PRM: 1, BEM: 1, BE: 8, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 15, PRM: 1, BEM: 1, BE: 12, PEM: 1, aff: 0 },
 			];
 		} else if (weaponType.value === bow) {
 			ugh = [
-				'{BRM:1,BR:0,PRM:1,BEM:1,BE:0,PEM:1,aff:0}',
-				'{BRM:1,BR:5,PRM:1,BEM:1,BE:5,PEM:1,aff:0}',
-				'{BRM:1,BR:8,PRM:1,BEM:1,BE:6,PEM:1,aff:0}',
-				'{BRM:1,BR:9,PRM:1,BEM:1,BE:8,PEM:1,aff:0}',
-				'{BRM:1,BR:10,PRM:1,BEM:1,BE:10,PEM:1,aff:0}',
+				{ BRM: 1, BR: 0, PRM: 1, BEM: 1, BE: 0, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 5, PRM: 1, BEM: 1, BE: 5, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 8, PRM: 1, BEM: 1, BE: 6, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 9, PRM: 1, BEM: 1, BE: 8, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 10, PRM: 1, BEM: 1, BE: 10, PEM: 1, aff: 0 },
 			];
 		} else if (weaponType.value === lbg || weaponType.value === hbg) {
 			ugh = [
-				'{BRM:1,BR:0,PRM:1,BEM:1,BE:0,PEM:1,aff:0}',
-				'{BRM:1,BR:5,PRM:1,BEM:1,BE:5,PEM:1,aff:0}',
-				'{BRM:1,BR:8,PRM:1,BEM:1,BE:6,PEM:1,aff:0}',
-				'{BRM:1,BR:9,PRM:1,BEM:1,BE:7,PEM:1,aff:0}',
-				'{BRM:1,BR:10,PRM:1,BEM:1,BE:8,PEM:1,aff:0}',
+				{ BRM: 1, BR: 0, PRM: 1, BEM: 1, BE: 0, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 5, PRM: 1, BEM: 1, BE: 5, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 8, PRM: 1, BEM: 1, BE: 6, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 9, PRM: 1, BEM: 1, BE: 7, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 10, PRM: 1, BEM: 1, BE: 8, PEM: 1, aff: 0 },
 			];
 		} else {
 			ugh = [
-				'{BRM:1,BR:0,PRM:1,BEM:1,BE:0,PEM:1,aff:0}',
-				'{BRM:1,BR:5,PRM:1,BEM:1,BE:5,PEM:1,aff:0}',
-				'{BRM:1,BR:10,PRM:1,BEM:1,BE:8,PEM:1,aff:0}',
-				'{BRM:1,BR:12,PRM:1,BEM:1,BE:10,PEM:1,aff:0}',
-				'{BRM:1,BR:15,PRM:1,BEM:1,BE:15,PEM:1,aff:0}',
+				{ BRM: 1, BR: 0, PRM: 1, BEM: 1, BE: 0, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 5, PRM: 1, BEM: 1, BE: 5, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 10, PRM: 1, BEM: 1, BE: 8, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 12, PRM: 1, BEM: 1, BE: 10, PEM: 1, aff: 0 },
+				{ BRM: 1, BR: 15, PRM: 1, BEM: 1, BE: 15, PEM: 1, aff: 0 },
 			];
 		}
 		$(ugh).each(function (index) {
-			let opt = document.createElement('option');
-			opt.value = this;
-			opt.textcontent = index === 0 ? '---' : 'Lv' + index;
-			ChainCrit.appendChild(opt);
+			ChainCrit[index].value = JSON.stringify(this);
 		});
 	}
 	$('.classSpecific').attr('selectedIndex', 0);
@@ -1792,17 +1787,13 @@ function loadState(ugh) {
 // $(Object.entries(info.skills)).each(function () {
 function populateSelectOptions() {
 	if (Object.values(check).every(keyCard => keyCard)) {
-		let ugh = {};
-		$(Object.entries(info.skills)).each(function () {
+		$(Object.entries(info.skills)).each(function (index2) {
 			let ugh2 = this[0];
-			if (ugh2 !== 'dropDereliction') {
-				$(`#${ugh2}`).empty();
+			if (ugh2 !== 'dropDereliction' && ugh2 !== 'DangoMarksman') {
 				// let ugh15 = `<div><label for="${ugh2}">${ugh2}</label><select id="${ugh2}" name="${ugh2}" onchange="DataCompile()" class="skill">`;
 
-				// console.log(ugh2);
-				ugh[ugh2] = [];
 				$(this[1]).each(function (index) {
-					let option = document.createElement('option');
+					let option = '';
 					if (index !== 0) {
 						let raw = '';
 						if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
@@ -1838,13 +1829,11 @@ function populateSelectOptions() {
 						raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp < 1 ? `Sharp +${this.Sharp * 100}%` : raw;
 						raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp > 1 ? `Sharp +${this.Sharp}` : raw;
 						raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
-						option.value = JSON.stringify(this);
-						option.textContent = index + ': ' + [raw, ele, aff].join(' ');
+						option = index + ': ' + [raw, ele, aff].join(' ');
 					} else {
-						option.value = JSON.stringify(this);
-						option.textContent = ugh2;
+						option = ugh2;
 					}
-					$(`#${ugh2}`)[0].appendChild(option);
+					$(`#${ugh2}`)[0][index].textContent = option;
 				});
 			}
 		});

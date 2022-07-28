@@ -3,16 +3,16 @@
 
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="prefetch" href="/MHR-Damage/json/GreatSword.json" as="fetch" />
-    <link rel="prefetch" href="/MHR-Damage/json/monster.json" as="fetch" />
-    <link rel="prefetch" href="/MHR-Damage/json/types.json" as="fetch" />
-    <link rel="prefetch" href="/MHR-Damage/json/rampage.json" as="fetch" />
-    <link rel="prefetch" href="/MHR-Damage/json/quest.json" as="fetch" />
-    <!-- <link rel="prefetch" href="/json/GreatSword.json" as="fetch" /> -->
-    <!-- <link rel="prefetch" href="/json/monster.json" as="fetch" /> -->
-    <!-- <link rel="prefetch" href="/json/types.json" as="fetch" /> -->
-    <!-- <link rel="prefetch" href="/json/rampage.json" as="fetch" /> -->
-    <!-- <link rel="prefetch" href="/json/quest.json" as="fetch" /> -->
+    <!-- <link rel="prefetch" href="/MHR-Damage/json/GreatSword.json" as="fetch" /> -->
+    <!-- <link rel="prefetch" href="/MHR-Damage/json/monster.json" as="fetch" /> -->
+    <!-- <link rel="prefetch" href="/MHR-Damage/json/types.json" as="fetch" /> -->
+    <!-- <link rel="prefetch" href="/MHR-Damage/json/rampage.json" as="fetch" /> -->
+    <!-- <link rel="prefetch" href="/MHR-Damage/json/quest.json" as="fetch" /> -->
+    <link rel="prefetch" href="/json/GreatSword.json" as="fetch" />
+    <link rel="prefetch" href="/json/monster.json" as="fetch" />
+    <link rel="prefetch" href="/json/types.json" as="fetch" />
+    <link rel="prefetch" href="/json/rampage.json" as="fetch" />
+    <link rel="prefetch" href="/json/quest.json" as="fetch" />
     <!-- <link rel="prefetch" href="/json/ChargeBlade.json" as="fetch" /> -->
     <!-- <script src="/node_modules/jquery/src/jquery.js" type="text/javascript"></script> -->
     <!-- <link href='/node_modules//smartmenus/src/css/sm-core-css.css' rel='stylesheet' type='text/css' /> -->
@@ -256,6 +256,11 @@
             <option value='{"BRM":1,"BR":0,"PRM":1.4,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
           </select></div>
         <div><label for="ChainCrit">Chain Crit</label><select id="ChainCrit" name="ChainCrit" onchange="DataCompile()" class="skill">
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+            <option value='{"BRM":1,"BR":5,"PRM":1,"BEM":1,"BE":5,"PEM":1,"aff":0}'>Base Bonus</option>
+            <option value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":8,"PEM":1,"aff":0}'>Lv-1</option>
+            <option value='{"BRM":1,"BR":12,"PRM":1,"BEM":1,"BE":10,"PEM":1,"aff":0}'>Lv-2</option>
+            <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":15,"PEM":1,"aff":0}'>Lv-3</option>
           </select></div>
         <div><label for="Counterstrike">Counterstrike</label><select id="Counterstrike" name="Counterstrike" onchange="DataCompile()" class="skill">
             <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
@@ -790,12 +795,12 @@
     <div id="previousWeaponType" value="initial" style="display:none"></div>
   </body>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-  <link href="/MHR-Damage/index.js/">
-  <script src="/MHR-Damage/index.js"></script>
-  <link rel="stylesheet" type="text/css" href="/MHR-Damage/index.css">
-  <!-- <link href="/index.js/"> -->
-  <!-- <script src="/index.js"></script> -->
-  <!-- <link rel="stylesheet" type="text/css" href="/index.css"> -->
+  <!-- <link href="/MHR-Damage/index.js/"> -->
+  <!-- <script src="/MHR-Damage/index.js"></script> -->
+  <!-- <link rel="stylesheet" type="text/css" href="/MHR-Damage/index.css"> -->
+  <link href="/index.js/">
+  <script src="/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
