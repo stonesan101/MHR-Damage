@@ -587,12 +587,12 @@ function TotalHitsOfSharpUsed(power) {
 			}
 		});
 	}
-
+	let razorSharp = info.skills.RazorSharp[RazorSharp.selectedIndex].Sharp;
 	// applies the extra hits of sharpness from the Masters Touch skill;
 	const mTBonus =
 		power.aff > 0 && MastersTouch.selectedIndex > 0
-			? sharpnessReduction(info.skills.MastersTouch[MastersTouch.selectedIndex] * power.aff) * sharpnessReduction(info.skills.RazorSharp[RazorSharp.selectedIndex])
-			: sharpnessReduction(info.skills.RazorSharp[RazorSharp.selectedIndex]);
+			? sharpnessReduction(info.skills.MastersTouch[MastersTouch.selectedIndex].Sharp * power.aff) * sharpnessReduction(razorSharp)
+			: sharpnessReduction(razorSharp);
 	total.purple = ~~(mTBonus * power.hitsOfSharpness.purple);
 	total.white = ~~(mTBonus * power.hitsOfSharpness.white);
 	total.blue = ~~(mTBonus * power.hitsOfSharpness.blue);
@@ -865,7 +865,7 @@ function BowComboDamage() {
 function sharpnessReduction(reduction) {
 	let total = 0;
 	let hits = 1;
-	while (hits > 0.0001) {
+	while (hits >= 0.0001) {
 		total += hits;
 		hits *= reduction;
 	}
