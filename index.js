@@ -3,6 +3,7 @@ let check = { GreatSword: 0, rampage: 0, quest: 0, monster: 0, types: 0, ammo: 0
 let count = 0;
 let keyUp = 0;
 let keyDown = 0;
+let lastEvent;
 let comboTracker = [];
 let tempAmmo = {};
 const info = {};
@@ -419,16 +420,10 @@ function GetSkills(power) {
 	// applies Demon Ammo if selected and damage type is sever or blunt
 	power.PRM *= $(DemonAmmo).hasClass('blue') && /(sever|blunt)/.test(power.type) ? 1.1 : 1;
 	1;
+	let skills = [];
 	$('.skillButton:not(button#ProtectivePolish)').each(function () {
 		if ($(this).hasClass('blue')) {
-			const skills = JSON.parse(this.value);
-			power.BRM *= skills.BRM;
-			power.BR += skills.BR;
-			power.PRM *= skills.PRM;
-			power.BEM *= skills.BEM;
-			power.BE += skills.BE;
-			power.PEM *= skills.PEM;
-			power.aff += skills.aff;
+			skills.push(JSON.parse(this.value));
 		}
 	});
 	power.getSkills = [];
@@ -502,19 +497,16 @@ function GetSkills(power) {
 	if (weaponType.value === 'Bow' && /Stake/.test(power.attackName)) {
 		power.getSkills = power.getSkills.filter((/** @type {string} */ skill) => skill !== 'bowCoating');
 	}
-
-	power.getSkills.forEach(skill => {
-		if ((document.getElementById([skill]).selectedIndex > 0 && skill !== 'Bombardier') || skill === 'dropDereliction') {
-			const skills = JSON.parse(document.getElementById([skill]).value);
-			power.BRM *= skills.BRM;
-			power.BR += skills.BR;
-			power.PRM *= skills.PRM;
-			power.BEM *= skills.BEM;
-			power.BE += skills.BE;
-			power.PEM *= skills.PEM;
-			power.aff += skills.aff;
+	$(power.getSkills).each(function () {
+		if (this != 'MailofHellfire' && Object.keys(this).length > 3 && $(`#${this}`)[0].selectedIndex > 0) {
+			skills.push(info.skills[this][$(`#${this}`)[0].selectedIndex]);
 		}
 	});
+
+	skills.push(JSON.parse(dropDereliction.value));
+	skills.push(JSON.parse(MailofHellfire.value));
+
+	getStats(power, skills);
 	// applies Water Blight if selected appropriate to the hzv
 	power.rawHZV = $(WaterBlight).hasClass('blue') ? Math.min(100, ~~(Math.max(power.rawHZV, power.rawHZV * 0.63 + 22.2) + 3)) : power.rawHZV;
 	if (weaponRampage0.value === 'Kushala Daora Soul') {
@@ -1546,18 +1538,16 @@ function showMenu() {
 		$('div.menu').css('top', '-93%');
 	}
 }
-function updateDereliction(event) {
-	$('select#dropDereliction').empty();
-	$('select#dropDereliction').append(
-		$('<option></option>').attr('value', event.target.value).text([window.event.target[window.event.target.selectedIndex].text]),
-	);
+function updateDereliction(e) {
+	let ugh = document.createElement('option');
+	$('select#dropDereliction').children()[0].outerHTML = window.event.path[0][window.event.path[0].selectedIndex].outerHTML;
 	$('div#scrollDiv').hide();
 	DataCompile();
 }
 
 function updateQuest(event) {
-	$('select#dropQuest').empty();
-	$('select#dropQuest').append($('<option></option>').attr('value', event.target.value).text([event.target[event.target.selectedIndex].text]));
+	let ugh = document.createElement('option');
+	$('select#dropQuest').children()[0].outerHTML = window.event.path[0][window.event.path[0].selectedIndex].outerHTML;
 	$('div.menu').hide();
 	DataCompile();
 }
@@ -1809,6 +1799,12 @@ function loadState(ugh) {
 // $('select.skill').on('change', function resetSelectOptions(e) {});
 $('select.skill').on('click', function populateSelectedOptions(e) {
 	e.stopPropagation();
+	if (lastEvent !== e.target && lastEvent !== undefined && lastEvent !== dropDereliction) {
+		$(lastEvent.children).each(function (index) {
+			this.textContent = index === 0 ? '---' : `Lv${index}`;
+		});
+		lastEvent;
+	}
 	if (Object.values(check).every(keyCard => keyCard)) {
 		if (e.target.id !== e.target.children[0].textContent) {
 			let ugh2 = e.target.id;
@@ -1862,8 +1858,10 @@ $('select.skill').on('click', function populateSelectedOptions(e) {
 				$(e.target.children).each(function (index) {
 					this.textContent = index === 0 ? '---' : `Lv${index}`;
 				});
+				lastEvent;
 			}
 		}
+		lastEvent = e.target;
 	}
 });
 
@@ -1922,3 +1920,24 @@ function populateSelectOptions() {
 	}
 }
 // });
+$(document).on('click', function (e) {
+	e.stopPropagation();
+	if (lastEvent !== e.target && lastEvent !== undefined && lastEvent !== dropDereliction) {
+		$(lastEvent.children).each(function (index) {
+			this.textContent = index === 0 ? '---' : `Lv${index}`;
+		});
+		lastEvent;
+	}
+});
+function getStats(power, skills) {
+	$(skills).each(function (index, skill) {
+		power.BRM *= skill.BRM;
+		power.BR += skill.BR;
+		power.PRM *= skill.PRM;
+		power.BEM *= skill.BEM;
+		power.BE += skill.BE;
+		power.PEM *= skill.PEM;
+		power.aff += skill.aff;
+	});
+	return power;
+}
