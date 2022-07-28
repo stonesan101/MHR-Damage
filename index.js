@@ -1806,6 +1806,67 @@ function loadState(ugh) {
 		//
 		**/
 // $(Object.entries(info.skills)).each(function () {
+// $('select.skill').on('change', function resetSelectOptions(e) {});
+$('select.skill').on('click', function populateSelectedOptions(e) {
+	e.stopPropagation();
+	if (Object.values(check).every(keyCard => keyCard)) {
+		if (e.target.id !== e.target.children[0].textContent) {
+			let ugh2 = e.target.id;
+			if (ugh2 !== 'dropDereliction' && ugh2 !== 'DangoMarksman') {
+				$(info.skills[ugh2]).each(function (index) {
+					let option = '';
+					if (index !== 0) {
+						let raw = '';
+						if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
+							raw = 'Raw';
+							if (this.BR > 0) {
+								raw += ' +' + this.BR;
+							}
+							if (this.BRM > 1) {
+								let brm = /\.[1-8]/.test((this.BRM - 1) * 100) ? ((this.BRM - 1) * 100).toFixed(1) : ((this.BRM - 1) * 100).toFixed(0);
+								raw += ' +' + brm + '%';
+							}
+							if (this.PRM > 1) {
+								let prm = /\.[1-8]/.test((this.PRM - 1) * 100) ? ((this.PRM - 1) * 100).toFixed(1) : ((this.PRM - 1) * 100).toFixed(0);
+								raw += ' +' + prm + '%';
+							}
+						}
+						let ele = '';
+						if (this.BE > 0 || this.PEM > 1 || this.BEM > 1) {
+							ele = 'Ele';
+							if (this.BE > 0) {
+								ele += ' +' + this.BE;
+							}
+							if (this.BEM > 1) {
+								let bem = /\.[1-8]/.test((this.BEM - 1) * 100) ? ((this.BEM - 1) * 100).toFixed(1) : ((this.BEM - 1) * 100).toFixed(0);
+								ele += ' +' + bem + '%';
+							}
+							if (this.PEM > 1) {
+								let pem = /\.[1-8]/.test((this.PEM - 1) * 100) ? ((this.PEM - 1) * 100).toFixed(1) : ((this.PEM - 1) * 100).toFixed(0);
+								ele += ' +' + pem + '%';
+							}
+						}
+						const aff = this.aff > 0 ? 'Aff +' + this.aff + '%' : '';
+						raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp < 1 ? `Sharp +${this.Sharp * 100}%` : raw;
+						raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp > 1 ? `Sharp +${this.Sharp}` : raw;
+						raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
+						option = index + ': ' + [raw, ele, aff].join(' ');
+					} else {
+						option = ugh2;
+					}
+					$(`#${ugh2}`)[0][index].textContent = option;
+				});
+			}
+		} else {
+			if (e.target.id !== 'dropDereliction' && e.target.id !== 'DangoMarksman') {
+				$(e.target.children).each(function (index) {
+					this.textContent = index === 0 ? '---' : `Lv${index}`;
+				});
+			}
+		}
+	}
+});
+
 function populateSelectOptions() {
 	if (Object.values(check).every(keyCard => keyCard)) {
 		$(Object.entries(info.skills)).each(function (index2) {
