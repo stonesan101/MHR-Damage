@@ -210,7 +210,7 @@ function MeleeDPS() {
 		power = GetSkills(power);
 		//
 
-		if (/inputs|inputButton/.test(event.target.className) && firstRun && !/BowGun/.test($(weaponType).val())) {
+		if (/inputs|inputButton/.test(window.event.target.className) && firstRun && !/BowGun/.test($(weaponType).val())) {
 			UpdateComboTracker();
 			UpdateComboDisplay();
 		}
@@ -311,7 +311,7 @@ function MeleeDPS() {
 		if ($('#dropWeaponType').val() === 'Bow') {
 			comboDamage = BowComboDamage();
 		}
-		if (!/Inputs/.test(event.target.className)) {
+		if (!/Inputs/.test(window.event.target.className)) {
 			meleeDamage.splice(1, 1, [
 				'replaceME',
 				'Combo Damage',
@@ -517,6 +517,9 @@ function GetSkills(power) {
 	});
 	// applies Water Blight if selected appropriate to the hzv
 	power.rawHZV = $(WaterBlight).hasClass('blue') ? Math.min(100, ~~(Math.max(power.rawHZV, power.rawHZV * 0.63 + 22.2) + 3)) : power.rawHZV;
+	if (weaponRampage0.value === 'Kushala Daora Soul') {
+		power.aff += 15;
+	}
 	// adds Weakness Exploit
 	power.aff = power.rawHZV >= 45 ? power.aff + JSON.parse($('#WeaknessExploit').val()) : power.aff;
 	power.aff = Math.min(power.aff, 100) / 100;
@@ -524,16 +527,16 @@ function GetSkills(power) {
 	return { ...power };
 }
 function UpdateComboTracker() {
-	if (!Number.isNaN(+event.target.id) && event.target.id !== '0') {
+	if (!Number.isNaN(+window.event.target.id) && window.event.target.id !== '0') {
 		// if value entered in the e.target combo input > amount stored in comboTracker [] adds attack id to the end of the comboTracker until they are ===
-		let difference = $('.inputs')[event.target.id].value - TimesUsed(event.target.id);
+		let difference = $('.inputs')[window.event.target.id].value - TimesUsed(window.event.target.id);
 		while (difference > 0) {
-			comboTracker.push(event.target.id);
+			comboTracker.push(window.event.target.id);
 			--difference;
 		}
 		// if value entered in the e.target combo input < amount stored in comboTracker [] removes the last instance of this attack id from the comboTracker until they are ===
 		while (difference < 0) {
-			comboTracker.splice(comboTracker.lastIndexOf(event.target.id), 1);
+			comboTracker.splice(comboTracker.lastIndexOf(window.event.target.id), 1);
 			++difference;
 		}
 	}
@@ -719,6 +722,9 @@ function GetRemainingSkills(power) {
 		power.PRM *= 1.1;
 		power.PEM *= 1.1;
 	}
+	if (weaponRampage0.value === 'Magnamalo Soul') {
+		power.BR += 12;
+	}
 	if (/BowGun/.test(weaponType.value)) {
 		if (dropWeaponType.value === 'LightBowGun' && /Pierce|Spread|Normal/.test(power.attackName) && $(CriticalFirePower).hasClass('blue')) {
 			if (/Normal/.test(power.attackName)) {
@@ -763,6 +769,7 @@ function GetRemainingSkills(power) {
 	// applies Dulling Strike to Base raw depending on sharpness and if selected
 	[power.augEFR, power.augPRM] = $('#weaponRampage0').val() === 'Dulling Strike' && Sharpness.selectedIndex < 5 ? [1.02, 1.2] : [power.augEFR, power.augPRM];
 	// applies Bludgeoner to Base raw depending on sharpness and selectedIndex
+
 	if (Sharpness.selectedIndex > 0) {
 		power.BRM *= Bludgeoner.selectedIndex === 1 && Sharpness.selectedIndex < 4 ? [1.05] : [1];
 		power.BRM *= Bludgeoner.selectedIndex === 2 && Sharpness.selectedIndex < 4 ? [1.1] : [1];
@@ -900,7 +907,7 @@ function GunlanceShelling(currentDamage, comboDamage, power) {
 		comboDamage[8] += this[1].baseEle * TimesUsed(index + 28);
 		comboDamage[9] += (EFR + this[1].baseEle) * (power.ticsPer + 1) * TimesUsed(index + 28);
 	});
-	if (!/Inputs/.test(event.target.className)) {
+	if (!/Inputs/.test(window.event.target.className)) {
 		BuildDamageTable(currentDamage, 'dps');
 	}
 	c0.innerHTML = `${[comboDamage[0]]}`;
@@ -943,7 +950,7 @@ function BuildDamageTable(myDamage, id) {
 				if (
 					$(previousWeaponType).val() === $(weaponType).val() &&
 					inputs.length > 0 &&
-					event.target.id !== 'BowChargePlus' &&
+					window.event.target.id !== 'BowChargePlus' &&
 					(($(weaponType).val() === 'Bow' && previousWeapon.value === dropWeapon.value) || $(weaponType).val() !== 'Bow')
 				) {
 					row.appendChild(inputs[k]);
@@ -971,7 +978,7 @@ function BuildDamageTable(myDamage, id) {
 						adjuster.setAttribute('value', 0);
 					}
 					++k;
-					adjuster.setAttribute('onChange', 'DataCompile(event)');
+					adjuster.setAttribute('onChange', 'DataCompile()');
 					cell.appendChild(adjuster);
 					row.appendChild(cell);
 				}
@@ -1123,10 +1130,30 @@ function classChange() {
 				{ BRM: 1, BR: 15, PRM: 1, BEM: 1, BE: 15, PEM: 1, aff: 0 },
 			];
 		}
+		info.skills.ChainCrit = ugh;
 		$(ugh).each(function (index) {
 			ChainCrit[index].value = JSON.stringify(this);
 		});
 	}
+	let bomb = [];
+	if (weaponType.value === cb) {
+		bomb = ['[1,1]', '[1.1,1.15]', '[1.15,1.15]', '[1.2,1.16]', '[1.25,1.17]'];
+	} else if (weaponType.value === gl) {
+		bomb = ['[1,1]', '[1.05,1.05]', '[1.1,1.1]', '[1.15,1.11]', '[1.2,1.12]'];
+	} else if (weaponType.value === lbg || weaponType.value === hbg) {
+		bomb = [
+			'{"wyvern":[1,1,1],"sticky":[1,1,1]}',
+			'{"wyvern":[1.1,1.1,1],"sticky":[1.1,1.1,1]}',
+			'{"wyvern":[1.15,1.15,1],"sticky":[1.1,1.1,1]}',
+			'{"wyvern":[1.20,1.16,1],"sticky":[1.2,1.16,1]}',
+			'{"wyvern":[1.25,1.17,1.1],"sticky":[1.25,1.17,1.1]}',
+		];
+	}
+	info.skills.Bombardier = bomb;
+	$(bomb).each(function (index) {
+		Bombardier[index].value = this;
+	});
+
 	$('.classSpecific').attr('selectedIndex', 0);
 	$('.classSpecific').hide();
 	$('.classSpecific').parent().hide();
@@ -1137,9 +1164,6 @@ function classChange() {
 		.show();
 	$(`.${$(weaponType).val()}`).show();
 
-	if (/BowGun/.test($(weaponType).val())) {
-		Bombardier.selectedIndex = 9;
-	}
 	if (/Bow/.test($(weaponType).val())) {
 		$('.Shot').parent().show();
 		$('.Shot').show();
@@ -1272,7 +1296,7 @@ function calculateAmmoFrames(power, ammoID) {
 	ammo.reloadFrames = info.ammo.reload.frames[ammo.reloadSpeed];
 	ammo.clipSize = power.clipSize[power.isUsed] + ammo.ammoIncrease;
 	ammo.spareShot = +SpareShot.value + +spareAdjust.value;
-	if (/(?<!snipe.*)explosion/.test(power.attackName) && Bombardier.selectedIndex > 2) {
+	if (/(?<!snipe.*)explosion/.test(power.attackName) && Bombardier.selectedIndex > 0) {
 		ammo.spareShot += JSON.parse(Bombardier.value)[lower(power.attackName).match(/sticky|wyvern/)[0]][2];
 	}
 
@@ -1295,7 +1319,6 @@ function calculateAmmoFrames(power, ammoID) {
 	} else if (/Pierc/.test(power.attackName)) {
 		ammo.ticsAdjust = (power.ticsPer + 1) * JSON.parse(pierceAdjust.value)[1];
 	}
-
 	return ammo;
 }
 
@@ -1325,15 +1348,15 @@ function TimesUsed(ID, arr = comboTracker) {
 }
 
 function IncreaseComboCount() {
-	if ($('.inputs')[event.target.id].value !== '20') {
-		++$('.inputs')[event.target.id].value;
+	if ($('.inputs')[window.event.target.id].value !== '20') {
+		++$('.inputs')[window.event.target.id].value;
 	}
 }
 function DecreaseComboCount() {
-	if (event.target.id === '0' && $('.inputs')[event.target.id].value !== '1') {
-		--$('.inputs')[event.target.id].value;
-	} else if (event.target.id !== '0' && $('.inputs')[event.target.id].value !== '0') {
-		--$('.inputs')[event.target.id].value;
+	if (window.event.target.id === '0' && $('.inputs')[window.event.target.id].value !== '1') {
+		--$('.inputs')[window.event.target.id].value;
+	} else if (window.event.target.id !== '0' && $('.inputs')[window.event.target.id].value !== '0') {
+		--$('.inputs')[window.event.target.id].value;
 	}
 }
 function jsonsLoaded() {
@@ -1351,7 +1374,7 @@ function jsonsLoaded() {
 		setHeight();
 	}
 }
-function paste() {
+function paste(event) {
 	let pasteurl = (event.clipboardData || window.clipboardData).getData('text');
 	decodeURL(pasteurl);
 	$(taWikiSetBuilder).text(document.createTextNode('Paste TA Wiki Set Builder Link Here'));
@@ -1486,7 +1509,7 @@ function HealthSelect() {
 // $('#1pHealth');
 // $('.menu')[0].style.display == 'none' ? $('.menu').show() : $('.menu').hide();
 // }
-function emptyContainer() {
+function emptyContainer(event) {
 	if ($(event.target).val() == 'Paste TA Wiki Set Builder Link Here') {
 		$(event.target).val('');
 	}
@@ -1523,14 +1546,16 @@ function showMenu() {
 		$('div.menu').css('top', '-93%');
 	}
 }
-function updateDereliction() {
+function updateDereliction(event) {
 	$('select#dropDereliction').empty();
-	$('select#dropDereliction').append($('<option></option>').attr('value', event.target.value).text([event.target[event.target.selectedIndex].text]));
+	$('select#dropDereliction').append(
+		$('<option></option>').attr('value', event.target.value).text([window.event.target[window.event.target.selectedIndex].text]),
+	);
 	$('div#scrollDiv').hide();
 	DataCompile();
 }
 
-function updateQuest() {
+function updateQuest(event) {
 	$('select#dropQuest').empty();
 	$('select#dropQuest').append($('<option></option>').attr('value', event.target.value).text([event.target[event.target.selectedIndex].text]));
 	$('div.menu').hide();
