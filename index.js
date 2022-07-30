@@ -1426,6 +1426,8 @@ function WeaponSelect() {
 	});
 }
 function RampageSelect() {
+		$(weaponRampage.children).hide();
+			$(weaponRampage0).show();
 	if (getWeapon().rampageSlots !== 0) {
 		let usableDecos = [];
 		$(Object.keys(info.rampage.rampageDecos)).each(function (index, element) {
@@ -1445,7 +1447,7 @@ function RampageSelect() {
 				PopulateDropDowns(Object.values(this), weaponRampage.children[index]);
 			});
 		} else {
-			$(weaponRampage0).show();
+
 			$(getWeapon().rampage).each(function (index, rampageSkill) {
 				$(weaponRampage0).append($('<option></option>').attr('value', info.rampage.keys2[this]).text(info.rampage.keys2[this]));
 			});
