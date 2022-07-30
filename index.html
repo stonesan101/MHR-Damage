@@ -155,19 +155,22 @@
             <option value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":10}'>Lv-2</option>
             <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'>Lv-3</option>
           </select></div>
-        <div id='scrollHeight'><label for="MailofHellfire">MailofHellfire</label><select id="MailofHellfire" name="Mail of Hellfire" onchange="DataCompile()">
+        <div id='scrollHeight'><label for="MailofHellfire">MailofHellfire</label>
+          <select id="MailofHellfire" name="Mail of Hellfire" onchange="DataCompile()">
             <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <optgroup label='Red Attack'>
-              <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-              <option value='{"BRM":1,"BR":25,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-              <option value='{"BRM":1,"BR":30,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+            <optgroup label="Red Attack">
+              <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>0: Raw +15</option>
+              <option value='{"BRM":1,"BR":25,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>1: Raw +25</option>
+              <option value='{"BRM":1,"BR":30,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>2: Raw +30</option>
             </optgroup>
-            <optgroup label='Blue Element'>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-1</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>Lv-2</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.2,"aff":0}'>Lv-3</option>
+            <optgroup label="Blue Element">
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>0: Ele +5%</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>1: Ele +10%</option>
+              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.2,"aff":0}'>2: Ele +20%</option>
             </optgroup>
-          </select></div>
+          </select>
+          </select>
+        </div>
         <div id='derelictionMenu'>
           <label for='dropDereliction'>Dereliction</label>
           <button type='button' aria-pressed='false' id='DerelictionButton' onclick='$(scrollDiv).show()'></button><select id='dropDereliction'
@@ -367,12 +370,11 @@
             <option value=0.25>Lv-2</option>
             <option value=0.5>Lv-3</option>
           </select></div>
-        <div><label for="Adrenaline">Dango Adrenaline</label><select class="skill" id="Adrenaline" name="Adrenaline" onchange='DataCompile()'>
+        <div><label for="WallRunner">Wall Runner</label><select id="WallRunner" name="Wall Runner" onchange="DataCompile()" class="skill">
             <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1.3,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1.35,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1.35,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-            <option value='{"BRM":1.35,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+            <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
           </select></div>
         <div><label for="Booster">Booster</label><select class="skill" id="Booster" name="Booster" onchange='DataCompile()'>
             <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
@@ -389,11 +391,12 @@
             <option value=[1.2,1.16]>Lv-3</option>
             <option value=[1.25,1.17]>Lv-4</option>
           </select></div>
-        <div><label for="WallRunner">Wall Runner</label><select id="WallRunner" name="Wall Runner" onchange="DataCompile()" class="skill">
+        <div><label for="Adrenaline">Dango Adrenaline</label><select class="skill" id="Adrenaline" name="Adrenaline" onchange='DataCompile()'>
             <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+            <option value='{"BRM":1.3,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+            <option value='{"BRM":1.35,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+            <option value='{"BRM":1.35,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+            <option value='{"BRM":1.35,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
           </select></div>
         <!-- <div><label for="ChargeMaster"> Charge Master </label><select id="ChargeMaster" class="skill" onchange="DataCompile()"> -->
         <!-- <option>---</option> -->
@@ -765,7 +768,7 @@
     <div id="previousWeapon" value="initial" style="display:none"></div>
     <div id="previousWeaponType" value="initial" style="display:none"></div>
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <link href="/MHR-Damage/index.js/">
   <script src="/MHR-Damage/index.js"></script>
   <link rel="stylesheet" type="text/css" href="/MHR-Damage/index.css">

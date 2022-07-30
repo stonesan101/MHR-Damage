@@ -3,7 +3,7 @@ let check = { GreatSword: 0, rampage: 0, quest: 0, monster: 0, types: 0, ammo: 0
 let count = 0;
 let keyUp = 0;
 let keyDown = 0;
-let lastEvent;
+let lastEvent = '';
 let comboTracker = [];
 let tempAmmo = {};
 const info = {};
@@ -367,7 +367,7 @@ function AddDependantSkills(power) {
 
 		return attacks;
 	} else if ($(weaponType).val() === 'ChargeBlade') {
-		const phialType = getWeapon().phialType === 'Impact Phial' ? 'Element Phial| Elemental Phial' : 'Impact Phial';
+		const phialType = getWeapon().phialType === 'Impact Phial' ? 'Element Phial| Elemental Phial|Element D' : 'Impact Phial';
 		const regexp = new RegExp(`${phialType}`);
 
 		let attacks = Object.fromEntries(Object.entries(getAttacks()).filter(skill => !regexp.test(skill)));
@@ -1797,138 +1797,121 @@ function loadState(ugh) {
 		**/
 // $(Object.entries(info.skills)).each(function () {
 // $('select.skill').on('change', function resetSelectOptions(e) {});
-$('select.skill').on('click', function populateSelectedOptions(e) {
+// if (lastEvent !== e.target && lastEvent !== undefined && lastEvent !== dropDereliction) {
+// 	if (lastEvent === MailofHellfire) {
+// 		$('#MailofHellfire>optgroup').each(function (index, option) {
+// 			$(this)
+// 				.children()
+// 				.each(function (index) {
+// 					this.textContent = `Lv${index}`;
+// 				});
+// 		});
+// 	} else {
+// 		$(lastEvent.children).each(function (index) {
+// 			this.textContent = index === 0 ? '---' : `Lv${index}`;
+// 		});
+// 		lastEvent='';
+// 	}
+// }
+
+$(document).on('click', function populateSelectedOptions(e) {
 	e.stopPropagation();
-	if (lastEvent !== e.target && lastEvent !== undefined && lastEvent !== dropDereliction) {
-		$(lastEvent.children).each(function (index) {
-			this.textContent = index === 0 ? '---' : `Lv${index}`;
-		});
-		lastEvent;
+	if (e.target.id !== lastEvent) {
+		$(lastEvent)
+			.children()
+			.each(function (index) {
+				this.textContent = index === 0 ? '---' : `Lv${index}`;
+			});
 	}
-	if (Object.values(check).every(keyCard => keyCard)) {
-		if (e.target.id !== e.target.children[0].textContent) {
-			let ugh2 = e.target.id;
-			if (ugh2 !== 'dropDereliction' && ugh2 !== 'DangoMarksman') {
-				$(info.skills[ugh2]).each(function (index) {
-					let option = '';
-					if (index !== 0) {
-						let raw = '';
-						if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
-							raw = 'Raw';
-							if (this.BR > 0) {
-								raw += ' +' + this.BR;
-							}
-							if (this.BRM > 1) {
-								let brm = /\.[1-8]/.test((this.BRM - 1) * 100) ? ((this.BRM - 1) * 100).toFixed(1) : ((this.BRM - 1) * 100).toFixed(0);
-								raw += ' +' + brm + '%';
-							}
-							if (this.PRM > 1) {
-								let prm = /\.[1-8]/.test((this.PRM - 1) * 100) ? ((this.PRM - 1) * 100).toFixed(1) : ((this.PRM - 1) * 100).toFixed(0);
-								raw += ' +' + prm + '%';
-							}
+	if (Object.values($('select.skill')).some(x => x.id === e.target.id) && e.target[0].text === '---') {
+		let ugh2 = e.target.id;
+		if (ugh2 !== 'dropDereliction' && ugh2 !== 'DangoMarksman') {
+			$(info.skills[ugh2]).each(function (index) {
+				let option;
+				if (index !== 0) {
+					let raw = '';
+					if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
+						raw = 'Raw';
+						if (this.BR > 0) {
+							raw += ' +' + this.BR;
 						}
-						let ele = '';
-						if (this.BE > 0 || this.PEM > 1 || this.BEM > 1) {
-							ele = 'Ele';
-							if (this.BE > 0) {
-								ele += ' +' + this.BE;
-							}
-							if (this.BEM > 1) {
-								let bem = /\.[1-8]/.test((this.BEM - 1) * 100) ? ((this.BEM - 1) * 100).toFixed(1) : ((this.BEM - 1) * 100).toFixed(0);
-								ele += ' +' + bem + '%';
-							}
-							if (this.PEM > 1) {
-								let pem = /\.[1-8]/.test((this.PEM - 1) * 100) ? ((this.PEM - 1) * 100).toFixed(1) : ((this.PEM - 1) * 100).toFixed(0);
-								ele += ' +' + pem + '%';
-							}
+						if (this.BRM > 1) {
+							let brm = /\.[1-8]/.test((this.BRM - 1) * 100) ? ((this.BRM - 1) * 100).toFixed(1) : ((this.BRM - 1) * 100).toFixed(0);
+							raw += ' +' + brm + '%';
 						}
-						const aff = this.aff > 0 ? 'Aff +' + this.aff + '%' : '';
-						raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp < 1 ? `Sharp +${this.Sharp * 100}%` : raw;
-						raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp > 1 ? `Sharp +${this.Sharp}` : raw;
-						raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
-						option = index + ': ' + [raw, ele, aff].join(' ');
-					} else {
-						option = ugh2;
+						if (this.PRM > 1) {
+							let prm = /\.[1-8]/.test((this.PRM - 1) * 100) ? ((this.PRM - 1) * 100).toFixed(1) : ((this.PRM - 1) * 100).toFixed(0);
+							raw += ' +' + prm + '%';
+						}
 					}
-					$(`#${ugh2}`)[0][index].textContent = option;
-				});
-			}
+					let ele = '';
+					if (this.BE > 0 || this.PEM > 1 || this.BEM > 1) {
+						ele = 'Ele';
+						if (this.BE > 0) {
+							ele += ' +' + this.BE;
+						}
+						if (this.BEM > 1) {
+							let bem = /\.[1-8]/.test((this.BEM - 1) * 100) ? ((this.BEM - 1) * 100).toFixed(1) : ((this.BEM - 1) * 100).toFixed(0);
+							ele += ' +' + bem + '%';
+						}
+						if (this.PEM > 1) {
+							let pem = /\.[1-8]/.test((this.PEM - 1) * 100) ? ((this.PEM - 1) * 100).toFixed(1) : ((this.PEM - 1) * 100).toFixed(0);
+							ele += ' +' + pem + '%';
+						}
+					}
+					const aff = this.aff > 0 ? 'Aff +' + this.aff + '%' : '';
+					raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp < 1 ? `Sharp +${this.Sharp * 100}%` : raw;
+					raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp > 1 ? `Sharp +${this.Sharp}` : raw;
+					raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
+					option = index + ': ' + [raw, ele, aff].join(' ');
+				} else {
+					option = ugh2;
+				}
+				$(`#${ugh2}`)[0][index].textContent = option;
+			});
+			lastEvent = e.target;
+		}
+	} else if (
+		(Object.values($('select.skill')).some(x => x.id === e.target.id) && e.target[0].text === e.target.id) ||
+		!Object.values($('select.skill')).some(x => x.id === e.target.id || e.target)
+	) {
+		if (lastEvent === MailofHellfire) {
+			$('#MailofHellfire>optgroup').each(function (index, option) {
+				$(this)
+					.children()
+					.each(function (index) {
+						this.textContent = `Lv${index}`;
+					});
+				lastEvent = '';
+			});
 		} else {
-			if (e.target.id !== 'dropDereliction' && e.target.id !== 'DangoMarksman') {
-				$(e.target.children).each(function (index) {
+			$(lastEvent)
+				.children()
+				.each(function (index) {
 					this.textContent = index === 0 ? '---' : `Lv${index}`;
 				});
-				lastEvent;
-			}
+			lastEvent = '';
 		}
-		lastEvent = e.target;
 	}
 });
-
-function populateSelectOptions() {
-	if (Object.values(check).every(keyCard => keyCard)) {
-		$(Object.entries(info.skills)).each(function (index2) {
-			let ugh2 = this[0];
-			if (ugh2 !== 'dropDereliction' && ugh2 !== 'DangoMarksman') {
-				// let ugh15 = `<div><label for="${ugh2}">${ugh2}</label><select id="${ugh2}" name="${ugh2}" onchange="DataCompile()" class="skill">`;
-
-				$(this[1]).each(function (index) {
-					let option = '';
-					if (index !== 0) {
-						let raw = '';
-						if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
-							raw = 'Raw';
-							if (this.BR > 0) {
-								raw += ' +' + this.BR;
-							}
-							if (this.BRM > 1) {
-								let brm = /\.[1-8]/.test((this.BRM - 1) * 100) ? ((this.BRM - 1) * 100).toFixed(1) : ((this.BRM - 1) * 100).toFixed(0);
-								raw += ' +' + brm + '%';
-							}
-							if (this.PRM > 1) {
-								let prm = /\.[1-8]/.test((this.PRM - 1) * 100) ? ((this.PRM - 1) * 100).toFixed(1) : ((this.PRM - 1) * 100).toFixed(0);
-								raw += ' +' + prm + '%';
-							}
-						}
-						let ele = '';
-						if (this.BE > 0 || this.PEM > 1 || this.BEM > 1) {
-							ele = 'Ele';
-							if (this.BE > 0) {
-								ele += ' +' + this.BE;
-							}
-							if (this.BEM > 1) {
-								let bem = /\.[1-8]/.test((this.BEM - 1) * 100) ? ((this.BEM - 1) * 100).toFixed(1) : ((this.BEM - 1) * 100).toFixed(0);
-								ele += ' +' + bem + '%';
-							}
-							if (this.PEM > 1) {
-								let pem = /\.[1-8]/.test((this.PEM - 1) * 100) ? ((this.PEM - 1) * 100).toFixed(1) : ((this.PEM - 1) * 100).toFixed(0);
-								ele += ' +' + pem + '%';
-							}
-						}
-						const aff = this.aff > 0 ? 'Aff +' + this.aff + '%' : '';
-						raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp < 1 ? `Sharp +${this.Sharp * 100}%` : raw;
-						raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp > 1 ? `Sharp +${this.Sharp}` : raw;
-						raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
-						option = index + ': ' + [raw, ele, aff].join(' ');
-					} else {
-						option = ugh2;
-					}
-					$(`#${ugh2}`)[0][index].textContent = option;
-				});
-			}
-		});
-	}
-}
+// $('select.skill').on('change', function (e) {
+// 	e.stopPropagation();
+// 	resetOptions(e);
 // });
-$(document).on('click', function (e) {
-	e.stopPropagation();
-	if (lastEvent !== e.target && lastEvent !== undefined && lastEvent !== dropDereliction) {
-		$(lastEvent.children).each(function (index) {
-			this.textContent = index === 0 ? '---' : `Lv${index}`;
-		});
-		lastEvent;
-	}
-});
+// $(document).on('click', function (e) {
+// 	e.stopPropagation();
+// 	if (!e.target.closest(lastEvent).length) {
+// 		resetOptions(e);
+// 	}
+// });
+// function resetOptions(e) {
+// 	if (Object.values(check).every(keyCard => keyCard) && e !== undefined) {
+// 		if (e.type === 'click' && lastEvent === e.target) {
+// 			return;
+// 		}
+// 		if (e.type === 'change' || (lastEvent !== e.target && lastEvent !== dropDereliction))
+// 	}
+// }
 function getStats(power, skills) {
 	$(skills).each(function (index, skill) {
 		power.BRM *= skill.BRM;
@@ -1941,3 +1924,113 @@ function getStats(power, skills) {
 	});
 	return power;
 }
+
+// function populateSelectOptions() {
+// if (Object.values(check).every(keyCard => keyCard)) {
+// $(Object.entries(info.skills)).each(function (index2) {
+// let ugh2 = this[0];
+// if (ugh2 !== 'dropDereliction' && ugh2 !== 'DangoMarksman') {
+// let ugh15 = `<div><label for="${ugh2}">${ugh2}</label><select id="${ugh2}" name="${ugh2}" onchange="DataCompile()" class="skill">`;
+
+// $(this[1]).each(function (index) {
+// let option = '';
+// if (index !== 0) {
+// let raw = '';
+// if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
+// raw = 'Raw';
+// if (this.BR > 0) {
+// raw += ' +' + this.BR;
+// }
+// if (this.BRM > 1) {
+// let brm = /\.[1-8]/.test((this.BRM - 1) * 100) ? ((this.BRM - 1) * 100).toFixed(1) : ((this.BRM - 1) * 100).toFixed(0);
+// raw += ' +' + brm + '%';
+// }
+// if (this.PRM > 1) {
+// let prm = /\.[1-8]/.test((this.PRM - 1) * 100) ? ((this.PRM - 1) * 100).toFixed(1) : ((this.PRM - 1) * 100).toFixed(0);
+// raw += ' +' + prm + '%';
+// }
+// }
+// let ele = '';
+// if (this.BE > 0 || this.PEM > 1 || this.BEM > 1) {
+// ele = 'Ele';
+// if (this.BE > 0) {
+// ele += ' +' + this.BE;
+// }
+// if (this.BEM > 1) {
+// let bem = /\.[1-8]/.test((this.BEM - 1) * 100) ? ((this.BEM - 1) * 100).toFixed(1) : ((this.BEM - 1) * 100).toFixed(0);
+// ele += ' +' + bem + '%';
+// }
+// if (this.PEM > 1) {
+// let pem = /\.[1-8]/.test((this.PEM - 1) * 100) ? ((this.PEM - 1) * 100).toFixed(1) : ((this.PEM - 1) * 100).toFixed(0);
+// ele += ' +' + pem + '%';
+// }
+// }
+// const aff = this.aff > 0 ? 'Aff +' + this.aff + '%' : '';
+// raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp < 1 ? `Sharp +${this.Sharp * 100}%` : raw;
+// raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp > 1 ? `Sharp +${this.Sharp}` : raw;
+// raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
+// option = index + ': ' + [raw, ele, aff].join(' ');
+// } else {
+// option = ugh2;
+// }
+// $(`#${ugh2}`)[0][index].textContent = option;
+// });
+// }
+// });
+// }
+// }
+// });
+// if (ugh2 === 'MailofHellfire') {
+// 			$(`#${ugh2}`)[0][0].textContent = 'MailofHellfire';
+// 			$('#MailofHellfire>optgroup').each(function (index, option) {
+// 				$(this)
+// 					.children()
+// 					.each(function (index) {
+// 						let thisValue = JSON.parse(this.value);
+// 						let newHTML = '';
+
+// 						let raw = '';
+// 						if (thisValue.BR > 0 || thisValue.PRM > 1 || thisValue.BRM > 1) {
+// 							raw = 'Raw';
+// 							if (thisValue.BR > 0) {
+// 								raw += ' +' + thisValue.BR;
+// 							}
+// 							if (thisValue.BRM > 1) {
+// 								let brm = /\.[1-8]/.test((thisValue.BRM - 1) * 100) ? ((thisValue.BRM - 1) * 100).toFixed(1) : ((thisValue.BRM - 1) * 100).toFixed(0);
+// 								raw += ' +' + brm + '%';
+// 							}
+// 							if (thisValue.PRM > 1) {
+// 								let prm = /\.[1-8]/.test((thisValue.PRM - 1) * 100) ? ((thisValue.PRM - 1) * 100).toFixed(1) : ((thisValue.PRM - 1) * 100).toFixed(0);
+// 								raw += ' +' + prm + '%';
+// 							}
+// 						}
+// 						let ele = '';
+// 						if (thisValue.BE > 0 || thisValue.PEM > 1 || thisValue.BEM > 1) {
+// 							ele = 'Ele';
+// 							if (thisValue.BE > 0) {
+// 								ele += ' +' + thisValue.BE;
+// 							}
+// 							if (thisValue.BEM > 1) {
+// 								let bem = /\.[1-8]/.test((thisValue.BEM - 1) * 100) ? ((thisValue.BEM - 1) * 100).toFixed(1) : ((thisValue.BEM - 1) * 100).toFixed(0);
+// 								ele += ' +' + bem + '%';
+// 							}
+// 							if (thisValue.PEM > 1) {
+// 								let pem = /\.[1-8]/.test((thisValue.PEM - 1) * 100) ? ((thisValue.PEM - 1) * 100).toFixed(1) : ((thisValue.PEM - 1) * 100).toFixed(0);
+// 								ele += ' +' + pem + '%';
+// 							}
+// 						}
+// 						const aff = thisValue.aff > 0 ? 'Aff +' + thisValue.aff + '%' : '';
+// 						raw = Object.prototype.hasOwnProperty.call(thisValue, 'Sharp') && thisValue.Sharp < 1 ? `Sharp +${thisValue.Sharp * 100}%` : raw;
+// 						raw = Object.prototype.hasOwnProperty.call(thisValue, 'Sharp') && thisValue.Sharp > 1 ? `Sharp +${thisValue.Sharp}` : raw;
+// 						raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
+// 						let text = raw !== '' ? raw : '';
+// 						text = aff !== '' ? text.push(aff) : text;
+// 						text = ele !== '' ? text.push(ele) : text;
+
+// 						newHTML = index + ': ' + [raw, ele, aff].join(' ');
+
+// 						this.textContent = newHTML;
+// 					});
+// 			});
+// 			lastEvent = e.target;
+// 		} else {

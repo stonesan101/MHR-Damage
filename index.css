@@ -312,9 +312,6 @@ select#dropQuest>option:nth-child(n+1):not(#dropQuest) {
   display: none;
   background-color: #ffffff00;
   z-index: -100;
-
-
-
 }
 
 select.derelictionMenu,
@@ -456,7 +453,6 @@ tr>th {
   border-style: outset;
   background-color: rgb(18, 18, 51);
   border-spacing: 0px;
-  min-width: fit-content;
   min-height: 1.2rem;
   z-index: 50;
 }
@@ -720,6 +716,7 @@ label,
   min-width: fit-content;
   /* font-size: 0.8rem; */
   font-weight: 300;
+  width: initial;
 }
 
 #monTable>tr:nth-child(1) {
@@ -822,10 +819,16 @@ div#ele.contain {
   grid-column: 1 / auto;
 }
 
+select:focus {
+  min-width: 110px;
+  width: fixed;
+}
+
 select option {
   background-color: rgb(5, 5, 35);
   border-style: none;
-  min-width: max-content;
+  font-size: .7rem;
+  width: max-content;
 }
 
 div#raw.contain {
@@ -880,6 +883,13 @@ select {
   background-color: rgba(5, 3, 39, 0.373);
   border-style: outset;
   border-width: 0.15rem;
+
+
+  width: fixed;
+}
+
+section#section1>div#raw:nth-child(n+1) {
+  width: 100%
 }
 
 select#ElderEssence {
@@ -887,11 +897,22 @@ select#ElderEssence {
   border-right: 0px;
 }
 
+#raw>div,
+#raw>div>select,
+#raw>div>label,
+#raw>div>select>option {
+  max-width: 110px;
+}
+
+select:focus {
+  min-width: 110px;
+
+}
+
 label {
-  min-width: max-content;
   border-style: outset;
   border-width: 0.15rem;
-
+  pointer-events: none;
   background-color: rgba(12, 26, 105, 0.85);
 }
 
@@ -1106,6 +1127,10 @@ select#dropQuest {
   height: 120%;
 }
 
+label,
+select {
+  min-width: max-content;
+}
 
 h1,
 label,
@@ -1114,6 +1139,7 @@ th,
 td {
   max-height: 30px;
   margin: 0;
+  width: -webkit-fill-available;
 }
 
 
