@@ -719,9 +719,7 @@ label,
   width: initial;
 }
 
-label {
-  min-width: max-content;
-}
+
 
 #monTable>tr:nth-child(1) {
   position: sticky;
@@ -832,13 +830,14 @@ select:focus {
   text-align: center;
   font-size: small;
   margin: auto;
+  min-width: fit-content;
 }
 
 select option {
   background-color: rgb(5, 5, 35);
   border-style: none;
   font-size: .7rem;
-  width: max-content;
+
 }
 
 div#raw.contain {
@@ -1151,7 +1150,7 @@ th,
 td {
   max-height: 30px;
   margin: 0;
-  width: -webkit-fill-available;
+
 }
 
 

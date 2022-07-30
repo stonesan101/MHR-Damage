@@ -1228,17 +1228,15 @@ $(window).on('resize', function () {
 	if ($(window).width() > 850) {
 		setHeight();
 	} else {
-			for (let i = 0; i < 74; i++) {
- const element = $('#raw>').children('select, label')[i];
+			for (let i = 0; i < 37; i++) {
+ const element = $('#raw>').children('label')[i];
 element.style= `width:${$('.thisWidth').width()*1.05}px; max-width:${$('.thisWidth').width()*1.05}px`
+		}
+			for (let i = 0; i < 37; i++) {
+ const element = $('#raw>').children('select')[i];
+element.style= `width:${$('.thisWidth').width()*1.05}px; min-width:${$('.thisWidth').width()*1.05}px; max-width:max-content`
 	}
 	section1.style = `width:${$('.thisWidth').width() * 5.6}px; max-width:${$('.thisWidth').width() *5.6}px`
-
-
-	}
-for (let i = 0; i < 74; i++) {
- const element = $('#raw>').children('select, label')[i];
-element.style= `width:${$('.thisWidth').width()*1.05}px; max-width:${$('.thisWidth').width()*1.05}px`
 
 	}
 });
@@ -1672,9 +1670,13 @@ function setHeight() {
 	$('#damageTable').height(height * 0.59);
 	$(comboCountContainer).css('height', +getComputedStyle(document.querySelector('#section2')).height.match(/\d.\d+?/)[0]);
 	$('#monDropDowns').height($('#dropHeight').height());
-	for (let i = 0; i < 74; i++) {
- const element = $('#raw>').children('select, label')[i];
-element.style= `width:${$('.thisWidth').width()*1.05}px; max-width:${$('.thisWidth').width()*1.05}px`
+	for (let i = 0; i < 37; i++) {
+ const element = $('#raw>').children('label')[i];
+element.style= `width:${$('.thisWidth').width()*1.05}px; max-width:${$('.thisWidth').width()*1.05}px;min-width:${$('.thisWidth').width()*1.05}px`
+	}
+		for (let i = 0; i < 37; i++) {
+ const element = $('#raw>').children('select')[i];
+element.style= `width:${$('.thisWidth').width()*1.05}px; min-width:${$('.thisWidth').width()*1.05}px; max-width:max-content`
 	}
 	section1.style = `width:${$('.thisWidth').width() * 5.6}px; max-width:${$('.thisWidth').width() *5.6}px`
 
