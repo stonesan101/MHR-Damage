@@ -1229,11 +1229,11 @@ $(window).on('resize', function () {
 		setHeight();
 	} else {
 			for (let i = 0; i < 37; i++) {
- const element = $('#raw>').children('label')[i];
+ const element = $('#raw').children('label')[i];
 element.style= `width:${$('.thisWidth').width()*1.05}px; max-width:${$('.thisWidth').width()*1.05}px`
 		}
 			for (let i = 0; i < 37; i++) {
- const element = $('#raw>').children('select')[i];
+ const element = $('#raw').children('div')[i];
 element.style= `width:${$('.thisWidth').width()*1.05}px; min-width:${$('.thisWidth').width()*1.05}px; max-width:max-content`
 	}
 	section1.style = `width:${$('.thisWidth').width() * 5.6}px; max-width:${$('.thisWidth').width() *5.6}px`
@@ -1413,6 +1413,7 @@ function PopulateDropDowns(json, dropDown) {
 	$.each(json, (key, value) => {
 		$(dropDown).append($('<option></option>').attr('value', value).text(value));
 	});
+	return
 }
 
 function WeaponTypeSelect() {
@@ -1441,6 +1442,7 @@ function RampageSelect() {
 	} else {
 		$(weaponRampage.children).html('');
 		$(weaponRampage.children).hide();
+			$(weaponRampage0).show();
 		if (/Rampage/.test(getWeapon().weapon)) {
 			$(info.rampage[getWeapon().weapon].Rampage).each(function (index, rampageSection) {
 				$(weaponRampage.children[index]).show();
@@ -1676,9 +1678,13 @@ function setHeight() {
  const element = $('#raw>').children('label')[i];
 element.style= `width:${$('.thisWidth').width()*1.05}px; max-width:${$('.thisWidth').width()*1.05}px;min-width:${$('.thisWidth').width()*1.05}px`
 	}
-		for (let i = 0; i < 37; i++) {
- const element = $('#raw>').children('select')[i];
-element.style= `width:${$('.thisWidth').width()*1.05}px; min-width:${$('.thisWidth').width()*1.05}px; max-width:max-content`
+	for (let i = 0; i < 37; i++) {
+		 const selects = $('#raw>').children('select')[i];
+selects.style= `min-width:${$('.thisWidth').width()*1.05}px`
+			 const labels = $('#raw>').children('label')[i];
+labels.style= `width:${$('.thisWidth').width()*1.05}px; max-width:${$('.thisWidth').width()*1.05}px;min-width:${$('.thisWidth').width()*1.05}px`
+ const divs = $('#raw').children('div')[i];
+divs.style= `width:${$('.thisWidth').width()*1.05}px; min-width:${$('.thisWidth').width()*1.05}px; max-width:max-content`
 	}
 	section1.style = `width:${$('.thisWidth').width() * 5.6}px; max-width:${$('.thisWidth').width() *5.6}px`
 

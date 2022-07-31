@@ -830,7 +830,10 @@ select:focus {
   text-align: center;
   font-size: small;
   margin: auto;
-  min-width: max-content;
+  display: grid;
+
+  min-width: 100%;
+  width: max-content;
 }
 
 select option {
