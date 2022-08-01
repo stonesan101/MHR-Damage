@@ -1242,7 +1242,7 @@ $(window).on('resize', function () {
 		// const element = $('#raw').children('div')[i];
 		// element.style = `width:${$('.thisWidth').width() * 1.05}px; min-width:${$('.thisWidth').width() * 1.05}px; max-width:max-content`
 		// }
-		// section1.style = `width:${$('.thisWidth').width() * 5.6}px; max-width:${$('.thisWidth').width() * 5.6}px`;
+		section1.style = `width:${$('.thisWidth').width() * 5.6}px; max-width:${$('.thisWidth').width() * 5.6}px`;
 	}
 });
 $('#BowChargePlus').change(function (e) {
@@ -1250,7 +1250,7 @@ $('#BowChargePlus').change(function (e) {
 	UpdateComboDisplay();
 });
 
-$('.scroll').on('mousedown', function (e) {
+$('.scroll').on('click', function (e) {
 	$('.scroll').toggleClass('vis invis');
 	info.skills.MailofHellfire = $(redScroll).hasClass('invis') ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
 });
@@ -1692,7 +1692,7 @@ function setHeight() {
 	// divs.style = `width:${$('.thisWidth').width() * 1.05}px; min-width:${$('.thisWidth').width() * 1.05}px; max-width:max-content`
 	// }
 	// }
-	// section1.style = `width:${$('.thisWidth').width() * 5.4}px; max-width:${$('.thisWidth').width() * 5.4}px`;
+	section1.style = `width:${$('.thisWidth').width() * 5.4}px; max-width:${$('.thisWidth').width() * 5.4}px`;
 	$(derelictionMenu).height($(scrollHeight).height());
 }
 function saveState() {

@@ -1201,7 +1201,7 @@ div>.vis:hover {
 }
 
 div>.vis {
-  pointer-events: all;
+
   display: grid;
 }
 
