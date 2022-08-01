@@ -1193,6 +1193,9 @@ $(window).on('keypress',function (e) {
 		keyDown = 0;
 	}
 });
+// $(window).on('mousedown',function (e) {
+// 	console.log(e)
+// })
 $(window).on('keypress',function (e) {
 	keyUp = e.originalEvent.key === '+' ? ++keyUp : 0;
 	if (keyUp === 3) {
@@ -1847,11 +1850,11 @@ $(document).on('change',function (e) {
 		$(e.target).children().each(function (index) {
 			this.textContent = index === 0 ? '---' : `Lv${index}`;
 		});
-		lastEvent = 'skip'
+		lastEvent = ''
 	}
 });
 
-$(document).on('click',function display(e) {
+$(document).on('mousedown',function display(e) {
 	// $(`#${e.target.id}`)[0].style = 'position:fixed';
 	// if (lastEvent === 'done') {
 	// 	lastEvent = '';
