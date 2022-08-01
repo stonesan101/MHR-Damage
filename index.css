@@ -139,9 +139,9 @@ section#section2 {
   gap: .5rem;
   /* gap: inherit; */
   grid-template-columns: repeat(8, 1fr) auto;
-
   justify-items: stretch;
   align-items: start;
+  min-width: max-content;
 }
 
 html div {
@@ -186,6 +186,7 @@ body {
   gap: 1rem;
   border-spacing: 0px;
   align-content: center;
+  overflow: auto;
 }
 
 #comboCountDisplay {
@@ -380,7 +381,7 @@ div#forButtonSelect {
   gap: 0.25rem;
   grid-template-columns: repeat(4, 1fr);
   display: grid;
-  justify-items: center;
+  justify-items: stretch;
   justify-content: center;
   grid-area: 2 / 2 / 3 / 5;
 }
@@ -449,7 +450,7 @@ tr>th {
   position: sticky;
   margin: 0px;
   place-content: center;
-  justify-items: center;
+  justify-items: stretch;
   border-style: outset;
   background-color: rgb(18, 18, 51);
   border-spacing: 0px;
@@ -679,8 +680,12 @@ label#dropDerelection {
 div#derelictionMenu {
 
   display: grid;
-  align-items: stretch;
+
   grid-template-rows: 1fr 1fr;
+
+  justify-items: stretch;
+
+  align-items: stretch;
 }
 
 select#dropDereliction {
@@ -714,10 +719,9 @@ label,
   border-color: rgb(77, 67, 69);
   color: white;
   box-sizing: border-box;
-
   /* font-size: 0.8rem; */
   font-weight: 300;
-  width: initial;
+  /* width: initial; */
 }
 
 
@@ -831,10 +835,11 @@ select:focus {
   text-align: center;
   font-size: small;
   margin: auto;
-  display: grid;
-
+  /* display: grid; */
+  /* justify-content: center; */
+  /* justify-self: center; */
   min-width: 100%;
-  width: max-content;
+  width: fit-content;
 }
 
 select option {
@@ -846,11 +851,12 @@ select option {
 
 div#raw.contain {
   display: grid;
-  grid-template-rows: repeat(5, auto);
   grid-template-columns: repeat(5, 1fr);
   grid-area: 4 / 1 / 5 / 6;
+  grid-template-rows: repeat(7, 2.6rem);
   border-style: none;
   padding: 0%;
+  align-items: center;
 }
 
 div#boxes.contain {
@@ -914,18 +920,13 @@ select#ElderEssence {
 #raw>div>select:not(#derelictionMenu),
 #raw>div>label,
 #raw>div>select>option {
-  margin: auto;
+  /* margin: auto; */
   display: grid;
-  align-content: center;
-  align-items: baseline;
-  justify-items: center;
-  justify-content: center;
+  /* align-content: center; */
+  /* align-items: baseline; */
+  /* justify-items: center; */
+  /* justify-content: center; */
   font-size: .8rem;
-
-}
-
-select:focus {
-  min-width: fit-content;
 }
 
 label {
@@ -1154,6 +1155,7 @@ th,
 td {
   max-height: 30px;
   margin: 0;
+  min-width: max-content;
 
 }
 
@@ -1169,4 +1171,40 @@ div.derelictionMenu,
 div.menu {
   z-index: 55;
   position: relative;
+}
+
+/* #redScroll:hover { */
+/* background-image: url('red.png'); */
+/* height: 120%; */
+/* width: 2.2rem; */
+/*  */
+/* } */
+
+#redScroll {
+  font-size: 1rem;
+}
+
+/* #blue { */
+/* background-image: url('blue.png'); */
+/* height: 120%; */
+/* width: 2.2rem; */
+/* background-size: contain; */
+/* } */
+div>.vis:hover {
+  background: rgb(245, 245, 245);
+  border-radius: 75%;
+
+}
+
+.scroll {
+  border: none;
+}
+
+div>.vis {
+  pointer-events: all;
+  display: grid;
+}
+
+div>.invis {
+  display: none;
 }

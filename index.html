@@ -2,7 +2,9 @@
 <html lang="en">
 
   <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="prefetch" href="/MHR-Damage/json/GreatSword.json" as="fetch" />
     <link rel="prefetch" href="/MHR-Damage/json/monster.json" as="fetch" />
     <link rel="prefetch" href="/MHR-Damage/json/types.json" as="fetch" />
@@ -22,6 +24,7 @@
     <!-- <link href=”https://code.jquery.com/ui/v1.13.1/themes/ui-lightness/jquery-ui.css” rel=”stylesheet”> -->
     <!-- <script src=”https://code.jquery.com/jquery-v1.13.1.js”></script> -->
     <!-- <script src=”https://code.jquery.com/ui/v1.13.1/jquery-ui.js”></script> -->
+    <title>Document</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGQJSRYWE1"></script>
     <script>
@@ -133,485 +136,759 @@
       </div>
       <div id="raw" class="contain">
         <h1>Raw</h1>
+        <div style="
+                grid-area: 1/1/1/-1;
+                /* height: 35%; */
+                display: grid;
+                justify-content: end;
+                justify-items: end;
+                align-items: center;
+                align-content: stretch;
+              ">
+          <label for="redScroll" class='scroll' style='font-size:1.1rem'>Red</label>
+          <img id="redScroll" class="scroll vis" src="/red.png" style="grid-area: 1/5;height: 35%;"><img id="redNon" class="scroll invis" src="/redInactive.png"
+               style="grid-area: 1/5;height: 33%;"><label class='scroll' for="blueScroll" style="grid-area: 1/6;
+              font-size:1.1rem">Blue</label><img class="scroll invis" id="blueScroll" src="/blue.png" style="grid-area: 1/7;height: 35%;"><img id="blueNon"
+               class="scroll vis" src="/blueInactive.png" style="grid-area: 1/7;height: 33%;">
+        </div>
         <div><label for="AttackBoost">Attack Boost</label><select id="AttackBoost" name="Attack Boost" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":3,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":6,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-            <option value='{"BRM":1.05,"BR":7,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
-            <option value='{"BRM":1.06,"BR":8,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-5</option>
-            <option value='{"BRM":1.08,"BR":9,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-6</option>
-            <option value='{"BRM":1.1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-7</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:3,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:6,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:9,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
+            <option value="{&quot;BRM&quot;:1.05,&quot;BR&quot;:7,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-4 </option>
+            <option value="{&quot;BRM&quot;:1.06,&quot;BR&quot;:8,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-5 </option>
+            <option value="{&quot;BRM&quot;:1.08,&quot;BR&quot;:9,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-6 </option>
+            <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-7 </option>
           </select></div>
         <div><label for="Bloodlust">Bloodlust</label><select id="Bloodlust" name="Bloodlust" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":5,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":7,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":10,"PEM":1,"aff":0}'>Lv-3</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:5,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:15,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:7,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:20,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:10,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
         <div><label for="Foray">Foray</label><select id="Foray" name="Foray" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":10}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'>Lv-3</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:10}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:15,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:20}">Lv-3
+            </option>
           </select></div>
-        <div id='scrollHeight'><label for="MailofHellfire">MailofHellfire</label>
-          <select id="MailofHellfire" name="Mail of Hellfire" onchange="DataCompile()">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+        <div id="scrollHeight"><label for="MailofHellfire">MailofHellfire</label>
+          <select id="MailofHellfire" name="Mail of Hellfire" class='skill' onchange="DataCompile()">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
             <optgroup label="Red Attack">
-              <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>0: Raw +15</option>
-              <option value='{"BRM":1,"BR":25,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>1: Raw +25</option>
-              <option value='{"BRM":1,"BR":30,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>2: Raw +30</option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:15,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">0:
+                Raw +15</option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:25,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">1:
+                Raw +25</option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:30,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">2:
+                Raw +30</option>
             </optgroup>
             <optgroup label="Blue Element">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>0: Ele +5%</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>1: Ele +10%</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.2,"aff":0}'>2: Ele +20%</option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.05,&quot;aff&quot;:0}">
+                0: Ele +5%</option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.1,&quot;aff&quot;:0}">1:
+                Ele +10%</option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.2,&quot;aff&quot;:0}">2:
+                Ele +20%</option>
             </optgroup>
           </select>
-          </select>
         </div>
-        <div id='derelictionMenu'>
-          <label for='dropDereliction'>Dereliction</label>
-          <button type='button' aria-pressed='false' id='DerelictionButton' onclick='$(scrollDiv).show()'></button><select id='dropDereliction'
-                  name='dropDereliction' class='skill'>
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+        <div id="derelictionMenu" style="height: 40.1768px;">
+          <label for="dropDereliction">Dereliction</label>
+          <button type="button" aria-pressed="false" id="DerelictionButton" onclick="$(scrollDiv).show()"></button><select id="dropDereliction"
+                  name="dropDereliction" class="skill">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
           </select>
-          <div id='scrollDiv' style='display:none'>
-            <label class='derelictionMenu' for='redScroll'> Red Scroll </label>
-            <select class='derelictionMenu' id='redScroll' name='redScroll' onchange='updateDereliction()'>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <optgroup label='Tier-1'>
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":5,"PEM":1,"aff":0}'>Lv-1</option>
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":8,"PEM":1,"aff":0}'>Lv-2</option>
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":12,"PEM":1,"aff":0}'>Lv-3</option>
+          <div id="scrollDiv" style="display:none">
+            <label class="derelictionMenu" for="redScroll"> Red Scroll </label>
+            <select class="derelictionMenu" id="redScroll" name="redScroll" onchange="updateDereliction()">
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <optgroup label="Tier-1">
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:5,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-1 </option>
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:8,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-2 </option>
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:12,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-3 </option>
               </optgroup>
-              <optgroup label='Tier-2'>
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":7,"PEM":1,"aff":0}'>Lv-1</option>
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":12,"PEM":1,"aff":0}'>Lv-2</option>
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":15,"PEM":1,"aff":0}'>Lv-3</option>
+              <optgroup label="Tier-2">
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:7,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-1 </option>
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:12,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-2 </option>
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:15,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-3 </option>
               </optgroup>
-              <optgroup label='Tier-3'>
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":10,"PEM":1,"aff":0}'>Lv-1</option>
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":15,"PEM":1,"aff":0}'>Lv-2</option>
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":20,"PEM":1,"aff":0}'>Lv-3</option>
+              <optgroup label="Tier-3">
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:10,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-1 </option>
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:15,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-2 </option>
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:20,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-3 </option>
               </optgroup>
             </select>
-            <label class='derelictionMenu blueScroll' for='blueScroll'> Blue Scroll </label>
-            <select class='derelictionMenu' id='blueScroll' name='blueScroll' onchange='updateDereliction()'>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <optgroup label='Tier-1'>
-                <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-                <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-                <option value='{"BRM":1,"BR":25,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+            <label class="derelictionMenu blueScroll" for="blueScroll"> Blue Scroll </label>
+            <select class="derelictionMenu" id="blueScroll" name="blueScroll" onchange="updateDereliction()">
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <optgroup label="Tier-1">
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:15,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-1 </option>
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:20,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-2 </option>
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:25,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-3 </option>
               </optgroup>
-              <optgroup label='Tier-2'>
-                <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-                <option value='{"BRM":1,"BR":25,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-                <option value='{"BRM":1,"BR":30,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+              <optgroup label="Tier-2">
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:20,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-1 </option>
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:25,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-2 </option>
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:30,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-3 </option>
               </optgroup>
-              <optgroup label='Tier-3'>
-                <option value='{"BRM":1,"BR":25,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-                <option value='{"BRM":1,"BR":30,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-                <option value='{"BRM":1,"BR":35,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+              <optgroup label="Tier-3">
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:25,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-1 </option>
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:30,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-2 </option>
+                <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:35,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                  Lv-3 </option>
               </optgroup>
             </select>
           </div>
         </div>
         <div><label for="PeakPerformance">Peak Performance</label><select id="PeakPerformance" name="Peak Performance" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":5,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:5,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:20,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
         <div><label for="Resentment">Resentment</label><select id="Resentment" name="Resentment" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":5,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-            <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
-            <option value='{"BRM":1,"BR":25,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-5</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:5,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:15,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:20,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-4
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:25,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-5
+            </option>
           </select></div>
         <div><label for="Agitator">Agitator</label><select id="Agitator" name="Agitator" onchange="DataCompile()" class="skill hitsOfSharp">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":4,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":3}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":8,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":5}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":12,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":7}'>Lv-3</option>
-            <option value='{"BRM":1,"BR":16,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":10}'>Lv-4</option>
-            <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":15}'>Lv-5</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:4,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:3}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:8,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:5}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:12,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:7}">Lv-3
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:16,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:10}">Lv-4
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:20,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:15}">Lv-5
+            </option>
           </select></div>
         <div><label for="Resuscitate">Resuscitate</label><select id="Resuscitate" name="Resuscitate" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":5,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:5,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:20,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
         <div><label for="Coalescence">Coalescence</label><select id="Coalescence" name="Coalescence" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":12,"PRM":1,"BEM":1,"BE":2,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":3,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":18,"PRM":1,"BEM":1,"BE":4,"PEM":1,"aff":0}'>Lv-3</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:12,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:2,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:15,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:3,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:18,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:4,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
         <div><label for="CriticalBoost">Critical Boost</label><select id="CriticalBoost" name="Critical Boost" onchange="DataCompile()" class="skill Crit">
-            <option value='{"BRM":1,"BR":0,"PRM":1.25,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.3,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.35,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.4,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.25,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.3,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.35,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-2 </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.4,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
         <div><label for="ChainCrit">Chain Crit</label><select id="ChainCrit" name="ChainCrit" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":5,"PRM":1,"BEM":1,"BE":5,"PEM":1,"aff":0}'>Base Bonus</option>
-            <option value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":8,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":12,"PRM":1,"BEM":1,"BE":10,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":15,"PEM":1,"aff":0}'>Lv-3</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:5,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:5,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Base
+              Bonus </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:8,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:12,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:10,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:15,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:15,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
         <div><label for="Counterstrike">Counterstrike</label><select id="Counterstrike" name="Counterstrike" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":25,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:15,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:25,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
         <div><label for="Spiribird">Spiribird</label><select id="Spiribird" name="Spiribird" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":1,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":2,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":3,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-            <option value='{"BRM":1,"BR":4,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
-            <option value='{"BRM":1,"BR":5,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-5</option>
-            <option value='{"BRM":1,"BR":6,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-6</option>
-            <option value='{"BRM":1,"BR":7,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-7</option>
-            <option value='{"BRM":1,"BR":8,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-8</option>
-            <option value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":0, "PEM":1,"aff":0}'>Lv-9</option>
-            <option value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-10</option>
-            <option value='{"BRM":1,"BR":11,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-11</option>
-            <option value='{"BRM":1,"BR":12,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-12</option>
-            <option value='{"BRM":1,"BR":13,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-13</option>
-            <option value='{"BRM":1,"BR":14,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-14</option>
-            <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-15</option>
-            <option value='{"BRM":1,"BR":16,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-16</option>
-            <option value='{"BRM":1,"BR":17,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-17</option>
-            <option value='{"BRM":1,"BR":18,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-18</option>
-            <option value='{"BRM":1,"BR":19,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-19</option>
-            <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-20</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:1,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:2,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:3,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:4,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-4
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:5,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-5
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:6,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-6
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:7,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-7
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:8,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-8
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:9,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0, &quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-9
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-10
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:11,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-11
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:12,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-12
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:13,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-13
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:14,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-14
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:15,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-15
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:16,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-16
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:17,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-17
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:18,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-18
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:19,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-19
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:20,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-20
+            </option>
           </select></div>
         <div><label for="PunishingDraw">Punishing Draw</label><select id="PunishingDraw" name="PunishingDraw" onchange="DataCompile()" class="skill">
-            <option value=0>---</option>
-            <option value=3>Lv-1</option>
-            <option value=5>Lv-2</option>
-            <option value=7>Lv-3</option>
+            <option value="0">---</option>
+            <option value="3">Lv-1</option>
+            <option value="5">Lv-2</option>
+            <option value="7">Lv-3</option>
           </select></div>
         <div><label for="Dragonheart">Dragonheart</label><select id="Dragonheart" name="Dragonheart" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-            <option value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
-            <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-5</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
+            <option value="{&quot;BRM&quot;:1.05,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-4 </option>
+            <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-5
+            </option>
           </select></div>
         <div><label for="OffensiveGuard">Offensive Guard</label><select id="OffensiveGuard" name="Offensive Guard" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1.15,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1.05,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-1 </option>
+            <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1.15,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-3 </option>
           </select></div>
-        <div><label class="melee Sharpness classSpecific" for="Grinder">Grinder(S)</label><select id="Grinder" onchange="DataCompile()" name="Grinder"
-                  class="skill melee Sharpness classSpecific">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":1.075,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":1.075,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":1.075,"PEM":1,"aff":0}'>Lv-3</option>
+        <div style=""><label class="melee Sharpness classSpecific" for="Grinder" selectedindex="0" style="">Grinder(S)</label><select id="Grinder"
+                  onchange="DataCompile()" name="Grinder" class="skill melee Sharpness classSpecific" selectedindex="0" style="">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:1.075,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-1 </option>
+            <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:1.075,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-2 </option>
+            <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:1.075,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-3 </option>
           </select></div>
         <div><label for="Heroics">Heroics</label><select id="Heroics" name="Heroics" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-            <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
-            <option value='{"BRM":1.3,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-5</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1.05,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-2 </option>
+            <option value="{&quot;BRM&quot;:1.05,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-3 </option>
+            <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-4
+            </option>
+            <option value="{&quot;BRM&quot;:1.3,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-5
+            </option>
           </select></div>
         <div><label for="Fortify">Fortify</label><select id="Fortify" name="Fortify" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1.2,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1.2,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
           </select></div>
-        <div><label class="melee Sharpness/HVZ classSpecific" for="MindsEye">Minds Eye</label><select id="MindsEye" onchange="DataCompile()" name="Minds Eye"
-                  class="skill melee Sharpness/HVZ classSpecific">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.15,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.3,"BEM":1,"BE":0,"PEM":1.3,"aff":0}'>Lv-3</option>
+        <div style=""><label class="melee Sharpness/HVZ classSpecific" for="MindsEye" selectedindex="0" style="">Minds Eye</label><select id="MindsEye"
+                  onchange="DataCompile()" name="Minds Eye" class="skill melee Sharpness/HVZ classSpecific" selectedindex="0" style="">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.1,&quot;aff&quot;:0}">
+              Lv-1 </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.15,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.15,&quot;aff&quot;:0}">
+              Lv-2 </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.3,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.3,&quot;aff&quot;:0}">
+              Lv-3 </option>
           </select></div>
-        <div><label class="melee Sharpness classSpecific" for="Bludgeoner">Bludgeoner</label><select id="Bludgeoner" onchange="DataCompile()" name="Bludgeoner"
-                  class="skill melee Sharpness classSpecific">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+        <div style=""><label class="melee Sharpness classSpecific" for="Bludgeoner" selectedindex="0" style="">Bludgeoner</label><select id="Bludgeoner"
+                  onchange="DataCompile()" name="Bludgeoner" class="skill melee Sharpness classSpecific" selectedindex="0" style="">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1.05,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-1 </option>
+            <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
-        <div><label for="Handicraft">Handicraft</label><select class="skill melee Sharpness hitsOfSharp classSpecific" id="Handicraft" onchange="DataCompile()">
-            <option value=0>---</option>
-            <option value=1>Lv-1</option>
-            <option value=2>Lv-2</option>
-            <option value=3>Lv-3</option>
-            <option value=4>Lv-4</option>
-            <option value=5>Lv-5</option>
+        <div style=""><label for="Handicraft">Handicraft</label><select class="skill melee Sharpness hitsOfSharp classSpecific" id="Handicraft"
+                  onchange="DataCompile()" selectedindex="0" style="">
+            <option value="0">---</option>
+            <option value="1">Lv-1</option>
+            <option value="2">Lv-2</option>
+            <option value="3">Lv-3</option>
+            <option value="4">Lv-4</option>
+            <option value="5">Lv-5</option>
           </select></div>
-        <div><label for="MastersTouch"> Masters Touch </label><select id="MastersTouch" class="skill melee hitsOfSharp
-                  Sharpness classSpecific" onchange="DataCompile()">
+        <div style=""><label for="MastersTouch"> Masters Touch </label><select id="MastersTouch" class="skill melee hitsOfSharp
+                        Sharpness classSpecific" onchange="DataCompile()" selectedindex="0" style="">
             <option value="0">---</option>
             <option value="0.2">Lv-1</option>
             <option value="0.4">Lv-2</option>
             <option value="0.8">Lv-3</option>
           </select></div>
-        <div><label for="RazorSharp">Razor Sharp</label><select id="RazorSharp" class="skill melee hitsOfSharp
-                                            Sharpness classSpecific" onchange="DataCompile()">
-            <option value=0>---</option>
-            <option value=0.1>Lv-1</option>
-            <option value=0.25>Lv-2</option>
-            <option value=0.5>Lv-3</option>
+        <div style=""><label for="RazorSharp">Razor Sharp</label><select id="RazorSharp" class="skill melee hitsOfSharp
+                                                  Sharpness classSpecific" onchange="DataCompile()" selectedindex="0" style="">
+            <option value="0">---</option>
+            <option value="0.1">Lv-1</option>
+            <option value="0.25">Lv-2</option>
+            <option value="0.5">Lv-3</option>
           </select></div>
         <div><label for="WallRunner">Wall Runner</label><select id="WallRunner" name="Wall Runner" onchange="DataCompile()" class="skill">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":20,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:20,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
-        <div><label for="Booster">Booster</label><select class="skill" id="Booster" name="Booster" onchange='DataCompile()'>
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":6,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":12,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-            <option value='{"BRM":1,"BR":15,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
+        <div><label for="Booster">Booster</label><select class="skill" id="Booster" name="Booster" onchange="DataCompile()">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:6,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:9,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:12,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:15,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-4
+            </option>
           </select></div>
-        <div><label for="Bombardier">Dango Bombardier</label><select id="Bombardier" name="Bombardier" onchange="DataCompile()"
-                  class="UAED Sticky Shelling classSpecific ChargeBlade HeavyBowGun LightBowGun Gunlance">
-            <option value=[1,1]>---</option>
-            <option value=[1.1,1.15]>Lv-1</option>
-            <option value=[1.15,1.15]>Lv-2</option>
-            <option value=[1.2,1.16]>Lv-3</option>
-            <option value=[1.25,1.17]>Lv-4</option>
+        <div style="display: none;"><label for="Bombardier">Dango Bombardier</label><select id="Bombardier" name="Bombardier" onchange="DataCompile()"
+                  class="UAED Sticky Shelling classSpecific ChargeBlade HeavyBowGun LightBowGun Gunlance" selectedindex="0" style="display: none;">
+            <option value="[1,1]">---</option>
+            <option value="[1.1,1.15]">Lv-1</option>
+            <option value="[1.15,1.15]">Lv-2</option>
+            <option value="[1.2,1.16]">Lv-3</option>
+            <option value="[1.25,1.17]">Lv-4</option>
           </select></div>
-        <div><label class='thisWidth' for="Adrenaline">Dango Adrenaline</label><select class="skill" id="Adrenaline" name="Adrenaline" onchange='DataCompile()'>
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1.3,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1.35,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1.35,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-            <option value='{"BRM":1.35,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
+        <div><label class="thisWidth" for="Adrenaline">Dango Adrenaline</label><select class="skill" id="Adrenaline" name="Adrenaline" onchange="DataCompile()">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1.3,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1.35,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-2 </option>
+            <option value="{&quot;BRM&quot;:1.35,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-3 </option>
+            <option value="{&quot;BRM&quot;:1.35,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-4 </option>
           </select></div>
         <!-- <div><label for="ChargeMaster"> Charge Master </label><select id="ChargeMaster" class="skill" onchange="DataCompile()"> -->
         <!-- <option>---</option> -->
         <!-- <option>Lv-1</option> -->
         <!-- <option>Lv-2</option> -->
         <!-- </select></div> -->
-        <div><label for="TuneUp">Tune-Up</label><select id="TuneUp" class="skill classSpecific LightBowGun HeavyBowGun" onchange="DataCompile()">
+        <div style="display: none;"><label for="TuneUp">Tune-Up</label><select id="TuneUp" class="skill classSpecific LightBowGun HeavyBowGun"
+                  onchange="DataCompile()" selectedindex="0" style="display: none;">
             <option>---</option>
             <option>Lv-1</option>
             <option>Lv-2</option>
           </select></div>
         <div><label for="Artillery">Artillery</label><select id="Artillery" name="Artillery" onchange="DataCompile()" class="skill UAED
-                  Sticky Shelling">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,
-                  "PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1.15,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1.3,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1.5,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+                        Sticky Shelling">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,
+                        &quot;PEM&quot;:1,&quot;aff&quot;:0}">---</option>
+            <option value="{&quot;BRM&quot;:1.15,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-1 </option>
+            <option value="{&quot;BRM&quot;:1.3,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1.5,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
-        <div><label for='BowChargePlus'>Mighty Bow</label><select class="skill classSpecific Bow" id="BowChargePlus" name="MightyBow" onchange="DataCompile()">
-            Mighty Bow > <option value='false'>---</ option>
-            <option value='true'>Lv-1</option>
+        <div style="display: none;"><label for="BowChargePlus">Mighty Bow</label><select class="skill classSpecific Bow" id="BowChargePlus" name="MightyBow"
+                  onchange="DataCompile()" selectedindex="0" style="display: none;"> Mighty Bow &gt; <option value="false">---
+              <!-- option-->
+            </option>
+            <option value="true">Lv-1</option>
           </select></div>
-        <div><label for="RapidFireUp">Rapid Fire Up</label><select onchange="DataCompile()" id="RapidFireUp" name="Rapid"
-                  class="skill classSpecific LightBowGun HeavyBowGun">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+        <div style="display: none;"><label for="RapidFireUp">Rapid Fire Up</label><select onchange="DataCompile()" id="RapidFireUp" name="Rapid"
+                  class="skill classSpecific LightBowGun HeavyBowGun" selectedindex="0" style="display: none;">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.05,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-1 </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.2,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
-        <div><label class="classSpecific Shot" for="PierceUp">Pierce Up</label><select onchange="DataCompile()" id="PierceUp" name="PierceUp"
-                  class="skill classSpecific Shot">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+        <div style="display: none;"><label class="classSpecific Shot" for="PierceUp" selectedindex="0" style="display: none;">Pierce Up</label><select
+                  onchange="DataCompile()" id="PierceUp" name="PierceUp" class="skill classSpecific Shot" selectedindex="0" style="display: none;">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.05,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-1 </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.2,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
-        <div><label class="classSpecific Shot" for="SpreadUp">Spread Up</label><select onchange="DataCompile()" id="SpreadUp" name="SpreadUp"
-                  class="skill classSpecific Shot">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+        <div style="display: none;"><label class="classSpecific Shot" for="SpreadUp" selectedindex="0" style="display: none;">Spread Up</label><select
+                  onchange="DataCompile()" id="SpreadUp" name="SpreadUp" class="skill classSpecific Shot" selectedindex="0" style="display: none;">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.05,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-1 </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.2,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
-        <div><label class="classSpecific Shot" for="NormalRapidUp">Normal/Rapid Up</label><select onchange="DataCompile()" id="NormalRapidUp"
-                  name="NormalRapidUp" class="skill classSpecific Shot">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+        <div style="display: none;"><label class="classSpecific Shot" for="NormalRapidUp" selectedindex="0" style="display: none;">Normal/Rapid
+            Up</label><select onchange="DataCompile()" id="NormalRapidUp" name="NormalRapidUp" class="skill classSpecific Shot" selectedindex="0"
+                  style="display: none;">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.05,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+              Lv-1 </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.2,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-3
+            </option>
           </select></div>
-        <div><label class="classSpecific Shot" for="SpecialAmmoBoost">Special Ammo Up</label><select onchange="DataCompile()" id="SpecialAmmoBoost"
-                  name="Special Ammo" class="skill classSpecific Shot">
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-            <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
+        <div style="display: none;"><label class="classSpecific Shot" for="SpecialAmmoBoost" selectedindex="0" style="display: none;">Special Ammo
+            Up</label><select onchange="DataCompile()" id="SpecialAmmoBoost" name="Special Ammo" class="skill classSpecific Shot" selectedindex="0"
+                  style="display: none;">
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+            </option>
+            <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.2,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+            </option>
           </select></div>
         <div class="contain" id="ele">
           <h1>Elemental</h1>
           <div><label for="ElementalAttack">ElementalAttack</label><select id="ElementalAttack" name="Elemental Attack" onchange="DataCompile()" class="skill">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":2,"PEM":1,"aff":0}'>Lv-1</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":3,"PEM":1,"aff":0}'>Lv-2</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.05,"BE":4,"PEM":1,"aff":0}'>Lv-3</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.1,"BE":4,"PEM":1,"aff":0}'>Lv-4</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.2,"BE":4,"PEM":1,"aff":0}'>Lv-5</option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:2,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-1
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:3,&quot;PEM&quot;:1,&quot;aff&quot;:0}">Lv-2
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.05,&quot;BE&quot;:4,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-3 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.1,&quot;BE&quot;:4,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-4 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.2,&quot;BE&quot;:4,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-5 </option>
             </select></div>
           <div><label for="ElderEssence">Elder Dragon Set Bonus</label><select id="ElderEssence" name="Elder Essence" onchange="DataCompile()"
                     class="skill setBonus">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.05,"BE":0,"PEM":1,"aff":0}'>Lv-1 </option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.1,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.15,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.15,"BE":0,"PEM":1,"aff":0}'>Lv-4</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.15,"BE":0,"PEM":1,"aff":0}'>Lv-5</option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.05,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-1 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-2 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.15,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-3 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.15,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-4 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.15,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-5 </option>
             </select></div>
           <div><label for="CriticalElement">Critical Element</label><select id="CriticalElement" name="Critical Element" onchange="DataCompile()" class="skill">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-1</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>Lv-2</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>Lv-3</option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.05,&quot;aff&quot;:0}">
+                Lv-1 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.1,&quot;aff&quot;:0}">
+                Lv-2 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.15,&quot;aff&quot;:0}">
+                Lv-3 </option>
             </select></div>
         </div>
         <div class="contain" id="aff">
           <h1>Affinity</h1>
           <div><label for="WeaknessExploit">Weakness Exploit</label><select id="WeaknessExploit" name="Weakness Exploit" onchange="DataCompile()"
                     class="skill hitsOfSharp">
-              <option value=0>---</option>
-              <option value=15>Lv-1</option>
-              <option value=30>Lv-2</option>
-              <option value=50>Lv-3</option>
+              <option value="0">---</option>
+              <option value="15">Lv-1</option>
+              <option value="30">Lv-2</option>
+              <option value="50">Lv-3</option>
             </select></div>
           <div><label for="CriticalEye">Critical Eye</label><select id="CriticalEye" name="Critical Eye" onchange="DataCompile()" class="skill hitsOfSharp ">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":5}'>Lv-1</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":10}'>Lv-2</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":15}'>Lv-3</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'>Lv-4</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":25}'>Lv-5</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":30}'>Lv-6</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":40}'>Lv-7</option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:5}">Lv-1
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:10}">
+                Lv-2 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:15}">
+                Lv-3 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:20}">
+                Lv-4 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:25}">
+                Lv-5 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:30}">
+                Lv-6 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:40}">
+                Lv-7 </option>
             </select></div>
           <div><label for="MaximumMight">Maximum Might</label><select id="MaximumMight" name="Maximum Might" onchange="DataCompile()" class="skill hitsOfSharp">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":10}'>Lv-1</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'>Lv-2</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":30}'>Lv-3</option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:10}">
+                Lv-1 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:20}">
+                Lv-2 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:30}">
+                Lv-3 </option>
             </select></div>
           <div><label for="LatentPower">Latent Power</label><select id="LatentPower" name="Latent Power" onchange="DataCompile()" class="skill hitsOfSharp">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":10}'>Lv-1</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'>Lv-2</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":30}'>Lv-3</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":45}'>Lv-4</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":50}'>Lv-5</option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:10}">
+                Lv-1 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:20}">
+                Lv-2 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:30}">
+                Lv-3 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:45}">
+                Lv-4 </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:50}">
+                Lv-5 </option>
             </select></div>
         </div>
-        <div class="contain" id="unique">
-          <h1 class='classSpecific Bow ChargeBlade InsectGlaive LightBowGun HeavyBowGun LongSword SwitchAxe' id='weaponId'></h1>
-          <div><label class="classSpecific InsectGlaive" for="Kinsect Buff">Kinsect Buff</label><select onchange="DataCompile()" id="KinsectBuff"
-                    name="Kinsect Buff" class="skill classSpecific InsectGlaive">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Red</option>
-              <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Red & White</option>
-              <option value='{"BRM":1.15,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Triple</option>
+        <div class="contain" id="unique" style="grid-area: 8 / 3 / 9 / 4;">
+          <h1 class="classSpecific Bow ChargeBlade InsectGlaive LightBowGun HeavyBowGun LongSword SwitchAxe" id="weaponId" selectedindex="0"
+              style="display: none;"> GreatSword</h1>
+          <div style="display: none;"><label class="classSpecific InsectGlaive" for="Kinsect Buff" selectedindex="0" style="display: none;">Kinsect
+              Buff</label><select onchange="DataCompile()" id="KinsectBuff" name="Kinsect Buff" class="skill classSpecific InsectGlaive" selectedindex="0"
+                    style="display: none;">
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1.05,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Red </option>
+              <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Red &amp; White</option>
+              <option value="{&quot;BRM&quot;:1.15,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Triple </option>
             </select></div>
-          <div><label class="classSpecific LongSword" for="SpiritGauge">Spirit Gauge</label><select onchange="DataCompile()" id="spiritGauge" name="SpiritGauge"
-                    class="skill classSpecific LongSword">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1.05,"BE":0,"PEM":1,"aff":0}'>White</option>
-              <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1.1,"BE":0,"PEM":1,"aff":0}'>Yellow</option>
-              <option value='{"BRM":1.2,"BR":0,"PRM":1,"BEM":1.2,"BE":0,"PEM":1,"aff":0}'>Red</option>
+          <div style="display: none;"><label class="classSpecific LongSword" for="SpiritGauge" selectedindex="0" style="display: none;">Spirit
+              Gauge</label><select onchange="DataCompile()" id="spiritGauge" name="SpiritGauge" class="skill classSpecific LongSword" selectedindex="0"
+                    style="display: none;">
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option
+                      value="{&quot;BRM&quot;:1.05,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.05,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                White</option>
+              <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Yellow </option>
+              <option value="{&quot;BRM&quot;:1.2,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.2,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Red </option>
             </select></div>
-          <div><label class="classSpecific LongSword" for="Helmbreaker">Serene/HelmBreaker</label><select id="Helmbreaker" name="LongSword"
-                    onchange="DataCompile()" class="skill classSpecific LongSword">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1.5,"BEM":1.1,"BE":0,"PEM":1,"aff":0}'>White</option>
-              <option value='{"BRM":2,"BR":0,"PRM":1,"BEM":1.2,"BE":0,"PEM":1,"aff":0}'>yellow</option>
-              <option value='{"BRM":3.2,"BR":0,"PRM":1,"BEM":1..3,"BE":0,"PEM":1,"aff":0}'>Red</option>
+          <div style="display: none;"><label class="classSpecific LongSword" for="Helmbreaker" selectedindex="0"
+                   style="display: none;">Serene/HelmBreaker</label><select id="Helmbreaker" name="LongSword" onchange="DataCompile()"
+                    class="skill classSpecific LongSword" selectedindex="0" style="display: none;">
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.5,&quot;BEM&quot;:1.1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                White </option>
+              <option value="{&quot;BRM&quot;:2,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.2,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                yellow </option>
+              <option
+                      value="{&quot;BRM&quot;:3.2,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1..3,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Red </option>
             </select></div>
-          <div><label class="classSpecific ChargeBlade" for="savageAxe">Savage Axe</label><select onchange="DataCompile()" id="savageAxe" name="Savage Axe"
-                    class="skill classSpecific ChargeBlade">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+          <div style="display: none;"><label class="classSpecific ChargeBlade" for="savageAxe" selectedindex="0" style="display: none;">Savage
+              Axe</label><select onchange="DataCompile()" id="savageAxe" name="Savage Axe" class="skill classSpecific ChargeBlade" selectedindex="0"
+                    style="display: none;">
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-1 </option>
             </select></div>
-          <div><label onchange="DataCompile()" class=" classSpecific ChargeBlade" for="impShieldCharge">Shield Charge</label><select onchange="DataCompile()"
-                    id="impShieldCharge" name="impShieldCharge" class="skill classSpecific ChargeBlade">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1.2,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+          <div style="display: none;"><label onchange="DataCompile()" class=" classSpecific ChargeBlade" for="impShieldCharge" selectedindex="0"
+                   style="display: none;">Shield Charge</label><select onchange="DataCompile()" id="impShieldCharge" name="impShieldCharge"
+                    class="skill classSpecific ChargeBlade" selectedindex="0" style="display: none;">
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1.2,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-1 </option>
             </select></div>
-          <div><label onchange="DataCompile()" class=" classSpecific ChargeBlade" for="eleShieldCharge">Shield Charge Ele</label><select
-                    onchange="DataCompile()" id="eleShieldCharge" name="eleShieldCharge" class="skill classSpecific ChargeBlade">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1.3,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
+          <div style="display: none;"><label onchange="DataCompile()" class=" classSpecific ChargeBlade" for="eleShieldCharge" selectedindex="0"
+                   style="display: none;">Shield Charge Ele</label><select onchange="DataCompile()" id="eleShieldCharge" name="eleShieldCharge"
+                    class="skill classSpecific ChargeBlade" selectedindex="0" style="display: none;">
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.3,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-1 </option>
             </select></div>
-          <div><label class="classSpecific LightBowGun" for="evadeHop">Evade Hop</label><select onchange="DataCompile()" id="evadeHop" name="Evade Hop"
-                    class="skill classSpecific LightBowGun">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>Lv-1</option>
+          <div style="display: none;"><label class="classSpecific LightBowGun" for="evadeHop" selectedindex="0" style="display: none;">Evade Hop</label><select
+                    onchange="DataCompile()" id="evadeHop" name="Evade Hop" class="skill classSpecific LightBowGun" selectedindex="0" style="display: none;">
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.1,&quot;aff&quot;:0}">
+                Lv-1 </option>
             </select></div>
-          <div><label class="classSpecific LightBowGun" for="fanningManeuver">Fanning Maneuver</label><select onchange="DataCompile()" id="fanningManeuver"
-                    name="Fanning Maneuver" class="skill classSpecific LightBowGun">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'>Lv-1</option>
+          <div style="display: none;"><label class="classSpecific LightBowGun" for="fanningManeuver" selectedindex="0" style="display: none;">Fanning
+              Maneuver</label><select onchange="DataCompile()" id="fanningManeuver" name="Fanning Maneuver" class="skill classSpecific LightBowGun"
+                    selectedindex="0" style="display: none;">
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.1,&quot;aff&quot;:0}">
+                Lv-1 </option>
             </select></div>
-          <div><label class="classSpecific HeavyBowGun" for="chargedShot">Charged Shot</label><select onchange="DataCompile()" id="chargedShot"
-                    name="Charged Shot" class="skill classSpecific HeavyBowGun">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1.1,"BR":0,"PRM":1,"BEM":1.1,"BE":0,"PEM":1,"aff":0}'>Lv-1</option>
-              <option value='{"BRM":1.2,"BR":0,"PRM":1,"BEM":1.2,"BE":0,"PEM":1,"aff":0}'>Lv-2</option>
-              <option value='{"BRM":1.3,"BR":0,"PRM":1,"BEM":1.3,"BE":0,"PEM":1,"aff":0}'>Lv-3</option>
+          <div style="display: none;"><label class="classSpecific HeavyBowGun" for="chargedShot" selectedindex="0" style="display: none;">Charged
+              Shot</label><select onchange="DataCompile()" id="chargedShot" name="Charged Shot" class="skill classSpecific HeavyBowGun" selectedindex="0"
+                    style="display: none;">
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option value="{&quot;BRM&quot;:1.1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-1 </option>
+              <option value="{&quot;BRM&quot;:1.2,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.2,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-2 </option>
+              <option value="{&quot;BRM&quot;:1.3,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1.3,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
+                Lv-3 </option>
             </select></div>
-          <div><label class="classSpecific Shot" for="DangoTemper">Dango Temper</label><select onchange="DataCompile()" id="DangoTemper" name="Dango Temper"
-                    class="skill classSpecific Shot">
-              <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-1</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-2</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1.075,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-3</option>
-              <option value='{"BRM":1,"BR":0,"PRM":1.075,"BEM":1,"BE":0,"PEM":1.05,"aff":0}'>Lv-4</option>
+          <div style="display: none;"><label class="classSpecific Shot" for="DangoTemper" selectedindex="0" style="display: none;">Dango Temper</label><select
+                    onchange="DataCompile()" id="DangoTemper" name="Dango Temper" class="skill classSpecific Shot" selectedindex="0" style="display: none;">
+              <option value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">---
+              </option>
+              <option
+                      value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.05,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.05,&quot;aff&quot;:0}">
+                Lv-1 </option>
+              <option
+                      value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.05,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.05,&quot;aff&quot;:0}">
+                Lv-2 </option>
+              <option
+                      value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.075,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.05,&quot;aff&quot;:0}">
+                Lv-3</option>
+              <option
+                      value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.075,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.05,&quot;aff&quot;:0}">
+                Lv-4</option>
             </select></div>
-          <div><label class="classSpecific Shot" for="DangoMarksmanid">Dango Marksman</label><select onchange="DataCompile()" id="DangoMarksmanid"
-                    name="Dango Marksman" class="skill classSpecific Shot">
-              <option value=[1,1]>---</option>
-              <option value=[1.05,1.015]>Lv-1</option>
-              <option value=[1.1,1.03]>Lv-2</option>
-              <option value=[1.05,1.045]>Lv-3</option>
-              <option value=[1.1,1.06]>Lv-4</option>
+          <div style="display: none;"><label class="classSpecific Shot" for="DangoMarksmanid" selectedindex="0" style="display: none;">Dango
+              Marksman</label><select onchange="DataCompile()" id="DangoMarksmanid" name="Dango Marksman" class="skill classSpecific Shot" selectedindex="0"
+                    style="display: none;">
+              <option value="[1,1]">---</option>
+              <option value="[1.05,1.015]">Lv-1</option>
+              <option value="[1.1,1.03]">Lv-2</option>
+              <option value="[1.05,1.045]">Lv-3</option>
+              <option value="[1.1,1.06]">Lv-4</option>
             </select></div>
-          <div><label class="classSpecific LightBowGun HeavyBowGun" for="SpareShot">Spare Shot</label><select onchange="DataCompile()" id="SpareShot"
-                    name="Spare Shot" class="skill classSpecific LightBowGun HeavyBowGun">
-              <option value=0>---</option>
-              <option value=5>Lv-1</option>
-              <option value=10>Lv-2</option>
-              <option value=20>Lv-3</option>
+          <div style="display: none;"><label class="classSpecific LightBowGun HeavyBowGun" for="SpareShot" selectedindex="0" style="display: none;">Spare
+              Shot</label><select onchange="DataCompile()" id="SpareShot" name="Spare Shot" class="skill classSpecific LightBowGun HeavyBowGun"
+                    selectedindex="0" style="display: none;">
+              <option value="0">---</option>
+              <option value="5">Lv-1</option>
+              <option value="10">Lv-2</option>
+              <option value="20">Lv-3</option>
             </select></div>
-          <div><label class="classSpecific LightBowGun HeavyBowGun" for="AmmoUp">Ammo Up</label><select onchange="DataCompile()" id="AmmoUp" name="AmmoUp"
-                    class="skill classSpecific LightBowGun HeavyBowGun">
-              <option value=0>---</option>
-              <option value=1>Lv-1</option>
-              <option value=2>Lv-2</option>
-              <option value=3>Lv-3</option>
+          <div style="display: none;"><label class="classSpecific LightBowGun HeavyBowGun" for="AmmoUp" selectedindex="0" style="display: none;">Ammo
+              Up</label><select onchange="DataCompile()" id="AmmoUp" name="AmmoUp" class="skill classSpecific LightBowGun HeavyBowGun" selectedindex="0"
+                    style="display: none;">
+              <option value="0">---</option>
+              <option value="1">Lv-1</option>
+              <option value="2">Lv-2</option>
+              <option value="3">Lv-3</option>
             </select></div>
-          <div><label class="classSpecific LightBowGun HeavyBowGun" for="RecoilDown">Recoil</label><select onchange="DataCompile()" id="RecoilDown"
-                    name="Recoil" class="skill classSpecific LightBowGun HeavyBowGun">
-              <option value=0>---</option>
-              <option value=1>Lv-1</option>
-              <option value=2>Lv-2</option>
-              <option value=3>Lv-3</option>
+          <div style="display: none;"><label class="classSpecific LightBowGun HeavyBowGun" for="RecoilDown" selectedindex="0"
+                   style="display: none;">Recoil</label><select onchange="DataCompile()" id="RecoilDown" name="Recoil"
+                    class="skill classSpecific LightBowGun HeavyBowGun" selectedindex="0" style="display: none;">
+              <option value="0">---</option>
+              <option value="1">Lv-1</option>
+              <option value="2">Lv-2</option>
+              <option value="3">Lv-3</option>
             </select></div>
-          <div><label class="classSpecific LightBowGun HeavyBowGun" for="ReloadSpeed">Reload</label><select onchange="DataCompile()" id="ReloadSpeed"
-                    name="Reload" class="skill classSpecific LightBowGun HeavyBowGun">
-              <option value=0>---</option>
-              <option value=1>Lv-1</option>
-              <option value=2>Lv-2</option>
-              <option value=3>Lv-3</option>
+          <div style="display: none;"><label class="classSpecific LightBowGun HeavyBowGun" for="ReloadSpeed" selectedindex="0"
+                   style="display: none;">Reload</label><select onchange="DataCompile()" id="ReloadSpeed" name="Reload"
+                    class="skill classSpecific LightBowGun HeavyBowGun" selectedindex="0" style="display: none;">
+              <option value="0">---</option>
+              <option value="1">Lv-1</option>
+              <option value="2">Lv-2</option>
+              <option value="3">Lv-3</option>
             </select></div>
         </div>
       </div>

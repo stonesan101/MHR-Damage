@@ -1087,6 +1087,9 @@ function MonChart() {
 function classChange() {
 	if (Object.values(check).every(keyCard => keyCard)) {
 		if (previousWeaponType.textContent !== '') {
+			if ($(window).width() > 850) {
+				setHeight();
+			}
 			ComboReset();
 		}
 		let ugh = [];
@@ -1166,11 +1169,7 @@ function classChange() {
 		MeleeElements();
 		UniqueColumnsDisplay();
 	}
-	if ($(window).width() > 850) {
-		setHeight();
-	} else {
 
-	}
 }
 function MeleeElements() {
 	$('.melee').parent().show();
@@ -1179,8 +1178,10 @@ function MeleeElements() {
 		if (getWeapon().phialType === 'Impact Phial') {
 			impShieldCharge.parentNode.style = "display:''";
 			eleShieldCharge.parentNode.style = 'display:none';
+			eleShieldCharge.selectedIndex = 0;
 		} else if (getWeapon().phialType === 'Element Phial') {
 			impShieldCharge.parentNode.style = 'display:none';
+			impShieldCharge.selectedIndex = 0;
 			eleShieldCharge.parentNode.style = "display:''";
 		}
 	}
@@ -1231,16 +1232,17 @@ function ResetSkills(element = '.skill') {
 $(window).on('resize',function () {
 	if ($(window).width() > 850) {
 		setHeight();
-	} else {
-		for (let i = 0; i < 37; i++) {
-			const element = $('#raw').children('label')[i];
-			element.style = `width:${$('.thisWidth').width() * 1.05}px; max-width:${$('.thisWidth').width() * 1.05}px`
-		}
-		for (let i = 0; i < 37; i++) {
-			const element = $('#raw').children('div')[i];
-			element.style = `width:${$('.thisWidth').width() * 1.05}px; min-width:${$('.thisWidth').width() * 1.05}px; max-width:max-content`
-		}
+	// } else {
+		// for (let i = 0; i < 37; i++) {
+			// const element = $('#raw').children('label')[i];
+			// element.style = `width:${$('.thisWidth').width() * 1.05}px; max-width:${$('.thisWidth').width() * 1.05}px`
+		// }
+		// for (let i = 0; i < 37; i++) {
+			// const element = $('#raw').children('div')[i];
+			// element.style = `width:${$('.thisWidth').width() * 1.05}px; min-width:${$('.thisWidth').width() * 1.05}px; max-width:max-content`
+		// }
 		section1.style = `width:${$('.thisWidth').width() * 5.6}px; max-width:${$('.thisWidth').width() * 5.6}px`
+
 
 	}
 });
@@ -1248,7 +1250,13 @@ $('#BowChargePlus').change(function (e) {
 	ComboReset();
 	UpdateComboDisplay();
 });
+
+$('.scroll').on('click',function (e) {
+	$('.scroll').toggleClass('vis invis')
+	info.skills.MailofHellfire = redScroll.style.display === none ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
+})
 $('.toggle').on('click',function (e) {
+
 	if (/DemonDrug/.test(e.target.id) && /gray/.test(e.target.className) && [DemonDrug.className,MegaDemonDrug.className].some(x => /blue/.test(x))) {
 		$('#DemonDrug').toggleClass('gray blue');
 
@@ -1678,17 +1686,17 @@ function setHeight() {
 	$('#damageTable').height(height * 0.59);
 	$(comboCountContainer).css('height',+getComputedStyle(document.querySelector('#section2')).height.match(/\d.\d+?/)[0]);
 	$('#monDropDowns').height($('#dropHeight').height());
-	for (let i = 0; i < 37; i++) {
-		const selects = $('#raw>').children('select')[i];
-		selects.style = `width:${$('.thisWidth').width() * 1.05}px`
-		const labels = $('#raw>').children('label')[i];
-		labels.style = `width:${$('.thisWidth').width() * 1.05}px; max-width:${$('.thisWidth').width() * 1.05}px;min-width:${$('.thisWidth').width() * 1.05}px`
-		const divs = $('#raw').children('div:not(#derelictionMenu)')[i];
-		divs.style = `width:${$('.thisWidth').width() * 1.05}px; min-width:${$('.thisWidth').width() * 1.05}px; max-width:max-content`
-	}
-	section1.style = `width:${$('.thisWidth').width() * 5.6}px; max-width:${$('.thisWidth').width() * 5.6}px`
-
-
+	// for (let i = 0; i < 37; i++) {
+		// const selects = $('#raw>').children('select')[i];
+		// selects.style = `width:${$('.thisWidth').width() * 1.05}px`
+		// const labels = $('#raw>').children('label')[i];
+		// // labels.style = `width:${$('.thisWidth').width() * 1.05}px; max-width:${$('.thisWidth').width() * 1.05}px;min-width:${$('.thisWidth').width() * 1.05}px`
+		// const divs = $('#raw').children('div:not(#derelictionMenu)')[i];
+		// divs.style = `width:${$('.thisWidth').width() * 1.05}px; min-width:${$('.thisWidth').width() * 1.05}px; max-width:max-content`
+		// }
+		// }
+		section1.style = `width:${$('.thisWidth').width() * 5.4}px; max-width:${$('.thisWidth').width() * 5.4}px`
+$(derelictionMenu).height($(scrollHeight).height())
 }
 function saveState() {
 	let ugh = [[],[],[],[]];
@@ -1934,9 +1942,7 @@ $(document).on('mousedown',function display(e) {
 					lastEvent = '';
 				});
 			} else {
-				$(e.target)
-					.children()
-					.each(function (index) {
+				$(e.target).children().each(function (index) {
 						this.textContent = index === 0 ? '---' : `Lv${index}`;
 					});
 				lastEvent = '';
@@ -1944,7 +1950,8 @@ $(document).on('mousedown',function display(e) {
 		}
 	} else {
 		lastEvent = ''
-	}
+}
+
 });
 // $(`#${e.target.id}`)[0].style = 'position:unset';
 // });

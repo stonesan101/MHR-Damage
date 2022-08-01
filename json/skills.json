@@ -2110,8 +2110,8 @@
    "Lv": 3
   }
  ],
- " MailofHellfire": {
-  "RedAttack": [
+ "MailofHellfireSourse": {
+  "red": [
    {
     "BRM": 1,
     "BR": 15,
@@ -2140,7 +2140,7 @@
     "aff": 0
    }
   ],
-  "BlueElement": [
+  "blue": [
    {
     "BRM": 1,
     "BR": 0,
