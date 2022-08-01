@@ -545,7 +545,7 @@ function UpdateComboDisplay() {
 }
 
 // finds HitsOfSharpness current sharpness as well as what combo hits were used how many times per color
-functionTotalHitsOfSharpUsed(power) {
+function TotalHitsOfSharpUsed(power) {
 	power.listOfEachAttack = [].concat(comboTracker);
 	let totalHitsOfSharpnessUsed = 0;
 	let increase = [];
