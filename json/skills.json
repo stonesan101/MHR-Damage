@@ -2112,6 +2112,15 @@
  ],
  "MailofHellfireSourse": {
   "red": [
+    {
+  "BRM": 1,
+  "BR": 0,
+  "PRM": 1,
+  "BEM": 1,
+  "BE": 0,
+  "PEM": 1,
+  "aff": 0
+ },
    {
     "BRM": 1,
     "BR": 15,
@@ -2141,6 +2150,15 @@
    }
   ],
   "blue": [
+    {
+  "BRM": 1,
+  "BR": 0,
+  "PRM": 1,
+  "BEM": 1,
+  "BE": 0,
+  "PEM": 1,
+  "aff": 0
+ },
    {
     "BRM": 1,
     "BR": 0,
