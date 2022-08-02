@@ -1734,7 +1734,7 @@ function setHeight() {
 	// divs.style = `width:${$('.thisWidth').width() * 1.05}px; min-width:${$('.thisWidth').width() * 1.05}px; max-width:max-content`
 	// }
 	// }
-	section1.style = `width:${$('.thisWidth').width() * 5.4}px; max-width:${$('.thisWidth').width() * 5.4}px`;
+	section1.style = `width:${Math.min($('div#weaponSelect.contain').width()+10,$('.thisWidth').width() * 5.4)}px; max-width:${Math.min($('div#weaponSelect.contain').width()+10,$('.thisWidth').width() * 5.4)}px`;
 }
 function saveState() {
 	let ugh = [[],[],[],[]];
@@ -1891,8 +1891,7 @@ function loadState(ugh) {
 // 	}
 // }
 
-$(document).on('change',function (e) {
-	if (Object.values($('select.skill')).some(x => x === e.target)) {
+$('select.skill').on('change',function (e) {
 		if (lastEvent === Dereliction) {
 			$('select#Dereliction').
 				children().
@@ -1913,7 +1912,6 @@ $(document).on('change',function (e) {
 				});
 			lastEvent = '';
 		}
-	}
 });
 
 $(document).on('mousedown',function display(e) {
