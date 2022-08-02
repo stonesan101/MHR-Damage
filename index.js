@@ -1967,7 +1967,7 @@ $(document).on('mousedown', function display(e) {
 						}
 						if (this.PRM > 1) {
 							let prm = /\.[1-8]/.test((this.PRM - 1) * 100) ? ((this.PRM - 1) * 100).toFixed(1) : ((this.PRM - 1) * 100).toFixed(0);
-							raw += ugh2 === 'CriticalBoost' ? ' +' + prm - 25 + '%' : ' +' + prm + '%';
+							raw += ugh2 === 'CriticalBoost' ? ` +${prm - 25}%` : ` +${prm}%`
 						}
 					}
 					let ele = '';
