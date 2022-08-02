@@ -258,9 +258,9 @@ function MeleeDPS() {
 		}
 		// damage/meleeDamage adds sharpness to the calculations and arranges them in the array to be used for the damageTable
 		let sharpnessModifier = power.noSharpMod === false ? JSON.parse(Sharpness.value) : { PRM: 1,PEM: 1 };
-		sharpnessModifier = weaponType.value === 'Bow' && bowCoating[bowCoating.selectedIndex].text === 'Power' ? 1.35 : sharpnessModifier;
-		sharpnessModifier = weaponType.value === 'Bow' && bowCoating[bowCoating.selectedIndex].text === 'Close Range' ? 1.32 : sharpnessModifier;
-		sharpnessModifier = weaponType.value === 'Bow' && bowCoating[bowCoating.selectedIndex].text === 'Close Range+' ? 1.39 : sharpnessModifier;
+		sharpnessModifier = weaponType.value === 'Bow' && BowCoating[BowCoating.selectedIndex].text === 'Power' ? 1.35 : sharpnessModifier;
+		sharpnessModifier = weaponType.value === 'Bow' && BowCoating[BowCoating.selectedIndex].text === 'Close Range' ? 1.32 : sharpnessModifier;
+		sharpnessModifier = weaponType.value === 'Bow' && BowCoating[BowCoating.selectedIndex].text === 'Close Range+' ? 1.39 : sharpnessModifier;
 		const damage = [
 			'replaceME',
 			power.attackName,
@@ -494,7 +494,7 @@ function GetSkills(power) {
 	}
 	power.aff += weaponRampage0.value === 'Hellion Mode' && weaponType.value === 'DualBlades' ? 20 : 0;
 	if (weaponType.value === 'Bow' && /Stake/.test(power.attackName)) {
-		power.getSkills = power.getSkills.filter((/** @type {string} */ skill) => skill != 'bowCoating');
+		power.getSkills = power.getSkills.filter((/** @type {string} */ skill) => skill != 'BowCoating');
 	}
 	$(power.getSkills).each(function () {
 		if (this == 'Dereliction') {
