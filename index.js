@@ -1241,7 +1241,7 @@ $(window).on('resize',function () {
 		// const element = $('#raw').children('div')[i];
 		// element.style = `width:${$('.thisWidth').width() * 1.05}px; min-width:${$('.thisWidth').width() * 1.05}px; max-width:max-content`
 		// }
-		section1.style = `width:${$('.thisWidth').width() * 5.6}px; max-width:${$('.thisWidth').width() * 5.6}px`;
+		section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
 	}
 });
 $('#BowChargePlus').change(function () {
@@ -1734,7 +1734,7 @@ function setHeight() {
 	// divs.style = `width:${$('.thisWidth').width() * 1.05}px; min-width:${$('.thisWidth').width() * 1.05}px; max-width:max-content`
 	// }
 	// }
-	section1.style = `width:${Math.min($('div#weaponSelect.contain').width()+10,$('.thisWidth').width() * 5.4)}px; max-width:${Math.min($('div#weaponSelect.contain').width()+10,$('.thisWidth').width() * 5.4)}px`;
+	section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
 }
 function saveState() {
 	let ugh = [[],[],[],[]];
@@ -1957,7 +1957,7 @@ $(document).on('mousedown',function display(e) {
 					} else if (ugh2 === 'AmmoUp' || ugh2 === 'SpareShot') {
 						let inc = ugh2 === 'AmmoUp' ? ['No Change','+1 Lvl 2 & Ele Ammo','+1 Lvl 3 & Dragon Ammo'] : ['Spare Shot +5%','Spare Shot +10%','Spare Shot +20%'];
 						option = index + ': ' + inc[index - 1];
-					} else if (ugh2 === 'Marksman') {
+					} else if (ugh2 == 'Marksman') {
 						let inc = ['Chance 20% Raw +5% EFR +1%','Chance 20% Raw +10% EFR +2%','Chance 60% Raw +5% EFR +3%','Chance 40% Raw +10% EFR +4%'];
 						option = index + ': ' + inc[index - 1];
 					} else {

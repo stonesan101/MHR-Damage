@@ -362,6 +362,11 @@ div#html {
   height: 100vh;
 }
 
+div#boxes.contain {
+  width: max-content;
+  max-width: max-content;
+}
+
 #forButtons {
   grid-area: 4 / 1 / 5 / -1;
   gap: 0.25rem;
