@@ -157,13 +157,13 @@ function RangedDPS() {
 				['Total Attack', ~~power.raw, ~~(0.1 + power.aff * 100), ~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo)],
 				[
 					'Total Damage',
-					~~(power.raw * power.critBoost * power.PRM * power.enrage * power.augPRM * JSON.parse(DangoMarksmanid.value)[0]),
+					~~(power.raw * power.critBoost * power.PRM * power.enrage * power.augPRM * JSON.parse(Marksman.value)[0]),
 					~~(power.aff * 100),
 					~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo * power.PEM * power.enrage * power.augPEM * power.eleCritBoost),
 				],
 				[
 					'Effective',
-					~~(power.raw * power.efrMulti * power.PRM * power.enrage * power.augPRM * JSON.parse(DangoMarksmanid.value)[1]),
+					~~(power.raw * power.efrMulti * power.PRM * power.enrage * power.augPRM * JSON.parse(Marksman.value)[1]),
 					~~(power.aff * 100),
 					~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo * power.PEM * power.enrage * power.augPEM * power.efeMulti),
 				],
@@ -290,13 +290,13 @@ function MeleeDPS() {
 				['Total Attack', ~~power.raw, ~~(power.aff * 100), ~~ele],
 				[
 					'Total Damage',
-					~~(power.raw * power.critBoost * power.PRM * power.enrage * power.augPRM * JSON.parse(DangoMarksmanid.value)[0] * sharpnessModifier.PRM),
+					~~(power.raw * power.critBoost * power.PRM * power.enrage * power.augPRM * JSON.parse(Marksman.value)[0] * sharpnessModifier.PRM),
 					~~(power.aff * 100),
 					~~(ele * power.eleCritBoost * power.PEM * power.enrage * power.augPEM * sharpnessModifier.PEM),
 				],
 				[
 					'Effective',
-					~~(power.raw * power.efrMulti * power.PRM * power.enrage * power.augEFR * JSON.parse(DangoMarksmanid.value)[1] * sharpnessModifier.PRM),
+					~~(power.raw * power.efrMulti * power.PRM * power.enrage * power.augEFR * JSON.parse(Marksman.value)[1] * sharpnessModifier.PRM),
 					~~(power.aff * 100),
 					~~(ele * power.efeMulti * power.PEM * power.augPEM * power.enrage * power.augEFR * sharpnessModifier.PEM),
 				],
@@ -809,9 +809,9 @@ function DamageCalculations(power) {
 	} else {
 		power.raw = Math.min(power.baseRaw * power.BRM + power.BR, 2600);
 		const rawFormula = (power.raw * power.PRM * power.rawHZV * power.enrage * power.rawMV) / 10000;
-		power.rawNon = rawFormula * power.augPRM * JSON.parse(DangoMarksmanid.value)[0];
-		power.efr = rawFormula * power.efrMulti * power.augEFR * JSON.parse(DangoMarksmanid.value)[1];
-		power.rawCrit = rawFormula * power.critBoost * power.augPRM * JSON.parse(DangoMarksmanid.value)[0];
+		power.rawNon = rawFormula * power.augPRM * JSON.parse(Marksman.value)[0];
+		power.efr = rawFormula * power.efrMulti * power.augEFR * JSON.parse(Marksman.value)[1];
+		power.rawCrit = rawFormula * power.critBoost * power.augPRM * JSON.parse(Marksman.value)[0];
 	}
 	power.eleAmmo =
 		power.Ele === false ? 0 : /BowGun/.test($('#dropWeaponType').val()) && /(Ice|Fire|Water|Dragon|Thunder)/.test(power.eleType) ? 1 + power.raw / 100 : 1;
@@ -1951,16 +1951,33 @@ $(document).on('mousedown', function display(e) {
 	if (Object.values($('select.skill')).some(x => x.id === e.target.id)) {
 		// $(`#${e.target.id}:focus`).hide();
 		let ugh2 = e.target.id;
-		if (ugh2 !== 'Dereliction' && ugh2 !== 'DangoMarksman') {
+		if (ugh2 !== 'Dereliction') {
 			$(info.skills[ugh2]).each(function (index) {
 				let option;
 				if (index !== 0) {
 					if (ugh2 === 'RecoilDown' || ugh2 === 'ReloadSpeed') {
 						option =/Reload/.test(ugh2)?ugh2.slice(0,6)+" "+ugh2.slice(6)+" +"+index: ugh2.slice(0,6)+" "+ugh2.slice(6)+" -"+index
 					} else if(ugh2 === 'AmmoUp' || ugh2 === 'SpareShot') {
-						let inc = ugh2 === 'AmmoUp' ? ['No Change','+1 Lvl 2/Ele Ammo','+1 Lvl 3/Dragon Ammo'] : ['Spare Proc 5%','Spare Proc 10%','Spare Proc 20%'];
-						option=inc[index-1]
-					} else{
+						let inc = ugh2 === 'AmmoUp' ? ['No Change','+1 Lvl 2 & Ele Ammo','+1 Lvl 3 & Dragon Ammo'] : ['Spare Shot +5%','Spare Shot +10%','Spare Shot +20%'];
+						option=index+': '+inc[index-1]
+					} else if (ugh2 === 'Marksman') {
+						let inc = [
+							[
+								"Chance 20% Raw +5% EFR +1%"
+							],
+							[
+								"Chance 20% Raw +10% EFR +2%"
+							],
+							[
+								"Chance 60% Raw +5% EFR +3%"
+							],
+							[
+								"Chance 40% Raw +10% EFR +4%"
+							]
+						];
+		option=index+': '+inc[index-1]
+
+					} else {
 						let raw = '';
 						if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
 							raw = 'Raw';
