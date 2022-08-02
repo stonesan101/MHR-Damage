@@ -1895,7 +1895,7 @@ $(document).on('change',function (e) {
 			if (lastEvent=== Dereliction) {
 				$('select#Dereliction').children().each(function () {
 					$(this).children().each(function (index) {
-						this.textContent = `Lv-${index}`;
+						this.textContent = `Lv-${index+1}`;
 
 					});
 				});
@@ -1924,7 +1924,7 @@ $(document).on('mousedown',function display(e) {
 		if (lastEvent === Dereliction) {
 			$('select#Dereliction').children().each(function () {
 				$(this).children().each(function (index) {
-					this.textContent = `Lv-${index}`;
+					this.textContent = `Lv-${index+1}`;
 
 				});
 			});
