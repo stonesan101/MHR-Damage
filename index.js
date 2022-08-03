@@ -725,7 +725,7 @@ function GetRemainingSkills(power) {
 		power.BR += 12;
 	}
 	if (/BowGun/.test(weaponType.value)) {
-		if (dropWeaponType.value === 'LightBowGun' && /Pierce|Spread|Normal/.test(power.attackName) && $(CriticalFirePower).hasClass('blue')) {
+		if (dropWeaponType.value === lbg && /Pierce|Spread|Normal/.test(power.attackName) && $(CriticalFirePower).hasClass('blue')) {
 			if (/Normal/.test(power.attackName)) {
 				power.PRM *= 1.3;
 				power.augEFR *= 1.3;
@@ -750,16 +750,23 @@ function GetRemainingSkills(power) {
 		} else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Long') {
 			power.baseRaw = ~~(power.baseRaw * 1.075);
 		}
+		if (/(?<!snipe.*)explosion/.test(power.attackName)) {
+	power.augEFR *= JSON.parse(Bombardier.value)[lower(power.attackName).match(/sticky|wyvern/)[0]][1];
+	power.augPRM *= JSON.parse($(Bombardier).val())[lower(power.attackName).match(/sticky|wyvern/)[0]][0];
+}
+
 	}
-	if (weaponType.value === 'ChargeBlade' && power.skillType === 'Stickies' && power.phialType === 'Impact Phial') {
+	if (weaponType.value === cb && power.skillType === 'Stickies' && power.phialType === 'Impact Phial') {
 		power.augEFR *= JSON.parse(Bombardier.value)[1];
 		power.augPRM *= JSON.parse(Bombardier.value)[0];
+	}	// If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
+
+	if (weaponType.value === sa && /Sword|ZSD|ED/.test(power.attackName) && power.phialType === 'Impact Phial') {
+	power.BRM*=1.15
 	}
-	if (/(?<!snipe.*)explosion/.test(power.attackName)) {
-		power.augEFR *= JSON.parse(Bombardier.value)[lower(power.attackName).match(/sticky|wyvern/)[0]][1];
-		power.augPRM *= JSON.parse($(Bombardier).val())[lower(power.attackName).match(/sticky|wyvern/)[0]][0];
-	}
-	// If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
+	if (weaponType.value === sa && /Sword|Elemental|ED/.test(power.attackName) && power.phialType === 'Elemental Phial') {
+	power.BEM*=1.45
+}
 	power.PEM *=
 		getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Elemental Exploit' && getHZ()[lower(getWeapon().eleType)] >= 25
 			? 1.3
@@ -777,11 +784,13 @@ function GetRemainingSkills(power) {
 	// applies sharpnessModifier to sever and blunt type attacks that use at least one hit of sharpness. This makes sure attacks like tackle or Bow skills don't get a sharpness modifier.
 
 	const sharpnessModifier = [];
-	[sharpnessModifier.PRM,sharpnessModifier.PEM] = power.noSharpMod === false ? [JSON.parse(Sharpness.value).PRM,JSON.parse(Sharpness.value).PEM] : [1,1];
+	[sharpnessModifier.PRM,sharpnessModifier.PEM] = power.noSharpMod === false &&/sever|blunt/.test(lower(power.type))? [JSON.parse(Sharpness.value).PRM,JSON.parse(Sharpness.value).PEM] : [1,1];
+	//adds minds eye
 	power.PRM *=
 		~~(0.1 + 25 / sharpnessModifier.PRM) >= info.monster.hzv[$('#dropMonster').val()][dropHZ.selectedIndex][power.type]
 			? JSON.parse(document.getElementById([`MindsEye`]).value).PRM
 			: 1;
+	//if can crit adds crit boost
 	power.critBoost = power.Crit === true ? JSON.parse($('#CriticalBoost').val()).PRM : 1;
 
 	power.efrMulti = 1 + (power.critBoost - 1) * power.aff;
@@ -799,6 +808,7 @@ function GetRemainingSkills(power) {
 		power.efrMulti = 1 + power.aff * -1 * 0.25 * 2 - power.aff * -1 * 0.75 * 0.75;
 		power.critBoost = 1.5;
 	}
+	//if can crit adds crit element
 	power.eleCritBoost = power.Crit === true ? JSON.parse($('#CriticalElement').val()).PEM : 1;
 
 	return { ...power };
