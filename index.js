@@ -1,3 +1,5 @@
+const { event } = require('jquery');
+
 const baseURL = /localhost/.test(window.location.host) ? 'http://localhost:5500' : 'https://stonesan101.github.io/MHR-Damage';
 let check = { GreatSword: 0, rampage: 0, quest: 0, monster: 0, types: 0, ammo: 0, skills: 0 };
 let count = 0;
@@ -1029,7 +1031,7 @@ function BuildDamageTable(myDamage, id) {
 			});
 		}
 
-		if (!/BowGun/.test($(weaponType).val())) {
+		if (!/BowGun/.test($(weaponType).val())||!/input/.test(event.target?.path[0].classChange)) {
 			$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index,element) {
 				const cell = document.createElement('td');
 				if (index ==  window.event?.target.id) {
@@ -1043,7 +1045,7 @@ function BuildDamageTable(myDamage, id) {
 					$(cell).addClass(`b ${index} inputContainer`);
 				} else {
 					cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs inputButton dec" onclick="setTimeout(timer, 3000);"
-				>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs inputButton inc" onclick="setTimeout(timer, 3000);">&#8679</button><output id="label">${element.textContent}</output>`;
+				>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs inputButton inc" , 3000);">&#8679</button><output id="label">${element.textContent}</output>`;
 					$(cell).addClass(`b ${index} inputContainer`);
 					cell.id = `b${index}`;
 					this.replaceWith(cell);
