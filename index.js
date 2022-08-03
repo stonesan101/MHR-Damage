@@ -1967,8 +1967,21 @@ $(document).on('mousedown', function display(e) {
 						let inc = ugh2 === 'AmmoUp' ? ['No Change', '+1 Lvl 2 & Ele Ammo', '+1 Lvl 3 & Dragon Ammo'] : ['Spare Shot +5%', 'Spare Shot +10%', 'Spare Shot +20%'];
 						option = index + ': ' + inc[index - 1];
 					} else if (ugh2 == 'Marksman') {
-						let inc = ['Chance 20% Raw  + 5% EFR +1%', 'Chance 20% Raw+10% EFR +2%', 'Chance 60% Raw  + 5% EFR +3% ', 'Chance 40% Raw+10% EFR +4%'];
+						let inc = ['Chance 20% Raw  + 5% EFR +1%','Chance 20% Raw+10% EFR +2%','Chance 60% Raw  + 5% EFR +3% ','Chance 40% Raw+10% EFR +4%'];
 						option = index + ': ' + inc[index - 1];
+					} else if (ugh2 === 'Bombardier') {
+						let bomb = [];
+						if (weaponType.value === cb) {
+							bomb = ['Bombardier','1: Raw +10% EFR +10%','2: Raw +15% EFR +15%','3: Raw +20% EFR +16%','4: Raw + 25% EFR +17%'];
+						} else if (weaponType.value === gl) {
+							bomb = ['Bombardier','1: Raw + 5% EFR + 5%','2: Raw+10% EFR+10%','3: Raw+15% EFR+11%','4: Raw+20% EFR+12%'];
+						} else if (weaponType.value === lbg) {
+							bomb = ['Bombardier','1: Raw +10% EFR +10%','2: Raw +10% EFR +10%','3: Raw +20% EFR +16%','4: Raw +25% EFR +17%'];
+
+						} else if (weaponType.value === hbg) {
+							bomb = ['Bombardier','1: Raw + 10% EFR + 10%','2: Sticky+10% Wyvern+15%','3: Raw + 20% EFR + 16%','4: Raw + 25% EFR + 17%'];
+						}
+												option = bomb[index]
 					} else {
 						let raw = '';
 						if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
