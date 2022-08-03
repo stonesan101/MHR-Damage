@@ -384,11 +384,11 @@ div#forButtonSelect {
 }
 
 button#filterCombo {
-  grid-area: 1 / 3 / 2 / 4;
+  grid-area: 1 / 2 / 2 / 3;
 }
 
 button#resetCombo {
-  grid-area: 1 / 5 / 2 / 6;
+  grid-area: 1 / 3 / 2 / 3;
 }
 
 button#resetSkills {

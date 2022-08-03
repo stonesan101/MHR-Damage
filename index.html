@@ -31,7 +31,7 @@
         <div style='display:content;'>
           <div><label for='dropWeaponType'>Weapon Type</label><select aria-autocomplete='both' class='skillinput hitsOfSharp' Data-myAttribute='weaponType'
                     contenteditable='true' id='dropWeaponType' name='weaponTypeSelection'
-                    onchange='WeaponSelect(); RampageSelect(); classChange(true);  DataCompile(); ComboReset(true)'>
+                    onchange='WeaponSelect(); RampageSelect(); classChange(true); MonChart(),partSelector(); DataCompile(); ComboReset(true)'>
             </select></div>
           <div class='uniqueBow' display='border:none'><label class='Bow BowId classSpecific skill' for='BowCoationg'>Bow Coatings</label><select
                     id='BowCoating' class='Bow classSpecific' onchange='DataCompile()' name='Bow Coatings'>
@@ -131,14 +131,14 @@
                id='blueNon' class='scroll vis' src='/MHR-Damage/blueInactive.png' style='grid-area: 1/7;height: 33%;'>
         </div>
         <div><label for='AttackBoost'>Attack Boost</label><select id='AttackBoost' name='Attack Boost' onchange='DataCompile()' class='skill'>
-            <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>--- </option>
-            <option value='{"BRM":1,"BR":3,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-1 </option>
-            <option value='{"BRM":1,"BR":6,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-2 </option>
-            <option value='{"BRM":1,"BR":9,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Lv-3 </option>
-            <option value='{"BRM":1.05,"BR":7,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'> Lv-4 </option>
-            <option value='{"BRM":1.06,"BR":8,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'> Lv-5 </option>
-            <option value='{"BRM":1.08,"BR":9,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'> Lv-6 </option>
-            <option value='{"BRM":1.1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'> Lv-7 </option>
+            <option>---</option>
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
           </select></div>
         <div><label for='Bloodlust'>Bloodlust</label><select id='Bloodlust' name='Bloodlust' onchange='DataCompile()' class='skill'>
             <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>--- </option>
@@ -571,26 +571,26 @@
           <div style='display: none;'><label class='classSpecific LightBowGun HeavyBowGun' for='AmmoUp' selectedindex='0' style='display: none;'>Ammo
               Up</label><select onchange='DataCompile()' id='AmmoUp' name='AmmoUp' class='skill classSpecific LightBowGun HeavyBowGun' selectedindex='0'
                     style='display: none;'>
-              <option value='0'>---</option>
-              <option value='1'>Lv-1</option>
-              <option value='2'>Lv-2</option>
-              <option value='3'>Lv-3</option>
+              <option>---</option>
+              <option></option>
+              <option></option>
+              <option></option>
             </select></div>
           <div style='display: none;'><label class='classSpecific LightBowGun HeavyBowGun' for='RecoilDown' selectedindex='0'
                    style='display: none;'>Recoil</label><select onchange='DataCompile()' id='RecoilDown' name='Recoil'
                     class='skill classSpecific LightBowGun HeavyBowGun' selectedindex='0' style='display: none;'>
-              <option value='0'>---</option>
-              <option value='1'>Lv-1</option>
-              <option value='2'>Lv-2</option>
-              <option value='3'>Lv-3</option>
+              <option>---</option>
+              <option></option>
+              <option></option>
+              <option></option>
             </select></div>
           <div style='display: none;'><label class='classSpecific LightBowGun HeavyBowGun' for='ReloadSpeed' selectedindex='0'
                    style='display: none;'>Reload</label><select onchange='DataCompile()' id='ReloadSpeed' name='Reload'
                     class='skill classSpecific LightBowGun HeavyBowGun' selectedindex='0' style='display: none;'>
-              <option value='0'>---</option>
-              <option value='1'>Lv-1</option>
-              <option value='2'>Lv-2</option>
-              <option value='3'>Lv-3</option>
+              <option>---</option>
+              <option></option>
+              <option></option>
+              <option></option>
             </select></div>
         </div>
       </div>
@@ -599,7 +599,7 @@
       <h1> Monster Selection</h1>
       <div id='monDropDowns'>
         <div id='dropHeight'><label for='dropMonster'>Monster</label><select id='dropMonster' name='monsterSelection'
-                  onchange='MonChart(), PartSelect(), QuestSelect(), HealthSelect(), DataCompile()'></select></div>
+                  onchange='MonChart(), PartSelect(), QuestSelect(), HealthSelect(),partSelector(); DataCompile()'></select></div>
         <div><label for='dropHZ'>Hit Zone</label><select id='dropHZ' name='hzSelection' onchange='DataCompile()'>
             <option value=1>Head</option>
           </select></div>
