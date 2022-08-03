@@ -2047,6 +2047,8 @@ $(document).on('mousedown',function display(e) {
 					this.textContent = index === 0 ? '---' : `Lv-${index}`;
 				});
 			lastEvent = '';
+
+
 		}
 	}
 });
