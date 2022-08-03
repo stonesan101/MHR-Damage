@@ -294,14 +294,6 @@ input#inputComboRepeat {
   color: rgb(6, 6, 24);
 }
 
-div>#ammoTable {
-  padding: 0.2rem;
-  max-height: 27rem;
-  overflow-y: auto;
-  min-width: fit-content;
-  border-spacing: 0px;
-  display: table-caption;
-}
 
 #monDropDowns>div:nth-child(3)>div>label:nth-child(1),
 #monDropDowns>div:nth-child(3)>div>label:nth-child(3) {
@@ -469,6 +461,8 @@ table#ammoTable * {
   gap: 0px;
   margin: 0px;
   padding: 0.1rem;
+  min-height: 100%;
+  overflow: auto;
 }
 
 output.comboAttack {

@@ -258,9 +258,13 @@ function MeleeDPS() {
 		}
 		// damage/meleeDamage adds sharpness to the calculations and arranges them in the array to be used for the damageTable
 		let sharpnessModifier = power.noSharpMod === false ? JSON.parse(Sharpness.value) : { PRM: 1,PEM: 1 };
-		sharpnessModifier = weaponType.value === 'Bow' && BowCoating[BowCoating.selectedIndex].text === 'Power' ? 1.35 : sharpnessModifier;
-		sharpnessModifier = weaponType.value === 'Bow' && BowCoating[BowCoating.selectedIndex].text === 'Close Range' ? 1.32 : sharpnessModifier;
-		sharpnessModifier = weaponType.value === 'Bow' && BowCoating[BowCoating.selectedIndex].text === 'Close Range+' ? 1.39 : sharpnessModifier;
+		if (weaponType.value === 'Bow' && power.type !== 'Shot') {
+			sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Power' ? 1.35 : sharpnessModifier;
+			sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Close Range' ? 1.32 : sharpnessModifier;
+			sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Close Range+' ? 1.39 : sharpnessModifier;
+		} else if (power.type === 'Shot') {
+			sharpnessModifier = { PRM: 1,PEM: 1 };
+		}
 		const damage = [
 			'replaceME',
 			power.attackName,
@@ -496,6 +500,7 @@ function GetSkills(power) {
 	if (weaponType.value === 'Bow' && /Stake/.test(power.attackName)) {
 		power.getSkills = power.getSkills.filter((/** @type {string} */ skill) => skill != 'BowCoating');
 	}
+	power.getSkills = power.getSkills.filter(onlyUnique);
 	$(power.getSkills).each(function () {
 		if (this == 'Dereliction') {
 			skills.push(JSON.parse(Dereliction.value));
@@ -1027,6 +1032,9 @@ function BuildDamageTable(myDamage,id) {
 				this.replaceWith(cell);
 			});
 		}
+		if ($(window).width() > 850) {
+			setHeight();
+		}
 	}
 	if (/blue/.test(filterCombo.className)) {
 		$('.a').each(function (index) {
@@ -1088,9 +1096,6 @@ function MonChart() {
 function classChange() {
 	if (Object.values(check).every(keyCard => keyCard)) {
 		if (previousWeaponType.textContent !== '') {
-			if ($(window).width() > 850) {
-				setHeight();
-			}
 			ComboReset();
 		}
 		let ugh = [];
@@ -1232,17 +1237,8 @@ function ResetSkills(element = '.skill') {
 $(window).on('resize',function () {
 	if ($(window).width() > 850) {
 		setHeight();
-		// } else {
-		// for (let i = 0; i < 37; i++) {
-		// const element = $('#raw').children('label')[i];
-		// element.style = `width:${$('.thisWidth').width() * 1.05}px; max-width:${$('.thisWidth').width() * 1.05}px`
-		// }
-		// for (let i = 0; i < 37; i++) {
-		// const element = $('#raw').children('div')[i];
-		// element.style = `width:${$('.thisWidth').width() * 1.05}px; min-width:${$('.thisWidth').width() * 1.05}px; max-width:max-content`
-		// }
-		section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
 	}
+	section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
 });
 $('#BowChargePlus').change(function () {
 	ComboReset();
@@ -1710,10 +1706,7 @@ function json(arr) {
 }
 function setHeight() {
 	const height =
-		+$(section1).
-			css('row-gap').
-			match(/\d.\d+?/)[0] *
-		4 +
+		+$(section1).css('row-gap').match(/\d.\d+?/)[0] * 4 +
 		$('.title').height() +
 		$(boxes).height() +
 		$(weaponSelect).height() +
@@ -1723,17 +1716,11 @@ function setHeight() {
 	$('#monTableContainer').height(height * 0.2);
 	// $('#monTableContainer').width($('#damageTable').width());
 	$('#damageTable').height(height * 0.59);
+	if (/BowGun/.test(weaponType.value)) {
+		$('#ammoTable').height(height * 0.59);
+	}
 	$(comboCountContainer).css('height',+getComputedStyle(document.querySelector('#section2')).height.match(/\d.\d+?/)[0]);
 	$('#monDropDowns').height($('#dropHeight').height());
-	// for (let i = 0; i < 37; i++) {
-	// const selects = $('#raw>').children('select')[i];
-	// selects.style = `width:${$('.thisWidth').width() * 1.05}px`
-	// const labels = $('#raw>').children('label')[i];
-	// // labels.style = `width:${$('.thisWidth').width() * 1.05}px; max-width:${$('.thisWidth').width() * 1.05}px;min-width:${$('.thisWidth').width() * 1.05}px`
-	// const divs = $('#raw').children('div:not(#derelictionMenu)')[i];
-	// divs.style = `width:${$('.thisWidth').width() * 1.05}px; min-width:${$('.thisWidth').width() * 1.05}px; max-width:max-content`
-	// }
-	// }
 	section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
 }
 function saveState() {
@@ -1892,26 +1879,26 @@ function loadState(ugh) {
 // }
 
 $('select.skill').on('change',function (e) {
-		if (lastEvent === Dereliction) {
-			$('select#Dereliction').
-				children().
-				each(function () {
-					$(this).
-						children().
-						each(function (index) {
-							this.textContent = `Lv-${index + 1}`;
-						});
-				});
-			Dereliction[0].text = '--- ';
-			lastEvent = '';
-		} else {
-			$(e.target).
-				children().
-				each(function (index) {
-					this.textContent = index === 0 ? '---' : `Lv${index}`;
-				});
-			lastEvent = '';
-		}
+	if (lastEvent === Dereliction) {
+		$('select#Dereliction').
+			children().
+			each(function () {
+				$(this).
+					children().
+					each(function (index) {
+						this.textContent = `Lv-${index + 1}`;
+					});
+			});
+		Dereliction[0].text = '--- ';
+		lastEvent = '';
+	} else {
+		$(e.target).
+			children().
+			each(function (index) {
+				this.textContent = index === 0 ? '---' : `Lv${index}`;
+			});
+		lastEvent = '';
+	}
 });
 
 $(document).on('mousedown',function display(e) {
@@ -1958,40 +1945,47 @@ $(document).on('mousedown',function display(e) {
 						let inc = ugh2 === 'AmmoUp' ? ['No Change','+1 Lvl 2 & Ele Ammo','+1 Lvl 3 & Dragon Ammo'] : ['Spare Shot +5%','Spare Shot +10%','Spare Shot +20%'];
 						option = index + ': ' + inc[index - 1];
 					} else if (ugh2 == 'Marksman') {
-						let inc = ['Chance 20% Raw +5% EFR +1%','Chance 20% Raw +10% EFR +2%','Chance 60% Raw +5% EFR +3%','Chance 40% Raw +10% EFR +4%'];
+						let inc = ['Chance 20% Raw  + 5% EFR +1%','Chance 20% Raw+10% EFR +2%','Chance 60% Raw  + 5% EFR +3% ','Chance 40% Raw+10% EFR +4%'];
 						option = index + ': ' + inc[index - 1];
 					} else {
 						let raw = '';
 						if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
 							raw = 'Raw';
 							if (this.BR > 0) {
-								raw += ' +' + this.BR;
+								raw += /\d\.?\d/.test(this.BR) ? '+' + this.BR : ` + ${this.BR}`;
 							}
 							if (this.BRM > 1) {
 								let brm = /\.[1-8]/.test((this.BRM - 1) * 100) ? ((this.BRM - 1) * 100).toFixed(1) : ((this.BRM - 1) * 100).toFixed(0);
-								raw += ' +' + brm + '%';
+								raw += /\d\.?\d/.test(brm) ? '+' + brm + '%' : ' + ' + brm + '%';
 							}
 							if (this.PRM > 1) {
 								let prm = /\.[1-8]/.test((this.PRM - 1) * 100) ? ((this.PRM - 1) * 100).toFixed(1) : ((this.PRM - 1) * 100).toFixed(0);
-								raw += ugh2 === 'CriticalBoost' ? ` +${prm - 25}%` : ` +${prm}%`;
+								raw +=
+									ugh2 === 'CriticalBoost' && /\d\.?\d/.test(prm - 25)
+										? `+${prm - 25}%`
+										: ugh2 === 'CriticalBoost'
+											? ` + ${prm - 25}%`
+											: /\d\.?\d/.test(prm)
+												? `+${prm}%`
+												: ` + ${prm}%`;
 							}
 						}
 						let ele = '';
 						if (this.BE > 0 || this.PEM > 1 || this.BEM > 1) {
 							ele = 'Ele';
 							if (this.BE > 0) {
-								ele += ' +' + this.BE;
+								ele += /\d\.?\d/.test(this.BE) ? '+' + this.BE : ` + ${this.BE}`;
 							}
 							if (this.BEM > 1) {
 								let bem = /\.[1-8]/.test((this.BEM - 1) * 100) ? ((this.BEM - 1) * 100).toFixed(1) : ((this.BEM - 1) * 100).toFixed(0);
-								ele += ' +' + bem + '%';
+								ele += /\d\.?\d/.test(bem) ? '+' + bem + '%' : ' + ' + bem + '%';
 							}
 							if (this.PEM > 1) {
 								let pem = /\.[1-8]/.test((this.PEM - 1) * 100) ? ((this.PEM - 1) * 100).toFixed(1) : ((this.PEM - 1) * 100).toFixed(0);
-								ele += ' +' + pem + '%';
+								ele += /\d\.?\d/.test(pem) ? '+' + pem + '%' : ' + ' + pem + '%';
 							}
 						}
-						const aff = this.aff > 0 ? 'Aff +' + this.aff + '%' : '';
+						const aff = this.aff > 0 && /\d\.?\d/.test(this.aff) ? `Aff+${this.aff}` : this.aff > 0 ? `Aff + ${this.aff}` : '';
 						raw = Object.prototype.hasOwnProperty.call(this,'Sharp') && this.Sharp < 1 ? `Sharp +${this.Sharp * 100}%` : raw;
 						raw = Object.prototype.hasOwnProperty.call(this,'Sharp') && this.Sharp > 1 ? `Sharp +${this.Sharp}` : raw;
 						raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
@@ -2006,7 +2000,7 @@ $(document).on('mousedown',function display(e) {
 		} else if (e.target === Dereliction) {
 			let text = $(redScroll).hasClass('invis')
 				? [['1:Raw +15'],['2:Raw +20'],['3:Raw +25'],['1:Raw +20'],['2:Raw +25'],['3:Raw +30'],['1:Raw +25'],['2:Raw +30'],['3:Raw +35']]
-				: [['1:Ele +5'],['2:Ele +8'],['3:Ele +12'],['1:Ele +7'],['2:Ele +12'],['3:Ele +15'],['1:Ele +10'],['2:Ele +15'],['3:Ele +20']];
+				: [['1:Ele + 5'],['2:Ele + 8'],['3:Ele +12'],['1:Ele + 7'],['2:Ele +12'],['3:Ele +15'],['1:Ele +10'],['2:Ele +15'],['3:Ele +20']];
 			let index = 0;
 			$('select#Dereliction').
 				children().
