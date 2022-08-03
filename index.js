@@ -1,5 +1,3 @@
-const { event } = require('jquery');
-
 const baseURL = /localhost/.test(window.location.host) ? 'http://localhost:5500' : 'https://stonesan101.github.io/MHR-Damage';
 let check = { GreatSword: 0, rampage: 0, quest: 0, monster: 0, types: 0, ammo: 0, skills: 0 };
 let count = 0;
@@ -1041,11 +1039,11 @@ function BuildDamageTable(myDamage, id) {
 					cell.id = `b${index}`;
 
 	this.replaceWith(cell);
-		setTimeout(timer(document.getElementById(`b${index}`)),5000)
+		setTimeout(toggle,500)
 					$(cell).addClass(`b ${index} inputContainer`);
 				} else {
-					cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs inputButton dec" onclick="setTimeout(timer, 3000);"
-				>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs inputButton inc" , 3000);">&#8679</button><output id="label">${element.textContent}</output>`;
+					cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs inputButton dec"
+				>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs inputButton inc">&#8679</button><output id="label">${element.textContent}</output>`;
 					$(cell).addClass(`b ${index} inputContainer`);
 					cell.id = `b${index}`;
 					this.replaceWith(cell);
@@ -1227,17 +1225,6 @@ $(window).on('keypress', function (e) {
 		ResetAllSkills();
 		DataCompile();
 		keyDown = 0;
-	}
-});
-// $(window).on('mousedown',function (e) {
-// 	console.log(e)
-// })
-$(window).on('keypress', function (e) {
-	keyUp = e.originalEvent.key === '+' ? ++keyUp : 0;
-	if (keyUp === 3) {
-		MaxSkills();
-		DataCompile();
-		keyUp = 0;
 	}
 });
 function UniqueColumnsDisplay() {
@@ -1432,7 +1419,7 @@ function FilterTableForComboAttacks() {
 
 function TimesUsed(ID, arr = comboTracker) {
 	return arr.filter(attackId => attackId == ID).length;
-})
+}
 $(document).on('click',function (e) {
 	if ($(e.target).hasClass('inputButton')) {
 		$(e.target).toggleClass('hover')
@@ -1444,16 +1431,17 @@ $(document).on('click',function (e) {
 
 $(document).on('click',function (e) {
 $(e.target).removeClass('hover')
-}
+})
 function IncreaseComboCount(e) {
 	if ($('.inputs')[window.event.target.id].value !== '20') {
 		++$('.inputs')[window.event.target.id].value;
-
 	}
-}
-function timer(target=window.event.path[0],thisClass = 'hover') {
-	$(target).toggleClass(thisClass);
-}
+	}
+function toggle() {
+	if ($('button.hover').length > 0) {
+		$('.hover').removeClass('hover');
+}}
+
 function DecreaseComboCount(e) {
 	if (window.event.target.id === '0' && $('.inputs')[window.event.target.id].value !== '1') {
 		--$('.inputs')[window.event.target.id].value;
