@@ -42,13 +42,6 @@
   }
 }
 
-li ul {
-  display: none;
-}
-
-li:hover>ul {
-  display: block;
-}
 
 output#label {
   pointer-events: none;
@@ -72,13 +65,22 @@ div.inputContainer {
   z-index: 15;
 }
 
-button.inputButton.clicked {
+button.inputButton.hover {
   color: rgb(252, 252, 252);
   z-index: 20;
   font-weight: 900;
   font-size: 1rem;
   background-color: rgba(11, 16, 42, 0.74);
 }
+
+button.hover {
+  color: rgb(252, 252, 252);
+  z-index: 20;
+  font-weight: 900;
+  font-size: 1rem;
+  background-color: rgba(11, 16, 42, 0.74);
+}
+
 
 button.inputButton:hover {
   color: rgb(252, 252, 252);

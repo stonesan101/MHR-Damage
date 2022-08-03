@@ -913,7 +913,7 @@ function GunlanceShelling(currentDamage, comboDamage, power) {
 		comboDamage[8] += this[1].baseEle * TimesUsed(index + 28);
 		comboDamage[9] += (EFR + this[1].baseEle) * (power.ticsPer + 1) * TimesUsed(index + 28);
 	});
-	if (!/Inputs/.test(window.event.target.className)) {
+	if (!/Inputs|inputButton/.test(window.event.target.className)) {
 		BuildDamageTable(currentDamage, 'dps');
 	}
 	c0.innerHTML = `${[comboDamage[0]]}`;
@@ -1030,14 +1030,28 @@ function BuildDamageTable(myDamage, id) {
 		}
 
 		if (!/BowGun/.test($(weaponType).val())) {
-			$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index, element) {
+			$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index,element) {
 				const cell = document.createElement('td');
-				cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputButton dec"
-				onclick="DecreaseComboCount(); DataCompile();">&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputButton inc" onclick="IncreaseComboCount(); DataCompile();">&#8679</button><output id="label">${element.textContent}</output>`;
-				$(cell).addClass(`b ${index} inputContainer`);
-				cell.id = `b${index}`;
-				this.replaceWith(cell);
-			});
+				if (index ==  window.event?.target.id) {
+					cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs inputButton dec" onclick="setTimeout(timer,
+3000);"
+		>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs hover inputButton inc">&#8679</button><output id="label">${element.textContent}</output>`;
+					cell.id = `b${index}`;
+
+	this.replaceWith(cell);
+		setTimeout(timer(document.getElementById(`b${index}`)),5000)
+					$(cell).addClass(`b ${index} inputContainer`);
+				} else {
+					cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs inputButton dec" onclick="setTimeout(timer, 3000);"
+				>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs inputButton inc" onclick="setTimeout(timer, 3000);">&#8679</button><output id="label">${element.textContent}</output>`;
+					$(cell).addClass(`b ${index} inputContainer`);
+					cell.id = `b${index}`;
+					this.replaceWith(cell);
+				}		});
+			if ($(window.event.target).hasClass('inputButton')) {
+				document.getElementById([window.event.target.id]).className += 'hover';
+
+			}
 		}
 		if ($(window).width() > 850) {
 			setHeight();
@@ -1417,13 +1431,27 @@ function FilterTableForComboAttacks() {
 function TimesUsed(ID, arr = comboTracker) {
 	return arr.filter(attackId => attackId == ID).length;
 }
+$(document).on('mouseup',function (e) {
+$(e.target).removeClass('hover')
+})
+$(document).on('mousedown',function (e) {
+	if ($(e.target).hasClass('inputButton')) {
+		$(e.target).toggleClass('hover')
+		$(e.target).hasClass('inc') ? IncreaseComboCount(e) : DecreaseComboCount(e);
+		DataCompile();
 
-function IncreaseComboCount() {
+	}
+})
+function IncreaseComboCount(e) {
 	if ($('.inputs')[window.event.target.id].value !== '20') {
 		++$('.inputs')[window.event.target.id].value;
+
 	}
 }
-function DecreaseComboCount() {
+function timer(target=window.event.path[0],thisClass = 'hover') {
+	$(target).toggleClass(thisClass);
+}
+function DecreaseComboCount(e) {
 	if (window.event.target.id === '0' && $('.inputs')[window.event.target.id].value !== '1') {
 		--$('.inputs')[window.event.target.id].value;
 	} else if (window.event.target.id !== '0' && $('.inputs')[window.event.target.id].value !== '0') {
