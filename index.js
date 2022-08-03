@@ -1430,11 +1430,8 @@ function FilterTableForComboAttacks() {
 
 function TimesUsed(ID, arr = comboTracker) {
 	return arr.filter(attackId => attackId == ID).length;
-}
-$(document).on('mouseup',function (e) {
-$(e.target).removeClass('hover')
 })
-$(document).on('mousedown',function (e) {
+$(document).on('click',function (e) {
 	if ($(e.target).hasClass('inputButton')) {
 		$(e.target).toggleClass('hover')
 		$(e.target).hasClass('inc') ? IncreaseComboCount(e) : DecreaseComboCount(e);
@@ -1442,6 +1439,10 @@ $(document).on('mousedown',function (e) {
 
 	}
 })
+
+$(document).on('click',function (e) {
+$(e.target).removeClass('hover')
+}
 function IncreaseComboCount(e) {
 	if ($('.inputs')[window.event.target.id].value !== '20') {
 		++$('.inputs')[window.event.target.id].value;
