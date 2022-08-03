@@ -740,14 +740,14 @@ function GetRemainingSkills(power) {
 		// Elemental Reload
 		power.BEM *= JSON.parse(BarrelId.value).Element;
 		// Power Barrel
-		if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BarrelId.options[BarrelId.selectedIndex].text === 'Power Barrel') {
+		if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BarrelId.options[BarrelId.selectedIndex].text === 'Power') {
 			power.baseRaw = ~~(power.baseRaw * 1.125);
-		} else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Power Barrel') {
+		} else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Power') {
 			power.baseRaw = ~~(power.baseRaw * 1.15);
 		}
-		if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BarrelId.options[BarrelId.selectedIndex].text === 'Long Barrel') {
+		if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BarrelId.options[BarrelId.selectedIndex].text === 'Long') {
 			power.baseRaw = ~~(power.baseRaw * 1.05);
-		} else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Long Barrel') {
+		} else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Long') {
 			power.baseRaw = ~~(power.baseRaw * 1.075);
 		}
 	}
