@@ -13,7 +13,10 @@
 		{ "BRM": 1, "BR": 0, "PRM": 1, "BEM": 1, "BE": 0, "PEM": 1, "aff": 0 },
 		{ "BRM": 1, "BR": 10, "PRM": 1, "BEM": 1, "BE": 5, "PEM": 1, "aff": 0 },
 		{ "BRM": 1, "BR": 15, "PRM": 1, "BEM": 1, "BE": 7, "PEM": 1, "aff": 0 },
-		{ "BRM": 1, "BR": 20, "PRM": 1, "BEM": 1, "BE": 10, "PEM": 1, "aff": 0 }
+		{ "BRM": 1, "BR": 20, "PRM": 1, "BEM": 1, "BE": 10, "PEM": 1, "aff": 0 },
+			{ "BRM": 1, "BR": 0, "PRM": 1, "BEM": 1, "BE": 0, "PEM": 1, "aff": 20 },
+	{ "BRM": 1, "BR": 0, "PRM": 1, "BEM": 1, "BE": 0, "PEM": 1, "aff": 25 },
+	{ "BRM": 1, "BR": 0, "PRM": 1, "BEM": 1, "BE": 0, "PEM": 1, "aff": 25 }
 	],
 	"Foray": [
 		{ "BRM": 1, "BR": 0, "PRM": 1, "BEM": 1, "BE": 0, "PEM": 1, "aff": 0 },

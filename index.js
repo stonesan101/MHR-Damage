@@ -1032,26 +1032,28 @@ function BuildDamageTable(myDamage, id) {
 		if (!/BowGun/.test($(weaponType).val())||!/input/.test(window.event?.target?.path[0].classChange)) {
 			$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index,element) {
 				const cell = document.createElement('td');
-				if (index ==  window.event?.target.id) {
-					cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs inputButton dec" onclick="setTimeout(timer,
-3000);"
-		>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs hover inputButton inc">&#8679</button><output id="label">${element.textContent}</output>`;
-					cell.id = `b${index}`;
 
-	this.replaceWith(cell);
-		setTimeout(toggle,500)
-					$(cell).addClass(`b ${index} inputContainer`);
+				if ( $(window.event?.target).hasClass('dec') ){
+		cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs hover inputButton dec">&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs inputButton inc">&#8679</button><output id="label">${element.textContent}</output>`;
+		setTimeout(toggle,200);
+
+
+		} else if (index == window.event?.target.id && $(window.event?.target).hasClass('inc')) {
+					cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs inputButton dec"
+	>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs
+hover inputButton inc">&#8679</button><output id="label">${element.textContent}</output>`;
+setTimeout(toggle,200);
+
+
 				} else {
 					cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs inputButton dec"
 				>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs inputButton inc">&#8679</button><output id="label">${element.textContent}</output>`;
-					$(cell).addClass(`b ${index} inputContainer`);
-					cell.id = `b${index}`;
-					this.replaceWith(cell);
-				}		});
-			if ($(window.event.target).hasClass('inputButton')) {
-				document.getElementById([window.event.target.id]).className += 'hover';
+				}
+								cell.id = `b${index}`;
+				this.replaceWith(cell);
+				$(cell).addClass(`b ${index} inputContainer`);
 
-			}
+			})
 		}
 		if ($(window).width() > 850) {
 			setHeight();
@@ -1231,21 +1233,6 @@ function UniqueColumnsDisplay() {
 	$('#unique')[0].style = /Bow/.test($(weaponType).val()) ? 'grid-template-columns:repeat(4, 1fr); grid-area: 9 / 1 / 10 / 6;' : 'grid-area: 8 / 3 / 9 / 4;';
 	forButtons.style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns: repeat(10. 1fr)' : 'grid-template-columns: repeat(6, 1fr)';
 }
-function MaxSkills() {
-	$('.skill').each(function (index, element) {
-		this.selectedIndex = this.style.display === 'none' ? 0 : [this.options.length - 1];
-	});
-}
-function ResetAllSkills(element = '.skill') {
-	for (let i = 0; i < $(element).length; ++i) {
-		$(element)[i].selectedIndex = 0;
-	}
-	$('button').each(function () {
-		if (/blue/.test(this.className)) {
-			$(this);
-		}
-	});
-}
 function ResetSkills(element = '.skill') {
 	for (let i = 0; i < $(element).length; ++i) {
 		$(element)[i].selectedIndex = 0;
@@ -1257,7 +1244,7 @@ $(window).on('resize', function () {
 	}
 	section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
 });
-$('#BowChargePlus').change(function () {
+$('#BowChargePlus').on("change", function () {
 	ComboReset();
 	UpdateComboDisplay();
 });
@@ -1422,16 +1409,16 @@ function TimesUsed(ID, arr = comboTracker) {
 }
 $(document).on('click',function (e) {
 	if ($(e.target).hasClass('inputButton')) {
-		$(e.target).toggleClass('hover')
+		// $(e.target).toggleClass('hover')
 		$(e.target).hasClass('inc') ? IncreaseComboCount(e) : DecreaseComboCount(e);
 		DataCompile();
 
 	}
 })
 
-$(document).on('click',function (e) {
-$(e.target).removeClass('hover')
-})
+// $(document).on('click',function (e) {
+// $(e.target).removeClass('hover')
+// })
 function IncreaseComboCount(e) {
 	if ($('.inputs')[window.event.target.id].value !== '20') {
 		++$('.inputs')[window.event.target.id].value;
@@ -1439,7 +1426,7 @@ function IncreaseComboCount(e) {
 	}
 function toggle() {
 	if ($('button.hover').length > 0) {
-		$('.hover').removeClass('hover');
+		$('.hover').toggleClass('hover');
 }}
 
 function DecreaseComboCount(e) {
@@ -1714,34 +1701,34 @@ function getHealthPools() {
 		return healthPool;
 	}
 }
-function json(arr) {
-	let headers = arr.splice(0, 1);
-	let newjson = {};
-	let i = 0;
-	let ugh = [];
-	let check = '';
-	arr.forEach(function (part, index) {
-		if (check !== '' && check !== part[0]) {
-			newjson[arr[index - 1][0]] = ugh;
-
-			ugh = [];
-			i = 0;
-		}
-		ugh[i] = {};
-		$(part).each(function (index, element) {
-			if (index > 0) {
-				if (/[1-9]/.test(element)) {
-					ugh[i][headers[0][index]] = Number(element);
-				} else {
-					ugh[i][headers[0][index]] = element;
-				}
-			}
-		});
-		++i;
-		check = part[0];
-	});
-	console.log(newjson);
-}
+// function json(arr) {
+	// let headers = arr.splice(0, 1);
+	// let newjson = {};
+	// let i = 0;
+	// let ugh = [];
+	// let check = '';
+	// arr.forEach(function (part, index) {
+		// if (check !== '' && check !== part[0]) {
+			// newjson[arr[index - 1][0]] = ugh;
+//
+			// ugh = [];
+			// i = 0;
+		// }
+		// ugh[i] = {};
+		// $(part).each(function (index, element) {
+			// if (index > 0) {
+				// if (/[1-9]/.test(element)) {
+					// ugh[i][headers[0][index]] = Number(element);
+				// } else {
+					// ugh[i][headers[0][index]] = element;
+				// }
+			// }
+		// });
+		// ++i;
+		// check = part[0];
+	// });
+	// console.log(newjson);
+// }
 function setHeight() {
 	const height =
 		+$(section1).
