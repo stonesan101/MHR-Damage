@@ -1029,31 +1029,26 @@ function BuildDamageTable(myDamage, id) {
 			});
 		}
 
-		if (!/BowGun/.test($(weaponType).val())||!/input/.test(window.event?.target?.path[0].classChange)) {
-			$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index,element) {
+		if (!/BowGun/.test($(weaponType).val()) || !/input/.test(window.event?.target?.path[0].classChange)) {
+			$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index, element) {
 				const cell = document.createElement('td');
-
-				if ( $(window.event?.target).hasClass('dec') ){
-		cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs hover inputButton dec">&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs inputButton inc">&#8679</button><output id="label">${element.textContent}</output>`;
-		setTimeout(toggle,200);
-
-
-		} else if (index == window.event?.target.id && $(window.event?.target).hasClass('inc')) {
-					cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs inputButton dec"
-	>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs
-hover inputButton inc">&#8679</button><output id="label">${element.textContent}</output>`;
-setTimeout(toggle,200);
-
-
-				} else {
-					cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs inputButton dec"
-				>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs inputButton inc">&#8679</button><output id="label">${element.textContent}</output>`;
-				}
-								cell.id = `b${index}`;
+//
+				// if ($(window.event?.target).hasClass('dec')) {
+					// // // cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs hover inputButton dec">&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs inputButton inc">&#8679</button><output id="label">${element.textContent}</output>`;
+					// setTimeout(toggle, 200);
+				// } else if (index == window.event?.target.id && $(window.event?.target).hasClass('inc')) {
+					// cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputs inputButton dec"
+	// >&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputs
+// hover inputButton inc">&#8679</button><output id="label">${element.textContent}</output>`;
+					// setTimeout(toggle, 200);
+				// } else {
+					cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputButton dec"
+				>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputButton inc">&#8679</button><output id="label">${element.textContent}</output>`;
+				// }
+				cell.id = `b${index}`;
 				this.replaceWith(cell);
 				$(cell).addClass(`b ${index} inputContainer`);
-
-			})
+			});
 		}
 		if ($(window).width() > 850) {
 			setHeight();
@@ -1085,8 +1080,11 @@ function MonChart() {
 
 		table.appendChild(headerRow);
 		mon = Object.entries(info.monster.hzv[dropMonster.value]).sort((b, a) => {
-			if (a[1][type] === b[1][type] && document.querySelector("#statsHead > tr > th:nth-child(4)").textContent !== 'none') {
-				return a[1][ lower(document.querySelector("#statsHead > tr > th:nth-child(4)").textContent)] - b[1][ lower(document.querySelector("#statsHead > tr > th:nth-child(4)").textContent)];
+			if (a[1][type] === b[1][type] && document.querySelector('#statsHead > tr > th:nth-child(4)').textContent !== 'none') {
+				return (
+					a[1][lower(document.querySelector('#statsHead > tr > th:nth-child(4)').textContent)] -
+					b[1][lower(document.querySelector('#statsHead > tr > th:nth-child(4)').textContent)]
+				);
 			}
 			return a[1][type] - b[1][type];
 		});
@@ -1244,7 +1242,7 @@ $(window).on('resize', function () {
 	}
 	section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
 });
-$('#BowChargePlus').on("change", function () {
+$('#BowChargePlus').on('change', function () {
 	ComboReset();
 	UpdateComboDisplay();
 });
@@ -1307,11 +1305,13 @@ $('.toggle').on('click', function (e) {
 	if (this !== filterCombo) {
 		DataCompile();
 		MonChart();
-			$(dropHZ).children().each(function (index) {
-			if (this.textContent === document.querySelector('#monTable > tr:nth-child(2) > td:nth-child(1)').textContent) {
-				dropHZ.selectedIndex = index;
-			}
-		});
+		$(dropHZ).
+			children().
+			each(function (index) {
+				if (this.textContent === document.querySelector('#monTable > tr:nth-child(2) > td:nth-child(1)').textContent) {
+					dropHZ.selectedIndex = index;
+				}
+			});
 	} else if (this === filterCombo) {
 		FilterTableForComboAttacks();
 	}
@@ -1407,27 +1407,28 @@ function FilterTableForComboAttacks() {
 function TimesUsed(ID, arr = comboTracker) {
 	return arr.filter(attackId => attackId == ID).length;
 }
-$(document).on('click',function (e) {
-	if ($(e.target).hasClass('inputButton')) {
-		// $(e.target).toggleClass('hover')
+$(document).on('click', function (e) {
+	if (/inputButton/.test(e.target.className) && /inc|dec/.test(e.target.className)) {
+		$(e.target).toggleClass('hover')
 		$(e.target).hasClass('inc') ? IncreaseComboCount(e) : DecreaseComboCount(e);
+				setTimeout(toggle, 200);
 		DataCompile();
-
 	}
-})
+});
 
 // $(document).on('click',function (e) {
 // $(e.target).removeClass('hover')
 // })
 function IncreaseComboCount(e) {
-	if ($('.inputs')[window.event.target.id].value !== '20') {
-		++$('.inputs')[window.event.target.id].value;
+	if ($('.inputs')[e.target.id].value!== '20') {
+		++$('.inputs')[e.target.id].value;
 	}
-	}
+}
 function toggle() {
 	if ($('button.hover').length > 0) {
 		$('.hover').toggleClass('hover');
-}}
+	}
+}
 
 function DecreaseComboCount(e) {
 	if (window.event.target.id === '0' && $('.inputs')[window.event.target.id].value !== '1') {
@@ -1652,7 +1653,7 @@ function updateQuest(event) {
 // }
 // });
 
-$(document).on('click', function (event) {
+$(document).on('mousedown', function (event) {
 	var $target = $(event.target);
 	if (!$target.closest(questButton).length && !$target.closest('.menu').length && !$target.closest(dropQuest).length && $('.menu').is(':visible')) {
 		$('.menu').hide();
@@ -1702,32 +1703,32 @@ function getHealthPools() {
 	}
 }
 // function json(arr) {
-	// let headers = arr.splice(0, 1);
-	// let newjson = {};
-	// let i = 0;
-	// let ugh = [];
-	// let check = '';
-	// arr.forEach(function (part, index) {
-		// if (check !== '' && check !== part[0]) {
-			// newjson[arr[index - 1][0]] = ugh;
+// let headers = arr.splice(0, 1);
+// let newjson = {};
+// let i = 0;
+// let ugh = [];
+// let check = '';
+// arr.forEach(function (part, index) {
+// if (check !== '' && check !== part[0]) {
+// newjson[arr[index - 1][0]] = ugh;
 //
-			// ugh = [];
-			// i = 0;
-		// }
-		// ugh[i] = {};
-		// $(part).each(function (index, element) {
-			// if (index > 0) {
-				// if (/[1-9]/.test(element)) {
-					// ugh[i][headers[0][index]] = Number(element);
-				// } else {
-					// ugh[i][headers[0][index]] = element;
-				// }
-			// }
-		// });
-		// ++i;
-		// check = part[0];
-	// });
-	// console.log(newjson);
+// ugh = [];
+// i = 0;
+// }
+// ugh[i] = {};
+// $(part).each(function (index, element) {
+// if (index > 0) {
+// if (/[1-9]/.test(element)) {
+// ugh[i][headers[0][index]] = Number(element);
+// } else {
+// ugh[i][headers[0][index]] = element;
+// }
+// }
+// });
+// ++i;
+// check = part[0];
+// });
+// console.log(newjson);
 // }
 function setHeight() {
 	const height =
@@ -1973,21 +1974,20 @@ $(document).on('mousedown', function display(e) {
 						let inc = ugh2 === 'AmmoUp' ? ['No Change', '+1 Lvl 2 & Ele Ammo', '+1 Lvl 3 & Dragon Ammo'] : ['Spare Shot +5%', 'Spare Shot +10%', 'Spare Shot +20%'];
 						option = index + ': ' + inc[index - 1];
 					} else if (ugh2 == 'Marksman') {
-						let inc = ['Chance 20% Raw  + 5% EFR +1%','Chance 20% Raw+10% EFR +2%','Chance 60% Raw  + 5% EFR +3% ','Chance 40% Raw+10% EFR +4%'];
+						let inc = ['Chance 20% Raw  + 5% EFR +1%', 'Chance 20% Raw+10% EFR +2%', 'Chance 60% Raw  + 5% EFR +3% ', 'Chance 40% Raw+10% EFR +4%'];
 						option = index + ': ' + inc[index - 1];
 					} else if (ugh2 === 'Bombardier') {
 						let bomb = [];
 						if (weaponType.value === cb) {
-							bomb = ['Bombardier','1: Raw +10% EFR +10%','2: Raw +15% EFR +15%','3: Raw +20% EFR +16%','4: Raw + 25% EFR +17%'];
+							bomb = ['Bombardier', '1: Raw +10% EFR +10%', '2: Raw +15% EFR +15%', '3: Raw +20% EFR +16%', '4: Raw + 25% EFR +17%'];
 						} else if (weaponType.value === gl) {
-							bomb = ['Bombardier','1: Raw + 5% EFR + 5%','2: Raw+10% EFR+10%','3: Raw+15% EFR+11%','4: Raw+20% EFR+12%'];
+							bomb = ['Bombardier', '1: Raw + 5% EFR + 5%', '2: Raw+10% EFR+10%', '3: Raw+15% EFR+11%', '4: Raw+20% EFR+12%'];
 						} else if (weaponType.value === lbg) {
-							bomb = ['Bombardier','1: Raw +10% EFR +10%','2: Raw +10% EFR +10%','3: Raw +20% EFR +16%','4: Raw +25% EFR +17%'];
-
+							bomb = ['Bombardier', '1: Raw +10% EFR +10%', '2: Raw +10% EFR +10%', '3: Raw +20% EFR +16%', '4: Raw +25% EFR +17%'];
 						} else if (weaponType.value === hbg) {
-							bomb = ['Bombardier','1: Raw + 10% EFR + 10%','2: Sticky+10% Wyvern+15%','3: Raw + 20% EFR + 16%','4: Raw + 25% EFR + 17%'];
+							bomb = ['Bombardier', '1: Raw + 10% EFR + 10%', '2: Sticky+10% Wyvern+15%', '3: Raw + 20% EFR + 16%', '4: Raw + 25% EFR + 17%'];
 						}
-												option = bomb[index]
+						option = bomb[index];
 					} else {
 						let raw = '';
 						if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
@@ -2234,9 +2234,11 @@ function getStats(power, skills) {
 // 			lastEvent = e.target;
 // 		} else {
 function partSelector() {
-	$(dropHZ).children().each(function (index) {
-		if (this.textContent === document.querySelector('#monTable > tr:nth-child(2) > td:nth-child(1)').textContent) {
-			dropHZ.selectedIndex = index;
-		}
-	});
+	$(dropHZ).
+		children().
+		each(function (index) {
+			if (this.textContent === document.querySelector('#monTable > tr:nth-child(2) > td:nth-child(1)').textContent) {
+				dropHZ.selectedIndex = index;
+			}
+		});
 }
