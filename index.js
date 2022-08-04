@@ -1029,7 +1029,7 @@ function BuildDamageTable(myDamage, id) {
 			});
 		}
 
-		if (!/BowGun/.test($(weaponType).val())||!/input/.test(window.event.target?.path[0].classChange)) {
+		if (!/BowGun/.test($(weaponType).val())||!/input/.test(window.event?.target?.path[0].classChange)) {
 			$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index,element) {
 				const cell = document.createElement('td');
 				if (index ==  window.event?.target.id) {
