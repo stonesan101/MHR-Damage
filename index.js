@@ -500,12 +500,12 @@ function GetSkills(power) {
 	$(power.getSkills).each(function () {
 		if (this == 'Dereliction') {
 			skills.push(JSON.parse(Dereliction.value));
+		} else if(this=='MailofHellfire'){skills.push(JSON.parse(MailofHellfire.value));
 		} else {
 			skills.push(info.skills[this][$(`#${this}`)[0].selectedIndex]);
 		}
 	});
 
-	// skills.push(JSON.parse(MailofHellfire.value));
 
 	getStats(power,skills);
 	// applies Water Blight if selected appropriate to the hzv
