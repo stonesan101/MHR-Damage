@@ -1816,6 +1816,7 @@ this.className=ugh[4][index]
 	QuestSelect();
 	PartSelect();
 	HealthSelect();
+	scrollChange();
 	DataCompile();
 	// $('input#taWikiSetBuilder')[0].value = '';
 	// $('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
