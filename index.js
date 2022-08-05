@@ -1777,7 +1777,6 @@ function saveState() {
 		ugh[2].push(this.value);
 	});
 	ugh[3].push(comboTracker[0]);
-	ugh=[]
 $('.scroll').each(function(){
 ugh[4].push(this.className)
 })
