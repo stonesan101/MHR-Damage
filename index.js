@@ -1480,7 +1480,7 @@ function decodeURL(url = taWikiSetBuilder.value) {
 				document.querySelector(`#${thisSkill[0]}`).selectedIndex = thisSkill[1];
 			}
 		});
-	} else if (JSON.parse(url).length === 4) {
+	} else if (JSON.parse(url).length === 5) {
 		loadState(url);
 	}
 }
