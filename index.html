@@ -83,8 +83,7 @@
             </tbody>
           </table>
         </div>
-        <input id='taWikiSetBuilder' onpaste='paste(); emptyContainer()' onclick='emptyContainer()' onchange='resetWikiText()'
-               value='Paste TA Wiki Set Builder Link Here'></input>
+        <input id='taWikiSetBuilder' contenteditable='true' onchange='resetWikiText()' value='Paste TA Wiki Set Builder Link Here'></input>
       </div>
       <div class='contain' id='boxes'>
         <h1>Consumables / Other</h1>
@@ -646,7 +645,7 @@
         <button type='button' aria-pressed='false' class='blue' id='resetSkills' onclick='ResetSkills(); DataCompile()'> Reset Skills </button>
         <button type='button' aria-pressed='false' class='blue' id='Save State' onclick='saveState()'> Save Selections </button>
         <button type='button' aria-pressed='false' class='blue classSpecific melee Bow' id='resetCombo' onclick='ComboReset()'> Reset Combo </button>
-        <button type='button' aria-pressed='false' class='gray toggle classSpecific LightBowGun' id='CriticalFirePower' onclick='DataCompile()'>
+        <button type='button' aria-pressed='false' class='gray toggle classSpecific LightBowGun skillButton' id='CriticalFirePower' onclick='DataCompile()'>
           CriticalFirePower </button>
         <button type='button' aria-pressed='false' class='gray toggle classSpecific Bow skillButton'
                 value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}' id='HerculesDraw' onclick='DataCompile()'> Hercules Draw </button>
@@ -660,7 +659,7 @@
                     class='classSpecific LightBowGun HeavyBowGun' onchange='DataCompile()'>
               <option value=[1,1]>Max Deeps</option>
               <option value=[0.85,0.72]>Legendary</option>
-              <option value=[0.77,0.6428]>SpeedRun</option>
+              <option value=[0.76,0.6428]>SpeedRun</option>
               <option value=[0.70,0.57]>Average</option>
               <option value=[0.62,0.5]>Casual</option>
             </select></div>
