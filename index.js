@@ -1251,9 +1251,10 @@ $('.scroll').on('click',function () {
 });
 function scrollChange() {
 	if (Object.values(check).every(keyCard => keyCard)) {
-		$('.scroll').toggleClass('vis invis');
-		info.skills.MailofHellfire = $(redScroll).hasClass('invis') ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
-
+		if ($(window.event.target).hasClass('scroll')) {
+			$('.scroll').toggleClass('vis invis');
+			info.skills.MailofHellfire = $(redScroll).hasClass('invis') ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
+		}
 		let newValues = $(redScroll).hasClass('invis')
 			? [
 				[{ BRM: 1,BR: 15,PRM: 1,BEM: 1,BE: 0,PEM: 1,aff: 0 },'Lv-1'],
@@ -1816,7 +1817,7 @@ this.className=ugh[4][index]
 	QuestSelect();
 	PartSelect();
 	HealthSelect();
-	scrollChange();
+	scrollChange()
 	DataCompile();
 	// $('input#taWikiSetBuilder')[0].value = '';
 	// $('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
