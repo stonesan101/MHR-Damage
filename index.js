@@ -1249,6 +1249,11 @@ function UniqueColumnsDisplay() {
 	forButtons.style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns: repeat(10. 1fr)' : 'grid-template-columns: repeat(6, 1fr)';
 }
 function ResetSkills(element = '.skill') {
+	$('.skillButton').each(function(){
+  if($(this).hasClass("blue")){
+    	$(this).toggleClass('blue gray')
+  }
+})
 	for (let i = 0; i < $(element).length; ++i) {
 		$(element)[i].selectedIndex = 0;
 	}
@@ -1755,6 +1760,11 @@ function saveState() {
 }
 function loadState(ugh, e) {
 	ugh = JSON.parse(ugh);
+	$('.skillButton').each(function(){
+  if($(this).hasClass("blue")){
+    	$(this).toggleClass('blue gray')
+  }
+})
 
 	let ugh2 = document.querySelectorAll('select');
 
