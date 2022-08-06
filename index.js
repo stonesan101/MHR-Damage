@@ -1928,7 +1928,7 @@ function setSkillDescriptions(thisSkill) {
 		} else if (thisSkill === Dereliction) {
 			let text = $(redScroll).hasClass('invis')
 				? [['1: Raw +15'],['2: Raw +20'],['3: Raw +25'],['1: Raw +20'],['2: Raw +25'],['3: Raw +30'],['1: Raw +25'],['2: Raw +30'],['3: Raw +35']]
-				: [['1: Ele + 5'],['2: Ele + 8'],['3: Ele +12'],['1: Ele + 7'],['2: Ele +12'],['3: Ele +15'],['1: Ele +10'],['2: Ele +15'],['3: Ele +20']];
+				: [['1: Ele + 5'],['2: Ele + 8'],['3: Ele+12'],['1: Ele + 7'],['2: Ele+12'],['3: Ele+15'],['1: Ele+10'],['2: Ele+15'],['3: Ele+20']];
 			let index = 0;
 			$('select#Dereliction').
 				children().
