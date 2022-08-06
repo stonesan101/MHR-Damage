@@ -34,14 +34,14 @@
                     onchange='WeaponSelect(); RampageSelect(); classChange(true); MonChart(),partSelector(); DataCompile(); ComboReset(true)'>
             </select></div>
           <div class='uniqueBow' display='border:none'><label class='Bow BowId classSpecific skill' for='BowCoationg'>Bow Coatings</label><select
-                    id='BowCoating' class='Bow classSpecific' onchange='DataCompile()' name='Bow Coatings'>
+                    id='BowCoating' class='Bow classSpecific skill' onchange='DataCompile()' name='Bow Coatings'>
               <option value='{"BRM": 1,"BR": 0,"PRM": 1,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>---</option>
               <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM":1,"aff":0}'>Close</option>
               <option value='{"BRM": 1,"BR": 0,"PRM": 1.35,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Power</option>
               <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 0,"aff":0}'>Status</option>
             </select></div>
-          <div id='BowGunId'> <label class='LightBowGun HeavyBowGun classSpecific skill' for='BarrelId'>Gunner Barrel</label><select
-                    class='LightBowGun HeavyBowGun classSpecific' id='BarrelId' name='BarrelSelection' onchange='DataCompile()'>
+          <div id='BowGunId'> <label for='BarrelId'>Gunner Barrel</label><select class='LightBowGun HeavyBowGun classSpecific skill' id='BarrelId'
+                    name='BarrelSelection' onchange='DataCompile()'>
               <option value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>---</option>
               <option value='{"Element":1,"Power":1.05,"Silencer":0,"reload":0}'>Long</option>
               <option value='{"Element":1,"Power":1.125,"Silencer":0,"reload":0}'>Power</option>
@@ -226,10 +226,13 @@
           </select></div>
         <div><label for='ChainCrit'>Chain Crit</label><select id='ChainCrit' name='ChainCrit' onchange='DataCompile()' class='skill'>
             <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
+            <optgroup label='Constant Bonus'>
+              <option></option>
+            </optgroup>
+            <optgroup label='After Chaining 5'>
+              <option></option>
+              <option></option>
+              <option></option>
           </select></div>
         <div><label for='Counterstrike'>Counterstrike</label><select id='Counterstrike' name='Counterstrike' onchange='DataCompile()' class='skill'>
             <option></option>
