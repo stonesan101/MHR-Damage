@@ -830,6 +830,18 @@ div#ele.contain {
 
 
 
+select.skill:enabled {
+  text-align: center;
+  justify-self: center;
+  /* margin: auto; */
+  /* display: grid; */
+  /* justify-content: center; */
+  /* justify-self: center; */
+  min-width: 100%;
+  width: fit-content;
+}
+}
+
 select.skill:focus {
   z-index: 100;
   text-align: center;
