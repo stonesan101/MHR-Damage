@@ -4,6 +4,7 @@ let count = 0;
 let keyUp = 0;
 let keyDown = 0;
 let lastEvent = '';
+
 let comboTracker = [];
 const info = {};
 const gs = 'GreatSword';
@@ -78,15 +79,15 @@ $([].concat(jsons,weaponTypes)).each(function () {
 	});
 });
 document.createElement('tagName');
-function DataCompile() {
+function DataCompile(e=window.event) {
 	if (/BowGun/.test($(weaponType).val())) {
-		RangedDPS();
+		RangedDPS(e);
 	} else {
-		MeleeDPS();
+		MeleeDPS(e);
 	}
 }
 
-function RangedDPS() {
+function RangedDPS(e) {
 	let rangedDamage = [];
 	let ammoFrameData = [];
 	let power = {};
@@ -191,11 +192,12 @@ function RangedDPS() {
 	BuildDamageTable(ammoFrameData,'ammo');
 }
 
-function MeleeDPS() {
+function MeleeDPS(e) {
 	let meleeDamage = [['Combo','Attack Name','MV','Raw','Element','Total','EFR','EFE','Effective']];
 	let comboDamage = [0,0,0,0,0,0,0,0,0,0];
 	let power = {};
 	let firstRun = true;
+	const lastSharp = Sharpness.selectedIndex;
 	//  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
 	//
 	if ($(weaponType).val() === 'Bow' || $(weaponType).val() === 'ChargeBlade' || $(weaponType).val() === 'InsectGlaive' || $(weaponType).val() === 'Gunlance') {
@@ -314,7 +316,37 @@ function MeleeDPS() {
 		if ($('#dropWeaponType').val() === 'Bow') {
 			comboDamage = BowComboDamage();
 		}
-		if (!/Inputs/.test(window.event.target.className)) {
+		if (lastSharp === Sharpness.selectedIndex && !/dropWeapon|taWikiSetBuilder/.test(e.target.id)) {
+			if (/input|inputButton/.test(e.target.className)) {
+				document.getElementById('c0').textContent = `${[comboDamage[0]]}`;
+				document.getElementById('d0').textContent = `${[comboDamage[1]]} / ${[comboDamage[2]]}`;
+				document.getElementById('e0').textContent = `${[comboDamage[3]]} / ${[comboDamage[4]]}`;
+				document.getElementById('f0').textContent = `${comboDamage[5]} / ${comboDamage[6]}`;
+				document.getElementById('g0').textContent = `${[comboDamage[7]]}`;
+				document.getElementById('h0').textContent = `${[comboDamage[8]]}`;
+				document.getElementById('i0').textContent = `${comboDamage[9]}`;
+			} else {
+				meleeDamage.splice(0,2,[
+					'replaceME',
+					'Combo Damage',
+					comboDamage[0],
+					`${comboDamage[1]} / ${comboDamage[2]}`,
+					`${comboDamage[3]} / ${comboDamage[4]}`,
+					`${comboDamage[5]} / ${comboDamage[6]}`,
+					comboDamage[7],
+					comboDamage[8],
+					comboDamage[9],
+				]);
+				let i = 0;
+				$(meleeDamage).each(function () {
+					this.splice(0,2);
+					$(this).each(function () {
+						Object.values($(dpsBody).children().children()).filter(x => !/a|b/.test(x.className))[i].textContent = this;
+						++i;
+					});
+				});
+			}
+		} else {
 			meleeDamage.splice(1,1,[
 				'replaceME',
 				'Combo Damage',
@@ -327,14 +359,8 @@ function MeleeDPS() {
 				comboDamage[9],
 			]);
 			BuildDamageTable(meleeDamage,'dps');
-		} else {
-			document.getElementById('c0').textContent = `${[comboDamage[0]]}`;
-			document.getElementById('d0').textContent = `${[comboDamage[1]]} / ${[comboDamage[2]]}`;
-			document.getElementById('e0').textContent = `${[comboDamage[3]]} / ${[comboDamage[4]]}`;
-			document.getElementById('f0').textContent = `${comboDamage[5]} / ${comboDamage[6]}`;
-			document.getElementById('g0').textContent = `${[comboDamage[7]]}`;
-			document.getElementById('h0').textContent = `${[comboDamage[8]]}`;
-			document.getElementById('i0').textContent = `${comboDamage[9]}`;
+
+
 		}
 	}
 }
@@ -421,7 +447,7 @@ function GetSkills(power) {
 	1;
 	let skills = [];
 	$('.skillButton:not(button#ProtectivePolish)').each(function () {
-		if ($(this).hasClass('blue')&&this.id!=='CriticalFirePower') {
+		if ($(this).hasClass('blue') && this.id !== 'CriticalFirePower') {
 			skills.push(JSON.parse(this.value));
 		}
 	});
@@ -496,16 +522,11 @@ function GetSkills(power) {
 	if (weaponType.value === 'Bow' && /Stake/.test(power.attackName)) {
 		power.getSkills = power.getSkills.filter((/** @type {string} */ skill) => skill != 'BowCoating');
 	}
-	power.getSkills = power.getSkills.filter(onlyUnique);
+	power.getSkills = power.getSkills.filter(isUnique);
 	$(power.getSkills).each(function () {
-		if (this == 'Dereliction') {
-			skills.push(JSON.parse(Dereliction.value));
-		} else if(this=='MailofHellfire'){skills.push(JSON.parse(MailofHellfire.value));
-		} else {
-			skills.push(info.skills[this][$(`#${this}`)[0].selectedIndex]);
-		}
+		skills.push(info.skills[this][$(`#${this}`)[0].selectedIndex]);
 	});
-
+	skills = skills.filter(isUnique);
 
 	getStats(power,skills);
 	// applies Water Blight if selected appropriate to the hzv
@@ -653,9 +674,9 @@ function TotalHitsOfSharpUsed(power) {
 	[power.hitsOfSharpness.yellow,hits] = hits > 0 && hits - total.yellow > 0 ? [0,hits - total.yellow] : [total.yellow - hits,0];
 	[power.hitsOfSharpness.orange,hits] = hits > 0 && hits - total.orange > 0 ? [0,hits - total.orange] : [total.orange - hits,0];
 	[power.hitsOfSharpness.red,hits] = hits > 0 && hits - total.red > 0 ? [0,hits - total.red] : [total.red - hits,0];
-	let width = total.purple + total.white + total.blue + total.green + total.yellow + total.orange + total.red;
+	let width = (total.purple + total.white + total.blue + total.green + total.yellow + total.orange + total.red) * 1.028;
 
-	let finalWidth = Math.min(width,$(section2).width());
+	let finalWidth = Math.min(width,$(section2).width()*.95);
 
 	$('#white').parent().css('width',`${finalWidth}px`);
 	purple.style.width = `${(power.hitsOfSharpness.purple / width) * finalWidth}px`;
@@ -724,13 +745,10 @@ function GetRemainingSkills(power) {
 		if (dropWeaponType.value === lbg && /Pierce|Spread|Normal/.test(power.attackName) && $(CriticalFirePower).hasClass('blue')) {
 			if (/Normal/.test(power.attackName)) {
 				power.PRM *= 1.3;
-				power.augEFR *= 1.3;
 			} else if (/Spread/.test(power.attackName)) {
 				power.PRM *= 1.2;
-				power.augEFR *= 1.2;
 			} else if (/Pierce/.test(power.attackName)) {
 				power.PRM *= 1.1;
-				power.augEFR *= 1.1;
 			}
 		}
 		// Elemental Reload
@@ -787,7 +805,7 @@ function GetRemainingSkills(power) {
 			? JSON.parse(document.getElementById([`MindsEye`]).value).PRM
 			: 1;
 	//if can crit adds crit boost
-	power.critBoost = power.Crit === true ? JSON.parse($('#CriticalBoost').val()).PRM : 1;
+	power.critBoost = power.Crit === true ? info.skills.CriticalBoost[CriticalBoost.selectedIndex].PRM : 1;
 
 	power.efrMulti = 1 + (power.critBoost - 1) * power.aff;
 
@@ -805,7 +823,7 @@ function GetRemainingSkills(power) {
 		power.critBoost = 1.5;
 	}
 	//if can crit adds crit element
-	power.eleCritBoost = power.Crit === true ? JSON.parse($('#CriticalElement').val()).PEM : 1;
+	power.eleCritBoost = power.Crit === true ? info.skills.CriticalElement[CriticalElement.selectedIndex].PRM : 1;
 
 	return { ...power };
 }
@@ -1221,7 +1239,7 @@ function MeleeElements() {
 $(window).on('keypress',function (e) {
 	keyDown = e.originalEvent.key === '-' ? ++keyDown : 0;
 	if (keyDown === 3) {
-		ResetAllSkills();
+		ResetSkills();
 		DataCompile();
 		keyDown = 0;
 	}
@@ -1246,52 +1264,18 @@ $('#BowChargePlus').on('change',function () {
 	UpdateComboDisplay();
 });
 
-$('.scroll').on('click',function () {
+$('.scroll').on('mousedown',function () {
 	scrollChange();
 });
 function scrollChange() {
 	if (Object.values(check).every(keyCard => keyCard)) {
 		if ($(window.event.target).hasClass('scroll')) {
 			$('.scroll').toggleClass('vis invis');
-			info.skills.MailofHellfire = $(redScroll).hasClass('invis') ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
 		}
-		let newValues = $(redScroll).hasClass('invis')
-			? [
-				[{ BRM: 1,BR: 15,PRM: 1,BEM: 1,BE: 0,PEM: 1,aff: 0 },'Lv-1'],
-				[{ BRM: 1,BR: 20,PRM: 1,BEM: 1,BE: 0,PEM: 1,aff: 0 },'Lv-2'],
-				[{ BRM: 1,BR: 25,PRM: 1,BEM: 1,BE: 0,PEM: 1,aff: 0 },'Lv-3'],
-				[{ BRM: 1,BR: 20,PRM: 1,BEM: 1,BE: 0,PEM: 1,aff: 0 },'Lv-1'],
-				[{ BRM: 1,BR: 25,PRM: 1,BEM: 1,BE: 0,PEM: 1,aff: 0 },'Lv-2'],
-				[{ BRM: 1,BR: 30,PRM: 1,BEM: 1,BE: 0,PEM: 1,aff: 0 },'Lv-3'],
-				[{ BRM: 1,BR: 25,PRM: 1,BEM: 1,BE: 0,PEM: 1,aff: 0 },'Lv-1'],
-				[{ BRM: 1,BR: 30,PRM: 1,BEM: 1,BE: 0,PEM: 1,aff: 0 },'Lv-2'],
-				[{ BRM: 1,BR: 35,PRM: 1,BEM: 1,BE: 0,PEM: 1,aff: 0 },'Lv-3'],
-			]
-			: [
-				[{ BRM: 1,BR: 15,PRM: 1,BEM: 1,BE: 5,PEM: 1,aff: 0 },'Lv-1'],
-				[{ BRM: 1,BR: 20,PRM: 1,BEM: 1,BE: 8,PEM: 1,aff: 0 },'Lv-2'],
-				[{ BRM: 1,BR: 25,PRM: 1,BEM: 1,BE: 12,PEM: 1,aff: 0 },'Lv-3'],
-				[{ BRM: 1,BR: 20,PRM: 1,BEM: 1,BE: 7,PEM: 1,aff: 0 },'Lv-1'],
-				[{ BRM: 1,BR: 25,PRM: 1,BEM: 1,BE: 12,PEM: 1,aff: 0 },'Lv-2'],
-				[{ BRM: 1,BR: 30,PRM: 1,BEM: 1,BE: 15,PEM: 1,aff: 0 },'Lv-3'],
-				[{ BRM: 1,BR: 25,PRM: 1,BEM: 1,BE: 10,PEM: 1,aff: 0 },'Lv-1'],
-				[{ BRM: 1,BR: 30,PRM: 1,BEM: 1,BE: 15,PEM: 1,aff: 0 },'Lv-2'],
-				[{ BRM: 1,BR: 35,PRM: 1,BEM: 1,BE: 20,PEM: 1,aff: 0 },'Lv-3'],
-			];
-		let index = 0;
-		$('select#Dereliction').
-			children().
-			each(function () {
-				$(this).
-					children().
-					each(function () {
-						this.textContent = newValues[index][1];
-						this.value = JSON.stringify(newValues[index][0]);
-						++index;
-					});
-			});
+		info.skills.MailofHellfire = $(redScroll).hasClass('invis') ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
+		info.skills.Dereliction = $(redScroll).hasClass('invis') ? info.skills.DerelictionSourse.blue : info.skills.DerelictionSourse.red;
+		DataCompile();
 	}
-	DataCompile();
 }
 
 $('.toggle').on('click',function (e) {
@@ -1430,7 +1414,7 @@ function toggle() {
 	}
 }
 
-function DecreaseComboCount(e) {
+function DecreaseComboCount() {
 	if (window.event.target.id === '0' && $('.inputs')[window.event.target.id].value !== '1') {
 		--$('.inputs')[window.event.target.id].value;
 	} else if (window.event.target.id !== '0' && $('.inputs')[window.event.target.id].value !== '0') {
@@ -1452,21 +1436,21 @@ function jsonsLoaded() {
 		DataCompile();
 		setHeight();
 		$('select.skill').each(function () {
-			resetSkillDescription(this)
-		})
+			lastEvent = this;
+			resetSkillDescription(this);
+		});
 	}
 }
-const target = document.querySelector('input#taWikiSetBuilder');
 
-target.addEventListener('paste',event => {
-	event.preventDefault();
+taWikiSetBuilder.addEventListener('paste',function(e) {
+	e.preventDefault();
 
 	let pasteurl = (event.clipboardData || window.clipboardData).getData('text');
-	decodeURL(pasteurl);
+	decodeURL(pasteurl,e);
 	$(taWikiSetBuilder).text(document.createTextNode('Paste TA Wiki Set Builder Link Here'));
-	DataCompile();
+	DataCompile(e);
 });
-function decodeURL(url = taWikiSetBuilder.value) {
+function decodeURL(url = taWikiSetBuilder.value,e) {
 	if (/mhrise\.wiki-db\.com/.test(url)) {
 		let decode = decodeURIComponent(url);
 		let skills = decode.match('(?<=skills=)(.*?)(?=&)')[0].split(',');
@@ -1482,12 +1466,14 @@ function decodeURL(url = taWikiSetBuilder.value) {
 			}
 		});
 	} else if (JSON.parse(url).length === 5) {
-		loadState(url);
+		loadState(url, e);
 	}
 }
 $('#taWikiSetBuilder').on('keyup',function (e) {
 	e.target.textContent =
-		e.originalEvent.key === 'v' && e.originalEvent.ctrlKey || e.originalEvent.metaKey ? (e.target.textContent = 'Build Successfully Decrypted') : 'Paste TA Wikizet Builder Link Here';
+		(e.originalEvent.key === 'v' && e.originalEvent.ctrlKey) || e.originalEvent.metaKey
+			? (e.target.textContent = 'Build Successfully Decrypted')
+			: 'Paste TA Wikizet Builder Link Here';
 });
 function resetWikiText() {
 	$('input#taWikiSetBuilder')[0].value = '';
@@ -1550,15 +1536,13 @@ function getHZ(part = dropHZ.value.slice(-1) === ' ' ? dropHZ.value.slice(0,drop
 	return info.monster.hzv[dropMonster.value].filter(hitzone => hitzone.part === part)[0];
 }
 
-function getAttacks() {
-	let attacks = { ...info[weaponType.value].attacks };
+const getAttacks = () => {
+	return { ...info[weaponType.value].attacks };
+};
 
-	return { ...attacks };
-}
-function getWeapon() {
-	let weapon = { ...info[weaponType.value].weapons[dropWeapon.value] };
-	return { ...weapon };
-}
+const getWeapon = () => {
+	return { ...info[weaponType.value].weapons[$('#dropWeapon').val()] };
+};
 
 function PartSelect() {
 	let parts = [];
@@ -1572,8 +1556,8 @@ function QuestSelect() {
 	$('#HR').empty();
 	$('#MR').empty();
 	$('#dropQuest').empty();
-	let questMR = Object.entries(info.quest).filter(x => x[1].monster === dropMonster.value && x[1].rank === 'MR');
-	let questHR = Object.entries(info.quest).filter(x => x[1].monster === dropMonster.value && x[1].rank === 'HR');
+	const questMR = Object.entries(info.quest).filter(x => x[1].monster === dropMonster.value && x[1].rank === 'MR');
+	const questHR = Object.entries(info.quest).filter(x => x[1].monster === dropMonster.value && x[1].rank === 'HR');
 	questHR.forEach(quest => {
 		$('#HR').append($('<option></option>').attr('value',quest[0]).text(quest[1].quest));
 	});
@@ -1594,21 +1578,14 @@ function HealthSelect() {
 		$(health).append($('<option></option>').attr('value',value).text(value));
 	});
 }
-// $('div.menu>select.players>option').on("click",function (e) {
-// PopulateDropDowns([event.target.value], $('#players'));
-// $('div.menu').hide();
-// });
-// function showHideMenu() {
-// $('#1pHealth');
-// $('.menu')[0].style.display == 'none' ? $('.menu').show() : $('.menu').hide();
-// }
+
 $('#taWikiSetBuilder').on('mousedown',function (e) {
 	if ($(event.target).val() == 'Paste TA Wiki Set Builder Link Here') {
 		$(event.target).val('');
 	}
 });
 
-function onlyUnique(value,index,self) {
+function isUnique(value,index,self) {
 	return self.indexOf(value) === index;
 }
 // $(document).ready(function () {
@@ -1653,17 +1630,6 @@ function updateQuest(event) {
 	$('div.menu').hide();
 	DataCompile();
 }
-// $(document).on('click', function (event) {
-// var $target = $(event.target);
-// if (
-// !$target.closest(DerelictionButton).length &&
-// !$target.closest('.derelictionMenu').length &&
-// !$target.closest(dropDereliction).length &&
-// $('#scrollDiv').is(':visible')
-// ) {
-// $('#scrollDiv').hide();
-// }
-// });
 
 $(document).on('mousedown',function (event) {
 	var $target = $(event.target);
@@ -1777,9 +1743,9 @@ function saveState() {
 		ugh[2].push(this.value);
 	});
 	ugh[3].push(comboTracker[0]);
-$('.scroll').each(function(){
-ugh[4].push(this.className)
-})
+	$('.scroll').each(function () {
+		ugh[4].push(this.className);
+	});
 	let copyText = document.createElement('input');
 	copyText.setAttribute('value',JSON.stringify(ugh));
 	copyText.select();
@@ -1787,208 +1753,93 @@ ugh[4].push(this.className)
 	navigator.clipboard.writeText(copyText.value);
 	return ugh;
 }
-function loadState(ugh) {
+function loadState(ugh, e) {
 	ugh = JSON.parse(ugh);
 
-	comboTracker = ugh[3];
 	let ugh2 = document.querySelectorAll('select');
 
 	ugh2[0].selectedIndex = ugh[0][0];
-	WeaponSelect();
 	classChange();
+	WeaponSelect();
 
 	ugh2[3].selectedIndex = ugh[0][3];
 	RampageSelect();
+		ugh2[70].selectedIndex = ugh[0][70];
+	QuestSelect();
+	PartSelect();
+	HealthSelect();
+	scrollChange();
 	$('select').each(function (index) {
-		this.selectedIndex = ugh[0][index];
+		if (index !== (0 || 3 || 70)) {
+			this.selectedIndex = ugh[0][index];
+		}
 	});
 	$('button.skillButton').each((index,element) => {
 		if (ugh[1][index]) {
 			$(element).toggleClass('blue gray');
 		}
 	});
+
 	$('.inputs').each((index,input) => {
 		input.value = ugh[2][index];
 	});
-	$('.scroll').each(function(index){
-this.className=ugh[4][index]
-})
-	QuestSelect();
-	PartSelect();
-	HealthSelect();
-	scrollChange()
-	DataCompile();
-	// $('input#taWikiSetBuilder')[0].value = '';
-	// $('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
-}
-/**function getMenu() {
-			if (Object.values(check).every(keyCard => keyCard)) {
-				// $(weaponTypes).each(function (index, weaponType) {
-				const weaponList = [];
-				$(info.ChargeBlade.weapons).each (function (index, element) {
-					weaponList.push(this.weapon);
-				});
-				let { ...myJSON } = weaponList;
-				var myTarget = document.getElementById('target');
-				myTarget.replaceWith(renderList(myJSON));
-				//
-				function renderList(obj) {
-					// cosmetic utility function for capitalizing text
-					function capitalize(str) {
-						console.log(power,this);
-	return str[0].toUpperCase() + str.slice(1);
-					}
-					// cosmetic utility for formatting the price
-					// function formatPrice(str) {
-					// if (parseFloat(str) < 1) result += '0';
-					// console.log(power,this);
-	return result + str;
-					// }
-					// for every level of our JSON object, we create a ul element
-					var result = document.createElement('ul');
-					// for every key in the object
-					Object.values(myJSON).each(function (index, weapon) {
+	$('.scroll').each(function (index) {
+		this.className = ugh[4][index];
+	});
 
-
-						// create a li element and create/add a capitalized copy of the key
-						var list = document.createElement('li');
-						var textnode = document.createTextNode(capitalize(weapon));
-						list.appendChild(textnode);
-						// if there's another level to the object, recursively call our function
-						// this will create a new ul which we'll add after our text
-						// if (typeof obj[key] === 'object') {
-						list.appendChild(renderList(obj[weapon]));
-						// } else {
-						// otherwise it must be a price. add ': ' and the value to the text
-						// textnode.textContent += ': ' + formatPrice(obj[key]);
-						// }
-						// add our completed li to the ul
-						result.appendChild(list);
-					}
-					console.log(power,this);
-	return result;
-				}
+	comboTracker = ugh[3];
+	$('.inputs:not(".inputComboRepeat")').each(function () {
+		if (this.value > 0) {
+			let difference = $('.inputs')[this.id].value - TimesUsed(this.id);
+			while (difference > 0) {
+				comboTracker.push(this.id);
+				--difference;
+			}
+			while (difference < 0) {
+				comboTracker.splice(comboTracker.lastIndexOf(this.id),1);
+				++difference;
 			}
 		}
-
-		// weaps = [
-		// ['GreatSword'],
-		// ['SwitchAxe'],
-		// ['ChargeBlade'],
-		// ['InsectGlaive'],
-		// ['HeavyBowGun'],
-		//
-		// ['SwordNShield'],
-		// ['DualBlades'],
-		// ['LongSword'],
-		// ['Lance'],
-		// ['HuntingHorn'],
-		// ['Gunlance'],
-		// ['Hammer'],
-		// ];
-		// i = 1;
-		//
-		// contain = document.createElement('ul');
-		// $(contain).css('id:main-menu class:sm sm-blue');
-		// $(weaps).each(function (index, element) {
-		// thisWeapon = element;
-		// catagories = document.createElement('ul');
-		// ugh1 = document.createElement('li');
-		// ugh1.innerHTML = `<a href="#">${thisWeapon}</a>`;
-		// $(catagories).append(ugh1);
-		// console.log(this);
-		// ugh2 = [];
-		// $(info.Hammer.weapons).each(function (index, element) {
-		// ugh2 = document.createElement('li');
-		// ugh2.innerHTML = `<a href="#">${element.weapon}</a>`;
-		// $(catagories).append(ugh2);
-		// });
-		// console.log(catagories);
-		// $(contain).append(catagories);
-		// });
-		//
-		**/
-// $(Object.entries(info.skills)).each(function () {
-// $('select.skill').on('change', function resetSelectOptions(e) {});
-// if (lastEvent !== e.target && lastEvent !== undefined && lastEvent !== dropDereliction) {
-// 	if (lastEvent === MailofHellfire) {
-// 		$('#MailofHellfire>optgroup').each(function (index, option) {
-// 			$(this)
-// 				.children()
-// 				.each(function (index) {
-// 					this.textContent = `Lv${index}`;
-// 				});
-// 		});
-// 	} else {
-// 		$(lastEvent.children).each(function (index) {
-// 			this.textContent = index === 0 ? '---' : `Lv${index}`;
-// 		});
-// 		lastEvent='';
-// 	}
-// }
+	});
+	UpdateComboDisplay();
+	setTimeout(() => { $('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here'; }, 2000)
+	$('input#taWikiSetBuilder')[0].value = 'Build Succsefully Loaded';
+};
 
 $('select.skill').on('change',function (e) {
 	resetSkillDescription(e.target);
-})
+});
 function resetSkillDescription(thisSkill) {
-	if (lastEvent === Dereliction) {
-		$('select#Dereliction').
-			children().
-			each(function () {
-				$(this).
-					children().
-					each(function (index) {
-						this.textContent = `Lv-${index + 1}`;
-					});
-			});
-		Dereliction[0].text = '--- ';
-		lastEvent = '';
-	} else {
-		$(thisSkill).
-			children().
-			each(function (index) {
-				this.textContent = index === 0 ? '---' : `Lv${index}`;
-			});
-		lastEvent = '';
-	}
-
-}
-$(document).on('mousedown',function (e) {
-	setSkillDescriptions(e.target);
-})
-function setSkillDescriptions(thisSkill) {
-	// $(`#${thisSkill.id}`)[0].style = 'position:fixed';
-	// if (lastEvent === 'done') {
-	// 	lastEvent = '';
-	// 	return;
-
 	if (lastEvent !== '') {
-		if (lastEvent === Dereliction) {
-			$('select#Dereliction').
-				children().
-				each(function () {
-					$(this).
-						children().
-						each(function (index) {
-							this.textContent = `Lv-${index + 1}`;
-						});
-				});
-			Dereliction[0].text = '--- ';
-			lastEvent = '';
-		} else {
-			// $(`#${lastEvent.id}`)[0].style = 'position:fixed';
-			$(lastEvent).
-				children().
-				each(function (index) {
-					this.textContent = index === 0 ? '---' : `Lv-${index}`;
-				});
-			// $(`#${lastEvent}>option`).show();
-			// $(`#${lastEvent.id}`)[0].style = 'position:unset';
-			lastEvent = '';
-		}
+		resetEachOption(0,thisSkill);
+		lastEvent = '';
 	}
+}
+function resetEachOption(index,thisElement) {
+	$(thisElement).
+		children().
+		each((i,child) => {
+			if (child.tagName === 'OPTGROUP') {
+				resetEachOption(index,child);
+			} else {
+				child.textContent = index === 0 ? '---' : `Lv-${index}`;
+				++index,thisElement;
+			}
+		});
+}
+$('select.skill').children().on('mousedown',function (e) {
+	if (lastEvent === e.target) {
+		resetSkillDescription(lastEvent);
+	}
+});
+$(document).on('mousedown',function (e) {
+	if (lastEvent !== '') {
+		resetSkillDescription(lastEvent);
+	}
+	setSkillDescriptions(e.target);
+});
+function setSkillDescriptions(thisSkill) {
 	if (Object.values($('select.skill')).some(x => x.id === thisSkill.id)) {
-		// $(`#${thisSkill.id}:focus`).hide();
 		let ugh2 = thisSkill.id;
 		if (ugh2 !== 'Dereliction') {
 			$(info.skills[ugh2]).each(function (index) {
@@ -2066,8 +1917,8 @@ function setSkillDescriptions(thisSkill) {
 			lastEvent = thisSkill;
 		} else if (thisSkill === Dereliction) {
 			let text = $(redScroll).hasClass('invis')
-				? [['1:Raw +15'],['2:Raw +20'],['3:Raw +25'],['1:Raw +20'],['2:Raw +25'],['3:Raw +30'],['1:Raw +25'],['2:Raw +30'],['3:Raw +35']]
-				: [['1:Ele + 5'],['2:Ele + 8'],['3:Ele +12'],['1:Ele + 7'],['2:Ele +12'],['3:Ele +15'],['1:Ele +10'],['2:Ele +15'],['3:Ele +20']];
+				? [['1: Raw +15'],['2: Raw +20'],['3: Raw +25'],['1: Raw +20'],['2: Raw +25'],['3: Raw +30'],['1: Raw +25'],['2: Raw +30'],['3: Raw +35']]
+				: [['1: Ele + 5'],['2: Ele + 8'],['3: Ele +12'],['1: Ele + 7'],['2: Ele +12'],['3: Ele +15'],['1: Ele +10'],['2: Ele +15'],['3: Ele +20']];
 			let index = 0;
 			$('select#Dereliction').
 				children().
@@ -2080,63 +1931,18 @@ function setSkillDescriptions(thisSkill) {
 						});
 				});
 			Dereliction[0].textContent = 'Dereliction';
-			lastEvent = thisSkill;
-		} else if (
-			(Object.values($('select.skill').children()).some(x => x.id === thisSkill.id) && thisSkill.children[0].textContent === thisSkill.id) ||
-			!Object.values($('select.skill').children()).some(x => x.id === thisSkill.id || thisSkill)
-		) {
-			if (thisSkill === Dereliction) {
-				$('select#Dereliction').
-					children().
-					each(function () {
-						$(this).
-							children().
-							each(function (index) {
-								this.textContent = `Lv-${index + 1}`;
-							});
-					});
-				Dereliction[0].text = '--- ';
-				lastEvent = '';
-			}
-			// if (lastEvent === MailofHellfire) {
-			// $('#MailofHellfire>optgroup').each(function (index,option) {
-			// $(this)
-			// .children()
-			// .each(function (index) {
-			// this.textContent = index === 0 ? '---' : `Lv${index}`;
-			// });
-			// lastEvent = '';
-			// });
-		} else {
-			$(thisSkill).
-				children().
-				each(function (index) {
-					this.textContent = index === 0 ? '---' : `Lv-${index}`;
-				});
-			lastEvent = '';
 		}
+		lastEvent = thisSkill;
+	}
+
+	if (
+		(Object.values($('select.skill').children()).some(x => x.id === thisSkill.id) && thisSkill.children[0].textContent === thisSkill.id) ||
+		!Object.values($('select.skill').children()).some(x => x.id === thisSkill.id || thisSkill)
+	) {
+		resetSkillDescription(thisSkill);
 	}
 }
-// $(`#${e.target.id}`)[0].style = 'position:unset';
-// });
-// $('select.skill').on('change', function (e) {
-// 	e.stopPropagation();
-// 	resetOptions(e);
-// });
-// $(document).on('click', function (e) {
-// 	e.stopPropagation();
-// 	if (!e.target.closest(lastEvent).length) {
-// 		resetOptions(e);
-// 	}
-// });
-// function resetOptions(e) {
-// 	if (Object.values(check).every(keyCard => keyCard) && e !== undefined) {
-// 		if (e.type === 'click' && lastEvent === e.target) {
-// 			return;
-// 		}
-// 		if (e.type === 'change' || (lastEvent !== e.target && lastEvent !== dropDereliction))
-// 	}
-// }
+
 function getStats(power,skills) {
 	$(skills).each(function (index,skill) {
 		power.BRM *= skill.BRM;
@@ -2150,115 +1956,6 @@ function getStats(power,skills) {
 	return power;
 }
 
-// function populateSelectOptions() {
-// if (Object.values(check).every(keyCard => keyCard)) {
-// $(Object.entries(info.skills)).each(function (index2) {
-// let ugh2 = this[0];
-// if (ugh2 !== 'dropDereliction' && ugh2 !== 'DangoMarksman') {
-// let ugh15 = `<div><label for="${ugh2}">${ugh2}</label><select id="${ugh2}" name="${ugh2}" onchange="DataCompile()" class="skill">`;
-
-// $(this[1]).each(function (index) {
-// let option = '';
-// if (index !== 0) {
-// let raw = '';
-// if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
-// raw = 'Raw';
-// if (this.BR > 0) {
-// raw += ' +' + this.BR;
-// }
-// if (this.BRM > 1) {
-// let brm = /\.[1-8]/.test((this.BRM - 1) * 100) ? ((this.BRM - 1) * 100).toFixed(1) : ((this.BRM - 1) * 100).toFixed(0);
-// raw += ' +' + brm + '%';
-// }
-// if (this.PRM > 1) {
-// let prm = /\.[1-8]/.test((this.PRM - 1) * 100) ? ((this.PRM - 1) * 100).toFixed(1) : ((this.PRM - 1) * 100).toFixed(0);
-// raw += ' +' + prm + '%';
-// }
-// }
-// let ele = '';
-// if (this.BE > 0 || this.PEM > 1 || this.BEM > 1) {
-// ele = 'Ele';
-// if (this.BE > 0) {
-// ele += ' +' + this.BE;
-// }
-// if (this.BEM > 1) {
-// let bem = /\.[1-8]/.test((this.BEM - 1) * 100) ? ((this.BEM - 1) * 100).toFixed(1) : ((this.BEM - 1) * 100).toFixed(0);
-// ele += ' +' + bem + '%';
-// }
-// if (this.PEM > 1) {
-// let pem = /\.[1-8]/.test((this.PEM - 1) * 100) ? ((this.PEM - 1) * 100).toFixed(1) : ((this.PEM - 1) * 100).toFixed(0);
-// ele += ' +' + pem + '%';
-// }
-// }
-// const aff = this.aff > 0 ? 'Aff +' + this.aff + '%' : '';
-// raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp < 1 ? `Sharp +${this.Sharp * 100}%` : raw;
-// raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp > 1 ? `Sharp +${this.Sharp}` : raw;
-// raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
-// option = index + ': ' + [raw, ele, aff].join(' ');
-// } else {
-// option = ugh2;
-// }
-// $(`#${ugh2}`)[0][index].textContent = option;
-// });
-// }
-// });
-// }
-// }
-// });
-// if (ugh2 === 'MailofHellfire') {
-// 			$(`#${ugh2}`)[0][0].textContent = 'MailofHellfire';
-// 			$('#MailofHellfire>optgroup').each(function (index, option) {
-// 				$(this)
-// 					.children()
-// 					.each(function (index) {
-// 						let thisValue = JSON.parse(this.value);
-// 						let newHTML = '';
-
-// 						let raw = '';
-// 						if (thisValue.BR > 0 || thisValue.PRM > 1 || thisValue.BRM > 1) {
-// 							raw = 'Raw';
-// 							if (thisValue.BR > 0) {
-// 								raw += ' +' + thisValue.BR;
-// 							}
-// 							if (thisValue.BRM > 1) {
-// 								let brm = /\.[1-8]/.test((thisValue.BRM - 1) * 100) ? ((thisValue.BRM - 1) * 100).toFixed(1) : ((thisValue.BRM - 1) * 100).toFixed(0);
-// 								raw += ' +' + brm + '%';
-// 							}
-// 							if (thisValue.PRM > 1) {
-// 								let prm = /\.[1-8]/.test((thisValue.PRM - 1) * 100) ? ((thisValue.PRM - 1) * 100).toFixed(1) : ((thisValue.PRM - 1) * 100).toFixed(0);
-// 								raw += ' +' + prm + '%';
-// 							}
-// 						}
-// 						let ele = '';
-// 						if (thisValue.BE > 0 || thisValue.PEM > 1 || thisValue.BEM > 1) {
-// 							ele = 'Ele';
-// 							if (thisValue.BE > 0) {
-// 								ele += ' +' + thisValue.BE;
-// 							}
-// 							if (thisValue.BEM > 1) {
-// 								let bem = /\.[1-8]/.test((thisValue.BEM - 1) * 100) ? ((thisValue.BEM - 1) * 100).toFixed(1) : ((thisValue.BEM - 1) * 100).toFixed(0);
-// 								ele += ' +' + bem + '%';
-// 							}
-// 							if (thisValue.PEM > 1) {
-// 								let pem = /\.[1-8]/.test((thisValue.PEM - 1) * 100) ? ((thisValue.PEM - 1) * 100).toFixed(1) : ((thisValue.PEM - 1) * 100).toFixed(0);
-// 								ele += ' +' + pem + '%';
-// 							}
-// 						}
-// 						const aff = thisValue.aff > 0 ? 'Aff +' + thisValue.aff + '%' : '';
-// 						raw = Object.prototype.hasOwnProperty.call(thisValue, 'Sharp') && thisValue.Sharp < 1 ? `Sharp +${thisValue.Sharp * 100}%` : raw;
-// 						raw = Object.prototype.hasOwnProperty.call(thisValue, 'Sharp') && thisValue.Sharp > 1 ? `Sharp +${thisValue.Sharp}` : raw;
-// 						raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
-// 						let text = raw !== '' ? raw : '';
-// 						text = aff !== '' ? text.push(aff) : text;
-// 						text = ele !== '' ? text.push(ele) : text;
-
-// 						newHTML = index + ': ' + [raw, ele, aff].join(' ');
-
-// 						this.textContent = newHTML;
-// 					});
-// 			});
-// 			lastEvent = e.target;
-// 		} else {
 function partSelector() {
 	$(dropHZ).
 		children().

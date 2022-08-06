@@ -70,22 +70,29 @@ button.clicked {
   transition: transform 500ms ease;
 }
 
-button.inputButton.hover {
+button.inputButton {
+  top: 0px;
+  pointer-events: auto;
+  background-color: rgba(11, 11, 42, 0.63);
+  position: absolute;
+  color: rgba(205, 0, 0, 0);
+  z-index: 5;
+  border: none;
+  width: 50%;
+  height: 100%;
+  min-height: 1.32rem;
+  transition: all .2s ease-in-out;
+}
+
+button.inputButton:active {
   color: rgb(252, 252, 252);
   z-index: 20;
   font-weight: 900;
   font-size: 1rem;
   background-color: rgba(11, 16, 42, 0.74);
+  transform: scale(1.1);
+  transition: .1s;
 }
-
-button.hover {
-  color: rgb(252, 252, 252);
-  z-index: 20;
-  font-weight: 900;
-  font-size: 1rem;
-  background-color: rgba(11, 16, 42, 0.74);
-}
-
 
 button.inputButton:hover {
   color: rgb(252, 252, 252);
@@ -104,19 +111,6 @@ button.inc.inputButton {
   right: 0px;
   grid-area: 1 / 2 / 2 / 3;
   border-left: none;
-}
-
-button.inputButton {
-  top: 0px;
-  pointer-events: auto;
-  background-color: rgba(11, 11, 42, 0.63);
-  position: absolute;
-  color: rgba(205, 0, 0, 0);
-  z-index: 5;
-  border: none;
-  width: 50%;
-  height: 100%;
-  min-height: 1.32rem;
 }
 
 html {
