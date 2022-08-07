@@ -1507,6 +1507,14 @@ function WeaponSelect() {
 	});
 }
 function RampageSelect() {
+	if (weaponType.value === 'Bow') {
+		$(BowCoating).empty()
+		getWeapon().coatings.forEach((coating,i) => {
+			info.skills.BowCoating[i] = info.skills[coating];
+				$(BowCoating).append($('<option></option>').attr('value',info.skills[coating]).text(coating));
+		})
+
+	}
 	$(weaponRampage.children).hide();
 	$(weaponRampage0).show();
 	if (getWeapon().rampageSlots !== 0) {
@@ -1835,7 +1843,11 @@ function resetEachOption(index,thisElement) {
 			if (child.tagName === 'OPTGROUP') {
 				resetEachOption(index,child);
 			} else {
-				child.textContent = index === 0 ? '---' : `Lv-${index}`;
+				let newText = `Lv-${index}`
+				if (weaponType.value === 'Bow') {
+					newText=getWeapon().coatings[index]
+				}
+				child.textContent = index === 0 ? '---' : newText;
 				++index,thisElement;
 			}
 		});
@@ -1933,7 +1945,7 @@ function setSkillDescriptions(thisSkill) {
 						raw = Object.prototype.hasOwnProperty.call(this,'Sharp') && this.Sharp > 1 ? `Sharp +${this.Sharp}` : raw;
 						raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
 						if (thisSkill === BowCoating) {
-							let text= ['CloseRange+','CloseRange', 'Power', 'Status']
+							let text = getWeapon().coatings;
 							option = text[index] + ': ' + [raw,ele,aff].join(' ');
 						} else {
 							option = index + ': ' + [raw,ele,aff].join(' ');

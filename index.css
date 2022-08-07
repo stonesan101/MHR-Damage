@@ -178,7 +178,7 @@ body {
   display: grid;
   color: white;
   /* background-image: url("background.webp"); */
-  background-image: url("Untitled.jpg");
+  background-image: url("Untitled.webp");
   background-size: cover;
   min-height: 100vh;
   /* min-width: fit-content; */
@@ -674,7 +674,7 @@ button#DerelictionButton {
 
 label#dropDerelection {
   grid-area: 1/1;
-  background-image: url("scrolls.png");
+  background-image: url("scrolls.webp");
 }
 
 div#derelictionMenu {
@@ -1186,7 +1186,7 @@ div.menu {
 }
 
 /* #redScroll:hover { */
-/* background-image: url('red.png'); */
+/* background-image: url('red.webp'); */
 /* height: 120%; */
 /* width: 2.2rem; */
 /*  */
@@ -1197,7 +1197,7 @@ div.menu {
 }
 
 /* #blue { */
-/* background-image: url('blue.png'); */
+/* background-image: url('blue.webp'); */
 /* height: 120%; */
 /* width: 2.2rem; */
 /* background-size: contain; */
