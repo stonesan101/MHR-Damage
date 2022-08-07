@@ -840,7 +840,7 @@ select.skill:enabled {
   min-width: 100%;
   width: fit-content;
 }
-}
+
 
 select.skill:focus {
   z-index: 100;
