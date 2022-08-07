@@ -6,11 +6,11 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta Cache-Control='no-cache'>
-    <link rel='prefetch' href='/MHR-Damage/json/types.json' as='fetch' />
-    <link rel='prefetch' href='/MHR-Damage/json/GreatSword.json' as='fetch' />
-    <link rel='prefetch' href='/MHR-Damage/json/quest.json' as='fetch' />
-    <link rel='prefetch' href='/MHR-Damage/json/rampage.json' as='fetch' />
-    <link rel='prefetch' href='/MHR-Damage/json/monster.json' as='fetch' />
+    <link rel='prefetch' href='/json/types.json' as='fetch' />
+    <link rel='prefetch' href='/json/GreatSword.json' as='fetch' />
+    <link rel='prefetch' href='/json/quest.json' as='fetch' />
+    <link rel='prefetch' href='/json/rampage.json' as='fetch' />
+    <link rel='prefetch' href='/json/monster.json' as='fetch' />
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
     <title>Monster Hunter Rise Damage Calculator</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -125,10 +125,10 @@
         <h1>Raw</h1>
         <div style='grid-area:1/1/1/-1; height: 100%; display:grid; justify-content:end; align-content:center; align-items:center'>
           <label for='redScroll' class='scroll' style='font-size:1.1rem'>Red</label>
-          <img id='redScroll' class='scroll vis' src='/MHR-Damage/red.webp' style='grid-area: 1/5;height: 35%;'><img id='redNon' class='scroll invis'
-               src='/MHR-Damage/redInactive.webp' style='grid-area: 1/5;height: 33%;'><label class='scroll' for='blueScroll' style='grid-area: 1/6;
-              font-size:1.1rem'>Blue</label><img class='scroll invis' id='blueScroll' src='/MHR-Damage/blue.webp' style='grid-area: 1/7;height: 35%;'><img
-               id='blueNon' class='scroll vis' src='/MHR-Damage/blueInactive.webp' style='grid-area: 1/7;height: 33%;'>
+          <img id='redScroll' class='scroll vis' src='/red.webp' style='grid-area: 1/5;height: 35%;'><img id='redNon' class='scroll invis'
+               src='/redInactive.webp' style='grid-area: 1/5;height: 33%;'><label class='scroll' for='blueScroll' style='grid-area: 1/6;
+              font-size:1.1rem'>Blue</label><img class='scroll invis' id='blueScroll' src='/blue.webp' style='grid-area: 1/7;height: 35%;'><img id='blueNon'
+               class='scroll vis' src='/blueInactive.webp' style='grid-area: 1/7;height: 33%;'>
         </div>
         <div><label for='AttackBoost'>Attack Boost</label><select id='AttackBoost' name='Attack Boost' onchange='DataCompile()' class='skill'>
             <option></option>
@@ -718,9 +718,9 @@
     <div id='previousWeapon' value='initial' style='display:none'></div>
     <div id='previousWeaponType' value='initial' style='display:none'></div>
   </body>
-  <link href='/MHR-Damage/index.js/'>
-  <script src='/MHR-Damage/index.js'></script>
-  <link rel='stylesheet' type='text/css' href='/MHR-Damage/index.css'>
+  <link href='/index.js/'>
+  <script src='/index.js'></script>
+  <link rel='stylesheet' type='text/css' href='/index.css'>
   <link rel='preconnect' href='https://fonts.googleapis.com'>
   <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
   <link href='https://fonts.googleapis.com/css2?family=Play&display=swap' rel='stylesheet'>

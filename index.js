@@ -1,7 +1,5 @@
 const baseURL = /localhost/.test(window.location.host) ? 'http://localhost:5500' : 'https://stonesan101.github.io/MHR-Damage';
 let check = { GreatSword: 0,rampage: 0,quest: 0,monster: 0,types: 0,ammo: 0,skills: 0 };
-let count = 0;
-let keyUp = 0;
 let keyDown = 0;
 let lastEvent = '';
 
