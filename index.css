@@ -43,6 +43,55 @@
 }
 
 
+
+#damageTable>table>thead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.cell {
+  display: grid;
+  align-items: center;
+}
+
+#statsHead>tr,
+#statsBody>tr {
+  display: grid;
+  grid-template-columns: 1fr .8fr .8fr .8fr;
+  grid-area: 1/1/2/-1;
+}
+
+.rangedContainer>#dpsHead,
+#dpsTable>th.tableRowRanged,
+#dpsBody>tr.tableRowRanged,
+#dpsHead>tr.tableRowRanged {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-area: 1/1/2/-1;
+  max-height: max-content;
+}
+
+.meleeContainer>#dpsHead,
+#dpsTable>th.tableRowMelee,
+#dpsBody>tr.tableRowMelee,
+#dpsHead>tr.tableRowMelee {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-area: 1/1/2/-1;
+}
+
+
+
+
+
+
+#monTable>th.tableRow,
+#monTable>tr.tableRow {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
 output#label {
   pointer-events: none;
   position: relative;
@@ -107,9 +156,7 @@ button.dec.inputButton {
 }
 
 button.inc.inputButton {
-  justify-items: end;
   right: 0px;
-  grid-area: 1 / 2 / 2 / 3;
   border-left: none;
 }
 
@@ -135,14 +182,14 @@ div#statsTableDiv {
 
 section#section2 {
   display: grid;
-  height: 100vh;
+
   align-content: start;
   gap: .5rem;
   /* gap: inherit; */
-  grid-template-columns: repeat(8, 1fr) auto;
+
   justify-items: stretch;
   align-items: start;
-  min-width: max-content;
+
 }
 
 html div {
@@ -220,7 +267,7 @@ div#sharpnessContainer {
   justify-content: start;
   background-color: rgb(10, 10, 10);
   border-style: ridge;
-  grid-area: 5 / 1 / 6 / 10;
+  grid-area: 5 / 1 / 6;
   column-gap: 0px;
   grid-template-columns: repeat(6, auto);
   width: fit-content;
@@ -244,7 +291,7 @@ div#blue {
 }
 
 div#monContainer.contain {
-  grid-area: 3 / 1 / 10 / 4;
+  grid-area: 3 / 1 / 10;
   display: grid;
   grid-template-columns: repeat(7, auto);
   place-items: stretch;
@@ -259,8 +306,8 @@ div#monContainer.contain {
 }
 
 div#monTableContainer {
-  grid-area: 3 / 1 / 4 / -1;
-  height: 20.8vh;
+  grid-area: 3 / 1 / 4;
+
   overflow: auto;
   display: grid;
   justify-items: stretch;
@@ -269,15 +316,12 @@ div#monTableContainer {
 }
 
 div#damageTable.meleeContainer {
-  height: vh;
+
   overflow: auto;
   display: grid;
   width: 100%;
 }
 
-div#damageTable.rangedContainer {
-  height: 45vh;
-}
 
 .rangedTable>tr>td.a {
   background-color: rgb(11, 11, 42);
@@ -361,7 +405,7 @@ div#boxes.contain {
 }
 
 #forButtons {
-  grid-area: 4 / 1 / 5 / -1;
+  grid-area: 4 / 1 / 5;
   gap: 0.25rem;
   place-content: center;
   grid-template-columns: repeat(5, 1fr);
@@ -431,9 +475,9 @@ select.players {
   width: 100%;
 }
 
-#dpsHead>tr>th:nth-child(1) {
-  width: max-content;
-}
+
+
+
 
 
 select.players,
@@ -443,7 +487,7 @@ div>select,
 select#dropMonster,
 #statsTable>tr>th,
 tr>th {
-  max-height: 25px;
+
   top: 0px;
   position: sticky;
   margin: 0px;
@@ -613,9 +657,9 @@ td {
   border-style: outset;
 }
 
-tbody.rangedTable {
-  max-height: 27rem;
-}
+
+
+
 
 .a.rangedTable {
   border-style: outset;
@@ -623,7 +667,7 @@ tbody.rangedTable {
 }
 
 div#monDropDowns {
-  grid-area: 2 / 1 / 3 / -1;
+  grid-area: 2 / 1 / 3;
   display: grid;
 
   align-items: start;
@@ -631,7 +675,7 @@ div#monDropDowns {
 
 div#damageTable {
   overflow: auto;
-  grid-area: 6 / 1 / 7 / -1;
+  grid-area: 6 / 1 / 7;
 }
 
 .b.meleeTable {
@@ -729,7 +773,7 @@ label,
 #monTable>tr:nth-child(1) {
   position: sticky;
   top: 0px;
-  min-width: fit-content;
+
 }
 
 .inputs {
@@ -742,7 +786,7 @@ table#monTable {
   border-color: rgb(77, 67, 69);
   margin: 0px;
   display: inline-table;
-  grid-area: 3 / 1 / 4 / -1;
+  grid-area: 3 / 1 / 4;
   height: 10rem;
 }
 
@@ -873,7 +917,7 @@ div#raw.contain {
 
 div#boxes.contain {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, 1fr);
   grid-area: 3 / 1 / 4 / 6;
 }
 
@@ -888,7 +932,6 @@ table>tbody>tr>td {
 tr>th,
 table>thead>tr>th {
   font-size: 1rem;
-  min-width: 4rem;
 }
 
 #enrageDisplay {
@@ -957,7 +1000,7 @@ label {
 }
 
 #MonsterSelect>label:nth-child(5) {
-  grid-area: 4 / 1 / auto / -1;
+  grid-area: 4 / 1 / auto;
 }
 
 parent#shieldChargeIMPid {
@@ -1162,9 +1205,7 @@ select#dropQuest {
 
 h1,
 label,
-input,
-th,
-td {
+input {
   max-height: 30px;
   margin: 0;
   min-width: max-content;
