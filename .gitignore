@@ -12,7 +12,7 @@
 /target
 /.eslintrc.json
 /.babalrc.json
-/.babel.config.json
+/.babel.config.js/on
 /test
 /rules
 /.csv
@@ -40,3 +40,4 @@ whitespace.js
 whitespaceRules.js
 legacy.js
 ughkjk.csv
+/jquery
