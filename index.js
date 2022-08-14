@@ -465,10 +465,13 @@ function GetSkills(power) {
 		case 'Stickies':
 		case 'IMPAED':
 		case 'IMPUAED':
-			power.skillType = 'Stickies';
+			power.skillType = "IMPAED";
 			break;
 		case 'Cluster':
 			power.skillType = 'Clusters';
+			break;
+		case 'IgnoreHZVEle':
+			power.skillType = 'EleAED';
 			break;
 		default:
 			power.skillType = 'AllSkills';
@@ -769,21 +772,22 @@ function GetRemainingSkills(power) {
 	if (weaponType.value === cb && power.skillType === 'Stickies' && power.phialType === 'Impact Phial') {
 		power.augEFR *= JSON.parse(Bombardier.value)[1];
 		power.augPRM *= JSON.parse(Bombardier.value)[0];
-	} // If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
 
-	if (weaponType.value === sa && /Sword|ZSD|ED/.test(power.attackName) && power.phialType === 'Impact Phial') {
-		power.BRM *= 1.15;
-	}
-	if (weaponType.value === sa && /Sword|Elemental|ED/.test(power.attackName) && power.phialType === 'Elemental Phial') {
-		power.BEM *= 1.45;
-	}
-	power.PEM *=
+		if (weaponType.value === sa && /Sword|ZSD|ED/.test(power.attackName) && power.phialType === 'Impact Phial') {
+			power.BRM *= 1.15;
+		}
+		if (weaponType.value === sa && /Sword|Elemental|ED/.test(power.attackName) && power.phialType === 'Elemental Phial') {
+			power.BEM *= 1.45;
+		}
+	} // If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
+		power.PEM *=
 		getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Elemental Exploit' && getHZ()[lower(getWeapon().eleType)] >= 25
-			? 1.3
+		? 1.3
 			: (power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Element Exploit' && getHZ()[lower(getWeapon().eleType)] >= 25 ? 1.15 : 1);
-	power.augPEM = $('#weaponRampage0').val() === 'Valstrax Soul' && power.eleType === 'Dragon' ? 1.2 : power.augPEM;
-	// applies Dulling Strike to Base raw depending on sharpness and if selected
-	[power.augEFR,power.augPRM] = $('#weaponRampage0').val() === 'Dulling Strike' && Sharpness.selectedIndex < 5 ? [1.02,1.2] : [power.augEFR,power.augPRM];
+	power.PEM*=getHZ()[lower(getWeapon().eleType)] >= 25 ? 1.15 : 1
+		power.augPEM = $('#weaponRampage0').val() === 'Valstrax Soul' && power.eleType === 'Dragon' ? 1.2 : power.augPEM;
+		// applies Dulling Strike to Base raw depending on sharpness and if selected
+		[power.augEFR,power.augPRM] = $('#weaponRampage0').val() === 'Dulling Strike' && Sharpness.selectedIndex < 5 ? [1.02,1.2] : [power.augEFR,power.augPRM];
 	// applies Bludgeoner to Base raw depending on sharpness and selectedIndex
 
 	if (Sharpness.selectedIndex > 0) {
@@ -795,14 +799,14 @@ function GetRemainingSkills(power) {
 
 	const sharpnessModifier = [];
 	[sharpnessModifier.PRM,sharpnessModifier.PEM] =
-		power.noSharpMod === false && /sever|blunt/.test(lower(power.type)) ? [JSON.parse(Sharpness.value).PRM,JSON.parse(Sharpness.value).PEM] : [1,1];
+	power.noSharpMod === false && /sever|blunt/.test(lower(power.type)) ? [JSON.parse(Sharpness.value).PRM,JSON.parse(Sharpness.value).PEM] : [1,1];
 	//adds minds eye
 	power.PRM *=
 		~~(0.1 + 25 / sharpnessModifier.PRM) >= info.monster.hzv[$('#dropMonster').val()][dropHZ.selectedIndex][power.type]
-			? JSON.parse(document.getElementById([`MindsEye`]).value).PRM
-			: 1;
-	//if can crit adds crit boost
-	power.critBoost = power.Crit === true ? info.skills.CriticalBoost[CriticalBoost.selectedIndex].PRM : 1;
+		? JSON.parse(document.getElementById([`MindsEye`]).value).PRM
+		: 1;
+		//if can crit adds crit boost
+		power.critBoost = power.Crit === true ? info.skills.CriticalBoost[CriticalBoost.selectedIndex].PRM : 1;
 
 	power.efrMulti = 1 + (power.critBoost - 1) * power.aff;
 
@@ -998,7 +1002,6 @@ function BuildDamageTable(myDamage,id) {
 						adjuster.setAttribute('value',0);
 					}
 					++k;
-					adjuster.setAttribute('onChange','DataCompile()');
 					cell.appendChild(adjuster);
 					row.appendChild(cell);
 				}
@@ -1046,8 +1049,8 @@ function BuildDamageTable(myDamage,id) {
 		if (!/BowGun/.test($(weaponType).val()) && !/inputButton/.test(window.event?.target?.classChange)) {
 			$(`tbody#${id}Body>tr>td:nth-child(2)`).each(function (index,element) {
 				const cell = document.createElement('td');
-				cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputButton dec"
-				>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputButton inc">&#8679</button><output class="label">${element.textContent}</output>`;
+				cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" onclick="DecreaseComboCount()" class="inputButton dec"
+				>&#8681</button><button type="button" aria-pressed="false" id="${index}" onclick="IncreaseComboCount()" class="inputButton inc">&#8679</button><output class="label">${element.textContent}</output>`;
 				cell.id = `b${index}`;
 				this.replaceWith(cell);
 				$(cell).addClass(`b ${index} inputContainer`);
@@ -1258,19 +1261,21 @@ function ResetSkills(element = '.skill') {
 }
 
 $(window).on('resize',function () {
-	if (weaponType.value === 'Bow') {
-		$(BowCoating).parent().css('max-width',`${$(dropWeapon).width() - $(dropWeaponType).width()}px`);
+	if (Object.values(check).every(keyCard => keyCard)) {
+		if (weaponType.value === 'Bow') {
+			$(BowCoating).parent().css('max-width',`${$(dropWeapon).width() - $(dropWeaponType).width()}px`);
+		}
+		if ($(window).width() > 850) {
+			setHeight();
+		}
+		section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
 	}
-	if ($(window).width() > 850) {
-		setHeight();
-	}
-	section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
 });
 function setHeight() {
 	const newHeight =
 		+$(section1).
 			css('row-gap').
-			match(/\d.\d+?/)[0] *
+			match(/\d.?\d+?/)[0] *
 		4 +
 		$('.title').height() +
 		$(boxes).height() +
@@ -1312,11 +1317,11 @@ function scrollChange() {
 		}
 		info.skills.MailofHellfire = $(redScroll).hasClass('invis') ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
 		info.skills.Dereliction = $(redScroll).hasClass('invis') ? info.skills.DerelictionSourse.blue : info.skills.DerelictionSourse.red;
-		// DataCompile();
+		DataCompile();
 	}
 }
 
-$('.toggle').on('click',function (e) {
+$('.toggle').on('mousedown',function (e) {
 	if (/DemonDrug/.test(e.target.id) && /gray/.test(e.target.className) && [DemonDrug.className,MegaDemonDrug.className].some(x => /blue/.test(x))) {
 		$('#DemonDrug').toggleClass('gray blue');
 
@@ -1433,30 +1438,27 @@ function TimesUsed(ID,arr = comboTracker) {
 	return arr.filter(attackId => attackId == ID).length;
 }
 
-	$('.aug').on('click',function (e) {
-	/inc/.test(e.target.className)?$(`#${e.target.id}Augment`).value+1:$(`#${e.target.id}Augment`).value-1
-})
-$('.inputButton').on('click',function (e) {
-
-		$(e.target).hasClass('inc') ? IncreaseComboCount(e) : DecreaseComboCount(e);
-		DataCompile();
-
-});
+	// $('.aug').on('click',function (e) {
+	// /inc/.test(e.target.className)?$(`#${e.target.id}Augment`).value+1:$(`#${e.target.id}Augment`).value-1
+// })
 
 // $(document).on('click',function (e) {
 // $(e.target).removeClass('hover')
 // })
-function IncreaseComboCount(e) {
-	if ($('.inputs')[e.target.id].value !== '20') {
-		++$('.inputs')[e.target.id].value;
+function IncreaseComboCount() {
+	if ($('.inputs')[window.event.target.id].value !== '20') {
+		++$('.inputs')[window.event.target.id].value;
+		DataCompile()
 	}
 }
 
 function DecreaseComboCount() {
 	if (window.event.target.id === '0' && $('.inputs')[window.event.target.id].value !== '1') {
 		--$('.inputs')[window.event.target.id].value;
+		DataCompile()
 	} else if (window.event.target.id !== '0' && $('.inputs')[window.event.target.id].value !== '0') {
 		--$('.inputs')[window.event.target.id].value;
+		DataCompile()
 	}
 }
 function jsonsLoaded() {
@@ -1473,17 +1475,17 @@ function jsonsLoaded() {
 		scrollChange();
 		DataCompile();
 		setHeight();
-		$('select.skill').each(function () {
-			lastEvent = this;
-			resetSkillDescription(this);
-		});
 	}
 }
 
-taWikiSetBuilder.addEventListener('paste',function (e) {
+$(taWikiSetBuilder).on('paste',function (e) {
 	e.preventDefault();
 
 	let pasteurl = (event.clipboardData || window.clipboardData).getData('text');
+		$('select.skill').each(function () {
+		lastEvent = this;
+		resetSkillDescription(this);
+	});
 	decodeURL(pasteurl,e);
 	$(taWikiSetBuilder).text(document.createTextNode('Paste TA Wiki Set Builder Link Here'));
 	DataCompile(e);
@@ -1835,13 +1837,6 @@ function loadState(ugh,e) {
 	},2000);
 	$('input#taWikiSetBuilder')[0].value = 'Build Succsefully Loaded';
 }
-
-$('select.skill').on('change',function (e) {
-	lastEvent = e.target;
-	resetSkillDescription();
-	e.target.blur();
-	DataCompile();
-});
 function resetSkillDescription() {
 	if (lastEvent !== '') {
 		let theseOptions = [];
@@ -1857,7 +1852,9 @@ function resetSkillDescription() {
 			if (window.event.target === BowCoating) {
 				newText = getWeapon().coatings[index];
 			} else if (window.event.target === BarrelId) {
-				newText=['----','Long','Power','Silencer',"Guard-Up"][index]
+				newText = ['----','Long','Power','Silencer',"Guard-Up"][index]
+					} else if (window.event.target === Dereliction) {
+			newText=["----","Lv-1 Charge-1","Lv-1 Charge-2","Lv-1 Charge-3","Lv-1 Charge-1","Lv-1 Charge-2","Lv-1 Charge-3","Lv-1 Charge-1","Lv-1 Charge-2","Lv-1 Charge-3"][index]
 			}else{
 				newText = `Lv-${index}`;
 			}
@@ -1905,10 +1902,12 @@ function resetSkillDescription() {
 // setSkillDescriptions(e.target)
 // });
 $(document).on('mousedown',function (e) {
-	if ( lastEvent !== '') {
-		resetSkillDescription();
+	if ( lastEvent !== ''&&lastEvent===e.target) {
+		return
 	}
-
+	if (lastEvent !== '') {
+				resetSkillDescription();
+	}
 	if (Object.values($('select.skill')).some(x => x.id === e.target.id)) {
 		setSkillDescriptions(e.target);
 	}
@@ -1924,7 +1923,7 @@ function setSkillDescriptions(thisSkill) {
 					if (ugh2 === 'RecoilDown' || ugh2 === 'ReloadSpeed') {
 						option = /Reload/.test(ugh2) ? ugh2.slice(0,6) + ' ' + ugh2.slice(6) + ' +' + index : ugh2.slice(0,6) + ' ' + ugh2.slice(6) + ' +' + index;
 					} else if (ugh2 === 'AmmoUp' || ugh2 === 'SpareShot') {
-						let inc = ugh2 === 'AmmoUp' ? ['No Change','+1 Lvl 2 & Ele Ammo','+1 Lvl 3 & Dragon Ammo'] : ['Spare Shot +5%','Spare Shot +10%','Spare Shot +25%'];
+						let inc = ugh2 === 'AmmoUp' ? ['No Change','+1 Lvl 2 & Ele Ammo','+1 Lvl 3 & Dragon Ammo'] : ['Spare Shot +5%','Spare Shot +10%','Spare Shot +20%'];
 						option = index + ': ' + inc[index - 1];
 					} else if (ugh2 == 'Marksman') {
 						let inc = ['Chance 20% Raw  + 5% EFR +1%','Chance 20% Raw+10% EFR +2%','Chance 60% Raw  + 5% EFR +3% ','Chance 40% Raw+10% EFR +4%'];
@@ -2082,3 +2081,11 @@ function formatNumbers(numbers) {
 	return +numbers;
 
 }
+
+$('select.skill').on('change',function (e) {
+
+	resetSkillDescription();
+
+		DataCompile();
+});
+

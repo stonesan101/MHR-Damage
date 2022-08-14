@@ -31,52 +31,54 @@
         <button id='Qurious' type='button' aria-pressed='false' class='toggle gray skillButton'>Qurious</button>
       </div>
       <div class='contain' id='weaponSelect'>
-        <div style='display:content'>
-          <div><label for='dropWeaponType'>Weapon Type</label><select aria-autocomplete='both' class='skillinput hitsOfSharp' Data-myAttribute='weaponType'
-                    contenteditable='true' id='dropWeaponType' name='weaponTypeSelection'
-                    onchange='WeaponSelect(); RampageSelect(); classChange(true); MonChart(),partSelector(); DataCompile(); ComboReset(true)'>
-            </select></div>
-          <div class='uniqueBow' display='border:none'><label class='Bow BowId classSpecific skill' for='BowCoationg'>Bow Coatings</label><select
-                    id='BowCoating' class='Bow classSpecific skill' onchange='DataCompile()' name='Bow Coatings'>
-              <option value='{"BRM": 1,"BR": 0,"PRM": 1,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>---</option>
-              <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM":1,"aff":0}'>Close</option>
-              <option value='{"BRM": 1,"BR": 0,"PRM": 1.35,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Power</option>
-              <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 0,"aff":0}'>Status</option>
-            </select></div>
-          <div id='BowGunId'> <label for='BarrelId'>Gunner Barrel</label><select class='LightBowGun HeavyBowGun classSpecific skill' id='BarrelId'
-                    name='BarrelSelection' onchange='DataCompile()'>
-              <option value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>---</option>
-              <option value='{"Element":1,"Power":1.05,"Silencer":0,"reload":0}'>Long</option>
-              <option value='{"Element":1,"Power":1.125,"Silencer":0,"reload":0}'>Power</option>
-              <option value='{"Element":1,"Power":1,"Silencer":1,"reload":0}'>Silencer</option>
-              <option value='{"Element":1.1,"Power":1,"Silencer":0,"reload":-2}'>Elemental</option>
-            </select></div>
-        </div>
-        <div><label for='dropWeapon'>Weapon</label><select id='dropWeapon' class='skillinput hitsOfSharp' name='weaponSelection' Data-myAttribute='weapon'
-                  onchange='RampageSelect(), DataCompile()'>
-            <option value='Kamura Cleaver I'>Kamura Cleaver I</option>
-          </select></div>
-        <div>
-          <label for='weaponRampage0' name='weaponRampage'>Rampage Skill</label>
-          <div id='weaponRampage' style='border-style:none; margin:0'>
-            <select class='skillhitsOfSharp' id='weaponRampage0' name='weaponRampage0'></select>
-            <select style='display:none' id='weaponRampage1' name='weaponRampage1'></select>
-            <select style='display:none' id='weaponRampage2' onchange='DataCompile()' name='weaponRampage2'></select>
-            <select style='display:none' id='weaponRampage3' onchange='DataCompile()' name='weaponRampage3'></select>
-            <select style='display:none' id='weaponRampage4' onchange='DataCompile()' name='weaponRampage4'></select>
-            <select style='display:none' id='weaponRampage5' onchange='DataCompile()' name='weaponRampage5'></select>
+        <div class='augToggle'>
+          <div style='display:content'>
+            <div><label for='dropWeaponType'>Weapon Type</label><select aria-autocomplete='both' class='skillinput hitsOfSharp' Data-myAttribute='weaponType'
+                      contenteditable='true' id='dropWeaponType' name='weaponTypeSelection'
+                      onchange='WeaponSelect(); RampageSelect(); classChange(true); MonChart(),partSelector(); DataCompile(); ComboReset(true)'>
+              </select></div>
+            <div class='uniqueBow' display='border:none'><label class='Bow BowId classSpecific skill' for='BowCoationg'>Bow Coatings</label><select
+                      id='BowCoating' class='Bow classSpecific skill' onchange='DataCompile()' name='Bow Coatings'>
+                <option value='{"BRM": 1,"BR": 0,"PRM": 1,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>---</option>
+                <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM":1,"aff":0}'>Close</option>
+                <option value='{"BRM": 1,"BR": 0,"PRM": 1.35,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Power</option>
+                <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 0,"aff":0}'>Status</option>
+              </select></div>
+            <div id='BowGunId'> <label for='BarrelId'>Gunner Barrel</label><select class='LightBowGun HeavyBowGun classSpecific skill' id='BarrelId'
+                      name='BarrelSelection' onchange='DataCompile()'>
+                <option value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>---</option>
+                <option value='{"Element":1,"Power":1.05,"Silencer":0,"reload":0}'>Long</option>
+                <option value='{"Element":1,"Power":1.125,"Silencer":0,"reload":0}'>Power</option>
+                <option value='{"Element":1,"Power":1,"Silencer":1,"reload":0}'>Silencer</option>
+                <option value='{"Element":1.1,"Power":1,"Silencer":0,"reload":-2}'>Elemental</option>
+              </select></div>
           </div>
-        </div>
-        <div style='display:none'><label for='Sharpness'>Sharpness<label><select name='Sharpness' id='Sharpness'>
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                <option value='{"BRM":1,"BR":0,"PRM":0.5,"BEM":1,"BE":0,"PEM":0.25,"aff":0}'>red</option>
-                <option value='{"BRM":1,"BR":0,"PRM":0.75,"BEM":1,"BE":0,"PEM":0.5,"aff":0}'>Orange</option>
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":0.75,"aff":0}'>Yellow</option>
-                <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Green</option>
-                <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1.0625,"aff":0}'>Blue</option>
-                <option value='{"BRM":1,"BR":0,"PRM":1.32,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>White</option>
-                <option value='{"BRM":1,"BR":0,"PRM":1.39,"BEM":1,"BE":0,"PEM":1.25,"aff":0}'>Purple</option>
-              </select>
+          <div><label for='dropWeapon'>Weapon</label><select id='dropWeapon' class='skillinput hitsOfSharp' name='weaponSelection' Data-myAttribute='weapon'
+                    onchange='RampageSelect(), DataCompile()'>
+              <option value='Kamura Cleaver I'>Kamura Cleaver I</option>
+            </select></div>
+          <div>
+            <label for='weaponRampage0' name='weaponRampage'>Rampage Skill</label>
+            <div id='weaponRampage' style='border-style:none; margin:0'>
+              <select class='skillhitsOfSharp' id='weaponRampage0' name='weaponRampage0'></select>
+              <select style='display:none' id='weaponRampage1' name='weaponRampage1'></select>
+              <select style='display:none' id='weaponRampage2' onchange='DataCompile()' name='weaponRampage2'></select>
+              <select style='display:none' id='weaponRampage3' onchange='DataCompile()' name='weaponRampage3'></select>
+              <select style='display:none' id='weaponRampage4' onchange='DataCompile()' name='weaponRampage4'></select>
+              <select style='display:none' id='weaponRampage5' onchange='DataCompile()' name='weaponRampage5'></select>
+            </div>
+          </div>
+          <div style='display:none'><label for='Sharpness'>Sharpness<label><select name='Sharpness' id='Sharpness'>
+                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+                  <option value='{"BRM":1,"BR":0,"PRM":0.5,"BEM":1,"BE":0,"PEM":0.25,"aff":0}'>red</option>
+                  <option value='{"BRM":1,"BR":0,"PRM":0.75,"BEM":1,"BE":0,"PEM":0.5,"aff":0}'>Orange</option>
+                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":0.75,"aff":0}'>Yellow</option>
+                  <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Green</option>
+                  <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1.0625,"aff":0}'>Blue</option>
+                  <option value='{"BRM":1,"BR":0,"PRM":1.32,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>White</option>
+                  <option value='{"BRM":1,"BR":0,"PRM":1.39,"BEM":1,"BE":0,"PEM":1.25,"aff":0}'>Purple</option>
+                </select>
+          </div>
         </div>
         <div id='statsTableDiv'>
           <table id='statsTable'>
@@ -113,7 +115,7 @@
         <button type='button' aria-pressed='false' class='toggle gray skillButton' id='ProtectivePolish' name='ProtectivePolish' value='1'> Protective Polish
         </button>
         <button type='button' aria-pressed='false' class='toggle gray skillButton' id='huntingHornElemental' name='Hunting Horn
-                    Elemental' value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'> Hunting Horn Elemental </button>
+        Elemental' value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'> Hunting Horn Elemental </button>
         <button type='button' aria-pressed='false' class='toggle gray skillButton' id='Demon Seed' name='Demon Seed'
                 value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'> Demon Seed </button>
         <button type='button' aria-pressed='false' class='toggle gray skillButton' id='Butterflame' name='ButterFlame'
@@ -133,7 +135,7 @@
                id='blueNon' class='scroll vis' src='/MHR-Damage/bluenon.webp' style='grid-area: 1/7;height: 33%;'>
         </div>
         <div><label for='AttackBoost'>Attack Boost</label><select id='AttackBoost' name='Attack Boost' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
@@ -143,27 +145,27 @@
             <option></option>
           </select></div>
         <div><label for='Bloodlust'>Bloodlust</label><select id='Bloodlust' name='Bloodlust' class='skill'>
-            <option></option>
+            <option>----</option>
             <optgroup label='Active Effects'>
               <option></option>
               <option></option>
               <option></option>
             </optgroup>
             <optgroup label='Post Effects'>
-              <option></option>
+              <option>----</option>
               <option></option>
               <option></option>
             </optgroup>
           </select></div>
         <div><label for='Foray'>Foray</label><select id='Foray' name='Foray' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div id='scrollHeight'><label for='MailofHellfire'>MailofHellfire</label>
           <select id='MailofHellfire' name='Mail of Hellfire' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
@@ -172,7 +174,7 @@
         <div>
           <label for='Dereliction'>Dereliction</label>
           <select id='Dereliction' name='Dereliction' class='skill'>
-            <option></option>
+            <option>----</option>
             <optgroup label='Skill Lv-1'>
               <option></option>
               <option></option>
@@ -188,13 +190,13 @@
           </select>
         </div>
         <div><label for='PeakPerformance'>Peak Performance</label><select id='PeakPerformance' name='Peak Performance' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div><label for='Resentment'>Resentment</label><select id='Resentment' name='Resentment' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
@@ -202,7 +204,7 @@
             <option></option>
           </select></div>
         <div><label for='Agitator'>Agitator</label><select id='Agitator' name='Agitator' class='skill hitsOfSharp'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
@@ -210,25 +212,25 @@
             <option></option>
           </select></div>
         <div><label for='Resuscitate'>Resuscitate</label><select id='Resuscitate' name='Resuscitate' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div><label for='Coalescence'>Coalescence</label><select id='Coalescence' name='Coalescence' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div><label for='CriticalBoost'>Critical Boost</label><select id='CriticalBoost' name='Critical Boost' class='skill Crit'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div><label for='ChainCrit'>Chain Crit</label><select id='ChainCrit' name='ChainCrit' class='skill'>
-            <option></option>
+            <option>----</option>
             <optgroup label='Constant Bonus'>
               <option></option>
             </optgroup>
@@ -238,13 +240,13 @@
               <option></option>
           </select></div>
         <div><label for='Counterstrike'>Counterstrike</label><select id='Counterstrike' name='Counterstrike' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div><label for='Spiribird'>Spiribird</label><select id='Spiribird' name='Spiribird' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
@@ -273,7 +275,7 @@
             <option value='7'>Lv-3</option>
           </select></div>
         <div><label for='Dragonheart'>Dragonheart</label><select id='Dragonheart' name='Dragonheart' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
@@ -281,20 +283,20 @@
             <option></option>
           </select></div>
         <div><label for='OffensiveGuard'>Offensive Guard</label><select id='OffensiveGuard' name='Offensive Guard' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div><label class='melee Sharpness classSpecific' for='Grinder' selectedindex='0'>Grinder(S)</label><select id='Grinder' name='Grinder'
                   class='skill melee Sharpness classSpecific' selectedindex='0'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div><label for='Heroics'>Heroics</label><select id='Heroics' name='Heroics' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
@@ -302,26 +304,26 @@
             <option></option>
           </select></div>
         <div><label for='Fortify'>Fortify</label><select id='Fortify' name='Fortify' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
           </select></div>
         <div><label class='melee Sharpness/HVZ classSpecific' for='MindsEye' selectedindex='0'>Minds Eye</label><select id='MindsEye' name='Minds Eye'
                   class='skill melee Sharpness/HVZ classSpecific' selectedindex='0'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div><label class='melee Sharpness classSpecific' for='Bludgeoner' selectedindex='0'>Bludgeoner</label><select id='Bludgeoner' name='Bludgeoner'
                   class='skill melee Sharpness classSpecific' selectedindex='0'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div><label for='Handicraft'>Handicraft</label><select class='skill melee Sharpness hitsOfSharp classSpecific' id='Handicraft' selectedindex='0'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
@@ -343,13 +345,13 @@
             <option value='0.5'>Lv-3</option>
           </select></div>
         <div><label for='WallRunner'>Wall Runner</label><select id='WallRunner' name='Wall Runner' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div><label for='Booster'>Booster</label><select class='skill' id='Booster' name='Booster'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
@@ -357,14 +359,14 @@
           </select></div>
         <div style='display: none;'><label for='Bombardier'>Dango Bombardier</label><select id='Bombardier' name='Bombardier'
                   class='skill classSpecific ChargeBlade HeavyBowGun LightBowGun Gunlance' selectedindex='0' style='display: none;'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div><label class='thisWidth' for='Adrenaline'>Dango Adrenaline</label><select class='skill' id='Adrenaline' name='Adrenaline'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
@@ -382,7 +384,7 @@
             <option>Lv-2</option>
           </select></div>
         <div><label for='Artillery'>Artillery</label><select id='Artillery' name='Artillery' class='skill'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
@@ -395,42 +397,42 @@
           </select></div>
         <div style='display: none;'><label for='RapidFireUp'>Rapid Fire Up</label><select id='RapidFireUp' name='Rapid'
                   class='skill classSpecific LightBowGun HeavyBowGun' selectedindex='0' style='display: none;'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div style='display: none;'><label class='classSpecific Shot' for='PierceUp' selectedindex='0' style='display: none;'>Pierce Up</label><select
                   id='PierceUp' name='PierceUp' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div style='display: none;'><label class='classSpecific Shot' for='SpreadUp' selectedindex='0' style='display: none;'>Spread Up</label><select
                   id='SpreadUp' name='SpreadUp' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div style='display: none;'><label class='classSpecific Shot' for='NormalRapidUp' selectedindex='0' style='display: none;'>Normal/Rapid
             Up</label><select id='NormalRapidUp' name='NormalRapidUp' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
         <div style='display: none;'><label class='classSpecific Shot' for='SpecialAmmoBoost' selectedindex='0' style='display: none;'>Special Ammo
             Up</label><select id='SpecialAmmoBoost' name='Special Ammo' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
-            <option></option>
+            <option>----</option>
             <option></option>
             <option></option>
           </select></div>
         <div class='contain' id='ele'>
           <h1>Elemental</h1>
           <div><label for='ElementalAttack'>ElementalAttack</label><select id='ElementalAttack' name='Elemental Attack' class='skill'>
-              <option></option>
+              <option>----</option>
               <option></option>
               <option></option>
               <option></option>
@@ -438,7 +440,7 @@
               <option></option>
             </select></div>
           <div><label for='ElderEssence'>Elder Dragon Set Bonus</label><select id='ElderEssence' name='Elder Essence' class='skill setBonus'>
-              <option></option>
+              <option>----</option>
               <option></option>
               <option></option>
               <option></option>
@@ -446,22 +448,28 @@
               <option></option>
             </select></div>
           <div><label for='CriticalElement'>Critical Element</label><select id='CriticalElement' name='Critical Element' class='skill'>
-              <option value=0></option>
+              <option value=0>----</option>
               <option value=5></option>
               <option value=15></option>
               <option value=10></option>
+            </select></div>
+          <div><label for='ElementExploit'>Elemental Exploit</label><select id='ElementExploit' name='Element Exploit'>
+              <option value=0>----</option>
+              <option value=10></option>
+              <option value=12.5></option>
+              <option value=15></option>
             </select></div>
         </div>
         <div class='contain' id="aff">
           <h1>Affinity</h1>
           <div><label for='WeaknessExploit'>Weakness Exploit</label><select id='WeaknessExploit' name='Weakness Exploit' class='skill hitsOfSharp'>
-              <option value=0></option>
+              <option value=0>----</option>
               <option value=15></option>
               <option value=30></option>
               <option value=50></option>
             </select></div>
           <div><label for='CriticalEye'>Critical Eye</label><select id='CriticalEye' name='Critical Eye' class='skill hitsOfSharp '>
-              <option></option>
+              <option>----</option>
               <option></option>
               <option></option>
               <option></option>
@@ -471,13 +479,13 @@
               <option></option>
             </select></div>
           <div><label for='MaximumMight'>Maximum Might</label><select id='MaximumMight' name='Maximum Might' class='skill hitsOfSharp'>
-              <option></option>
+              <option>----</option>
               <option></option>
               <option></option>
               <option></option>
             </select></div>
           <div><label for='LatentPower'>Latent Power</label><select id='LatentPower' name='Latent Power' class='skill hitsOfSharp'>
-              <option></option>
+              <option>----</option>
               <option></option>
               <option></option>
               <option></option>
@@ -490,14 +498,14 @@
               style='display: none;'> GreatSword</h1>
           <div style='display: none;'><label class='classSpecific InsectGlaive' for='Kinsect Buff' selectedindex='0' style='display: none;'>Kinsect
               Buff</label><select id='KinsectBuff' name='Kinsect Buff' class='skill classSpecific InsectGlaive' selectedindex='0' style='display: none;'>
-              <option></option>
+              <option>----</option>
               <option></option>
               <option></option>
               <option></option>
             </select></div>
           <div style='display: none;'><label class='classSpecific LongSword' for='SpiritGauge' selectedindex='0' style='display: none;'>Spirit
               Gauge</label><select id='spiritGauge' name='SpiritGauge' class='skill classSpecific LongSword' selectedindex='0' style='display: none;'>
-              <option></option>
+              <option>----</option>
               <option></option>
               <option></option>
               <option></option>
@@ -505,49 +513,49 @@
           <div style='display: none;'><label class='classSpecific LongSword' for='Helmbreaker' selectedindex='0'
                    style='display: none;'>Serene/HelmBreaker</label><select id='Helmbreaker' name='LongSword' class='skill classSpecific LongSword'
                     selectedindex='0' style='display: none;'>
-              <option></option>
+              <option>----</option>
               <option></option>
               <option></option>
               <option></option>
             </select></div>
           <div style='display: none;'><label class='classSpecific ChargeBlade' for='savageAxe' selectedindex='0' style='display: none;'>Savage
               Axe</label><select id='savageAxe' name='Savage Axe' class='skill classSpecific ChargeBlade' selectedindex='0' style='display: none;'>
-              <option></option>
+              <option>----</option>
               <option></option>
             </select></div>
           <div style='display: none;'><label onchange='DataCompile()' class=' classSpecific ChargeBlade' for='impShieldCharge' selectedindex='0'
                    style='display: none;'>Shield Charge</label><select id='impShieldCharge' name='impShieldCharge' class='skill classSpecific ChargeBlade'
                     selectedindex='0' style='display: none;'>
-              <option></option>
+              <option>----</option>
               <option></option>
             </select></div>
           <div style='display: none;'><label onchange='DataCompile()' class=' classSpecific ChargeBlade' for='eleShieldCharge' selectedindex='0'
                    style='display: none;'>Shield Charge Ele</label><select id='eleShieldCharge' name='eleShieldCharge' class='skill classSpecific ChargeBlade'
                     selectedindex='0' style='display: none;'>
-              <option></option>
+              <option>----</option>
               <option></option>
             </select></div>
           <div style='display: none;'><label class='classSpecific LightBowGun' for='evadeHop' selectedindex='0' style='display: none;'>Evade Hop</label><select
                     id='evadeHop' name='Evade Hop' class='skill classSpecific LightBowGun' selectedindex='0' style='display: none;'>
-              <option></option>
+              <option>----</option>
               <option></option>
             </select></div>
           <div style='display: none;'><label class='classSpecific LightBowGun' for='fanningManeuver' selectedindex='0' style='display: none;'>Fanning
               Maneuver</label><select id='fanningManeuver' name='Fanning Maneuver' class='skill classSpecific LightBowGun' selectedindex='0'
                     style='display: none;'>
-              <option></option>
+              <option>----</option>
               <option></option>
             </select></div>
           <div style='display: none;'><label class='classSpecific HeavyBowGun' for='chargedShot' selectedindex='0' style='display: none;'>Charged
               Shot</label><select id='chargedShot' name='Charged Shot' class='skill classSpecific HeavyBowGun' selectedindex='0' style='display: none;'>
-              <option></option>
+              <option>----</option>
               <option></option>
               <option></option>
               <option></option>
             </select></div>
           <div style='display: none;'><label class='classSpecific Shot' for='DangoTemper' selectedindex='0' style='display: none;'>Dango Temper</label><select
                     id='DangoTemper' name='Dango Temper' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
-              <option></option>
+              <option>----</option>
               <option></option>
               <option></option>
               <option></option>
@@ -566,7 +574,7 @@
               <option value='0'>---</option>
               <option value='5'>Lv-1</option>
               <option value='10'>Lv-2</option>
-              <option value='25'>Lv-3</option>
+              <option value='20'>Lv-3</option>
             </select></div>
           <div style='display: none;'><label class='classSpecific LightBowGun HeavyBowGun' for='AmmoUp' selectedindex='0' style='display: none;'>Ammo
               Up</label><select id='AmmoUp' name='AmmoUp' class='skill classSpecific LightBowGun HeavyBowGun' selectedindex='0' style='display: none;'>

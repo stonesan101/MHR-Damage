@@ -826,11 +826,11 @@ table#monTable {
   gap: 0.25rem;
 }
 
-#ele>div:nth-child(3) {
-  grid-area: 3 / 1 / auto / 3;
-  display: grid;
-  align-content: center;
-}
+
+
+
+
+
 
 #ele>div:nth-child(3)>label {
   display: grid;
@@ -849,6 +849,12 @@ div#divEnrage {
   align-content: center;
   margin: 0px;
   gap: 0px;
+}
+
+div.augToggle {
+  gap: .25rem;
+  display: grid;
+  grid-area: 1/1/5;
 }
 
 #monContainer>div>div:nth-child(2) {
