@@ -879,7 +879,7 @@ div#divEnrage {
 }
 
 div#forWeaponSelects,
-div.augToggle {
+div.augToggle.vis {
   gap: .2rem;
   display: grid;
   grid-area: 1/1/5;
