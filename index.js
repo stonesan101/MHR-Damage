@@ -780,11 +780,14 @@ function GetRemainingSkills(power) {
 			power.BEM *= 1.45;
 		}
 	} // If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
+	if (power.eleType!=='none') {
+
 		power.PEM *=
 		getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Elemental Exploit' && getHZ()[lower(getWeapon().eleType)] >= 25
 		? 1.3
-			: (power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Element Exploit'&&power.eleType!=='none' && getHZ()[lower(power.eleType)] >= 25 ? 1.15 : 1);
+		: (power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Element Exploit'&&power.eleType!=='none' && getHZ()[lower(power.eleType)] >= 25 ? 1.15 : 1);
 	power.PEM *= getHZ()[lower(power.eleType)] >= 20 &&lower(power.eleType)!=='none'? info.skills.ElementalExploit[ElementalExploit.selectedIndex] : 1
+}
 		power.augPEM = $('#weaponRampage0').val() === 'Valstrax Soul' && power.eleType === 'Dragon' ? 1.2 : power.augPEM;
 		// applies Dulling Strike to Base raw depending on sharpness and if selected
 		[power.augEFR,power.augPRM] = $('#weaponRampage0').val() === 'Dulling Strike' && Sharpness.selectedIndex < 5 ? [1.02,1.2] : [power.augEFR,power.augPRM];
