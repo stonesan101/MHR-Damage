@@ -114,9 +114,18 @@ output.label {
   grid-area: 1 / 1 / 2 / 3;
 }
 
+.augDiv>output.label {
+  grid-area: 1/1/2/-1;
+  text-align: end;
+  padding-right: 5px;
+  z-index: 5;
+  background-color: rgb(0, 0, 0, 0);
+}
+
+div.augDiv,
 div.inputContainer {
-  top: 0px;
-  position: absolute;
+  top: 0;
+  position: relative;
   grid-template-columns: 1fr 1fr;
   min-height: 1.32rem;
   display: grid;
@@ -129,7 +138,7 @@ button.clicked {
   transition: transform 500ms ease;
 }
 
-button.aug,
+button.augButton,
 button.inputButton {
   top: 0px;
   pointer-events: auto;
@@ -144,7 +153,7 @@ button.inputButton {
   transition: all .2s ease-in-out;
 }
 
-button.aug:active,
+button.augButton:active,
 button.inputButton:active {
   color: rgb(252, 252, 252);
   z-index: 20;
@@ -155,7 +164,7 @@ button.inputButton:active {
   transition: .1s;
 }
 
-button.aug:hover,
+button.augButton:hover,
 button.inputButton:hover {
   color: rgb(252, 252, 252);
   z-index: 20;
@@ -180,6 +189,7 @@ button.inc {
   border-left: none;
 }
 
+
 html {
   min-width: fit-content;
   display: grid;
@@ -194,6 +204,8 @@ input#taWikiSetBuilder {
 
 div#statsTableDiv {
   grid-area: 1 / 2 / 4 / 6;
+  display: grid;
+  align-items: stretch;
 }
 
 #weaponSelect>div:nth-child(3) {
@@ -221,9 +233,7 @@ section#section1.contain {
   align-items: start;
   align-content: start;
   grid-template-columns: repeat(5, 1fr);
-  grid-area: 2 / 1 / 3 / 2;
   gap: 0.6rem;
-  grid-template-rows: 1.8rem;
 }
 
 div#BowGunId,
@@ -234,12 +244,16 @@ div.uniqueBow {
 div#weaponSelect.contain {
   grid-template-columns: 1.3fr 2fr;
   grid-area: 2 / 1 / 3 / 6;
+  display: grid;
+  align-items: baseline;
 }
 
 .contain {
   gap: 0.25rem;
   display: grid;
   box-sizing: border-box;
+  align-content: center;
+  align-items: center;
 }
 
 body {
@@ -520,14 +534,25 @@ select#dropMonster,
 tr>th {
 
   top: 0px;
+
   position: sticky;
+
   margin: 0px;
+
+  display: grid;
+
   place-content: center;
+
   justify-items: stretch;
+
   border-style: outset;
+
   background-color: rgb(18, 18, 51);
+
   border-spacing: 0px;
+
   min-height: 1.2rem;
+
   z-index: 50;
 }
 
@@ -654,6 +679,10 @@ tr:nth-child(2n+1) {
 table#statsTable {
   gap: 0px;
   border-spacing: 0px;
+  display: grid;
+  align-items: center;
+  height: 100%;
+  min-height: 100%;
 }
 
 #statsTable>tr:nth-child(n+2)>td:nth-child(1) {
@@ -715,9 +744,7 @@ div#damageTable {
 }
 
 div#statsTableDiv>table#statsTable>tbody#statsBody>tr>td:first-child {
-  border-style: outset;
   background-color: rgb(11, 11, 42);
-  height: 1.25rem;
 }
 
 output#enrageDisplay {
@@ -789,13 +816,13 @@ select,
 label,
 * {
   border-spacing: 0px;
-  /* font-family: Play, sans-serif; */
+  font-family: Play, sans-serif;
   text-align: center;
   border-color: rgb(77, 67, 69);
   color: white;
   box-sizing: border-box;
-  /* font-size: 0.8rem; */
-  font-weight: 300;
+  /* font-size: revert; */
+  font-weight: 500;
   /* width: initial; */
 }
 
@@ -851,8 +878,9 @@ div#divEnrage {
   gap: 0px;
 }
 
+div#forWeaponSelects,
 div.augToggle {
-  gap: .25rem;
+  gap: .2rem;
   display: grid;
   grid-area: 1/1/5;
 }
@@ -914,12 +942,8 @@ div#ele.contain {
 select.skill:enabled {
   text-align: center;
   justify-self: center;
-  /* margin: auto; */
-  /* display: grid; */
-  /* justify-content: center; */
-  /* justify-self: center; */
   min-width: 100%;
-  width: fit-content;
+  /* width: fit-content; */
 }
 }
 
@@ -966,11 +990,7 @@ table>tbody>tr>td {
   font-size: 0.8rem;
 }
 
-tr>th,
-table>thead>tr>th {
-  font-size: 1rem;
-  display: grid;
-}
+
 
 #enrageDisplay {
   background-color: rgba(11, 11, 42, 0.38);
@@ -1013,12 +1033,6 @@ select#ElderEssence {
 #raw>div>select:not(#derelictionMenu),
 #raw>div>label,
 #raw>div>select>option {
-  /* margin: auto; */
-  display: grid;
-  /* align-content: center; */
-  /* align-items: baseline; */
-  /* justify-items: center; */
-  /* justify-content: center; */
   font-size: .8rem;
 }
 
@@ -1223,15 +1237,6 @@ div#forButtons button {
   background: rgb(117, 21, 21);
 }
 
-select#dropDereliction {
-  pointer-events: none;
-  position: relative;
-  display: grid;
-  /* top: -118%; */
-  height: 100%;
-  grid-area: 3/1;
-}
-
 select#dropQuest {
   pointer-events: none;
   position: relative;
@@ -1250,6 +1255,10 @@ input {
 
 }
 
+.augDiv>label {
+  grid-area: 1/1/2/3;
+}
+
 
 * {
   -webkit-box-sizing: border-box;
@@ -1257,8 +1266,6 @@ input {
   box-sizing: border-box;
 }
 
-
-div.derelictionMenu,
 div.menu {
   z-index: 55;
   position: relative;
@@ -1278,11 +1285,12 @@ div>.vis:hover {
   border: none;
 }
 
+div>.augVis,
 div>.vis {
-
   display: grid;
 }
 
+div>.augInvis,
 div>.invis {
   display: none;
 }

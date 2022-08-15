@@ -783,8 +783,8 @@ function GetRemainingSkills(power) {
 		power.PEM *=
 		getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Elemental Exploit' && getHZ()[lower(getWeapon().eleType)] >= 25
 		? 1.3
-			: (power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Element Exploit' && getHZ()[lower(getWeapon().eleType)] >= 25 ? 1.15 : 1);
-	power.PEM*=getHZ()[lower(getWeapon().eleType)] >= 25 ? 1.15 : 1
+			: (power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Element Exploit' && getHZ()[lower(power.eleType)] >= 25 ? 1.15 : 1);
+	power.PEM *= getHZ()[lower(power.eleType)] >= 20 &&lower(power.eleType)!=='none'? info.skills.ElementalExploit[ElementalExploit.selectedIndex] : 1
 		power.augPEM = $('#weaponRampage0').val() === 'Valstrax Soul' && power.eleType === 'Dragon' ? 1.2 : power.augPEM;
 		// applies Dulling Strike to Base raw depending on sharpness and if selected
 		[power.augEFR,power.augPRM] = $('#weaponRampage0').val() === 'Dulling Strike' && Sharpness.selectedIndex < 5 ? [1.02,1.2] : [power.augEFR,power.augPRM];
@@ -1265,6 +1265,10 @@ $(window).on('resize',function () {
 		if (weaponType.value === 'Bow') {
 			$(BowCoating).parent().css('max-width',`${$(dropWeapon).width() - $(dropWeaponType).width()}px`);
 		}
+		if (weaponType.value === (lbg||hbg)) {
+			$(BarrelId).parent().css('max-width',`${($(dropWeapon).width() - $(dropWeaponType).width())*.95}px`);
+		}
+
 		if ($(window).width() > 850) {
 			setHeight();
 		}
@@ -1863,44 +1867,7 @@ function resetSkillDescription() {
 		lastEvent = '';
 	}
 }
-// function resetEachOption(index,thisElement) {
-	// $(thisElement).
-		// children().
-		// each((i,child) => {
-			// if (child.tagName === 'OPTGROUP') {
-				// resetEachOption(index,child);
-			// }
-			// let newText = '';
-			// if (window.event.target === BowCoating) {
-				// newText = getWeapon().coatings[index];
-			// } else {
-				// newText = `Lv-${index}`;
-			// }
-			// child.textContent = index === 0 ? '----' : newText;
-			// ++index,thisElement;
-		// });
-// }
-// function setSkillDescription(thisSkill) {
-// if (Object.values($('select.skill')).some(x => x.id === thisSkill.id)) {
-// let ugh2 = thisSkill.id;
-// setEachOption(0, thisSkill);
-// lastEvent = thisSkill;
-// }
-// }
-// function setEachOption(index,thisElement) {
-// $(info.skills[ugh2]).each(function (index) {
-// $(thisElement).
-// children().
-// each((i,child) => {
-// if (child.tagName === 'OPTGROUP') {
-// setEachOption(index,child);
-// }
-// $('select.skill').on('click',function (e) {
-// if (lastEvent === e.target) {
-// resetSkillDescription(lastEvent);
-// }
-// setSkillDescriptions(e.target)
-// });
+
 $(document).on('mousedown',function (e) {
 	if ( lastEvent !== ''&&lastEvent===e.target) {
 		return
@@ -1912,6 +1879,14 @@ $(document).on('mousedown',function (e) {
 		setSkillDescriptions(e.target);
 	}
 });
+$('select.skill').on('change',function (e) {
+
+	resetSkillDescription();
+
+	DataCompile();
+	e.target.blur()
+});
+
 function setSkillDescriptions(thisSkill) {
 	if (Object.values($('select.skill')).some(x => x.id === thisSkill.id)) {
 		let ugh2 = thisSkill.id;
@@ -1926,26 +1901,23 @@ function setSkillDescriptions(thisSkill) {
 						let inc = ugh2 === 'AmmoUp' ? ['No Change','+1 Lvl 2 & Ele Ammo','+1 Lvl 3 & Dragon Ammo'] : ['Spare Shot +5%','Spare Shot +10%','Spare Shot +20%'];
 						option = index + ': ' + inc[index - 1];
 					} else if (ugh2 == 'Marksman') {
-						let inc = ['Chance 20% Raw  + 5% EFR +1%','Chance 20% Raw+10% EFR +2%','Chance 60% Raw  + 5% EFR +3% ','Chance 40% Raw+10% EFR +4%'];
-						option = index + ': ' + inc[index - 1];
+							option = index + ': ' + ['Chance 20% Raw  + 5% EFR +1%','Chance 20% Raw+10% EFR +2%','Chance 60% Raw  + 5% EFR +3% ','Chance 40% Raw+10% EFR +4%'][index-1];
 					} else if (ugh2 === 'Bombardier') {
-						let bomb = [];
 						if (weaponType.value === cb) {
-							bomb = ['Bombardier','1: Raw +10% EFR +10%','2: Raw +15% EFR +15%','3: Raw +20% EFR +16%','4: Raw + 25% EFR +17%'];
+							option = ['Bombardier','1: Raw +10% EFR +10%','2: Raw +15% EFR +15%','3: Raw +20% EFR +16%','4: Raw + 25% EFR +17%'][index];
 						} else if (weaponType.value === gl) {
-							bomb = ['Bombardier','1: Raw + 5% EFR + 5%','2: Raw+10% EFR+10%','3: Raw+15% EFR+11%','4: Raw+20% EFR+12%'];
+							option = ['Bombardier','1: Raw + 5% EFR + 5%','2: Raw+10% EFR+10%','3: Raw+15% EFR+11%','4: Raw+20% EFR+12%'][index];
 						} else if (weaponType.value === lbg) {
-							bomb = ['Bombardier','1: Raw +10% EFR +10%','2: Raw +10% EFR +10%','3: Raw +20% EFR +16%','4: Raw +25% EFR +17%'];
+							option = ['Bombardier','1: Raw +10% EFR +10%','2: Raw +10% EFR +10%','3: Raw +20% EFR +16%','4: Raw +25% EFR +17%'][index];
 						} else if (weaponType.value === hbg) {
-							bomb = ['Bombardier','1: Raw + 10% EFR + 10%','2: Sticky+10% Wyvern+15%','3: Raw + 20% EFR + 16%','4: Raw + 25% EFR + 17%'];
+							option = ['Bombardier','1: Raw + 10% EFR + 10%','2: Sticky+10% Wyvern+15%','3: Raw + 20% EFR + 16%','4: Raw + 25% EFR + 17%'][index];
 						}
-						option = bomb[index];
 					} else if (ugh2 == 'BarrelId') {
-// 							let barrel = weaponType.value===hbg ? [`Barrels`,`Power: Raw + 12.5%`,`Shield: Guard Up`]:[`Barrels`,`Long: Raw + 5%`,`Silencer:
-// Recoil Down +1`,`Elemental: Reload-2 Ele+10%`];
-						let barrel = ['Barrels',`Long: Raw + 5%`,`Power: Raw + 12.5%`,`Silencer: Recoil Down +1`,`Shield: Guard Up`];
-						option = barrel[index];
-						lastEvent = thisSkill;
+						option = ['Barrels',`Long: Raw + 5%`,`Power: Raw + 12.5%`,`Silencer: Recoil Down +1`,`Shield: Guard Up`][index]
+
+					} else if (ugh2 == 'ElementalExploit') {
+							option = index + ': ' + ["----",'Ele + 10%','Ele + 12.5%','Ele + 15%'][index]
+
 					} else {
 						let raw = '';
 						if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
@@ -2081,11 +2053,3 @@ function formatNumbers(numbers) {
 	return +numbers;
 
 }
-
-$('select.skill').on('change',function (e) {
-
-	resetSkillDescription();
-
-		DataCompile();
-});
-

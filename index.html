@@ -27,57 +27,83 @@
     <h1 class='title'>Monster Hunter Rise Damage Calculator</h1>
     <section id='section1' class='contain'>
       <h1>Weapon Selection</h1>
-      <div style='grid-area:1/1/1/-1; height: 100%; display:grid; justify-content:end; align-content:center; align-items:center'>
-        <button id='Qurious' type='button' aria-pressed='false' class='toggle gray skillButton'>Qurious</button>
+      <div style='grid-area:1/1/1/-1; height: 100%; display:grid; justify-content:start; align-content:center; align-items:center'>
+        <button id='Qurious' type='button' aria-pressed='false' onclick="$('.augToggle').toggleClass('augVis augInvis')" class='toggle gray skillButton'>Qurious
+          Augments</button>
       </div>
       <div class='contain' id='weaponSelect'>
-        <div class='augToggle'>
-          <div style='display:content'>
-            <div><label for='dropWeaponType'>Weapon Type</label><select aria-autocomplete='both' class='skillinput hitsOfSharp' Data-myAttribute='weaponType'
-                      contenteditable='true' id='dropWeaponType' name='weaponTypeSelection'
-                      onchange='WeaponSelect(); RampageSelect(); classChange(true); MonChart(),partSelector(); DataCompile(); ComboReset(true)'>
+        <div id='forWeaponSelects'>
+          <div class='augToggle augVis'>
+            <div>
+              <div><label for='dropWeaponType'>Weapon Type</label><select class='skillinput hitsOfSharp' id='dropWeaponType' name='weaponTypeSelection'
+                        onchange='WeaponSelect(); RampageSelect(); classChange(true); MonChart(),partSelector(); DataCompile(); ComboReset(true)'>
+                </select></div>
+              <div class='uniqueBow' display='border:none'><label class='Bow BowId classSpecific skill' for='BowCoationg'>Bow Coatings</label><select
+                        id='BowCoating' class='Bow classSpecific skill' onchange='DataCompile()' name='Bow Coatings'>
+                  <option value='{"BRM": 1,"BR": 0,"PRM": 1,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>---</option>
+                  <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM":1,"aff":0}'>Close</option>
+                  <option value='{"BRM": 1,"BR": 0,"PRM": 1.35,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Power</option>
+                  <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 0,"aff":0}'>Status</option>
+                </select></div>
+              <div id='BowGunId'> <label for='BarrelId'>Gunner Barrel</label><select class='LightBowGun HeavyBowGun classSpecific skill' id='BarrelId'
+                        name='BarrelSelection' onchange='DataCompile()'>
+                  <option value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>---</option>
+                  <option value='{"Element":1,"Power":1.05,"Silencer":0,"reload":0}'>Long</option>
+                  <option value='{"Element":1,"Power":1.125,"Silencer":0,"reload":0}'>Power</option>
+                  <option value='{"Element":1,"Power":1,"Silencer":1,"reload":0}'>Silencer</option>
+                  <option value='{"Element":1.1,"Power":1,"Silencer":0,"reload":-2}'>Elemental</option>
+                </select></div>
+            </div>
+            <div><label for='dropWeapon'>Weapon</label><select id='dropWeapon' class='skillinput hitsOfSharp' name='weaponSelection' Data-myAttribute='weapon'
+                      onchange='RampageSelect(), DataCompile()'>
+                <option value='Kamura Cleaver I'>Kamura Cleaver I</option>
               </select></div>
-            <div class='uniqueBow' display='border:none'><label class='Bow BowId classSpecific skill' for='BowCoationg'>Bow Coatings</label><select
-                      id='BowCoating' class='Bow classSpecific skill' onchange='DataCompile()' name='Bow Coatings'>
-                <option value='{"BRM": 1,"BR": 0,"PRM": 1,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>---</option>
-                <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM":1,"aff":0}'>Close</option>
-                <option value='{"BRM": 1,"BR": 0,"PRM": 1.35,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Power</option>
-                <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 0,"aff":0}'>Status</option>
-              </select></div>
-            <div id='BowGunId'> <label for='BarrelId'>Gunner Barrel</label><select class='LightBowGun HeavyBowGun classSpecific skill' id='BarrelId'
-                      name='BarrelSelection' onchange='DataCompile()'>
-                <option value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>---</option>
-                <option value='{"Element":1,"Power":1.05,"Silencer":0,"reload":0}'>Long</option>
-                <option value='{"Element":1,"Power":1.125,"Silencer":0,"reload":0}'>Power</option>
-                <option value='{"Element":1,"Power":1,"Silencer":1,"reload":0}'>Silencer</option>
-                <option value='{"Element":1.1,"Power":1,"Silencer":0,"reload":-2}'>Elemental</option>
-              </select></div>
-          </div>
-          <div><label for='dropWeapon'>Weapon</label><select id='dropWeapon' class='skillinput hitsOfSharp' name='weaponSelection' Data-myAttribute='weapon'
-                    onchange='RampageSelect(), DataCompile()'>
-              <option value='Kamura Cleaver I'>Kamura Cleaver I</option>
-            </select></div>
-          <div>
-            <label for='weaponRampage0' name='weaponRampage'>Rampage Skill</label>
-            <div id='weaponRampage' style='border-style:none; margin:0'>
-              <select class='skillhitsOfSharp' id='weaponRampage0' name='weaponRampage0'></select>
-              <select style='display:none' id='weaponRampage1' name='weaponRampage1'></select>
-              <select style='display:none' id='weaponRampage2' onchange='DataCompile()' name='weaponRampage2'></select>
-              <select style='display:none' id='weaponRampage3' onchange='DataCompile()' name='weaponRampage3'></select>
-              <select style='display:none' id='weaponRampage4' onchange='DataCompile()' name='weaponRampage4'></select>
-              <select style='display:none' id='weaponRampage5' onchange='DataCompile()' name='weaponRampage5'></select>
+            <div>
+              <label for='weaponRampage0' name='weaponRampage'>Rampage Skill</label>
+              <div id='weaponRampage' style='border-style:none; margin:0'>
+                <select class='skillhitsOfSharp' id='weaponRampage0' name='weaponRampage0'></select>
+                <select style='display:none' id='weaponRampage1' name='weaponRampage1'></select>
+                <select style='display:none' id='weaponRampage2' onchange='DataCompile()' name='weaponRampage2'></select>
+                <select style='display:none' id='weaponRampage3' onchange='DataCompile()' name='weaponRampage3'></select>
+                <select style='display:none' id='weaponRampage4' onchange='DataCompile()' name='weaponRampage4'></select>
+                <select style='display:none' id='weaponRampage5' onchange='DataCompile()' name='weaponRampage5'></select>
+              </div>
+            </div>
+            </divstyle>
+            <div style='display:none'><label for='Sharpness'>Sharpness<label><select name='Sharpness' id='Sharpness'>
+                    <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
+                    <option value='{"BRM":1,"BR":0,"PRM":0.5,"BEM":1,"BE":0,"PEM":0.25,"aff":0}'>red</option>
+                    <option value='{"BRM":1,"BR":0,"PRM":0.75,"BEM":1,"BE":0,"PEM":0.5,"aff":0}'>Orange</option>
+                    <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":0.75,"aff":0}'>Yellow</option>
+                    <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Green</option>
+                    <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1.0625,"aff":0}'>Blue</option>
+                    <option value='{"BRM":1,"BR":0,"PRM":1.32,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>White</option>
+                    <option value='{"BRM":1,"BR":0,"PRM":1.39,"BEM":1,"BE":0,"PEM":1.25,"aff":0}'>Purple</option>
+                  </select>
             </div>
           </div>
-          <div style='display:none'><label for='Sharpness'>Sharpness<label><select name='Sharpness' id='Sharpness'>
-                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---</option>
-                  <option value='{"BRM":1,"BR":0,"PRM":0.5,"BEM":1,"BE":0,"PEM":0.25,"aff":0}'>red</option>
-                  <option value='{"BRM":1,"BR":0,"PRM":0.75,"BEM":1,"BE":0,"PEM":0.5,"aff":0}'>Orange</option>
-                  <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":0.75,"aff":0}'>Yellow</option>
-                  <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Green</option>
-                  <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1.0625,"aff":0}'>Blue</option>
-                  <option value='{"BRM":1,"BR":0,"PRM":1.32,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>White</option>
-                  <option value='{"BRM":1,"BR":0,"PRM":1.39,"BEM":1,"BE":0,"PEM":1.25,"aff":0}'>Purple</option>
-                </select>
+          <div class='augToggle augInvis'>
+            <output class='augDiv'>5</output>
+            <div class="augDiv"><button type="button" aria-pressed="false" class="attackAug augButton dec">⇩</button>
+              <button type="button" aria-pressed="false" class="attackAug augButton inc">⇧</button>
+              <label for="attackAug">Attack Slot Boost</label><output class="attackAug label">0</output>
+            </div>
+            <div class="augDiv"><button type="button" aria-pressed="false" class="elementalAug augButton dec">⇩</button>
+              <button type="button" aria-pressed="false" class="elementalAug augButton inc">⇧</button>
+              <label for="elementalAug">Elemental Slot Boost</label><output class="elementalAug label">0</output>
+            </div>
+            <div class="augDiv"><button type="button" aria-pressed="false" class="affinityAug augButton dec">⇩</button>
+              <button type="button" aria-pressed="false" class="affinityAug augButton inc">⇧</button>
+              <label for="affinityAug">Affinity Slot Boost</label><output class="affinityAug label">0</output>
+            </div>
+            <div class="augDiv"><button type="button" aria-pressed="false" class="sharpnessAug augButton dec">⇩</button>
+              <button type="button" aria-pressed="false" class="sharpnessAug augButton inc">⇧</button>
+              <label for="sharpnessAug">Sharpness Slot Boost</label><output class="sharpnessAug label">0</output>
+            </div>
+          </div>
+          <div class="augDiv"><button type="button" aria-pressed="false" id="rampageAug" class="rampageAug augButton dec">⇩</button>
+            <button type="button" aria-pressed="false" class="rampageAug augButton inc">⇧</button>
+            <label for="rampageAug">Rampage Slot Boost</label><output class="rampageAug label">0</output>
           </div>
         </div>
         <div id='statsTableDiv'>
@@ -453,7 +479,7 @@
               <option value=15></option>
               <option value=10></option>
             </select></div>
-          <div><label for='ElementExploit'>Elemental Exploit</label><select id='ElementExploit' name='Element Exploit'>
+          <div><label for='ElementalExploit'>Elemental Exploit</label><select id='ElementalExploit' name='Elemental Exploit' class='skill'>
               <option value=0>----</option>
               <option value=10></option>
               <option value=12.5></option>
@@ -650,8 +676,6 @@
         <button type='button' aria-pressed='false' class='blue' id='resetSkills' onclick='ResetSkills(); DataCompile()'> Reset Skills </button>
         <button type='button' aria-pressed='false' class='blue' id='Save State' onclick='saveState()'> Save Selections </button>
         <button type='button' aria-pressed='false' class='blue classSpecific melee Bow' id='resetCombo' onclick='ComboReset()'> Reset Combo </button>
-        <button type='button' aria-pressed='false' class='gray toggle classSpecific LightBowGun skillButton' id='CriticalFirePower' onclick='DataCompile()'>
-          CriticalFirePower </button>
         <button type='button' aria-pressed='false' class='gray toggle classSpecific Bow skillButton'
                 value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}' id='HerculesDraw' onclick='DataCompile()'> Hercules Draw </button>
         <button type='button' aria-pressed='false' class='gray toggle classSpecific Bow skillButton'
@@ -659,6 +683,8 @@
         <button type='button' aria-pressed='false' class='gray toggle classSpecific melee Bow' id='filterCombo'> Combo Attack Filter</button>
         <button type='button' aria-pressed='false' class='blue classSpecific LightBowGun HeavyBowGun' id='ammoChange' onclick='ToggleAmmoTables()'> Change Ammo
           Table </button>
+        <button type='button' aria-pressed='false' class='gray toggle classSpecific LightBowGun skillButton' id='CriticalFirePower' onclick='DataCompile()'>
+          CriticalFirePower </button>
       </div>
       <div id='forButtonSelect'>
         <div><label class='classSpecific LightBowGun HeavyBowGun' for='pierceAdjust'>Pierce Dmg Adjust</label><select id='pierceAdjust' name='pierceAdjust'
