@@ -1820,8 +1820,7 @@ function loadState(ugh,e) {
 	ugh2[70].selectedIndex = ugh[0][70];
 	QuestSelect();
 	PartSelect();
-	HealthSelect();
-	scrollChange();
+	HealthSelect();;
 	$('select').each(function (index) {
 		if (index !== (0 || 3 || 70)) {
 			this.selectedIndex = ugh[0][index];

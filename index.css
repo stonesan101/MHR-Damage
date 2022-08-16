@@ -260,7 +260,7 @@ body {
   display: grid;
   color: white;
 
-  background-image: url("Untitled.webp");
+  /* background-image: url("Untitled.webp"); */
   background-size: cover;
   min-height: 100vh;
   /* min-width: fit-content; */
