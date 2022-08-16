@@ -1288,6 +1288,7 @@ div>.vis:hover {
 div>.augVis,
 div>.vis {
   display: grid;
+  gap: .2rem;
 }
 
 div>.augInvis,

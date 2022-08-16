@@ -33,11 +33,9 @@
    "baseRaw": 150,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     10,
-     15
-    ]
+    1,
+    10,
+    15
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -52,12 +50,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -65,11 +61,9 @@
    "baseRaw": 190,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     10,
-     15
-    ]
+    1,
+    10,
+    15
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -84,12 +78,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -97,11 +89,9 @@
    "baseRaw": 210,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     10,
-     15
-    ]
+    1,
+    10,
+    15
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -116,12 +106,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -129,11 +117,9 @@
    "baseRaw": 230,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     10,
-     15
-    ]
+    1,
+    10,
+    15
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -148,12 +134,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -161,11 +145,9 @@
    "baseRaw": 50,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     11,
-     15
-    ]
+    1,
+    11,
+    15
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -180,12 +162,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -193,11 +173,9 @@
    "baseRaw": 60,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     11,
-     15
-    ]
+    1,
+    11,
+    15
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -212,12 +190,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -225,11 +201,9 @@
    "baseRaw": 90,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     11,
-     16
-    ]
+    1,
+    11,
+    16
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -244,12 +218,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -257,11 +229,9 @@
    "baseRaw": 140,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     11,
-     16
-    ]
+    2,
+    11,
+    16
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -276,12 +246,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -289,11 +257,9 @@
    "baseRaw": 150,
    "aff": 0,
    "rampage": [
-    [
-     12,
-     16,
-     241
-    ]
+    12,
+    16,
+    241
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -308,12 +274,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -321,11 +285,9 @@
    "baseRaw": 190,
    "aff": 0,
    "rampage": [
-    [
-     13,
-     16,
-     241
-    ]
+    13,
+    16,
+    241
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -340,12 +302,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -353,11 +313,9 @@
    "baseRaw": 250,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -372,12 +330,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -385,11 +341,9 @@
    "baseRaw": 290,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -404,12 +358,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -445,11 +397,9 @@
    "baseRaw": 320,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Dragon",
@@ -464,12 +414,10 @@
     "purple": 20
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -477,11 +425,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Dragon",
@@ -496,12 +442,10 @@
     "purple": 40
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -509,11 +453,9 @@
    "baseRaw": 170,
    "aff": -15,
    "rampage": [
-    [
-     10,
-     30,
-     232
-    ]
+    10,
+    30,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -528,12 +470,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -541,11 +481,9 @@
    "baseRaw": 200,
    "aff": -15,
    "rampage": [
-    [
-     10,
-     31,
-     232
-    ]
+    10,
+    31,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -560,12 +498,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -573,11 +509,9 @@
    "baseRaw": 230,
    "aff": -15,
    "rampage": [
-    [
-     10,
-     32,
-     232
-    ]
+    10,
+    32,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -592,12 +526,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -605,11 +537,9 @@
    "baseRaw": 310,
    "aff": -15,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Ice",
@@ -624,12 +554,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -637,11 +565,9 @@
    "baseRaw": 320,
    "aff": -15,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Ice",
@@ -656,12 +582,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -669,11 +593,9 @@
    "baseRaw": 350,
    "aff": -15,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Ice",
@@ -688,12 +610,10 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -701,11 +621,9 @@
    "baseRaw": 110,
    "aff": 10,
    "rampage": [
-    [
-     2,
-     10,
-     22
-    ]
+    2,
+    10,
+    22
    ],
    "rampageSlots": 0,
    "eleType": "Water",
@@ -720,12 +638,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -733,11 +649,9 @@
    "baseRaw": 160,
    "aff": 10,
    "rampage": [
-    [
-     2,
-     11,
-     23
-    ]
+    2,
+    11,
+    23
    ],
    "rampageSlots": 0,
    "eleType": "Water",
@@ -752,12 +666,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -765,11 +677,9 @@
    "baseRaw": 190,
    "aff": 15,
    "rampage": [
-    [
-     3,
-     11,
-     23
-    ]
+    3,
+    11,
+    23
    ],
    "rampageSlots": 0,
    "eleType": "Water",
@@ -784,12 +694,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -797,11 +705,9 @@
    "baseRaw": 300,
    "aff": 15,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Water",
@@ -816,12 +722,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -829,11 +733,9 @@
    "baseRaw": 310,
    "aff": 15,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Water",
@@ -848,12 +750,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -861,11 +761,9 @@
    "baseRaw": 320,
    "aff": 15,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Water",
@@ -880,12 +778,10 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -893,11 +789,9 @@
    "baseRaw": 120,
    "aff": 0,
    "rampage": [
-    [
-     16,
-     231,
-     235
-    ]
+    16,
+    231,
+    235
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -912,12 +806,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -925,11 +817,9 @@
    "baseRaw": 150,
    "aff": 0,
    "rampage": [
-    [
-     16,
-     231,
-     235
-    ]
+    16,
+    231,
+    235
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -944,12 +834,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -957,11 +845,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     17,
-     231,
-     235
-    ]
+    17,
+    231,
+    235
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -976,12 +862,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -989,11 +873,9 @@
    "baseRaw": 120,
    "aff": -20,
    "rampage": [
-    [
-     10,
-     15,
-     232
-    ]
+    10,
+    15,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -1008,12 +890,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1021,11 +901,9 @@
    "baseRaw": 130,
    "aff": -20,
    "rampage": [
-    [
-     10,
-     16,
-     232
-    ]
+    10,
+    16,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -1040,12 +918,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -1053,11 +929,9 @@
    "baseRaw": 200,
    "aff": -20,
    "rampage": [
-    [
-     11,
-     16,
-     232
-    ]
+    11,
+    16,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -1072,12 +946,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -1085,11 +957,9 @@
    "baseRaw": 260,
    "aff": -20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -1104,12 +974,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1117,11 +985,9 @@
    "baseRaw": 270,
    "aff": -20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -1136,12 +1002,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1149,11 +1013,9 @@
    "baseRaw": 360,
    "aff": -20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -1168,12 +1030,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     10,
-     40,
-     0,
-     0
-    ]
+    10,
+    40,
+    0,
+    0
    ]
   },
   {
@@ -1181,11 +1041,9 @@
    "baseRaw": 150,
    "aff": -20,
    "rampage": [
-    [
-     2,
-     10,
-     232
-    ]
+    2,
+    10,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -1200,12 +1058,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1213,11 +1069,9 @@
    "baseRaw": 200,
    "aff": -20,
    "rampage": [
-    [
-     2,
-     11,
-     232
-    ]
+    2,
+    11,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -1232,12 +1086,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -1245,11 +1097,9 @@
    "baseRaw": 210,
    "aff": -15,
    "rampage": [
-    [
-     3,
-     11,
-     232
-    ]
+    3,
+    11,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -1264,12 +1114,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1277,11 +1125,9 @@
    "baseRaw": 330,
    "aff": -15,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -1296,12 +1142,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1309,11 +1153,9 @@
    "baseRaw": 340,
    "aff": -15,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -1328,12 +1170,10 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     0,
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1341,11 +1181,9 @@
    "baseRaw": 350,
    "aff": -15,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -1360,12 +1198,10 @@
     "purple": 20
    },
    "handicraft": [
-    [
-     0,
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1373,11 +1209,9 @@
    "baseRaw": 90,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     26,
-     246
-    ]
+    2,
+    26,
+    246
    ],
    "rampageSlots": 0,
    "eleType": "Thunder",
@@ -1392,12 +1226,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1405,11 +1237,9 @@
    "baseRaw": 110,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     26,
-     246
-    ]
+    3,
+    26,
+    246
    ],
    "rampageSlots": 0,
    "eleType": "Thunder",
@@ -1424,12 +1254,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1437,11 +1265,9 @@
    "baseRaw": 140,
    "aff": 0,
    "rampage": [
-    [
-     4,
-     27,
-     246
-    ]
+    4,
+    27,
+    246
    ],
    "rampageSlots": 0,
    "eleType": "Thunder",
@@ -1456,12 +1282,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -1469,11 +1293,9 @@
    "baseRaw": 260,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Thunder",
@@ -1488,12 +1310,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     10,
-     40,
-     0,
-     0
-    ]
+    10,
+    40,
+    0,
+    0
    ]
   },
   {
@@ -1501,11 +1321,9 @@
    "baseRaw": 290,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Thunder",
@@ -1520,12 +1338,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1533,11 +1349,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Thunder",
@@ -1552,12 +1366,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -1565,11 +1377,9 @@
    "baseRaw": 60,
    "aff": 10,
    "rampage": [
-    [
-     10,
-     243,
-     255
-    ]
+    10,
+    243,
+    255
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -1584,12 +1394,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -1597,11 +1405,9 @@
    "baseRaw": 80,
    "aff": 12,
    "rampage": [
-    [
-     11,
-     243,
-     255
-    ]
+    11,
+    243,
+    255
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -1616,12 +1422,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1629,11 +1433,9 @@
    "baseRaw": 150,
    "aff": 15,
    "rampage": [
-    [
-     12,
-     243,
-     255
-    ]
+    12,
+    243,
+    255
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -1648,12 +1450,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1661,11 +1461,9 @@
    "baseRaw": 240,
    "aff": 15,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "None",
@@ -1680,12 +1478,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -1693,11 +1489,9 @@
    "baseRaw": 320,
    "aff": 20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "None",
@@ -1712,12 +1506,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -1725,11 +1517,9 @@
    "baseRaw": 90,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     38,
-     231
-    ]
+    2,
+    38,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -1744,12 +1534,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1757,11 +1545,9 @@
    "baseRaw": 100,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     38,
-     231
-    ]
+    3,
+    38,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -1776,12 +1562,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1789,11 +1573,9 @@
    "baseRaw": 160,
    "aff": 0,
    "rampage": [
-    [
-     4,
-     38,
-     231
-    ]
+    4,
+    38,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -1808,12 +1590,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -1821,11 +1601,9 @@
    "baseRaw": 310,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Poison",
@@ -1840,12 +1618,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -1853,11 +1629,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Poison",
@@ -1872,12 +1646,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     10,
-     40,
-     0,
-     0
-    ]
+    10,
+    40,
+    0,
+    0
    ]
   },
   {
@@ -1885,11 +1657,9 @@
    "baseRaw": 110,
    "aff": 30,
    "rampage": [
-    [
-     2,
-     10,
-     241
-    ]
+    2,
+    10,
+    241
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -1904,12 +1674,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -1917,11 +1685,9 @@
    "baseRaw": 160,
    "aff": 30,
    "rampage": [
-    [
-     3,
-     10,
-     241
-    ]
+    3,
+    10,
+    241
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -1936,12 +1702,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -1949,11 +1713,9 @@
    "baseRaw": 180,
    "aff": 35,
    "rampage": [
-    [
-     3,
-     11,
-     241
-    ]
+    3,
+    11,
+    241
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -1968,12 +1730,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -1981,11 +1741,9 @@
    "baseRaw": 250,
    "aff": 35,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "None",
@@ -2000,12 +1758,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2013,11 +1769,9 @@
    "baseRaw": 280,
    "aff": 35,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "None",
@@ -2032,12 +1786,10 @@
     "purple": 20
    },
    "handicraft": [
-    [
-     0,
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2045,11 +1797,9 @@
    "baseRaw": 300,
    "aff": 35,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "None",
@@ -2064,12 +1814,38 @@
     "purple": 30
    },
    "handicraft": [
-    [
-     0,
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "weapon": "Merak's Asterism",
+   "baseRaw": 340,
+   "aff": 0,
+   "rampage": [
+    0,
+    0,
+    0
+   ],
+   "rampageSlots": 1,
+   "eleType": "Poison",
+   "baseEle": 20,
+   "sharpness": {
+    "red": 50,
+    "orange": 90,
+    "yellow": 60,
+    "green": 60,
+    "blue": 60,
+    "white": 20,
+    "purple": 10
+   },
+   "handicraft": [
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2077,11 +1853,9 @@
    "baseRaw": 90,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     44,
-     231
-    ]
+    1,
+    44,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Sleep",
@@ -2096,12 +1870,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2109,11 +1881,9 @@
    "baseRaw": 120,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     44,
-     231
-    ]
+    2,
+    44,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Sleep",
@@ -2128,12 +1898,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2141,11 +1909,9 @@
    "baseRaw": 160,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     44,
-     231
-    ]
+    3,
+    44,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Sleep",
@@ -2160,12 +1926,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -2173,11 +1937,9 @@
    "baseRaw": 260,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Sleep",
@@ -2192,12 +1954,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -2205,11 +1965,9 @@
    "baseRaw": 290,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Sleep",
@@ -2224,12 +1982,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -2237,11 +1993,9 @@
    "baseRaw": 320,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Sleep",
@@ -2256,12 +2010,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -2269,11 +2021,9 @@
    "baseRaw": 280,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Ice",
@@ -2288,12 +2038,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -2301,11 +2049,9 @@
    "baseRaw": 310,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Ice",
@@ -2320,12 +2066,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -2333,11 +2077,9 @@
    "baseRaw": 320,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Ice",
@@ -2352,12 +2094,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -2365,11 +2105,9 @@
    "baseRaw": 80,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     10,
-     16
-    ]
+    1,
+    10,
+    16
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -2384,12 +2122,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2397,11 +2133,9 @@
    "baseRaw": 100,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     10,
-     16
-    ]
+    1,
+    10,
+    16
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -2416,12 +2150,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2429,11 +2161,9 @@
    "baseRaw": 110,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     10,
-     16
-    ]
+    2,
+    10,
+    16
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -2448,12 +2178,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2461,11 +2189,9 @@
    "baseRaw": 140,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     16,
-     234
-    ]
+    2,
+    16,
+    234
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -2480,12 +2206,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2493,11 +2217,9 @@
    "baseRaw": 160,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     38,
-     234
-    ]
+    2,
+    38,
+    234
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -2512,12 +2234,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -2525,11 +2245,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     38,
-     234
-    ]
+    3,
+    38,
+    234
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -2544,12 +2262,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -2557,11 +2273,9 @@
    "baseRaw": 240,
    "aff": 10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Poison",
@@ -2576,12 +2290,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -2589,11 +2301,9 @@
    "baseRaw": 280,
    "aff": 10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Poison",
@@ -2608,12 +2318,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -2621,11 +2329,9 @@
    "baseRaw": 340,
    "aff": 10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Poison",
@@ -2640,12 +2346,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2653,11 +2357,9 @@
    "baseRaw": 300,
    "aff": 20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Thunder",
@@ -2672,12 +2374,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2685,11 +2385,9 @@
    "baseRaw": 310,
    "aff": 20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Thunder",
@@ -2704,12 +2402,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -2717,11 +2413,9 @@
    "baseRaw": 320,
    "aff": 20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Thunder",
@@ -2736,12 +2430,10 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2749,11 +2441,9 @@
    "baseRaw": 100,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     16,
-     235
-    ]
+    3,
+    16,
+    235
    ],
    "rampageSlots": 0,
    "eleType": "Fire",
@@ -2768,12 +2458,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2781,11 +2469,9 @@
    "baseRaw": 130,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     16,
-     235
-    ]
+    3,
+    16,
+    235
    ],
    "rampageSlots": 0,
    "eleType": "Fire",
@@ -2800,12 +2486,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2813,11 +2497,9 @@
    "baseRaw": 160,
    "aff": 0,
    "rampage": [
-    [
-     4,
-     16,
-     236
-    ]
+    4,
+    16,
+    236
    ],
    "rampageSlots": 0,
    "eleType": "Fire",
@@ -2832,12 +2514,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2845,11 +2525,9 @@
    "baseRaw": 260,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Fire",
@@ -2864,12 +2542,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -2877,11 +2553,9 @@
    "baseRaw": 300,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Fire",
@@ -2896,12 +2570,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2909,11 +2581,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Fire",
@@ -2928,12 +2598,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -2941,11 +2609,9 @@
    "baseRaw": 100,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     15,
-     38
-    ]
+    2,
+    15,
+    38
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -2960,12 +2626,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -2973,11 +2637,9 @@
    "baseRaw": 130,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     15,
-     38
-    ]
+    3,
+    15,
+    38
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -2992,12 +2654,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3005,11 +2665,9 @@
    "baseRaw": 170,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     15,
-     39
-    ]
+    3,
+    15,
+    39
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -3024,12 +2682,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3037,11 +2693,9 @@
    "baseRaw": 250,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Poison",
@@ -3056,12 +2710,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3069,11 +2721,9 @@
    "baseRaw": 280,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Poison",
@@ -3088,12 +2738,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3101,11 +2749,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Poison",
@@ -3120,12 +2766,10 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3133,11 +2777,9 @@
    "baseRaw": 100,
    "aff": 30,
    "rampage": [
-    [
-     2,
-     11,
-     247
-    ]
+    2,
+    11,
+    247
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -3152,12 +2794,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -3165,11 +2805,9 @@
    "baseRaw": 120,
    "aff": 30,
    "rampage": [
-    [
-     3,
-     11,
-     247
-    ]
+    3,
+    11,
+    247
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -3184,12 +2822,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3197,11 +2833,9 @@
    "baseRaw": 160,
    "aff": 35,
    "rampage": [
-    [
-     4,
-     11,
-     247
-    ]
+    4,
+    11,
+    247
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -3216,12 +2850,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -3229,11 +2861,9 @@
    "baseRaw": 270,
    "aff": 35,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Ice",
@@ -3248,12 +2878,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -3261,11 +2889,9 @@
    "baseRaw": 290,
    "aff": 35,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Ice",
@@ -3280,12 +2906,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3293,11 +2917,9 @@
    "baseRaw": 310,
    "aff": 35,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Ice",
@@ -3312,12 +2934,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -3325,11 +2945,9 @@
    "baseRaw": 300,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Ice",
@@ -3344,12 +2962,10 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3357,11 +2973,9 @@
    "baseRaw": 310,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Ice",
@@ -3376,12 +2990,10 @@
     "purple": 20
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3389,11 +3001,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Ice",
@@ -3408,12 +3018,10 @@
     "purple": 40
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3421,11 +3029,9 @@
    "baseRaw": 100,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     18,
-     244
-    ]
+    1,
+    18,
+    244
    ],
    "rampageSlots": 0,
    "eleType": "Fire",
@@ -3440,12 +3046,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3453,11 +3057,9 @@
    "baseRaw": 130,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     18,
-     244
-    ]
+    2,
+    18,
+    244
    ],
    "rampageSlots": 0,
    "eleType": "Fire",
@@ -3472,12 +3074,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3485,11 +3085,9 @@
    "baseRaw": 160,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     19,
-     244
-    ]
+    2,
+    19,
+    244
    ],
    "rampageSlots": 0,
    "eleType": "Fire",
@@ -3504,12 +3102,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -3517,11 +3113,9 @@
    "baseRaw": 250,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Fire",
@@ -3536,12 +3130,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -3549,11 +3141,9 @@
    "baseRaw": 270,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Fire",
@@ -3568,12 +3158,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -3581,11 +3169,9 @@
    "baseRaw": 340,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Fire",
@@ -3600,12 +3186,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -3613,11 +3197,9 @@
    "baseRaw": 110,
    "aff": 0,
    "rampage": [
-    [
-     15,
-     22,
-     231
-    ]
+    15,
+    22,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Water",
@@ -3632,12 +3214,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3645,11 +3225,9 @@
    "baseRaw": 130,
    "aff": 0,
    "rampage": [
-    [
-     15,
-     23,
-     231
-    ]
+    15,
+    23,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Water",
@@ -3664,12 +3242,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3677,11 +3253,9 @@
    "baseRaw": 160,
    "aff": 0,
    "rampage": [
-    [
-     15,
-     24,
-     231
-    ]
+    15,
+    24,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Water",
@@ -3696,12 +3270,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -3709,11 +3281,9 @@
    "baseRaw": 250,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Water",
@@ -3728,12 +3298,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -3741,11 +3309,9 @@
    "baseRaw": 270,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Water",
@@ -3760,12 +3326,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -3773,11 +3337,9 @@
    "baseRaw": 340,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Water",
@@ -3792,12 +3354,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -3805,11 +3365,9 @@
    "baseRaw": 90,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     10,
-     15
-    ]
+    2,
+    10,
+    15
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -3824,12 +3382,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3837,11 +3393,9 @@
    "baseRaw": 110,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     10,
-     15
-    ]
+    2,
+    10,
+    15
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -3856,12 +3410,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3869,11 +3421,9 @@
    "baseRaw": 120,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     11,
-     15
-    ]
+    2,
+    11,
+    15
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -3888,12 +3438,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3901,11 +3449,9 @@
    "baseRaw": 130,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     11,
-     231
-    ]
+    2,
+    11,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -3920,12 +3466,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -3933,11 +3477,9 @@
    "baseRaw": 150,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     34,
-     231
-    ]
+    3,
+    34,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Dragon",
@@ -3952,12 +3494,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -3965,11 +3505,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     4,
-     34,
-     231
-    ]
+    4,
+    34,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Dragon",
@@ -3984,12 +3522,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -3997,11 +3533,9 @@
    "baseRaw": 240,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Dragon",
@@ -4016,12 +3550,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -4029,11 +3561,9 @@
    "baseRaw": 290,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Dragon",
@@ -4048,12 +3578,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -4061,11 +3589,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Dragon",
@@ -4080,12 +3606,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -4093,11 +3617,9 @@
    "baseRaw": 250,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Water",
@@ -4112,12 +3634,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -4125,11 +3645,9 @@
    "baseRaw": 300,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Water",
@@ -4144,12 +3662,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     10,
-     40,
-     0,
-     0
-    ]
+    10,
+    40,
+    0,
+    0
    ]
   },
   {
@@ -4157,11 +3673,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Water",
@@ -4176,12 +3690,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -4189,11 +3701,9 @@
    "baseRaw": 290,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Water",
@@ -4208,12 +3718,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -4221,11 +3729,9 @@
    "baseRaw": 310,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Water",
@@ -4240,12 +3746,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -4253,11 +3757,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Water",
@@ -4272,12 +3774,10 @@
     "purple": 30
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -4285,11 +3785,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     11,
-     16,
-     234
-    ]
+    11,
+    16,
+    234
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -4304,12 +3802,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -4317,11 +3813,9 @@
    "baseRaw": 200,
    "aff": 0,
    "rampage": [
-    [
-     12,
-     16,
-     234
-    ]
+    12,
+    16,
+    234
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -4336,12 +3830,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -4349,11 +3841,9 @@
    "baseRaw": 280,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -4368,12 +3858,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -4381,11 +3869,9 @@
    "baseRaw": 320,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -4400,12 +3886,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -4413,11 +3897,9 @@
    "baseRaw": 350,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -4432,12 +3914,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -4445,11 +3925,9 @@
    "baseRaw": 310,
    "aff": 10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -4464,12 +3942,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -4477,11 +3953,9 @@
    "baseRaw": 320,
    "aff": 10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -4496,12 +3970,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -4509,11 +3981,9 @@
    "baseRaw": 330,
    "aff": 10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -4528,12 +3998,10 @@
     "purple": 20
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -4541,11 +4009,9 @@
    "baseRaw": 170,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     38,
-     243
-    ]
+    1,
+    38,
+    243
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -4560,12 +4026,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -4573,11 +4037,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     38,
-     243
-    ]
+    2,
+    38,
+    243
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -4592,12 +4054,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -4605,11 +4065,9 @@
    "baseRaw": 210,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     38,
-     243
-    ]
+    2,
+    38,
+    243
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -4624,12 +4082,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -4637,11 +4093,9 @@
    "baseRaw": 270,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Poison",
@@ -4656,12 +4110,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -4669,11 +4121,9 @@
    "baseRaw": 320,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Poison",
@@ -4688,12 +4138,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     10,
-     40,
-     0,
-     0
-    ]
+    10,
+    40,
+    0,
+    0
    ]
   },
   {
@@ -4701,11 +4149,9 @@
    "baseRaw": 340,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Poison",
@@ -4720,12 +4166,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -4733,11 +4177,9 @@
    "baseRaw": 300,
    "aff": 20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Fire",
@@ -4752,12 +4194,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -4765,11 +4205,9 @@
    "baseRaw": 310,
    "aff": 20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Fire",
@@ -4784,12 +4222,10 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -4797,11 +4233,9 @@
    "baseRaw": 320,
    "aff": 20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Fire",
@@ -4816,12 +4250,10 @@
     "purple": 20
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -4829,11 +4261,9 @@
    "baseRaw": 190,
    "aff": -10,
    "rampage": [
-    [
-     10,
-     22,
-     232
-    ]
+    10,
+    22,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "Water",
@@ -4848,12 +4278,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -4861,11 +4289,9 @@
    "baseRaw": 200,
    "aff": -10,
    "rampage": [
-    [
-     10,
-     23,
-     232
-    ]
+    10,
+    23,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "Water",
@@ -4880,12 +4306,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -4893,11 +4317,9 @@
    "baseRaw": 210,
    "aff": -10,
    "rampage": [
-    [
-     11,
-     23,
-     232
-    ]
+    11,
+    23,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "Water",
@@ -4912,12 +4334,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -4925,11 +4345,9 @@
    "baseRaw": 280,
    "aff": -10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Water",
@@ -4944,12 +4362,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -4957,11 +4373,9 @@
    "baseRaw": 310,
    "aff": -10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Water",
@@ -4976,12 +4390,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -4989,11 +4401,9 @@
    "baseRaw": 350,
    "aff": -10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Water",
@@ -5008,12 +4418,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -5021,11 +4429,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     18,
-     233
-    ]
+    2,
+    18,
+    233
    ],
    "rampageSlots": 0,
    "eleType": "Fire",
@@ -5040,12 +4446,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -5053,11 +4457,9 @@
    "baseRaw": 190,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     18,
-     233
-    ]
+    2,
+    18,
+    233
    ],
    "rampageSlots": 0,
    "eleType": "Fire",
@@ -5072,12 +4474,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -5085,11 +4485,9 @@
    "baseRaw": 210,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     18,
-     233
-    ]
+    3,
+    18,
+    233
    ],
    "rampageSlots": 0,
    "eleType": "Fire",
@@ -5104,12 +4502,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -5117,11 +4513,9 @@
    "baseRaw": 310,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Fire",
@@ -5136,12 +4530,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5149,11 +4541,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Fire",
@@ -5168,12 +4558,38 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "weapon": "Rathalos Gleamsword",
+   "baseRaw": 310,
+   "aff": 35,
+   "rampage": [
+    0,
+    0,
+    0
+   ],
+   "rampageSlots": 2,
+   "eleType": "Fire",
+   "baseEle": 70,
+   "sharpness": {
+    "red": 130,
+    "orange": 30,
+    "yellow": 30,
+    "green": 50,
+    "blue": 60,
+    "white": 50,
+    "purple": 0
+   },
+   "handicraft": [
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -5181,11 +4597,9 @@
    "baseRaw": 170,
    "aff": -25,
    "rampage": [
-    [
-     10,
-     15,
-     231
-    ]
+    10,
+    15,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -5200,12 +4614,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     10,
-     40,
-     0,
-     0
-    ]
+    10,
+    40,
+    0,
+    0
    ]
   },
   {
@@ -5213,11 +4625,9 @@
    "baseRaw": 210,
    "aff": -25,
    "rampage": [
-    [
-     11,
-     15,
-     235
-    ]
+    11,
+    15,
+    235
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -5232,12 +4642,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -5245,11 +4653,9 @@
    "baseRaw": 230,
    "aff": -25,
    "rampage": [
-    [
-     12,
-     16,
-     235
-    ]
+    12,
+    16,
+    235
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -5264,12 +4670,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -5277,11 +4681,9 @@
    "baseRaw": 350,
    "aff": -25,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -5296,12 +4698,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -5309,11 +4709,9 @@
    "baseRaw": 360,
    "aff": -25,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -5328,12 +4726,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -5341,11 +4737,9 @@
    "baseRaw": 370,
    "aff": -25,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -5360,12 +4754,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -5373,11 +4765,9 @@
    "baseRaw": 100,
    "aff": 0,
    "rampage": [
-    [
-     15,
-     231,
-     243
-    ]
+    15,
+    231,
+    243
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -5392,12 +4782,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5405,11 +4793,9 @@
    "baseRaw": 110,
    "aff": 0,
    "rampage": [
-    [
-     16,
-     231,
-     243
-    ]
+    16,
+    231,
+    243
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -5424,12 +4810,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5437,11 +4821,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     16,
-     231,
-     235
-    ]
+    16,
+    231,
+    235
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -5456,12 +4838,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -5469,11 +4849,9 @@
    "baseRaw": 260,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "None",
@@ -5488,12 +4866,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -5501,11 +4877,9 @@
    "baseRaw": 360,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "None",
@@ -5520,12 +4894,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5533,11 +4905,9 @@
    "baseRaw": 140,
    "aff": -20,
    "rampage": [
-    [
-     10,
-     18,
-     232
-    ]
+    10,
+    18,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "Fire",
@@ -5552,12 +4922,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5565,11 +4933,9 @@
    "baseRaw": 200,
    "aff": -20,
    "rampage": [
-    [
-     10,
-     19,
-     232
-    ]
+    10,
+    19,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "Fire",
@@ -5584,12 +4950,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -5597,11 +4961,9 @@
    "baseRaw": 220,
    "aff": -20,
    "rampage": [
-    [
-     11,
-     20,
-     232
-    ]
+    11,
+    20,
+    232
    ],
    "rampageSlots": 0,
    "eleType": "Fire",
@@ -5616,12 +4978,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5629,11 +4989,9 @@
    "baseRaw": 280,
    "aff": -20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Fire",
@@ -5648,12 +5006,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5661,11 +5017,9 @@
    "baseRaw": 320,
    "aff": -20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Fire",
@@ -5680,12 +5034,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5693,11 +5045,9 @@
    "baseRaw": 350,
    "aff": -20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Fire",
@@ -5712,12 +5062,10 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5725,11 +5073,9 @@
    "baseRaw": 120,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     26,
-     259
-    ]
+    1,
+    26,
+    259
    ],
    "rampageSlots": 0,
    "eleType": "Thunder",
@@ -5744,12 +5090,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5757,11 +5101,9 @@
    "baseRaw": 170,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     26,
-     259
-    ]
+    2,
+    26,
+    259
    ],
    "rampageSlots": 0,
    "eleType": "Thunder",
@@ -5776,12 +5118,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5789,11 +5129,9 @@
    "baseRaw": 200,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     27,
-     259
-    ]
+    2,
+    27,
+    259
    ],
    "rampageSlots": 0,
    "eleType": "Thunder",
@@ -5808,12 +5146,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     10,
-     40,
-     0,
-     0
-    ]
+    10,
+    40,
+    0,
+    0
    ]
   },
   {
@@ -5821,11 +5157,9 @@
    "baseRaw": 310,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Thunder",
@@ -5840,12 +5174,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5853,11 +5185,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Thunder",
@@ -5872,12 +5202,10 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5885,11 +5213,9 @@
    "baseRaw": 90,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     22,
-     245
-    ]
+    2,
+    22,
+    245
    ],
    "rampageSlots": 0,
    "eleType": "Water",
@@ -5904,12 +5230,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5917,11 +5241,9 @@
    "baseRaw": 100,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     22,
-     245
-    ]
+    2,
+    22,
+    245
    ],
    "rampageSlots": 0,
    "eleType": "Water",
@@ -5936,12 +5258,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -5949,11 +5269,9 @@
    "baseRaw": 170,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     23,
-     245
-    ]
+    3,
+    23,
+    245
    ],
    "rampageSlots": 0,
    "eleType": "Water",
@@ -5968,12 +5286,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -5981,11 +5297,9 @@
    "baseRaw": 240,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Water",
@@ -6000,12 +5314,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -6013,11 +5325,9 @@
    "baseRaw": 290,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Water",
@@ -6032,12 +5342,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6045,11 +5353,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Water",
@@ -6064,12 +5370,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -6077,11 +5381,9 @@
    "baseRaw": 310,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "None",
@@ -6096,12 +5398,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6109,11 +5409,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "None",
@@ -6128,12 +5426,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6141,11 +5437,9 @@
    "baseRaw": 360,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "None",
@@ -6160,12 +5454,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -6173,11 +5465,9 @@
    "baseRaw": 90,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     30,
-     243
-    ]
+    1,
+    30,
+    243
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -6192,12 +5482,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6205,11 +5493,9 @@
    "baseRaw": 100,
    "aff": 0,
    "rampage": [
-    [
-     1,
-     31,
-     243
-    ]
+    1,
+    31,
+    243
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -6224,12 +5510,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6237,11 +5521,9 @@
    "baseRaw": 150,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     31,
-     231
-    ]
+    2,
+    31,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -6256,12 +5538,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -6269,11 +5549,9 @@
    "baseRaw": 240,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Ice",
@@ -6288,12 +5566,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     10,
-     40,
-     0,
-     0
-    ]
+    10,
+    40,
+    0,
+    0
    ]
   },
   {
@@ -6301,11 +5577,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Ice",
@@ -6320,12 +5594,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -6333,11 +5605,9 @@
    "baseRaw": 130,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     47,
-     248
-    ]
+    2,
+    47,
+    248
    ],
    "rampageSlots": 0,
    "eleType": "Blast",
@@ -6352,12 +5622,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -6365,11 +5633,9 @@
    "baseRaw": 140,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     47,
-     248
-    ]
+    3,
+    47,
+    248
    ],
    "rampageSlots": 0,
    "eleType": "Blast",
@@ -6384,12 +5650,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -6397,11 +5661,9 @@
    "baseRaw": 200,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     48,
-     248
-    ]
+    3,
+    48,
+    248
    ],
    "rampageSlots": 0,
    "eleType": "Blast",
@@ -6416,12 +5678,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -6429,11 +5689,9 @@
    "baseRaw": 290,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Blast",
@@ -6448,12 +5706,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6461,11 +5717,9 @@
    "baseRaw": 320,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Blast",
@@ -6480,12 +5734,10 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6493,11 +5745,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Blast",
@@ -6512,12 +5762,10 @@
     "purple": 20
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6525,11 +5773,9 @@
    "baseRaw": 300,
    "aff": 20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Dragon",
@@ -6544,12 +5790,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6557,11 +5801,9 @@
    "baseRaw": 310,
    "aff": 20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Dragon",
@@ -6576,12 +5818,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -6589,11 +5829,9 @@
    "baseRaw": 320,
    "aff": 20,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Dragon",
@@ -6608,12 +5846,10 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6621,11 +5857,9 @@
    "baseRaw": 290,
    "aff": 45,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Dragon",
@@ -6640,12 +5874,10 @@
     "purple": 10
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6653,11 +5885,9 @@
    "baseRaw": 300,
    "aff": 45,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Dragon",
@@ -6672,12 +5902,10 @@
     "purple": 20
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6685,11 +5913,9 @@
    "baseRaw": 180,
    "aff": 10,
    "rampage": [
-    [
-     10,
-     26,
-     231
-    ]
+    10,
+    26,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Thunder",
@@ -6704,12 +5930,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6717,11 +5941,9 @@
    "baseRaw": 190,
    "aff": 10,
    "rampage": [
-    [
-     10,
-     27,
-     231
-    ]
+    10,
+    27,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Thunder",
@@ -6736,12 +5958,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -6749,11 +5969,9 @@
    "baseRaw": 210,
    "aff": 10,
    "rampage": [
-    [
-     11,
-     27,
-     231
-    ]
+    11,
+    27,
+    231
    ],
    "rampageSlots": 0,
    "eleType": "Thunder",
@@ -6768,12 +5986,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -6781,11 +5997,9 @@
    "baseRaw": 320,
    "aff": 10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Thunder",
@@ -6800,12 +6014,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -6813,11 +6025,9 @@
    "baseRaw": 330,
    "aff": 10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Thunder",
@@ -6832,12 +6042,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -6845,11 +6053,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Thunder",
@@ -6864,12 +6070,10 @@
     "purple": 50
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6877,11 +6081,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     36,
-     258,
-     15
-    ]
+    36,
+    258,
+    15
    ],
    "rampageSlots": 0,
    "eleType": "Dragon",
@@ -6896,12 +6098,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -6909,11 +6109,9 @@
    "baseRaw": 200,
    "aff": 0,
    "rampage": [
-    [
-     36,
-     258,
-     253
-    ]
+    36,
+    258,
+    253
    ],
    "rampageSlots": 0,
    "eleType": "Dragon",
@@ -6928,12 +6126,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -6941,11 +6137,9 @@
    "baseRaw": 210,
    "aff": 0,
    "rampage": [
-    [
-     37,
-     258,
-     253
-    ]
+    37,
+    258,
+    253
    ],
    "rampageSlots": 0,
    "eleType": "Dragon",
@@ -6960,12 +6154,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -6973,11 +6165,9 @@
    "baseRaw": 340,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Dragon",
@@ -6992,12 +6182,10 @@
     "purple": 20
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7005,11 +6193,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     258,
-     254
-    ]
+    2,
+    258,
+    254
    ],
    "rampageSlots": 0,
    "eleType": "Thunder",
@@ -7024,12 +6210,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -7037,11 +6221,9 @@
    "baseRaw": 190,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     258,
-     254
-    ]
+    3,
+    258,
+    254
    ],
    "rampageSlots": 0,
    "eleType": "Thunder",
@@ -7056,12 +6238,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     10,
-     40,
-     0,
-     0
-    ]
+    10,
+    40,
+    0,
+    0
    ]
   },
   {
@@ -7069,11 +6249,9 @@
    "baseRaw": 320,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Thunder",
@@ -7088,12 +6266,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -7101,11 +6277,9 @@
    "baseRaw": 180,
    "aff": 10,
    "rampage": [
-    [
-     2,
-     11,
-     251
-    ]
+    2,
+    11,
+    251
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -7120,12 +6294,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -7133,11 +6305,9 @@
    "baseRaw": 190,
    "aff": 10,
    "rampage": [
-    [
-     3,
-     12,
-     251
-    ]
+    3,
+    12,
+    251
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -7152,12 +6322,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7165,11 +6333,9 @@
    "baseRaw": 310,
    "aff": 10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Ice",
@@ -7184,12 +6350,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -7197,11 +6361,9 @@
    "baseRaw": 320,
    "aff": 10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Ice",
@@ -7216,12 +6378,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -7229,11 +6389,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     244,
-     252
-    ]
+    2,
+    244,
+    252
    ],
    "rampageSlots": 0,
    "eleType": "Blast",
@@ -7248,12 +6406,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -7261,11 +6417,9 @@
    "baseRaw": 190,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     244,
-     252
-    ]
+    3,
+    244,
+    252
    ],
    "rampageSlots": 0,
    "eleType": "Blast",
@@ -7280,12 +6434,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -7293,11 +6445,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Blast",
@@ -7312,12 +6462,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -7325,11 +6473,9 @@
    "baseRaw": 340,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Blast",
@@ -7344,12 +6490,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -7357,11 +6501,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     2,
-     17,
-     250
-    ]
+    2,
+    17,
+    250
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -7376,12 +6518,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -7389,11 +6529,9 @@
    "baseRaw": 190,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     17,
-     250
-    ]
+    3,
+    17,
+    250
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -7408,12 +6546,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -7421,11 +6557,9 @@
    "baseRaw": 310,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Poison",
@@ -7440,12 +6574,10 @@
     "purple": 20
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7453,11 +6585,9 @@
    "baseRaw": 320,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Poison",
@@ -7472,12 +6602,10 @@
     "purple": 30
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7485,11 +6613,9 @@
    "baseRaw": 170,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     242,
-     249
-    ]
+    3,
+    242,
+    249
    ],
    "rampageSlots": 0,
    "eleType": "Dragon",
@@ -7504,12 +6630,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7517,11 +6641,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     242,
-     249
-    ]
+    3,
+    242,
+    249
    ],
    "rampageSlots": 0,
    "eleType": "Dragon",
@@ -7536,12 +6658,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7549,11 +6669,9 @@
    "baseRaw": 340,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Dragon",
@@ -7568,12 +6686,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7581,11 +6697,9 @@
    "baseRaw": 340,
    "aff": -15,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Dragon",
@@ -7600,12 +6714,10 @@
     "purple": 80
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7613,11 +6725,9 @@
    "baseRaw": 100,
    "aff": 0,
    "rampage": [
-    [
-     38,
-     231,
-     256
-    ]
+    38,
+    231,
+    256
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -7632,12 +6742,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7645,11 +6753,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     38,
-     231,
-     256
-    ]
+    38,
+    231,
+    256
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -7664,12 +6770,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -7677,11 +6781,9 @@
    "baseRaw": 210,
    "aff": 0,
    "rampage": [
-    [
-     38,
-     231,
-     256
-    ]
+    38,
+    231,
+    256
    ],
    "rampageSlots": 0,
    "eleType": "Poison",
@@ -7696,12 +6798,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -7709,11 +6809,9 @@
    "baseRaw": 270,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Poison",
@@ -7728,12 +6826,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     10,
-     40,
-     0,
-     0
-    ]
+    10,
+    40,
+    0,
+    0
    ]
   },
   {
@@ -7741,11 +6837,9 @@
    "baseRaw": 340,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Poison",
@@ -7760,12 +6854,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7773,11 +6865,9 @@
    "baseRaw": 100,
    "aff": 0,
    "rampage": [
-    [
-     15,
-     44,
-     259
-    ]
+    15,
+    44,
+    259
    ],
    "rampageSlots": 0,
    "eleType": "Sleep",
@@ -7792,12 +6882,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7805,11 +6893,9 @@
    "baseRaw": 120,
    "aff": 0,
    "rampage": [
-    [
-     16,
-     44,
-     259
-    ]
+    16,
+    44,
+    259
    ],
    "rampageSlots": 0,
    "eleType": "Sleep",
@@ -7824,12 +6910,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -7837,11 +6921,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     17,
-     45,
-     259
-    ]
+    17,
+    45,
+    259
    ],
    "rampageSlots": 0,
    "eleType": "Sleep",
@@ -7856,12 +6938,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -7869,11 +6949,9 @@
    "baseRaw": 270,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Sleep",
@@ -7888,12 +6966,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -7901,11 +6977,9 @@
    "baseRaw": 330,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Sleep",
@@ -7920,12 +6994,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7933,11 +7005,9 @@
    "baseRaw": 130,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     233,
-     247
-    ]
+    3,
+    233,
+    247
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -7952,12 +7022,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -7965,11 +7033,9 @@
    "baseRaw": 140,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     233,
-     247
-    ]
+    3,
+    233,
+    247
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -7984,12 +7050,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -7997,11 +7061,9 @@
    "baseRaw": 150,
    "aff": 0,
    "rampage": [
-    [
-     4,
-     233,
-     247
-    ]
+    4,
+    233,
+    247
    ],
    "rampageSlots": 0,
    "eleType": "Ice",
@@ -8016,12 +7078,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -8029,11 +7089,9 @@
    "baseRaw": 270,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Ice",
@@ -8048,12 +7106,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -8061,11 +7117,9 @@
    "baseRaw": 310,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Ice",
@@ -8080,12 +7134,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -8093,11 +7145,9 @@
    "baseRaw": 160,
    "aff": 0,
    "rampage": [
-    [
-     16,
-     35,
-     242
-    ]
+    16,
+    35,
+    242
    ],
    "rampageSlots": 0,
    "eleType": "Dragon",
@@ -8112,12 +7162,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -8125,11 +7173,9 @@
    "baseRaw": 170,
    "aff": 0,
    "rampage": [
-    [
-     17,
-     35,
-     242
-    ]
+    17,
+    35,
+    242
    ],
    "rampageSlots": 0,
    "eleType": "Dragon",
@@ -8144,12 +7190,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     10,
-     40,
-     0,
-     0
-    ]
+    10,
+    40,
+    0,
+    0
    ]
   },
   {
@@ -8157,11 +7201,9 @@
    "baseRaw": 190,
    "aff": 0,
    "rampage": [
-    [
-     17,
-     36,
-     242
-    ]
+    17,
+    36,
+    242
    ],
    "rampageSlots": 0,
    "eleType": "Dragon",
@@ -8176,12 +7218,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     0,
-     50,
-     0,
-     0
-    ]
+    0,
+    50,
+    0,
+    0
    ]
   },
   {
@@ -8189,11 +7229,9 @@
    "baseRaw": 250,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Dragon",
@@ -8208,12 +7246,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -8221,11 +7257,9 @@
    "baseRaw": 310,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "Dragon",
@@ -8240,12 +7274,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
    ]
   },
   {
@@ -8253,11 +7285,9 @@
    "baseRaw": 100,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     231,
-     255
-    ]
+    3,
+    231,
+    255
    ],
    "rampageSlots": 0,
    "eleType": "Para",
@@ -8272,12 +7302,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -8285,11 +7313,9 @@
    "baseRaw": 130,
    "aff": 0,
    "rampage": [
-    [
-     3,
-     231,
-     255
-    ]
+    3,
+    231,
+    255
    ],
    "rampageSlots": 0,
    "eleType": "Para",
@@ -8304,12 +7330,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -8317,11 +7341,9 @@
    "baseRaw": 150,
    "aff": 0,
    "rampage": [
-    [
-     4,
-     231,
-     255
-    ]
+    4,
+    231,
+    255
    ],
    "rampageSlots": 0,
    "eleType": "Para",
@@ -8336,12 +7358,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -8349,11 +7369,9 @@
    "baseRaw": 220,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Para",
@@ -8368,12 +7386,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     20,
-     30,
-     0,
-     0
-    ]
+    20,
+    30,
+    0,
+    0
    ]
   },
   {
@@ -8381,11 +7397,9 @@
    "baseRaw": 300,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 1,
    "eleType": "Para",
@@ -8400,12 +7414,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -8413,11 +7425,9 @@
    "baseRaw": 310,
    "aff": 10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -8432,12 +7442,10 @@
     "purple": 20
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -8445,11 +7453,9 @@
    "baseRaw": 320,
    "aff": 10,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 2,
    "eleType": "None",
@@ -8464,12 +7470,10 @@
     "purple": 50
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -8477,11 +7481,9 @@
    "baseRaw": 320,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 3,
    "eleType": "Blast",
@@ -8496,12 +7498,10 @@
     "purple": 40
    },
    "handicraft": [
-    [
-     0,
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -8509,11 +7509,9 @@
    "baseRaw": 150,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -8528,12 +7526,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -8541,11 +7537,9 @@
    "baseRaw": 170,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -8560,12 +7554,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -8573,11 +7565,9 @@
    "baseRaw": 180,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -8592,12 +7582,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -8605,11 +7593,9 @@
    "baseRaw": 190,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -8624,12 +7610,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     50,
-     0,
-     0,
-     0
-    ]
+    50,
+    0,
+    0,
+    0
    ]
   },
   {
@@ -8637,11 +7621,9 @@
    "baseRaw": 200,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -8656,12 +7638,10 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     40,
-     10,
-     0,
-     0
-    ]
+    40,
+    10,
+    0,
+    0
    ]
   },
   {
@@ -8669,11 +7649,9 @@
    "baseRaw": 210,
    "aff": 0,
    "rampage": [
-    [
-     0,
-     0,
-     0
-    ]
+    0,
+    0,
+    0
    ],
    "rampageSlots": 0,
    "eleType": "None",
@@ -8688,12 +7666,38 @@
     "purple": 0
    },
    "handicraft": [
-    [
-     30,
-     20,
-     0,
-     0
-    ]
+    30,
+    20,
+    0,
+    0
+   ]
+  },
+  {
+   "weapon": "<COLOR FF0000>#Rejected#</COLOR> W_GreatSword_444_Name",
+   "baseRaw": 0,
+   "aff": 0,
+   "rampage": [
+    0,
+    0,
+    0
+   ],
+   "rampageSlots": 0,
+   "eleType": "None",
+   "baseEle": 0,
+   "sharpness": {
+    "red": 0,
+    "orange": 0,
+    "yellow": 0,
+    "green": 0,
+    "blue": 0,
+    "white": 0,
+    "purple": 0
+   },
+   "handicraft": [
+    0,
+    0,
+    0,
+    0
    ]
   }
  ],

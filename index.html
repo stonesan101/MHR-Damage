@@ -84,25 +84,25 @@
           </div>
           <div class='augToggle augInvis'>
             <output class='augDiv'>5</output>
-            <div class="augDiv"><button type="button" aria-pressed="false" class="attackAug augButton dec">⇩</button>
-              <button type="button" aria-pressed="false" class="attackAug augButton inc">⇧</button>
-              <label for="attackAug">Attack Slot Boost</label><output class="attackAug label">0</output>
+            <div class="augDiv"><button value='2' type="button" aria-pressed="false" class="attackAug augButton dec">⇩</button>
+              <button value='2' value=1type="button" aria-pressed="false" class="attackAug augButton inc">⇧</button>
+              <label for="attackAug">Attack Slot Boost</label><output class="attackAug augLabel label">0</output>
             </div>
-            <div class="augDiv"><button type="button" aria-pressed="false" class="elementalAug augButton dec">⇩</button>
-              <button type="button" aria-pressed="false" class="elementalAug augButton inc">⇧</button>
-              <label for="elementalAug">Elemental Slot Boost</label><output class="elementalAug label">0</output>
+            <div class="augDiv"><button value=1 type="button" aria-pressed="false" class="elementalAug augButton dec">⇩</button>
+              <button value=1 type="button" aria-pressed="false" class="elementalAug augButton inc">⇧</button>
+              <label for="elementalAug">Elemental Slot Boost</label><output class="elementalAug augLabel label">0</output>
             </div>
-            <div class="augDiv"><button type="button" aria-pressed="false" class="affinityAug augButton dec">⇩</button>
-              <button type="button" aria-pressed="false" class="affinityAug augButton inc">⇧</button>
-              <label for="affinityAug">Affinity Slot Boost</label><output class="affinityAug label">0</output>
+            <div class="augDiv"><button value='3' type="button" aria-pressed="false" class="affinityAug augButton dec">⇩</button>
+              <button value='3' type="button" aria-pressed="false" class="affinityAug augButton inc">⇧</button>
+              <label for="affinityAug">Affinity Slot Boost</label><output class="affinityAug augLabel label">0</output>
             </div>
-            <div class="augDiv"><button type="button" aria-pressed="false" class="sharpnessAug augButton dec">⇩</button>
-              <button type="button" aria-pressed="false" class="sharpnessAug augButton inc">⇧</button>
-              <label for="sharpnessAug">Sharpness Slot Boost</label><output class="sharpnessAug label">0</output>
+            <div class="augDiv"><button value='4' type="button" aria-pressed="false" class="sharpnessAug augButton dec">⇩</button>
+              <button value='4' type="button" aria-pressed="false" class="sharpnessAug augButton inc">⇧</button>
+              <label for="sharpnessAug">Sharpness Slot Boost</label><output class="sharpnessAug augLabel label">0</output>
             </div>
-            <div class="augDiv"><button type="button" aria-pressed="false" id="rampageAug" class="rampageAug augButton dec">⇩</button>
-              <button type="button" aria-pressed="false" class="rampageAug augButton inc">⇧</button>
-              <label for="rampageAug">Rampage Slot Boost</label><output class="rampageAug label">0</output>
+            <div class="augDiv"><button value='4' type="button" aria-pressed="false" id="rampageAug" class="rampageAug augButton dec">⇩</button>
+              <button value='4 ' type="button" aria-pressed="false" class="rampageAug augButton inc">⇧</button>
+              <label for="rampageAug">Rampage Slot Boost</label><output class="rampageAug augLabel">0</output>
             </div>
           </div>
         </div>
@@ -154,11 +154,14 @@
       <div id='raw' class='contain'>
         <h1>Raw</h1>
         <div style='grid-area:1/1/1/-1; height: 100%; display:grid; justify-content:end; align-content:center; align-items:center'>
-          <label for='redScroll' class='scroll' style='font-size:1.1rem'>Red</label>
-          <img id='redScroll' class='scroll vis' src='/MHR-Damage/red.webp' style='grid-area: 1/5;height: 35%;'><img id='redNon' class='scroll invis'
-               src='/MHR-Damage/rednon.webp' style='grid-area: 1/5;height: 33%;'><label class='scroll' for='blueScroll' style='grid-area: 1/6;
-              font-size:1.1rem'>Blue</label><img class='scroll invis' id='blueScroll' src='/MHR-Damage/blue.webp' style='grid-area: 1/7;height: 35%;'><img
-               id='blueNon' class='scroll vis' src='/MHR-Damage/bluenon.webp' style='grid-area: 1/7;height: 33%;'>
+          <label for='redScroll' class='scroll vis' style='font-size:1.1rem'>Red</label>
+          <img id='redScroll' class='scroll vis' src='/MHR-Damage/red.webp' style='grid-area: 1/5;height: 35%;'>
+          <label for='redNon' class='scroll invis' style='font-size:1.1rem'>Red</label>
+          <img id='redNon' class='scroll invis' src='/MHR-Damage/rednon.webp' style='grid-area: 1/5;height: 33%;'>
+          <label class='scroll invis' for='blueScroll' style='grid-area: 1/6; font-size:1.1rem'>Blue</label>
+          <img class='scroll invis' id='blueScroll' src='/MHR-Damage/blue.webp' style='grid-area: 1/7;height: 35%;'>
+          <label class='scroll vis' for='blueNon' style='grid-area: 1/6; font-size:1.1rem'>Blue</label>
+          <img id='blueNon' class='scroll vis' src='/MHR-Damage/bluenon.webp' style='grid-area: 1/7;height: 33%;'>
         </div>
         <div><label for='AttackBoost'>Attack Boost</label><select id='AttackBoost' name='Attack Boost' class='skill'>
             <option>----</option>

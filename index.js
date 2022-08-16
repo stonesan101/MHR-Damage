@@ -91,6 +91,8 @@ function RangedDPS(e) {
 	let power = {};
 	let ammo = {};
 	let pass1 = true;
+
+
 	$(
 		Object.keys(
 			Object.fromEntries(
@@ -363,6 +365,15 @@ function MeleeDPS(e) {
 }
 
 function ApplyRampageSelections(power) {
+		if ($('output.attackAug').val()>0) {
+	power.baseRaw+=$('output.attackAug').val()/2*5
+	}
+		if ($('output.affinityAug').val()>0) {
+	power.aff+=$('output.affinityAug').val()/3*5
+	}
+		if ($('elementalAug').val()>0) {
+	power.baseRaw+=$('output.elementalAug').val()*3
+}
 	if (getWeapon().rampageSlots === 0) {
 		// applies rampage any bonuses that effect base stats
 		$(weaponRampage.children).each(function (index,element) {
@@ -616,66 +627,66 @@ function TotalHitsOfSharpUsed(power) {
 	total.yellow = ~~(mTBonus * power.hitsOfSharpness.yellow);
 	total.orange = ~~(mTBonus * power.hitsOfSharpness.orange);
 	total.red = ~~(mTBonus * power.hitsOfSharpness.red);
+	if (comboTracker !== ([] || [null])) {
 
-	let comboMulti = $('.inputComboRepeat').val();
-	// for each pont in the comboMultiplier input, adds another comboTracker [] to the listOfEachAttack
-	while (comboMulti > 1) {
-		power.listOfEachAttack = power.listOfEachAttack.concat(comboTracker);
-		--comboMulti;
-	}
-	power.comboHitsPerColor = [];
-	power.comboHitsPerColor.purple = [];
-	power.comboHitsPerColor.white = [];
-	power.comboHitsPerColor.blue = [];
-	power.comboHitsPerColor.green = [];
-	power.comboHitsPerColor.yellow = [];
-	power.comboHitsPerColor.orange = [];
-	power.comboHitsPerColor.red = [];
+		let comboMulti = $('.inputComboRepeat').val();
+		// for each pont in the comboMultiplier input, adds another comboTracker [] to the listOfEachAttack
+		while (comboMulti > 1) {
+			power.listOfEachAttack = power.listOfEachAttack.concat(comboTracker);
+			--comboMulti;
+		}
+		power.comboHitsPerColor = [];
+		power.comboHitsPerColor.purple = [];
+		power.comboHitsPerColor.white = [];
+		power.comboHitsPerColor.blue = [];
+		power.comboHitsPerColor.green = [];
+		power.comboHitsPerColor.yellow = [];
+		power.comboHitsPerColor.orange = [];
+		power.comboHitsPerColor.red = [];
 
-	$(power.listOfEachAttack).each(function () {
-		const eachAttack = this;
-		let attackKeys = Object.keys(power.attacks);
-		if ($(ProtectivePolish).hasClass('gray')) {
-			if ($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 28)) {
-				for (let i = 0; i < power.ticsPer + 1; i++) {
-					// applies DualBlades Sharpness Reduction
-					if ($(weaponType).val() === 'DualBlades') {
-						totalHitsOfSharpnessUsed += info[$(weaponType).val()].attacks[attackKeys[eachAttack]].hitsOfSharp / 3;
-					} else {
-						totalHitsOfSharpnessUsed += info[$(weaponType).val()].attacks[attackKeys[eachAttack]].hitsOfSharp;
+power.listOfEachAttack.forEach((eachAttack)=> {
+			let attackKeys = Object.keys(power.attacks)[eachAttack];
+			if ($(ProtectivePolish).hasClass('gray')) {
+				if ($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 28)) {
+					for (let i = 0; i < power.ticsPer + 1; i++) {
+						// applies DualBlades Sharpness Reduction
+						if ($(weaponType).val() === 'DualBlades') {
+							totalHitsOfSharpnessUsed += getAttacks()[attackKeys].hitsOfSharp / 3;
+						} else {
+							totalHitsOfSharpnessUsed += getAttacks()[attackKeys].hitsOfSharp
+						}
 					}
+				} else if ($('#dropWeaponType').val() === 'Gunlance' && eachAttack > 27) {
+					++totalHitsOfSharpnessUsed;
 				}
-			} else if ($('#dropWeaponType').val() === 'Gunlance' && eachAttack > 27) {
-				++totalHitsOfSharpnessUsed;
 			}
-		}
-		let totalHits = 0;
-		if (totalHitsOfSharpnessUsed <= (totalHits += total.purple) && power.hitsOfSharpness.purple > 0) {
-			power.comboHitsPerColor.purple.push(eachAttack);
-		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue) && power.hitsOfSharpness.white > 0) {
-			power.comboHitsPerColor.white.push(eachAttack);
-		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue) && power.hitsOfSharpness.blue > 0) {
-			power.comboHitsPerColor.blue.push(eachAttack);
-		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.green) && power.hitsOfSharpness.green > 0) {
-			power.comboHitsPerColor.green.push(eachAttack);
-		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.yellow) && power.hitsOfSharpness.yellow > 0) {
-			power.comboHitsPerColor.yellow.push(eachAttack);
-		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.orange)) {
-			power.comboHitsPerColor.orange.push(eachAttack);
-		} else if (totalHitsOfSharpnessUsed <= (totalHits += total.red)) {
-			power.comboHitsPerColor.red.push(eachAttack);
-		}
-	});
-	let hits = totalHitsOfSharpnessUsed;
-	[power.hitsOfSharpness.purple,hits] = hits - total.purple > 0 ? [0,hits - total.purple] : [total.purple - hits,0];
-	[power.hitsOfSharpness.white,hits] = hits - total.white > 0 ? [0,hits - total.white] : [total.white - hits,0];
-	[power.hitsOfSharpness.blue,hits] = hits > 0 && hits - total.blue > 0 ? [0,hits - total.blue] : [total.blue - hits,0];
-	[power.hitsOfSharpness.green,hits] = hits > 0 && hits - total.green > 0 ? [0,hits - total.green] : [total.green - hits,0];
-	[power.hitsOfSharpness.yellow,hits] = hits > 0 && hits - total.yellow > 0 ? [0,hits - total.yellow] : [total.yellow - hits,0];
-	[power.hitsOfSharpness.orange,hits] = hits > 0 && hits - total.orange > 0 ? [0,hits - total.orange] : [total.orange - hits,0];
-	[power.hitsOfSharpness.red,hits] = hits > 0 && hits - total.red > 0 ? [0,hits - total.red] : [total.red - hits,0];
+			let totalHits = 0;
+			if (totalHitsOfSharpnessUsed <= (totalHits += total.purple) && power.hitsOfSharpness.purple > 0) {
+				power.comboHitsPerColor.purple.push(eachAttack);
+			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue) && power.hitsOfSharpness.white > 0) {
+				power.comboHitsPerColor.white.push(eachAttack);
+			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue) && power.hitsOfSharpness.blue > 0) {
+				power.comboHitsPerColor.blue.push(eachAttack);
+			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.green) && power.hitsOfSharpness.green > 0) {
+				power.comboHitsPerColor.green.push(eachAttack);
+			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.yellow) && power.hitsOfSharpness.yellow > 0) {
+				power.comboHitsPerColor.yellow.push(eachAttack);
+			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.orange)) {
+				power.comboHitsPerColor.orange.push(eachAttack);
+			} else if (totalHitsOfSharpnessUsed <= (totalHits += total.red)) {
+				power.comboHitsPerColor.red.push(eachAttack);
+			}
+		});
+		let hits = totalHitsOfSharpnessUsed;
+		[power.hitsOfSharpness.purple,hits] = hits - total.purple > 0 ? [0,hits - total.purple] : [total.purple - hits,0];
+		[power.hitsOfSharpness.white,hits] = hits - total.white > 0 ? [0,hits - total.white] : [total.white - hits,0];
+		[power.hitsOfSharpness.blue,hits] = hits > 0 && hits - total.blue > 0 ? [0,hits - total.blue] : [total.blue - hits,0];
+		[power.hitsOfSharpness.green,hits] = hits > 0 && hits - total.green > 0 ? [0,hits - total.green] : [total.green - hits,0];
+		[power.hitsOfSharpness.yellow,hits] = hits > 0 && hits - total.yellow > 0 ? [0,hits - total.yellow] : [total.yellow - hits,0];
+		[power.hitsOfSharpness.orange,hits] = hits > 0 && hits - total.orange > 0 ? [0,hits - total.orange] : [total.orange - hits,0];
+		[power.hitsOfSharpness.red,hits] = hits > 0 && hits - total.red > 0 ? [0,hits - total.red] : [total.red - hits,0];
+	}
 	let width = (total.purple + total.white + total.blue + total.green + total.yellow + total.orange + total.red) * 1.028;
-
 	let finalWidth = Math.min(width,$(section2).width() * 0.95);
 
 	$('#white').parent().css('width',`${finalWidth}px`);
@@ -780,12 +791,12 @@ function GetRemainingSkills(power) {
 			power.BEM *= 1.45;
 		}
 	} // If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
-	if (power.eleType!=='none') {
+	if (power.eleType!=='None') {
 
 		power.PEM *=
-		getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Elemental Exploit' && getHZ()[lower(getWeapon().eleType)] >= 25
+		getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Elemental Exploit' && getHZ()[lower(power.eleType)] >= 25
 		? 1.3
-		: (power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Element Exploit'&&power.eleType!=='none' && getHZ()[lower(power.eleType)] >= 25 ? 1.15 : 1);
+		: (power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Element Exploit'&&power.eleType!=='none' && getHZ()[power.eleType] >= 25 ? 1.15 : 1);
 	power.PEM *= getHZ()[lower(power.eleType)] >= 20 &&lower(power.eleType)!=='none'? info.skills.ElementalExploit[ElementalExploit.selectedIndex] : 1
 }
 		power.augPEM = $('#weaponRampage0').val() === 'Valstrax Soul' && power.eleType === 'Dragon' ? 1.2 : power.augPEM;
@@ -827,7 +838,7 @@ function GetRemainingSkills(power) {
 		power.critBoost = 1.5;
 	}
 	//if can crit adds crit element
-	power.eleCritBoost = power.Crit === true ? info.skills.CriticalElement[CriticalElement.selectedIndex].PRM : 1;
+	power.eleCritBoost = power.Crit === true ? info.skills.CriticalElement[CriticalElement.selectedIndex].PEM : 1;
 
 	return { ...power };
 }
@@ -1315,18 +1326,11 @@ $('#BowChargePlus').on('change',function () {
 });
 
 $('.scroll').on('mousedown',function () {
-	scrollChange();
-});
-function scrollChange() {
-	if (Object.values(check).every(keyCard => keyCard)) {
-		if ($(window.event.target).hasClass('scroll')) {
 			$('.scroll').toggleClass('vis invis');
-		}
 		info.skills.MailofHellfire = $(redScroll).hasClass('invis') ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
 		info.skills.Dereliction = $(redScroll).hasClass('invis') ? info.skills.DerelictionSourse.blue : info.skills.DerelictionSourse.red;
 		DataCompile();
-	}
-}
+})
 
 $('.toggle').on('mousedown',function (e) {
 	if (/DemonDrug/.test(e.target.id) && /gray/.test(e.target.className) && [DemonDrug.className,MegaDemonDrug.className].some(x => /blue/.test(x))) {
@@ -1337,8 +1341,10 @@ $('.toggle').on('mousedown',function (e) {
 		$(e.target).toggleClass('gray blue');
 	}
 	if (this !== filterCombo) {
+	let ugh=	dropHZ.selectedIndex
 		DataCompile();
 		MonChart();
+		dropHZ.selectedIndex=ugh
 		$(dropHZ).
 			children().
 			each(function (index) {
@@ -1468,7 +1474,15 @@ function DecreaseComboCount() {
 		DataCompile()
 	}
 }
-function jsonsLoaded() {
+$('.augButton').on('mousedown',function (e) {
+	let ugh= e.target.className.split()
+	if ($(e.target).hasClass('inc') && $(`.${[e.target.className.split()][0]}>output`).val() + e.target.value < 6) {
+		$(`.augLabel`)[0].value += e.target.value;
+	} else {
+		$(`.augLabel`)[0].value += e.target.value;
+	}
+})
+		function jsonsLoaded() {
 	if (Object.values(check).every(keyCard => keyCard)) {
 		WeaponTypeSelect();
 		WeaponSelect();
@@ -1479,7 +1493,6 @@ function jsonsLoaded() {
 		HealthSelect();
 		MonChart();
 		classChange();
-		scrollChange();
 		DataCompile();
 		setHeight();
 	}
@@ -1556,6 +1569,9 @@ function RampageSelect() {
 	$(weaponRampage.children).hide();
 	$(weaponRampage0).show();
 	if (getWeapon().rampageSlots !== 0) {
+		if ($('output.rampageAug').val()>0) {
+			++getWeapon().rampageSlots
+		}
 		let usableDecos = [];
 		$(Object.keys(info.rampage.rampageDecos)).each(function (index,element) {
 			// element == this
@@ -1586,8 +1602,8 @@ function MonsterSelect() {
 	PopulateDropDowns(Object.keys(info.monster.hzv),dropMonster);
 	dropMonster.selectedIndex = Object.keys(info.monster.hzv).indexOf('Toadversary');
 }
-function getHZ(part = dropHZ.value.slice(-1) === ' ' ? dropHZ.value.slice(0,dropHZ.value.length - 1) : dropHZ.value) {
-	return info.monster.hzv[dropMonster.value].filter(hitzone => hitzone.part === part)[0];
+function getHZ() {
+	return info.monster.hzv[dropMonster.value][dropHZ.selectedIndex];
 }
 
 const getAttacks = () => {
@@ -1595,7 +1611,7 @@ const getAttacks = () => {
 };
 
 const getWeapon = () => {
-	return { ...info[weaponType.value].weapons[$('#dropWeapon').val()] };
+	return { ...info[weaponType.value].weapons[$('#dropWeapon').val()],...ele };
 };
 
 function PartSelect() {
