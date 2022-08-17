@@ -812,7 +812,7 @@ select#dropEnraged {
 }
 
 div#setBonus.contain {
-    grid-area: 9/3/12/6;
+    grid-area: 9/4/12/6;
     grid-template-columns: repeat(2, 1fr);
 }
 
