@@ -268,17 +268,17 @@ div#weaponSelect.contain {
 body {
   display: grid;
   color: rgb(3, 3, 3);
-  background-size: 100% 100%;
-  background-position: 0px 0px, 0px 0px;
+  /* background-size: 100% 100%; */
+  /* background-position: 0px 0px, 0px 0px; */
   /* background-image: repeating-linear-gradient(167deg, #470383FF 57%, #850000A1 57%, #090505B3 65%), repeating-linear-gradient(198deg, #FF0000FF 64%, #1D1A55FF 65%, #000000FF 70%); */
-  background-size: 100% 100%;
-  background-position: 0px 0px, 0px 0px;
+  /* background-size: 100% 100%; */
+  /* background-position: 0px 0px, 0px 0px; */
   /*   background-image: repeating-linear-gradient(167deg, #470383FF 57%, #850000A1 57%, #090505B3 58%), repeating-linear-gradient(198deg, #FF0000FF 64%, #000000FF 64%, #1D1A55FF 65%);
 
  */
   /* background-image: url("Untitled.webp"); */
-  background-size: 100% 100%;
-  background-position: 0px 0px, 0px 0px;
+  /* background-size: 100% 100%; */
+  /* background-position: 0px 0px, 0px 0px; */
   background-image: repeating-linear-gradient(167deg, #470383FF 53%, #850000A1 53%, #270A0ACC 55%), repeating-linear-gradient(198deg, #FF0000FF 64%, #000000FF 64%, #1D1A55FF 65%);
   background-size: cover;
   min-height: 100vh;
