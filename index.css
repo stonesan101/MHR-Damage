@@ -108,13 +108,22 @@ output.label {
   color: rgb(255, 255, 255);
   min-height: 1.32rem;
   z-index: 10;
+  z-index: 5;
   width: 100%;
   display: grid;
   border: none;
   grid-area: 1 / 1 / 2 / 3;
 }
 
-.augDiv>output.label {
+.augDiv>output.augLabel {
+  grid-area: 1/1/2/-1;
+  text-align: start;
+  padding-right: 5px;
+  z-index: 5;
+  background-color: rgb(0, 0, 0, 0);
+}
+
+.augDiv>output.label:not(.augLabel) {
   grid-area: 1/1/2/-1;
   text-align: end;
   padding-right: 5px;
@@ -258,14 +267,23 @@ div#weaponSelect.contain {
 
 body {
   display: grid;
-  color: white;
+  color: rgb(3, 3, 3);
+  background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px;
+  /* background-image: repeating-linear-gradient(167deg, #470383FF 57%, #850000A1 57%, #090505B3 65%), repeating-linear-gradient(198deg, #FF0000FF 64%, #1D1A55FF 65%, #000000FF 70%); */
+  background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px;
+  /*   background-image: repeating-linear-gradient(167deg, #470383FF 57%, #850000A1 57%, #090505B3 58%), repeating-linear-gradient(198deg, #FF0000FF 64%, #000000FF 64%, #1D1A55FF 65%);
 
+ */
   /* background-image: url("Untitled.webp"); */
+  background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px;
+  background-image: repeating-linear-gradient(167deg, #470383FF 53%, #850000A1 53%, #270A0ACC 55%), repeating-linear-gradient(198deg, #FF0000FF 64%, #000000FF 64%, #1D1A55FF 65%);
   background-size: cover;
   min-height: 100vh;
   /* min-width: fit-content; */
-  border-style: none;
-  border-color: rgb(6, 6, 6);
+
   gap: 1rem;
   border-spacing: 0px;
   align-content: center;
@@ -820,6 +838,7 @@ label,
   text-align: center;
   border-color: rgb(77, 67, 69);
   color: white;
+  z-index: 5;
   box-sizing: border-box;
   /* font-size: revert; */
   font-weight: 500;

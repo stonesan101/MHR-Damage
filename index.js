@@ -111,7 +111,7 @@ function RangedDPS(e) {
 			});
 		}
 		power = { ...getWeapon(),...info.ammo[ammoID] };
-		power = ApplyRampageSelections(power);
+		power = getRampageSkills(power);
 		power = GetSkills(power);
 		power = GetRemainingSkills(power);
 		power = DamageCalculations(power);
@@ -207,7 +207,7 @@ function MeleeDPS(e) {
 	}
 	$(Object.keys(power.attacks)).each(function (attackID,eachAttack) {
 		power = { ...power,...info[$(weaponType).val()].attacks[eachAttack],...getWeapon() };
-		power = { ...ApplyRampageSelections(power) };
+		power = { ...getRampageSkills(power) };
 		//
 		power = GetSkills(power);
 		//
@@ -364,16 +364,13 @@ function MeleeDPS(e) {
 	}
 }
 
-function ApplyRampageSelections(power) {
-		if ($('output.attackAug').val()>0) {
+function getRampageSkills(power) {
+// adds qurious augs
 	power.baseRaw+=$('output.attackAug').val()/2*5
-	}
-		if ($('output.affinityAug').val()>0) {
-	power.aff+=$('output.affinityAug').val()/3*5
-	}
-		if ($('elementalAug').val()>0) {
-	power.baseRaw+=$('output.elementalAug').val()*3
-}
+	power.aff += $('output.affinityAug').val() / 3 * 5
+	if(getWeapon().eleType!=='None')
+	power.baseEle+=$('output.elementalAug').val()*3
+
 	if (getWeapon().rampageSlots === 0) {
 		// applies rampage any bonuses that effect base stats
 		$(weaponRampage.children).each(function (index,element) {
@@ -455,7 +452,7 @@ function GetSkills(power) {
 	1;
 	let skills = [];
 	$('.skillButton:not(button#ProtectivePolish)').each(function () {
-		if ($(this).hasClass('blue') && this.id !== 'CriticalFirePower'&&window.event.target !== Qurious) {
+		if ($(this).hasClass('blue') && this.id !== 'CriticalFirePower' && this.id !== 'Qurious') {
 			skills.push(JSON.parse(this.value));
 		}
 	});
@@ -1475,12 +1472,18 @@ function DecreaseComboCount() {
 	}
 }
 $('.augButton').on('mousedown',function (e) {
-	let ugh= e.target.className.split()
-	if ($(e.target).hasClass('inc') && $(`.${[e.target.className.split()][0]}>output`).val() + e.target.value < 6) {
-		$(`.augLabel`)[0].value += e.target.value;
-	} else {
-		$(`.augLabel`)[0].value += e.target.value;
+	let	ugh = 0;
+	$('.augLabel').each((x,output) => {
+		ugh += +output.value;
+	})
+	if ($(e.target).hasClass('inc')&& ugh + +e.target.value < 6 && (+$(e.target).siblings()[2].value + +e.target.value < 6&& !/elementalAug/.test(e.target.className)|| /elementalAug/.test(e.target.className) && +$(e.target).siblings()[2].value < 3)) {
+
+
+	$(e.target).siblings()[2].value = +$(e.target).siblings()[2].value + +e.target.value
+	} else if ($(e.target).hasClass('dec')&&+$(e.target).siblings()[2].value >0){
+	$(e.target).siblings()[2].value = +$(e.target).siblings()[2].value - +e.target.value
 	}
+	DataCompile()
 })
 		function jsonsLoaded() {
 	if (Object.values(check).every(keyCard => keyCard)) {
