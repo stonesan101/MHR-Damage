@@ -279,8 +279,10 @@ body {
   /* background-image: url("Untitled.webp"); */
   /* background-size: 100% 100%; */
   /* background-position: 0px 0px, 0px 0px; */
-  background-image: repeating-linear-gradient(167deg, #470383FF 53%, #850000A1 53%, #270A0ACC 55%), repeating-linear-gradient(198deg, #FF0000FF 64%, #000000FF 64%, #1D1A55FF 65%);
-  background-size: cover;
+  background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px, 0px 0px;
+  background-image: repeating-linear-gradient(303deg, #000000D4 76%, #050505BA 79%), repeating-linear-gradient(222deg, #0D0101CC 11%, #090909BD 12%, #000000BD 14%), repeating-linear-gradient(145deg, #0000ACD1 64%, #0B119EFF 66%);
+  /* background-size: cover; */
   min-height: 100vh;
   /* min-width: fit-content; */
 

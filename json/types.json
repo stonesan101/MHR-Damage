@@ -195,7 +195,7 @@
 		"Helmbreaker"
 	],
 	"Rathian": { "Wyvern": true, "Aerial ": true, "Aquatic": false, "Fanged": false },
-	"Apex Rathian": { "Wyvern": true, "Aerial ": true, "Aquatic": false, "Fanged": false },
+	"ApDz Rathian": { "Wyvern": true, "Aerial ": true, "Aquatic": false, "Fanged": false },
 	"Rathalos": { "Wyvern": true, "Aerial ": true, "Aquatic": false, "Fanged": false },
 	"Apex Rathalos": { "Wyvern": true, "Aerial ": true, "Aquatic": false, "Fanged": false },
 	"Khezu": { "Wyvern": true, "Aerial ": true, "Aquatic": false, "Fanged": false },
