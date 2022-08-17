@@ -1,549 +1,501 @@
 @media only screen and (max-width: 780px) {
-  body {
-    background-position: center center;
-  }
-
-  body div {
-    border: none;
-    align-items: baseline;
-  }
-
-  combo {
-    width: 100%;
-  }
-
-  section#section2 {
-    grid-area: 3 / 1 / 4 / 3;
-    overflow: hidden;
-  }
-
-  .title {
-    grid-area: 1 / 1 / 2 / 3;
-  }
-
-  section#section1.contain {
-    justify-self: start;
-    justify-content: start;
-  }
-
-  div#divComboAttacks {
-    width: 15rem;
-    grid-area: 2 / 2 / 4 / 3;
-  }
+    body {
+        background-position: center center;
+    }
+    body div {
+        border: none;
+        align-items: baseline;
+    }
+    combo {
+        width: 100%;
+    }
+    section#section2 {
+        grid-area: 3 / 1 / 4 / 3;
+        overflow: hidden;
+    }
+    .title {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    section#section1.contain {
+        justify-self: start;
+        justify-content: start;
+    }
+    div#divComboAttacks {
+        width: 15rem;
+        grid-area: 2 / 2 / 4 / 3;
+    }
 }
 
 @media only screen and (min-width: 781px) {
-  section#section2 {
-    grid-area: 2 / 3 / 3 / 4;
-  }
-
-  .title {
-    grid-area: 1 / 1 / 2 / 4;
-  }
+    section#section2 {
+        grid-area: 2 / 3 / 3 / 4;
+    }
+    .title {
+        grid-area: 1 / 1 / 2 / 4;
+    }
 }
 
-
-
 #damageTable>table>thead {
-  position: sticky;
-  top: 0;
-  z-index: 50;
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 #ammoBody>tr>td,
 .cell {
-  display: grid;
-  align-items: center;
+    display: grid;
+    align-items: center;
 }
 
 #statsHead>tr,
 #statsBody>tr {
-  display: grid;
-  grid-template-columns: 1fr .8fr .8fr .8fr;
-  grid-area: 1/1/2/-1;
+    display: grid;
+    grid-template-columns: 1fr .8fr .8fr .8fr;
+    grid-area: 1/1/2/-1;
 }
 
 #ammoHead>tr,
 #ammoHead,
 #ammoBody>tr {
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-area: 1/1/2/-1;
-  max-height: max-content;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-area: 1/1/2/-1;
+    max-height: max-content;
 }
 
 .rangedContainer>#dpsHead,
 #dpsTable>th.tableRowRanged,
 #dpsBody>tr.tableRowRanged,
 #dpsHead>tr.tableRowRanged {
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-area: 1/1/2/-1;
-  max-height: max-content;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-area: 1/1/2/-1;
+    max-height: max-content;
 }
 
 .meleeContainer>#dpsHead,
 #dpsTable>th.tableRowMelee,
 #dpsBody>tr.tableRowMelee,
 #dpsHead>tr.tableRowMelee {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-area: 1/1/2/-1;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-area: 1/1/2/-1;
 }
-
-
-
-
-
 
 #monTable>th.tableRow,
 #monTable>tr.tableRow {
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 output.label {
-  pointer-events: none;
-  position: relative;
-  color: rgb(255, 255, 255);
-  min-height: 1.32rem;
-  z-index: 10;
-  z-index: 5;
-  width: 100%;
-  display: grid;
-  border: none;
-  grid-area: 1 / 1 / 2 / 3;
+    pointer-events: none;
+    position: relative;
+    color: rgb(255, 255, 255);
+    min-height: 1.32rem;
+    z-index: 10;
+    z-index: 5;
+    width: 100%;
+    display: grid;
+    border: none;
+    grid-area: 1 / 1 / 2 / 3;
 }
 
 .augDiv>output.augLabel {
-  grid-area: 1/1/2/-1;
-  text-align: start;
-  padding-right: 5px;
-  z-index: 5;
-  background-color: rgb(0, 0, 0, 0);
+    grid-area: 1/1/2/-1;
+    text-align: start;
+    padding-right: 5px;
+    z-index: 5;
+    background-color: rgb(0, 0, 0, 0);
 }
 
 .augDiv>output.label:not(.augLabel) {
-  grid-area: 1/1/2/-1;
-  text-align: end;
-  padding-right: 5px;
-  z-index: 5;
-  background-color: rgb(0, 0, 0, 0);
+    grid-area: 1/1/2/-1;
+    text-align: end;
+    padding-right: 5px;
+    z-index: 5;
+    background-color: rgb(0, 0, 0, 0);
 }
 
 div.augDiv,
 div.inputContainer {
-  top: 0;
-  position: relative;
-  grid-template-columns: 1fr 1fr;
-  min-height: 1.32rem;
-  display: grid;
-  color: rgb(255, 255, 255);
-  z-index: 15;
+    top: 0;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    min-height: 1.32rem;
+    display: grid;
+    color: rgb(255, 255, 255);
+    z-index: 15;
 }
 
 button.clicked {
-  transform: translateY(65%);
-  transition: transform 500ms ease;
+    transform: translateY(65%);
+    transition: transform 500ms ease;
 }
 
 button.augButton,
 button.inputButton {
-  top: 0px;
-  pointer-events: auto;
-  background-color: rgba(11, 11, 42, 0.63);
-  position: absolute;
-  color: rgba(205, 0, 0, 0);
-  z-index: 5;
-  border: none;
-  width: 50%;
-  height: 100%;
-  min-height: 1.32rem;
-  transition: all .2s ease-in-out;
+    top: 0px;
+    pointer-events: auto;
+    background-color: rgba(11, 11, 42, 0.63);
+    position: absolute;
+    color: rgba(205, 0, 0, 0);
+    z-index: 5;
+    border: none;
+    width: 50%;
+    height: 100%;
+    min-height: 1.32rem;
+    transition: all .2s ease-in-out;
 }
 
 button.augButton:active,
 button.inputButton:active {
-  color: rgb(252, 252, 252);
-  z-index: 20;
-  font-weight: 900;
-  font-size: 1rem;
-  background-color: rgba(11, 16, 42, 0.74);
-  transform: scale(1.1);
-  transition: .1s;
+    color: rgb(252, 252, 252);
+    z-index: 20;
+    font-weight: 900;
+    font-size: 1rem;
+    background-color: rgba(11, 16, 42, 0.74);
+    transform: scale(1.1);
+    transition: .1s;
 }
 
 button.augButton:hover,
 button.inputButton:hover {
-  color: rgb(252, 252, 252);
-  z-index: 20;
-  font-weight: 900;
-  font-size: 1rem;
-  background-color: rgba(11, 16, 42, 0.74);
+    color: rgb(252, 252, 252);
+    z-index: 20;
+    font-weight: 900;
+    font-size: 1rem;
+    background-color: rgba(11, 16, 42, 0.74);
 }
 
 button.dec {
-  left: 0px;
+    left: 0px;
 }
 
+
 /*  */
+
+
 /* #attackAugment { */
+
+
 /* background-image: url("attack.png"); */
+
+
 /* z-index: 200; */
+
+
 /* background-size: cover; */
+
+
 /* } */
 
 button.inc {
-  right: 0px;
-  border-left: none;
+    right: 0px;
+    border-left: none;
 }
 
-
 html {
-  min-width: fit-content;
-  display: grid;
-  gap: 5rem;
+    min-width: fit-content;
+    display: grid;
+    gap: 5rem;
 }
 
 input#taWikiSetBuilder {
-  height: max-content;
-  grid-area: 4 / 2 / 5 / 6;
-  background-color: gray;
+    height: max-content;
+    grid-area: 4 / 2 / 5 / 6;
+    background-color: gray;
 }
 
 div#statsTableDiv {
-  grid-area: 1 / 2 / 4 / 6;
-  display: grid;
-  align-items: stretch;
+    grid-area: 1 / 2 / 4 / 6;
+    display: grid;
+    align-items: stretch;
 }
 
 #weaponSelect>div:nth-child(3) {
-  grid-area: 3 / 1 / 5 / 2;
+    grid-area: 3 / 1 / 5 / 2;
 }
 
 section#section2 {
-  display: grid;
-
-  align-content: start;
-  gap: .5rem;
-  /* gap: inherit; */
-
-  justify-items: stretch;
-  align-items: start;
-
+    display: grid;
+    align-content: start;
+    gap: .5rem;
+    /* gap: inherit; */
+    justify-items: stretch;
+    align-items: start;
 }
 
 html div {
-  display: grid;
-  align-content: start;
+    display: grid;
+    align-content: start;
 }
 
 section#section1.contain {
-  align-items: start;
-  align-content: start;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.6rem;
+    align-items: start;
+    align-content: start;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.6rem;
 }
 
 div#BowGunId,
 div.uniqueBow {
-  grid-area: 1 / 2 / auto / auto;
+    grid-area: 1 / 2 / auto / auto;
 }
 
 div#weaponSelect.contain {
-  grid-template-columns: 1.3fr 2fr;
-  grid-area: 2 / 1 / 3 / 6;
-  display: grid;
-  align-items: baseline;
+    grid-template-columns: 1.3fr 2fr;
+    grid-area: 2 / 1 / 3 / 6;
+    display: grid;
+    align-items: baseline;
 }
 
 .contain {
-  gap: 0.25rem;
-  display: grid;
-  box-sizing: border-box;
-  align-content: center;
-  align-items: center;
+    gap: 0.25rem;
+    display: grid;
+    box-sizing: border-box;
+    align-content: center;
+    align-items: center;
 }
 
 body {
-  display: grid;
-  color: rgb(3, 3, 3);
-  /* background-size: 100% 100%; */
-  /* background-position: 0px 0px, 0px 0px; */
-  /* background-image: repeating-linear-gradient(167deg, #470383FF 57%, #850000A1 57%, #090505B3 65%), repeating-linear-gradient(198deg, #FF0000FF 64%, #1D1A55FF 65%, #000000FF 70%); */
-  /* background-size: 100% 100%; */
-  /* background-position: 0px 0px, 0px 0px; */
-  /*   background-image: repeating-linear-gradient(167deg, #470383FF 57%, #850000A1 57%, #090505B3 58%), repeating-linear-gradient(198deg, #FF0000FF 64%, #000000FF 64%, #1D1A55FF 65%);
+    display: grid;
+    color: rgb(3, 3, 3);
+    /* background-size: 100% 100%; */
+    /* background-position: 0px 0px, 0px 0px; */
+    /* background-image: repeating-linear-gradient(167deg, #470383FF 57%, #850000A1 57%, #090505B3 65%), repeating-linear-gradient(198deg, #FF0000FF 64%, #1D1A55FF 65%, #000000FF 70%); */
+    /* background-size: 100% 100%; */
+    /* background-position: 0px 0px, 0px 0px; */
+    /*   background-image: repeating-linear-gradient(167deg, #470383FF 57%, #850000A1 57%, #090505B3 58%), repeating-linear-gradient(198deg, #FF0000FF 64%, #000000FF 64%, #1D1A55FF 65%);
 
  */
-  /* background-image: url("Untitled.webp"); */
-  /* background-size: 100% 100%; */
-  /* background-position: 0px 0px, 0px 0px; */
-  background-size: 100% 100%;
-  background-position: 0px 0px, 0px 0px, 0px 0px;
-  background-image: repeating-linear-gradient(303deg, #000000D4 76%, #050505BA 79%), repeating-linear-gradient(222deg, #0D0101CC 11%, #090909BD 12%, #000000BD 14%), repeating-linear-gradient(145deg, #0000ACD1 64%, #0B119EFF 66%);
-  /* background-size: cover; */
-  min-height: 100vh;
-  /* min-width: fit-content; */
-
-  gap: 1rem;
-  border-spacing: 0px;
-  align-content: center;
-  overflow: auto;
+    /* background-image: url("Untitled.webp"); */
+    /* background-size: 100% 100%; */
+    /* background-position: 0px 0px, 0px 0px; */
+    background-size: 100% 100%;
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+    background-image: repeating-linear-gradient(303deg, #650000d4 76%, #090000ba 79%), repeating-linear-gradient(222deg, #7e0c0ccc 11%, #5c0000bd 12%, #000000d7 14%), repeating-linear-gradient(145deg, #000075d1 64%, #0B119EFF 66%);
+    /* background-size: cover; */
+    min-height: 100vh;
+    /* min-width: fit-content; */
+    text-align: center;
+    gap: 1rem;
+    border-spacing: 0px;
+    align-content: center;
+    overflow: auto;
 }
 
 #comboCountDisplay {
-  min-width: min-content;
-  width: 15rem;
-
-  display: grid;
-
-  z-index: 55;
-  background-color: rgb(0, 14, 94);
+    min-width: min-content;
+    width: 15rem;
+    display: grid;
+    z-index: 55;
+    background-color: rgb(0, 14, 94);
 }
 
 #comboCountContainer {
-  min-width: min-content;
-  grid-area: 2 / 2 / 2 / 3;
-  margin: 0px;
-  display: grid;
-  overflow: auto;
-  width: 15rem;
-  gap: 0px;
-  align-items: start;
+    min-width: min-content;
+    grid-area: 2 / 2 / 2 / 3;
+    margin: 0px;
+    display: grid;
+    overflow: auto;
+    width: 15rem;
+    gap: 0px;
+    align-items: start;
 }
 
 div#divComboAttacks {
-  max-height: 550px;
-  overflow: auto;
+    max-height: 550px;
+    overflow: auto;
 }
 
 div#sharpnessContainer {
-  justify-content: start;
-  background-color: rgb(10, 10, 10);
-  border-style: ridge;
-  grid-area: 5 / 1 / 6;
-  column-gap: 0px;
-  grid-template-columns: repeat(6, auto);
-  width: fit-content;
-  border-color: rgb(77, 67, 69);
-  justify-self: center;
+    justify-content: start;
+    background-color: rgb(10, 10, 10);
+    border-style: ridge;
+    grid-area: 5 / 1 / 6;
+    column-gap: 0px;
+    grid-template-columns: repeat(6, auto);
+    width: fit-content;
+    border-color: rgb(77, 67, 69);
+    justify-self: center;
 }
 
 div.sharpness {
-  grid-row: 1 / 2;
-  color: black;
-  padding: 0px;
-  font-weight: 700;
+    grid-row: 1 / 2;
+    color: black;
+    padding: 0px;
+    font-weight: 700;
 }
 
 div#red.sharpness {
-  color: white;
+    color: white;
 }
 
 div#blue {
-  color: white;
+    color: white;
 }
 
 div#monContainer.contain {
-  grid-area: 3 / 1 / 10;
-  display: grid;
-  grid-template-columns: repeat(7, auto);
-  place-items: stretch;
-  justify-content: center;
-  max-height: 11rem;
-  overflow: auto;
+    grid-area: 3 / 1 / 10;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    place-items: stretch;
+    justify-content: center;
+    max-height: 11rem;
+    overflow: auto;
 }
 
 .title {
-  display: grid;
-  place-content: center;
+    display: grid;
+    place-content: center;
 }
 
 div#monTableContainer {
-  grid-area: 3 / 1 / 4;
-
-  overflow: auto;
-  display: grid;
-  justify-items: stretch;
-
-
+    grid-area: 3 / 1 / 4;
+    overflow: auto;
+    display: grid;
+    justify-items: stretch;
 }
 
 div#damageTable.meleeContainer {
-
-  overflow: auto;
-  display: grid;
-  width: 100%;
+    overflow: auto;
+    display: grid;
+    width: 100%;
 }
 
-
 .rangedTable>tr>td.a {
-  background-color: rgb(11, 11, 42);
-  min-width: fit-content;
+    background-color: rgb(11, 11, 42);
+    min-width: fit-content;
 }
 
 .meleeTable>tr>.b {
-  background-color: rgba(11, 11, 42, 0);
-  position: relative;
+    background-color: rgba(11, 11, 42, 0);
+    position: relative;
 }
 
 input.inputs,
 input#inputComboRepeat {
-  background-color: rgba(211, 211, 211, 0.37);
-  color: rgb(6, 6, 24);
+    background-color: rgba(211, 211, 211, 0.37);
+    color: rgb(6, 6, 24);
 }
-
 
 #monDropDowns>div:nth-child(3)>div>label:nth-child(1),
 #monDropDowns>div:nth-child(3)>div>label:nth-child(3) {
-  background-color: rgb(12, 26, 105);
-
+    background-color: rgb(12, 26, 105);
 }
 
-select#dropQuest>option:nth-child(n+1):not(#dropQuest) {
-  display: none;
-  background-color: #ffffff00;
-  z-index: -100;
-}
-
-/* select.derelictionMenu, */
-/* select.menu { */
-/* min-height: 1.5rem; */
-/* } */
-/*  */
-/* label.derelictionMenu, */
-/* label.menu { */
-/* background-color: rgb(12, 26, 105) */
-/* } */
-/*  */
-/* label.derelictionMenu.blueScroll { */
-/* grid-area: 1/2; */
-/* } */
-/*  */
-/* label.derelictionMenu blue { */
-/* grid-area: 1/2; */
-/* } */
-/*  */
 #monDropDowns>div:nth-child(3)>div>label:nth-child(1),
 #monDropDowns>div:nth-child(3)>div>label:nth-child(3),
 select#MR,
 select#HR {
-  z-index: 10;
-  width: 100%;
+    z-index: 10;
+    width: 100%;
 }
 
 tbody.meleeTable>tr:nth-child(1) {
-  position: sticky;
-  top: 26px;
-  z-index: 20;
-  opacity: 100;
-  border-spacing: 0px;
-  background-color: rgb(55, 65, 103);
+    position: sticky;
+    top: 26px;
+    z-index: 20;
+    opacity: 100;
+    border-spacing: 0px;
+    background-color: rgb(55, 65, 103);
 }
 
 tbody.meleeTable.a.rangedTable>tr>td:nth-child(2) {
-  width: 16.5rem;
+    width: 16.5rem;
 }
 
 div#html {
-  display: grid;
-  overflow: hidden;
-  align-items: start;
-  gap: 1rem;
-  height: 100vh;
+    display: grid;
+    overflow: hidden;
+    align-items: start;
+    gap: 1rem;
+    height: 100vh;
 }
 
 div#boxes.contain {
-  width: max-content;
-  max-width: max-content;
+    width: max-content;
+    max-width: max-content;
 }
 
 #forButtons {
-
-  gap: 0.25rem;
-
-  grid-area: 4/1;
-
-  grid-template-columns: repeat(4, 1fr);
+    gap: 0.25rem;
+    grid-area: 4/1;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 div#forButtonSelect>div:nth-child(2) {
-  grid-area: 1 / 3 / 2 / 4;
+    grid-area: 1 / 3 / 2 / 4;
 }
 
 div#forButtonSelect>div:nth-child(1) {
-  grid-area: 1 / 2;
+    grid-area: 1 / 2;
 }
 
 div#forButtonSelect {
-  gap: 0.25rem;
-  grid-template-columns: repeat(4, 1fr);
-  display: grid;
-  justify-items: stretch;
-  justify-content: center;
-  grid-area: 5 / 1;
+    gap: 0.25rem;
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    justify-items: stretch;
+    justify-content: center;
+    grid-area: 5 / 1;
 }
 
 button#HerculesDraw {
-  grid-area: 2/2;
+    grid-area: 2/2;
 }
 
 button#UpperCrit {
-  grid-area: 2/3;
+    grid-area: 2/3;
 }
 
 button#filterCombo {
-  grid-area: 1 / 2 / 2 / 3;
+    grid-area: 1 / 2 / 2 / 3;
 }
 
 button#resetCombo {
-  grid-area: 1 / 3 / 2 / 3;
+    grid-area: 1 / 3 / 2 / 3;
 }
 
 button#resetSkills {
-  grid-area: 1 / 4 / 2 / 5;
+    grid-area: 1 / 4 / 2 / 5;
 }
 
 button#maxSkills {
-  grid-area: 1 / 3 / 2 / 4;
+    grid-area: 1 / 3 / 2 / 4;
 }
 
 #dpsTable {
-  border: none;
-  overflow: auto;
-  min-width: fit-content;
-  width: 100%;
+    border: none;
+    overflow: auto;
+    min-width: fit-content;
+    width: 100%;
 }
 
 button.gray {
-  background-color: rgba(77, 58, 58);
-  color: white;
+    background-color: rgba(77, 58, 58);
+    color: white;
 }
 
 button.blue {
-  background-color: rgb(12, 26, 105);
-  color: white;
+    background-color: rgb(12, 26, 105);
+    color: white;
 }
 
 div>button.toggle:hover {
-  background-color: rgb(6, 6, 24);
-  color: rgb(167, 170, 192);
+    background-color: rgb(6, 6, 24);
+    color: rgb(167, 170, 192);
 }
 
 select.players option {
-  z-index: -5;
+    z-index: -5;
 }
 
 select.players {
-  z-index: 0;
-  width: 100%;
+    z-index: 0;
+    width: 100%;
 }
-
-
-
-
-
 
 select.players,
 output#enrageDisplay,
@@ -552,281 +504,234 @@ div>select,
 select#dropMonster,
 #statsTable>tr>th,
 tr>th {
-
-  top: 0px;
-
-  position: sticky;
-
-  margin: 0px;
-
-  display: grid;
-
-  place-content: center;
-
-  justify-items: stretch;
-
-  border-style: outset;
-
-  background-color: rgb(18, 18, 51);
-
-  border-spacing: 0px;
-
-  min-height: 1.2rem;
-
-  z-index: 50;
+    top: 0px;
+    position: sticky;
+    margin: 0px;
+    display: grid;
+    place-content: center;
+    justify-items: stretch;
+    border-style: outset;
+    background-color: rgb(18, 18, 51);
+    border-spacing: 0px;
+    min-height: 1.2rem;
+    z-index: 50;
 }
 
 table#ammoTable * {
-  /* width: max-content; */
-  border-spacing: 0px;
-  gap: 0px;
-  margin: 0px;
-  /* padding: 0.1rem; */
-  /* min-height: 100%; */
-  overflow: auto;
+    /* width: max-content; */
+    border-spacing: 0px;
+    gap: 0px;
+    margin: 0px;
+    /* padding: 0.1rem; */
+    /* min-height: 100%; */
+    overflow: auto;
 }
 
 output.comboAttack {
-  border-color: rgb(77, 67, 69);
-  border-style: ridge;
-  border-width: 0.07rem;
-  border-collapse: collapse;
-  background-color: rgba(11, 11, 42, 0.796);
+    border-color: rgb(77, 67, 69);
+    border-style: ridge;
+    border-width: 0.07rem;
+    border-collapse: collapse;
+    background-color: rgba(11, 11, 42, 0.796);
 }
 
 #ammoChange {
-  grid-area: 1 / 2 / 2 / 3;
+    grid-area: 1 / 2 / 2 / 3;
 }
 
 button#Booster {
-  grid-area: 4 / 2 / 5 / 3;
+    grid-area: 4 / 2 / 5 / 3;
 }
 
 button#Butterflame {
-  grid-area: 5 / 2 / auto / auto;
+    grid-area: 5 / 2 / auto / auto;
 }
 
 button#Palico\ Affinity {
-  grid-area: 3 / 3 / 4 / 4;
+    grid-area: 3 / 3 / 4 / 4;
 }
 
 button#WaterBlight {
-  grid-area: 5 / 3 / auto / auto;
+    grid-area: 5 / 3 / auto / auto;
 }
 
 button#Demon\ Seed {
-  grid-area: 2 / 2 / auto / auto;
+    grid-area: 2 / 2 / auto / auto;
 }
 
 button#Power\ Charm {
-  grid-area: 5 / 1 / auto / auto;
+    grid-area: 5 / 1 / auto / auto;
 }
 
 button#DemonAmmo {
-  grid-area: 4 / 3 / auto / auto;
+    grid-area: 4 / 3 / auto / auto;
 }
 
 button#MegaDemonDrug {
-  grid-area: 3 / 1 / 4 / 2;
+    grid-area: 3 / 1 / 4 / 2;
 }
 
 button#Booster {
-  grid-area: 4 / 2 / 5 / 3;
+    grid-area: 4 / 2 / 5 / 3;
 }
 
 button#huntingHornAffinity {
-  grid-area: 3 / 4 / 4 / 5;
+    grid-area: 3 / 4 / 4 / 5;
 }
 
 button#huntingHornElemental {
-  grid-area: 4 / 4 / auto / auto;
+    grid-area: 4 / 4 / auto / auto;
 }
 
 button#huntingHornAttack {
-  grid-area: 2 / 4 / auto / auto;
+    grid-area: 2 / 4 / auto / auto;
 }
 
 button#sleepWakeUp {
-  grid-area: 5 / 4 / auto / auto;
+    grid-area: 5 / 4 / auto / auto;
 }
 
 button#palicoAffinity {
-  grid-area: 3 / 3 / 4 / 4;
+    grid-area: 3 / 3 / 4 / 4;
 }
 
 button#Demon\ Seed {
-  grid-area: 2 / 2 / auto / auto;
+    grid-area: 2 / 2 / auto / auto;
 }
 
 button#Demon\ Powder {
-  grid-area: 3 / 2 / auto / auto;
+    grid-area: 3 / 2 / auto / auto;
 }
 
 button#DemonDrug {
-  grid-area: 2 / 1 / 3 / 2;
+    grid-area: 2 / 1 / 3 / 2;
 }
 
 button#Power\ Talisman {
-  grid-area: 4 / 1 / 5 / 2;
+    grid-area: 4 / 1 / 5 / 2;
 }
 
 #monTable {
-  border: none;
-  overflow: auto;
-  display: table-cell;
-  border-spacing: 0px;
-
+    border: none;
+    overflow: auto;
+    display: table-cell;
+    border-spacing: 0px;
 }
 
 tr:nth-child(2n) {
-  background-color: rgba(77, 58, 58, 0.67);
+    background-color: rgba(77, 58, 58, 0.67);
 }
 
 tr:nth-child(2n+1) {
-  background-color: rgba(77, 83, 126, 0.67);
+    background-color: rgba(77, 83, 126, 0.67);
 }
 
 .rangedTable td:nth-child(1) {
-  background-color: rgb(11, 11, 42);
+    background-color: rgb(11, 11, 42);
 }
 
 .rangedTable th:nth-child(n+1) {
-  background-color: rgb(11, 11, 42);
-  min-width: fit-content;
-  max-width: 2rem;
+    background-color: rgb(11, 11, 42);
+    min-width: fit-content;
+    max-width: 2rem;
 }
 
 table#statsTable {
-  gap: 0px;
-  border-spacing: 0px;
-  display: grid;
-  align-items: center;
-  height: 100%;
-  min-height: 100%;
+    gap: 0px;
+    border-spacing: 0px;
+    display: grid;
+    align-items: center;
+    height: 100%;
+    min-height: 100%;
 }
 
 #statsTable>tr:nth-child(n+2)>td:nth-child(1) {
-  border-style: outset;
-  background-color: rgb(7, 4, 69);
-  min-width: fit-content;
+    border-style: outset;
+    background-color: rgb(7, 4, 69);
+    min-width: fit-content;
 }
 
 #monTable>tr:nth-child(1)>th:nth-child(1) {
-  min-width: fit-content;
+    min-width: fit-content;
 }
 
 td.a {
-  padding: 0px;
+    padding: 0px;
 }
 
 output {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(5, 3, 39, 0.373);
-  border-top-style: outset;
-  border-right-style: outset;
-  border-bottom-style: outset;
-  border-width: 0.15rem 0.15rem 0.15rem 0px;
-  border-left-style: initial;
-  border-left-color: initial;
-  align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 3, 39, 0.373);
+    border-top-style: outset;
+    border-right-style: outset;
+    border-bottom-style: outset;
+    border-width: 0.15rem 0.15rem 0.15rem 0px;
+    border-left-style: initial;
+    border-left-color: initial;
+    align-items: center;
 }
 
 td {
-  color: rgb(255, 255, 255);
-  border-style: outset;
+    color: rgb(255, 255, 255);
+    border-style: outset;
 }
 
-
-
-
-
 .a.rangedTable {
-  border-style: outset;
-  background-color: rgb(11, 11, 42);
+    border-style: outset;
+    background-color: rgb(11, 11, 42);
 }
 
 div#monDropDowns {
-  grid-area: 2 / 1 / 3;
-  display: grid;
-
-  align-items: start;
+    grid-area: 2 / 1 / 3;
+    display: grid;
+    align-items: start;
 }
 
 div#damageTable {
-  overflow: auto;
-  grid-area: 6 / 1 / 7;
+    overflow: auto;
+    grid-area: 6 / 1 / 7;
 }
 
 .b.meleeTable {
-  border-style: outset;
-  background-color: rgb(11, 11, 42);
+    border-style: outset;
+    background-color: rgb(11, 11, 42);
 }
 
 div#statsTableDiv>table#statsTable>tbody#statsBody>tr>td:first-child {
-  background-color: rgb(11, 11, 42);
+    background-color: rgb(11, 11, 42);
 }
 
 output#enrageDisplay {
-  display: grid;
-  align-content: space-around;
+    display: grid;
+    align-content: space-around;
 }
 
 div#monDropDowns>select {
-  height: 100%;
+    height: 100%;
 }
 
 div#scrollDiv {
-
-  top: -108%;
-
-  position: relative;
-
-  display: grid;
-
-  z-index: 80;
-
-  grid-template-columns: 100% 100%;
-}
-
-button#DerelictionButton {
-  height: 300%;
-  width: 100%;
+    top: -108%;
+    position: relative;
+    display: grid;
+    z-index: 80;
+    grid-template-columns: 100% 100%;
 }
 
 label#dropDerelection {
-  grid-area: 1/1;
-  background-image: url("scrolls.webp");
-}
-
-div#derelictionMenu {
-
-  display: grid;
-
-  grid-template-rows: 1fr 1fr;
-
-  justify-items: stretch;
-
-  align-items: stretch;
-}
-
-select#dropDereliction {
-  pointer-events: none;
-  position: relative;
-  display: grid;
-  top: -36%;
-  height: 100%;
-  grid-area: 3/1/4/2;
+    grid-area: 1/1;
+    background-image: url("scrolls.webp");
 }
 
 div#monDropDowns>div {
-  display: grid;
-  align-items: stretch;
-  grid-template-rows: 1fr 1fr;
+    display: grid;
+    align-items: stretch;
+    grid-template-rows: 1fr 1fr;
 }
 
 html div {
-  gap: 0px;
+    gap: 0px;
 }
 
 h1.players,
@@ -835,484 +740,465 @@ input,
 select,
 label,
 * {
-  border-spacing: 0px;
-  font-family: Play, sans-serif;
-  text-align: center;
-  border-color: rgb(77, 67, 69);
-  color: white;
-  z-index: 5;
-  box-sizing: border-box;
-  /* font-size: revert; */
-  font-weight: 500;
-  /* width: initial; */
+    border-spacing: 0px;
+    font-family: Play, sans-serif;
+    text-align: center;
+    border-color: rgb(77, 67, 69);
+    color: white;
+    z-index: 5;
+    font-size: 98%;
+    box-sizing: border-box;
+    /* font-size: revert; */
+    font-weight: 500;
+    /* width: initial; */
 }
 
-
-
 #monTable>tr:nth-child(1) {
-  position: sticky;
-  top: 0px;
-
+    position: sticky;
+    top: 0px;
 }
 
 .inputs {
-  color: midnightblue;
-  background-color: rgba(27, 25, 94, 0.71);
-
+    color: midnightblue;
+    background-color: rgba(27, 25, 94, 0.71);
 }
 
 table#monTable {
-  border-color: rgb(77, 67, 69);
-  margin: 0px;
-  display: inline-table;
-  grid-area: 3 / 1 / 4;
-  height: 10rem;
+    border-color: rgb(77, 67, 69);
+    margin: 0px;
+    display: inline-table;
+    grid-area: 3 / 1 / 4;
+    height: 10rem;
 }
 
 #boxes>div:nth-child(n+1) {
-  display: grid;
-  gap: 0.25rem;
-}
-
-
-
-
-
-
-
-#ele>div:nth-child(3)>label {
-  display: grid;
-  grid-column: 1 / 3;
+    display: grid;
+    gap: 0.25rem;
 }
 
 label.row1span2 {
-  width: 100%;
-  grid-area: 1 / 1 / 2 / 3;
+    width: 100%;
+    grid-area: 1 / 1 / 2 / 3;
 }
 
 div#divEnrage {
-  display: grid;
-  grid-area: 1 / 5 / auto / 5;
-  align-items: center;
-  align-content: center;
-  margin: 0px;
-  gap: 0px;
+    display: grid;
+    grid-area: 1 / 5 / auto / 5;
+    align-items: center;
+    align-content: center;
+    margin: 0px;
+    gap: 0px;
 }
 
 div#forWeaponSelects,
 div.augToggle.vis {
-  gap: .2rem;
-  display: grid;
-  grid-area: 1/1/5;
+    gap: .2rem;
+    display: grid;
+    grid-area: 1/1/5;
 }
 
 #monContainer>div>div:nth-child(2) {
-  grid-column: 3 / auto;
+    grid-column: 3 / auto;
 }
 
 #monContainer>div:nth-child(2) {
-  display: grid;
-  grid-area: 3 / 2 / auto / 3;
+    display: grid;
+    grid-area: 3 / 2 / auto / 3;
 }
 
 select#dropEnraged {
-  grid-area: 2 / 1 / 3 / 2;
-  border-right: 0px;
+    grid-area: 2 / 1 / 3 / 2;
+    border-right: 0px;
 }
 
-div#aff.contain {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-style: none;
-  grid-area: 8 / 1 / 9 / 3;
-  justify-items: stretch;
+div#setBonus.contain {
+    grid-area: 9/3/12/6;
+    grid-template-columns: repeat(2, 1fr);
 }
 
-div#ele.contain {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-area: 8 / 4 / 9 / 6;
-  justify-content: end;
-  justify-items: stretch;
-}
-
-#weaponSelect>div:nth-child(4)>div>div:nth-child(3) {
-  grid-column: 2 / 2;
-}
-
-#monContainer>div:nth-child(4) {
-  grid-area: 3 / 5 / 4 / 6;
-}
-
-#monContainer>div:nth-child(5) {
-  grid-area: 3 / 6 / auto / 7;
-}
-
-#monContainer>div:nth-child(3) {
-  grid-area: 3 / 3 / auto / 5;
-  margin: 0px;
-}
-
-#MonsterSelect>div>div:nth-child(1) {
-  display: grid;
-  grid-column: 1 / auto;
-}
-
-
-
-select.skill:enabled {
-  text-align: center;
-  justify-self: center;
-  min-width: 100%;
-  /* width: fit-content; */
-}
-}
-
-select.skill:focus {
-  z-index: 100;
-  text-align: center;
-  font-size: small;
-  margin: auto;
-  /* display: grid; */
-  /* justify-content: center; */
-  /* justify-self: center; */
-  min-width: 100%;
-  width: fit-content;
-}
-
-select option {
-  background-color: rgb(5, 5, 35);
-  border-style: none;
-  font-size: .7rem;
-
+div#dango.contain {
+    grid-area: 11/1;
 }
 
 div#raw.contain {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-area: 4 / 1 / 5 / 6;
-  grid-template-rows: repeat(7, 2.6rem);
-  border-style: none;
-  padding: 0%;
-  align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-area: 4 / 1 / 5 / 6;
+    grid-template-rows: repeat(7, 2.6rem);
+    border-style: none;
+    padding: 0%;
+    align-items: center;
 }
 
 div#boxes.contain {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-area: 3 / 1 / 4 / 6;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-area: 3 / 1 / 4 / 6;
+}
+
+div#aff.contain {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-style: none;
+    grid-area: 8 / 1 / 10 / 3;
+    justify-items: stretch;
+}
+
+div#ele.contain {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-area: 8 / 3 / 9 / 6;
+    justify-content: end;
+    justify-items: stretch;
+}
+
+#weaponSelect>div:nth-child(4)>div>div:nth-child(3) {
+    grid-column: 2 / 2;
+}
+
+#monContainer>div:nth-child(4) {
+    grid-area: 3 / 5 / 4 / 6;
+}
+
+#monContainer>div:nth-child(5) {
+    grid-area: 3 / 6 / auto / 7;
+}
+
+#monContainer>div:nth-child(3) {
+    grid-area: 3 / 3 / auto / 5;
+    margin: 0px;
+}
+
+#MonsterSelect>div>div:nth-child(1) {
+    display: grid;
+    grid-column: 1 / auto;
+}
+
+select.skill:enabled {
+    text-align: center;
+    justify-self: center;
+    min-width: 100%;
+    /* width: fit-content; */
+}
+
+select.skill:focus {
+    z-index: 100;
+    text-align: center;
+    font-size: small;
+    margin: auto;
+    /* display: grid; */
+    /* justify-content: center; */
+    /* justify-self: center; */
+    min-width: 100%;
+    width: fit-content;
+}
+
+select option {
+    background-color: rgb(5, 5, 35);
+    border-style: none;
+    font-size: .7rem;
 }
 
 #dpsTable {
-  min-width: fit-content;
+    min-width: fit-content;
 }
 
 table>tbody>tr>td {
-  font-size: 0.8rem;
+    font-size: 0.8rem;
 }
 
-
-
 #enrageDisplay {
-  background-color: rgba(11, 11, 42, 0.38);
-  border-style: outset;
+    background-color: rgba(11, 11, 42, 0.38);
+    border-style: outset;
 }
 
 h1 {
-  font-size: 1.3rem;
-  box-sizing: border-box;
-  margin: 0.25rem 0px;
-  grid-area: 1 / 1 / 2 / -1;
-  background-color: rgb(0, 14, 94);
-  border-style: outset;
-  color: white;
+    font-size: 1.3rem;
+    box-sizing: border-box;
+    margin: 0.25rem 0px;
+    grid-area: 1 / 1 / 2 / -1;
+    background-color: rgb(0, 14, 94);
+    border-style: outset;
+    color: white;
 }
 
 .sharpnessdropDown {
-  display: none;
+    display: none;
 }
 
 select {
-  background-color: rgba(5, 3, 39, 0.373);
-  border-style: outset;
-  border-width: 0.15rem;
-
-
-  width: fixed;
+    background-color: rgba(5, 3, 39, 0.373);
+    border-style: outset;
+    border-width: 0.15rem;
+    width: fixed;
 }
 
 section#section1>div#raw:nth-child(n+1) {
-  width: 100%
+    width: 100%
 }
 
 select#ElderEssence {
-  grid-column: 1 / 3;
-  border-right: 0px;
+    grid-column: 1 / 3;
+    border-right: 0px;
 }
 
 #raw>div,
 #raw>div>select:not(#derelictionMenu),
 #raw>div>label,
 #raw>div>select>option {
-  font-size: .8rem;
+    font-size: .8rem;
 }
 
 label {
-  border-style: outset;
-  border-width: 0.15rem;
-  pointer-events: none;
-  background-color: rgba(12, 26, 105, 0.85);
+    border-style: outset;
+    border-width: 0.15rem;
+    pointer-events: none;
+    background-color: rgba(12, 26, 105, 0.85);
 }
 
 #weaponSelect>div:nth-child(4)>label {
-  grid-column: 1 / -1;
+    grid-column: 1 / -1;
 }
 
 #boxes>label:nth-child(7) {
-  grid-area: l / l / l / l;
+    grid-area: l / l / l / l;
 }
 
 #MonsterSelect>label:nth-child(5) {
-  grid-area: 4 / 1 / auto;
+    grid-area: 4 / 1 / auto;
 }
 
 parent#shieldChargeIMPid {
-  grid-column: 2 / 3;
+    grid-column: 2 / 3;
 }
 
 div#unique {
-  display: grid;
-  height: fit-content;
-  border: none;
+    display: grid;
+    height: fit-content;
+    border: none;
 }
 
-
 #monTable td:nth-child(1) {
-  border-style: outset;
-  background-color: rgba(11, 11, 42, 0.686);
+    border-style: outset;
+    background-color: rgba(11, 11, 42, 0.686);
 }
 
 .S:nth-child(2),
 .S:nth-child(3),
 .S:nth-child(4) {
-  background-color: rgb(234, 88, 12);
-  color: rgb(0, 0, 0);
+    background-color: rgb(234, 88, 12);
+    color: rgb(0, 0, 0);
 }
 
 .A:nth-child(2),
 .A:nth-child(3),
 .A:nth-child(4) {
-  background-color: rgb(249, 115, 22);
-  color: rgb(24, 23, 23);
+    background-color: rgb(249, 115, 22);
+    color: rgb(24, 23, 23);
 }
 
 .B:nth-child(2),
 .B:nth-child(3),
 .B:nth-child(4) {
-  background-color: rgb(251, 146, 60);
-  color: rgb(54, 54, 54);
+    background-color: rgb(251, 146, 60);
+    color: rgb(54, 54, 54);
 }
 
 .C:nth-child(2),
 .C:nth-child(3),
 .C:nth-child(4) {
-  background-color: rgb(253, 186, 116);
-  color: rgb(134, 134, 134);
+    background-color: rgb(253, 186, 116);
+    color: rgb(134, 134, 134);
 }
 
 .F:nth-child(2),
 .F:nth-child(3),
 .F:nth-child(4) {
-  background-color: rgb(254, 215, 170);
-  color: rgb(162, 162, 162);
+    background-color: rgb(254, 215, 170);
+    color: rgb(162, 162, 162);
 }
 
 .A:nth-child(5),
 .B:nth-child(5) {
-  background-color: rgb(153, 27, 27);
-  color: rgb(252, 252, 252);
+    background-color: rgb(153, 27, 27);
+    color: rgb(252, 252, 252);
 }
 
 .C:nth-child(5) {
-  background-color: rgb(239, 68, 68);
-  color: rgb(224, 224, 224);
+    background-color: rgb(239, 68, 68);
+    color: rgb(224, 224, 224);
 }
 
 .F:nth-child(5) {
-  background-color: rgb(248, 113, 113);
-  color: rgb(94, 94, 94);
+    background-color: rgb(248, 113, 113);
+    color: rgb(94, 94, 94);
 }
 
 .A:nth-child(6),
 .B:nth-child(6) {
-  background-color: rgb(29, 78, 216);
-  color: rgb(248, 248, 248);
+    background-color: rgb(29, 78, 216);
+    color: rgb(248, 248, 248);
 }
 
 .C:nth-child(6) {
-  background-color: rgb(37, 99, 235);
-  color: rgb(216, 216, 216);
+    background-color: rgb(37, 99, 235);
+    color: rgb(216, 216, 216);
 }
 
 .F:nth-child(6) {
-  background-color: rgb(59, 130, 246);
-  color: rgb(48, 48, 48);
+    background-color: rgb(59, 130, 246);
+    color: rgb(48, 48, 48);
 }
 
 .A:nth-child(7),
 .B:nth-child(7) {
-  background-color: rgb(250, 204, 21);
-  color: rgb(7, 7, 7);
+    background-color: rgb(250, 204, 21);
+    color: rgb(7, 7, 7);
 }
 
 .C:nth-child(7) {
-  background-color: rgb(253, 224, 71);
-  color: rgb(23, 22, 22);
+    background-color: rgb(253, 224, 71);
+    color: rgb(23, 22, 22);
 }
 
 .F:nth-child(7) {
-  background-color: rgb(254, 249, 195);
-  color: rgb(94, 94, 94);
+    background-color: rgb(254, 249, 195);
+    color: rgb(94, 94, 94);
 }
 
 .A:nth-child(8),
 .B:nth-child(8) {
-  background-color: rgb(2, 132, 199);
-  color: rgb(0, 0, 0);
+    background-color: rgb(2, 132, 199);
+    color: rgb(0, 0, 0);
 }
 
 .C:nth-child(8) {
-  background-color: rgb(14, 165, 233);
-  color: rgb(23, 22, 22);
+    background-color: rgb(14, 165, 233);
+    color: rgb(23, 22, 22);
 }
 
 .F:nth-child(8) {
-  background-color: rgb(56, 189, 248);
-  color: rgb(94, 94, 94);
+    background-color: rgb(56, 189, 248);
+    color: rgb(94, 94, 94);
 }
 
 .A:nth-child(9),
 .B:nth-child(9) {
-  background-color: rgb(91, 33, 182);
-  color: rgb(255, 255, 255);
+    background-color: rgb(91, 33, 182);
+    color: rgb(255, 255, 255);
 }
 
 .C:nth-child(9) {
-  background-color: rgb(124, 58, 237);
-  color: rgb(209, 208, 208);
+    background-color: rgb(124, 58, 237);
+    color: rgb(209, 208, 208);
 }
 
 .F:nth-child(9) {
-  background-color: rgb(139, 92, 246);
-  color: rgb(173, 173, 173);
+    background-color: rgb(139, 92, 246);
+    color: rgb(173, 173, 173);
 }
 
 select#weaponRampage0 {
-  grid-column: 1 / auto;
+    grid-column: 1 / auto;
 }
 
 select#weaponRampage1 {
-  grid-column: 2 / 3;
+    grid-column: 2 / 3;
 }
 
 select#weaponRampage2 {
-  grid-column: 1 / auto;
+    grid-column: 1 / auto;
 }
 
 select#weaponRampage3 {
-  grid-column: 2 / 3;
+    grid-column: 2 / 3;
 }
 
 select#weaponRampage4 {
-  grid-column: 1 / auto;
+    grid-column: 1 / auto;
 }
 
 select#weaponRampage5 {
-  grid-column: 2 / 3;
+    grid-column: 2 / 3;
 }
 
 @media not all {
-  tbody#dpsBody.meleeTable>tr {
-    height: 27px;
-  }
+    tbody#dpsBody.meleeTable>tr {
+        height: 27px;
+    }
 }
 
 div#forButtons button {
-  min-width: max-content;
+    min-width: max-content;
 }
 
-
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(19, 19, 19);
+    background: rgb(19, 19, 19);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(53, 53, 70);
+    background: rgb(53, 53, 70);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(117, 21, 21);
+    background: rgb(117, 21, 21);
 }
 
 select#dropQuest {
-  pointer-events: none;
-  position: relative;
-  display: grid;
-  top: -118%;
-  height: 120%;
+    pointer-events: none;
+    position: relative;
+    display: grid;
+    top: -118%;
+    height: 120%;
 }
-
 
 h1,
 label,
 input {
-  max-height: 30px;
-  margin: 0;
-  min-width: max-content;
-
+    max-height: 30px;
+    margin: 0;
+    min-width: max-content;
 }
 
 .augDiv>label {
-  grid-area: 1/1/2/3;
+    grid-area: 1/1/2/3;
 }
 
-
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 div.menu {
-  z-index: 55;
-  position: relative;
+    z-index: 55;
+    position: relative;
 }
 
 #redScroll {
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 div>.vis:hover {
-  background: rgb(245, 245, 245);
-  border-radius: 75%;
-
+    background: rgb(245, 245, 245);
+    border-radius: 75%;
 }
 
 .scroll {
-  border: none;
+    border: none;
 }
 
 div>.augVis,
 div>.vis {
-  display: grid;
-  gap: .2rem;
+    display: grid;
+    gap: .2rem;
 }
 
 div>.augInvis,
 div>.invis {
-  display: none;
+    display: none;
 }
