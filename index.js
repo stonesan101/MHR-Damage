@@ -541,7 +541,9 @@ function GetSkills(power) {
     }
     power.getSkills = power.getSkills.filter(isUnique);
     $(power.getSkills).each(function() {
-        skills.push(info.skills[this][$(`#${this}`)[0].selectedIndex]);
+        if ($(`#${this}`).css('display') !== 'none') {
+            skills.push(info.skills[this][document.getElementById(this).selectedIndex]);
+        }
     });
     skills = skills.filter(isUnique);
 
@@ -1082,6 +1084,9 @@ function BuildDamageTable(myDamage,id) {
 		if ($(window).width() > 850) {
 			setHeight();
 		}
+		$('.inputs').on('change',function (e) {
+	DataCompile(e)
+})
 	}
 	if (/blue/.test(filterCombo.className)) {
 		$('.a').each(function (index) {
@@ -1269,7 +1274,7 @@ $(window).on('keypress',function (e) {
 	}
 });
 function UniqueColumnsDisplay() {
-	$('#unique')[0].style = /Bow/.test($(weaponType).val()) ? 'grid-template-columns:repeat(4, 1fr); grid-area: 9 / 1 / 10 / 6;' : 'grid-area: 8 / 3 / 9 / 4;';
+	$('#dango')[0].style = Bombardier.style.display ==='none' ? 'grid-template-columns:repeat(2, 1fr); grid-area: 10/1/11/3;' : 'grid-template-columns:repeat(3, 1fr); grid-area: 10/1/12/4;';
 	// forButtons.style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns: repeat(10. 1fr)' : 'grid-template-columns: repeat(6, 1fr)';
 }
 function ResetSkills(element = '.skill') {
@@ -1352,15 +1357,17 @@ $('.toggle').on('mousedown',function (e) {
 	if (this !== filterCombo) {
 	let ugh=	dropHZ.selectedIndex
 		DataCompile();
-		MonChart();
-		dropHZ.selectedIndex=ugh
-		$(dropHZ).
-			children().
-			each(function (index) {
-				if (this.textContent === document.querySelector('#monTable > tr:nth-child(2) > td:nth-child(1)').textContent) {
-					dropHZ.selectedIndex = index;
-				}
-			});
+		if (this === WaterBlight) {
+			MonChart();
+			dropHZ.selectedIndex = ugh;
+			// $(dropHZ).
+			// children().
+			// each(function (index) {
+			// if (this.textContent === document.querySelector('#monTable > tr:nth-child(2) > td:nth-child(1)').textContent) {
+			// dropHZ.selectedIndex = index;
+			// }
+			// });
+		}
 	} else if (this === filterCombo) {
 		FilterTableForComboAttacks();
 	}
@@ -1375,7 +1382,7 @@ function calculateAmmoFrames(power) {
 	let attackName = /\(RF\+\d\)/.test(power.attackName) ? power.attackName.replace(/ \(RF\+\d\)/,'') : power.attackName;
 	attackName = /(?<!Lv)\d/.test(attackName) ? attackName.slice(0,attackName.length - 1) + 'Lv' + attackName.slice(-1) : attackName;
 	const ammo = {};
-	ammo.ammoIncrease = info.ammo.AmmoUp[attackName][AmmoUp.selectedIndex];
+	ammo.ammoIncrease = info.ammo.AmmoUp[attackName][AmmoUP.selectedIndex];
 	// converts to number to find frames used while staying within possible parameters
 	ammo.recoilSpeed =
 		info.ammo.recoil[attackName][
@@ -1408,7 +1415,7 @@ function calculateAmmoFrames(power) {
 		];
 	ammo.reloadFrames = info.ammo.reload.frames[ammo.reloadSpeed];
 	ammo.clipSize = power.clipSize[power.isUsed] + ammo.ammoIncrease;
-	ammo.spareShot = +SpareShot.value + +spareAdjust.value;
+	ammo.spareShot = info.skills.SpareShot[SpareShot.selectedIndex] + +spareAdjust.value;
 	if (/(?<!snipe.*)explosion/.test(attackName) && Bombardier.selectedIndex > 0) {
 		ammo.spareShot += JSON.parse(Bombardier.value)[lower(attackName).match(/sticky|wyvern/)[0]][2];
 	}
@@ -1924,8 +1931,8 @@ function setSkillDescriptions(thisSkill) {
 				if (index !== 0) {
 					if (ugh2 === 'RecoilDown' || ugh2 === 'ReloadSpeed') {
 						option = /Reload/.test(ugh2) ? ugh2.slice(0,6) + ' ' + ugh2.slice(6) + ' +' + index : ugh2.slice(0,6) + ' ' + ugh2.slice(6) + ' +' + index;
-					} else if (ugh2 === 'AmmoUp' || ugh2 === 'SpareShot') {
-						let inc = ugh2 === 'AmmoUp' ? ['No Change','+1 Lvl 2 & Ele Ammo','+1 Lvl 3 & Dragon Ammo'] : ['Spare Shot +5%','Spare Shot +10%','Spare Shot +20%'];
+					} else if (ugh2 === 'AmmoUP' || ugh2 === 'SpareShot') {
+						let inc = ugh2 === 'AmmoUP' ? ['No Change','+1 Lvl 2 & Ele Ammo','+1 Lvl 3 & Dragon Ammo'] : ['Spare Shot +5%','Spare Shot +10%','Spare Shot +20%'];
 						option = index + ': ' + inc[index - 1];
 					} else if (ugh2 == 'Marksman') {
 							option = index + ': ' + ['Chance 20% Raw  + 5% EFR +1%','Chance 20% Raw+10% EFR +2%','Chance 60% Raw  + 5% EFR +3% ','Chance 40% Raw+10% EFR +4%'][index-1];

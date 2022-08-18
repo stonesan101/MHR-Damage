@@ -38,7 +38,7 @@
 #damageTable>table>thead {
     position: sticky;
     top: 0;
-    z-index: 50;
+    z-index: 20;
 }
 
 #ammoBody>tr>td,
@@ -197,8 +197,9 @@ button.inc {
 
 html {
     min-width: fit-content;
-    display: grid;
-    gap: 5rem;
+    /* display: grid; */
+    /* gap: 5rem; */
+    overflow: visible;
 }
 
 input#taWikiSetBuilder {
@@ -219,11 +220,10 @@ div#statsTableDiv {
 
 section#section2 {
     display: grid;
-    align-content: start;
-    gap: .5rem;
+    grid-area: 2/3/3/4;
+    /* gap: .5rem; */
     /* gap: inherit; */
-    justify-items: stretch;
-    align-items: start;
+    align-content: stretch;
 }
 
 html div {
@@ -274,7 +274,7 @@ body {
     /* background-position: 0px 0px, 0px 0px; */
     background-size: 100% 100%;
     background-position: 0px 0px, 0px 0px, 0px 0px;
-    background-image: repeating-linear-gradient(303deg, #650000d4 76%, #090000ba 79%), repeating-linear-gradient(222deg, #7e0c0ccc 11%, #5c0000bd 12%, #000000d7 14%), repeating-linear-gradient(145deg, #000075d1 64%, #0B119EFF 66%);
+    background-image: repeating-linear-gradient(303deg, #4f0000d4 76%, #090000ba 79%), repeating-linear-gradient(222deg, #490000cc 11%, #3c0000bd 12%, #000000d7 14%), repeating-linear-gradient(105deg, #000030d1 64%, rgb(0, 3, 82) 66%);
     /* background-size: cover; */
     min-height: 100vh;
     /* min-width: fit-content; */
@@ -389,7 +389,7 @@ input#inputComboRepeat {
 #monDropDowns>div:nth-child(3)>div>label:nth-child(3),
 select#MR,
 select#HR {
-    z-index: 10;
+    z-index: 50;
     width: 100%;
 }
 
@@ -483,18 +483,14 @@ button.blue {
     color: white;
 }
 
+button#questButton {
+    display: grid;
+    grid-area: 2/1/3/2;
+}
+
 div>button.toggle:hover {
     background-color: rgb(6, 6, 24);
     color: rgb(167, 170, 192);
-}
-
-select.players option {
-    z-index: -5;
-}
-
-select.players {
-    z-index: 0;
-    width: 100%;
 }
 
 select.players,
@@ -727,11 +723,36 @@ label#dropDerelection {
 div#monDropDowns>div {
     display: grid;
     align-items: stretch;
-    grid-template-rows: 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr; */
+    overflow: visible;
 }
 
 html div {
     gap: 0px;
+}
+
+div#divMR {
+    display: grid;
+    top: 50%;
+    /* grid-area: 2/1/3/2; */
+}
+
+div#divHR {
+    z-index: 80;
+    position: relative;
+    display: grid;
+    top: 50%;
+}
+
+div#divMR {
+    z-index: 80;
+    position: relative;
+    /* grid-area: 1/2/1/2; */
+}
+
+div#license {
+    display: grid;
+    grid-area: 3/1/4/4;
 }
 
 h1.players,
@@ -745,7 +766,7 @@ label,
     text-align: center;
     border-color: rgb(77, 67, 69);
     color: white;
-    z-index: 5;
+    /* z-index: 1; */
     font-size: 98%;
     box-sizing: border-box;
     /* font-size: revert; */
@@ -812,12 +833,17 @@ select#dropEnraged {
 }
 
 div#setBonus.contain {
-    grid-area: 9/4/12/6;
+    grid-area: 8/4/9/6;
     grid-template-columns: repeat(2, 1fr);
 }
 
 div#dango.contain {
-    grid-area: 11/1;
+    grid-area: 10/1/11/4;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+div#unique {
+    grid-area: 8 / 3 / 9 / 4;
 }
 
 div#raw.contain {
@@ -846,8 +872,8 @@ div#aff.contain {
 
 div#ele.contain {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-area: 8 / 3 / 9 / 6;
+    grid-template-columns: repeat(2, 1fr);
+    grid-area: 10 / 4 / 10 / 6;
     justify-content: end;
     justify-items: stretch;
 }
@@ -947,6 +973,10 @@ select#ElderEssence {
 #raw>div>label,
 #raw>div>select>option {
     font-size: .8rem;
+}
+
+#raw>div:nth-child(30) {
+    grid-column-start: 5;
 }
 
 label {
@@ -1150,10 +1180,11 @@ div#forButtons button {
 
 select#dropQuest {
     pointer-events: none;
-    position: relative;
+    /* position: relative; */
     display: grid;
-    top: -118%;
-    height: 120%;
+    /* top: -118%; */
+    /* height: 120%; */
+    grid-area: 2/1/3/2;
 }
 
 h1,
@@ -1161,7 +1192,11 @@ label,
 input {
     max-height: 30px;
     margin: 0;
-    min-width: max-content;
+    display: grid;
+}
+
+#monDropDowns>div:nth-child(3)>label {
+    grid-area: 1/1;
 }
 
 .augDiv>label {
@@ -1175,8 +1210,11 @@ input {
 }
 
 div.menu {
-    z-index: 55;
-    position: relative;
+    z-index: 80;
+    display: grid;
+    overflow: visible;
+    grid-area: 1/1/2/2;
+    /* position: relative; */
 }
 
 #redScroll {

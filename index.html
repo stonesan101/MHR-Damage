@@ -296,7 +296,7 @@
             <option></option>
             <option></option>
           </select></div>
-            <div><label for='PunishingDraw'>Punishing Draw</label><select id='PunishingDraw' name='PunishingDraw' class='skill'>
+            <div><label for='PunishingDraw'>Punishing Draw</label><select id='PunishingDraw' name='PunishingDraw' class='skill classSpecific melee Bow'>
             <option value='0'>---</option>
             <option value='3'>Lv-1</option>
             <option value='5'>Lv-2</option>
@@ -391,9 +391,8 @@
             <option></option>
             <option></option>
           </select></div>
-            <div style='display: none;'><label for='BowChargePlus'>Mighty Bow</label><select class='skill classSpecific Bow' id='BowChargePlus' name='MightyBow' selectedindex='0' style='display: none;'> Mighty Bow &gt; <option value='false'>---
-              <!-- option-->
-            </option>
+            <div style='display: none;'><label for='BowChargePlus'>Mighty Bow</label><select class='skill classSpecific Bow' id='BowChargePlus' name='MightyBow' selectedindex='0' style='display: none;'>
+            <option value='false'>---</option>
             <option value='true'>Lv-1</option>
           </select></div>
             <div style='display: none;'><label for='RapidFireUp'>Rapid Fire Up</label><select id='RapidFireUp' name='Rapid' class='skill classSpecific LightBowGun HeavyBowGun' selectedindex='0' style='display: none;'>
@@ -424,6 +423,30 @@
             <div style='display: none;'><label class='classSpecific Shot' for='SpecialAmmoBoost' selectedindex='0' style='display: none;'>Special Ammo
             Up</label><select id='SpecialAmmoBoost' name='Special Ammo' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
             <option>----</option>
+            <option></option>
+            <option></option>
+          </select></div>
+            <div style='display: none;'><label for='AmmoUP'>AmmoUP</label><select id='AmmoUP' name='AmmoUP' class='skill classSpecific  HeavyBowGun LightBowGun' selectedindex='0' style='display: none;'>
+            <option>----</option>
+            <option></option>
+            <option></option>
+            <option></option>
+          </select></div>
+            <div style='display: none;'><label for='RecoilDown'>Recoil Down</label><select id='RecoilDown' name='RecoilDown' class='skill classSpecific HeavyBowGun LightBowGun' selectedindex='0' style='display: none;'>
+            <option>----</option>
+            <option></option>
+            <option></option>
+            <option></option>
+          </select></div>
+            <div style='display: none;'><label for='ReloadSpeed'>Reload Speed</label><select id='ReloadSpeed' name='ReloadSpeed' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
+            <option>----</option>
+            <option></option>
+            <option></option>
+            <option></option>
+          </select></div>
+            <div style='display: none;'><label for='SpareShot'>Spare Shot</label><select id='SpareShot' name='SpareShot' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
+            <option>----</option>
+            <option></option>
             <option></option>
             <option></option>
           </select></div>
@@ -499,13 +522,13 @@
               <option></option>
               <option></option>
             </select></div>
+                <div><label for='ElementalExploit'>Elemental Exploit</label><select id='ElementalExploit' name='Elemental Exploit' class='skill'>
+              <option value=0>----</option>
+              <option value=10></option>
+              <option value=12.5></option>
+              <option value=15></option>
+            </select></div>
             </div>
-            <div><label for='ElementalExploit'>Elemental Exploit</label><select id='ElementalExploit' name='Elemental Exploit' class='skill'>
-            <option value=0>----</option>
-            <option value=10></option>
-            <option value=12.5></option>
-            <option value=15></option>
-          </select></div>
             <div class='contain' id="dango">
                 <h1>Dango Skills</h1>
                 <div><label for='Booster'>Booster</label><select class='skill' id='Booster' name='Booster'>
@@ -515,28 +538,28 @@
               <option></option>
               <option></option>
             </select></div>
-                <div style='display: none;'><label for='Bombardier'>Dango Bombardier</label><select id='Bombardier' name='Bombardier' class='skill classSpecific ChargeBlade HeavyBowGun LightBowGun Gunlance' selectedindex='0' style='display: none;'>
+                <div style='display: none;'><label for='Bombardier'>Bombardier</label><select id='Bombardier' name='Bombardier' class='skill classSpecific ChargeBlade HeavyBowGun LightBowGun Gunlance' selectedindex='0' style='display: none;'>
               <option>----</option>
               <option></option>
               <option></option>
               <option></option>
               <option></option>
             </select></div>
-                <div><label class='thisWidth' for='Adrenaline'>Dango Adrenaline</label><select class='skill' id='Adrenaline' name='Adrenaline'>
+                <div><label class='thisWidth' for='Adrenaline'>Adrenaline</label><select class='skill' id='Adrenaline' name='Adrenaline'>
               <option>----</option>
               <option></option>
               <option></option>
               <option></option>
               <option></option>
             </select></div>
-                <div style='display: none;'><label class='classSpecific Shot' for='DangoTemper' selectedindex='0' style='display: none;'>Dango Temper</label><select id='DangoTemper' name='Dango Temper' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
+                <div style='display: none;'><label class='classSpecific Shot' for='DangoTemper' selectedindex='0' style='display: none;'>Temper</label><select id='DangoTemper' name='Dango Temper' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
               <option>----</option>
               <option></option>
               <option></option>
               <option></option>
               <option></option>
             </select></div>
-                <div style='display: none;'><label class='classSpecific Shot' for='Marksman' selectedindex='0' style='display: none;'>Dango Marksman</label><select id='Marksman' name='Marksman' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
+                <div style='display: none;'><label class='classSpecific Shot' for='Marksman' selectedindex='0' style='display: none;'>Marksman</label><select id='Marksman' name='Marksman' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
               <option value='[1,1]'>---</option>
               <option value='[1.05,1.015]'>Lv-1</option>
               <option value='[1.1,1.03]'>Lv-2</option>
@@ -640,7 +663,7 @@
             <button type='button' aria-pressed='false' class='gray toggle classSpecific Bow skillButton' value='{"BRM":1,"BR":0,"PRM":1.15,"BEM":1,"BE":0,"PEM":1.1,"aff":0}' id='UpperCrit' onclick='DataCompile()'> Upper Critical Distance </button>
             <button type='button' aria-pressed='false' class='gray toggle classSpecific melee Bow' id='filterCombo'> Combo Attack Filter</button>
             <button type='button' aria-pressed='false' class='blue classSpecific LightBowGun HeavyBowGun' id='ammoChange' onclick='ToggleAmmoTables()'> Change Ammo
-          Table </button>
+          Table</button>
             <button type='button' aria-pressed='false' class='gray toggle classSpecific LightBowGun skillButton' id='CriticalFirePower' onclick='DataCompile()'>
           CriticalFirePower </button>
         </div>
