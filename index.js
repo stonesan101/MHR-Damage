@@ -138,9 +138,9 @@ function RangedDPS(_e) {
         if (/snipe/.test(power.attackName) || /explosion/.test(power.attackName) || /Wyvern/.test(power.attackName) || /sub-Lv/.test(power.attackName)) {
             [power.efe, power.eleCrit, power.eleNon] = [power.baseEle, power.baseEle, power.baseEle];
         }
-        const totalEffective = ~~(~~(0.1 + power.efr) + ~~(0.1 + power.efe) * ammo.ticsAdjust);
-        const totalCrit = ~~(~~(0.1 + power.rawCrit) + ~~(0.1 + power.eleCrit) * ammo.ticsAdjust);
-        const totalNon = ~~(~~(0.1 + power.rawNon) + ~~(0.1 + power.eleNon) * ammo.ticsAdjust);
+        const totalEffective = ~~((~~(0.1 + power.efr) + ~~(0.1 + power.efe)) * ammo.ticsAdjust);
+        const totalCrit = ~~((~~(0.1 + power.rawCrit) + ~~(0.1 + power.eleCrit)) * ammo.ticsAdjust);
+        const totalNon = ~~((~~(0.1 + power.rawNon) + ~~(0.1 + power.eleNon)) * ammo.ticsAdjust);
 
         const shotsToKill = ~~(0.99 + $('#health').val() / totalEffective);
         // const timeToKill = /(Sticky|Slicing)/.test(power.attackName)
