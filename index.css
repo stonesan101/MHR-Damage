@@ -6,7 +6,11 @@
         border: none;
         align-items: baseline;
     }
-    combo {
+    div#license {
+        display: grid;
+        grid-area: 5/1/4/3;
+    }
+    .combo {
         width: 100%;
     }
     section#section2 {
@@ -32,6 +36,10 @@
     }
     .title {
         grid-area: 1 / 1 / 2 / 4;
+    }
+    div#license {
+        display: grid;
+        grid-area: 3/1/4/4;
     }
 }
 
@@ -748,11 +756,6 @@ div#divMR {
     z-index: 80;
     position: relative;
     /* grid-area: 1/2/1/2; */
-}
-
-div#license {
-    display: grid;
-    grid-area: 3/1/4/4;
 }
 
 h1.players,
