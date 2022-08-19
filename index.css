@@ -18,7 +18,7 @@
         overflow: hidden;
     }
     .title {
-        grid-area: 1 / 1 / 2 / 3;
+        grid-area: 1 / 1 / 2 / 4;
     }
     section#section1.contain {
         justify-self: start;
