@@ -813,8 +813,10 @@ function GetRemainingSkills(power) {
     } // If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
     if (power.eleType !== 'None') {
         power.PEM *= getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Elemental Exploit' && getHZ()[lower(power.eleType)] >= 25 ?
-            1.3 :
-            (power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Element Exploit' && power.eleType !== 'none' && getHZ()[power.eleType] >= 25 ? 1.15 : 1);
+            1.3 : 1;
+        power.PEM *= power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() == 'Element Exploit' && getHZ()[lower(power.eleType)] >= 25 && lower(power.eleType) !== 'none' ?
+            1.15 :
+            1;
         power.PEM *= getHZ()[lower(power.eleType)] >= 20 && lower(power.eleType) !== 'none' ? info.skills.ElementalExploit[ElementalExploit.selectedIndex] : 1;
     }
     power.augPEM = $('#weaponRampage0').val() === 'Valstrax Soul' && power.eleType === 'Dragon' ? 1.2 : power.augPEM;
@@ -1086,6 +1088,9 @@ function BowComboDamage() {
       if ($(window).width() > 850) {
         setHeight();
       }
+      $('#weaponRampage0').on('change',function (e) {
+        DataCompile(e)
+      })
       $('.inputs').on('change',(e) => {
         DataCompile(e);
       });
@@ -1876,6 +1881,7 @@ function BowComboDamage() {
   }
   function resetSkillDescription() {
     if (lastEvent !== '') {
+      if(lastEvent===BowCoating&&weaponType.value!=='Bow'){return}
       let theseOptions = [];
       if (Object.values(lastEvent.children).some((x) => x.tagName === 'OPTGROUP')) {
         theseOptions = Object.values($(lastEvent.children).children());
