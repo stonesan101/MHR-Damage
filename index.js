@@ -1494,6 +1494,7 @@ $(document).on('mousedown',function (e) {
 	var $target = $(e.target);
 	if (!$target.closest(augToggle).length && $('#augToggle').css('display') !== 'none' && e.target !== Qurious) {
 		$('.augToggle').toggleClass('augVis augInvis');
+		$('#Qurious').toggleClass('blue gray')
 	}
 });
 
