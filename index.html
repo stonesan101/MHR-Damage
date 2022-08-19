@@ -31,8 +31,7 @@
     <section id='section1' class='contain'>
         <h1>Weapon Selection</h1>
         <div style='grid-area:1/1/1/-1; height: 100%; display:grid; justify-content:start; align-content:center; align-items:center'>
-            <button id='Qurious' type='button' aria-pressed='false' onclick="$('.augToggle').toggleClass('augVis augInvis')" class='toggle gray skillButton'>Qurious
-          Augments</button>
+            <button id='Qurious' type='button' aria-pressed='false' class='toggle gray skillButton'>Qurious Augments</button>
         </div>
         <div class='contain' id='weaponSelect'>
             <div id='forWeaponSelects'>
@@ -81,7 +80,7 @@
                   </select>
             </div>
           </div>
-          <div class='augToggle augInvis'>
+          <div id='augToggle' class='augToggle augInvis'>
             <div class="augDiv">
               <button value=2 type="button" aria-pressed="false" class="attackAug augButton dec">⇩</button>
               <button value=2 value=1type="button" aria-pressed="false" class="attackAug augButton inc">⇧</button>
@@ -93,7 +92,7 @@
                         <button value=1 type="button" aria-pressed="false" class="elementalAug augButton dec">⇩</button>
                         <button value=1 type="button" aria-pressed="false" class="elementalAug augButton inc">⇧</button>
                         <label for="elementalAug">Elemental Boost</label>
-                        <output class="elementalAug augLabel label">0</output>
+                        <output class="elementalAug augLabel label classSpecific melee Bow">0</output>
                         <output id="elementalResult" class="label">+ 0</output>
                     </div>
                     <div class="augDiv">
@@ -107,7 +106,7 @@
                         <button value=3 type="button" aria-pressed="false" class="sharpnessAug augButton dec">⇩</button>
                         <button value=3 type="button" aria-pressed="false" class="sharpnessAug augButton inc">⇧</button>
                         <label for="sharpnessAug">Sharpness Boost</label>
-                        <output class="sharpnessAug augLabel label">0</output>
+                        <output class="sharpnessAug augLabel label classSpecific melee">0</output>
                         <output id="sharpnessResult" class="label">+ 0</output>
                     </div>
                     <div class="augDiv">

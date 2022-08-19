@@ -371,12 +371,12 @@ function MeleeDPS(e) {
 function getRampageSkills(power) {
     // adds qurious augs
     power.baseRaw += $('output.attackAug').val() / 2 * 5;
-    attackResult.value = `+ ${$('output.attackAug').val() / 2 * 5}`
-    power.aff += $('output.affinityAug').val() / 3 * 5
+    attackResult.value = `+ ${$('output.attackAug').val() / 2 * 5}`;
+    power.aff += $('output.affinityAug').val() / 3 * 5;
 
     if (getWeapon().eleType !== 'None')
 
-        power.baseEle += $('output.elementalAug').val() * 3
+        power.baseEle += $('output.elementalAug').val() * 3;
 
 
     if (getWeapon().rampageSlots === 0) {
@@ -662,7 +662,7 @@ function TotalHitsOfSharpUsed(power) {
                         if ($(weaponType).val() === 'DualBlades') {
                             totalHitsOfSharpnessUsed += getAttacks()[attackKeys].hitsOfSharp / 3;
                         } else {
-                            totalHitsOfSharpnessUsed += getAttacks()[attackKeys].hitsOfSharp
+                            totalHitsOfSharpnessUsed += getAttacks()[attackKeys].hitsOfSharp;
                         }
                     }
                 } else if ($('#dropWeaponType').val() === 'Gunlance' && eachAttack > 27) {
@@ -807,7 +807,7 @@ function GetRemainingSkills(power) {
             getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Elemental Exploit' && getHZ()[lower(power.eleType)] >= 25 ?
             1.3 :
             (power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Element Exploit' && power.eleType !== 'none' && getHZ()[power.eleType] >= 25 ? 1.15 : 1);
-        power.PEM *= getHZ()[lower(power.eleType)] >= 20 && lower(power.eleType) !== 'none' ? info.skills.ElementalExploit[ElementalExploit.selectedIndex] : 1
+        power.PEM *= getHZ()[lower(power.eleType)] >= 20 && lower(power.eleType) !== 'none' ? info.skills.ElementalExploit[ElementalExploit.selectedIndex] : 1;
     }
     power.augPEM = $('#weaponRampage0').val() === 'Valstrax Soul' && power.eleType === 'Dragon' ? 1.2 : power.augPEM;
     // applies Dulling Strike to Base raw depending on sharpness and if selected
@@ -1085,8 +1085,8 @@ function BuildDamageTable(myDamage,id) {
 			setHeight();
 		}
 		$('.inputs').on('change',function (e) {
-	DataCompile(e)
-})
+			DataCompile(e);
+		});
 	}
 	if (/blue/.test(filterCombo.className)) {
 		$('.a').each(function (index) {
@@ -1235,10 +1235,10 @@ function classChange() {
 			$('.Shot').show();
 
 			// getWeapon()['coatings'].forEach((coat, index)=>{
- // if(coat){
-// info.skills.BowCoating.push(info.skills[['CloseRange','Power','Poison','Para','Sleep','Blast','Exhaust'][index])
- // }
-// })
+			// if(coat){
+			// info.skills.BowCoating.push(info.skills[['CloseRange','Power','Poison','Para','Sleep','Blast','Exhaust'][index])
+			// }
+			// })
 			// if=== 1?getWeapon().coatings.push(coat):enums[i]===2?getWeapon().coatings.push('Poison+'):enums[i]===3?getWeapon().coatings.push('Para+'):enums[i]===4?getWeapon().coatings.push('Sleep+'):getWeapon().coatings
 
 
@@ -1274,7 +1274,7 @@ $(window).on('keypress',function (e) {
 	}
 });
 function UniqueColumnsDisplay() {
-	$('#dango')[0].style = Bombardier.style.display ==='none' ? 'grid-template-columns:repeat(2, 1fr); grid-area: 10/1/11/3;' : 'grid-template-columns:repeat(3, 1fr); grid-area: 10/1/12/4;';
+	$('#dango')[0].style = Bombardier.style.display === 'none' ? 'grid-template-columns:repeat(2, 1fr); grid-area: 10/1/11/3;' : 'grid-template-columns:repeat(3, 1fr); grid-area: 10/1/12/4;';
 	// forButtons.style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns: repeat(10. 1fr)' : 'grid-template-columns: repeat(6, 1fr)';
 }
 function ResetSkills(element = '.skill') {
@@ -1293,8 +1293,8 @@ $(window).on('resize',function () {
 		if (weaponType.value === 'Bow') {
 			$(BowCoating).parent().css('max-width',`${$(dropWeapon).width() - $(dropWeaponType).width()}px`);
 		}
-		if (weaponType.value === (lbg||hbg)) {
-			$(BarrelId).parent().css('max-width',`${($(dropWeapon).width() - $(dropWeaponType).width())*.95}px`);
+		if (weaponType.value === (lbg || hbg)) {
+			$(BarrelId).parent().css('max-width',`${($(dropWeapon).width() - $(dropWeaponType).width()) * .95}px`);
 		}
 
 		if ($(window).width() > 850) {
@@ -1340,11 +1340,11 @@ $('#BowChargePlus').on('change',function () {
 });
 
 $('.scroll').on('mousedown',function () {
-			$('.scroll').toggleClass('vis invis');
-		info.skills.MailofHellfire = $(redScroll).hasClass('invis') ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
-		info.skills.Dereliction = $(redScroll).hasClass('invis') ? info.skills.DerelictionSourse.blue : info.skills.DerelictionSourse.red;
-		DataCompile();
-})
+	$('.scroll').toggleClass('vis invis');
+	info.skills.MailofHellfire = $(redScroll).hasClass('invis') ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
+	info.skills.Dereliction = $(redScroll).hasClass('invis') ? info.skills.DerelictionSourse.blue : info.skills.DerelictionSourse.red;
+	DataCompile();
+});
 
 $('.toggle').on('mousedown',function (e) {
 	if (/DemonDrug/.test(e.target.id) && /gray/.test(e.target.className) && [DemonDrug.className,MegaDemonDrug.className].some(x => /blue/.test(x))) {
@@ -1355,7 +1355,7 @@ $('.toggle').on('mousedown',function (e) {
 		$(e.target).toggleClass('gray blue');
 	}
 	if (this !== filterCombo) {
-	let ugh=	dropHZ.selectedIndex
+		let ugh = dropHZ.selectedIndex;
 		DataCompile();
 		if (this === WaterBlight) {
 			MonChart();
@@ -1467,8 +1467,8 @@ function TimesUsed(ID,arr = comboTracker) {
 	return arr.filter(attackId => attackId == ID).length;
 }
 
-	// $('.aug').on('click',function (e) {
-	// /inc/.test(e.target.className)?$(`#${e.target.id}Augment`).value+1:$(`#${e.target.id}Augment`).value-1
+// $('.aug').on('click',function (e) {
+// /inc/.test(e.target.className)?$(`#${e.target.id}Augment`).value+1:$(`#${e.target.id}Augment`).value-1
 // })
 
 // $(document).on('click',function (e) {
@@ -1477,34 +1477,48 @@ function TimesUsed(ID,arr = comboTracker) {
 function IncreaseComboCount() {
 	if ($('.inputs')[window.event.target.id].value !== '20') {
 		++$('.inputs')[window.event.target.id].value;
-		DataCompile()
+		DataCompile();
 	}
 }
 
 function DecreaseComboCount() {
 	if (window.event.target.id === '0' && $('.inputs')[window.event.target.id].value !== '1') {
 		--$('.inputs')[window.event.target.id].value;
-		DataCompile()
+		DataCompile();
 	} else if (window.event.target.id !== '0' && $('.inputs')[window.event.target.id].value !== '0') {
 		--$('.inputs')[window.event.target.id].value;
-		DataCompile()
+		DataCompile();
 	}
 }
+$(document).on('mousedown',function (e) {
+	var $target = $(e.target);
+	if (!$target.closest(augToggle).length && $('#augToggle').css('display') !== 'none' && e.target !== Qurious) {
+		$('.augToggle').toggleClass('augVis augInvis');
+	}
+});
+
+$('#Qurious').on('mousedown',function () {
+	$('.augToggle').toggleClass('augVis augInvis');
+});
 $('.augButton').on('mousedown',function (e) {
-	let	ugh = 0;
+	let ugh = 0;
 	$('.augLabel').each((x,output) => {
 		ugh += +output.value;
-	})
-	if ($(e.target).hasClass('inc')&& ugh + +e.target.value < 6 && (+$(e.target).siblings()[2].value + +e.target.value < 6&& !/elementalAug/.test(e.target.className)|| /elementalAug/.test(e.target.className) && +$(e.target).siblings()[2].value < 3)) {
+	});
+	if ($(e.target).hasClass('inc') && ugh + +e.target.value < 6 && (+$(e.target).siblings()[2].value + +e.target.value < 6 && !/elementalAug/.test(e.target.className) || /elementalAug/.test(e.target.className) && +$(e.target).siblings()[2].value < 3)) {
 
 
-	$(e.target).siblings()[2].value = +$(e.target).siblings()[2].value + +e.target.value
-	} else if ($(e.target).hasClass('dec')&&+$(e.target).siblings()[2].value >0){
-	$(e.target).siblings()[2].value = +$(e.target).siblings()[2].value - +e.target.value
+		$(e.target).siblings()[2].value = +$(e.target).siblings()[2].value + +e.target.value;
+	} else if ($(e.target).hasClass('dec') && +$(e.target).siblings()[2].value > 0) {
+		$(e.target).siblings()[2].value = +$(e.target).siblings()[2].value - +e.target.value;
 	}
-	DataCompile()
-})
-		function jsonsLoaded() {
+	DataCompile();
+	if (/rampageAug/.test(e.target.className)) {
+	$('#rampageResult').text($('output.rampageAug').val() > 0 ? +1 : +0);
+		RampageSelect()
+	}
+});
+function jsonsLoaded() {
 	if (Object.values(check).every(keyCard => keyCard)) {
 		WeaponTypeSelect();
 		WeaponSelect();
@@ -1524,7 +1538,7 @@ $(taWikiSetBuilder).on('paste',function (e) {
 	e.preventDefault();
 
 	let pasteurl = (event.clipboardData || window.clipboardData).getData('text');
-		$('select.skill').each(function () {
+	$('select.skill').each(function () {
 		lastEvent = this;
 		resetSkillDescription(this);
 	});
@@ -1591,14 +1605,11 @@ function RampageSelect() {
 	$(weaponRampage.children).hide();
 	$(weaponRampage0).show();
 	if (getWeapon().rampageSlots !== 0) {
-		if ($('output.rampageAug').val()>0) {
-			++getWeapon().rampageSlots
-		}
 		let usableDecos = [];
 		$(Object.keys(info.rampage.rampageDecos)).each(function (index,element) {
 			// element == this
 			let deco = element;
-			if (+deco.slice(-1) <= getWeapon().rampageSlots) {
+			if (+deco.slice(-1) <= getWeapon().rampageSlots + (+$('output.rampageAug').val() > 0 ? 1 : 0)) {
 				usableDecos.push(info.rampage.rampageDecos[deco]);
 			}
 		});
@@ -1662,7 +1673,6 @@ function QuestSelect() {
 		$('#dropQuest').append($('<option></option>').attr('value',questHR[0][0]).text(questHR[0][1].quest));
 		$('#MR').hide();
 	}
-	('select#dropQuest>option');
 }
 function HealthSelect() {
 	$(health).empty();
@@ -1879,21 +1889,21 @@ function resetSkillDescription() {
 	if (lastEvent !== '') {
 		let theseOptions = [];
 		if (Object.values(lastEvent.children).some(x => x.tagName === 'OPTGROUP')) {
-			theseOptions =Object.values( $(lastEvent.children).children());
+			theseOptions = Object.values($(lastEvent.children).children());
 			theseOptions.splice(-2);
 			theseOptions.splice(0,0,lastEvent[0]);
 		} else {
 			theseOptions = Object.values(lastEvent.children);
 		}
-		theseOptions.forEach((thisOption,index)=>{
+		theseOptions.forEach((thisOption,index) => {
 			let newText = '';
 			if (window.event.target === BowCoating) {
 				newText = getWeapon().coatings[index];
 			} else if (window.event.target === BarrelId) {
-				newText = ['----','Long','Power','Silencer',"Guard-Up"][index]
-					} else if (window.event.target === Dereliction) {
-			newText=["----","Lv-1 Charge-1","Lv-1 Charge-2","Lv-1 Charge-3","Lv-1 Charge-1","Lv-1 Charge-2","Lv-1 Charge-3","Lv-1 Charge-1","Lv-1 Charge-2","Lv-1 Charge-3"][index]
-			}else{
+				newText = ['----','Long','Power','Silencer',"Guard-Up"][index];
+			} else if (window.event.target === Dereliction) {
+				newText = ["----","Lv-1 Charge-1","Lv-1 Charge-2","Lv-1 Charge-3","Lv-1 Charge-1","Lv-1 Charge-2","Lv-1 Charge-3","Lv-1 Charge-1","Lv-1 Charge-2","Lv-1 Charge-3"][index];
+			} else {
 				newText = `Lv-${index}`;
 			}
 			thisOption.textContent = index === 0 ? '----' : newText;
@@ -1903,11 +1913,11 @@ function resetSkillDescription() {
 }
 
 $(document).on('mousedown',function (e) {
-	if ( lastEvent !== ''&&lastEvent===e.target) {
-		return
+	if (lastEvent !== '' && lastEvent === e.target) {
+		return;
 	}
 	if (lastEvent !== '') {
-				resetSkillDescription();
+		resetSkillDescription();
 	}
 	if (Object.values($('select.skill')).some(x => x.id === e.target.id)) {
 		setSkillDescriptions(e.target);
@@ -1918,7 +1928,7 @@ $('select.skill').on('change',function (e) {
 	resetSkillDescription();
 
 	DataCompile();
-	e.target.blur()
+	e.target.blur();
 });
 
 function setSkillDescriptions(thisSkill) {
@@ -1935,7 +1945,7 @@ function setSkillDescriptions(thisSkill) {
 						let inc = ugh2 === 'AmmoUP' ? ['No Change','+1 Lvl 2 & Ele Ammo','+1 Lvl 3 & Dragon Ammo'] : ['Spare Shot +5%','Spare Shot +10%','Spare Shot +20%'];
 						option = index + ': ' + inc[index - 1];
 					} else if (ugh2 == 'Marksman') {
-							option = index + ': ' + ['Chance 20% Raw  + 5% EFR +1%','Chance 20% Raw+10% EFR +2%','Chance 60% Raw  + 5% EFR +3% ','Chance 40% Raw+10% EFR +4%'][index-1];
+						option = index + ': ' + ['Chance 20% Raw  + 5% EFR +1%','Chance 20% Raw+10% EFR +2%','Chance 60% Raw  + 5% EFR +3% ','Chance 40% Raw+10% EFR +4%'][index - 1];
 					} else if (ugh2 === 'Bombardier') {
 						if (weaponType.value === cb) {
 							option = ['Bombardier','1: Raw +10% EFR +10%','2: Raw +15% EFR +15%','3: Raw +20% EFR +16%','4: Raw + 25% EFR +17%'][index];
@@ -1947,10 +1957,10 @@ function setSkillDescriptions(thisSkill) {
 							option = ['Bombardier','1: Raw + 10% EFR + 10%','2: Sticky+10% Wyvern+15%','3: Raw + 20% EFR + 16%','4: Raw + 25% EFR + 17%'][index];
 						}
 					} else if (ugh2 == 'BarrelId') {
-						option = ['Barrels',`Long: Raw + 5%`,`Power: Raw + 12.5%`,`Silencer: Recoil Down +1`,`Shield: Guard Up`][index]
+						option = ['Barrels',`Long: Raw + 5%`,`Power: Raw + 12.5%`,`Silencer: Recoil Down +1`,`Shield: Guard Up`][index];
 
 					} else if (ugh2 == 'ElementalExploit') {
-							option = index + ': ' + ["----",'Ele + 10%','Ele + 12.5%','Ele + 15%'][index]
+						option = index + ': ' + ["----",'Ele + 10%','Ele + 12.5%','Ele + 15%'][index];
 
 					} else {
 						let raw = '';
