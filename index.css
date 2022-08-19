@@ -10,6 +10,9 @@
         display: grid;
         grid-area: 4/1/5/3;
     }
+    #section2 {
+        grid-area: 3/1/4/3;
+    }
     .combo {
         width: 100%;
     }
@@ -224,7 +227,6 @@ div#statsTableDiv {
 
 section#section2 {
     display: grid;
-    grid-area: 3/1/4/3;
     /* gap: .5rem; */
     /* gap: inherit; */
     align-content: stretch;
