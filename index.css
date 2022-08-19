@@ -220,7 +220,7 @@ section#section2 {
     display: grid;
     /* gap: .5rem; */
     /* gap: inherit; */
-    align-content: stretch;
+    align-content: space-between;
 }
 
 html div {
@@ -271,7 +271,7 @@ body {
     /* background-position: 0px 0px, 0px 0px; */
     background-size: 100% 100%;
     background-position: 0px 0px, 0px 0px, 0px 0px;
-    background-image: repeating-linear-gradient(303deg, #4f0000d4 76%, #090000ba 79%), repeating-linear-gradient(222deg, #490000cc 11%, #3c0000bd 12%, #000000d7 14%), repeating-linear-gradient(105deg, #000030d1 64%, rgb(0, 3, 82) 66%);
+    background-image: repeating-linear-gradient(303deg, #300000d4 76%, #090000ba 79%), repeating-linear-gradient(222deg, #350000cc 11%, #2d0000bd 12%, #000000d7 14%), repeating-linear-gradient(105deg, #000030d1 64%, rgb(0, 2, 60) 66%);
     /* background-size: cover; */
     min-height: 100vh;
     /* min-width: fit-content; */
@@ -307,9 +307,10 @@ div#divComboAttacks {
 }
 
 div#sharpnessContainer {
-    justify-content: start;
     background-color: rgb(10, 10, 10);
     border-style: ridge;
+    min-width: max-content;
+    display: grid;
     grid-area: 5 / 1 / 6;
     column-gap: 0px;
     grid-template-columns: repeat(6, auto);
@@ -341,11 +342,6 @@ div#monContainer.contain {
     justify-content: center;
     max-height: 11rem;
     overflow: auto;
-}
-
-.title {
-    display: grid;
-    place-content: center;
 }
 
 div#monTableContainer {
@@ -392,7 +388,7 @@ select#HR {
 
 tbody.meleeTable>tr:nth-child(1) {
     position: sticky;
-    top: 26px;
+    top: 1.8rem;
     z-index: 20;
     opacity: 100;
     border-spacing: 0px;
@@ -434,8 +430,6 @@ div#forButtonSelect {
     gap: 0.25rem;
     grid-template-columns: repeat(4, 1fr);
     display: grid;
-    justify-items: stretch;
-    justify-content: center;
     grid-area: 5 / 1;
 }
 
@@ -507,6 +501,10 @@ tr>th {
     border-spacing: 0px;
     min-height: 1.2rem;
     z-index: 50;
+}
+
+tr>th {
+    height: 1.8rem;
 }
 
 table#ammoTable * {
@@ -929,8 +927,17 @@ table>tbody>tr>td {
     border-style: outset;
 }
 
+#discord>a>img {
+    height: 1.8rem;
+}
+
+h1.title {
+    height: 2.3rem;
+}
+
 h1 {
     font-size: 1.3rem;
+    height: 1.8rem;
     box-sizing: border-box;
     margin: 0.25rem 0px;
     grid-area: 1 / 1 / 2 / -1;

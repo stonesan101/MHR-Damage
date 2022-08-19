@@ -27,7 +27,12 @@
 </head>
 
 <body>
-    <h1 class='title'>Monster Hunter Rise Damage Calculator</h1>
+    <div class='title'>
+        <h1 class='title'>Monster Hunter Rise Damage Calculator</h1>
+        <div id='discord' style='grid-area:1/1/1/-1; display:grid; justify-content:start; align-content:center; align-items:center'>
+            <a href="https://discord.gg/HhrKVzGftW"><img style="border-width:0" src="OIP.webp" /></a>
+        </div>
+    </div>
     <section id='section1' class='contain'>
         <h1>Weapon Selection</h1>
         <div style='grid-area:1/1/1/-1; height: 100%; display:grid; justify-content:start; align-content:center; align-items:center'>
@@ -567,7 +572,7 @@
             </select></div>
             </div>
             <div class='contain' id='unique' style='grid-area: 8 / 3 / 9 / 4;'>
-                <h1 class='classSpecific Bow ChargeBlade InsectGlaive LightBowGun HeavyBowGun LongSword SwitchAxe' id='weaponId' selectedindex='0' style='display: none;'> GreatSword</h1>
+                <h1 class='classSpecific Bow ChargeBlade InsectGlaive LightBowGun LongSword' id='weaponId' selectedindex='0' style='display: none;'> GreatSword</h1>
                 <div style='display: none;'><label class='classSpecific InsectGlaive' for='Kinsect Buff' selectedindex='0' style='display: none;'>Kinsect
               Buff</label><select id='KinsectBuff' name='Kinsect Buff' class='skill classSpecific InsectGlaive' selectedindex='0' style='display: none;'>
               <option>----</option>
@@ -604,6 +609,14 @@
               <option></option>
             </select></div>
                 <div style='display: none;'><label class='classSpecific LightBowGun' for='evadeHop' selectedindex='0' style='display: none;'>Evade Hop</label><select id='evadeHop' name='Evade Hop' class='skill classSpecific LightBowGun' selectedindex='0' style='display: none;'>
+              <option>----</option>
+              <option></option>
+            </select></div>
+                <div style='display: none;'><label for='HerculesDraw' selectedindex='0'>Hercules Draw</label><select id='HerculesDraw' name='HerculesDraw' class='skill classSpecific Bow' selectedindex='0'>
+              <option>----</option>
+              <option></option>
+            </select></div>
+                <div style='display: none;'><label for='UpperCrit'>Upper Critical Distance</label><select id='UpperCrit' name='Upper Crit' class='skill classSpecific Bow' selectedindex='0' style='display: none;'>
               <option>----</option>
               <option></option>
             </select></div>
@@ -658,8 +671,6 @@
             <button type='button' aria-pressed='false' class='blue' id='resetSkills' onclick='ResetSkills(); DataCompile()'> Reset Skills </button>
             <button type='button' aria-pressed='false' class='blue' id='Save State' onclick='saveState()'> Save Selections </button>
             <button type='button' aria-pressed='false' class='blue classSpecific melee Bow' id='resetCombo' onclick='ComboReset()'> Reset Combo </button>
-            <button type='button' aria-pressed='false' class='gray toggle classSpecific Bow skillButton' value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}' id='HerculesDraw' onclick='DataCompile()'> Hercules Draw </button>
-            <button type='button' aria-pressed='false' class='gray toggle classSpecific Bow skillButton' value='{"BRM":1,"BR":0,"PRM":1.15,"BEM":1,"BE":0,"PEM":1.1,"aff":0}' id='UpperCrit' onclick='DataCompile()'> Upper Critical Distance </button>
             <button type='button' aria-pressed='false' class='gray toggle classSpecific melee Bow' id='filterCombo'> Combo Attack Filter</button>
             <button type='button' aria-pressed='false' class='blue classSpecific LightBowGun HeavyBowGun' id='ammoChange' onclick='ToggleAmmoTables()'> Change Ammo
           Table</button>
