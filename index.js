@@ -445,6 +445,9 @@ function AddDependantSkills() {
 }
 
 function GetSkills(power) {
+    If(comboTracker[0]===null){
+    ComboTracker = [];
+    }
     power.baseRaw += power.Draw === true ? +document.getElementById('PunishingDraw').value : 0;
     power.BR = 0;
     power.BRM = 1;
