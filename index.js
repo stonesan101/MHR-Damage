@@ -180,7 +180,7 @@ function RangedDPS(_e) {
                     'Effective', ~~(power.raw * power.efrMulti * power.PRM * power.enrage * power.augPRM * JSON.parse(Marksman.value)[1]), ~~(power.aff * 100), ~~(0.1 + (11 * power.BEM + power.BE) * power.eleAmmo * power.PEM * power.enrage * power.augPEM * power.efeMulti),
                 ],
             ];
-            BuildDamageTable(stats, 'stats');
+            BuildDamageTable(stats, 'stats', e);
             pass1 = false;
 
             rangedDamage.splice(0, 0, [
@@ -198,9 +198,9 @@ function RangedDPS(_e) {
         }
     });
 
-    BuildDamageTable(rangedDamage, 'dps');
+    BuildDamageTable(rangedDamage, 'dps', e);
     ammoFrameData.splice(0, 0, ['Ammo Type', 'rawMV', 'Reload', 'Recoil', 'Clip Size', 'Tics Per Shot', 'Shots Per \n Min Base', 'Shots \n Per Min']);
-    BuildDamageTable(ammoFrameData, 'ammo');
+    BuildDamageTable(ammoFrameData, 'ammo', e);
 }
 
 function MeleeDPS(e) {
@@ -319,7 +319,7 @@ function MeleeDPS(e) {
                     'Effective', ~~(power.raw * power.efrMulti * power.PRM * power.enrage * power.augEFR * JSON.parse(Marksman.value)[1] * sharpnessModifier.PRM), ~~(power.aff * 100), ~~(ele * power.efeMulti * power.PEM * power.augPEM * power.enrage * power.augEFR * sharpnessModifier.PEM),
                 ],
             ];
-            BuildDamageTable(stats, 'stats');
+            BuildDamageTable(stats, 'stats', e);
             firstRun = false;
         }
     });
@@ -329,7 +329,7 @@ function MeleeDPS(e) {
         if ($('#dropWeaponType').val() === 'Bow') {
             comboDamage = BowComboDamage();
         }
-        if (lastSharp === Sharpness.selectedIndex && !/dropWeapon|taWikiSetBuilder/.test(e.target.id) && window.event.target !== BowChargePlus) {
+        if (lastSharp === Sharpness.selectedIndex && !/dropWeapon|taWikiSetBuilder/.test(e.target.id) && window.event.target !== BowChargePlus && e.target === dropWeapon && !weaponType.value === cb) {
             if (/input|inputButton/.test(e.target.className)) {
                 document.getElementById('c0').textContent = `${formatNumbers(comboDamage[0])}`;
                 document.getElementById('d0').textContent = `${formatNumbers(comboDamage[1])} / ${formatNumbers(comboDamage[2])}`;
@@ -371,7 +371,7 @@ function MeleeDPS(e) {
                 `${formatNumbers(comboDamage[8])}`,
                 `${formatNumbers(comboDamage[9])}`,
             ]);
-            BuildDamageTable(meleeDamage, 'dps');
+            BuildDamageTable(meleeDamage, 'dps', e);
         }
     }
 }
@@ -414,7 +414,7 @@ function AddDependantSkills() {
         return attacks;
     }
     if ($(weaponType).val() === 'ChargeBlade') {
-        const phialType = getWeapon().phialType === 'Impact Phial' ? 'Element Phial| Elemental Phial|Element D' : 'Impact Phial';
+        const phialType = getWeapon().phialType === 'Impact Phial' ? 'Element Phial| Elemental Phial' : 'Impact Phial';
         const regexp = new RegExp(`${phialType}`);
 
         const attacks = Object.fromEntries(Object.entries(getAttacks()).filter((skill) => !regexp.test(skill)));
@@ -961,7 +961,7 @@ function BowComboDamage() {
       comboDamage[9] += (EFR + this[1].baseEle) * (power.ticsPer + 1) * TimesUsed(index + 28);
     });
     if (!/Inputs|inputButton/.test(window.event.target.className)) {
-      BuildDamageTable(currentDamage,'dps');
+      BuildDamageTable(currentDamage,'dps', e);
     }
     c0.innerHTML = `${formatNumbers(comboDamage[0])}`;
     d0.innerHTML = `${formatNumbers(comboDamage[1])} / ${formatNumbers(comboDamage[2])}`;
@@ -972,7 +972,7 @@ function BowComboDamage() {
     i0.innerHTML = `${formatNumbers(comboDamage[9])}`;
   }
 
-  function BuildDamageTable(myDamage,id) {
+  function BuildDamageTable(myDamage,id, e) {
     const currentAmmoTableStyle = ammoTable.style.display;
     const currentDamageTableStyle = dpsTable.style.display;
     const inputs = /gray/.test(filterCombo.className) ? document.querySelectorAll('.a') : document.querySelectorAll('.a:not(.gray)');
@@ -1003,6 +1003,7 @@ function BowComboDamage() {
           if (
             $(previousWeaponType).val() === $(weaponType).val()
             && inputs.length > 0
+            && (window.event.target===dropWeapon &&weaponType.value!==cb||window.event.target!==dropWeapon)
             && window.event.target.id !== 'BowChargePlus'
             && (($(weaponType).val() === 'Bow' && previousWeapon.value === dropWeapon.value) || $(weaponType).val() !== 'Bow')
           ) {
