@@ -132,7 +132,7 @@ function RangedDPS(_e) {
         power = GetSkills(power);
         power = GetRemainingSkills(power);
         power = DamageCalculations(power);
-        if (!/Wyvern|explosion|sub-Lv/.test(power.attackName)) {
+        if (!/Wyvern/.test(power.attackName) && !/explosion/.test(power.attackName) && !/sub-Lv/.test(power.attackName)) {
             ammo = calculateAmmoFrames(power);
         }
         if (/snipe/.test(power.attackName) || /explosion/.test(power.attackName) || /Wyvern/.test(power.attackName) || /sub-Lv/.test(power.attackName)) {
@@ -931,12 +931,12 @@ function BowComboDamage() {
     return total / 1 + 0.001;
   }
   function GunlanceShelling(currentDamage,comboDamage,power) {
-    const regex = new RegExp(`${getWeapon().shellingType} ${getWeapon().shellingLevel}`);
+    const regex = new RegExp(`${getWeapon().shellingType} Lv${getWeapon().shellingLevel}`);
     let Raw = 1;
     let EFR = 1;
     $(Object.entries(getAttacks()).filter((attack) => regex.test(attack))).each(function (index) {
-      Raw = ~~(this[1].rawMV * JSON.parse(Bombardier.value)[0] * JSON.parse(Artillery.value).BRM);
-      EFR = ~~(this[1].rawMV * JSON.parse(Bombardier.value)[1] * JSON.parse(Artillery.value).BRM);
+      Raw = ~~(this[1].rawMV * info.skills.Bombardier[Bombardier.selectedIndex][0] * info.skills.Artillery[Artillery.selectedIndex].BRM);
+      EFR = ~~(this[1].rawMV * info.skills.Bombardier[Bombardier.selectedIndex][1] * info.skills.Artillery[Artillery.selectedIndex].BRM);
       const final = [
         'replaceME',
         this[0],
@@ -1209,16 +1209,16 @@ function BowComboDamage() {
 
       let bomb = [];
       if (weaponType.value === cb) {
-        bomb = ['[1,1]','[1.1,1.15]','[1.15,1.15]','[1.2,1.16]','[1.25,1.17]'];
+        bomb = [[1,1],[1.1,1.15],[1.15,1.15],[1.2,1.16],[1.25,1.17]];
       } else if (weaponType.value === gl) {
-        bomb = ['[1,1]','[1.05,1.05]','[1.1,1.1]','[1.15,1.11]','[1.2,1.12]'];
+        bomb = [[1,1],[1.05,1.05],[1.1,1.1],[1.15,1.11],[1.2,1.12]];
       } else if (weaponType.value === lbg || weaponType.value === hbg) {
         bomb = [
-          '{"wyvern":[1,1,1],"sticky":[1,1,1]}',
-          '{"wyvern":[1.1,1.1,1],"sticky":[1.1,1.1,1]}',
-          '{"wyvern":[1.15,1.15,1],"sticky":[1.1,1.1,1]}',
-          '{"wyvern":[1.20,1.16,1],"sticky":[1.2,1.16,1]}',
-          '{"wyvern":[1.25,1.17,1.1],"sticky":[1.25,1.17,1.1]}',
+          {"wyvern":[1,1,1],"sticky":[1,1,1]},
+          {"wyvern":[1.1,1.1,1],"sticky":[1.1,1.1,1]},
+          {"wyvern":[1.15,1.15,1],"sticky":[1.1,1.1,1]},
+          {"wyvern":[1.20,1.16,1],"sticky":[1.2,1.16,1]},
+          {"wyvern":[1.25,1.17,1.1],"sticky":[1.25,1.17,1.1]},
         ];
       }
       info.skills.Bombardier = bomb;
