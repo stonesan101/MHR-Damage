@@ -126,234 +126,253 @@ function RangedDPS(e) {
             ),
         ),
     ).each((_index, skill) => {
-        let ammoID = skill;
-        if ($(weaponType).val() === 'LightBowGun') {
-            getWeapon().isRapidFire.forEach((ammoType) => {
-                if (ammoType === info.ammo[ammoID].isUsed) {
-                    ammoID = info.ammo.keys[info.ammo[ammoID].isUsed - 1][1];
-                }
-            });
-        }
-        power = {...getWeapon(), ...info.ammo[ammoID] };
-        power = getRampageSkills(power);
-        power = initialStats(power);
-        power = GetRemainingSkills(power);
-        power = DamageCalculations(power);
-        if (!/Wyvern/.test(power.attackName) && !/explosion/.test(power.attackName) && !/sub-Lv/.test(power.attackName)) {
-            ammo = calculateAmmoFrames(power);
-        } else { ammo.ticsAdjust === 1 }
-        if (/snipe/.test(power.attackName) || /explosion/.test(power.attackName) || /Wyvern/.test(power.attackName) || /sub-Lv/.test(power.attackName)) {
-            [power.efe, power.eleCrit, power.eleNon] = [power.baseEle, power.baseEle, power.baseEle];
-        }
-        const totalEffective = ~~((~~(power.efr) + ~~(power.efe)) * ammo.ticsAdjust);
-        const totalCrit = ~~((~~(power.rawCrit) + ~~(power.eleCrit)) * ammo.ticsAdjust);
-        const totalNon = ~~((~~(power.rawNon) + ~~(power.eleNon)) * ammo.ticsAdjust);
-
-        const shotsToKill = ~~(0.99 + $('#health').val() / totalEffective);
-        // const timeToKill = /(Sticky|Slicing)/.test(power.attackName)
-        // ? 5 + ~~( (60 / ammo.shotsPerMin) * shotsToKill) // Adds delay time for stickies/ slicing;
-        // : ~~( (60 / ammo.shotsPerMin) * shotsToKill);
-        const timeToKill = /Stic|Slic/.test(power.attackName) ?
-            5 + ~~(0.99 + (60 / ammo.shotsPerMin) * shotsToKill) :
-            ~~(0.99 + (60 / ammo.shotsPerMin) * shotsToKill);
-        const rawBoth = [`${~~(.1 + power.rawNon)} / ${~~(.1 + power.rawCrit)}`];
-        const eleBoth = [`${~~(.1 + power.eleNon)} / ${~~(.1 + power.eleCrit)}`];
-        const total = [`${~~(.1 + totalNon)} / ${~~(.1 + totalCrit)}`];
-        const damage = [power.attackName, rawBoth, eleBoth, total, ~~(.1 + power.efr), ~~(.1 + power.efe), totalEffective, ammo.shotsPerGain, shotsToKill, timeToKill];
-
-        rangedDamage.push(damage);
-
-        const ammoStats = [
-            power.attackName,
-            power.rawMV,
-            ammo.reloadSpeed,
-            ammo.recoilSpeed,
-            ammo.clipSize,
-            power.ticsPer + 1,
-            ammo.shotsPerMinBase,
-            ammo.shotsPerMin,
-        ];
-
-        ammoFrameData.push(ammoStats, e);
-        if (pass1) {
-            const stats = [
-                ['Stat', 'Raw', 'Affinity', 'Ele Pierce'],
-                ['Base', ~~power.baseRaw, ~~power.baseAff, ~~(11 * (1 + power.raw / 100))],
-                ['Total Attack', ~~power.raw, ~~(power.aff * 100), ~~((11 * power.BEM + power.BE) * (1 + power.raw / 100))],
-                [
-                    'Total Damage', ~~(power.raw * getCritBoost(power.Crit, power.aff).PRM * power.PRM * power.augPRM), ~~(power.aff * 100), ~~((11 * power.BEM + power.BE) * (1 + power.raw / 100) * power.PEM * power.augPEM * getCritEle(power.Crit, power.aff).PEM)
-                ],
-
-
-
-                [
-                    'Effective', ~~(power.raw * getCritBoost(power.Crit, power.aff).EFR * power.PRM * power.augPRM), ~~(power.aff * 100), ~~((11 * power.BEM + power.BE) * (1 + power.raw / 100) * power.PEM * power.augPEM * getCritEle(power.Crit, power.aff).EFE)
-                ],
-            ];
-            BuildDamageTable(stats, 'stats', e);
-            pass1 = false;
-
-            rangedDamage.splice(0, 0, [
-                'Ammo Type',
-                'Raw',
-                'Elemental',
-                'Combined',
-                'EFR',
-                'EFE',
-                'Effective',
-                'RPM Gain',
-                'Shots \n To Kill',
-                'Seconds \n To Kill',
-            ]);
-        }
-    });
-
-    BuildDamageTable(rangedDamage, 'dps', e);
-    ammoFrameData.splice(0, 0, ['Ammo Type', 'rawMV', 'Reload', 'Recoil', 'Clip Size', 'Procs Per', 'RPM Base', 'Current RPM']);
-    BuildDamageTable(ammoFrameData, 'ammo', e);
-}
-
-function MeleeDPS(e) {
-    const meleeDamage = [
-        ['Combo', 'Attack Name', 'MV', 'Raw', 'Element', 'Total', 'EFR', 'EFE', 'Effective']
-    ];
-    let comboDamage = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let power = {};
-    let firstRun = true;
-    const lastSharp = Sharpness.selectedIndex;
-    //  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
-    //
-    if ($(weaponType).val() === 'Bow' || $(weaponType).val() === 'ChargeBlade' || $(weaponType).val() === 'InsectGlaive' || $(weaponType).val() === 'Gunlance') {
-        power.attacks = {...AddDependantSkills(power) };
-    } else {
-        power.attacks = {...getAttacks() };
-    }
-    $(Object.keys(power.attacks)).each((attackID, eachAttack) => {
-        power = {...power, ...info[$(weaponType).val()].attacks[eachAttack], ...getWeapon() };
-        power = {...getRampageSkills(power) };
-        //
-        power = initialStats(power);
-        //
-
-        if (/inputs|inputButton/.test(window.event.target.className) && firstRun && !/BowGun/.test($(weaponType).val())) {
-            UpdateComboTracker();
-            UpdateComboDisplay();
-        }
-
-        if (firstRun && power.comboHitsPerColor === undefined && $(weaponType).val() !== 'Bow') {
-            power = TotalHitsOfSharpUsed(power);
-        }
-        power = GetRemainingSkills(power);
-
-        power = DamageCalculations(power);
-
-        if (!/Bow/.test($(weaponType).val()) && comboTracker.length > 0 && comboTracker[0] !== null && comboTracker[0] !== undefined) {
-            /* goes through each color sharpness and filters the recorded attacks for the number of times this current attack was used
-             * then applies the given sharpness modifier to the damage if damage type is sever or blunt then multiplies by the times used
-             * saves results in the comboDamage var and += the totals for every sharpness of every attack
-             * to later be used to update the comboDamage in the dpsTable
-             */
-            if ($('.inputs').length > 0) {
-                $(Object.keys(power.comboHitsPerColor)).each((_index, color) => {
-                    if (TimesUsed(attackID, power.comboHitsPerColor[color]) > 0) {
-                        const [sharpPRM, sharpPEM] = power.noSharpMod === false ? [sharpnessMod[color].PRM, sharpnessMod[color].PEM] : [1, 1];
-                        const hitsPerAttackPerSharpness = TimesUsed(attackID, power.comboHitsPerColor[color]);
-                        // combo=[rawMV,rawNon,rawCrit,eleNon,eleCrit,totalNon,TotalCrit,EFR,EFE,totalEffective]
-                        comboDamage = [
-                            (comboDamage[0] += Number(~~(power.rawMV * hitsPerAttackPerSharpness * (power.ticsPer + 1)))),
-                            (comboDamage[1] += Number(~~(power.rawNon * sharpPRM) * hitsPerAttackPerSharpness)),
-                            (comboDamage[2] += Number(~~(power.rawCrit * sharpPRM) * hitsPerAttackPerSharpness)),
-                            (comboDamage[3] += Number(~~(power.eleNon * sharpPEM) * hitsPerAttackPerSharpness)),
-                            (comboDamage[4] += Number(~~(power.eleCrit * sharpPEM) * hitsPerAttackPerSharpness)),
-                            (comboDamage[5] += Number(
-                                (~~(power.rawNon * sharpPRM) * hitsPerAttackPerSharpness + ~~(power.eleNon * sharpPEM) * hitsPerAttackPerSharpness) * (power.ticsPer + 1),
-                            )),
-                            (comboDamage[6] += Number(
-                                (~~(power.rawCrit * sharpPRM) * hitsPerAttackPerSharpness + ~~(power.eleCrit * sharpPEM) * hitsPerAttackPerSharpness) * (power.ticsPer + 1),
-                            )),
-                            (comboDamage[7] += Number(~~(power.efr * sharpPRM) * hitsPerAttackPerSharpness)),
-                            (comboDamage[8] += Number(~~(power.efe * sharpPEM) * hitsPerAttackPerSharpness)),
-                            (comboDamage[9] += Number(
-                                (~~(power.efr * sharpPRM) * hitsPerAttackPerSharpness + ~~(power.efe * sharpPEM) * hitsPerAttackPerSharpness) * (power.ticsPer + 1),
-                            )),
-                        ];
+            let ammoID = skill;
+            if ($(weaponType).val() === 'LightBowGun') {
+                getWeapon().isRapidFire.forEach((ammoType) => {
+                    if (ammoType === info.ammo[ammoID].isUsed) {
+                        ammoID = info.ammo.keys[info.ammo[ammoID].isUsed - 1][1];
                     }
                 });
             }
-        }
-        // damage/meleeDamage adds sharpness to the calculations and arranges them in the array to be used for the damageTable
-        let sharpnessModifier = power.noSharpMod === false ? JSON.parse(Sharpness.value) : { PRM: 1, PEM: 1 };
-        if (weaponType.value === 'Bow' && power.type !== 'Shot') {
-            sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Power' ? 1.35 : sharpnessModifier;
-            sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Close Range' ? 1.32 : sharpnessModifier;
-            sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Close Range+' ? 1.39 : sharpnessModifier;
-        } else if (power.type === 'Shot') {
-            sharpnessModifier = { PRM: 1, PEM: 1 };
-        }
-        const damage = [
-            'replaceME',
-            power.attackName,
-            power.rawMV,
-            `${formatNumbers(~~(power.rawNon * sharpnessModifier.PRM))} / ${formatNumbers(~~(power.rawCrit * sharpnessModifier.PRM))}`,
+            power = {...getWeapon(), ...info.ammo[ammoID] };
+            power = getRampageSkills(power);
+            power = initialStats(power);
+            power = GetRemainingSkills(power);
+            power = DamageCalculations(power);
+            if (!/Wyvern/.test(power.attackName) && !/explosion/.test(power.attackName || /Wyvern/.test(power.attackName) && /explosion/.test(power.attackName) && !/sub-Lv/.test(power.attackName)) {
+                    ammo = calculateAmmoFrames(power);
+                } else { ammo.ticsAdjust === 1 }
+                if (/snipe/.test(power.attackName) || /explosion/.test(power.attackName) || /Wyvern/.test(power.attackName) || /sub-Lv/.test(power.attackName)) {
+                    [power.efe, power.eleCrit, power.eleNon] = [power.baseEle, power.baseEle, power.baseEle];
+                }
+                const totalEffective = ~~((~~(power.efr) + ~~(power.efe)) * ammo.ticsAdjust);
+                const totalCrit = ~~((~~(power.rawCrit) + ~~(power.eleCrit)) * ammo.ticsAdjust);
+                const totalNon = ~~((~~(power.rawNon) + ~~(power.eleNon)) * ammo.ticsAdjust);
 
-            `${formatNumbers(~~(power.eleNon * sharpnessModifier.PEM))} / ${formatNumbers(~~(power.eleCrit * sharpnessModifier.PEM))}`,
+                const shotsToKill = ~~(0.99 + $('#health').val() / totalEffective);
+                // const timeToKill = /(Sticky|Slicing)/.test(power.attackName)
+                // ? 5 + ~~( (60 / ammo.shotsPerMin) * shotsToKill) // Adds delay time for stickies/ slicing;
+                // : ~~( (60 / ammo.shotsPerMin) * shotsToKill);
+                const timeToKill = /Stic|Slic/.test(power.attackName) ?
+                    5 + ~~(0.99 + (60 / ammo.shotsPerMin) * shotsToKill) :
+                    ~~(0.99 + (60 / ammo.shotsPerMin) * shotsToKill);
+                const rawBoth = [`${~~(.1 + power.rawNon)} / ${~~(.1 + power.rawCrit)}`];
+                const eleBoth = [`${~~(.1 + power.eleNon)} / ${~~(.1 + power.eleCrit)}`];
+                const total = [`${~~(.1 + totalNon)} / ${~~(.1 + totalCrit)}`];
+                const damage = [power.attackName, rawBoth, eleBoth, total, ~~(.1 + power.efr), ~~(.1 + power.efe), totalEffective, ammo.shotsPerGain, shotsToKill, timeToKill];
 
-            `${formatNumbers((~~(power.rawNon * sharpnessModifier.PRM) + ~~(power.eleNon * sharpnessModifier.PEM)) * (power.ticsPer + 1))} / ${formatNumbers(
+                rangedDamage.push(damage);
+
+                const ammoStats = [
+                    power.attackName,
+                    power.rawMV,
+                    ammo.reloadSpeed,
+                    ammo.recoilSpeed,
+                    ammo.clipSize,
+                    power.ticsPer + 1,
+                    ammo.shotsPerMinBase,
+                    ammo.shotsPerMin,
+                ];
+
+                ammoFrameData.push(ammoStats, e);
+                if (pass1) {
+                    const stats = [
+                        ['Stat', 'Raw', 'Affinity', 'Ele Pierce'],
+                        ['Base', ~~power.baseRaw, ~~power.baseAff, ~~(11 * (1 + power.raw / 100))],
+                        ['Total Attack', ~~power.raw, ~~(power.aff * 100), ~~((11 * power.BEM + power.BE) * (1 + power.raw / 100))],
+                        [
+                            'Total Damage', ~~(power.raw * getCritBoost(power.Crit, power.aff).PRM * power.PRM * power.augPRM), ~~(power.aff * 100), ~~((11 * power.BEM + power.BE) * (1 + power.raw / 100) * power.PEM * power.augPEM * getCritEle(power.Crit, power.aff).PEM)
+                        ],
+
+
+
+                        [
+                            'Effective', ~~(power.raw * getCritBoost(power.Crit, power.aff).EFR * power.PRM * power.augPRM), ~~(power.aff * 100), ~~((11 * power.BEM + power.BE) * (1 + power.raw / 100) * power.PEM * power.augPEM * getCritEle(power.Crit, power.aff).EFE)
+                        ],
+                    ];
+                    BuildDamageTable(stats, 'stats', e);
+                    pass1 = false;
+
+                    rangedDamage.splice(0, 0, [
+                        'Ammo Type',
+                        'Raw',
+                        'Elemental',
+                        'Combined',
+                        'EFR',
+                        'EFE',
+                        'Effective',
+                        'RPM Gain',
+                        'Shots \n To Kill',
+                        'Seconds \n To Kill',
+                    ]);
+                }
+            });
+
+        BuildDamageTable(rangedDamage, 'dps', e); ammoFrameData.splice(0, 0, ['Ammo Type', 'rawMV', 'Reload', 'Recoil', 'Clip Size', 'Procs Per', 'RPM Base', 'Current RPM']); BuildDamageTable(ammoFrameData, 'ammo', e);
+    }
+
+    function MeleeDPS(e) {
+        const meleeDamage = [
+            ['Combo', 'Attack Name', 'MV', 'Raw', 'Element', 'Total', 'EFR', 'EFE', 'Effective']
+        ];
+        let comboDamage = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        let power = {};
+        let firstRun = true;
+        const lastSharp = Sharpness.selectedIndex;
+        //  filters CB Phial Attacks, Gunlance Shelling, Bow Attacks
+        //
+        if ($(weaponType).val() === 'Bow' || $(weaponType).val() === 'ChargeBlade' || $(weaponType).val() === 'InsectGlaive' || $(weaponType).val() === 'Gunlance') {
+            power.attacks = {...AddDependantSkills(power) };
+        } else {
+            power.attacks = {...getAttacks() };
+        }
+        $(Object.keys(power.attacks)).each((attackID, eachAttack) => {
+            power = {...power, ...info[$(weaponType).val()].attacks[eachAttack], ...getWeapon() };
+            power = {...getRampageSkills(power) };
+            //
+            power = initialStats(power);
+            //
+
+            if (/inputs|inputButton/.test(window.event.target.className) && firstRun && !/BowGun/.test($(weaponType).val())) {
+                UpdateComboTracker();
+                UpdateComboDisplay();
+            }
+
+            if (firstRun && power.comboHitsPerColor === undefined && $(weaponType).val() !== 'Bow') {
+                power = TotalHitsOfSharpUsed(power);
+            }
+            power = GetRemainingSkills(power);
+
+            power = DamageCalculations(power);
+
+            if (!/Bow/.test($(weaponType).val()) && comboTracker.length > 0 && comboTracker[0] !== null && comboTracker[0] !== undefined) {
+                /* goes through each color sharpness and filters the recorded attacks for the number of times this current attack was used
+                 * then applies the given sharpness modifier to the damage if damage type is sever or blunt then multiplies by the times used
+                 * saves results in the comboDamage var and += the totals for every sharpness of every attack
+                 * to later be used to update the comboDamage in the dpsTable
+                 */
+                if ($('.inputs').length > 0) {
+                    $(Object.keys(power.comboHitsPerColor)).each((_index, color) => {
+                        if (TimesUsed(attackID, power.comboHitsPerColor[color]) > 0) {
+                            const [sharpPRM, sharpPEM] = power.noSharpMod === false ? [sharpnessMod[color].PRM, sharpnessMod[color].PEM] : [1, 1];
+                            const hitsPerAttackPerSharpness = TimesUsed(attackID, power.comboHitsPerColor[color]);
+                            // combo=[rawMV,rawNon,rawCrit,eleNon,eleCrit,totalNon,TotalCrit,EFR,EFE,totalEffective]
+                            comboDamage = [
+                                (comboDamage[0] += Number(~~(power.rawMV * hitsPerAttackPerSharpness * (power.ticsPer + 1)))),
+                                (comboDamage[1] += Number(~~(power.rawNon * sharpPRM) * hitsPerAttackPerSharpness)),
+                                (comboDamage[2] += Number(~~(power.rawCrit * sharpPRM) * hitsPerAttackPerSharpness)),
+                                (comboDamage[3] += Number(~~(power.eleNon * sharpPEM) * hitsPerAttackPerSharpness)),
+                                (comboDamage[4] += Number(~~(power.eleCrit * sharpPEM) * hitsPerAttackPerSharpness)),
+                                (comboDamage[5] += Number(
+                                    (~~(power.rawNon * sharpPRM) * hitsPerAttackPerSharpness + ~~(power.eleNon * sharpPEM) * hitsPerAttackPerSharpness) * (power.ticsPer + 1),
+                                )),
+                                (comboDamage[6] += Number(
+                                    (~~(power.rawCrit * sharpPRM) * hitsPerAttackPerSharpness + ~~(power.eleCrit * sharpPEM) * hitsPerAttackPerSharpness) * (power.ticsPer + 1),
+                                )),
+                                (comboDamage[7] += Number(~~(power.efr * sharpPRM) * hitsPerAttackPerSharpness)),
+                                (comboDamage[8] += Number(~~(power.efe * sharpPEM) * hitsPerAttackPerSharpness)),
+                                (comboDamage[9] += Number(
+                                    (~~(power.efr * sharpPRM) * hitsPerAttackPerSharpness + ~~(power.efe * sharpPEM) * hitsPerAttackPerSharpness) * (power.ticsPer + 1),
+                                )),
+                            ];
+                        }
+                    });
+                }
+            }
+            // damage/meleeDamage adds sharpness to the calculations and arranges them in the array to be used for the damageTable
+            let sharpnessModifier = power.noSharpMod === false ? JSON.parse(Sharpness.value) : { PRM: 1, PEM: 1 };
+            if (weaponType.value === 'Bow' && power.type !== 'Shot') {
+                sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Power' ? 1.35 : sharpnessModifier;
+                sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Close Range' ? 1.32 : sharpnessModifier;
+                sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Close Range+' ? 1.39 : sharpnessModifier;
+            } else if (power.type === 'Shot') {
+                sharpnessModifier = { PRM: 1, PEM: 1 };
+            }
+            const damage = [
+                'replaceME',
+                power.attackName,
+                power.rawMV,
+                `${formatNumbers(~~(power.rawNon * sharpnessModifier.PRM))} / ${formatNumbers(~~(power.rawCrit * sharpnessModifier.PRM))}`,
+
+                `${formatNumbers(~~(power.eleNon * sharpnessModifier.PEM))} / ${formatNumbers(~~(power.eleCrit * sharpnessModifier.PEM))}`,
+
+                `${formatNumbers((~~(power.rawNon * sharpnessModifier.PRM) + ~~(power.eleNon * sharpnessModifier.PEM)) * (power.ticsPer + 1))} / ${formatNumbers(
         (~~(power.rawCrit * sharpnessModifier.PRM) + ~~(power.eleCrit * sharpnessModifier.PEM)) * (power.ticsPer + 1),
       )}`,
 
-            formatNumbers(~~(power.efr * sharpnessModifier.PRM)),
+                formatNumbers(~~(power.efr * sharpnessModifier.PRM)),
 
-            formatNumbers(~~(power.efe * sharpnessModifier.PEM)),
+                formatNumbers(~~(power.efe * sharpnessModifier.PEM)),
 
-            formatNumbers((~~(power.efe * sharpnessModifier.PEM) + ~~(power.efr * sharpnessModifier.PRM)) * (power.ticsPer + 1)),
-        ];
-
-        meleeDamage.push(damage);
-        // stats stores calculations to be used for the statsTable
-        if (firstRun) {
-            const ele = lower(power.eleType) === 'none' ? 0 : power.ele;
-            const stats = [
-                [
-                    ['Stat'],
-                    ['Raw'],
-                    ['Affinity'],
-                    [power.eleType]
-
-
-
-
-                ],
-                ['Base', ~~power.baseRaw, power.baseAff, power.baseEle],
-                ['Total Attack', ~~power.raw, ~~(power.aff * 100), ~~ele],
-                [
-                    'Total Damage', ~~(power.raw * getCritBoost(power.Crit, power.aff).PRM * power.PRM * power.augPRM * sharpnessModifier.PRM), ~~(power.aff * 100), ~~(ele * getCritEle(power.Crit, power.aff).PEM * power.PEM * power.augPEM * sharpnessModifier.PEM),
-                ],
-                [
-                    'Effective', ~~(power.raw * getCritBoost(power.Crit, power.aff).EFR * power.PRM * power.augEFR * sharpnessModifier.PRM), ~~(power.aff * 100), ~~(ele * getCritEle(power.Crit, power.aff).EFE * power.PEM * power.augPEM * power.augEFR * sharpnessModifier.PEM),
-                ],
+                formatNumbers((~~(power.efe * sharpnessModifier.PEM) + ~~(power.efr * sharpnessModifier.PRM)) * (power.ticsPer + 1)),
             ];
-            BuildDamageTable(stats, 'stats', e);
-            firstRun = false;
-        }
-    });
-    if ($('#dropWeaponType').val() === 'Gunlance') {
-        GunlanceShelling(meleeDamage, comboDamage, power, e);
-    } else {
-        if ($('#dropWeaponType').val() === 'Bow') {
-            comboDamage = BowComboDamage();
-        }
-        if (lastSharp === Sharpness.selectedIndex && !/dropWeapon|taWikiSetBuilder/.test(e.target.id) && window.event.target !== BowChargePlus && e.target === dropWeapon && !weaponType.value === cb) {
-            if (/input|inputButton/.test(e.target.className)) {
-                document.getElementById('c0').textContent = `${formatNumbers(comboDamage[0])}`;
-                document.getElementById('d0').textContent = `${formatNumbers(comboDamage[1])} / ${formatNumbers(comboDamage[2])}`;
-                document.getElementById('e0').textContent = `${formatNumbers(comboDamage[3])} / ${formatNumbers(comboDamage[4])}`;
-                document.getElementById('f0').textContent = `${formatNumbers(comboDamage[5])} / ${formatNumbers(comboDamage[6])}`;
-                document.getElementById('g0').textContent = `${formatNumbers(comboDamage[7])}`;
-                document.getElementById('h0').textContent = `${formatNumbers(comboDamage[8])}`;
-                document.getElementById('i0').textContent = `${formatNumbers(comboDamage[9])}`;
+
+            meleeDamage.push(damage);
+            // stats stores calculations to be used for the statsTable
+            if (firstRun) {
+                const ele = lower(power.eleType) === 'none' ? 0 : power.ele;
+                const stats = [
+                    [
+                        ['Stat'],
+                        ['Raw'],
+                        ['Affinity'],
+                        [power.eleType]
+
+
+
+
+                    ],
+                    ['Base', ~~power.baseRaw, power.baseAff, power.baseEle],
+                    ['Total Attack', ~~power.raw, ~~(power.aff * 100), ~~ele],
+                    [
+                        'Total Damage', ~~(power.raw * getCritBoost(power.Crit, power.aff).PRM * power.PRM * power.augPRM * sharpnessModifier.PRM), ~~(power.aff * 100), ~~(ele * getCritEle(power.Crit, power.aff).PEM * power.PEM * power.augPEM * sharpnessModifier.PEM),
+                    ],
+                    [
+                        'Effective', ~~(power.raw * getCritBoost(power.Crit, power.aff).EFR * power.PRM * power.augEFR * sharpnessModifier.PRM), ~~(power.aff * 100), ~~(ele * getCritEle(power.Crit, power.aff).EFE * power.PEM * power.augPEM * power.augEFR * sharpnessModifier.PEM),
+                    ],
+                ];
+                BuildDamageTable(stats, 'stats', e);
+                firstRun = false;
+            }
+        });
+        if ($('#dropWeaponType').val() === 'Gunlance') {
+            GunlanceShelling(meleeDamage, comboDamage, power, e);
+        } else {
+            if ($('#dropWeaponType').val() === 'Bow') {
+                comboDamage = BowComboDamage();
+            }
+            if (lastSharp === Sharpness.selectedIndex && !/dropWeapon|taWikiSetBuilder/.test(e.target.id) && window.event.target !== BowChargePlus && e.target === dropWeapon && !weaponType.value === cb) {
+                if (/input|inputButton/.test(e.target.className)) {
+                    document.getElementById('c0').textContent = `${formatNumbers(comboDamage[0])}`;
+                    document.getElementById('d0').textContent = `${formatNumbers(comboDamage[1])} / ${formatNumbers(comboDamage[2])}`;
+                    document.getElementById('e0').textContent = `${formatNumbers(comboDamage[3])} / ${formatNumbers(comboDamage[4])}`;
+                    document.getElementById('f0').textContent = `${formatNumbers(comboDamage[5])} / ${formatNumbers(comboDamage[6])}`;
+                    document.getElementById('g0').textContent = `${formatNumbers(comboDamage[7])}`;
+                    document.getElementById('h0').textContent = `${formatNumbers(comboDamage[8])}`;
+                    document.getElementById('i0').textContent = `${formatNumbers(comboDamage[9])}`;
+                } else {
+                    meleeDamage.splice(0, 2, [
+                        'replaceME',
+                        'Combo Damage',
+                        `${formatNumbers(comboDamage[0])}`,
+                        `${formatNumbers(comboDamage[1])} / ${formatNumbers(comboDamage[2])}`,
+                        `${formatNumbers(comboDamage[3])} / ${formatNumbers(comboDamage[4])}`,
+                        `${formatNumbers(comboDamage[5])} / ${formatNumbers(comboDamage[6])}`,
+                        `${formatNumbers(comboDamage[7])}`,
+                        `${formatNumbers(comboDamage[8])}`,
+                        `${formatNumbers(comboDamage[9])}`,
+                    ]);
+                    let i = 0;
+                    $(meleeDamage).each(function() {
+                        this.splice(0, 2);
+                        $(this).each(function() {
+                            Object.values($(dpsBody).children().children()).filter((x) => !/a|b/.test(x.className))[i].textContent = this;
+                            ++i;
+                        });
+                    });
+                }
             } else {
-                meleeDamage.splice(0, 2, [
+                meleeDamage.splice(1, 1, [
                     'replaceME',
                     'Combo Damage',
                     `${formatNumbers(comboDamage[0])}`,
@@ -364,573 +383,552 @@ function MeleeDPS(e) {
                     `${formatNumbers(comboDamage[8])}`,
                     `${formatNumbers(comboDamage[9])}`,
                 ]);
-                let i = 0;
-                $(meleeDamage).each(function() {
-                    this.splice(0, 2);
-                    $(this).each(function() {
-                        Object.values($(dpsBody).children().children()).filter((x) => !/a|b/.test(x.className))[i].textContent = this;
-                        ++i;
-                    });
-                });
+                BuildDamageTable(meleeDamage, 'dps', e);
             }
-        } else {
-            meleeDamage.splice(1, 1, [
-                'replaceME',
-                'Combo Damage',
-                `${formatNumbers(comboDamage[0])}`,
-                `${formatNumbers(comboDamage[1])} / ${formatNumbers(comboDamage[2])}`,
-                `${formatNumbers(comboDamage[3])} / ${formatNumbers(comboDamage[4])}`,
-                `${formatNumbers(comboDamage[5])} / ${formatNumbers(comboDamage[6])}`,
-                `${formatNumbers(comboDamage[7])}`,
-                `${formatNumbers(comboDamage[8])}`,
-                `${formatNumbers(comboDamage[9])}`,
-            ]);
-            BuildDamageTable(meleeDamage, 'dps', e);
-        }
-    }
-}
-
-function getRampageSkills(power) {
-    // adds qurious augs
-    power.baseRaw += $('output.attackAug').val() / 2 * 5;
-    attackResult.value = `+ ${$('output.attackAug').val() / 2 * 5}`;
-    power.aff += $('output.affinityAug').val() / 3 * 5;
-    affinityResult.value = `+ ${$('output.affinityAug').val() / 3 * 5}`;
-    if (getWeapon().eleType !== 'None') {
-        power.baseEle += $('output.elementalAug').val() * 3;
-        elementalResult.value = `+ ${$('output.elementalAug').val()  * 3}`;
-    }
-
-    $('#rampageResult').text($('output.rampageAug').val() > 0 ? '+1' : '+0');
-
-    if (getWeapon().rampageSlots === 0) {
-        // applies rampage any bonuses that effect base stats
-        $(weaponRampage.children).each((_index, element) => {
-            const rampageSkill = info.rampage['Rampage-Up Skill'][element.value];
-            if (rampageSkill !== undefined) {
-                for (let i = 0; i < Object.keys(rampageSkill).length; i++) {
-                    const stat = Object.keys(rampageSkill)[i];
-                    power[stat] += rampageSkill[stat];
-                }
-            }
-        });
-        // for skills that change the base element
-        if (!/BowGun/.test($('#dropWeaponType').val())) {
-            power.eleType = /Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/.test(weaponRampage.children[1].value) ?
-                weaponRampage.children[1].value.match(/Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/)[0] :
-                power.eleType;
-        }
-    }
-    power.baseAff = power.aff;
-
-    return {...power };
-}
-
-function AddDependantSkills() {
-    if ($(weaponType).val() === 'InsectGlaive') {
-        const attacks = Object.fromEntries(Object.entries(info.InsectGlaive.attacks).filter((skill) => !/Kinsect|Dust|Powder|Mark/.test(skill)));
-
-        return attacks;
-    }
-    if ($(weaponType).val() === 'ChargeBlade') {
-        const phialType = getWeapon().phialType === 'Impact Phial' ? 'Element Phial| Elemental Phial' : 'Impact Phial';
-        const regexp = new RegExp(`${phialType}`);
-
-        const attacks = Object.fromEntries(Object.entries(getAttacks()).filter((skill) => !regexp.test(skill)));
-
-        return attacks;
-
-        //  filters bow attacks for only the usable attacks
-    }
-    if ($('#dropWeaponType').val() === 'Bow') {
-        // let attacksTemp = getAttacks();
-
-        let usableKeys = '';
-        const totalKeys = document.getElementById('BowChargePlus').selectedIndex === 1 && getWeapon().baseCharge < 4 ? getWeapon().baseCharge + 1 : getWeapon().baseCharge;
-        $(getWeapon().bowShot).each((index, element) => {
-            if (index < totalKeys) {
-                usableKeys += `|Lv${element.match('[1-5]')[0]} ${element.match('Normal|Rapid|Pierce|Spread')[0]}`;
-            }
-        });
-        const regex = new RegExp([usableKeys.slice(1)]);
-        let ugh = Object.entries(getAttacks()).filter((attack) => regex.test(attack[0]));
-        ugh = [].concat(Object.entries(getAttacks()).splice(0, 1), ugh);
-        ugh = ugh.concat(Object.entries(getAttacks()).splice(136));
-        return Object.fromEntries(ugh);
-    }
-    if ($(weaponType).val() === 'Gunlance') {
-        return Object.fromEntries(Object.entries(getAttacks()).splice(0, 28));
-    }
-}
-
-
-
-function getBaseSkills(power) {
-    [...power.getSkills] = info.types[power.skillType];
-    enrageDisplay.textContent = `${~~(getEnrage() * 100)}%`;
-    if ($('#dropEnraged').val() === 'Enraged') {
-        power.getSkills.push('Agitator');
-        power.PEM *= getEnrage();
-        power.PRM *= getEnrage();
-    }
-    return power;
-}
-
-function getEnrage() {
-    return $('#dropEnraged').val() === 'Enraged' ? Object.fromEntries(Object.entries(
-        info.monster.enrage).sort((b, a) => { b[1]['Large Monster'] - a[1]['Large Monster']; }))[document.getElementById('dropMonster').selectedIndex]['Player Dmg'] : 1;
-
-}
-
-function initialStats(power) {
-    if (comboTracker[0] === null) {
-        comboTracker = [];
-    };
-    power.baseRaw += power.Draw === true ? +document.getElementById('PunishingDraw').value : 0;
-    power.BR = 0;
-    power.BRM = 1;
-    power.PRM = 1;
-    power.BEM = 1;
-    power.BE = 0;
-    power.PEM = 1;
-
-    // For non ele Weapons
-    power.eleHZV = power.eleType === 'IgnoreHZV' ? 0 : getHZ()[lower(power.eleType)];
-    // removes HZV for attacks like stickies and phials
-    power.rawHZV = power.type === 'IgnoreHZV' ? 100 : getHZ()[lower(power.type)];
-    // applies Demon Ammo if selected and damage type is sever or blunt
-    power.PRM *= $(DemonAmmo).hasClass('blue') && /(Sever|Blunt)/.test(power.type) ? 1.1 : 1;
-    1;
-    const skills = [];
-    $('.skillButton:not(button#ProtectivePolish)').each(function() {
-        if ($(this).hasClass('blue') && this.id !== 'CriticalFirePower' && this.id !== 'Qurious') {
-            skills.push(JSON.parse(this.value));
-        }
-    });
-    power.getSkills = [];
-    switch (power.type) {
-        case 'Sever':
-        case 'Blunt':
-            power.skillType = 'Sever';
-            break;
-        case 'Shot':
-            power.skillType = 'Gunner';
-            break;
-        case 'IgnoreHZV':
-            power.skillType = 'IMPAED';
-            break;
-        default:
-            power.skillType = 'AllSkills';
-            break;
-    }
-    // adds agitator to getSkills if enraged
-    getBaseSkills(power);
-
-
-
-
-
-
-
-    // applies RF/Normal/Pierce/Spread up bonuses to bow and bowgun
-    if (/Bow/.test($(weaponType).val())) {
-        if (/Pierc/.test(power.attackName)) {
-            power.getSkills.push('PierceUp');
-        } else if (/Spread/.test(power.attackName)) {
-            power.getSkills.push('SpreadUp');
-        } else if (/Normal|Rapid/.test(power.attackName)) {
-            power.getSkills.push('NormalRapidUp');
-        }
-        if (/RF+/.test(power.attackName)) {
-            power.getSkills.push('RapidFireUp');
-        }
-        if (/Wyvern|Dragon Piercer/.test(power.attackName)) {
-            power.getSkills.push('SpecialAmmoBoost');
         }
     }
 
-    // applies LongSword Charge Level Bonus
-    if ($(weaponType).val() === 'LongSword' && !/Helm Breaker|Serene/.test(power.attackName)) {
-        power.getSkills.push('spiritGauge');
-    } else if ($(weaponType).val() === 'LongSword') {
-        power.getSkills.push('Helmbreaker');
-    }
-    // applies GreatSwords Charge Level Bonus
-    if ($(weaponType).val() === 'GreatSword' && /(?<=Lv)1|2|3/.test(power.attackName)) {
-        power.rawMV *= Number(`1.${power.attackName.match('(?<=Lv)1|2|3')[0]}`);
-        power.rawMV = power.rawMV.toFixed(1);
-    }
-    // applies ChargeBlade specific abilities
-    if ($(weaponType).val() === 'ChargeBlade') {
-        if (!/3rd|(?<!Midair |Axe: )UED|(?<!Charged )Sword(?!.*Shield)/.test(power.attackName)) {
-            power.getSkills.push('savageAxe');
+    function getRampageSkills(power) {
+        // adds qurious augs
+        power.baseRaw += $('output.attackAug').val() / 2 * 5;
+        attackResult.value = `+ ${$('output.attackAug').val() / 2 * 5}`;
+        power.aff += $('output.affinityAug').val() / 3 * 5;
+        affinityResult.value = `+ ${$('output.affinityAug').val() / 3 * 5}`;
+        if (getWeapon().eleType !== 'None') {
+            power.baseEle += $('output.elementalAug').val() * 3;
+            elementalResult.value = `+ ${$('output.elementalAug').val()  * 3}`;
         }
-        getWeapon().phialType === 'Impact Phial' ? power.getSkills.push('impShieldCharge') : power.getSkills.push('eleShieldCharge');
-    }
-    power.aff += weaponRampage0.value === 'Hellion Mode' && weaponType.value === 'DualBlades' ? 20 : 0;
-    if (weaponType.value === 'Bow') {
-        power.getSkills = power.getSkills.concat("UpperCrit", "HerculesDraw");
-        if (/Stake/.test(power.attackName)) {
-            power.getSkills = power.getSkills.filter(( /** @type {string} */ skill) => skill != 'BowCoating');
-        }
-    }
 
-    power.getSkills = power.getSkills.filter(isUnique);
-    $(power.getSkills).each(function() {
-        if ($(`#${this}`).css('display') !== 'none' && $(`#${this}`)[0].selectedIndex > 0) {
-            skills.push(info.skills[this][document.getElementById(this).selectedIndex]);
-        }
-    });
+        $('#rampageResult').text($('output.rampageAug').val() > 0 ? '+1' : '+0');
 
-    getStats(power, skills);
-    // applies Water Blight if selected appropriate to the hzv
-    power.rawHZV = $(WaterBlight).hasClass('blue') ? Math.min(100, ~~(Math.max(power.rawHZV, power.rawHZV * 0.63 + 22.2) + 3)) : power.rawHZV;
-    if (weaponRampage0.value === 'Kushala Daora Soul') {
-        power.aff += 15;
-    }
-    // adds Weakness Exploit
-    power.aff = power.rawHZV >= 45 ? power.aff + JSON.parse($('#WeaknessExploit').val()) : power.aff;
-    power.aff = Math.min(power.aff, 100) / 100;
-
-    return {...power };
-}
-
-function UpdateComboTracker() {
-    if (!Number.isNaN(+window.event.target.id) && window.event.target.id !== '0') {
-        // if value entered in the e.target combo input > amount stored in comboTracker [] adds attack id to the end of the comboTracker until they are ===
-        let difference = $('.inputs')[window.event.target.id].value - TimesUsed(window.event.target.id);
-        while (difference > 0) {
-            comboTracker.push(window.event.target.id);
-            --difference;
-        }
-        // if value entered in the e.target combo input < amount stored in comboTracker [] removes the last instance of this attack id from the comboTracker until they are ===
-        while (difference < 0) {
-            comboTracker.splice(comboTracker.lastIndexOf(window.event.target.id), 1);
-            ++difference;
-        }
-    }
-}
-
-function UpdateComboDisplay() {
-    $('.comboHits').remove();
-    let comboHit;
-    $(comboTracker).each((_index, element) => {
-        comboHit = document.createElement('output');
-        comboHit.className = 'comboHits';
-        comboHit.textContent = $(`td#b${[element]}>output`).text();
-        $(comboCountDisplay).after(comboHit);
-    });
-}
-
-// finds HitsOfSharpness current sharpness as well as what combo hits were used how many times per color
-function TotalHitsOfSharpUsed(power) {
-    power.listOfEachAttack = [].concat(comboTracker);
-    let totalHitsOfSharpnessUsed = 0;
-    let increase = [];
-    const total = {};
-    power.hitsOfSharpness = [];
-    power.hitsOfSharpness.purple = power.sharpness.purple;
-    power.hitsOfSharpness.white = power.sharpness.white;
-    power.hitsOfSharpness.blue = power.sharpness.blue;
-    power.hitsOfSharpness.green = power.sharpness.green;
-    power.hitsOfSharpness.yellow = power.sharpness.yellow;
-    power.hitsOfSharpness.orange = power.sharpness.orange;
-    power.hitsOfSharpness.red = power.sharpness.red;
-
-    // gets handicraft.selectedIndex & figures out which color power.handicraft actually applies to then add the extra points appropriately.
-    if (Handicraft.selectedIndex > 0) {
-        if (power.hitsOfSharpness.purple > 0) {
-            increase = ['purple'];
-        } else if (power.hitsOfSharpness.white > 0) {
-            increase = ['white', 'purple'];
-        } else if (power.hitsOfSharpness.blue > 0) {
-            increase = ['blue', 'white', 'purple'];
-        } else if (power.hitsOfSharpness.green > 0) {
-            increase = ['green', 'blue', 'white', 'purple'];
-        } else if (power.hitsOfSharpness.yellow > 0) {
-            increase = ['yellow', 'green', 'blue', 'white'];
-        }
-        let pointsOfHandicraft = Handicraft.selectedIndex;
-        $(power.handicraft).each((index, element) => {
-            while (element > 0 && pointsOfHandicraft > 0) {
-                power.hitsOfSharpness[increase[index]] += 10;
-                --pointsOfHandicraft;
-                element -= 10;
-            }
-        });
-    }
-    const razorSharp = info.skills.RazorSharp[RazorSharp.selectedIndex].Sharp;
-    let MT = info.skills.MastersTouch[MastersTouch.selectedIndex].Sharp;
-    MT *= power.aff;
-    // applies the extra hits of sharpness from the Masters Touch skill;
-    const mTBonus = power.aff > 0 && MastersTouch.selectedIndex > 0 ? sharpnessReduction(MT) * sharpnessReduction(razorSharp) : sharpnessReduction(razorSharp);
-    total.purple = ~~(mTBonus * power.hitsOfSharpness.purple);
-    total.white = ~~(mTBonus * power.hitsOfSharpness.white);
-    total.blue = ~~(mTBonus * power.hitsOfSharpness.blue);
-    total.green = ~~(mTBonus * power.hitsOfSharpness.green);
-    total.yellow = ~~(mTBonus * power.hitsOfSharpness.yellow);
-    total.orange = ~~(mTBonus * power.hitsOfSharpness.orange);
-    total.red = ~~(mTBonus * power.hitsOfSharpness.red);
-    if (comboTracker[0] !== undefined && comboTracker[0] !== null) {
-        let comboMulti = $('.inputComboRepeat').val();
-        // for each pont in the comboMultiplier input, adds another comboTracker [] to the listOfEachAttack
-        while (comboMulti > 1) {
-            power.listOfEachAttack = power.listOfEachAttack.concat(comboTracker);
-            --comboMulti;
-        }
-        power.comboHitsPerColor = [];
-        power.comboHitsPerColor.purple = [];
-        power.comboHitsPerColor.white = [];
-        power.comboHitsPerColor.blue = [];
-        power.comboHitsPerColor.green = [];
-        power.comboHitsPerColor.yellow = [];
-        power.comboHitsPerColor.orange = [];
-        power.comboHitsPerColor.red = [];
-
-        power.listOfEachAttack.forEach((eachAttack) => {
-            const attackKeys = Object.keys(power.attacks)[eachAttack];
-            if ($(ProtectivePolish).hasClass('gray')) {
-                if ($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 28)) {
-                    for (let i = 0; i < power.ticsPer + 1; i++) {
-                        // applies DualBlades Sharpness Reduction
-                        if ($(weaponType).val() === 'DualBlades') {
-                            totalHitsOfSharpnessUsed += getAttacks()[attackKeys].hitsOfSharp / 3;
-                        } else {
-                            totalHitsOfSharpnessUsed += getAttacks()[attackKeys].hitsOfSharp;
-                        }
+        if (getWeapon().rampageSlots === 0) {
+            // applies rampage any bonuses that effect base stats
+            $(weaponRampage.children).each((_index, element) => {
+                const rampageSkill = info.rampage['Rampage-Up Skill'][element.value];
+                if (rampageSkill !== undefined) {
+                    for (let i = 0; i < Object.keys(rampageSkill).length; i++) {
+                        const stat = Object.keys(rampageSkill)[i];
+                        power[stat] += rampageSkill[stat];
                     }
-                } else if ($('#dropWeaponType').val() === 'Gunlance' && eachAttack > 27) {
-                    ++totalHitsOfSharpnessUsed;
                 }
+            });
+            // for skills that change the base element
+            if (!/BowGun/.test($('#dropWeaponType').val())) {
+                power.eleType = /Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/.test(weaponRampage.children[1].value) ?
+                    weaponRampage.children[1].value.match(/Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/)[0] :
+                    power.eleType;
             }
-            let totalHits = 0;
-            if (totalHitsOfSharpnessUsed <= (totalHits += total.purple) && power.hitsOfSharpness.purple > 0) {
-                power.comboHitsPerColor.purple.push(eachAttack);
-            } else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue) && power.hitsOfSharpness.white > 0) {
-                power.comboHitsPerColor.white.push(eachAttack);
-            } else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue) && power.hitsOfSharpness.blue > 0) {
-                power.comboHitsPerColor.blue.push(eachAttack);
-            } else if (totalHitsOfSharpnessUsed <= (totalHits += total.green) && power.hitsOfSharpness.green > 0) {
-                power.comboHitsPerColor.green.push(eachAttack);
-            } else if (totalHitsOfSharpnessUsed <= (totalHits += total.yellow) && power.hitsOfSharpness.yellow > 0) {
-                power.comboHitsPerColor.yellow.push(eachAttack);
-            } else if (totalHitsOfSharpnessUsed <= (totalHits += total.orange)) {
-                power.comboHitsPerColor.orange.push(eachAttack);
-            } else if (totalHitsOfSharpnessUsed <= (totalHits += total.red)) {
-                power.comboHitsPerColor.red.push(eachAttack);
+        }
+        power.baseAff = power.aff;
+
+        return {...power };
+    }
+
+    function AddDependantSkills() {
+        if ($(weaponType).val() === 'InsectGlaive') {
+            const attacks = Object.fromEntries(Object.entries(info.InsectGlaive.attacks).filter((skill) => !/Kinsect|Dust|Powder|Mark/.test(skill)));
+
+            return attacks;
+        }
+        if ($(weaponType).val() === 'ChargeBlade') {
+            const phialType = getWeapon().phialType === 'Impact Phial' ? 'Element Phial| Elemental Phial' : 'Impact Phial';
+            const regexp = new RegExp(`${phialType}`);
+
+            const attacks = Object.fromEntries(Object.entries(getAttacks()).filter((skill) => !regexp.test(skill)));
+
+            return attacks;
+
+            //  filters bow attacks for only the usable attacks
+        }
+        if ($('#dropWeaponType').val() === 'Bow') {
+            // let attacksTemp = getAttacks();
+
+            let usableKeys = '';
+            const totalKeys = document.getElementById('BowChargePlus').selectedIndex === 1 && getWeapon().baseCharge < 4 ? getWeapon().baseCharge + 1 : getWeapon().baseCharge;
+            $(getWeapon().bowShot).each((index, element) => {
+                if (index < totalKeys) {
+                    usableKeys += `|Lv${element.match('[1-5]')[0]} ${element.match('Normal|Rapid|Pierce|Spread')[0]}`;
+                }
+            });
+            const regex = new RegExp([usableKeys.slice(1)]);
+            let ugh = Object.entries(getAttacks()).filter((attack) => regex.test(attack[0]));
+            ugh = [].concat(Object.entries(getAttacks()).splice(0, 1), ugh);
+            ugh = ugh.concat(Object.entries(getAttacks()).splice(136));
+            return Object.fromEntries(ugh);
+        }
+        if ($(weaponType).val() === 'Gunlance') {
+            return Object.fromEntries(Object.entries(getAttacks()).splice(0, 28));
+        }
+    }
+
+
+
+    function getBaseSkills(power) {
+        [...power.getSkills] = info.types[power.skillType];
+        enrageDisplay.textContent = `${~~(getEnrage() * 100)}%`;
+        if ($('#dropEnraged').val() === 'Enraged') {
+            power.getSkills.push('Agitator');
+            power.PEM *= getEnrage();
+            power.PRM *= getEnrage();
+        }
+        return power;
+    }
+
+    function getEnrage() {
+        return $('#dropEnraged').val() === 'Enraged' ? Object.fromEntries(Object.entries(
+            info.monster.enrage).sort((b, a) => { b[1]['Large Monster'] - a[1]['Large Monster']; }))[document.getElementById('dropMonster').selectedIndex]['Player Dmg'] : 1;
+
+    }
+
+    function initialStats(power) {
+        if (comboTracker[0] === null) {
+            comboTracker = [];
+        };
+        power.baseRaw += power.Draw === true ? +document.getElementById('PunishingDraw').value : 0;
+        power.BR = 0;
+        power.BRM = 1;
+        power.PRM = 1;
+        power.BEM = 1;
+        power.BE = 0;
+        power.PEM = 1;
+
+        // For non ele Weapons
+        power.eleHZV = power.eleType === 'IgnoreHZV' ? 0 : getHZ()[lower(power.eleType)];
+        // removes HZV for attacks like stickies and phials
+        power.rawHZV = power.type === 'IgnoreHZV' ? 100 : getHZ()[lower(power.type)];
+        // applies Demon Ammo if selected and damage type is sever or blunt
+        power.PRM *= $(DemonAmmo).hasClass('blue') && /(Sever|Blunt)/.test(power.type) ? 1.1 : 1;
+        1;
+        const skills = [];
+        $('.skillButton:not(button#ProtectivePolish)').each(function() {
+            if ($(this).hasClass('blue') && this.id !== 'CriticalFirePower' && this.id !== 'Qurious') {
+                skills.push(JSON.parse(this.value));
             }
         });
-        let hits = totalHitsOfSharpnessUsed;
-        [power.hitsOfSharpness.purple, hits] = hits - total.purple > 0 ? [0, hits - total.purple] : [total.purple - hits, 0];
-        [power.hitsOfSharpness.white, hits] = hits - total.white > 0 ? [0, hits - total.white] : [total.white - hits, 0];
-        [power.hitsOfSharpness.blue, hits] = hits > 0 && hits - total.blue > 0 ? [0, hits - total.blue] : [total.blue - hits, 0];
-        [power.hitsOfSharpness.green, hits] = hits > 0 && hits - total.green > 0 ? [0, hits - total.green] : [total.green - hits, 0];
-        [power.hitsOfSharpness.yellow, hits] = hits > 0 && hits - total.yellow > 0 ? [0, hits - total.yellow] : [total.yellow - hits, 0];
-        [power.hitsOfSharpness.orange, hits] = hits > 0 && hits - total.orange > 0 ? [0, hits - total.orange] : [total.orange - hits, 0];
-        [power.hitsOfSharpness.red, hits] = hits > 0 && hits - total.red > 0 ? [0, hits - total.red] : [total.red - hits, 0];
-    }
-    const width = (total.purple + total.white + total.blue + total.green + total.yellow + total.orange + total.red);
-    const finalWidth = Math.min(width, $(section2).width() * 0.95);
+        power.getSkills = [];
+        switch (power.type) {
+            case 'Sever':
+            case 'Blunt':
+                power.skillType = 'Sever';
+                break;
+            case 'Shot':
+                power.skillType = 'Gunner';
+                break;
+            case 'IgnoreHZV':
+                power.skillType = 'IMPAED';
+                break;
+            default:
+                power.skillType = 'AllSkills';
+                break;
+        }
+        // adds agitator to getSkills if enraged
+        getBaseSkills(power);
 
-    $('#white').parent().css('width', `${finalWidth}px`);
-    purple.style.width = `${(power.hitsOfSharpness.purple / width) * finalWidth}px`;
-    white.style.width = `${(power.hitsOfSharpness.white / width) * finalWidth}px`;
-    blue.style.width = `${(power.hitsOfSharpness.blue / width) * finalWidth}px`;
-    green.style.width = `${(power.hitsOfSharpness.green / width) * finalWidth}px`;
-    yellow.style.width = `${(power.hitsOfSharpness.yellow / width) * finalWidth}px`;
-    orange.style.width = `${(power.hitsOfSharpness.orange / width) * finalWidth}px`;
-    red.style.width = `${(power.hitsOfSharpness.red / width) * finalWidth}px`;
 
-    purple.innerHTML = power.hitsOfSharpness.purple > 0 ? ~~(power.hitsOfSharpness.purple + 0.7) : '';
-    white.innerHTML = power.hitsOfSharpness.white > 0 ? ~~(power.hitsOfSharpness.white + 0.7) : '';
-    blue.innerHTML = power.hitsOfSharpness.blue > 0 ? ~~(power.hitsOfSharpness.blue + 0.7) : '';
-    green.innerHTML = power.hitsOfSharpness.green > 0 ? ~~(power.hitsOfSharpness.green + 0.7) : '';
-    yellow.innerHTML = power.hitsOfSharpness.yellow > 0 ? ~~(power.hitsOfSharpness.yellow + 0.7) : '';
-    orange.innerHTML = power.hitsOfSharpness.orange > 0 ? ~~(power.hitsOfSharpness.orange + 0.7) : '';
-    red.innerHTML = power.hitsOfSharpness.red > 0 ? ~~(power.hitsOfSharpness.red + 0.7) : '';
 
-    if (power.hitsOfSharpness.purple > 0) {
-        Sharpness.selectedIndex = 7;
-    } else if (power.hitsOfSharpness.white > 0) {
-        Sharpness.selectedIndex = 6;
-    } else if (power.hitsOfSharpness.blue > 0) {
-        Sharpness.selectedIndex = 5;
-    } else if (power.hitsOfSharpness.green > 0) {
-        Sharpness.selectedIndex = 4;
-    } else if (power.hitsOfSharpness.yellow > 0) {
-        Sharpness.selectedIndex = 3;
-    } else if (power.hitsOfSharpness.orange > 0) {
-        Sharpness.selectedIndex = 2;
-    } else if (power.hitsOfSharpness.red >= 0) {
-        Sharpness.selectedIndex = 1;
-    }
 
-    return {...power };
-}
 
-function GetRemainingSkills(power) {
-    [power.augEFR, power.augPRM, power.augPEM] = [1, 1, 1];
-    power.augPEM *= $('#weaponRampage0').val() === 'Valstrax Soul' && power.eleType === 'Dragon' ? 1.2 : 1;
-    // applies Dulling Strike to Base raw depending on sharpness and if selected
-    [power.augEFR, power.augPRM] = $('#weaponRampage0').val() === 'Dulling Strike' && Sharpness.selectedIndex < 5 ? [1.02, 1.2] : [power.augEFR, power.augPRM];
-    /*
-     * If an anti species type skill is selected it gets the list of monsters applicable and checks
-     *if the selected monster is in the list.If true, it applies the skill.
-     */
-    if (
-        getWeapon().rampageSlots === 0 &&
-        Object.prototype.hasOwnProperty.call(info.types, $('#weaponRampage0').val()) &&
-        Object.prototype.hasOwnProperty.call(info.types[$('#weaponRampage0').val()].Monsters, $('#dropMonster').val())
-    ) {
-        [power.augPRM, power.augPEM] = info.types[$('#weaponRampage0').val()];
-    } else if (
-        dropMonster.value !== 'Toadversary' &&
-        getWeapon().rampageSlots > 0 &&
-        Object.entries(info.types[dropMonster.value]).filter((isSpecies) => isSpecies[1] && weaponRampage0.value.match(isSpecies[0])).length > 0
-    ) {
-        power.PRM *= 1.05;
-        power.PEM *= 1.05;
-    }
-    if (/blight Exploit/.test(weaponRampage0.value)) {
-        power.PRM *= 1.1;
-        power.PEM *= 1.1;
-    }
-    if (weaponRampage0.value === 'Magnamalo Soul') {
-        power.BR += 12;
-    }
-    if (/BowGun/.test(weaponType.value)) {
-        if (dropWeaponType.value === lbg && /Pierce|Spread|Normal/.test(power.attackName) && $(CriticalFirePower).hasClass('blue')) {
-            if (/Normal/.test(power.attackName)) {
-                power.PRM *= 1.3;
+
+
+        // applies RF/Normal/Pierce/Spread up bonuses to bow and bowgun
+        if (/Bow/.test($(weaponType).val())) {
+            if (/Pierc/.test(power.attackName)) {
+                power.getSkills.push('PierceUp');
             } else if (/Spread/.test(power.attackName)) {
-                power.PRM *= 1.2;
-            } else if (/Pierce/.test(power.attackName)) {
-                power.PRM *= 1.1;
+                power.getSkills.push('SpreadUp');
+            } else if (/Normal|Rapid/.test(power.attackName)) {
+                power.getSkills.push('NormalRapidUp');
+            }
+            if (/RF+/.test(power.attackName)) {
+                power.getSkills.push('RapidFireUp');
+            }
+            if (/Wyvern|Dragon Piercer/.test(power.attackName)) {
+                power.getSkills.push('SpecialAmmoBoost');
             }
         }
-        // Elemental Reload
-        power.BEM *= JSON.parse(BarrelId.value).Element;
-        // Power Barrel
-        if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BarrelId.options[BarrelId.selectedIndex].text === 'Power') {
-            power.baseRaw = ~~(power.baseRaw * 1.125);
-        } else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Power') {
-            power.baseRaw = ~~(power.baseRaw * 1.15);
+
+        // applies LongSword Charge Level Bonus
+        if ($(weaponType).val() === 'LongSword' && !/Helm Breaker|Serene/.test(power.attackName)) {
+            power.getSkills.push('spiritGauge');
+        } else if ($(weaponType).val() === 'LongSword') {
+            power.getSkills.push('Helmbreaker');
         }
-        if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BarrelId.options[BarrelId.selectedIndex].text === 'Long') {
-            power.baseRaw = ~~(power.baseRaw * 1.05);
-        } else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Long') {
-            power.baseRaw = ~~(power.baseRaw * 1.075);
+        // applies GreatSwords Charge Level Bonus
+        if ($(weaponType).val() === 'GreatSword' && /(?<=Lv)1|2|3/.test(power.attackName)) {
+            power.rawMV *= Number(`1.${power.attackName.match('(?<=Lv)1|2|3')[0]}`);
+            power.rawMV = power.rawMV.toFixed(1);
+        }
+        // applies ChargeBlade specific abilities
+        if ($(weaponType).val() === 'ChargeBlade') {
+            if (!/3rd|(?<!Midair |Axe: )UED|(?<!Charged )Sword(?!.*Shield)/.test(power.attackName)) {
+                power.getSkills.push('savageAxe');
+            }
+            getWeapon().phialType === 'Impact Phial' ? power.getSkills.push('impShieldCharge') : power.getSkills.push('eleShieldCharge');
+        }
+        power.aff += weaponRampage0.value === 'Hellion Mode' && weaponType.value === 'DualBlades' ? 20 : 0;
+        if (weaponType.value === 'Bow') {
+            power.getSkills = power.getSkills.concat("UpperCrit", "HerculesDraw");
+            if (/Stake/.test(power.attackName)) {
+                power.getSkills = power.getSkills.filter(( /** @type {string} */ skill) => skill != 'BowCoating');
+            }
+        }
+
+        power.getSkills = power.getSkills.filter(isUnique);
+        $(power.getSkills).each(function() {
+            if ($(`#${this}`).css('display') !== 'none' && $(`#${this}`)[0].selectedIndex > 0) {
+                skills.push(info.skills[this][document.getElementById(this).selectedIndex]);
+            }
+        });
+
+        getStats(power, skills);
+        // applies Water Blight if selected appropriate to the hzv
+        power.rawHZV = $(WaterBlight).hasClass('blue') ? Math.min(100, ~~(Math.max(power.rawHZV, power.rawHZV * 0.63 + 22.2) + 3)) : power.rawHZV;
+        if (weaponRampage0.value === 'Kushala Daora Soul') {
+            power.aff += 15;
+        }
+        // adds Weakness Exploit
+        power.aff = power.rawHZV >= 45 ? power.aff + JSON.parse($('#WeaknessExploit').val()) : power.aff;
+        power.aff = Math.min(power.aff, 100) / 100;
+
+        return {...power };
+    }
+
+    function UpdateComboTracker() {
+        if (!Number.isNaN(+window.event.target.id) && window.event.target.id !== '0') {
+            // if value entered in the e.target combo input > amount stored in comboTracker [] adds attack id to the end of the comboTracker until they are ===
+            let difference = $('.inputs')[window.event.target.id].value - TimesUsed(window.event.target.id);
+            while (difference > 0) {
+                comboTracker.push(window.event.target.id);
+                --difference;
+            }
+            // if value entered in the e.target combo input < amount stored in comboTracker [] removes the last instance of this attack id from the comboTracker until they are ===
+            while (difference < 0) {
+                comboTracker.splice(comboTracker.lastIndexOf(window.event.target.id), 1);
+                ++difference;
+            }
         }
     }
-    if (power.skillType === 'IgnoreHZV') {
-        power.augEFR *= info.skills.Bombardier[Bombardier.selectedIndex][1];
-        power.augPRM *= info.skills.Bombardier[Bombardier.selectedIndex][0];
 
-        if (weaponType.value === sa && /Sword|ZSD|ED/.test(power.attackName) && power.phialType === 'Impact Phial') {
-            power.BRM *= 1.15;
+    function UpdateComboDisplay() {
+        $('.comboHits').remove();
+        let comboHit;
+        $(comboTracker).each((_index, element) => {
+            comboHit = document.createElement('output');
+            comboHit.className = 'comboHits';
+            comboHit.textContent = $(`td#b${[element]}>output`).text();
+            $(comboCountDisplay).after(comboHit);
+        });
+    }
+
+    // finds HitsOfSharpness current sharpness as well as what combo hits were used how many times per color
+    function TotalHitsOfSharpUsed(power) {
+        power.listOfEachAttack = [].concat(comboTracker);
+        let totalHitsOfSharpnessUsed = 0;
+        let increase = [];
+        const total = {};
+        power.hitsOfSharpness = [];
+        power.hitsOfSharpness.purple = power.sharpness.purple;
+        power.hitsOfSharpness.white = power.sharpness.white;
+        power.hitsOfSharpness.blue = power.sharpness.blue;
+        power.hitsOfSharpness.green = power.sharpness.green;
+        power.hitsOfSharpness.yellow = power.sharpness.yellow;
+        power.hitsOfSharpness.orange = power.sharpness.orange;
+        power.hitsOfSharpness.red = power.sharpness.red;
+
+        // gets handicraft.selectedIndex & figures out which color power.handicraft actually applies to then add the extra points appropriately.
+        if (Handicraft.selectedIndex > 0) {
+            if (power.hitsOfSharpness.purple > 0) {
+                increase = ['purple'];
+            } else if (power.hitsOfSharpness.white > 0) {
+                increase = ['white', 'purple'];
+            } else if (power.hitsOfSharpness.blue > 0) {
+                increase = ['blue', 'white', 'purple'];
+            } else if (power.hitsOfSharpness.green > 0) {
+                increase = ['green', 'blue', 'white', 'purple'];
+            } else if (power.hitsOfSharpness.yellow > 0) {
+                increase = ['yellow', 'green', 'blue', 'white'];
+            }
+            let pointsOfHandicraft = Handicraft.selectedIndex;
+            $(power.handicraft).each((index, element) => {
+                while (element > 0 && pointsOfHandicraft > 0) {
+                    power.hitsOfSharpness[increase[index]] += 10;
+                    --pointsOfHandicraft;
+                    element -= 10;
+                }
+            });
         }
-        if (weaponType.value === sa && /Sword|Elemental|ED/.test(power.attackName) && power.phialType === 'Elemental Phial') {
-            power.BEM *= 1.45;
+        const razorSharp = info.skills.RazorSharp[RazorSharp.selectedIndex].Sharp;
+        let MT = info.skills.MastersTouch[MastersTouch.selectedIndex].Sharp;
+        MT *= power.aff;
+        // applies the extra hits of sharpness from the Masters Touch skill;
+        const mTBonus = power.aff > 0 && MastersTouch.selectedIndex > 0 ? sharpnessReduction(MT) * sharpnessReduction(razorSharp) : sharpnessReduction(razorSharp);
+        total.purple = ~~(mTBonus * power.hitsOfSharpness.purple);
+        total.white = ~~(mTBonus * power.hitsOfSharpness.white);
+        total.blue = ~~(mTBonus * power.hitsOfSharpness.blue);
+        total.green = ~~(mTBonus * power.hitsOfSharpness.green);
+        total.yellow = ~~(mTBonus * power.hitsOfSharpness.yellow);
+        total.orange = ~~(mTBonus * power.hitsOfSharpness.orange);
+        total.red = ~~(mTBonus * power.hitsOfSharpness.red);
+        if (comboTracker[0] !== undefined && comboTracker[0] !== null) {
+            let comboMulti = $('.inputComboRepeat').val();
+            // for each pont in the comboMultiplier input, adds another comboTracker [] to the listOfEachAttack
+            while (comboMulti > 1) {
+                power.listOfEachAttack = power.listOfEachAttack.concat(comboTracker);
+                --comboMulti;
+            }
+            power.comboHitsPerColor = [];
+            power.comboHitsPerColor.purple = [];
+            power.comboHitsPerColor.white = [];
+            power.comboHitsPerColor.blue = [];
+            power.comboHitsPerColor.green = [];
+            power.comboHitsPerColor.yellow = [];
+            power.comboHitsPerColor.orange = [];
+            power.comboHitsPerColor.red = [];
+
+            power.listOfEachAttack.forEach((eachAttack) => {
+                const attackKeys = Object.keys(power.attacks)[eachAttack];
+                if ($(ProtectivePolish).hasClass('gray')) {
+                    if ($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 28)) {
+                        for (let i = 0; i < power.ticsPer + 1; i++) {
+                            // applies DualBlades Sharpness Reduction
+                            if ($(weaponType).val() === 'DualBlades') {
+                                totalHitsOfSharpnessUsed += getAttacks()[attackKeys].hitsOfSharp / 3;
+                            } else {
+                                totalHitsOfSharpnessUsed += getAttacks()[attackKeys].hitsOfSharp;
+                            }
+                        }
+                    } else if ($('#dropWeaponType').val() === 'Gunlance' && eachAttack > 27) {
+                        ++totalHitsOfSharpnessUsed;
+                    }
+                }
+                let totalHits = 0;
+                if (totalHitsOfSharpnessUsed <= (totalHits += total.purple) && power.hitsOfSharpness.purple > 0) {
+                    power.comboHitsPerColor.purple.push(eachAttack);
+                } else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue) && power.hitsOfSharpness.white > 0) {
+                    power.comboHitsPerColor.white.push(eachAttack);
+                } else if (totalHitsOfSharpnessUsed <= (totalHits += total.blue) && power.hitsOfSharpness.blue > 0) {
+                    power.comboHitsPerColor.blue.push(eachAttack);
+                } else if (totalHitsOfSharpnessUsed <= (totalHits += total.green) && power.hitsOfSharpness.green > 0) {
+                    power.comboHitsPerColor.green.push(eachAttack);
+                } else if (totalHitsOfSharpnessUsed <= (totalHits += total.yellow) && power.hitsOfSharpness.yellow > 0) {
+                    power.comboHitsPerColor.yellow.push(eachAttack);
+                } else if (totalHitsOfSharpnessUsed <= (totalHits += total.orange)) {
+                    power.comboHitsPerColor.orange.push(eachAttack);
+                } else if (totalHitsOfSharpnessUsed <= (totalHits += total.red)) {
+                    power.comboHitsPerColor.red.push(eachAttack);
+                }
+            });
+            let hits = totalHitsOfSharpnessUsed;
+            [power.hitsOfSharpness.purple, hits] = hits - total.purple > 0 ? [0, hits - total.purple] : [total.purple - hits, 0];
+            [power.hitsOfSharpness.white, hits] = hits - total.white > 0 ? [0, hits - total.white] : [total.white - hits, 0];
+            [power.hitsOfSharpness.blue, hits] = hits > 0 && hits - total.blue > 0 ? [0, hits - total.blue] : [total.blue - hits, 0];
+            [power.hitsOfSharpness.green, hits] = hits > 0 && hits - total.green > 0 ? [0, hits - total.green] : [total.green - hits, 0];
+            [power.hitsOfSharpness.yellow, hits] = hits > 0 && hits - total.yellow > 0 ? [0, hits - total.yellow] : [total.yellow - hits, 0];
+            [power.hitsOfSharpness.orange, hits] = hits > 0 && hits - total.orange > 0 ? [0, hits - total.orange] : [total.orange - hits, 0];
+            [power.hitsOfSharpness.red, hits] = hits > 0 && hits - total.red > 0 ? [0, hits - total.red] : [total.red - hits, 0];
         }
-    } // If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
-    if (power.eleType !== 'None') {
-        power.PEM *= getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Elemental Exploit' && getHZ()[lower(power.eleType)] >= 25 ?
-            1.3 : 1;
-        power.PEM *= power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() == 'Element Exploit' && getHZ()[lower(power.eleType)] >= 25 && lower(power.eleType) !== 'none' ?
-            1.15 :
+        const width = (total.purple + total.white + total.blue + total.green + total.yellow + total.orange + total.red);
+        const finalWidth = Math.min(width, $(section2).width() * 0.95);
+
+        $('#white').parent().css('width', `${finalWidth}px`);
+        purple.style.width = `${(power.hitsOfSharpness.purple / width) * finalWidth}px`;
+        white.style.width = `${(power.hitsOfSharpness.white / width) * finalWidth}px`;
+        blue.style.width = `${(power.hitsOfSharpness.blue / width) * finalWidth}px`;
+        green.style.width = `${(power.hitsOfSharpness.green / width) * finalWidth}px`;
+        yellow.style.width = `${(power.hitsOfSharpness.yellow / width) * finalWidth}px`;
+        orange.style.width = `${(power.hitsOfSharpness.orange / width) * finalWidth}px`;
+        red.style.width = `${(power.hitsOfSharpness.red / width) * finalWidth}px`;
+
+        purple.innerHTML = power.hitsOfSharpness.purple > 0 ? ~~(power.hitsOfSharpness.purple + 0.7) : '';
+        white.innerHTML = power.hitsOfSharpness.white > 0 ? ~~(power.hitsOfSharpness.white + 0.7) : '';
+        blue.innerHTML = power.hitsOfSharpness.blue > 0 ? ~~(power.hitsOfSharpness.blue + 0.7) : '';
+        green.innerHTML = power.hitsOfSharpness.green > 0 ? ~~(power.hitsOfSharpness.green + 0.7) : '';
+        yellow.innerHTML = power.hitsOfSharpness.yellow > 0 ? ~~(power.hitsOfSharpness.yellow + 0.7) : '';
+        orange.innerHTML = power.hitsOfSharpness.orange > 0 ? ~~(power.hitsOfSharpness.orange + 0.7) : '';
+        red.innerHTML = power.hitsOfSharpness.red > 0 ? ~~(power.hitsOfSharpness.red + 0.7) : '';
+
+        if (power.hitsOfSharpness.purple > 0) {
+            Sharpness.selectedIndex = 7;
+        } else if (power.hitsOfSharpness.white > 0) {
+            Sharpness.selectedIndex = 6;
+        } else if (power.hitsOfSharpness.blue > 0) {
+            Sharpness.selectedIndex = 5;
+        } else if (power.hitsOfSharpness.green > 0) {
+            Sharpness.selectedIndex = 4;
+        } else if (power.hitsOfSharpness.yellow > 0) {
+            Sharpness.selectedIndex = 3;
+        } else if (power.hitsOfSharpness.orange > 0) {
+            Sharpness.selectedIndex = 2;
+        } else if (power.hitsOfSharpness.red >= 0) {
+            Sharpness.selectedIndex = 1;
+        }
+
+        return {...power };
+    }
+
+    function GetRemainingSkills(power) {
+        [power.augEFR, power.augPRM, power.augPEM] = [1, 1, 1];
+        power.augPEM *= $('#weaponRampage0').val() === 'Valstrax Soul' && power.eleType === 'Dragon' ? 1.2 : 1;
+        // applies Dulling Strike to Base raw depending on sharpness and if selected
+        [power.augEFR, power.augPRM] = $('#weaponRampage0').val() === 'Dulling Strike' && Sharpness.selectedIndex < 5 ? [1.02, 1.2] : [power.augEFR, power.augPRM];
+        /*
+         * If an anti species type skill is selected it gets the list of monsters applicable and checks
+         *if the selected monster is in the list.If true, it applies the skill.
+         */
+        if (
+            getWeapon().rampageSlots === 0 &&
+            Object.prototype.hasOwnProperty.call(info.types, $('#weaponRampage0').val()) &&
+            Object.prototype.hasOwnProperty.call(info.types[$('#weaponRampage0').val()].Monsters, $('#dropMonster').val())
+        ) {
+            [power.augPRM, power.augPEM] = info.types[$('#weaponRampage0').val()];
+        } else if (
+            dropMonster.value !== 'Toadversary' &&
+            getWeapon().rampageSlots > 0 &&
+            Object.entries(info.types[dropMonster.value]).filter((isSpecies) => isSpecies[1] && weaponRampage0.value.match(isSpecies[0])).length > 0
+        ) {
+            power.PRM *= 1.05;
+            power.PEM *= 1.05;
+        }
+        if (/blight Exploit/.test(weaponRampage0.value)) {
+            power.PRM *= 1.1;
+            power.PEM *= 1.1;
+        }
+        if (weaponRampage0.value === 'Magnamalo Soul') {
+            power.BR += 12;
+        }
+        if (/BowGun/.test(weaponType.value)) {
+            if (dropWeaponType.value === lbg && /Pierce|Spread|Normal/.test(power.attackName) && $(CriticalFirePower).hasClass('blue')) {
+                if (/Normal/.test(power.attackName)) {
+                    power.PRM *= 1.3;
+                } else if (/Spread/.test(power.attackName)) {
+                    power.PRM *= 1.2;
+                } else if (/Pierce/.test(power.attackName)) {
+                    power.PRM *= 1.1;
+                }
+            }
+            // Elemental Reload
+            power.BEM *= JSON.parse(BarrelId.value).Element;
+            // Power Barrel
+            if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BarrelId.options[BarrelId.selectedIndex].text === 'Power') {
+                power.baseRaw = ~~(power.baseRaw * 1.125);
+            } else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Power') {
+                power.baseRaw = ~~(power.baseRaw * 1.15);
+            }
+            if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BarrelId.options[BarrelId.selectedIndex].text === 'Long') {
+                power.baseRaw = ~~(power.baseRaw * 1.05);
+            } else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Long') {
+                power.baseRaw = ~~(power.baseRaw * 1.075);
+            }
+        }
+        if (power.skillType === 'IgnoreHZV') {
+            power.augEFR *= info.skills.Bombardier[Bombardier.selectedIndex][1];
+            power.augPRM *= info.skills.Bombardier[Bombardier.selectedIndex][0];
+
+            if (weaponType.value === sa && /Sword|ZSD|ED/.test(power.attackName) && power.phialType === 'Impact Phial') {
+                power.BRM *= 1.15;
+            }
+            if (weaponType.value === sa && /Sword|Elemental|ED/.test(power.attackName) && power.phialType === 'Elemental Phial') {
+                power.BEM *= 1.45;
+            }
+        } // If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
+        if (power.eleType !== 'None') {
+            power.PEM *= getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Elemental Exploit' && getHZ()[lower(power.eleType)] >= 25 ?
+                1.3 : 1;
+            power.PEM *= power.PEM *= getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() == 'Element Exploit' && getHZ()[lower(power.eleType)] >= 25 && lower(power.eleType) !== 'none' ?
+                1.15 :
+                1;
+            power.PEM *= getHZ()[lower(power.eleType)] >= 20 && lower(power.eleType) !== 'none' ? info.skills.ElementalExploit[ElementalExploit.selectedIndex] : 1;
+        }
+
+
+
+
+        // applies Bludgeoner to Base raw depending on sharpness and selectedIndex
+
+        if (Sharpness.selectedIndex > 0 && Bludgeoner.selectedIndex > 0) {
+            power.BRM *= Bludgeoner.selectedIndex === 1 && Sharpness.selectedIndex < 4 ? [1.05] : [1];
+            power.BRM *= Bludgeoner.selectedIndex === 2 && Sharpness.selectedIndex < 4 ? [1.1] : [1];
+            power.BRM *= Bludgeoner.selectedIndex === 3 && Sharpness.selectedIndex < 5 ? [1.1] : [1];
+        }
+        // applies sharpnessModifier to sever and blunt type attacks that use at least one hit of sharpness. This makes sure attacks like tackle or Bow skills don't get a sharpness modifier.
+
+        const sharpnessModifier = [];
+        [sharpnessModifier.PRM, sharpnessModifier.PEM] = power.noSharpMod === false && /sever|blunt/.test(lower(power.type)) ? [JSON.parse(Sharpness.value).PRM, JSON.parse(Sharpness.value).PEM] : [1, 1];
+        // adds minds eye
+        power.PRM *= ~~(25 / sharpnessModifier.PRM) >= getHZ()[power.type] ?
+            JSON.parse(document.getElementById(['MindsEye']).value).PRM :
             1;
-        power.PEM *= getHZ()[lower(power.eleType)] >= 20 && lower(power.eleType) !== 'none' ? info.skills.ElementalExploit[ElementalExploit.selectedIndex] : 1;
+
+        /*
+         * Brutal Strike
+         * Converts -Aff to a positive then * chance to proc * dmg modifier then
+         * adds the -dps to the +dps gain to find overall dps difference
+         */
+
+        if (getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Brutal Strike' && power.aff < 0) {
+            power.efrMulti = 1 + power.aff * -1 * 0.2 * 1.5 - power.aff * -1 * 0.8 * 0.75;
+            power.critBoost = 1.5;
+        } else if (getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Brutal Strike' && power.aff < 0) {
+            power.efrMulti = 1 + power.aff * -1 * 0.25 * 2 - power.aff * -1 * 0.75 * 0.75;
+            power.critBoost = 1.5;
+        }
+
+        power.augPRM *= info.skills.Marksman[Marksman.selectedIndex][0];
+        power.augEFR *= info.skills.Marksman[Marksman.selectedIndex][1];
+        return {...power };
     }
 
-
-
-
-    // applies Bludgeoner to Base raw depending on sharpness and selectedIndex
-
-    if (Sharpness.selectedIndex > 0 && Bludgeoner.selectedIndex > 0) {
-        power.BRM *= Bludgeoner.selectedIndex === 1 && Sharpness.selectedIndex < 4 ? [1.05] : [1];
-        power.BRM *= Bludgeoner.selectedIndex === 2 && Sharpness.selectedIndex < 4 ? [1.1] : [1];
-        power.BRM *= Bludgeoner.selectedIndex === 3 && Sharpness.selectedIndex < 5 ? [1.1] : [1];
-    }
-    // applies sharpnessModifier to sever and blunt type attacks that use at least one hit of sharpness. This makes sure attacks like tackle or Bow skills don't get a sharpness modifier.
-
-    const sharpnessModifier = [];
-    [sharpnessModifier.PRM, sharpnessModifier.PEM] = power.noSharpMod === false && /sever|blunt/.test(lower(power.type)) ? [JSON.parse(Sharpness.value).PRM, JSON.parse(Sharpness.value).PEM] : [1, 1];
-    // adds minds eye
-    power.PRM *= ~~(25 / sharpnessModifier.PRM) >= getHZ()[power.type] ?
-        JSON.parse(document.getElementById(['MindsEye']).value).PRM :
-        1;
-
-    /*
-     * Brutal Strike
-     * Converts -Aff to a positive then * chance to proc * dmg modifier then
-     * adds the -dps to the +dps gain to find overall dps difference
-     */
-
-    if (getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Brutal Strike' && power.aff < 0) {
-        power.efrMulti = 1 + power.aff * -1 * 0.2 * 1.5 - power.aff * -1 * 0.8 * 0.75;
-        power.critBoost = 1.5;
-    } else if (getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Brutal Strike' && power.aff < 0) {
-        power.efrMulti = 1 + power.aff * -1 * 0.25 * 2 - power.aff * -1 * 0.75 * 0.75;
-        power.critBoost = 1.5;
+    function getCritEle(canCrit, affinity) {
+        return canCrit ? {
+            PEM: info.skills.CriticalElement[CriticalElement.selectedIndex].PEM,
+            EFE: 1 + (info.skills.CriticalElement[CriticalElement.selectedIndex].PEM - 1) * affinity
+        } : { PRM: 1, EFE: 1 };
     }
 
-    power.augPRM *= info.skills.Marksman[Marksman.selectedIndex][0];
-    power.augEFR *= info.skills.Marksman[Marksman.selectedIndex][1];
-    return {...power };
-}
-
-function getCritEle(canCrit, affinity) {
-    return canCrit ? {
-        PEM: info.skills.CriticalElement[CriticalElement.selectedIndex].PEM,
-        EFE: 1 + (info.skills.CriticalElement[CriticalElement.selectedIndex].PEM - 1) * affinity
-    } : { PRM: 1, EFE: 1 };
-}
-
-function getCritBoost(canCrit, affinity) {
-    return canCrit ? {
-        PRM: info.skills.CriticalBoost[CriticalBoost.selectedIndex].PRM,
-        EFR: 1 + (info.skills.CriticalBoost[CriticalBoost.selectedIndex].PRM - 1) * affinity
-    } : { PRM: 1, EFR: 1 };
-}
-
-function DamageCalculations(power) {
-    if (power.Raw === false) {
-        [power.raw, power.rawNon, power.efr, power.rawCrit] = [0, 0, 0, 0];
-    } else {
-        power.raw = Math.min(power.baseRaw * power.BRM + power.BR, 2600);
-        const rawFormula = (power.raw * power.PRM * power.rawHZV * power.rawMV) / 10000;
-        power.rawNon = rawFormula * power.augPRM;
-        power.efr = rawFormula * power.augEFR * getCritBoost(power.Crit, power.aff).EFR;
-        power.rawCrit = rawFormula * power.augPRM * getCritBoost(power.Crit, power.aff).PRM;
+    function getCritBoost(canCrit, affinity) {
+        return canCrit ? {
+            PRM: info.skills.CriticalBoost[CriticalBoost.selectedIndex].PRM,
+            EFR: 1 + (info.skills.CriticalBoost[CriticalBoost.selectedIndex].PRM - 1) * affinity
+        } : { PRM: 1, EFR: 1 };
     }
-    if (power.Ele === false || lower(power.eleType) === 'none') {
-        [power.ele, power.eleNon, power.efe, power.eleCrit] = [0, 0, 0, 0];
-    } else if (power.NoEleBuff === true) {
-        [power.ele, power.eleNon, power.efe, power.eleCrit] = [power.baseEle, power.baseEle, power.baseEle, power.baseEle];
-    } else {
-        power.eleAmmo = /BowGun/.test($('#dropWeaponType').val()) && power.eleType !== 'None' ? 1 + power.raw / 100 : 1;
-        power.ele = Math.min(power.baseEle * power.BEM + power.BE, 365) * power.eleAmmo;
-        const eleFormula = power.ele * power.PEM * (power.eleHZV / 100) * power.eleMV * power.augPEM;
-        power.eleNon = Math.max(1, eleFormula);
-        power.efe = Math.max(1, eleFormula * getCritEle(power.Crit, power.aff).EFE);
-        power.eleCrit = Math.max(1, eleFormula * getCritEle(power.Crit, power.aff).PEM);
-    }
-    return {...power };
-}
 
-function BowComboDamage() {
-    /*
-     * for each combo input > 0 takes the damage listed for that skill * the number entered into the input field
-     * += for every skill used then updates the Combo Damage field
-     */
-    const tableCell = ['c', 'd', 'e', 'f', 'g', 'h', 'i'];
-    const comboDamage = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    $('.inputs').each((index, input) => {
-                let eachAttacksDamage = [];
-                if (input.value > 0) {
-                    $(tableCell).each((_index, letter) => {
-                                eachAttacksDamage = eachAttacksDamage.concat(`${$(`#${[letter + input.id]}`).text()}`.match(/\d+/g));
+    function DamageCalculations(power) {
+        if (power.Raw === false) {
+            [power.raw, power.rawNon, power.efr, power.rawCrit] = [0, 0, 0, 0];
+        } else {
+            power.raw = Math.min(power.baseRaw * power.BRM + power.BR, 2600);
+            const rawFormula = (power.raw * power.PRM * power.rawHZV * power.rawMV) / 10000;
+            power.rawNon = rawFormula * power.augPRM;
+            power.efr = rawFormula * power.augEFR * getCritBoost(power.Crit, power.aff).EFR;
+            power.rawCrit = rawFormula * power.augPRM * getCritBoost(power.Crit, power.aff).PRM;
+        }
+        if (power.Ele === false || lower(power.eleType) === 'none') {
+            [power.ele, power.eleNon, power.efe, power.eleCrit] = [0, 0, 0, 0];
+        } else if (power.NoEleBuff === true) {
+            [power.ele, power.eleNon, power.efe, power.eleCrit] = [power.baseEle, power.baseEle, power.baseEle, power.baseEle];
+        } else {
+            power.eleAmmo = /BowGun/.test($('#dropWeaponType').val()) && power.eleType !== 'None' ? 1 + power.raw / 100 : 1;
+            power.ele = Math.min(power.baseEle * power.BEM + power.BE, 365) * power.eleAmmo;
+            const eleFormula = power.ele * power.PEM * (power.eleHZV / 100) * power.eleMV * power.augPEM;
+            power.eleNon = Math.max(1, eleFormula);
+            power.efe = Math.max(1, eleFormula * getCritEle(power.Crit, power.aff).EFE);
+            power.eleCrit = Math.max(1, eleFormula * getCritEle(power.Crit, power.aff).PEM);
+        }
+        return {...power };
+    }
+
+    function BowComboDamage() {
+        /*
+         * for each combo input > 0 takes the damage listed for that skill * the number entered into the input field
+         * += for every skill used then updates the Combo Damage field
+         */
+        const tableCell = ['c', 'd', 'e', 'f', 'g', 'h', 'i'];
+        const comboDamage = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        $('.inputs').each((index, input) => {
+                    let eachAttacksDamage = [];
+                    if (input.value > 0) {
+                        $(tableCell).each((_index, letter) => {
+                                    eachAttacksDamage = eachAttacksDamage.concat(`${$(`#${[letter + input.id]}`).text()}`.match(/\d+/g));
       });
       eachAttacksDamage = eachAttacksDamage.map((damage) => +damage * input.value * $('.inputComboRepeat ').val());
       $(eachAttacksDamage).each((index) => {
