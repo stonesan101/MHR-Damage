@@ -27,6 +27,12 @@
         width: 15rem;
         grid-area: 2 / 2 / 4 / 3;
     }
+    div#discord {
+        grid-area: 1/1/1/-1;
+        justify-content: flex-start;
+        top: .55rem;
+        position: relative;
+    }
 }
 
 @media only screen and (min-width: 781px) {

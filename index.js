@@ -104,6 +104,13 @@ function DataCompile(e = window.event) {
 }
 
 function RangedDPS(e) {
+
+    $('output.elementalAug').val(0);
+    elementalResult.value = '+0';
+
+    $('output.sharpnessAug').val(0);
+    sharpnessResult.value = '+0';
+
     const rangedDamage = [];
     const ammoFrameData = [];
     let power = {};
@@ -388,8 +395,13 @@ function getRampageSkills(power) {
     power.baseRaw += $('output.attackAug').val() / 2 * 5;
     attackResult.value = `+ ${$('output.attackAug').val() / 2 * 5}`;
     power.aff += $('output.affinityAug').val() / 3 * 5;
+    affinityResult.value = `+ ${$('output.affinityAug').val() / 3 * 5}`;
+    if (getWeapon().eleType !== 'None') {
+        power.baseEle += $('output.elementalAug').val() * 3;
+        elementalResult.value = `+ ${$('output.elementalAug').val()  * 3}`;
+    }
 
-    if (getWeapon().eleType !== 'None') { power.baseEle += $('output.elementalAug').val() * 3; }
+    $('#rampageResult').text($('output.rampageAug').val() > 0 ? '+1' : '+0');
 
     if (getWeapon().rampageSlots === 0) {
         // applies rampage any bonuses that effect base stats
@@ -451,6 +463,8 @@ function AddDependantSkills() {
     }
 }
 
+
+
 function getBaseSkills(power) {
     [...power.getSkills] = info.types[power.skillType];
     enrageDisplay.textContent = `${~~(getEnrage() * 100)}%`;
@@ -459,12 +473,6 @@ function getBaseSkills(power) {
         power.PEM *= getEnrage();
         power.PRM *= getEnrage();
     }
-
-
-
-
-
-
     return power;
 }
 
@@ -477,7 +485,7 @@ function getEnrage() {
 function initialStats(power) {
     if (comboTracker[0] === null) {
         comboTracker = [];
-    }
+    };
     power.baseRaw += power.Draw === true ? +document.getElementById('PunishingDraw').value : 0;
     power.BR = 0;
     power.BRM = 1;
@@ -1293,8 +1301,8 @@ $(window).on('keypress',(e) => {
 });
 function UniqueColumnsDisplay() {
   $('#dango')[0].style = Bombardier.style.display === 'none' ? 'grid-template-columns:repeat(2, 1fr); grid-area: 10/1/11/3;' : 'grid-template-columns:repeat(3, 1fr); grid-area: 10/1/11/4;';
-   $('#setBonus').css('grid-area',Bombardier.style.display === 'none' ? '9/4/11/6' :
-'10/4/11/6');
+  $('#setBonus').css('grid-area',weaponType.value !== lbg && weaponTypes.value !== hbg ? '9/4/11/6' :
+    '10/4/11/6');
   // forButtons.style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns: repeat(10. 1fr)' : 'grid-template-columns: repeat(6, 1fr)';
 }
 function ResetSkills(element = '.skill') {
@@ -1535,10 +1543,8 @@ $('.augButton').on('mousedown',(e) => {
     $(e.target).siblings()[2].value = +$(e.target).siblings()[2].value - +e.target.value;
   }
   DataCompile(e);
-  if (/rampageAug/.test(e.target.className)) {
-    $('#rampageResult').text($('output.rampageAug').val() > 0 ? +1 : +0);
     RampageSelect();
-  }
+
 });
 function jsonsLoaded(e) {
   if (Object.values(check).every((keyCard) => keyCard)) {
@@ -2023,8 +2029,6 @@ function setSkillDescriptions(thisSkill) {
           }
         } else {
           option = ugh2;
-<<<<<<< HEAD
-=======
         }
         $(`#${ugh2}`)[0][index].textContent = option;
       });
@@ -2056,63 +2060,6 @@ function setSkillDescriptions(thisSkill) {
     resetSkillDescription(thisSkill);
   }
 }
-
-function getStats(power,skills) {
-  $(skills).each((_index,skill) => {
-    power.BRM *= skill.BRM;
-    power.BR += skill.BR;
-    power.PRM *= skill.PRM;
-    power.BEM *= skill.BEM;
-    power.BE += skill.BE;
-    power.PEM *= skill.PEM;
-    power.aff += skill.aff;
-  });
-  return power;
-}
-
-  function partSelector() {
-    $(dropHZ)
-      .children()
-      .each(function (index) {
-        if (this.textContent === document.querySelector('#monTable > tr:nth-child(2) > td:nth-child(1)').textContent) {
-          dropHZ.selectedIndex = index;
->>>>>>> 4807e9db5bb2184bf78ba51e96bec3dab192a07b
-        }
-        $(`#${ugh2}`)[0][index].textContent = option;
-      });
-      lastEvent = thisSkill;
-    } else if (thisSkill === Dereliction) {
-      const text = $(redScroll).hasClass('invis')
-        ? [['1: Raw +15'],['2: Raw +20'],['3: Raw +25'],['1: Raw +20'],['2: Raw +25'],['3: Raw +30'],['1: Raw +25'],['2: Raw +30'],['3: Raw +35']]
-        : [['1: Ele + 5'],['2: Ele + 8'],['3: Ele+12'],['1: Ele + 7'],['2: Ele+12'],['3: Ele+15'],['1: Ele+10'],['2: Ele+15'],['3: Ele+20']];
-      let index = 0;
-      $('select#Dereliction')
-        .children()
-        .each(function () {
-          $(this)
-            .children()
-            .each(function () {
-              this.textContent = text[index];
-              ++index;
-            });
-        });
-      Dereliction[0].textContent = 'Dereliction';
-    }
-    lastEvent = thisSkill;
-  }
-
-<<<<<<< HEAD
-  if (
-    (Object.values($('select.skill').children()).some((x) => x.id === thisSkill.id) && thisSkill.children[0]?.textContent === thisSkill.id)
-    || !Object.values($('select.skill').children()).some((x) => x.id === thisSkill.id || thisSkill)
-  ) {
-    resetSkillDescription(thisSkill);
-  }
-}
-=======
-  return (time * ammo.Speed).toFixed(3);
-};
->>>>>>> 4807e9db5bb2184bf78ba51e96bec3dab192a07b
 
 function getStats(power,skills) {
   $(skills).each((_index,skill) => {
@@ -2142,7 +2089,6 @@ const distanceCalc = (ammo,fps = 60) => {
     while (time < ammo.TickRate) {
       time += 1 / fps;
     }
-<<<<<<< HEAD
   }
 
   return (time * ammo.Speed).toFixed(3);
@@ -2166,7 +2112,3 @@ function formatNumbers(numbers) {
   }
   return +numbers;
 }
-=======
-    return +numbers;
-  }
->>>>>>> 4807e9db5bb2184bf78ba51e96bec3dab192a07b
