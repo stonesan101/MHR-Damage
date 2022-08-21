@@ -139,9 +139,7 @@ function RangedDPS(e) {
         power = initialStats(power);
         power = GetRemainingSkills(power);
         power = DamageCalculations(power);
-        if (!/Wyvern/.test(power.attackName) && !/explosion/.test(power.attackName) || power.attackName === 'Wyvern' || /explosion/.test(power.attackName)) {
-            ammo = calculateAmmoFrames(power);
-        } else { ammo.ticsAdjust === 1 }
+        ammo = calculateAmmoFrames(power);
         if (/snipe/.test(power.attackName) || /explosion/.test(power.attackName) || /Wyvern/.test(power.attackName) || /sub-Lv/.test(power.attackName)) {
             [power.efe, power.eleCrit, power.eleNon] = [power.baseEle, power.baseEle, power.baseEle];
         }
@@ -174,7 +172,7 @@ function RangedDPS(e) {
             ammo.shotsPerMin,
         ];
 
-        ammoFrameData.push(ammoStats, e);
+        ammoFrameData.push(ammoStats);
         if (pass1) {
             const stats = [
                 ['Stat', 'Raw', 'Affinity', 'Ele Pierce'],
