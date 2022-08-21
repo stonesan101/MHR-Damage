@@ -141,7 +141,7 @@ function RangedDPS(e) {
         power = DamageCalculations(power);
         if (!/Wyvern/.test(power.attackName) && !/explosion/.test(power.attackName) && !/sub-Lv/.test(power.attackName)) {
             ammo = calculateAmmoFrames(power);
-        }
+        } else { ammo.ticsAdjust === 1 }
         if (/snipe/.test(power.attackName) || /explosion/.test(power.attackName) || /Wyvern/.test(power.attackName) || /sub-Lv/.test(power.attackName)) {
             [power.efe, power.eleCrit, power.eleNon] = [power.baseEle, power.baseEle, power.baseEle];
         }
@@ -201,7 +201,7 @@ function RangedDPS(e) {
                 'EFR',
                 'EFE',
                 'Effective',
-                'Shots \n Per Gain',
+                'RPM Gain',
                 'Shots \n To Kill',
                 'Seconds \n To Kill',
             ]);
@@ -209,7 +209,7 @@ function RangedDPS(e) {
     });
 
     BuildDamageTable(rangedDamage, 'dps', e);
-    ammoFrameData.splice(0, 0, ['Ammo Type', 'rawMV', 'Reload', 'Recoil', 'Clip Size', 'Tics Per Shot', 'Shots Per \n Min Base', 'Shots \n Per Min']);
+    ammoFrameData.splice(0, 0, ['Ammo Type', 'rawMV', 'Reload', 'Recoil', 'Clip Size', 'Procs Per', 'RPM Base', 'Current RPM']);
     BuildDamageTable(ammoFrameData, 'ammo', e);
 }
 
