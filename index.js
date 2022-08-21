@@ -445,9 +445,6 @@ function AddDependantSkills() {
 }
 
 function GetSkills(power) {
-    if(comboTracker[0]=== null ){
-    comboTracker = []
-    };
     power.baseRaw += power.Draw === true ? +document.getElementById('PunishingDraw').value : 0;
     power.BR = 0;
     power.BRM = 1;
@@ -650,7 +647,7 @@ function TotalHitsOfSharpUsed(power) {
     total.yellow = ~~(mTBonus * power.hitsOfSharpness.yellow);
     total.orange = ~~(mTBonus * power.hitsOfSharpness.orange);
     total.red = ~~(mTBonus * power.hitsOfSharpness.red);
-    if (comboTracker[0] !== null) {
+    if (comboTracker !== ([] || [null])) {
         let comboMulti = $('.inputComboRepeat').val();
         // for each pont in the comboMultiplier input, adds another comboTracker [] to the listOfEachAttack
         while (comboMulti > 1) {
