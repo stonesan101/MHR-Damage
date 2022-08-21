@@ -822,7 +822,7 @@ select#dropEnraged {
 }
 
 div#setBonus.contain {
-    grid-area: 8/4/9/6;
+    grid-area: 9/4/11/6;
     grid-template-columns: repeat(2, 1fr);
 }
 
@@ -832,7 +832,7 @@ div#dango.contain {
 }
 
 div#unique {
-    grid-area: 8 / 3 / 9 / 4;
+    grid-area: 8 / 3 / 10 / 4;
 }
 
 div#raw.contain {
@@ -862,7 +862,7 @@ div#aff.contain {
 div#ele.contain {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-area: 10 / 4 / 10 / 6;
+    grid-area: 8 / 4 / 9 / 6;
     justify-content: end;
     justify-items: stretch;
 }
