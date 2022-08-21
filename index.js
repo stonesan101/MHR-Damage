@@ -2023,6 +2023,8 @@ function setSkillDescriptions(thisSkill) {
           }
         } else {
           option = ugh2;
+<<<<<<< HEAD
+=======
         }
         $(`#${ugh2}`)[0][index].textContent = option;
       });
@@ -2068,6 +2070,63 @@ function getStats(power,skills) {
   return power;
 }
 
+  function partSelector() {
+    $(dropHZ)
+      .children()
+      .each(function (index) {
+        if (this.textContent === document.querySelector('#monTable > tr:nth-child(2) > td:nth-child(1)').textContent) {
+          dropHZ.selectedIndex = index;
+>>>>>>> 4807e9db5bb2184bf78ba51e96bec3dab192a07b
+        }
+        $(`#${ugh2}`)[0][index].textContent = option;
+      });
+      lastEvent = thisSkill;
+    } else if (thisSkill === Dereliction) {
+      const text = $(redScroll).hasClass('invis')
+        ? [['1: Raw +15'],['2: Raw +20'],['3: Raw +25'],['1: Raw +20'],['2: Raw +25'],['3: Raw +30'],['1: Raw +25'],['2: Raw +30'],['3: Raw +35']]
+        : [['1: Ele + 5'],['2: Ele + 8'],['3: Ele+12'],['1: Ele + 7'],['2: Ele+12'],['3: Ele+15'],['1: Ele+10'],['2: Ele+15'],['3: Ele+20']];
+      let index = 0;
+      $('select#Dereliction')
+        .children()
+        .each(function () {
+          $(this)
+            .children()
+            .each(function () {
+              this.textContent = text[index];
+              ++index;
+            });
+        });
+      Dereliction[0].textContent = 'Dereliction';
+    }
+    lastEvent = thisSkill;
+  }
+
+<<<<<<< HEAD
+  if (
+    (Object.values($('select.skill').children()).some((x) => x.id === thisSkill.id) && thisSkill.children[0]?.textContent === thisSkill.id)
+    || !Object.values($('select.skill').children()).some((x) => x.id === thisSkill.id || thisSkill)
+  ) {
+    resetSkillDescription(thisSkill);
+  }
+}
+=======
+  return (time * ammo.Speed).toFixed(3);
+};
+>>>>>>> 4807e9db5bb2184bf78ba51e96bec3dab192a07b
+
+function getStats(power,skills) {
+  $(skills).each((_index,skill) => {
+    power.BRM *= skill.BRM;
+    power.BR += skill.BR;
+    power.PRM *= skill.PRM;
+    power.BEM *= skill.BEM;
+    power.BE += skill.BE;
+    power.PEM *= skill.PEM;
+    power.aff += skill.aff;
+  });
+  return power;
+}
+
 function partSelector() {
   $(dropHZ)
     .children()
@@ -2083,6 +2142,7 @@ const distanceCalc = (ammo,fps = 60) => {
     while (time < ammo.TickRate) {
       time += 1 / fps;
     }
+<<<<<<< HEAD
   }
 
   return (time * ammo.Speed).toFixed(3);
@@ -2106,3 +2166,7 @@ function formatNumbers(numbers) {
   }
   return +numbers;
 }
+=======
+    return +numbers;
+  }
+>>>>>>> 4807e9db5bb2184bf78ba51e96bec3dab192a07b
