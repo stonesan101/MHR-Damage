@@ -156,10 +156,10 @@ function RangedDPS(e) {
         const timeToKill = /Stic|Slic/.test(power.attackName) ?
             5 + ~~(0.99 + (60 / ammo.shotsPerMin) * shotsToKill) :
             ~~(0.99 + (60 / ammo.shotsPerMin) * shotsToKill);
-        const rawBoth = [`${~~(.1 + power.rawNon)} / ${~~(.1 + power.rawCrit)}`];
-        const eleBoth = [`${~~(.1 + power.eleNon)} / ${~~(.1 + power.eleCrit)}`];
-        const total = [`${~~(.1 + totalNon)} / ${~~(.1 + totalCrit)}`];
-        const damage = [power.attackName, rawBoth, eleBoth, total, ~~(.1 + power.efr), ~~(.1 + power.efe), totalEffective, ammo.shotsPerGain, shotsToKill, timeToKill];
+        const rawBoth = [`${~~( power.rawNon)} / ${~~( power.rawCrit)}`];
+        const eleBoth = [`${~~( power.eleNon)} / ${~~( power.eleCrit)}`];
+        const total = [`${~~( totalNon)} / ${~~( totalCrit)}`];
+        const damage = [power.attackName, rawBoth, eleBoth, total, ~~(power.efr), ~~(power.efe), totalEffective, ammo.shotsPerGain, shotsToKill, timeToKill];
 
         rangedDamage.push(damage);
 
@@ -1301,7 +1301,7 @@ $(window).on('keypress',(e) => {
 });
 function UniqueColumnsDisplay() {
   $('#dango')[0].style = Bombardier.style.display === 'none' ? 'grid-template-columns:repeat(2, 1fr); grid-area: 10/1/11/3;' : 'grid-template-columns:repeat(3, 1fr); grid-area: 10/1/11/4;';
-  $('#setBonus').css('grid-area',weaponType.value !== lbg && weaponTypes.value !== hbg ? '9/4/11/6' :
+  $('#setBonus').css('grid-area',weaponType.value !== lbg && weaponType.value !== hbg ? '9/4/11/6' :
     '10/4/11/6');
   // forButtons.style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns: repeat(10. 1fr)' : 'grid-template-columns: repeat(6, 1fr)';
 }
