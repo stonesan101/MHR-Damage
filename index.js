@@ -139,7 +139,9 @@ function RangedDPS(e) {
         power = initialStats(power);
         power = GetRemainingSkills(power);
         power = DamageCalculations(power);
-        ammo = calculateAmmoFrames(power);
+        if (!/Wyvernblast/.test(power.attackName)) {
+            ammo = calculateAmmoFrames(power);
+        }
         if (/snipe/.test(power.attackName) || /explosion/.test(power.attackName) || /Wyvern/.test(power.attackName) || /sub-Lv/.test(power.attackName)) {
             [power.efe, power.eleCrit, power.eleNon] = [power.baseEle, power.baseEle, power.baseEle];
         }
@@ -1411,54 +1413,54 @@ function ToggleAmmoTables() {
 }
 function calculateAmmoFrames(power) {
   let attackName = /sub-Lv|explosion|Procs|\(RF\+\d\)/.test(power.attackName) ? power.attackName.replace(/sub-| explosion| Procs| \(RF\+\d\)/,'') : power.attackName;
-  attackName = /(?<!Lv)\d/.test(attackName) ? `${attackName.slice(0,attackName.length - 1)}Lv${attackName.slice(-1)}` : attackName;
-  const ammo = {};
-  ammo.ammoIncrease = info.ammo.AmmoUp[attackName][AmmoUP.selectedIndex];
-  // converts to number to find frames used while staying within possible parameters
-  ammo.recoilSpeed = info.ammo.recoil[attackName][
-    Math.max(
-      0,
-      Math.min(
-        5,
-        power.recoil
-        + RecoilDown.selectedIndex
-        + (JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex + JSON.parse(BarrelId.value).Silencer : 0)
-        - ($(CriticalFirePower).hasClass('blue') ? 2 : 0),
-      ),
-    )
-  ];
-  ammo.recoilSpeed = /\(RF\+\d\)/.test(power.attackName) ? `${ammo.recoilSpeed} ${power.attackName.match(/\(RF\+\d\)/)[0]}` : ammo.recoilSpeed;
-  ammo.recoilFrames = info.ammo.recoil.frames[ammo.recoilSpeed];
-  ammo.reloadSpeed = info.ammo.reload[attackName][
-    Math.max(
-      0,
-      Math.min(
-        8,
-        power.reload
-        - 2
-        + ReloadSpeed.selectedIndex
-        + JSON.parse(BarrelId.value).reload
-        - [BarrelId.options[BarrelId.selectedIndex].text === '----' && TuneUp.selectedIndex > 0 ? 1 : 0][0],
-      ),
-    )
-  ];
-  ammo.reloadFrames = info.ammo.reload.frames[ammo.reloadSpeed];
-  ammo.clipSize = power.clipSize[power.isUsed] + ammo.ammoIncrease;
-  ammo.spareShot = info.skills.SpareShot[SpareShot.selectedIndex] + +spareAdjust.value;
-  if (/(?<!snipe.*)explosion/.test(attackName) && Bombardier.selectedIndex > 0) {
-    ammo.spareShot += JSON.parse(Bombardier.value)[lower(attackName).match(/sticky|wyvern/)[0]][2];
-  }
+    attackName = /(?<!Lv)\d/.test(attackName) ? `${attackName.slice(0,attackName.length - 1)}Lv${attackName.slice(-1)}` : attackName;
+    const ammo = {};
+    ammo.ammoIncrease = info.ammo.AmmoUp[attackName][AmmoUP.selectedIndex];
+    // converts to number to find frames used while staying within possible parameters
+    ammo.recoilSpeed = info.ammo.recoil[attackName][
+      Math.max(
+        0,
+        Math.min(
+          5,
+          power.recoil
+          + RecoilDown.selectedIndex
+          + (JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex + JSON.parse(BarrelId.value).Silencer : 0)
+          - ($(CriticalFirePower).hasClass('blue') ? 2 : 0),
+        ),
+      )
+    ];
+    ammo.recoilSpeed = /\(RF\+\d\)/.test(power.attackName) ? `${ammo.recoilSpeed} ${power.attackName.match(/\(RF\+\d\)/)[0]}` : ammo.recoilSpeed;
+    ammo.recoilFrames = info.ammo.recoil.frames[ammo.recoilSpeed];
+    ammo.reloadSpeed = info.ammo.reload[attackName][
+      Math.max(
+        0,
+        Math.min(
+          8,
+          power.reload
+          - 2
+          + ReloadSpeed.selectedIndex
+          + JSON.parse(BarrelId.value).reload
+          - [BarrelId.options[BarrelId.selectedIndex].text === '----' && TuneUp.selectedIndex > 0 ? 1 : 0][0],
+        ),
+      )
+    ];
+    ammo.reloadFrames = info.ammo.reload.frames[ammo.reloadSpeed];
+    ammo.clipSize = power.clipSize[power.isUsed] + ammo.ammoIncrease;
+    ammo.spareShot = info.skills.SpareShot[SpareShot.selectedIndex] + +spareAdjust.value;
+    if (/(?<!snipe.*)explosion/.test(attackName) && Bombardier.selectedIndex > 0) {
+      ammo.spareShot += JSON.parse(Bombardier.value)[lower(attackName).match(/sticky|wyvern/)[0]][2];
+    }
 
-  /*
-      * finds time needed to shoot 100 shots as a base for calculations
-      *                  ( (        actual shots consumed    times reloaded    for total frames spent reloading) + (total recoil frames) for total frames used / 30 frames for total second / 100 shots = seconds per shot)
-        60 seconds / ( ( ( ( ( 100 shots-Spare Shot percent) / clip size -1 for inital clip) * frames per reload ) + (100 * recoil frames )) / 30 frames per second / 100 shots )
-      */
+    /*
+        * finds time needed to shoot 100 shots as a base for calculations
+        *                  ( (        actual shots consumed    times reloaded    for total frames spent reloading) + (total recoil frames) for total frames used / 30 frames for total second / 100 shots = seconds per shot)
+          60 seconds / ( ( ( ( ( 100 shots-Spare Shot percent) / clip size -1 for inital clip) * frames per reload ) + (100 * recoil frames )) / 30 frames per second / 100 shots )
+        */
 
-  const shotsPerTimeLimit = 60;
-  ammo.shotsPerMinBase = shotsCheck(ammo.recoilFrames / 30,ammo.reloadFrames / 30,power.clipSize[power.isUsed],shotsPerTimeLimit);
-  ammo.shotsPerMin = shotsCheck(ammo.recoilFrames / 30,ammo.reloadFrames / 30,ammo.clipSize,shotsPerTimeLimit,100 / ammo.spareShot);
-  ammo.shotsPerGain = `${Number.parseFloat((ammo.shotsPerMin / ammo.shotsPerMinBase - 1) * 100).toFixed(2)}%`;
+    const shotsPerTimeLimit = 60;
+    ammo.shotsPerMinBase = shotsCheck(ammo.recoilFrames / 30,ammo.reloadFrames / 30,power.clipSize[power.isUsed],shotsPerTimeLimit);
+    ammo.shotsPerMin = shotsCheck(ammo.recoilFrames / 30,ammo.reloadFrames / 30,ammo.clipSize,shotsPerTimeLimit,100 / ammo.spareShot);
+    ammo.shotsPerGain = `${Number.parseFloat((ammo.shotsPerMin / ammo.shotsPerMinBase - 1) * 100).toFixed(2)}%`;
 
   ammo.ticsAdjust = +power.ticsPer + 1;
   // Reduces total damage from pierce attacks displayed depending on selection
