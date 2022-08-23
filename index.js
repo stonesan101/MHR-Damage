@@ -156,9 +156,9 @@ function RangedDPS(e) {
         const timeToKill = /Stic|Slic/.test(power.attackName) ?
             5 + ~~(0.99 + (60 / ammo.shotsPerMin) * shotsToKill) :
             ~~(0.99 + (60 / ammo.shotsPerMin) * shotsToKill);
-        const rawBoth = [`${~~( power.rawNon)} / ${~~( power.rawCrit)}`];
-        const eleBoth = [`${~~( power.eleNon)} / ${~~( power.eleCrit)}`];
-        const total = [`${~~( totalNon)} / ${~~( totalCrit)}`];
+        const rawBoth = [`${~~(power.rawNon)} / ${~~(power.rawCrit)}`];
+        const eleBoth = [`${~~(power.eleNon)} / ${~~(power.eleCrit)}`];
+        const total = [`${~~(totalNon)} / ${~~(totalCrit)}`];
         const damage = [power.attackName, rawBoth, eleBoth, total, ~~(power.efr), ~~(power.efe), totalEffective, ammo.shotsPerGain, shotsToKill, timeToKill];
 
         rangedDamage.push(damage);
@@ -398,7 +398,7 @@ function getRampageSkills(power) {
     affinityResult.value = `+ ${$('output.affinityAug').val() / 3 * 5}`;
     if (getWeapon().eleType !== 'None') {
         power.baseEle += $('output.elementalAug').val() * 3;
-        elementalResult.value = `+ ${$('output.elementalAug').val()  * 3}`;
+        elementalResult.value = `+ ${$('output.elementalAug').val() * 3}`;
     }
 
     $('#rampageResult').text($('output.rampageAug').val() > 0 ? '+1' : '+0');
@@ -789,16 +789,20 @@ function GetRemainingSkills(power) {
         Object.entries(info.types[dropMonster.value]).filter((isSpecies) => isSpecies[1] && weaponRampage0.value.match(isSpecies[0])).length > 0
     ) {
         power.PRM *= 1.05;
-        power.PEM *= 1.05;
+
     }
     if (/blight Exploit/.test(weaponRampage0.value)) {
         power.PRM *= 1.1;
-        power.PEM *= 1.1;
+
     }
     if (weaponRampage0.value === 'Magnamalo Soul') {
         power.BR += 12;
     }
     if (/BowGun/.test(weaponType.value)) {
+        if (power.type === 'IgnoreHZV' && !/Cluster|Tranq/.test(power.attackName)) {
+            power.augEFR *= info.skills.Bombardier[Bombardier.selectedIndex][power.attackName.match('Sticky|Wyvern')[0]][1];
+            power.augPRM *= info.skills.Bombardier[Bombardier.selectedIndex][power.attackName.match('Sticky|Wyvern')[0]][0];
+        }
         if (dropWeaponType.value === lbg && /Pierce|Spread|Normal/.test(power.attackName) && $(CriticalFirePower).hasClass('blue')) {
             if (/Normal/.test(power.attackName)) {
                 power.PRM *= 1.3;
@@ -809,20 +813,20 @@ function GetRemainingSkills(power) {
             }
         }
         // Elemental Reload
-        power.BEM *= JSON.parse(BarrelId.value).Element;
+        power.BEM *= JSON.parse(BowgunBarrel.value).Element;
         // Power Barrel
-        if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BarrelId.options[BarrelId.selectedIndex].text === 'Power') {
+        if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BowgunBarrel.options[BowgunBarrel.selectedIndex].text === 'Power') {
             power.baseRaw = ~~(power.baseRaw * 1.125);
-        } else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Power') {
+        } else if (TuneUp.selectedIndex === 2 && BowgunBarrel.options[BowgunBarrel.selectedIndex].text === 'Power') {
             power.baseRaw = ~~(power.baseRaw * 1.15);
         }
-        if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BarrelId.options[BarrelId.selectedIndex].text === 'Long') {
+        if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BowgunBarrel.options[BowgunBarrel.selectedIndex].text === 'Long') {
             power.baseRaw = ~~(power.baseRaw * 1.05);
-        } else if (TuneUp.selectedIndex === 2 && BarrelId.options[BarrelId.selectedIndex].text === 'Long') {
+        } else if (TuneUp.selectedIndex === 2 && BowgunBarrel.options[BowgunBarrel.selectedIndex].text === 'Long') {
             power.baseRaw = ~~(power.baseRaw * 1.075);
         }
     }
-    if (power.skillType === 'IgnoreHZV') {
+    if (power.type === 'IgnoreHZV' && weaponType.value !== (hbg && lbg) && weaponType.value === cb) {
         power.augEFR *= info.skills.Bombardier[Bombardier.selectedIndex][1];
         power.augPRM *= info.skills.Bombardier[Bombardier.selectedIndex][0];
 
@@ -900,9 +904,9 @@ function DamageCalculations(power) {
     } else {
         power.raw = Math.min(power.baseRaw * power.BRM + power.BR, 2600);
         const rawFormula = (power.raw * power.PRM * power.rawHZV * power.rawMV) / 10000;
-        power.rawNon = rawFormula * power.augPRM;
-        power.efr = rawFormula * power.augEFR * getCritBoost(power.Crit, power.aff).EFR;
-        power.rawCrit = rawFormula * power.augPRM * getCritBoost(power.Crit, power.aff).PRM;
+        power.rawNon = Math.max(1, rawFormula * power.augPRM);
+        power.efr = Math.max(1, rawFormula * power.augEFR * getCritBoost(power.Crit, power.aff).EFR);
+        power.rawCrit = Math.max(1, rawFormula * power.augPRM * getCritBoost(power.Crit, power.aff).PRM);
     }
     if (power.Ele === false || lower(power.eleType) === 'none') {
         [power.ele, power.eleNon, power.efe, power.eleCrit] = [0, 0, 0, 0];
@@ -1211,6 +1215,7 @@ $([dropWeapon,weaponType]).on('change',(_e) => {
   }
 });
 function classChange() {
+
   if (Object.values(check).every((keyCard) => keyCard)) {
     if (previousWeaponType.textContent !== '') {
       ComboReset();
@@ -1235,11 +1240,11 @@ function classChange() {
       bomb = [[1,1],[1.05,1.05],[1.1,1.1],[1.15,1.11],[1.2,1.12]];
     } else if (weaponType.value === lbg || weaponType.value === hbg) {
       bomb = [
-        { "wyvern": [1,1,1],"sticky": [1,1,1] },
-        { "wyvern": [1.1,1.1,1],"sticky": [1.1,1.1,1] },
-        { "wyvern": [1.15,1.15,1],"sticky": [1.1,1.1,1] },
-        { "wyvern": [1.20,1.16,1],"sticky": [1.2,1.16,1] },
-        { "wyvern": [1.25,1.17,1.1],"sticky": [1.25,1.17,1.1] },
+        { "Wyvern": [1,1,1],"Sticky": [1,1,1] },
+        { "Wyvern": [1.1,1.1,1],"Sticky": [1.1,1.1,1] },
+        { "Wyvern": [1.15,1.15,1],"Sticky": [1.1,1.1,1] },
+        { "Wyvern": [1.20,1.16,1],"Sticky": [1.2,1.16,1] },
+        { "Wyvern": [1.25,1.17,1.1],"Sticky": [1.25,1.17,1.1] },
       ];
     }
     info.skills.Bombardier = bomb;
@@ -1322,47 +1327,47 @@ $(window).on('resize',() => {
       $(BowCoating).parent().css('max-width',`${$(dropWeapon).width() - $(dropWeaponType).width()}px`);
     }
     if (weaponType.value === (lbg || hbg)) {
-      $(BarrelId).parent().css('max-width',`${($(dropWeapon).width() - $(dropWeaponType).width()) * 0.95}px`);
+      $(BowgunBarrel).parent().css('max-width',`${($(dropWeapon).width() - $(dropWeaponType).width()) * 0.95}px`);
     }
 
     if ($(window).width() > 850) {
       setHeight();
     }
-    section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
   }
 });
 function setHeight() {
+  section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
+
   const newHeight = +$(section1)
     .css('row-gap')
     .match(/\d.?\d+?/)[0]
-    * 4
+    * 3
     + $('.title').height()
     + $(boxes).height()
     + $(weaponSelect).height()
     + $(raw).height();
   $('#section2').height(newHeight);
-  // $('#section2').width($('#damageTable').width());
-  $('#monTableContainer').height(newHeight * 0.2 + (newHeight * 0.59 - $(dpsTable).height() > 0 ? newHeight * 0.59 - $(dpsTable).height() > 0 : 0));
+  //  $('#section2').width($('#damageTable').width());
+  //  $('#monTableContainer').css('max-height', newHeight * 0.2 + (newHeight * 0.59 - $(dpsTable).height() > 0 ? newHeight * 0.59 - $(dpsTable).height() > 0 : 0));
   // $('#monTableContainer').width($('#damageTable').width());
-  $('#damageTable').height(Math.min(newHeight * 0.59,$(dpsTable).height()));
+  $('#damageTable').css('max-height',newHeight * 0.59,);
   if (/BowGun/.test(weaponType.value)) {
     $('#ammoTable').height(newHeight * 0.59);
   }
-  $(comboCountContainer).css('height',+getComputedStyle(document.querySelector('#section2')).height.match(/\d.\d+?/)[0]);
-  $('#monDropDowns').height($('#dropHeight').height());
-  section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
+  //  $(comboCountContainer).css('max-height',+getComputedStyle(document.querySelector('#section2')).height.match(/\d.\d+?/)[0]);
+  //  $('#monDropDowns').height($('#dropHeight').height());
+  //  section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
   if (weaponType.value === 'Bow') {
     $(BowCoating).parent().css('max-width',`${($(
       dropWeapon
     ).width() - $(dropWeaponType).width()) * 1.05}px`);
-    // $([dropWeapon,weaponRampage]).css('max-width',`${$(dropWeapon).width()}px`)
+
     $(BowCoating).parent().css('min-width',`${($(
       dropWeapon
     ).width() - $(dropWeaponType).width()) * 1.05}px`);
-    // $([dropWeapon,weaponRampage]).css('max-width',`${$(dropWeapon).width()}px`)
+
   }
 }
-
 $('#BowChargePlus').on('change',() => {
   ComboReset();
   UpdateComboDisplay();
@@ -1413,54 +1418,54 @@ function ToggleAmmoTables() {
 }
 function calculateAmmoFrames(power) {
   let attackName = /sub-Lv|explosion|Procs|\(RF\+\d\)/.test(power.attackName) ? power.attackName.replace(/sub-| explosion| Procs| \(RF\+\d\)/,'') : power.attackName;
-    attackName = /(?<!Lv)\d/.test(attackName) ? `${attackName.slice(0,attackName.length - 1)}Lv${attackName.slice(-1)}` : attackName;
-    const ammo = {};
-    ammo.ammoIncrease = info.ammo.AmmoUp[attackName][AmmoUP.selectedIndex];
-    // converts to number to find frames used while staying within possible parameters
-    ammo.recoilSpeed = info.ammo.recoil[attackName][
-      Math.max(
-        0,
-        Math.min(
-          5,
-          power.recoil
-          + RecoilDown.selectedIndex
-          + (JSON.parse(BarrelId.value).Silencer > 0 ? TuneUp.selectedIndex + JSON.parse(BarrelId.value).Silencer : 0)
-          - ($(CriticalFirePower).hasClass('blue') ? 2 : 0),
-        ),
-      )
-    ];
-    ammo.recoilSpeed = /\(RF\+\d\)/.test(power.attackName) ? `${ammo.recoilSpeed} ${power.attackName.match(/\(RF\+\d\)/)[0]}` : ammo.recoilSpeed;
-    ammo.recoilFrames = info.ammo.recoil.frames[ammo.recoilSpeed];
-    ammo.reloadSpeed = info.ammo.reload[attackName][
-      Math.max(
-        0,
-        Math.min(
-          8,
-          power.reload
-          - 2
-          + ReloadSpeed.selectedIndex
-          + JSON.parse(BarrelId.value).reload
-          - [BarrelId.options[BarrelId.selectedIndex].text === '----' && TuneUp.selectedIndex > 0 ? 1 : 0][0],
-        ),
-      )
-    ];
-    ammo.reloadFrames = info.ammo.reload.frames[ammo.reloadSpeed];
-    ammo.clipSize = power.clipSize[power.isUsed] + ammo.ammoIncrease;
-    ammo.spareShot = info.skills.SpareShot[SpareShot.selectedIndex] + +spareAdjust.value;
-    if (/(?<!snipe.*)explosion/.test(attackName) && Bombardier.selectedIndex > 0) {
-      ammo.spareShot += JSON.parse(Bombardier.value)[lower(attackName).match(/sticky|wyvern/)[0]][2];
-    }
+  attackName = /(?<!Lv)\d/.test(attackName) ? `${attackName.slice(0,attackName.length - 1)}Lv${attackName.slice(-1)}` : attackName;
+  const ammo = {};
+  ammo.ammoIncrease = info.ammo.AmmoUp[attackName][AmmoUP.selectedIndex];
+  // converts to number to find frames used while staying within possible parameters
+  ammo.recoilSpeed = info.ammo.recoil[attackName][
+    Math.max(
+      0,
+      Math.min(
+        5,
+        power.recoil
+        + RecoilDown.selectedIndex
+        + (info.skills.BowgunBarrel[BowgunBarrel.selectedIndex].Silencer > 0 ? TuneUp.selectedIndex + info.skills.BowgunBarrel[BowgunBarrel.selectedIndex].Silencer : 0)
+        - ($(CriticalFirePower).hasClass('blue') ? 2 : 0),
+      ),
+    )
+  ];
+  ammo.recoilSpeed = /\(RF\+\d\)/.test(power.attackName) ? `${ammo.recoilSpeed} ${power.attackName.match(/\(RF\+\d\)/)[0]}` : ammo.recoilSpeed;
+  ammo.recoilFrames = info.ammo.recoil.frames[ammo.recoilSpeed];
+  ammo.reloadSpeed = info.ammo.reload[attackName][
+    Math.max(
+      0,
+      Math.min(
+        8,
+        power.reload
+        - 2
+        + ReloadSpeed.selectedIndex
+        + JSON.parse(BowgunBarrel.value).reload
+        + (BowgunBarrel.selectedIndex === 0 && TuneUp.selectedIndex > 0 ? 1 : 0),
+      ),
+    )
+  ];
+  ammo.reloadFrames = info.ammo.reload.frames[ammo.reloadSpeed];
+  ammo.clipSize = power.clipSize[power.isUsed] + ammo.ammoIncrease;
+  ammo.spareShot = info.skills.SpareShot[SpareShot.selectedIndex] + +spareAdjust.value;
+  // if (/(?<!snipe.*)explosion/.test(attackName) && Bombardier.selectedIndex > 0) {
+  // ammo.spareShot += JSON.parse(Bombardier.value)[attackName.match(/Sticky|Wyvern/)[0]][2];
+  // }
 
-    /*
-        * finds time needed to shoot 100 shots as a base for calculations
-        *                  ( (        actual shots consumed    times reloaded    for total frames spent reloading) + (total recoil frames) for total frames used / 30 frames for total second / 100 shots = seconds per shot)
-          60 seconds / ( ( ( ( ( 100 shots-Spare Shot percent) / clip size -1 for inital clip) * frames per reload ) + (100 * recoil frames )) / 30 frames per second / 100 shots )
-        */
+  /*
+      * finds time needed to shoot 100 shots as a base for calculations
+      *                  ( (        actual shots consumed    times reloaded    for total frames spent reloading) + (total recoil frames) for total frames used / 30 frames for total second / 100 shots = seconds per shot)
+        60 seconds / ( ( ( ( ( 100 shots-Spare Shot percent) / clip size -1 for inital clip) * frames per reload ) + (100 * recoil frames )) / 30 frames per second / 100 shots )
+      */
 
-    const shotsPerTimeLimit = 60;
-    ammo.shotsPerMinBase = shotsCheck(ammo.recoilFrames / 30,ammo.reloadFrames / 30,power.clipSize[power.isUsed],shotsPerTimeLimit);
-    ammo.shotsPerMin = shotsCheck(ammo.recoilFrames / 30,ammo.reloadFrames / 30,ammo.clipSize,shotsPerTimeLimit,100 / ammo.spareShot);
-    ammo.shotsPerGain = `${Number.parseFloat((ammo.shotsPerMin / ammo.shotsPerMinBase - 1) * 100).toFixed(2)}%`;
+  const shotsPerTimeLimit = 60;
+  ammo.shotsPerMinBase = shotsCheck(ammo.recoilFrames / 30,ammo.reloadFrames / 30,power.clipSize[power.isUsed],shotsPerTimeLimit);
+  ammo.shotsPerMin = shotsCheck(ammo.recoilFrames / 30,ammo.reloadFrames / 30,ammo.clipSize,shotsPerTimeLimit,100 / ammo.spareShot);
+  ammo.shotsPerGain = `${Number.parseFloat((ammo.shotsPerMin / ammo.shotsPerMinBase - 1) * 100).toFixed(2)}%`;
 
   ammo.ticsAdjust = +power.ticsPer + 1;
   // Reduces total damage from pierce attacks displayed depending on selection
@@ -1543,7 +1548,7 @@ $('.augButton').on('mousedown',(e) => {
     $(e.target).siblings()[2].value = +$(e.target).siblings()[2].value - +e.target.value;
   }
   DataCompile(e);
-    RampageSelect();
+  RampageSelect();
 
 });
 function jsonsLoaded(e) {
@@ -1919,7 +1924,7 @@ function resetSkillDescription() {
       let newText = '';
       if (lastEvent === BowCoating) {
         newText = getWeapon().coatings[index];
-      } else if (lastEvent === BarrelId) {
+      } else if (lastEvent === BowgunBarrel) {
         newText = ['----','Long','Power','Silencer','Guard-Up'][index];
       } else if (lastEvent === Dereliction) {
         newText = ['----','Lv-1 Charge-1','Lv-1 Charge-2','Lv-1 Charge-3','Lv-1 Charge-1','Lv-1 Charge-2','Lv-1 Charge-3','Lv-1 Charge-1','Lv-1 Charge-2','Lv-1 Charge-3'][index];
@@ -1974,7 +1979,7 @@ function setSkillDescriptions(thisSkill) {
             } else if (weaponType.value === hbg) {
               option = ['Bombardier','1: Raw + 10% EFR + 10%','2: Sticky+10% Wyvern+15%','3: Raw + 20% EFR + 16%','4: Raw + 25% EFR + 17%'][index];
             }
-          } else if (ugh2 == 'BarrelId') {
+          } else if (ugh2 == 'BowgunBarrel') {
             option = ['Barrels','Long: Raw + 5%','Power: Raw + 12.5%','Silencer: Recoil Down +1','Shield: Guard Up'][index];
           } else if (ugh2 == 'ElementalExploit') {
             option = `${index}: ${['----','Ele + 10%','Ele + 12.5%','Ele + 15%'][index]}`;

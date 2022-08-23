@@ -35,6 +35,10 @@
     }
 }
 
+button {
+    font-size: 95%;
+}
+
 @media only screen and (min-width: 781px) {
     section#section2 {
         grid-area: 2 / 3 / 3 / 4;
@@ -91,7 +95,7 @@
 #dpsBody>tr.tableRowMelee,
 #dpsHead>tr.tableRowMelee {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 4.4fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-area: 1/1/2/-1;
 }
 
@@ -225,8 +229,8 @@ div#statsTableDiv {
 section#section2 {
     display: grid;
     /* gap: .5rem; */
-    /* gap: inherit; */
-    align-content: space-between;
+    gap: inherit;
+    align-content: start;
 }
 
 html div {
@@ -323,6 +327,7 @@ div#sharpnessContainer {
     width: fit-content;
     border-color: rgb(77, 67, 69);
     justify-self: center;
+    justify-content: start;
 }
 
 div.sharpness {
@@ -358,7 +363,7 @@ div#monTableContainer {
 }
 
 div#damageTable.meleeContainer {
-    overflow: auto;
+    overflow-y: scroll;
     display: grid;
     width: 100%;
 }
@@ -914,10 +919,10 @@ select.skill:focus {
     width: fit-content;
 }
 
-select option {
+select>option {
     background-color: rgb(5, 5, 35);
     border-style: none;
-    font-size: .7rem;
+    font-size: .9rem;
 }
 
 #dpsTable {

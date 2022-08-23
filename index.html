@@ -50,7 +50,7 @@
                   <option value='{"BRM": 1,"BR": 0,"PRM": 1.35,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>Power</option>
                   <option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 0,"aff":0}'>Status</option>
                 </select></div>
-                        <div id='BowGunId'> <label for='BarrelId'>Gunner Barrel</label><select class='LightBowGun HeavyBowGun classSpecific skill' id='BarrelId' name='BarrelSelection' onchange='DataCompile()'>
+                        <div id='BowGunId'> <label for='BowgunBarrel'>Gunner Barrel</label><select class='LightBowGun HeavyBowGun classSpecific skill' id='BowgunBarrel' name='BarrelSelection' onchange='DataCompile()'>
                   <option value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>---</option>
                   <option value='{"Element":1,"Power":1.05,"Silencer":0,"reload":0}'>Long</option>
                   <option value='{"Element":1,"Power":1.125,"Silencer":0,"reload":0}'>Power</option>
@@ -384,20 +384,15 @@
             <!-- <option>Lv-1</option> -->
             <!-- <option>Lv-2</option> -->
             <!-- </select></div> -->
-            <div style='display: none;'><label for='TuneUp'>Tune-Up</label><select id='TuneUp' class='skill classSpecific LightBowGun HeavyBowGun' selectedindex='0' style='display: none;'>
-            <option>---</option>
-            <option>Lv-1</option>
-            <option>Lv-2</option>
+            <div style='display: none;'><label for='BowChargePlus'>Mighty Bow</label><select class='skill classSpecific Bow' id='BowChargePlus' name='MightyBow' selectedindex='0' style='display: none;'>
+            <option value='false'>---</option>
+            <option value='true'>Lv-1</option>
           </select></div>
             <div><label class='melee Sharpness classSpecific' for='Bludgeoner' selectedindex='0'>Bludgeoner</label><select id='Bludgeoner' name='Bludgeoner' class='skill melee Sharpness classSpecific' selectedindex='0'>
             <option>----</option>
             <option></option>
             <option></option>
             <option></option>
-          </select></div>
-            <div style='display: none;'><label for='BowChargePlus'>Mighty Bow</label><select class='skill classSpecific Bow' id='BowChargePlus' name='MightyBow' selectedindex='0' style='display: none;'>
-            <option value='false'>---</option>
-            <option value='true'>Lv-1</option>
           </select></div>
             <div style='display: none;'><label for='RapidFireUp'>Rapid Fire Up</label><select id='RapidFireUp' name='Rapid' class='skill classSpecific LightBowGun HeavyBowGun' selectedindex='0' style='display: none;'>
             <option>----</option>
@@ -430,6 +425,17 @@
             <option></option>
             <option></option>
           </select></div>
+            <div style='display: none;'><label for='TuneUp'>Tune-Up</label><select id='TuneUp' class='skill classSpecific LightBowGun HeavyBowGun' selectedindex='0' style='display: none;'>
+            <option>---</option>
+            <option>Lv-1</option>
+            <option>Lv-2</option>
+          </select></div>
+            <div style='display: none;'><label for='SpareShot'>Spare Shot</label><select id='SpareShot' name='SpareShot' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
+            <option>----</option>
+            <option></option>
+            <option></option>
+            <option></option>
+          </select></div>
             <div style='display: none;'><label for='AmmoUP'>AmmoUP</label><select id='AmmoUP' name='AmmoUP' class='skill classSpecific  HeavyBowGun LightBowGun' selectedindex='0' style='display: none;'>
             <option>----</option>
             <option></option>
@@ -443,12 +449,6 @@
             <option></option>
           </select></div>
             <div style='display: none;'><label for='ReloadSpeed'>Reload Speed</label><select id='ReloadSpeed' name='ReloadSpeed' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
-            <option>----</option>
-            <option></option>
-            <option></option>
-            <option></option>
-          </select></div>
-            <div style='display: none;'><label for='SpareShot'>Spare Shot</label><select id='SpareShot' name='SpareShot' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
             <option>----</option>
             <option></option>
             <option></option>
@@ -734,7 +734,7 @@
         <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>
     </div>
 </body>
-<link href='/MHR-Damage/index.js/'>
+<link href='/MHR-Damage/index.js'>
 <script src='/MHR-Damage/index.js'></script>
 <link rel='stylesheet' type='text/css' href='/MHR-Damage/index.css'>
 <link rel='preconnect' href='https://fonts.googleapis.com'>
