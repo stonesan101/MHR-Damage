@@ -235,7 +235,7 @@ function MeleeDPS(e) {
         power = initialStats(power);
         //
 
-        if (/inputs|inputButton/.test(window.event.target.className) && firstRun && !/BowGun/.test($(weaponType).val())) {
+        if (/inputs|inputButton/.test(e.target.className) && firstRun && !/BowGun/.test($(weaponType).val())) {
             UpdateComboTracker();
             UpdateComboDisplay();
         }
@@ -1670,9 +1670,9 @@ function getHZ() {
   return info.monster.hzv[dropMonster.value][dropHZ.selectedIndex];
 }
 
-const getAttacks = () => ({ ...info[weaponType.value].attacks });
+const getAttacks = (weapon=weaponType.value) => ({ ...info[weapon].attacks });
 
-const getWeapon = () => ({ ...info[weaponType.value].weapons[$('#dropWeapon').val()],...ele });
+const getWeapon = (weapon=weaponType.value) => ({ ...info[weapon].weapons[$('#dropWeapon').val()]});
 
 function PartSelect() {
   const parts = [];

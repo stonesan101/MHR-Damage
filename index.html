@@ -6,12 +6,12 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta Cache-Control='no-cache'>
-    <link rel='prefetch' href='/MHR-Damage/json/types.json' as='fetch' />
-    <link rel='prefetch' href='/MHR-Damage/json/GreatSword.json' as='fetch' />
-    <link rel='prefetch' href='/MHR-Damage/json/quest.json' as='fetch' />
-    <link rel='prefetch' href='/MHR-Damage/json/rampage.json' as='fetch' />
-    <link rel='prefetch' href='/MHR-Damage/json/monster.json' as='fetch' />
-    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
+    <!-- <link rel='prefetch' href='/MHR-Damage/json/types.json' as='fetch' /> -->
+    <!-- <link rel='prefetch' href='/MHR-Damage/json/GreatSword.json' as='fetch' /> -->
+    <!-- <link rel='prefetch' href='/MHR-Damage/json/quest.json' as='fetch' /> -->
+    <!-- <link rel='prefetch' href='/MHR-Damage/json/rampage.json' as='fetch' /> -->
+    <!-- <link rel='prefetch' href='/MHR-Damage/json/monster.json' as='fetch' /> -->
+    <meta name="MHR-Damage Calculator" content="Monster Hunter Rise Sunbreak Damage Calculations. A site designed to be capable of answering any optimization questions someone might have. Featuring many functions you cant find anywhere else!">
     <title>Stone's Sunbreak Damage Calculator</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src='https://www.googletagmanager.com/gtag/js?id=G-CGQJSRYWE1'></script>
@@ -394,12 +394,6 @@
             <option></option>
             <option></option>
           </select></div>
-            <div style='display: none;'><label for='RapidFireUp'>Rapid Fire Up</label><select id='RapidFireUp' name='Rapid' class='skill classSpecific LightBowGun HeavyBowGun' selectedindex='0' style='display: none;'>
-            <option>----</option>
-            <option></option>
-            <option></option>
-            <option></option>
-          </select></div>
             <div style='display: none;'><label class='classSpecific Shot' for='PierceUp' selectedindex='0' style='display: none;'>Pierce Up</label><select id='PierceUp' name='PierceUp' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
             <option>----</option>
             <option></option>
@@ -419,16 +413,18 @@
             <option></option>
             <option></option>
           </select></div>
+            <div style='display: none;'><label for='RapidFireUp'>Rapid Fire Up</label><select id='RapidFireUp' name='Rapid' class='skill
+                classSpecific LightBowGun HeavyBowGun' selectedindex='0' style='display: none;'>
+            <option>----</option>
+            <option></option>
+            <option></option>
+            <option></option>
+          </select></div>
             <div style='display: none;'><label class='classSpecific Shot' for='SpecialAmmoBoost' selectedindex='0' style='display: none;'>Special Ammo
             Up</label><select id='SpecialAmmoBoost' name='Special Ammo' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
             <option>----</option>
             <option></option>
             <option></option>
-          </select></div>
-            <div style='display: none;'><label for='TuneUp'>Tune-Up</label><select id='TuneUp' class='skill classSpecific LightBowGun HeavyBowGun' selectedindex='0' style='display: none;'>
-            <option>---</option>
-            <option>Lv-1</option>
-            <option>Lv-2</option>
           </select></div>
             <div style='display: none;'><label for='SpareShot'>Spare Shot</label><select id='SpareShot' name='SpareShot' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
             <option>----</option>
@@ -442,13 +438,19 @@
             <option></option>
             <option></option>
           </select></div>
-            <div style='display: none;'><label for='RecoilDown'>Recoil Down</label><select id='RecoilDown' name='RecoilDown' class='skill classSpecific HeavyBowGun LightBowGun' selectedindex='0' style='display: none;'>
+            <div style='display: none;'><label for='TuneUp'>Tune-Up</label><select id='TuneUp' class='skill classSpecific LightBowGun HeavyBowGun' selectedindex='0' style='display: none;'>
+            <option>---</option>
+            <option>Lv-1</option>
+            <option>Lv-2</option>
+          </select></div>
+            <div style='display: none;'><label for='ReloadSpeed'>Reload Speed</label><select id='ReloadSpeed' name='ReloadSpeed' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
             <option>----</option>
             <option></option>
             <option></option>
             <option></option>
           </select></div>
-            <div style='display: none;'><label for='ReloadSpeed'>Reload Speed</label><select id='ReloadSpeed' name='ReloadSpeed' class='skill classSpecific Shot' selectedindex='0' style='display: none;'>
+            <div style='display: none;'><label for='RecoilDown'>Recoil Down</label><select id='RecoilDown' name='RecoilDown' class='skill
+            classSpecific HeavyBowGun LightBowGun' selectedindex='0' style='display: none;'>
             <option>----</option>
             <option></option>
             <option></option>
@@ -734,6 +736,7 @@
         <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>
     </div>
 </body>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
 <link href='/MHR-Damage/index.js'>
 <script src='/MHR-Damage/index.js'></script>
 <link rel='stylesheet' type='text/css' href='/MHR-Damage/index.css'>
