@@ -116,25 +116,18 @@ function RangedDPS(e) {
     let power = {};
     let ammo = {};
     let pass1 = true;
-
-    $(
-        Object.keys(
-            Object.fromEntries(
-                Object.entries(info.ammo).filter(
-                    (eachAmmo) => (getWeapon().usableAmmo[eachAmmo[1].isUsed] && !/RF\+/.test(eachAmmo[0])) || (/Wyvernblast/.test(eachAmmo[0]) && weaponType.value === lbg),
-                ),
-            ),
-        ),
-    ).each((_index, skill) => {
-        let ammoID = skill;
-        if ($(weaponType).val() === 'LightBowGun') {
-            getWeapon().isRapidFire.forEach((ammoType) => {
-                if (ammoType === info.ammo[ammoID].isUsed) {
-                    ammoID = info.ammo.keys[info.ammo[ammoID].isUsed - 1][1];
-                }
-            });
+    let usableAmmo = [];
+    i = 1;
+    for (let i = 0; i < getWeapon().usableAmmo.length; i++) {
+        const element = Object.values(getWeapon().usableAmmo)[i];
+        if (weaponType.value === lbg && getWeapon().isRapidFire.some(x => x === i && x !== 0)) {
+            usableAmmo = usableAmmo.concat(info.ammo.keys[i - 1].slice(info.ammo.keys[i - 1].length / 2));
+        } else if (element > 0) {
+            usableAmmo = usableAmmo.concat(info.ammo.keys[i - 1].slice(0, info.ammo.keys[i - 1].some(x => /RF\+/.test(x)) ? info.ammo.keys[i - 1].length / 2 : 1));
         }
-        power = {...getWeapon(), ...info.ammo[ammoID] };
+    };
+    usableAmmo.forEach((ammo) => {
+        power = {...getWeapon(), ...info.ammo[ammo] };
         power = getRampageSkills(power);
         power = initialStats(power);
         power = GetRemainingSkills(power);
@@ -800,6 +793,7 @@ function GetRemainingSkills(power) {
     }
     if (/BowGun/.test(weaponType.value)) {
         if (power.type === 'IgnoreHZV' && !/Cluster|Tranq/.test(power.attackName)) {
+            Bombardier.selectedIndex = Bombardier.selectedIndex < 0 ? 0 : Bombardier.selectedIndex;
             power.augEFR *= info.skills.Bombardier[Bombardier.selectedIndex][power.attackName.match('Sticky|Wyvern')[0]][1];
             power.augPRM *= info.skills.Bombardier[Bombardier.selectedIndex][power.attackName.match('Sticky|Wyvern')[0]][0];
         }
@@ -878,9 +872,10 @@ function GetRemainingSkills(power) {
         power.efrMulti = 1 + power.aff * -1 * 0.25 * 2 - power.aff * -1 * 0.75 * 0.75;
         power.critBoost = 1.5;
     }
-
-    power.augPRM *= info.skills.Marksman[Marksman.selectedIndex][0];
-    power.augEFR *= info.skills.Marksman[Marksman.selectedIndex][1];
+    if (power.type === 'Shot') {
+        power.augPRM *= info.skills.Marksman[Marksman.selectedIndex][0];
+        power.augEFR *= info.skills.Marksman[Marksman.selectedIndex][1];
+    }
     return {...power };
 }
 
@@ -1417,7 +1412,7 @@ function ToggleAmmoTables() {
   ammoTable.style = dpsTable.style.display !== 'none' ? 'display:none' : "display:''";
 }
 function calculateAmmoFrames(power) {
-  let attackName = /sub-Lv|explosion|Procs|\(RF\+\d\)/.test(power.attackName) ? power.attackName.replace(/sub-| explosion| Procs| \(RF\+\d\)/,'') : power.attackName;
+  let attackName = /sub-Lv|explosion| Procs|\(RF\+\d\)/.test(power.attackName) ? power.attackName.replace(/sub-| explosion| \(RF\+\d\) Procs| Procs| \(RF\+\d\)/,'') : power.attackName;
   attackName = /(?<!Lv)\d/.test(attackName) ? `${attackName.slice(0,attackName.length - 1)}Lv${attackName.slice(-1)}` : attackName;
   const ammo = {};
   ammo.ammoIncrease = info.ammo.AmmoUp[attackName][AmmoUP.selectedIndex];
@@ -1428,6 +1423,7 @@ function calculateAmmoFrames(power) {
       Math.min(
         5,
         power.recoil
+        - 1
         + RecoilDown.selectedIndex
         + (info.skills.BowgunBarrel[BowgunBarrel.selectedIndex].Silencer > 0 ? TuneUp.selectedIndex + info.skills.BowgunBarrel[BowgunBarrel.selectedIndex].Silencer : 0)
         - ($(CriticalFirePower).hasClass('blue') ? 2 : 0),
@@ -1442,7 +1438,6 @@ function calculateAmmoFrames(power) {
       Math.min(
         8,
         power.reload
-        - 2
         + ReloadSpeed.selectedIndex
         + JSON.parse(BowgunBarrel.value).reload
         + (BowgunBarrel.selectedIndex === 0 && TuneUp.selectedIndex > 0 ? 1 : 0),
@@ -1670,9 +1665,9 @@ function getHZ() {
   return info.monster.hzv[dropMonster.value][dropHZ.selectedIndex];
 }
 
-const getAttacks = (weapon=weaponType.value) => ({ ...info[weapon].attacks });
+const getAttacks = (weapon = weaponType.value) => ({ ...info[weapon].attacks });
 
-const getWeapon = (weapon=weaponType.value) => ({ ...info[weapon].weapons[$('#dropWeapon').val()]});
+const getWeapon = (weapon = weaponType.value) => ({ ...info[weapon].weapons[$('#dropWeapon').val()] });
 
 function PartSelect() {
   const parts = [];

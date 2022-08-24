@@ -33,6 +33,9 @@
         top: .55rem;
         position: relative;
     }
+    * {
+        font-size: 12px;
+    }
 }
 
 button {
