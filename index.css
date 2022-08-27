@@ -45,13 +45,28 @@ button {
 @media only screen and (min-width: 781px) {
     section#section2 {
         grid-area: 2 / 3 / 3 / 4;
+        /* max-width: 98%;
+        min-width: 98% */
     }
     .title {
-        grid-area: 1 / 1 / 2 / 4;
+        grid-area: 1 / 1 / 2 / -1;
+    }
+    body {
+        grid-template-columns: 4fr 1fr 5fr;
     }
     div#license {
         display: grid;
         grid-area: 3/1/4/4;
+    }
+    @media (hover) {
+        button.augButton:hover,
+        button.inputButton:hover {
+            color: rgb(252, 252, 252);
+            z-index: 20;
+            font-weight: 900;
+            font-size: .9rem;
+            background-color: rgba(11, 16, 42, 0.74);
+        }
     }
 }
 
@@ -162,23 +177,12 @@ button.inputButton {
     min-height: 1.32rem;
 }
 
-@media (hover) {
-    button.augButton:hover,
-    button.inputButton:hover {
-        color: rgb(252, 252, 252);
-        z-index: 20;
-        font-weight: 900;
-        font-size: 1rem;
-        background-color: rgba(11, 16, 42, 0.74);
-    }
-}
-
 button.augButton:active,
 button.inputButton:active {
     color: rgb(252, 252, 252);
     z-index: 20;
     font-weight: 900;
-    font-size: 1rem;
+    font-size: 15px;
     background-color: rgba(11, 16, 42, 0.74);
 }
 
@@ -206,13 +210,6 @@ button.inc {
     border-left: none;
 }
 
-html {
-    min-width: fit-content;
-    /* display: grid; */
-    /* gap: 5rem; */
-    overflow: visible;
-}
-
 input#taWikiSetBuilder {
     height: max-content;
     grid-area: 4 / 2 / 5 / 6;
@@ -231,8 +228,8 @@ div#statsTableDiv {
 
 section#section2 {
     display: grid;
-    /* gap: .5rem; */
-    gap: inherit;
+    gap: .6rem;
+    /* gap: inherit; */
     align-content: start;
 }
 
@@ -297,21 +294,22 @@ body {
 
 #comboCountDisplay {
     min-width: min-content;
-    width: 15rem;
     display: grid;
+    overflow-y: scroll;
     z-index: 55;
+    min-height: max-content;
     background-color: rgb(0, 14, 94);
+    align-items: start;
 }
 
 #comboCountContainer {
     min-width: min-content;
     grid-area: 2 / 2 / 2 / 3;
+    width: 14rem;
     margin: 0px;
     display: grid;
-    overflow: auto;
-    width: 15rem;
+    overflow: hidden;
     gap: 0px;
-    align-items: start;
 }
 
 div#divComboAttacks {
@@ -320,15 +318,18 @@ div#divComboAttacks {
 }
 
 div#sharpnessContainer {
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(157, 0, 0);
     border-style: ridge;
-    min-width: max-content;
+    border-width: 3px;
+    max-width: 50%;
+    min-width: 47.8%;
+    width: fit-content;
     display: grid;
-    grid-area: 5 / 1 / 6;
+    grid-area: 5 / 1 / 6/ 2;
     column-gap: 0px;
     grid-template-columns: repeat(6, auto);
-    width: fit-content;
-    border-color: rgb(77, 67, 69);
+    /* width: fit-content; */
+    border-color: rgb(76, 82, 61);
     justify-self: center;
     justify-content: start;
 }
@@ -338,6 +339,7 @@ div.sharpness {
     color: black;
     padding: 0px;
     font-weight: 700;
+    min-width: fit-content;
 }
 
 div#red.sharpness {
@@ -474,6 +476,7 @@ button#maxSkills {
 #dpsTable {
     border: none;
     overflow: auto;
+    block-size: auto;
     min-width: fit-content;
     width: 100%;
 }
@@ -506,6 +509,7 @@ select#dropMonster,
 tr>th {
     top: 0px;
     position: sticky;
+    min-height: max-content;
     margin: 0px;
     display: grid;
     place-content: center;
@@ -513,7 +517,7 @@ tr>th {
     border-style: outset;
     background-color: rgb(18, 18, 51);
     border-spacing: 0px;
-    min-height: 1.2rem;
+    /* min-height: 1.2rem; */
     z-index: 50;
 }
 
@@ -665,7 +669,8 @@ td.a {
 
 output {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+    min-height: max-content;
     background-color: rgba(5, 3, 39, 0.373);
     border-top-style: outset;
     border-right-style: outset;
@@ -735,9 +740,7 @@ div#monDropDowns>div {
     overflow: visible;
 }
 
-html div {
-    gap: 0px;
-}
+html div {}
 
 div#divMR {
     display: grid;
@@ -846,7 +849,7 @@ div#dango.contain {
 }
 
 div#unique {
-    grid-area: 8 / 3 / 10 / 4;
+    grid-area: 8 / 3 / 11 / 4;
 }
 
 div#raw.contain {
@@ -856,13 +859,14 @@ div#raw.contain {
     grid-template-rows: repeat(7, 2.6rem);
     border-style: none;
     padding: 0%;
-    align-items: center;
+    align-items: start;
 }
 
 div#boxes.contain {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-area: 3 / 1 / 4 / 6;
+    gap: .5rem;
 }
 
 div#aff.contain {
@@ -913,11 +917,10 @@ select.skill:enabled {
 select.skill:focus {
     z-index: 100;
     text-align: center;
-    font-size: small;
     margin: auto;
-    /* display: grid; */
-    /* justify-content: center; */
-    /* justify-self: center; */
+    display: grid;
+    justify-content: center;
+    justify-self: center;
     min-width: 100%;
     width: fit-content;
 }
@@ -925,15 +928,10 @@ select.skill:focus {
 select>option {
     background-color: rgb(5, 5, 35);
     border-style: none;
-    font-size: .9rem;
 }
 
 #dpsTable {
     min-width: fit-content;
-}
-
-table>tbody>tr>td {
-    font-size: 0.8rem;
 }
 
 #enrageDisplay {
@@ -953,12 +951,14 @@ h1 {
     font-size: 1.3rem;
     height: 1.8rem;
     box-sizing: border-box;
-    margin: 0.25rem 0px;
+    margin: 0.25rem 0in;
     grid-area: 1 / 1 / 2 / -1;
     background-color: rgb(0, 14, 94);
     border-style: outset;
     color: white;
 }
+
+h1.combo {}
 
 .sharpnessdropDown {
     display: none;
@@ -976,15 +976,8 @@ section#section1>div#raw:nth-child(n+1) {
 }
 
 select#ElderEssence {
-    grid-column: 1 / 3;
-    border-right: 0px;
-}
-
-#raw>div,
-#raw>div>select:not(#derelictionMenu),
-#raw>div>label,
-#raw>div>select>option {
-    font-size: .8rem;
+    /* grid-column: 1 / 3; */
+    /* border-right: 0px; */
 }
 
 #raw>div:nth-child(30) {

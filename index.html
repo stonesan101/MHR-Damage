@@ -508,7 +508,7 @@
             </div>
             <div class='contain' id="setBonus">
                 <h1>Set Bonuses</h1>
-                <div><label for='ElderEssence'>Elder Dragon Elemental</label><select id='ElderEssence' name='Elder Essence' class='skill setBonus'>
+                <div><label for='ElderEssence'>Elder Dragon</label><select id='ElderEssence' name='Elder Essence' class='skill setBonus'>
               <option>----</option>
               <option></option>
               <option></option>
@@ -590,6 +590,14 @@
               <option></option>
             </select></div>
                 <div style='display: none;'><label class='classSpecific LongSword' for='Helmbreaker' selectedindex='0' style='display: none;'>Serene/HelmBreaker</label><select id='Helmbreaker' name='LongSword' class='skill classSpecific LongSword' selectedindex='0' style='display: none;'>
+              <option>----</option>
+              <option></option>
+              <option></option>
+              <option></option>
+            </select></div>
+                <div style='display: none;'><label class='classSpecific LongSword' for='SerenePose' selectedindex='0' style='display:
+                none;'>Serene Pose</label><select id='SerenePose' name='LongSword' class='skill classSpecific LongSword' selectedindex='0' style='display:
+                none;'>
               <option>----</option>
               <option></option>
               <option></option>
@@ -693,6 +701,9 @@
             <option value=5>+5%</option>
             <option value=10>+10%</option>
           </select></div>
+            <button type='button' aria-pressed='false' class='skillButton gray toggle classSpecific LightBowGun' id='ElementalReload' value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}' onclick='DataCompile()'> ElementalReload </button>
+            <button type='button' aria-pressed='false' class='gray toggle skillButton classSpecific GreatSword' id='StrongarmStance' onclick='DataCompile()'>
+          Strongarm Stance </button>
         </div>
         <div id='sharpnessContainer'>
             <div class='sharpness' id='red' style='background-color:red; border-style: none;'></div>
@@ -724,11 +735,12 @@
         </table>
     </section>
     </div>
-    <div>
-        <div id='divComboAttacks'></div>
-    </div>
+    <!-- <div> -->
+    <!-- <div id='divComboAttacks'></div> -->
+    <!-- </div> -->
     <div class='combo' id='comboCountContainer'>
-        <h1 class='combo' id='comboCountDisplay'>Combo Attacks</h1>
+        <h1 class='combo'>Combo Attacks</h1>
+        <div class='combo' id='comboCountDisplay'></div>
     </div>
     <div id='previousWeapon' value='initial' style='display:none'></div>
     <div id='previousWeaponType' value='initial' style='display:none'></div>
