@@ -1,12 +1,12 @@
 const check = {
-    GreatSword: 0,
+    ammo: 0,
+    LightBowGun: 0,
     rampage: 0,
     quest: 0,
     monster: 0,
     types: 0,
     ammo: 0,
-    skills: 0,
-    ammoDistance: 0,
+    skills: 0
 };
 let keyDown = 0;
 let lastEvent = '';
@@ -75,19 +75,18 @@ const weaponTypes = [
     ['Hammer'],
 ];
 const jsons = [
+    ['ammo'],
     ['monster'],
     ['types'],
     ['rampage'],
-    ['ammo'],
     ['quest'],
-    ['skills'],
-    ['ammoDistance']
+    ['skills']
 ];
 const baseURL = /localhost/.test(window.location.host) ? 'http://localhost:5500' : 'https://stonesan101.github.io/MHR-Damage';
 $([].concat(jsons, weaponTypes)).each(function() {
     $.getJSON(`${baseURL}/json/${this}.json`, data => {
         info[this] = data;
-        if (/monster|types|rampage|quest|GreatSword|ammo|skills/.test(this)) {
+        if (/monster|types|rampage|quest|LightBowGun|ammo|skills/.test(this)) {
             ++check[this];
             jsonsLoaded();
         }
@@ -619,7 +618,7 @@ function getInitialSharpness(baseSharp = {...getWeapon().sharpness }) {
             increase = ['yellow', 'green', 'blue', 'white'];
         }
         let pointsOfHandicraft = Handicraft.selectedIndex;
-        $(baseSharp).each((index, element) => {
+        $(getWeapon().handicraft).each((index, element) => {
             while (element > 0 && pointsOfHandicraft > 0) {
                 baseSharp[increase[index]] += 10;
                 --pointsOfHandicraft;
