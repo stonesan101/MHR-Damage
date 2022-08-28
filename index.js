@@ -115,8 +115,8 @@ function RangedDPS(e) {
     let power = {};
     let ammo = {};
     let pass1 = true;
-    $.each(getAttacks(), function(attackName) {
-        power = {...getWeapon(), ...getAttacks()[attackName] };
+    $.each(getUsedAttacks(), function(attackName) {
+        power = {...getWeapon(), ...info.ammo[attackName] };
         power = getRampageSkills(power);
         power = initialStats(power);
         power = GetRemainingSkills(power);
@@ -194,7 +194,7 @@ function MeleeDPS(e) {
     let comboHitsUsed = [];
     const lastSharp = Sharpness.selectedIndex;
 
-    $.each(getAttacks(), function(attackID, index) {
+    $.each(getUsedAttacks(), function(attackID, index) {
         ++thisIndex;
         power = {...this, ...getWeapon() };
         power = {...getRampageSkills(power) };
@@ -205,13 +205,7 @@ function MeleeDPS(e) {
             UpdateComboDisplay();
         }
         if (power.attackName === 'Combo Damage') {
-
-
             comboHitsUsed = weaponType.value !== bow ? getComboHitsAndSetSharpness(power.aff) : hitsPerColorSharp()[1];
-
-
-
-
         }
         power = GetRemainingSkills(power);
         power = DamageCalculations(power);
@@ -451,13 +445,13 @@ function addDependantSkills() {
 }
 
 function getBaseSkills(power) {
-    [...power.getSkills] = info.types[power.skillType];
-    enrageDisplay.textContent = `${~~(getEnrage() * 100)}%`;
-    if ($('#dropEnraged').val() === 'Enraged') {
-        power.getSkills.push('Agitator');
-        power.PEM *= getEnrage();
-        power.PRM *= getEnrage();
-    }
+
+
+
+
+
+
+
     return power;
 }
 
@@ -482,12 +476,8 @@ function initialStats(power) {
     power.BEM = 1;
     power.BE = 0;
     power.PEM = 1;
-
-    // For non ele Weapons
-    power.eleHZV = power.eleType === 'IgnoreHZV' ? 0 : getHZ()[lower(power.eleType)];
-    // removes HZV for attacks like stickies and phials
-    power.rawHZV = power.type === 'IgnoreHZV' ? 100 : getHZ()[lower(power.type)];
-    // applies Demon Ammo if selected and damage type is sever or blunt
+    power.rawHZV = getHZ()[power.type] !== undefined ? getHZ()[power.type] : 100
+        // applies Demon Ammo if selected and damage type is sever or blunt
     power.PRM *= $(DemonAmmo).hasClass('blue') && /(Sever|Blunt)/.test(power.type) ? 1.1 : 1;
     1;
     const skills = [];
@@ -513,7 +503,13 @@ function initialStats(power) {
             break;
     }
     // adds agitator to getSkills if enraged
-    getBaseSkills(power);
+    [...power.getSkills] = info.types[power.skillType];
+    enrageDisplay.textContent = `${~~(getEnrage() * 100)}%`;
+    if ($('#dropEnraged').val() === 'Enraged') {
+        power.getSkills.push('Agitator');
+        power.PEM *= getEnrage();
+        power.PRM *= getEnrage();
+    }
 
     // applies RF/Normal/Pierce/Spread up bonuses to bow and bowgun
     if (/Bow/.test($(weaponType).val())) {
@@ -623,7 +619,7 @@ function getInitialSharpness(baseSharp = {...getWeapon().sharpness }) {
             increase = ['yellow', 'green', 'blue', 'white'];
         }
         let pointsOfHandicraft = Handicraft.selectedIndex;
-        $(getWeapon().handicraft).each((index, element) => {
+        $(baseSharp).each((index, element) => {
             while (element > 0 && pointsOfHandicraft > 0) {
                 baseSharp[increase[index]] += 10;
                 --pointsOfHandicraft;
@@ -658,36 +654,29 @@ function getTotalComboHits() {
     }
 }
 
-function getComboHitsAndSetSharpness(affinity, ComboHits = getTotalComboHits()) {
-    const [...totalSharpness] = applySharpnessSkills(affinity);
-    const total = totalSharpness.reduce((a, b) => a + b);
-    if (comboTracker.length < 1) {
-        for (let i = 0; i < 7; i++) {
-            const color = $('#sharpnessContainer').children()[i];
-            color.textContent = totalSharpness[i] === 0 ? '' : totalSharpness[i];
-            $(color).width(totalSharpness[i] / total * $(damageTable).width() * .47);
+function getComboHitsAndSetSharpness(affinity) {
+    const [totalSharpness, comboHitsPerColor, total] = hitsPerColorSharp(affinity);
+
+
+    let sharpnessSet = false;
+    for (let i = 0; i < 7; i++) {
+        const element = totalSharpness[i];
+        const color = $('#sharpnessContainer').children()[6 - i];
+        color.textContent = element === 0 ? '' : Number(element).toFixed(0);
+        $(color).width(Number(element).toFixed(0) / total * $(damageTable).width() * .47);
+        if (element > 0 && !sharpnessSet) {
+            Sharpness.selectedIndex = 7 - i;
+            sharpnessSet = true;
         }
-        return { purple: [], white: [], blue: [], green: [], yellow: [], orange: [], red: [] };
-    } else {
-        const [totalSharpness, comboHitsPerColor] = hitsPerColorSharp(affinity);
-        let sharpnessSet = false;
-        for (let i = 0; i < 7; i++) {
-            const element = totalSharpness[i];
-            const color = $('#sharpnessContainer').children()[6 - i];
-            color.textContent = element === 0 ? '' : element;
-            $(color).width(element / total * $(damageTable).width() * .47);
-            if (element > 0 && !sharpnessSet) {
-                Sharpness.selectedIndex = 7 - i;
-                sharpnessSet = true;
-            }
-        };
-        return comboHitsPerColor;
-    }
+    };
+    return comboHitsPerColor;
 }
+
 
 function hitsPerColorSharp(affinity = 0, hits = getTotalComboHits()) {
     let comboHitsPerColor = { purple: [], white: [], blue: [], green: [], yellow: [], orange: [], red: [] };
     const totalSharpness = weaponType.value !== bow ? {...applySharpnessSkills(affinity).reverse() } : [0, 0, 0, 0, 1, 0, 0, 0];
+    const total = Object.values(totalSharpness).reduce((a, b) => a + b);
     if (hits !== undefined) {
         hits.forEach(eachAttack => {
             const attackKey = Object.keys(getAttacks())[eachAttack];
@@ -719,7 +708,7 @@ function hitsPerColorSharp(affinity = 0, hits = getTotalComboHits()) {
             }
         });
     }
-    return [totalSharpness, comboHitsPerColor];
+    return [totalSharpness, comboHitsPerColor, total];
 }
 
 function getHitsPerTic(attackName, index) {
@@ -860,6 +849,7 @@ function getCritBoost(canCrit, affinity) {
 }
 
 function DamageCalculations(power) {
+
     if (power.Raw === false) {
         [power.raw, power.rawNon, power.efr, power.rawCrit] = [0, 0, 0, 0];
     } else {
@@ -1075,7 +1065,7 @@ function BuildDamageTable(myDamage, id, e) {
     Object.values(damageTable.children[0].children[1].children).forEach(row => {
         $(row).children().addClass('cell');
     });
-    if ($(window).width() > 850) {
+    if ($(window).width() > 850 && (e.target === weaponType || (e.target === dropWeapon && weaponType.value === (bow || gl || lbg || hbg)))) {
         setHeight();
     }
 }
@@ -1661,7 +1651,7 @@ function getHZ() {
     return info.monster.hzv[dropMonster.value][dropHZ.selectedIndex];
 }
 
-const getAttacks = (weapon = weaponType.value) => {
+const getUsedAttacks = (weapon = weaponType.value) => {
     let attacks;
     if ($(weaponType).val() === 'InsectGlaive') {
         attacks = Object.fromEntries(Object.entries(info.InsectGlaive.attacks).filter(skill => !/Sever|Blunt|Kinsect|Dust|Powder|Mark/.test(skill)));
@@ -1718,6 +1708,7 @@ const getAttacks = (weapon = weaponType.value) => {
     return {...info[weapon].attacks };
 };
 
+const getAttacks = (weapon = weaponType.value) => ({...info[weapon].attacks });
 const getWeapon = (weapon = weaponType.value) => ({...info[weapon].weapons[$('#dropWeapon').val()] });
 
 function PartSelect() {
@@ -2201,26 +2192,8 @@ const distanceCalc = (ammo, fps = 60) => {
     return (time * ammo.Speed).toFixed(3);
 };
 
-function formatNumbers(numbers) {
-    numbers = numbers.toString();
-    let len = /\./.test(numbers) ? numbers.match(/\./).index : numbers.length
-
-
-    if (len > 3) {
-
-        let result = '';
-        while (len - 3 >= 0) {
-            len += -3;
-            const num = numbers.slice(len, len + 3);
-            result = result === '' ? num : `${num},${result}`;
-        }
-        if (len === 0) {
-            return result;
-        }
-        const num = numbers.slice(0, len);
-        return `${num},${result}`;
-    }
-    return +numbers;
+function formatNumbers(num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
 function parseCSV(csv) {
