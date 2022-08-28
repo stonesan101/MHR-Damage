@@ -59,6 +59,7 @@ const sharpnessMod = {
     },
 };
 const weaponTypes = [
+    ['LightBowGun'],
     ['GreatSword'],
     ['ChargeBlade'],
     ['InsectGlaive'],
@@ -68,7 +69,6 @@ const weaponTypes = [
     ['LongSword'],
     ['Lance'],
     ['HeavyBowGun'],
-    ['LightBowGun'],
     ['Bow'],
     ['HuntingHorn'],
     ['Gunlance'],
