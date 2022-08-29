@@ -175,7 +175,7 @@ function RangedDPS(e) {
 
         }
     });
-    rangedDamage.splice(0, 0, ['Ammo Type', 'Raw', 'Elemental', 'Combined', 'EFR', 'EFE', 'Effective', 'RPM Gain', 'Shots \n To Kill', 'Seconds \n To Kill']);
+    rangedDamage.splice(0, 0, ['Ammo Type', 'Raw', 'Ele', 'Total', 'EFR', 'EFE', 'Effective', 'RPM Gain', 'Shots \n To Kill', 'Seconds \n To Kill']);
 
     BuildDamageTable(rangedDamage, 'dps', e);
     ammoFrameData.splice(0, 0, ['Ammo Type', 'rawMV', 'Reload', 'Recoil', 'Clip Size', 'Procs Per', 'RPM Base', 'Current RPM']);
@@ -654,12 +654,12 @@ function getTotalComboHits() {
 }
 
 function getComboHitsAndSetSharpness(affinity) {
-    const [totalSharpness, comboHitsPerColor, total] = hitsPerColorSharp(affinity);
+    const [remainingSharp, comboHitsPerColor, total] = hitsPerColorSharp(affinity);
 
 
     let sharpnessSet = false;
     for (let i = 0; i < 7; i++) {
-        const element = totalSharpness[i];
+        const element = remainingSharp[i];
         const color = $('#sharpnessContainer').children()[6 - i];
         color.textContent = element === 0 ? '' : Number(element).toFixed(0);
         $(color).width(Number(element).toFixed(0) / total * $(damageTable).width() * .47);
@@ -674,40 +674,40 @@ function getComboHitsAndSetSharpness(affinity) {
 
 function hitsPerColorSharp(affinity = 0, hits = getTotalComboHits()) {
     let comboHitsPerColor = { purple: [], white: [], blue: [], green: [], yellow: [], orange: [], red: [] };
-    const totalSharpness = weaponType.value !== bow ? {...applySharpnessSkills(affinity).reverse() } : [0, 0, 0, 0, 1, 0, 0, 0];
-    const total = Object.values(totalSharpness).reduce((a, b) => a + b);
+    const remainingSharp = weaponType.value !== bow ? {...applySharpnessSkills(affinity).reverse() } : [0, 0, 0, 0, 1, 0, 0, 0];
+    const total = Object.values(remainingSharp).reduce((a, b) => a + b);
     if (hits !== undefined) {
         hits.forEach(eachAttack => {
             const attackKey = Object.keys(getAttacks())[eachAttack];
             if (($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 28))) {
                 for (let i = 0; i < getAttacks()[attackKey].ticsPer + 1; i++) {
-                    if (totalSharpness[0] > 0) {
+                    if (remainingSharp[0] > 0) {
                         comboHitsPerColor.purple.push(eachAttack);
-                        totalSharpness[0] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (totalSharpness[1] > 0) {
+                        remainingSharp[0] -= getHitsPerTic(attackKey, eachAttack);
+                    } else if (remainingSharp[1] > 0) {
                         comboHitsPerColor.white.push(eachAttack);
-                        totalSharpness[1] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (totalSharpness[2] > 0) {
+                        remainingSharp[1] -= getHitsPerTic(attackKey, eachAttack);
+                    } else if (remainingSharp[2] > 0) {
                         comboHitsPerColor.blue.push(eachAttack);
-                        totalSharpness[2] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (totalSharpness[3] > 0) {
+                        remainingSharp[2] -= getHitsPerTic(attackKey, eachAttack);
+                    } else if (remainingSharp[3] > 0) {
                         comboHitsPerColor.green.push(eachAttack);
-                        totalSharpness[3] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (totalSharpness[4] > 0) {
+                        remainingSharp[3] -= getHitsPerTic(attackKey, eachAttack);
+                    } else if (remainingSharp[4] > 0) {
                         comboHitsPerColor.yellow.push(eachAttack);
-                        totalSharpness[4] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (totalSharpness[5] > 0) {
+                        remainingSharp[4] -= getHitsPerTic(attackKey, eachAttack);
+                    } else if (remainingSharp[5] > 0) {
                         comboHitsPerColor.orange.push(eachAttack);
-                        totalSharpness[5] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (totalSharpness[6] > 0) {
+                        remainingSharp[5] -= getHitsPerTic(attackKey, eachAttack);
+                    } else if (remainingSharp[6] > 0) {
                         comboHitsPerColor.red.push(eachAttack);
-                        totalSharpness[6] -= getHitsPerTic(attackKey, eachAttack);
+                        remainingSharp[6] -= getHitsPerTic(attackKey, eachAttack);
                     }
                 }
             }
         });
     }
-    return [totalSharpness, comboHitsPerColor, total];
+    return [remainingSharp, comboHitsPerColor, total];
 }
 
 function getHitsPerTic(attackName, index) {
@@ -1280,54 +1280,54 @@ function ResetSkills(element = '.skill') {
     }
 }
 
-$(window).on('resize', () => {
-    if (Object.values(check).every(keyCard => keyCard)) {
-        if (weaponType.value === 'Bow') {
-            $(BowCoating)
-                .parent()
-                .css('max-width', `${$(dropWeapon).width() - $(dropWeaponType).width()}px`);
-        }
-        if (weaponType.value === (lbg || hbg)) {
-            $(BowgunBarrel)
-                .parent()
-                .css('max-width', `${($(dropWeapon).width() - $(dropWeaponType).width()) * 0.95}px`);
-        }
-
-        if ($(window).width() > 850) {
-            setHeight();
-        }
-    }
-});
-
+// $(window).on('resize', () => {
+// if (Object.values(check).every(keyCard => keyCard)) {
+// if (weaponType.value === 'Bow') {
+// $(BowCoating)
+// .parent()
+// .css('max-width', `${$(dropWeapon).width() - $(dropWeaponType).width()}px`);
+// }
+// if (weaponType.value === (lbg || hbg)) {
+// $(BowgunBarrel)
+// .parent()
+// .css('max-width', `${($(dropWeapon).width() - $(dropWeaponType).width()) * 0.95}px`);
+// }
+//
+// if ($(window).width() > 850) {
+// setHeight();
+// }
+// }
+// });
+//
 function setHeight() {
-    section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
-
-    const newHeight = +$(section1)
-        .css('row-gap')
-        .match(/\d.?\d+?/)[0] *
-        3 +
-        $('div#raw>h1 ').height() +
-        $(boxes).height() +
-        $(weaponSelect).height() +
-        $(raw).height();
-    $('#section2').css("height", newHeight);
-    //  $('#section2').width($('#damageTable').width());
-    $('#monTableContainer').css('max-height', newHeight * 0.23);
-    $('#monTableContainer').css('min-height', newHeight * 0.15);
+    // section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
+    //
+    // const newHeight = +$(section1)
+    // .css('row-gap')
+    // .match(/\d.?\d+?/)[0] *
+    // 3 +
+    // $('div#raw>h1 ').height() +
+    // $(boxes).height() +
+    // $(weaponSelect).height() +
+    // $(raw).height();
+    // $('#section2').css("height", newHeight);
+    // $('#section2').width($('#damageTable').width());
+    // $('#monTableContainer').css('max-height', newHeight * 0.23);
+    // $('#monTableContainer').css('min-height', newHeight * 0.15);
     // $('#monTableContainer').width($('#damageTable').width());
-    $('#damageTable').css('min-height', newHeight * 0.55);
-    $('#damageTable').css('max-height', newHeight * 0.75);
-    if (/BowGun/.test(weaponType.value)) {
-        $('#ammoTable').css('max-height', newHeight * 0.63);
-    }
-    $(comboCountDisplay).css('max-height', newHeight * .95);
-    $('#monDropDowns').height($('#dropHeight').height());
-    //  section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
-    if (weaponType.value === 'Bow') {
-        $(BowCoating)
-            .parent()
-            .css('max-width', `${($(dropWeapon).width() - $(dropWeaponType).width()) * 1.05}px`);
-    }
+    // $('#damageTable').css('min-height', newHeight * 0.55);
+    // $('#damageTable').css('max-height', newHeight * 0.75);
+    // if (/BowGun/.test(weaponType.value)) {
+    // $('#ammoTable').css('max-height', newHeight * 0.63);
+    // }
+    // $(comboCountDisplay).css('max-height', newHeight * .95);
+    // $('#monDropDowns').height($('#dropHeight').height());
+    // section1.style = `width:${$('div#boxes.contain').width()}px; max-width:$($('div#boxes.contain').width()}px`;
+    // if (weaponType.value === 'Bow') {
+    // $(BowCoating)
+    // .parent()
+    // .css('max-width', `${($(dropWeapon).width() - $(dropWeaponType).width()) * 1.05}px`);
+    // }
 }
 $('#BowChargePlus').on('change', () => {
     ComboReset();
@@ -1336,6 +1336,8 @@ $('#BowChargePlus').on('change', () => {
 $(document).on('change', function(e) {
     if (e.target === ($('#weaponRampage0')[0] || $('.inputs')[0])) {
         DataCompile(e);
+    } else if (e.target === weaponType) {
+        weaponType.className = /Bow/.test(weaponType.value) ? 'double' : 'single'
     }
 });
 $('.scroll').on('mousedown', () => {

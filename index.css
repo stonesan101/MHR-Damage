@@ -1,4 +1,4 @@
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 1200px) {
     body {
         background-position: center center;
     }
@@ -8,29 +8,32 @@
     }
     div#license {
         display: grid;
-        grid-area: 4/1/5/3;
+        grid-area: 4 / 1 / 5 / 3;
     }
     #section2 {
-        grid-area: 3/1/4/3;
-    }
-    .combo {
-        width: 100%;
+        min-height: 120vh;
+        max-height: 130vh;
+        grid-area: 3 / 1 / 4 / 3;
     }
     .title {
-        grid-area: 1 / 1 / 2 / 3;
+        grid-area: 1 / 1 / 2 / 4;
     }
     section#section1.contain {
+        min-height: 120vh;
+        max-height: 200vh;
+        min-width: 100vw;
         justify-self: start;
         justify-content: start;
     }
     div#divComboAttacks {
-        width: 15rem;
-        grid-area: 2 / 2 / 4 / 3;
+        width: 10vw;
+        min-height: 120vh;
+        max-height: 130vh;
+        grid-area: 2 / 2 / 3 / 3;
     }
     div#discord {
-        grid-area: 1/1/1/-1;
+        grid-area: 1 / 1 / 1 / -1;
         justify-content: flex-start;
-        top: .55rem;
         position: relative;
     }
     * {
@@ -38,15 +41,35 @@
     }
 }
 
-button {
-    font-size: 95%;
-}
-
-@media only screen and (min-width: 781px) {
+@media only screen and (min-width: 1200px) {
     section#section2 {
         grid-area: 2 / 3 / 3 / 4;
-        /* max-width: 98%;
-        min-width: 98% */
+        min-height: 124.2vh;
+        max-height: 154vh;
+        max-width: 50vw;
+    }
+    th#dpsHead {
+        max-height: 5em;
+    }
+    th {
+        min-height: 1.8em;
+    }
+    tbody>tr:nth-child(1)>td#d0 {
+        min-height: 3em;
+    }
+    #damageTable {
+        max-height: 100vh;
+    }
+    #section1.contain {
+        min-height: 108.2vh;
+        max-height: 154vh;
+        max-width: 50vw;
+        width: 42.5vw;
+        justify-self: start;
+        justify-content: start;
+    }
+    div#divComboAttacks {
+        grid-area: 2 / 2 / 3 / 3;
     }
     .title {
         grid-area: 1 / 1 / 2 / -1;
@@ -56,7 +79,7 @@ button {
     }
     div#license {
         display: grid;
-        grid-area: 3/1/4/4;
+        grid-area: 3 / 1 / 4 / 4;
     }
     @media (hover) {
         button.augButton:hover,
@@ -64,15 +87,19 @@ button {
             color: rgb(252, 252, 252);
             z-index: 20;
             font-weight: 900;
-            font-size: .9rem;
+            font-size: 0.9rem;
             background-color: rgba(11, 16, 42, 0.74);
         }
     }
 }
 
+div.double {
+    grid-template-columns: 56% 44%;
+}
+
 #damageTable>table>thead {
     position: sticky;
-    top: 0;
+    top: 0px;
     z-index: 20;
 }
 
@@ -85,8 +112,8 @@ button {
 #statsHead>tr,
 #statsBody>tr {
     display: grid;
-    grid-template-columns: 1fr .8fr .8fr .8fr;
-    grid-area: 1/1/2/-1;
+    grid-template-columns: 1fr 0.8fr 0.8fr 0.8fr;
+    grid-area: 1 / 1 / 2 / -1;
 }
 
 #ammoHead>tr,
@@ -94,7 +121,7 @@ button {
 #ammoBody>tr {
     display: grid;
     grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-area: 1/1/2/-1;
+    grid-area: 1 / 1 / 2 / -1;
     max-height: max-content;
 }
 
@@ -104,7 +131,7 @@ button {
 #dpsHead>tr.tableRowRanged {
     display: grid;
     grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-area: 1/1/2/-1;
+    grid-area: 1 / 1 / 2 / -1;
     max-height: max-content;
 }
 
@@ -114,7 +141,7 @@ button {
 #dpsHead>tr.tableRowMelee {
     display: grid;
     grid-template-columns: 1fr 4.4fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-area: 1/1/2/-1;
+    grid-area: 1 / 1 / 2 / -1;
 }
 
 #monTable>th.tableRow,
@@ -128,7 +155,6 @@ output.label {
     position: relative;
     color: rgb(255, 255, 255);
     min-height: 1.32rem;
-    z-index: 10;
     z-index: 5;
     width: 100%;
     display: grid;
@@ -137,24 +163,24 @@ output.label {
 }
 
 .augDiv>output.augLabel {
-    grid-area: 1/1/2/-1;
+    grid-area: 1 / 1 / 2 / -1;
     text-align: start;
     padding-right: 5px;
     z-index: 5;
-    background-color: rgb(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .augDiv>output.label:not(.augLabel) {
-    grid-area: 1/1/2/-1;
+    grid-area: 1 / 1 / 2 / -1;
     text-align: end;
     padding-right: 5px;
     z-index: 5;
-    background-color: rgb(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 div.augDiv,
 div.inputContainer {
-    top: 0;
+    top: 0px;
     position: relative;
     grid-template-columns: 1fr 1fr;
     min-height: 1.32rem;
@@ -190,30 +216,15 @@ button.dec {
     left: 0px;
 }
 
-
-/* #attackAugment { */
-
-
-/* background-image: url("attack.png"); */
-
-
-/* z-index: 200; */
-
-
-/* background-size: cover; */
-
-
-/* } */
-
 button.inc {
     right: 0px;
     border-left: none;
 }
 
 input#taWikiSetBuilder {
-    height: max-content;
+    height: 2em;
     grid-area: 4 / 2 / 5 / 6;
-    background-color: gray;
+    background-color: rgb(64, 58, 58);
 }
 
 div#statsTableDiv {
@@ -228,8 +239,7 @@ div#statsTableDiv {
 
 section#section2 {
     display: grid;
-    gap: .6rem;
-    /* gap: inherit; */
+    gap: 0.6rem;
     align-content: start;
 }
 
@@ -242,7 +252,6 @@ section#section1.contain {
     align-items: start;
     align-content: start;
     grid-template-columns: repeat(5, 1fr);
-    gap: 0.6rem;
 }
 
 div#BowGunId,
@@ -258,7 +267,7 @@ div#weaponSelect.contain {
 }
 
 .contain {
-    gap: 0.25rem;
+    gap: 1.2rem;
     display: grid;
     box-sizing: border-box;
     align-content: center;
@@ -268,25 +277,12 @@ div#weaponSelect.contain {
 body {
     display: grid;
     color: rgb(3, 3, 3);
-    /* background-size: 100% 100%; */
-    /* background-position: 0px 0px, 0px 0px; */
-    /* background-image: repeating-linear-gradient(167deg, #470383FF 57%, #850000A1 57%, #090505B3 65%), repeating-linear-gradient(198deg, #FF0000FF 64%, #1D1A55FF 65%, #000000FF 70%); */
-    /* background-size: 100% 100%; */
-    /* background-position: 0px 0px, 0px 0px; */
-    /*   background-image: repeating-linear-gradient(167deg, #470383FF 57%, #850000A1 57%, #090505B3 58%), repeating-linear-gradient(198deg, #FF0000FF 64%, #000000FF 64%, #1D1A55FF 65%);
-
- */
-    /* background-image: url("Untitled.webp"); */
-    /* background-size: 100% 100%; */
-    /* background-position: 0px 0px, 0px 0px; */
+    background-image: repeating-linear-gradient(167deg, rgba(0, 0, 0, 0.95) 57%, rgba(57, 0, 0, 0.58) 57%, rgb(0, 0, 0) 65%), repeating-linear-gradient(198deg, rgba(255, 0, 0, 0.52) 64%, rgba(1, 1, 2, 0.97) 65%, rgb(0, 0, 0) 70%);
     background-size: 100% 100%;
     background-position: 0px 0px, 0px 0px, 0px 0px;
-    background-image: repeating-linear-gradient(303deg, #300000d4 76%, #090000ba 79%), repeating-linear-gradient(222deg, #350000cc 11%, #2d0000bd 12%, #000000d7 14%), repeating-linear-gradient(105deg, #000030d1 64%, rgb(0, 2, 60) 66%);
-    /* background-size: cover; */
     min-height: 100vh;
-    /* min-width: fit-content; */
     text-align: center;
-    gap: 1rem;
+    gap: 0.6rem;
     border-spacing: 0px;
     align-content: center;
     overflow: auto;
@@ -303,9 +299,9 @@ body {
 }
 
 #comboCountContainer {
-    min-width: min-content;
-    grid-area: 2 / 2 / 2 / 3;
-    width: 14rem;
+    min-width: fit-content;
+    grid-area: 2 / 2 / 3 / 3;
+    max-height: 101vh;
     margin: 0px;
     display: grid;
     overflow: hidden;
@@ -325,10 +321,9 @@ div#sharpnessContainer {
     min-width: 47.8%;
     width: fit-content;
     display: grid;
-    grid-area: 5 / 1 / 6/ 2;
+    grid-area: 5 / 1 / 6 / 2;
     column-gap: 0px;
     grid-template-columns: repeat(6, auto);
-    /* width: fit-content; */
     border-color: rgb(76, 82, 61);
     justify-self: center;
     justify-content: start;
@@ -351,23 +346,23 @@ div#blue {
 }
 
 div#monContainer.contain {
-    grid-area: 3 / 1 / 10;
+    grid-area: 3 / 1 / 10 / auto;
     display: grid;
     grid-template-columns: repeat(7, auto);
     place-items: stretch;
     justify-content: center;
-    max-height: 11rem;
     overflow: auto;
 }
 
 div#monTableContainer {
-    grid-area: 3 / 1 / 4;
+    grid-area: 3 / 1 / 4 / auto;
     overflow: auto;
     display: grid;
-    justify-items: stretch;
+    max-height: 100vh;
 }
 
 div#damageTable.meleeContainer {
+    max-height: 100vh;
     overflow-y: scroll;
     display: grid;
     width: 100%;
@@ -423,14 +418,8 @@ div#html {
     height: 100vh;
 }
 
-div#boxes.contain {
-    width: max-content;
-    max-width: max-content;
-}
-
 #forButtons {
-    gap: 0.25rem;
-    grid-area: 4/1;
+    grid-area: 4 / 1 / auto / auto;
     grid-template-columns: repeat(4, 1fr);
 }
 
@@ -439,22 +428,22 @@ div#forButtonSelect>div:nth-child(2) {
 }
 
 div#forButtonSelect>div:nth-child(1) {
-    grid-area: 1 / 2;
+    grid-area: 1 / 2 / auto / auto;
 }
 
 div#forButtonSelect {
     gap: 0.25rem;
     grid-template-columns: repeat(4, 1fr);
     display: grid;
-    grid-area: 5 / 1;
+    grid-area: 5 / 1 / auto / auto;
 }
 
 button#HerculesDraw {
-    grid-area: 2/2;
+    grid-area: 2 / 2 / auto / auto;
 }
 
 button#UpperCrit {
-    grid-area: 2/3;
+    grid-area: 2 / 3 / auto / auto;
 }
 
 button#filterCombo {
@@ -474,7 +463,6 @@ button#maxSkills {
 }
 
 #dpsTable {
-    border: none;
     overflow: auto;
     block-size: auto;
     min-width: fit-content;
@@ -482,7 +470,7 @@ button#maxSkills {
 }
 
 button.gray {
-    background-color: rgba(77, 58, 58);
+    background-color: rgb(77, 58, 58);
     color: white;
 }
 
@@ -493,7 +481,7 @@ button.blue {
 
 button#questButton {
     display: grid;
-    grid-area: 2/1/3/2;
+    grid-area: 2 / 1 / 3 / 2;
 }
 
 div>button.toggle:hover {
@@ -517,21 +505,23 @@ tr>th {
     border-style: outset;
     background-color: rgb(18, 18, 51);
     border-spacing: 0px;
-    /* min-height: 1.2rem; */
     z-index: 50;
 }
 
 tr>th {
-    height: 1.8rem;
+    border-style: ridge;
+    border-width: 4px;
+}
+
+td {
+    border-width: 2px;
+    border-style: ridge;
 }
 
 table#ammoTable * {
-    /* width: max-content; */
     border-spacing: 0px;
     gap: 0px;
     margin: 0px;
-    /* padding: 0.1rem; */
-    /* min-height: 100%; */
     overflow: auto;
 }
 
@@ -669,7 +659,6 @@ td.a {
 
 output {
     width: 100%;
-    /* height: 100%; */
     min-height: max-content;
     background-color: rgba(5, 3, 39, 0.373);
     border-top-style: outset;
@@ -692,14 +681,14 @@ td {
 }
 
 div#monDropDowns {
-    grid-area: 2 / 1 / 3;
+    grid-area: 2 / 1 / 3 / auto;
     display: grid;
     align-items: start;
 }
 
 div#damageTable {
     overflow: auto;
-    grid-area: 6 / 1 / 7;
+    grid-area: 6 / 1 / 7 / auto;
 }
 
 .b.meleeTable {
@@ -729,14 +718,13 @@ div#scrollDiv {
 }
 
 label#dropDerelection {
-    grid-area: 1/1;
+    grid-area: 1 / 1 / auto / auto;
     background-image: url("scrolls.webp");
 }
 
 div#monDropDowns>div {
     display: grid;
     align-items: stretch;
-    /* grid-template-rows: 1fr 1fr; */
     overflow: visible;
 }
 
@@ -745,7 +733,6 @@ html div {}
 div#divMR {
     display: grid;
     top: 50%;
-    /* grid-area: 2/1/3/2; */
 }
 
 div#divHR {
@@ -758,7 +745,6 @@ div#divHR {
 div#divMR {
     z-index: 80;
     position: relative;
-    /* grid-area: 1/2/1/2; */
 }
 
 h1.players,
@@ -768,16 +754,11 @@ select,
 label,
 * {
     border-spacing: 0px;
-    font-family: Play, sans-serif;
     text-align: center;
     border-color: rgb(77, 67, 69);
     color: white;
-    /* z-index: 1; */
-    font-size: 98%;
     box-sizing: border-box;
-    /* font-size: revert; */
-    font-weight: 500;
-    /* width: initial; */
+    font-size: revert;
 }
 
 #monTable>tr:nth-child(1) {
@@ -794,8 +775,8 @@ table#monTable {
     border-color: rgb(77, 67, 69);
     margin: 0px;
     display: inline-table;
-    grid-area: 3 / 1 / 4;
-    height: 10rem;
+    grid-area: 3 / 1 / 4 / auto;
+    height: 2vh;
 }
 
 #boxes>div:nth-child(n+1) {
@@ -819,9 +800,9 @@ div#divEnrage {
 
 div#forWeaponSelects,
 div.augToggle.vis {
-    gap: .2rem;
+    gap: 0.2rem;
     display: grid;
-    grid-area: 1/1/5;
+    grid-area: 1 / 1 / 5 / auto;
 }
 
 #monContainer>div>div:nth-child(2) {
@@ -839,17 +820,17 @@ select#dropEnraged {
 }
 
 div#setBonus.contain {
-    grid-area: 9/4/11/6;
+    grid-area: 9 / 4 / 11 / 6;
     grid-template-columns: repeat(2, 1fr);
 }
 
 div#dango.contain {
-    grid-area: 10/1/11/4;
+    grid-area: 10 / 1 / 11 / 4;
     grid-template-columns: repeat(3, 1fr);
 }
 
 div#unique {
-    grid-area: 8 / 3 / 11 / 4;
+    grid-area: 8 / 3 / 10 / 4;
 }
 
 div#raw.contain {
@@ -859,14 +840,12 @@ div#raw.contain {
     grid-template-rows: repeat(7, 2.6rem);
     border-style: none;
     padding: 0%;
-    align-items: start;
 }
 
 div#boxes.contain {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-area: 3 / 1 / 4 / 6;
-    gap: .5rem;
 }
 
 div#aff.contain {
@@ -911,7 +890,6 @@ select.skill:enabled {
     text-align: center;
     justify-self: center;
     min-width: 100%;
-    /* width: fit-content; */
 }
 
 select.skill:focus {
@@ -958,7 +936,9 @@ h1 {
     color: white;
 }
 
-h1.combo {}
+h1.combo {
+    min-width: max-content;
+}
 
 .sharpnessdropDown {
     display: none;
@@ -968,17 +948,13 @@ select {
     background-color: rgba(5, 3, 39, 0.373);
     border-style: outset;
     border-width: 0.15rem;
-    width: fixed;
 }
 
 section#section1>div#raw:nth-child(n+1) {
-    width: 100%
+    width: 100%;
 }
 
-select#ElderEssence {
-    /* grid-column: 1 / 3; */
-    /* border-right: 0px; */
-}
+select#ElderEssence {}
 
 #raw>div:nth-child(30) {
     grid-column-start: 5;
@@ -1000,7 +976,7 @@ label {
 }
 
 #MonsterSelect>label:nth-child(5) {
-    grid-area: 4 / 1 / auto;
+    grid-area: 4 / 1 / auto / auto;
 }
 
 parent#shieldChargeIMPid {
@@ -1167,9 +1143,7 @@ div#forButtons button {
     min-width: max-content;
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-}
+::-webkit-scrollbar {}
 
 ::-webkit-scrollbar-track {
     background: rgb(19, 19, 19);
@@ -1185,32 +1159,27 @@ div#forButtons button {
 
 select#dropQuest {
     pointer-events: none;
-    /* position: relative; */
     display: grid;
-    /* top: -118%; */
-    /* height: 120%; */
-    grid-area: 2/1/3/2;
+    grid-area: 2 / 1 / 3 / 2;
 }
 
 label,
 input {
     max-height: 30px;
-    margin: 0;
+    margin: 0px;
     display: grid;
 }
 
 #monDropDowns>div:nth-child(3)>label {
-    grid-area: 1/1;
+    grid-area: 1 / 1 / auto / auto;
 }
 
 .augDiv>label {
-    grid-area: 1/1/2/3;
+    grid-area: 1 / 1 / 2 / 3;
     z-index: 5;
 }
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -1218,8 +1187,7 @@ div.menu {
     z-index: 80;
     display: grid;
     overflow: visible;
-    grid-area: 1/1/2/2;
-    /* position: relative; */
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 #redScroll {
@@ -1238,7 +1206,7 @@ div>.vis:hover {
 div>.augVis,
 div>.vis {
     display: grid;
-    gap: .2rem;
+    gap: 0.2rem;
 }
 
 div>.augInvis,
