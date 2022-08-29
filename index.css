@@ -19,11 +19,11 @@
         grid-area: 1 / 1 / 2 / 4;
     }
     section#section1.contain {
-        min-height: 120vh;
-        max-height: 200vh;
-        min-width: 100vw;
-        justify-self: start;
-        justify-content: start;
+        min-height: max-content;
+        /* max-height: 200vh; */
+        min-width: 166vw;
+        /* justify-self: start; */
+        /* justify-content: start; */
     }
     div#divComboAttacks {
         width: 10vw;
@@ -34,10 +34,11 @@
     div#discord {
         grid-area: 1 / 1 / 1 / -1;
         justify-content: flex-start;
+        top: .58rem;
         position: relative;
     }
     * {
-        font-size: 12px;
+        /* font-size: 12px; */
     }
 }
 
@@ -270,7 +271,7 @@ div#weaponSelect.contain {
     gap: 1.2rem;
     display: grid;
     box-sizing: border-box;
-    align-content: center;
+    align-content: space-between;
     align-items: center;
 }
 
@@ -279,13 +280,12 @@ body {
     color: rgb(3, 3, 3);
     background-image: repeating-linear-gradient(167deg, rgba(0, 0, 0, 0.95) 57%, rgba(57, 0, 0, 0.58) 57%, rgb(0, 0, 0) 65%), repeating-linear-gradient(198deg, rgba(255, 0, 0, 0.52) 64%, rgba(1, 1, 2, 0.97) 65%, rgb(0, 0, 0) 70%);
     background-size: 100% 100%;
-    background-position: 0px 0px, 0px 0px, 0px 0px;
-    min-height: 100vh;
+    min-height: max-content;
     text-align: center;
     gap: 0.6rem;
     border-spacing: 0px;
     align-content: center;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 #comboCountDisplay {
@@ -509,8 +509,8 @@ tr>th {
 }
 
 tr>th {
-    border-style: ridge;
-    border-width: 4px;
+    /* border-style: ridge; */
+    /* border-width: 4px; */
 }
 
 td {
@@ -728,7 +728,9 @@ div#monDropDowns>div {
     overflow: visible;
 }
 
-html div {}
+label {
+    /* min-width: max-content; */
+}
 
 div#divMR {
     display: grid;
@@ -846,6 +848,8 @@ div#boxes.contain {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-area: 3 / 1 / 4 / 6;
+    align-items: stretch;
+    align-content: center;
 }
 
 div#aff.contain {
@@ -1165,7 +1169,7 @@ select#dropQuest {
 
 label,
 input {
-    max-height: 30px;
+    /* max-height: 30px; */
     margin: 0px;
     display: grid;
 }
