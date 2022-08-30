@@ -6,13 +6,13 @@
             border: none;
             align-items: baseline;
         }
-        /* div, */
-        /* input, */
-        /* select, */
-        /* label, */
-        /* * { */
-        /* font-size: 1rem; */
-        /* } */
+        div,
+        input,
+        select,
+        label,
+        * {
+            font-size: 1.2rem;
+        }
         div#license {
             display: grid;
             grid-area: 4 / 1 / 5 / 3;
@@ -20,7 +20,7 @@
         #section2 {
             min-height: 120vh;
             max-height: 130vh;
-            grid-area: 3 / 1 / 4 / 3;
+            grid-area: 3 / 1 / 4 / -1;
         }
         .title {
             grid-area: 1 / 1 / 2 / 4;
@@ -28,7 +28,7 @@
         section#section1.contain {
             min-height: max-content;
             /* max-height: 200vh; */
-            min-width: 200vw;
+            /* min-width: 200vw; */
             /* justify-self: start; */
             /* justify-content: start; */
         }
@@ -80,7 +80,7 @@
             max-height: 154vh;
             max-width: 50vw;
             grid-area: 2/1/4/2;
-            width: 42.5vw;
+            width: 40.5vw;
             justify-self: start;
             justify-content: start;
         }
@@ -279,11 +279,12 @@
         grid-template-columns: 1.3fr 2fr;
         grid-area: 2 / 1 / 3 / 6;
         display: grid;
-        align-items: baseline;
+        align-items: start;
+        gap: .5rem;
     }
     
     .contain {
-        gap: 1.2rem;
+        gap: .5rem;
         display: grid;
         box-sizing: border-box;
         align-content: space-between;
@@ -317,6 +318,7 @@
         min-width: fit-content;
         grid-area: 2 / 2 / 3 / 3;
         max-height: 101vh;
+        width: 12vw;
         margin: 0px;
         display: grid;
         overflow: hidden;
@@ -436,6 +438,8 @@
     #forButtons {
         grid-area: 4 / 1 / auto / auto;
         grid-template-columns: repeat(4, 1fr);
+        display: grid;
+        justify-items: center;
     }
     
     div#forButtonSelect>div:nth-child(2) {
@@ -512,7 +516,7 @@
     tr>th {
         top: 0px;
         position: sticky;
-        min-height: max-content;
+        min-height: initial;
         margin: 0px;
         display: grid;
         place-content: center;
@@ -1161,6 +1165,7 @@
     
     div#forButtons button {
         min-width: max-content;
+        gap: .5rem;
     }
     
      ::-webkit-scrollbar {}

@@ -184,7 +184,7 @@ function RangedDPS(e) {
 
 function MeleeDPS(e) {
     const meleeDamage = [
-        ['Combo', 'Attack Name', 'MV', 'Raw', 'Element', 'Total', 'EFR', 'EFE', 'Effective']
+        ['Combo', 'Attack Name', 'MV', 'Raw', 'Ele', 'Total', 'EFR', 'EFE', 'Effective']
     ];
     let comboDamage = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     let power = {};
@@ -379,7 +379,7 @@ function getRampageSkills(power) {
     return {...power };
 }
 
-function addDependantSkills() {
+function addDependantSkills(power) {
     // applies RF/Normal/Pierce/Spread up bonuses to bow and bowgun
     if (/Bow/.test($(weaponType).val())) {
         if (/Pierc/.test(power.attackName)) {
@@ -399,13 +399,18 @@ function addDependantSkills() {
 
     // applies LongSword Charge Level Bonus
     if ($(weaponType).val() === 'LongSword' && !/Helm Breaker|Serene/.test(power.attackName)) {
-        power.getSkills.push('spiritGauge');
+        power.getSkills.push('SpiritGauge');
     } else if (/Helm Breaker|Serene/.test(power.attackName)) {
-        power.getSkills += /Helm Breaker/.test(power.attackName) ? 'Helmbreaker' : 'SerenePose';
+        power.getSkills.push(/Helm Breaker/.test(power.attackName) ? 'Helmbreaker' : 'SerenePose');
     }
     // applies GreatSwords Charge Level Bonus
-    if ($(weaponType).val() === 'GreatSword' && /(?<=Lv)1|2|3/.test(power.attackName)) {
-        power.rawMV *= Number(`1.${power.attackName.match('(?<=Lv)1|2|3')[0]}`);
+    const regex = new RegExp(/Charged Slash|Rising Slash|Wide Slash|Strong Charged Slash|True Charged Slash|Rage Slash/);
+    if (regex.test(power.attackName) && $(StrongarmStance).hasClass('blue')) {
+        power.PRM *= info.skills.StrongarmStance[power.attackName.match(regex)[0]][0];
+        power.PEM *= info.skills.StrongarmStance[power.attackName.match(regex)[0]][1];
+    }
+    if ($(weaponType).val() === 'GreatSword' && /(?<!Tackle )Lv[1-3]/.test(power.attackName)) {
+        power.rawMV *= Number(`1.${power.attackName.match(/(?<=Lv)[1-3]/)[0]}`);
         power.rawMV = power.rawMV.toFixed(1);
     }
     // applies ChargeBlade specific abilities
@@ -422,24 +427,6 @@ function addDependantSkills() {
             power.getSkills = power.getSkills.filter(( /** @type {string} */ skill) => skill != 'BowCoating');
         }
     }
-
-    power.getSkills = power.getSkills.filter(isUnique);
-    $(power.getSkills).each(function() {
-        if ($(`#${this}`).css('display') !== 'none' && $(`#${this}`)[0].selectedIndex > 0) {
-            skills.push(info.skills[this][document.getElementById(this).selectedIndex]);
-        }
-    });
-
-    getStats(power, skills);
-    // applies Water Blight if selected appropriate to the hzv
-    power.rawHZV = $(WaterBlight).hasClass('blue') ? Math.min(100, ~~(Math.max(power.rawHZV, power.rawHZV * 0.63 + 22.2) + 3)) : power.rawHZV;
-    if (weaponRampage0.value === 'Kushala Daora Soul') {
-        power.aff += 15;
-    }
-    // adds Weakness Exploit
-    power.aff = getHZ()[power.type] >= 45 ? power.aff + info.skills.WeaknessExploit[$('#WeaknessExploit')[0].selectedIndex].aff : power.aff;
-    power.aff = Math.min(power.aff, 100) / 100;
-
     return {...power };
 }
 
@@ -475,13 +462,13 @@ function initialStats(power) {
     power.BEM = 1;
     power.BE = 0;
     power.PEM = 1;
-    power.rawHZV = getHZ()[power.type] !== undefined ? getHZ()[power.type] : 100;
+    power.rawHZV = getHZ()[power.type];
     // applies Demon Ammo if selected and damage type is sever or blunt
     power.PRM *= $(DemonAmmo).hasClass('blue') && /(Sever|Blunt)/.test(power.type) ? 1.1 : 1;
     1;
     const skills = [];
     $('.skillButton:not(button#ProtectivePolish)').each(function() {
-        if ($(this).hasClass('blue') && this.id !== 'CriticalFirePower' && this.id !== 'Qurious') {
+        if ($(this).hasClass('blue') && $(this).hasClass('skillButton') && this.id !== ('CriticalFirePower' || 'StrongarmStance' || 'Qurious')) {
             skills.push(JSON.parse(this.value));
         }
     });
@@ -510,52 +497,11 @@ function initialStats(power) {
         power.PRM *= getEnrage();
     }
 
-    // applies RF/Normal/Pierce/Spread up bonuses to bow and bowgun
-    if (/Bow/.test($(weaponType).val())) {
-        if (/Pierc/.test(power.attackName)) {
-            power.getSkills.push('PierceUp');
-        } else if (/Spread/.test(power.attackName)) {
-            power.getSkills.push('SpreadUp');
-        } else if (/Normal|Rapid/.test(power.attackName)) {
-            power.getSkills.push('NormalRapidUp');
-        }
-        if (/RF+/.test(power.attackName)) {
-            power.getSkills.push('RapidFireUp');
-        }
-        if (/Wyvern|Dragon Piercer/.test(power.attackName)) {
-            power.getSkills.push('SpecialAmmoBoost');
-        }
-    }
-
-    // applies LongSword Charge Level Bonus
-    if ($(weaponType).val() === 'LongSword' && !/Helm Breaker|Serene/.test(power.attackName)) {
-        power.getSkills.push('spiritGauge');
-    } else if (/Helm Breaker|Serene/.test(power.attackName)) {
-        /Helm Breaker/.test(power.attackName) ? power.getSkills.push('Helmbreaker') : power.getSkills.push('SerenePose');
-    }
-    // applies GreatSwords Charge Level Bonus
-    if ($(weaponType).val() === 'GreatSword' && /(?<=Lv)1|2|3/.test(power.attackName)) {
-        power.rawMV *= Number(`1.${power.attackName.match('(?<=Lv)1|2|3')[0]}`);
-        power.rawMV = power.rawMV.toFixed(1);
-    }
-    // applies ChargeBlade specific abilities
-    if ($(weaponType).val() === 'ChargeBlade') {
-        if (!/3rd|(?<!Midair |Axe: )UED|(?<!Charged )Sword(?!.*Shield)/.test(power.attackName)) {
-            power.getSkills.push('savageAxe');
-        }
-        getWeapon().phialType === 'Impact Phial' ? power.getSkills.push('impShieldCharge') : power.getSkills.push('eleShieldCharge');
-    }
-    power.aff += weaponRampage0.value === 'Hellion Mode' && weaponType.value === 'DualBlades' ? 20 : 0;
-    if (weaponType.value === 'Bow') {
-        power.getSkills = power.getSkills.concat('UpperCrit', 'HerculesDraw');
-        if (/Stake/.test(power.attackName)) {
-            power.getSkills = power.getSkills.filter(( /** @type {string} */ skill) => skill != 'BowCoating');
-        }
-    }
+    addDependantSkills(power);
 
     power.getSkills = power.getSkills.filter(isUnique);
     $(power.getSkills).each(function() {
-        if ($(`#${this}`).css('display') !== 'none' && $(`#${this}`)[0].selectedIndex > 0) {
+        if ($(`#${this}`).css('display') !== 'none' && document.getElementById(this).selectedIndex > 0) {
             skills.push(info.skills[this][document.getElementById(this).selectedIndex]);
         }
     });
@@ -569,7 +515,7 @@ function initialStats(power) {
     // adds Weakness Exploit
     power.aff = power.rawHZV >= 45 ? power.aff + JSON.parse($('#WeaknessExploit').val()) : power.aff;
     power.aff = Math.min(power.aff, 100) / 100;
-
+    power.rawHZV = getHZ()[power.type] !== undefined ? power.rawHZV : 100;
     return {...power };
 }
 
@@ -661,7 +607,7 @@ function getComboHitsAndSetSharpness(affinity) {
     for (let i = 0; i < 7; i++) {
         const element = remainingSharp[i];
         const color = $('#sharpnessContainer').children()[6 - i];
-        color.textContent = element === 0 ? '' : Number(element).toFixed(0);
+        color.textContent = element < 0.1 ? '' : Number(element).toFixed(0);
         $(color).width(Number(element).toFixed(0) / total * $(damageTable).width() * .47);
         if (element > 0 && !sharpnessSet) {
             Sharpness.selectedIndex = 7 - i;
@@ -682,25 +628,25 @@ function hitsPerColorSharp(affinity = 0, hits = getTotalComboHits()) {
             const attackKey = Object.keys(getUsedAttacks())[eachAttack];
             if (($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 28))) {
                 for (let i = 0; i < getAttacks()[attackKey].ticsPer + 1; i++) {
-                    if (remainingSharp[0] > 0) {
+                    if (remainingSharp[0] > 0.1) {
                         comboHitsPerColor.purple.push(eachAttack);
                         remainingSharp[0] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (remainingSharp[1] > 0) {
+                    } else if (remainingSharp[1] > 0.1) {
                         comboHitsPerColor.white.push(eachAttack);
                         remainingSharp[1] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (remainingSharp[2] > 0) {
+                    } else if (remainingSharp[2] > 0.1) {
                         comboHitsPerColor.blue.push(eachAttack);
                         remainingSharp[2] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (remainingSharp[3] > 0) {
+                    } else if (remainingSharp[3] > 0.1) {
                         comboHitsPerColor.green.push(eachAttack);
                         remainingSharp[3] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (remainingSharp[4] > 0) {
+                    } else if (remainingSharp[4] > 0.1) {
                         comboHitsPerColor.yellow.push(eachAttack);
                         remainingSharp[4] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (remainingSharp[5] > 0) {
+                    } else if (remainingSharp[5] > 0.1) {
                         comboHitsPerColor.orange.push(eachAttack);
                         remainingSharp[5] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (remainingSharp[6] > 0) {
+                    } else if (remainingSharp[6] > 0.10) {
                         comboHitsPerColor.red.push(eachAttack);
                         remainingSharp[6] -= getHitsPerTic(attackKey, eachAttack);
                     }
@@ -716,10 +662,10 @@ function getHitsPerTic(attackName, index) {
         // applies DualBlades Sharpness Reduction
         if ($(weaponType).val() === 'DualBlades') {
             return getAttacks()[attackName].hitsOfSharp / 3;
-        } else if ($('#dropWeaponType').val() === 'Gunlance' && index > 27) {
-            return 1;
+        } else if ($('#dropWeaponType').val() === 'Gunlance' && index > 27 || $('#dropWeaponType').val() !== 'Gunlance') {
+            return getAttacks()[attackName].hitsOfSharp;
         }
-        return getAttacks()[attackName].hitsOfSharp;
+        return 1;
     }
     return 0;
 }
@@ -2209,21 +2155,29 @@ function parseCSV(csv, weapon = undefined) {
 
     ugh.forEach((row, index) => {
         if (row.split('\t')[0] !== undefined) {
-            let thisAttack = row.split('\t')[0].replace(/New | \(Ripper.*|\?| "$|"| +$|(?<=\() +| +(?=\))/g, '');
+            let thisAttack = row.split('\t')[0].replace(/,|New | \(Ripper.*|\?| "$|"|\s\s+|\s$|(?<=\() +| +(?=\))/g, '');
             if (weapon === cb) {
                 thisAttack = thisAttack.replace(/SAED/, "UAED");
             }
             if (weapon === gs) {
 
                 thisAttack = thisAttack.replace(/⇒/g, ' ⇒ ');
-                thisAttack = thisAttack.replace(/  +/g, ' ');
-                thisAttack = thisAttack.replace(/_/g, ' ');
+
+
                 thisAttack = thisAttack.replace(/(?<!Lv)2$/, '2nd Hit');
                 thisAttack = thisAttack.replace(/Ⅲ/g, 'Lv3');
                 thisAttack = thisAttack.replace(/Ⅱ/g, 'Lv2');
                 thisAttack = thisAttack.replace(/Ⅰ/g, 'Lv1');
             }
-            thisAttack = capitalAll(thisAttack)
+            if (/\w+Lv\d$/.test(thisAttack)) {
+                let ugh3 = thisAttack.match(/\w+Lv\d$/)[0];
+
+                thisAttack = `${thisAttack.replace(/.\w+Lv\d$/,"")} (${ugh3.replace(/Lv\d$/," " + ugh3.slice((ugh3.length - 3)))})`;
+            }
+            thisAttack = thisAttack.replace(/  +/g, ' ');
+            thisAttack = thisAttack.replace(/ ?_ ?/g, ' ');
+            thisAttack = thisAttack.replace(/）$/, ")");
+            thisAttack = capitalAll(thisAttack);
             ugh2[thisAttack] = csvFilter(row.split('\t'), weapon, thisAttack);
         }
     });
@@ -2270,7 +2224,7 @@ function csvFilter(row, weapon, thisAttack) {
         if (/Ticks/.test(thisAttack)) {
             ugh.ticsPer = 6;
         }
-    } else { ugh.ticsPer = +row[7].match(/\d/) }
+    } else { ugh.ticsPer = +row[7].match(/\d/); }
     let thisKey = row[0].match(/\d/);
     row.forEach((cell, index) => {
         if ([15, 16, 17, 18, 19, 28, 33, 34, 39, 45, 46, 47, 48, 49, 50, 51, 52, 53].some(x => x === index)) {
