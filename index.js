@@ -1800,8 +1800,10 @@ $(document).on('mousedown', event => {
     }
 });
 
-function capital(str) {
-    return str[0].toUpperCase() + str.slice(1);
+const capitalAll = (str) => str.replace(/(?<!\w)\w{1}/g, letter => letter.toUpperCase());
+
+function capital(str, index = 0) {
+    return str[index].toUpperCase() + str.slice(1);
 }
 
 function lower(str) {
@@ -2198,37 +2200,34 @@ function formatNumbers(num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 }
 
-function parseCSV(weapon, csv) {
-    ugh2 = {};
-    csv = csv.replace(/\?/g, '');
-    ugh = csv.split('\n');
-
-    ugh.forEach((row, index) => {
-        ugh2[row.split('\t')[0].replace(/ \(Ripper.*|\?| "$|"| +$|(?<=\() +| +(?=\))/g, '')] = csvFilter(row.split('\t'), index, row[0]);
-    });
-
-    console.log(Object.fromEntries(Object.entries(ugh2)));
-
-}
 
 
-function parseCSV(weapon, csv) {
+function parseCSV(csv, weapon = undefined) {
     let ugh2 = {};
     csv = csv.replace(/\?/g, '');
     let ugh = csv.split('\n');
 
     ugh.forEach((row, index) => {
-        thisAttack = row.split('\t')[0].replace(/ \(Ripper.*|\?| "$|"| +$|(?<=\() +| +(?=\))/g, '');
-        if (weapon === cb) {
-            thisAttack = thisAttack.replace(/SAED/, "UAED");
-            thisAttack = thisAttack.replace(/for counter/, "For Counter");
-            thisAttack = thisAttack.replace(/chainsaw m/, "Chainsaw M");
-        }
-        ugh2[thisAttack] = csvFilter(row.split('\t'), weapon, thisAttack);
-    });
+        if (row.split('\t')[0] !== undefined) {
+            let thisAttack = row.split('\t')[0].replace(/New | \(Ripper.*|\?| "$|"| +$|(?<=\() +| +(?=\))/g, '');
+            if (weapon === cb) {
+                thisAttack = thisAttack.replace(/SAED/, "UAED");
+            }
+            if (weapon === gs) {
 
+                thisAttack = thisAttack.replace(/⇒/g, ' ⇒ ');
+                thisAttack = thisAttack.replace(/  +/g, ' ');
+                thisAttack = thisAttack.replace(/_/g, ' ');
+                thisAttack = thisAttack.replace(/(?<!Lv)2$/, '2nd Hit');
+                thisAttack = thisAttack.replace(/Ⅲ/g, 'Lv3');
+                thisAttack = thisAttack.replace(/Ⅱ/g, 'Lv2');
+                thisAttack = thisAttack.replace(/Ⅰ/g, 'Lv1');
+            }
+            thisAttack = capitalAll(thisAttack)
+            ugh2[thisAttack] = csvFilter(row.split('\t'), weapon, thisAttack);
+        }
+    });
     console.log(Object.fromEntries(Object.entries(ugh2)));
-    return Object.fromEntries(Object.entries(ugh2));
 }
 
 
@@ -2263,21 +2262,24 @@ function csvFilter(row, weapon, thisAttack) {
         return;
     }
     ugh.attackName = thisAttack;
-    if (/Ticks/.test(thisAttack)) {
-        ugh.ticsPer = 6
-    } else if (info[weapon].attacks[row[0]] !== undefined) {
-        ugh.ticsPer = info[weapon].attacks[row[0]].ticsPer;
-    } else { ugh.ticsPer = /\(SAED\)/.test(thisAttack) ? 4 : 0; }
-
-    let thisKey = row[0];
+    if (weapon !== undefined) {
+        if (weapon === cb) {}
+        if (info[weapon].attacks[row[0]] !== undefined) {
+            ugh.ticsPer = info[weapon].attacks[row[0]].ticsPer;
+        } else { ugh.ticsPer = /\(SAED\)/.test(thisAttack) ? 4 : 0; }
+        if (/Ticks/.test(thisAttack)) {
+            ugh.ticsPer = 6;
+        }
+    } else { ugh.ticsPer = +row[7].match(/\d/) }
+    let thisKey = row[0].match(/\d/);
     row.forEach((cell, index) => {
         if ([15, 16, 17, 18, 19, 28, 33, 34, 39, 45, 46, 47, 48, 49, 50, 51, 52, 53].some(x => x === index)) {
             key = header[i];
-            if (index === 7) {
 
 
-            }
-            cell = cell.replace(/ \(Ripper.*|\?| "$|"| +$|(?<=\() +| +(?=\))/g, '');
+            cell = cell.replace(/New | \(Ripper.*|\?| "$|"| +$|(?<=\() +| +(?=\))/g, '');
+
+
             if (/\d/.test(cell) && cell.length < 4) {
                 ugh[key] = +cell;
             } else if (cell === '■') {
