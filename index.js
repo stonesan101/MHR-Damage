@@ -259,8 +259,8 @@ function MeleeDPS(e) {
             `${formatNumbers(~~(power.eleNon * sharpnessModifier.PEM))} / ${formatNumbers(~~(power.eleCrit * sharpnessModifier.PEM))}`,
 
             `${formatNumbers((~~(power.rawNon * sharpnessModifier.PRM) + ~~(power.eleNon * sharpnessModifier.PEM)) * (power.ticsPer + 1))} / ${formatNumbers(
-				(~~(power.rawCrit * sharpnessModifier.PRM) + ~~(power.eleCrit * sharpnessModifier.PEM)) * (power.ticsPer + 1),
-			)}`,
+    (~~(power.rawCrit * sharpnessModifier.PRM) + ~~(power.eleCrit * sharpnessModifier.PEM)) * (power.ticsPer + 1),
+   )}`,
 
             formatNumbers(~~(power.efr * sharpnessModifier.PRM)),
 
@@ -294,7 +294,7 @@ function MeleeDPS(e) {
     });
     if ($('#dropWeaponType').val() === 'Gunlance') {
         GunlanceShelling(meleeDamage, comboDamage, power, e);
-        return
+        return;
     } else {
         if (lastSharp === Sharpness.selectedIndex && !/dropWeapon|taWikiSetBuilder/.test(e.target.id) && window.event.target !== BowChargePlus && e.target === dropWeapon && !weaponType.value === cb) {
             if (/input|inputButton/.test(e.target.className)) {
@@ -475,8 +475,8 @@ function initialStats(power) {
     power.BEM = 1;
     power.BE = 0;
     power.PEM = 1;
-    power.rawHZV = getHZ()[power.type] !== undefined ? getHZ()[power.type] : 100
-        // applies Demon Ammo if selected and damage type is sever or blunt
+    power.rawHZV = getHZ()[power.type] !== undefined ? getHZ()[power.type] : 100;
+    // applies Demon Ammo if selected and damage type is sever or blunt
     power.PRM *= $(DemonAmmo).hasClass('blue') && /(Sever|Blunt)/.test(power.type) ? 1.1 : 1;
     1;
     const skills = [];
@@ -673,12 +673,13 @@ function getComboHitsAndSetSharpness(affinity) {
 
 
 function hitsPerColorSharp(affinity = 0, hits = getTotalComboHits()) {
+
     let comboHitsPerColor = { purple: [], white: [], blue: [], green: [], yellow: [], orange: [], red: [] };
     const remainingSharp = weaponType.value !== bow ? {...applySharpnessSkills(affinity).reverse() } : [0, 0, 0, 0, 1, 0, 0, 0];
     const total = Object.values(remainingSharp).reduce((a, b) => a + b);
     if (hits !== undefined) {
         hits.forEach(eachAttack => {
-            const attackKey = Object.keys(getAttacks())[eachAttack];
+            const attackKey = Object.keys(getUsedAttacks())[eachAttack];
             if (($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 28))) {
                 for (let i = 0; i < getAttacks()[attackKey].ticsPer + 1; i++) {
                     if (remainingSharp[0] > 0) {
@@ -927,7 +928,7 @@ function GunlanceShelling(currentDamage, comboDamage, power, e) {
     g0.innerHTML = `${formatNumbers(comboDamage[7])}`;
     h0.innerHTML = `${formatNumbers(comboDamage[8])}`;
     i0.innerHTML = `${formatNumbers(comboDamage[9])}`;
-    return
+    return;
 }
 
 function BuildDamageTable(myDamage, id, e) {
@@ -1337,7 +1338,7 @@ $(document).on('change', function(e) {
     if (e.target === ($('#weaponRampage0')[0] || $('.inputs')[0])) {
         DataCompile(e);
     } else if (e.target === weaponType) {
-        weaponType.className = /Bow/.test(weaponType.value) ? 'double' : 'single'
+        weaponType.className = /Bow/.test(weaponType.value) ? 'double' : 'single';
     }
 });
 $('.scroll').on('mousedown', () => {
@@ -1428,10 +1429,10 @@ function calculateAmmoFrames(power) {
     // }
 
     /*
-    		* finds time needed to shoot 100 shots as a base for calculations
-    		*                  ( (        actual shots consumed    times reloaded    for total frames spent reloading) + (total recoil frames) for total frames used / 30 frames for total second / 100 shots = seconds per shot)
-    				60 seconds / ( ( ( ( ( 100 shots-Spare Shot percent) / clip size -1 for inital clip) * frames per reload ) + (100 * recoil frames )) / 30 frames per second / 100 shots )
-    		*/
+      * finds time needed to shoot 100 shots as a base for calculations
+      *                  ( (        actual shots consumed    times reloaded    for total frames spent reloading) + (total recoil frames) for total frames used / 30 frames for total second / 100 shots = seconds per shot)
+        60 seconds / ( ( ( ( ( 100 shots-Spare Shot percent) / clip size -1 for inital clip) * frames per reload ) + (100 * recoil frames )) / 30 frames per second / 100 shots )
+      */
 
     const shotsPerTimeLimit = 60;
     ammo.shotsPerMinBase = shotsCheck(ammo.recoilFrames / 30, ammo.reloadFrames / 30, power.clipSize[power.isUsed], shotsPerTimeLimit);
@@ -1660,7 +1661,7 @@ const getUsedAttacks = (weapon = weaponType.value) => {
         return {...attacks };
     }
     if ($(weaponType).val() === 'ChargeBlade') {
-        const phialType = getWeapon().phialType === 'Impact Phial' ? 'Element Phial| Elemental Phial' : 'Impact Phial';
+        const phialType = getWeapon().phialType === 'Impact Phial' ? 'Element Phial|Elemental Phial' : 'Impact Phial';
         const regexp = new RegExp(`${phialType}`);
 
         attacks = Object.fromEntries(Object.entries(info.ChargeBlade.attacks).filter(skill => !regexp.test(skill)));
@@ -2044,7 +2045,7 @@ function setSkillDescriptions(thisSkill) {
                         option = `${index}: ${inc[index - 1]}`;
                     } else if (ugh2 == 'Marksman') {
                         option = `${index}: ${['Chance 20% Raw  + 5% EFR +1%','Chance 20% Raw+10% EFR +2%','Chance 60% Raw  + 5% EFR +3% ','Chance 40% Raw+10% EFR +4%'][index - 1]
-							}`;
+       }`;
                     } else if (ugh2 === 'Bombardier') {
                         if (weaponType.value === cb) {
                             option = ['Bombardier', '1: Raw +10% EFR +10%', '2: Raw +15% EFR +15%', '3: Raw +20% EFR +16%', '4: Raw + 25% EFR +17%'][index];
@@ -2194,25 +2195,47 @@ const distanceCalc = (ammo, fps = 60) => {
 };
 
 function formatNumbers(num) {
-    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 }
 
-function parseCSV(csv) {
+function parseCSV(weapon, csv) {
     ugh2 = {};
     csv = csv.replace(/\?/g, '');
     ugh = csv.split('\n');
 
     ugh.forEach((row, index) => {
-        ugh2[row.split('\t')[0].replace(/ "$|"| +$|(?<=\() +| +(?=\))/g, '')] = csvFilter(row.split('\t'), index);
+        ugh2[row.split('\t')[0].replace(/ \(Ripper.*|\?| "$|"| +$|(?<=\() +| +(?=\))/g, '')] = csvFilter(row.split('\t'), index, row[0]);
     });
 
     console.log(Object.fromEntries(Object.entries(ugh2)));
+
 }
 
-function csvFilter(row, counter) {
+
+function parseCSV(weapon, csv) {
+    let ugh2 = {};
+    csv = csv.replace(/\?/g, '');
+    let ugh = csv.split('\n');
+
+    ugh.forEach((row, index) => {
+        thisAttack = row.split('\t')[0].replace(/ \(Ripper.*|\?| "$|"| +$|(?<=\() +| +(?=\))/g, '');
+        if (weapon === cb) {
+            thisAttack = thisAttack.replace(/SAED/, "UAED");
+            thisAttack = thisAttack.replace(/for counter/, "For Counter");
+            thisAttack = thisAttack.replace(/chainsaw m/, "Chainsaw M");
+        }
+        ugh2[thisAttack] = csvFilter(row.split('\t'), weapon, thisAttack);
+    });
+
+    console.log(Object.fromEntries(Object.entries(ugh2)));
+    return Object.fromEntries(Object.entries(ugh2));
+}
+
+
+function csvFilter(row, weapon, thisAttack) {
     const header = [
-        ['attackName'],
-        ['ticsPer'],
+
+
         ['rawMV'],
         ['eleType'],
         ['baseEle'],
@@ -2229,20 +2252,33 @@ function csvFilter(row, counter) {
         ['Draw'],
         ['Wire'],
         ['NoEleBuff'],
+        ['NoSneak'],
+        ['ChargeMaster']
     ];
-    ugh = {};
+    let ugh = {};
 
     i = 0;
 
-    // if (row[0] === '') {
-    // return;
-    // }
+    if (row[0] === '') {
+        return;
+    }
+    ugh.attackName = thisAttack;
+    if (/Ticks/.test(thisAttack)) {
+        ugh.ticsPer = 6
+    } else if (info[weapon].attacks[row[0]] !== undefined) {
+        ugh.ticsPer = info[weapon].attacks[row[0]].ticsPer;
+    } else { ugh.ticsPer = /\(SAED\)/.test(thisAttack) ? 4 : 0; }
+
+    let thisKey = row[0];
     row.forEach((cell, index) => {
-        if ([0, 7, 15, 16, 17, 18, 19, 28, 33, 34, 39, 45, 46, 47, 48, 49, 50, 51].some(x => x === index)) {
-            cell = index === 7 ? cell.match(/^\d/)[0] : cell;
+        if ([15, 16, 17, 18, 19, 28, 33, 34, 39, 45, 46, 47, 48, 49, 50, 51, 52, 53].some(x => x === index)) {
             key = header[i];
-            cell = cell.replace(/ "$|"| +$|(?<=\() +| +(?=\))/g, '');
-            if (/\d+/.test(cell) && i > 0) {
+            if (index === 7) {
+
+
+            }
+            cell = cell.replace(/ \(Ripper.*|\?| "$|"| +$|(?<=\() +| +(?=\))/g, '');
+            if (/\d/.test(cell) && cell.length < 4) {
                 ugh[key] = +cell;
             } else if (cell === '■') {
                 ugh[key] = true;

@@ -6,13 +6,13 @@
             border: none;
             align-items: baseline;
         }
-        div,
-        input,
-        select,
-        label,
-        * {
-            font-size: 1rem;
-        }
+        /* div, */
+        /* input, */
+        /* select, */
+        /* label, */
+        /* * { */
+        /* font-size: 1rem; */
+        /* } */
         div#license {
             display: grid;
             grid-area: 4 / 1 / 5 / 3;
@@ -59,13 +59,13 @@
         th#dpsHead {
             max-height: 5em;
         }
-        div,
-        input,
-        select,
-        label,
-        * {
-            font-size: 95%;
-        }
+        /* div, */
+        /* input, */
+        /* select, */
+        /* label, */
+        /* * { */
+        /* font-size: 95%; */
+        /* } */
         th {
             min-height: 1.8em;
         }
