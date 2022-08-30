@@ -284,7 +284,7 @@
     }
     
     .contain {
-        gap: .5rem;
+        gap: 1.05rem;
         display: grid;
         box-sizing: border-box;
         align-content: space-between;
