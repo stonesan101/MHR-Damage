@@ -241,7 +241,7 @@ function MeleeDPS(e) {
                 }
             });
         }
-        // damage/meleeDamage adds sharpness to the calculations and arranges them in the array to be used for the damageTable
+        // damage/meleeDamage adds sharpness to the calculations and arranges them in the array to be used for the damageContainer
         let sharpnessModifier = power.type === ('Sever' || 'Blunt') && power.noSharpMod === false ? JSON.parse(Sharpness.value) : { PRM: 1, PEM: 1 };
         if (weaponType.value === 'Bow' && power.type !== 'Shot') {
             sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Power' ? 1.35 : sharpnessModifier;
@@ -296,7 +296,7 @@ function MeleeDPS(e) {
         GunlanceShelling(meleeDamage, comboDamage, power, e);
         return;
     } else {
-        if (lastSharp === Sharpness.selectedIndex && !/dropWeapon|taWikiSetBuilder/.test(e.target.id) && window.event.target !== BowChargePlus && e.target === dropWeapon && !weaponType.value === cb) {
+        if (lastSharp === Sharpness.selectedIndex && !/dropWeapon|taWikiSetBuilder/.test(e.target.id) && e.target !== BowChargePlus && e.target === dropWeapon && !weaponType.value === cb) {
             if (/input|inputButton/.test(e.target.className)) {
                 document.getElementById('c0').textContent = `${formatNumbers(comboDamage[0])}`;
                 document.getElementById('d0').textContent = `${formatNumbers(comboDamage[1])} / ${formatNumbers(comboDamage[2])}`;
@@ -344,18 +344,6 @@ function MeleeDPS(e) {
 }
 
 function getRampageSkills(power) {
-    // adds qurious augs
-    power.baseRaw += ($('output.attackAug').val() / 2) * 5;
-    attackResult.value = `+ ${($('output.attackAug').val() / 2) * 5}`;
-    power.aff += ($('output.affinityAug').val() / 3) * 5;
-    affinityResult.value = `+ ${($('output.affinityAug').val() / 3) * 5}`;
-    if (getWeapon().eleType !== 'None') {
-        power.baseEle += $('output.elementalAug').val() * 3;
-        elementalResult.value = `+ ${$('output.elementalAug').val() * 3}`;
-    }
-
-    $('#rampageResult').text($('output.rampageAug').val() > 0 ? '+1' : '+0');
-
     if (getWeapon().rampageSlots === 0) {
         // applies rampage any bonuses that effect base stats
         $(weaponRampage.children).each((_index, element) => {
@@ -373,6 +361,17 @@ function getRampageSkills(power) {
                 weaponRampage.children[1].value.match(/Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/)[0] :
                 power.eleType;
         }
+    } else {
+        // adds qurious augs
+        power.baseRaw += ($('output.attackAug').val() / 2) * 5;
+        attackResult.value = `+ ${($('output.attackAug').val() / 2) * 5}`;
+        power.aff += ($('output.affinityAug').val() / 3) * 5;
+        affinityResult.value = `+ ${($('output.affinityAug').val() / 3) * 5}`;
+        if (getWeapon().eleType !== 'None') {
+            power.baseEle += $('output.elementalAug').val() * 3;
+            elementalResult.value = `+ ${$('output.elementalAug').val() * 3}`;
+        }
+        $('#rampageResult').text($('output.rampageAug').val() > 0 ? '+1' : '+0');
     }
     power.baseAff = power.aff;
 
@@ -424,30 +423,14 @@ function addDependantSkills(power) {
     if (weaponType.value === 'Bow') {
         power.getSkills = power.getSkills.concat('UpperCrit', 'HerculesDraw');
         if (/Stake/.test(power.attackName)) {
-            power.getSkills = power.getSkills.filter(( /** @type {string} */ skill) => skill != 'BowCoating');
+            power.getSkills = power.getSkills.filter((skill) => skill != 'BowCoating');
         }
     }
     return {...power };
 }
 
-function getBaseSkills(power) {
-
-
-
-
-
-
-
-    return power;
-}
-
 function getEnrage() {
-    return $('#dropEnraged').val() === 'Enraged' ? // Object.fromEntries(
-        // Object.entries(info.monster.enrage).sort((b, a) => {
-        // b[1]['Large Monster'] - a[1]['Large Monster'];
-        // }),
-        // )
-        info.monster[document.getElementById('dropMonster').selectedIndex]['Player Dmg'] :
+    return $('#dropEnraged').val() === 'Enraged' ? info.monster[document.getElementById('dropMonster').selectedIndex]['Player Dmg'] :
         1;
 }
 
@@ -468,16 +451,12 @@ function initialStats(power) {
     1;
     const skills = [];
     $('.skillButton:not(button#ProtectivePolish)').each(function() {
-        if ($(this).hasClass('blue') && $(this).hasClass('skillButton') && this.id !== ('CriticalFirePower' || 'StrongarmStance' || 'Qurious')) {
+        if ($(this).hasClass('blue') && this.id !== ('CriticalFirePower' && 'StrongarmStance' && 'Qurious')) {
             skills.push(JSON.parse(this.value));
         }
     });
     power.getSkills = [];
     switch (power.type) {
-        case 'Sever':
-        case 'Blunt':
-            power.skillType = 'Sever';
-            break;
         case 'Shot':
             power.skillType = 'Gunner';
             break;
@@ -485,11 +464,11 @@ function initialStats(power) {
             power.skillType = 'IMPAED';
             break;
         default:
-            power.skillType = 'AllSkills';
+            power.skillType = 'Sever';
             break;
     }
     // adds agitator to getSkills if enraged
-    [...power.getSkills] = info.types[power.skillType];
+    [...power.getSkills] = info.types[power.skillType].filter(skill => $(`#${skill}`).css('display') !== 'none' && document.getElementById(skill).selectedIndex > 0);
     enrageDisplay.textContent = `${~~(getEnrage() * 100)}%`;
     if ($('#dropEnraged').val() === 'Enraged') {
         power.getSkills.push('Agitator');
@@ -501,9 +480,9 @@ function initialStats(power) {
 
     power.getSkills = power.getSkills.filter(isUnique);
     $(power.getSkills).each(function() {
-        if ($(`#${this}`).css('display') !== 'none' && document.getElementById(this).selectedIndex > 0) {
-            skills.push(info.skills[this][document.getElementById(this).selectedIndex]);
-        }
+        // if ($(`#${this}`).css('display') !== 'none' && document.getElementById(this).selectedIndex > 0) {
+        skills.push(info.skills[this][document.getElementById(this).selectedIndex]);
+        // }
     });
 
     getStats(power, skills);
@@ -599,7 +578,7 @@ function getTotalComboHits() {
     }
 }
 
-function getComboHitsAndSetSharpness(affinity) {
+function getComboHitsAndSetSharpness(affinity = 0) {
     const [remainingSharp, comboHitsPerColor, total] = hitsPerColorSharp(affinity);
 
 
@@ -608,7 +587,7 @@ function getComboHitsAndSetSharpness(affinity) {
         const element = remainingSharp[i];
         const color = $('#sharpnessContainer').children()[6 - i];
         color.textContent = element < 0.1 ? '' : Number(element).toFixed(0);
-        $(color).width(Number(element).toFixed(0) / total * $(damageTable).width() * .47);
+        $(color).width(Number(element).toFixed(0) / total * $(damageContainer).width() * .47);
         if (element > 0 && !sharpnessSet) {
             Sharpness.selectedIndex = 7 - i;
             sharpnessSet = true;
@@ -784,7 +763,7 @@ function getCritEle(canCrit, affinity) {
     return canCrit ? {
         PEM: info.skills.CriticalElement[CriticalElement.selectedIndex].PEM,
         EFE: 1 + (info.skills.CriticalElement[CriticalElement.selectedIndex].PEM - 1) * affinity,
-    } : { PRM: 1, EFE: 1 };
+    } : { PEM: 1, EFE: 1 };
 }
 
 function getCritBoost(canCrit, affinity) {
@@ -806,7 +785,7 @@ function DamageCalculations(power) {
         power.rawCrit = Math.max(1, rawFormula * power.augPRM * getCritBoost(power.Crit, power.aff).PRM);
     }
 
-    if ((Object.prototype.hasOwnProperty.call(power, 'NoEleBuff') && power.NoEleBuff === true) || power.type === 'IgnoreHZV') {
+    if ((Object.prototype.hasOwnProperty.call(power, 'NoEleBuff') && power.NoEleBuff === true)) {
         [power.ele, power.eleNon, power.efe, power.eleCrit] = [power.baseEle, power.baseEle, power.baseEle, power.baseEle];
     } else if (power.Ele === false || power.eleType === 'None') {
         [power.ele, power.eleNon, power.efe, power.eleCrit] = [0, 0, 0, 0];
@@ -955,7 +934,7 @@ function BuildDamageTable(myDamage, id, e) {
     tHead.setAttribute('id', `${id}Head`);
     tBody.setAttribute('id', `${id}Body`);
     tBody.className = /(BowGun)/.test($('#dropWeaponType').val()) ? 'rangedTable' : 'meleeTable';
-    damageTable.className = /(BowGun)/.test($('#dropWeaponType').val()) ? 'rangedContainer' : 'meleeContainer';
+    damageContainer.className = /(BowGun)/.test($('#dropWeaponType').val()) ? 'rangedContainer' : 'meleeContainer';
 
     ammoTable.style.display = currentAmmoTableStyle;
     dpsTable.style.display = currentDamageTableStyle;
@@ -1008,7 +987,7 @@ function BuildDamageTable(myDamage, id, e) {
             $(row).addClass(tableClass);
         });
     });
-    Object.values(damageTable.children[0].children[1].children).forEach(row => {
+    Object.values(damageContainer.children[0].children[1].children).forEach(row => {
         $(row).children().addClass('cell');
     });
     if ($(window).width() > 850 && (e.target === weaponType || (e.target === dropWeapon && weaponType.value === (bow || gl || lbg || hbg)))) {
@@ -1100,7 +1079,9 @@ $([dropWeapon, weaponType]).on('change', _e => {
 });
 
 function classChange() {
+
     if (Object.values(check).every(keyCard => keyCard)) {
+        $([unique, dango]).toggleClass(previousWeaponType.value + ' ' + weaponType.value);
         if (previousWeaponType.textContent !== '') {
             ComboReset();
         }
@@ -1208,11 +1189,11 @@ $(window).on('keypress', e => {
 });
 
 function UniqueColumnsDisplay() {
-    $('#dango')[0].style =
-        Bombardier.style.display === 'none' ?
-        'grid-template-columns:repeat(2, 1fr); grid-area: 10/1/11/3;' :
-        'grid-template-columns:repeat(3, 1fr); grid-area: 10/1/11/4;';
-    $('#setBonus').css('grid-area', weaponType.value !== lbg && weaponType.value !== hbg ? '9/4/11/6' : '10/4/11/6');
+    // $('#dango')[0].style =
+    // /Bow/.test(weaponType.value) ?
+    // 'grid-template-columns:repeat(2, 1fr); grid-area: 11/1/13/4;' :
+    // 'grid-template-columns:repeat(3, 1fr); grid-area: 10/1/11/4;';
+
     // forButtons.style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns: repeat(10. 1fr)' : 'grid-template-columns: repeat(6, 1fr)';
 }
 
@@ -1258,12 +1239,12 @@ function setHeight() {
     // $(weaponSelect).height() +
     // $(raw).height();
     // $('#section2').css("height", newHeight);
-    // $('#section2').width($('#damageTable').width());
+    // $('#section2').width($('#damageContainer').width());
     // $('#monTableContainer').css('max-height', newHeight * 0.23);
     // $('#monTableContainer').css('min-height', newHeight * 0.15);
-    // $('#monTableContainer').width($('#damageTable').width());
-    // $('#damageTable').css('min-height', newHeight * 0.55);
-    // $('#damageTable').css('max-height', newHeight * 0.75);
+    // $('#monTableContainer').width($('#damageContainer').width());
+    // $('#damageContainer').css('min-height', newHeight * 0.55);
+    // $('#damageContainer').css('max-height', newHeight * 0.75);
     // if (/BowGun/.test(weaponType.value)) {
     // $('#ammoTable').css('max-height', newHeight * 0.63);
     // }
@@ -1899,7 +1880,7 @@ function loadState(ugh, _e) {
         this.className = ugh[4][index];
     });
 
-    comboTracker = ugh[3];
+    let comboTracker = ugh[3];
     $('.inputs:not(".inputComboRepeat")').each(function() {
         if (this.value > 0) {
             let difference = $('.inputs')[this.id].value - TimesUsed(this.id);
@@ -1989,7 +1970,7 @@ function setSkillDescriptions(thisSkill) {
                     if (ugh2 === 'RecoilDown' || ugh2 === 'ReloadSpeed') {
                         option = /Reload/.test(ugh2) ? `${ugh2.slice(0,6)} ${ugh2.slice(6)} +${index}` : `${ugh2.slice(0,6)} ${ugh2.slice(6)} +${index}`;
                     } else if (ugh2 === 'AmmoUP' || ugh2 === 'SpareShot') {
-                        const inc = ugh2 === 'AmmoUP' ? ['No Change', '+1 Lvl 2 & Ele Ammo', '+1 Lvl 3 & Dragon Ammo'] : ['Spare Shot +5%', 'Spare Shot +10%', 'Spare Shot +20%'];
+                        const inc = ugh2 === 'AmmoUP' ? ['No Change', 'Lv2 & Ele Ammo', 'Lv3 & Dragon Ammo'] : ['Spare Shot +5%', 'Spare Shot +10%', 'Spare Shot +20%'];
                         option = `${index}: ${inc[index - 1]}`;
                     } else if (ugh2 == 'Marksman') {
                         option = `${index}: ${['Chance 20% Raw  + 5% EFR +1%','Chance 20% Raw+10% EFR +2%','Chance 60% Raw  + 5% EFR +3% ','Chance 40% Raw+10% EFR +4%'][index - 1]
