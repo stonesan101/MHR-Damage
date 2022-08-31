@@ -11,7 +11,7 @@
             select,
             label,
             * {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             div#license {
                 display: grid;
@@ -785,7 +785,7 @@
         * {
             border-spacing: 0px;
             text-align: center;
-            font-size: 99%;
+            /* font-size: 99%; */
             border-color: rgb(77, 67, 69);
             color: white;
             box-sizing: border-box;
