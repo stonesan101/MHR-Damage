@@ -15,18 +15,18 @@
             }
             div#license {
                 display: grid;
-                grid-area: 4 / 1 / 5 / 3;
+                grid-area: 10 / 1 / 10 / 3;
             }
             #section2 {
-                min-height: 50em;
-                max-height: 130vh;
-                grid-area: 3 / 1 / 4 / -1;
+                /* min-height: 50em; */
+                /* max-height: 130vh; */
+                grid-area: 9 / 1 / 10 / -1;
             }
             .title {
                 grid-area: 1 / 1 / 2 / 4;
             }
             section#section1.contain {
-                min-height: max-content;
+                /* min-height: max-content; */
                 /* max-height: 200vh; */
                 /* min-width: 200vw; */
                 /* justify-self: start; */
@@ -255,7 +255,6 @@
         section#section2 {
             display: grid;
             gap: 0.6rem;
-            align-content: start;
         }
         
         html div {
@@ -266,8 +265,9 @@
         section#section1.contain {
             align-items: start;
             align-content: start;
-            grid-auto-rows: 2.8em 10em 10.2em;
+            /* grid-auto-rows: 2.8em 10em 10.2em; */
             grid-template-columns: repeat(5, 1fr);
+            grid-area: 1 //1/2;;;;;;;;;;;
         }
         
         div#BowGunId,
@@ -1273,7 +1273,7 @@
         
         div#section1-4 {
             display: grid;
-            grid-area: 11/1/12/6;
+            grid-area: 11/1/11/-1;
             /* max-width: fit-content; */
             justify-content: center;
         }
@@ -1282,9 +1282,9 @@
         div#section1-4>div#unique.LightBowGun,
         div#section1-4>div#unique.ChargeBlade,
         div#section1-4>div#unique.LongSword {
-            grid-area: 1/4/2/5;
+            grid-area: 1/6/2/6;
             grid-template-columns: repeat(2, 1fr);
-            min-width: 16vw
+            min-width: 25em;
         }
         
         div#section1-4>div#unique.HeavyBowGun,
@@ -1315,9 +1315,9 @@
         div#section1-4>div#dango.Bow,
         div#section1-4>div#dango.LightBowGun,
         div#section1-4>div#dango.ChargeBlade {
-            grid-area: 1/1/2/4;
+            grid-area: 1/1/2/6;
             grid-template-columns: repeat(3, 1fr);
-            min-width: 24vw
+            min-width: 38em;
         }
         
         div#section1-4>div#dango.SwordNShield,
