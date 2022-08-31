@@ -860,7 +860,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             /* width: 75%; */
-            /* justify-self: center; */
+            justify-self: center;
         }
         
         div#unique {
@@ -1272,10 +1272,11 @@
         /* } */
         
         div#section1-4 {
-            display: grid;
-            grid-area: 11/1/11/-1;
+            display: inline-flex;
+            grid-area: 11/1/11/6;
             /* max-width: fit-content; */
-            justify-content: center;
+            align-content: stretch;
+            /* flex-direction: row-reverse; */
         }
         
         div#section1-4>div#unique.Bow,
@@ -1284,7 +1285,7 @@
         div#section1-4>div#unique.LongSword {
             grid-area: 1/6/2/6;
             grid-template-columns: repeat(2, 1fr);
-            min-width: 25em;
+            min-width: 39%;
         }
         
         div#section1-4>div#unique.HeavyBowGun,
@@ -1315,9 +1316,9 @@
         div#section1-4>div#dango.Bow,
         div#section1-4>div#dango.LightBowGun,
         div#section1-4>div#dango.ChargeBlade {
-            grid-area: 1/1/2/6;
+            grid-area: 1/1/1/2;
             grid-template-columns: repeat(3, 1fr);
-            min-width: 38em;
+            min-width: 60%;
         }
         
         div#section1-4>div#dango.SwordNShield,
