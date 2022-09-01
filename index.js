@@ -404,29 +404,29 @@ function addDependantSkills(power) {
     }
     // applies GreatSwords Charge Level Bonus
     const regex = new RegExp(/Charged Slash|Rising Slash|Wide Slash|Strong Charged Slash|True Charged Slash|Rage Slash/);
-    if (regex.test(power.attackName) && $(StrongarmStance).hasClass('blue')) {
-        power.PRM *= info.skills.StrongarmStance[power.attackName.match(regex)[0]][0];
-        power.PEM *= info.skills.StrongarmStance[power.attackName.match(regex)[0]][1];
+    if (regex.test(power.attackName) && $(StrongarmStance).selectedIndex > 0)) {
+    power.PRM *= info.skills.StrongarmStance[power.attackName.match(regex)[0]][0];
+    power.PEM *= info.skills.StrongarmStance[power.attackName.match(regex)[0]][1];
+}
+if ($(weaponType).val() === 'GreatSword' && /(?<!Tackle )Lv[1-3]/.test(power.attackName)) {
+    power.rawMV *= Number(`1.${power.attackName.match(/(?<=Lv)[1-3]/)[0]}`);
+    power.rawMV = power.rawMV.toFixed(1);
+}
+// applies ChargeBlade specific abilities
+if ($(weaponType).val() === 'ChargeBlade') {
+    if (!/3rd|(?<!Midair |Axe: )UED|(?<!Charged )Sword(?!.*Shield)/.test(power.attackName)) {
+        power.getSkills.push('savageAxe');
     }
-    if ($(weaponType).val() === 'GreatSword' && /(?<!Tackle )Lv[1-3]/.test(power.attackName)) {
-        power.rawMV *= Number(`1.${power.attackName.match(/(?<=Lv)[1-3]/)[0]}`);
-        power.rawMV = power.rawMV.toFixed(1);
+    getWeapon().phialType === 'Impact Phial' ? power.getSkills.push('impShieldCharge') : power.getSkills.push('eleShieldCharge');
+}
+power.aff += weaponRampage0.value === 'Hellion Mode' && weaponType.value === 'DualBlades' ? 20 : 0;
+if (weaponType.value === 'Bow') {
+    power.getSkills = power.getSkills.concat('UpperCrit', 'HerculesDraw');
+    if (/Stake/.test(power.attackName)) {
+        power.getSkills = power.getSkills.filter((skill) => skill != 'BowCoating');
     }
-    // applies ChargeBlade specific abilities
-    if ($(weaponType).val() === 'ChargeBlade') {
-        if (!/3rd|(?<!Midair |Axe: )UED|(?<!Charged )Sword(?!.*Shield)/.test(power.attackName)) {
-            power.getSkills.push('savageAxe');
-        }
-        getWeapon().phialType === 'Impact Phial' ? power.getSkills.push('impShieldCharge') : power.getSkills.push('eleShieldCharge');
-    }
-    power.aff += weaponRampage0.value === 'Hellion Mode' && weaponType.value === 'DualBlades' ? 20 : 0;
-    if (weaponType.value === 'Bow') {
-        power.getSkills = power.getSkills.concat('UpperCrit', 'HerculesDraw');
-        if (/Stake/.test(power.attackName)) {
-            power.getSkills = power.getSkills.filter((skill) => skill != 'BowCoating');
-        }
-    }
-    return {...power };
+}
+return {...power };
 }
 
 function getEnrage() {
