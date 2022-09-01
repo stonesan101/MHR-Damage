@@ -111,7 +111,7 @@
             grid-template-columns: 56% 44%;
         }
         
-        #damageContainer>table>thead {
+        #damageTable>table>thead {
             position: sticky;
             top: 0px;
             z-index: 20;
@@ -154,7 +154,7 @@
         #dpsBody>tr.tableRowMelee,
         #dpsHead>tr.tableRowMelee {
             display: grid;
-            grid-template-columns: .4fr 4.4fr 1fr 1fr 1fr 1fr 1fr 1fr 1.2fr;
+            grid-template-columns: 1fr 4.4fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-area: 1 / 1 / 2 / -1;
         }
         
@@ -377,7 +377,7 @@
             max-height: 13.5em;
         }
         
-        div#damagContainer {
+        div#damageTable.meleeContainer {
             max-height: 43.3em;
             overflow-y: scroll;
             display: grid;
@@ -397,7 +397,6 @@
         input.inputs,
         input#inputComboRepeat {
             height: 84%;
-            width: 4.4em;
             background-color: rgba(211, 211, 211, 0.37);
             color: rgb(6, 6, 24);
         }
@@ -709,11 +708,11 @@
             align-items: start;
         }
         
-        div#damageContainer {
+        div#damageTable {
             overflow: auto;
             grid-area: 6 / 1 / 7 / auto;
             gap: .6em;
-            max-height: 40em;
+            max-height: 43em;
         }
         
         h1.damageHeader {
@@ -759,7 +758,7 @@
         }
         
         label {
-            min-width: max-content;
+            /* min-width: max-content; */
         }
         
         div#divMR {
@@ -996,6 +995,8 @@
         section#section1>div#raw:nth-child(n+1) {
             width: 100%;
         }
+        
+        select#ElderEssence {}
         
         #raw>div:nth-child(30) {
             grid-column-start: 5;
