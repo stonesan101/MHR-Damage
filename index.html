@@ -691,19 +691,21 @@
           Table</button>
         </div>
         <div id='forButtonSelect'>
-            <div><label for='pierceAdjust'>Pierce Dmg Adjust</label><select id='pierceAdjust' name='pierceAdjust' class='classSpecific LightBowGun HeavyBowGun' onchange='DataCompile()'>
+            <div><label class='classSpecific LightBowGun HeavyBowGun' for='pierceAdjust'>Pierce Dmg Adjust</label><select id='pierceAdjust' name='pierceAdjust' class='classSpecific LightBowGun HeavyBowGun' onchange='DataCompile()'>
             <option value=[1,1]>Max Deeps</option>
             <option value=[0.90,0.72]>Legendary</option>
             <option value=[0.79,0.6428]>SpeedRun</option>
             <option value=[0.70,0.57]>Average</option>
             <option value=[0.60,0.5]>Casual</option>
           </select></div>
-            <div><label for='spareAdjust'>Spare Shot Adjust</label><select id='spareAdjust' name='spareAdjust' class='classSpecific LightBowGun HeavyBowGun' onchange='DataCompile()'>
+            <div><label class='classSpecific LightBowGun HeavyBowGun' for='spareAdjust'>Spare Shot Adjust</label><select id='spareAdjust' name='spareAdjust' class='classSpecific LightBowGun HeavyBowGun' onchange='DataCompile()'>
             <option value=0>---</option>
             <option value=-5>-5%</option>
             <option value=5>+5%</option>
             <option value=10>+10%</option>
           </select></div>
+            <button type='button' aria-pressed='false' class='gray toggle classSpecific GreatSword' id='StrongarmStance' onclick='DataCompile()'> Strongarm
+          Stance</button>
         </div>
         <div id='sharpnessContainer'>
             <div class='sharpness' id='red' style='background-color:red; border-style: none;'></div>
