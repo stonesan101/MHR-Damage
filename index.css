@@ -31,8 +31,7 @@
             section#section1.contain {
                 min-height: max-content;
                 /* max-height: 200vh; */
-                min-width: max-content;
-                width: 100vw;
+                min-width: fit-content;
                 /* justify-self: start; */
                 /* justify-content: start; */
             }
