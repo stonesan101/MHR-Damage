@@ -47,9 +47,6 @@
                 top: .58rem;
                 position: relative;
             }
-            * {
-                /* font-size: 12px; */
-            }
         }
         
         @media only screen and (min-width: 1200px) {
@@ -262,14 +259,12 @@
             grid-template-columns: 7em 1em;
         }
         
-        div {}
-        
         section#section1.contain {
             align-items: start;
             align-content: start;
             /* grid-auto-rows: 2.8em 10em 10.2em; */
             grid-template-columns: repeat(5, 1fr);
-            grid-area: 1 //1/2;;;;;;;;;;;
+            grid-area: 1 /1/2;
         }
         
         div#BowGunId,
@@ -762,7 +757,7 @@
         }
         
         label {
-            /* min-width: max-content; */
+            min-width: max-content;
         }
         
         div#divMR {
@@ -879,11 +874,6 @@
             grid-template-columns: repeat(3, 1fr);
             /* width: 75%; */
             /* justify-self: center; */
-        }
-        
-        div#unique {
-            /* grid-area: 1 / 5 / 1 / 6; */
-            /* grid-template-columns: 1fr 1fr; */
         }
         
         div#raw.contain {
@@ -1013,8 +1003,6 @@
         section#section1>div#raw:nth-child(n+1) {
             width: 100%;
         }
-        
-        select#ElderEssence {}
         
         #raw>div:nth-child(30) {
             grid-column-start: 5;
