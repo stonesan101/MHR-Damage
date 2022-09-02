@@ -11,7 +11,7 @@
             select,
             label,
             * {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             div#license {
                 display: grid;
@@ -785,11 +785,15 @@
         * {
             border-spacing: 0px;
             text-align: center;
-            font-size: 99%;
             border-color: rgb(77, 67, 69);
             color: white;
             box-sizing: border-box;
             /* font-size: revert; */
+        }
+        
+        label {
+            min-width: max-content;
+            font-size: 1.05em;
         }
         
         #monTable>tr:nth-child(1) {
@@ -864,8 +868,8 @@
         }
         
         div#unique {
-            grid-area: 1 / 5 / 1 / 6;
-            grid-template-columns: 1fr 1fr;
+            /* grid-area: 1 / 5 / 1 / 6; */
+            /* grid-template-columns: 1fr 1fr; */
         }
         
         div#raw.contain {
@@ -1273,8 +1277,9 @@
         
         div#section1-4 {
             display: grid;
-            grid-area: 11/1/11/-1;
+            grid-area: 11/1/12/6;
             /* max-width: fit-content; */
+            grid-template-columns: repeat(5, 1fr);
             justify-content: center;
         }
         
@@ -1282,9 +1287,9 @@
         div#section1-4>div#unique.LightBowGun,
         div#section1-4>div#unique.ChargeBlade,
         div#section1-4>div#unique.LongSword {
-            grid-area: 1/6/2/6;
+            grid-area: 1/4/2/6;
             grid-template-columns: repeat(2, 1fr);
-            min-width: 25em;
+            min-width: 16em;
         }
         
         div#section1-4>div#unique.HeavyBowGun,
@@ -1293,7 +1298,6 @@
         div#section1-4>div#unique.InsectGlaive {
             grid-area: 1/4/2/5;
             grid-template-columns: repeat(1, 1fr);
-            min-width: 8vw
         }
         
         div#section1-4>div#unique.Gunlance,
@@ -1304,20 +1308,18 @@
         div#section1-4>div#unique.SwordNShield {
             display: none;
         }
-        
-        div#section1-4>div#dango.HeavyBowGun {
-            grid-area: 1/1/2/7;
-            grid-template-columns: repeat(5, 1fr);
-            min-width: 40vw
-        }
+        /* div#section1-4>div#dango.HeavyBowGun { */
+        /* grid-area: 1/1/2/7; */
+        /* grid-template-columns: repeat(5, 1fr); */
+        /* } */
         
         div#section1-4>div#dango.Gunlance,
         div#section1-4>div#dango.Bow,
         div#section1-4>div#dango.LightBowGun,
         div#section1-4>div#dango.ChargeBlade {
-            grid-area: 1/1/2/6;
+            grid-area: 1/1/2/4;
+            display: grid;
             grid-template-columns: repeat(3, 1fr);
-            min-width: 38em;
         }
         
         div#section1-4>div#dango.SwordNShield,
@@ -1325,7 +1327,6 @@
         div#section1-4>div#dango.Hammer {
             grid-area: 1/2/2/5;
             grid-template-columns: repeat(2, 1fr);
-            min-width: 16vw
         }
         
         div#section1-4>div#dango.DualBlades,
@@ -1336,5 +1337,4 @@
         div#section1-4>div#dango.InsectGlaive {
             grid-area: 1/2/2/4;
             grid-template-columns: repeat(2, 1fr);
-            min-width: 16vw
         }

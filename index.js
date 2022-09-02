@@ -480,9 +480,7 @@ function initialStats(power) {
 
     power.getSkills = power.getSkills.filter(isUnique);
     $(power.getSkills).each(function() {
-        // if ($(`#${this}`).css('display') !== 'none' && document.getElementById(this).selectedIndex > 0) {
         skills.push(info.skills[this][document.getElementById(this).selectedIndex]);
-        // }
     });
 
     getStats(power, skills);
