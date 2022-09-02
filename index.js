@@ -713,7 +713,7 @@ function GetRemainingSkills(power) {
             power.baseRaw = ~~(power.baseRaw * 1.075);
         }
     }
-    if ((power.type === 'IgnoreHZV' && weaponType.value === lbg) || weaponType.value === cb) {
+    if ((power.type === 'IgnoreHZV' && (weaponType.value === lbg) || weaponType.value === cb)) {
         power.augEFR *= info.skills.Bombardier[Bombardier.selectedIndex][1];
         power.augPRM *= info.skills.Bombardier[Bombardier.selectedIndex][0];
 
@@ -730,7 +730,7 @@ function GetRemainingSkills(power) {
             getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() == 'Element Exploit' && getHZ()[lower(power.eleType)] >= 25 && lower(power.eleType) !== 'none' ?
             1.15 :
             1;
-        power.PEM *= getHZ()[lower(power.eleType)] >= 20 && lower(power.eleType) !== 'none' ? info.skills.ElementalExploit[ElementalExploit.selectedIndex] : 1;
+        power.PEM *= getHZ()[lower(power.eleType)] >= 20 && lower(power.eleType) !== 'none' && ElementalExploit.selectedIndex > 0 ? info.skills.ElementalExploit[ElementalExploit.selectedIndex] : 1;
     }
 
     // applies Bludgeoner to Base raw depending on sharpness and selectedIndex
@@ -795,7 +795,7 @@ function DamageCalculations(power) {
 
     if (Object.prototype.hasOwnProperty.call(power, 'NoEleBuff') && power.NoEleBuff === true) {
         [power.ele, power.eleNon, power.efe, power.eleCrit] = [power.baseEle, power.baseEle, power.baseEle, power.baseEle];
-    } else if (power.Ele === false || power.eleType === 'None') {
+    } else if (power.Ele === false || (power.eleType === 'None' && !/BowGun/.test(weaponType.value))) {
         [power.ele, power.eleNon, power.efe, power.eleCrit] = [0, 0, 0, 0];
     } else {
         power.eleAmmo = /BowGun/.test($('#dropWeaponType').val()) && power.eleType !== 'None' ? 1 + power.raw / 100 : 1;
