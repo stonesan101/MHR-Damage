@@ -404,7 +404,7 @@ function addDependantSkills(power) {
     }
     // applies GreatSwords Charge Level Bonus
     const regex = new RegExp(/Charged Slash|Rising Slash|Wide Slash|Strong Charged Slash|True Charged Slash|Rage Slash/);
-    if (regex.test(power.attackName) && $(StrongarmStance).hasClass('blue')) {
+    if (regex.test(power.attackName) && $(StrongarmStance)[0].selectedIndex > 0) {
         power.PRM *= info.skills.StrongarmStance[power.attackName.match(regex)[0]][0];
         power.PEM *= info.skills.StrongarmStance[power.attackName.match(regex)[0]][1];
     }
@@ -451,7 +451,7 @@ function initialStats(power) {
     1;
     const skills = [];
     $('.skillButton:not(button#ProtectivePolish)').each(function() {
-        if ($(this).hasClass('blue') && this.id !== ('CriticalFirePower' && 'StrongarmStance' && 'Qurious')) {
+        if ($(this).hasClass('blue') && this.id !== 'Qurious') {
             skills.push(JSON.parse(this.value));
         }
     });
@@ -468,7 +468,7 @@ function initialStats(power) {
             break;
     }
     // adds agitator to getSkills if enraged
-    [...power.getSkills] = info.types[power.skillType].filter(skill => $(`#${skill}`).css('display') !== 'none' && document.getElementById(skill).selectedIndex > 0);
+    [...power.getSkills] = info.types[power.skillType].filter(skill => $(`#${skill}`).css('display') !== 'none' && document.getElementById(skill).selectedIndex > 0 && document.getElementById(skill).id !== ('CriticalFirePower' && 'StrongarmStance'));
     enrageDisplay.textContent = `${~~(getEnrage() * 100)}%`;
     if ($('#dropEnraged').val() === 'Enraged') {
         power.getSkills.push('Agitator');
@@ -683,7 +683,7 @@ function GetRemainingSkills(power) {
             power.augEFR *= info.skills.Bombardier[Bombardier.selectedIndex][power.attackName.match('Sticky|Wyvern')[0]][1];
             power.augPRM *= info.skills.Bombardier[Bombardier.selectedIndex][power.attackName.match('Sticky|Wyvern')[0]][0];
         }
-        if (dropWeaponType.value === lbg && /Pierce|Spread|Normal/.test(power.attackName) && $(CriticalFirePower).hasClass('blue')) {
+        if (dropWeaponType.value === lbg && /Pierce|Spread|Normal/.test(power.attackName) && $(CriticalFirePower)[0].selectedIndex > 0) {
             if (/Normal/.test(power.attackName)) {
                 power.PRM *= 1.3;
             } else if (/Spread/.test(power.attackName)) {
@@ -1328,7 +1328,7 @@ function calculateAmmoFrames(power) {
                     (info.skills.BowgunBarrel[BowgunBarrel.selectedIndex].Silencer > 0 ?
                         TuneUp.selectedIndex + info.skills.BowgunBarrel[BowgunBarrel.selectedIndex].Silencer :
                         0) -
-                    ($(CriticalFirePower).hasClass('blue') ? 2 : 0),
+                    ($(CriticalFirePower)[0].selectedIndex > 0 ? 2 : 0),
                 ),
             )
         ];
