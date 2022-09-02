@@ -7,12 +7,12 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta name="MHR-Damage Calculator" content="Monster Hunter Rise Sunbreak Damage Calculations. A site designed to be capable of answering any optimization questions someone might have. Featuring many functions you cant find anywhere else!">
     <meta Cache-Control='no-cache'>
-    <!--<link rel='prefetch' href='/MHR-Damage/json/types.json' as='fetch' />-->
-    <!--<link rel='prefetch' href='/MHR-Damage/json/GreatSword.json' as='fetch' />-->
-    <!--<link rel='prefetch' href='/MHR-Damage/json/quest.json' as='fetch' />-->
-    <!--<link rel='prefetch' href='/MHR-Damage/json/rampage.json' as='fetch' />-->
-    <!--<link rel='prefetch' href='/MHR-Damage/json/monster.json' as='fetch' />-->
-    <title>Stone's MH Rise Sunbreak Damage Calculator</title>
+    <!--<link rel='prefetch' href='/json/types.json' as='fetch' />-->
+    <!--<link rel='prefetch' href='/json/GreatSword.json' as='fetch' />-->
+    <!--<link rel='prefetch' href='/json/quest.json' as='fetch' />-->
+    <!--<link rel='prefetch' href='/json/rampage.json' as='fetch' />-->
+    <!--<link rel='prefetch' href='/json/monster.json' as='fetch' />-->
+    <title>Stone's MHR Sunbreak Damage Calculator</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src='https://www.googletagmanager.com/gtag/js?id=G-CGQJSRYWE1'></script>
     <script>
@@ -158,13 +158,13 @@
             <h1>Raw</h1>
             <div style='grid-area:1/1/1/-1; height: 100%; display:grid; justify-content:end; align-content:center; align-items:center'>
                 <label for='redScroll' class='scroll vis' style='font-size:1.1rem'>Red</label>
-                <img id='redScroll' class='scroll vis' src='/MHR-Damage/red.webp' style='grid-area: 1/5;height: 35%;'>
+                <img id='redScroll' class='scroll vis' src='/red.webp' style='grid-area: 1/5;height: 35%;'>
                 <label for='redNon' class='scroll invis' style='font-size:1.1rem'>Red</label>
-                <img id='redNon' class='scroll invis' src='/MHR-Damage/rednon.webp' style='grid-area: 1/5;height: 33%;'>
+                <img id='redNon' class='scroll invis' src='/rednon.webp' style='grid-area: 1/5;height: 33%;'>
                 <label class='scroll invis' for='blueScroll' style='grid-area: 1/6; font-size:1.1rem'>Blue</label>
-                <img class='scroll invis' id='blueScroll' src='/MHR-Damage/blue.webp' style='grid-area: 1/7;height: 35%;'>
+                <img class='scroll invis' id='blueScroll' src='/blue.webp' style='grid-area: 1/7;height: 35%;'>
                 <label class='scroll vis' for='blueNon' style='grid-area: 1/6; font-size:1.1rem'>Blue</label>
-                <img id='blueNon' class='scroll vis' src='/MHR-Damage/bluenon.webp' style='grid-area: 1/7;height: 33%;'>
+                <img id='blueNon' class='scroll vis' src='/bluenon.webp' style='grid-area: 1/7;height: 33%;'>
             </div>
             <div><label for='AttackBoost'>Attack Boost</label><select id='AttackBoost' name='Attack Boost' class='skill'>
             <option>----</option>
@@ -575,7 +575,8 @@
               </select></div>
                 </div>
                 <div class='contain' id='unique'>
-                    <h1 class='classSpecific Bow ChargeBlade InsectGlaive LightBowGun LongSword' id='weaponId' selectedindex='0' style='display: none;'>GreatSword</h1>
+                    <h1 class='classSpecific Bow ChargeBlade InsectGlaive LightBowGun LongSword GreatSword' id='weaponId' selectedindex='0' style='display: none;'>
+                        GreatSword</h1>
                     <div style='display: none;'><label class='classSpecific InsectGlaive' for='Kinsect Buff' selectedindex='0' style='display: none;'>Kinsect
                 Buff</label><select id='KinsectBuff' name='Kinsect Buff' class='skill classSpecific InsectGlaive' selectedindex='0' style='display: none;'>
                 <option>----</option>
@@ -608,6 +609,10 @@
                 <option></option>
               </select></div>
                     <div style='display: none;'><label for='impShieldCharge'>Shield Charge</label><select id='impShieldCharge' name='impShieldCharge' class='skill classSpecific ChargeBlade' selectedindex='0' style='display: none;'>
+                <option>----</option>
+                <option></option>
+              </select></div>
+                    <div style='display: none;'><label for='StrongarmStance'>Strongarm Stance</label><select id='StrongarmStance' name='StrongarmStance' class='skill classSpecific GreatSword' selectedindex='0' style='display: none;'>
                 <option>----</option>
                 <option></option>
               </select></div>
@@ -691,21 +696,19 @@
           Table</button>
         </div>
         <div id='forButtonSelect'>
-            <div><label class='classSpecific LightBowGun HeavyBowGun' for='pierceAdjust'>Pierce Dmg Adjust</label><select id='pierceAdjust' name='pierceAdjust' class='classSpecific LightBowGun HeavyBowGun' onchange='DataCompile()'>
+            <div><label for='pierceAdjust'>Pierce Dmg Adjust</label><select id='pierceAdjust' name='pierceAdjust' class='classSpecific LightBowGun HeavyBowGun' onchange='DataCompile()'>
             <option value=[1,1]>Max Deeps</option>
             <option value=[0.90,0.72]>Legendary</option>
             <option value=[0.79,0.6428]>SpeedRun</option>
             <option value=[0.70,0.57]>Average</option>
             <option value=[0.60,0.5]>Casual</option>
           </select></div>
-            <div><label class='classSpecific LightBowGun HeavyBowGun' for='spareAdjust'>Spare Shot Adjust</label><select id='spareAdjust' name='spareAdjust' class='classSpecific LightBowGun HeavyBowGun' onchange='DataCompile()'>
+            <div><label for='spareAdjust'>Spare Shot Adjust</label><select id='spareAdjust' name='spareAdjust' class='classSpecific LightBowGun HeavyBowGun' onchange='DataCompile()'>
             <option value=0>---</option>
             <option value=-5>-5%</option>
             <option value=5>+5%</option>
             <option value=10>+10%</option>
           </select></div>
-            <button type='button' aria-pressed='false' class='gray toggle classSpecific GreatSword' id='StrongarmStance' onclick='DataCompile()'> Strongarm
-          Stance</button>
         </div>
         <div id='sharpnessContainer'>
             <div class='sharpness' id='red' style='background-color:red; border-style: none;'></div>
@@ -753,9 +756,9 @@
     </div>
 </body>
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
-<link href='/MHR-Damage/index.js'>
-<script src='/MHR-Damage/index.js'></script>
-<link rel='stylesheet' type='text/css' href='/MHR-Damage/index.css'>
+<link href='/index.js'>
+<script src='/index.js'></script>
+<link rel='stylesheet' type='text/css' href='/index.css'>
 <link rel='preconnect' href='https://fonts.googleapis.com'>
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
 <link href='https://fonts.googleapis.com/css2?family=Play&display=swap' rel='stylesheet'>
