@@ -259,8 +259,8 @@ function MeleeDPS(e) {
             `${formatNumbers(~~(power.eleNon * sharpnessModifier.PEM))} / ${formatNumbers(~~(power.eleCrit * sharpnessModifier.PEM))}`,
 
             `${formatNumbers((~~(power.rawNon * sharpnessModifier.PRM) + ~~(power.eleNon * sharpnessModifier.PEM)) * (power.ticsPer + 1))} / ${formatNumbers(
-    (~~(power.rawCrit * sharpnessModifier.PRM) + ~~(power.eleCrit * sharpnessModifier.PEM)) * (power.ticsPer + 1),
-   )}`,
+                (~~(power.rawCrit * sharpnessModifier.PRM) + ~~(power.eleCrit * sharpnessModifier.PEM)) * (power.ticsPer + 1),
+            )}`,
 
             formatNumbers(~~(power.efr * sharpnessModifier.PRM)),
 
@@ -1333,10 +1333,12 @@ $(document).on('change', function(e) {
     }
 });
 $(document).on('mousedown', function(e) {
-    if ($(e.target).hasClass('dec')) {
-        DecreaseComboCount(e);
-    } else if ($(e.target).hasClass('inc')) {
-        IncreaseComboCount(e);
+    if ($(e.target).hasClass('inputButton')) {
+        if ($(e.target).hasClass('dec')) {
+            DecreaseComboCount(e);
+        } else if ($(e.target).hasClass('inc')) {
+            IncreaseComboCount(e);
+        }
     }
 });
 
@@ -1742,7 +1744,7 @@ function saveState() {
     $('.inputs').each(function() {
         ugh[2].push(this.value);
     });
-    ugh[3].push(comboTracker[0]);
+    ugh[3].push(comboTracker);
     $('.scroll').each(function() {
         ugh[4].push(this.className);
     });
@@ -1755,7 +1757,7 @@ function saveState() {
     return ugh;
 }
 
-function loadState(ugh, _e) {
+function loadState(ugh, e) {
     ugh = JSON.parse(ugh);
     $('.skillButton').each(function() {
         if ($(this).hasClass('blue')) {
@@ -1774,12 +1776,12 @@ function loadState(ugh, _e) {
 
     ugh2[3].selectedIndex = ugh[0][3];
     RampageSelect();
-    ugh2[70].selectedIndex = ugh[0][70];
+    ugh2[80].selectedIndex = ugh[0][80];
     QuestSelect();
     PartSelect();
     HealthSelect();
     $('select').each(function(index) {
-        if (index !== (0 || 3 || 70)) {
+        if (index !== (0 || 3 || 80)) {
             this.selectedIndex = ugh[0][index];
         }
     });
@@ -1795,8 +1797,10 @@ function loadState(ugh, _e) {
     $('.scroll').each(function(index) {
         this.className = ugh[4][index];
     });
+    info.skills.MailofHellfire = $(redScroll).hasClass('invis') ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
+    info.skills.Dereliction = $(redScroll).hasClass('invis') ? info.skills.DerelictionSourse.blue : info.skills.DerelictionSourse.red;
 
-    let comboTracker = ugh[3];
+    [...comboTracker] = ugh[3][0];
     $('.inputs:not(".inputComboRepeat")').each(function() {
         if (this.value > 0) {
             let difference = $('.inputs')[this.id].value - TimesUsed(this.id);
@@ -1810,11 +1814,14 @@ function loadState(ugh, _e) {
             }
         }
     });
+    DataCompile(e);
     UpdateComboDisplay();
     setTimeout(() => {
         $('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
     }, 2000);
     $('input#taWikiSetBuilder')[0].value = 'Build Succsefully Loaded';
+
+
 }
 
 function resetSkillDescription() {
