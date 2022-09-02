@@ -208,7 +208,7 @@ function MeleeDPS(e) {
         }
         power = GetRemainingSkills(power);
         power = DamageCalculations(power);
-        if (comboTracker.some(x => x == thisIndex)) {
+        if (comboTracker.includes(thisIndex)) {
             /* goes through each color sharpness and filters the recorded attacks for the number of times this current attack was used
              * then applies the given sharpness modifier to the damage if damage type is sever or blunt then multiplies by the times used
              * saves results in the comboDamage var and += the totals for every sharpness of every attack
@@ -430,7 +430,7 @@ function addDependantSkills(power) {
 }
 
 function getEnrage() {
-    return $('#dropEnraged').val() === 'Enraged' ? info.monster[document.getElementById('dropMonster').selectedIndex]['Player Dmg'] :
+    return $('#dropEnraged').val() === 'Enraged' ? Object.values(info.monster.enrage).filter(x => x['Large Monster'] === dropMonster.value)[0]['Player Dmg'] :
         1;
 }
 
