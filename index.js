@@ -208,7 +208,7 @@ function MeleeDPS(e) {
         }
         power = GetRemainingSkills(power);
         power = DamageCalculations(power);
-        if (comboTracker.includes(thisIndex)) {
+        if (comboTracker.includes(thisIndex.toString())) {
             /* goes through each color sharpness and filters the recorded attacks for the number of times this current attack was used
              * then applies the given sharpness modifier to the damage if damage type is sever or blunt then multiplies by the times used
              * saves results in the comboDamage var and += the totals for every sharpness of every attack
@@ -1539,25 +1539,17 @@ function WeaponSelect() {
 }
 
 function RampageSelect() {
-    // if (weaponType.value === 'Bow') {
-    // $(BowCoating).empty();
-    // getWeapon().coatings.forEach((coating, i) => {
-    // info.skills.BowCoating[i] = info.skills[coating];
-    // // $(BowCoating).append($('<option></option>').attr('value', info.skills[coating]).text(coating));
-    // });
-    // }
     $(weaponRampage.children).hide();
     $(weaponRampage0).show();
     if (getWeapon().rampageSlots !== 0) {
         const usableDecos = [];
-        $(Object.keys(info.rampage.rampageDecos)).each((_index, element) => {
-            // element == this
-            const deco = element;
+        $(Object.keys(info.rampage.rampageDecos)).each((_index, deco) => {
             if (+deco.slice(-1) <= getWeapon().rampageSlots + (+$('output.rampageAug').val() > 0 ? 1 : 0)) {
                 usableDecos.push(info.rampage.rampageDecos[deco]);
             }
         });
         PopulateDropDowns(usableDecos, weaponRampage0);
+        return;
     } else {
         $(weaponRampage.children).html('');
         $(weaponRampage.children).hide();
@@ -1567,10 +1559,12 @@ function RampageSelect() {
                 $(weaponRampage.children[index]).show();
                 PopulateDropDowns(Object.values(this), weaponRampage.children[index]);
             });
+            return;
         } else {
             $(getWeapon().rampage).each(function(_index, _rampageSkill) {
                 $(weaponRampage0).append($('<option></option>').attr('value', info.rampage.keys2[this]).text(info.rampage.keys2[this]));
             });
+            return;
         }
     }
 }
@@ -1678,23 +1672,7 @@ $('#taWikiSetBuilder').on('mousedown', e => {
 function isUnique(value, index, self) {
     return self.indexOf(value) === index;
 }
-// $(document).ready(function () {
-// var touch = $('#resp-menu');
-// var menu = $('.menu');
-//
-// $(touch).on('click', function (e) {
-// e.preventDefault();
-// menu.slideToggle();
-// });
 
-// $(window).resize(function () {
-// var w = $(window).width();
-// if (w > 767 && menu.is(':hidden')) {
-// menu.removeAttr('style');
-// }
-// });
-// 1;
-// });
 function showMenu() {
     $('.menu').show();
     document.querySelector('#MR').children.length > 0 ? $('#divMR').show() : $('#divMR').hide();
