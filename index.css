@@ -265,7 +265,6 @@
             align-content: start;
             /* grid-auto-rows: 2.8em 10em 10.2em; */
             grid-template-columns: repeat(5, 1fr);
-            grid-area: 1 /1/2;
         }
         
         div#BowGunId,
