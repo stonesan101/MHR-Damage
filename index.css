@@ -31,7 +31,8 @@
             section#section1.contain {
                 min-height: max-content;
                 /* max-height: 200vh; */
-                min-width: fit-content;
+                min-width: max-content;
+                width: 100vw;
                 /* justify-self: start; */
                 /* justify-content: start; */
             }
@@ -51,7 +52,7 @@
         
         @media only screen and (min-width: 1200px) {
             section#section2 {
-                grid-area: 1 / 3 / 2 / 4;
+                grid-area: 2 / 3 / 3 / 4;
                 min-height: 60em;
                 min-width: 48em;
                 /* max-height: 65em; */
@@ -70,7 +71,7 @@
                 min-height: max-content;
                 max-height: 65em;
                 max-width: 50vw;
-                grid-area: 2/1/4/2;
+                grid-area: 2/1/3/2;
                 width: 40.5vw;
                 justify-self: start;
                 justify-content: start;
