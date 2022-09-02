@@ -1622,19 +1622,9 @@ const getUsedAttacks = (weapon = weaponType.value) => {
         return {...attacks };
     }
 
-    if (weaponType.value === (lbg || hbg)) {
-        let usableAmmo = [];
-        for (let i = 1; i < getWeapon().usableAmmo.length; i++) {
-            const isUsed = Object.values(getWeapon().usableAmmo)[i];
-            if (weaponType.value === lbg && getWeapon().isRapidFire.some(x => x === i && x !== 0)) {
-                usableAmmo = usableAmmo.concat(info.ammo.keys[i - 1].slice(info.ammo.keys[i - 1].length / 2));
-            } else if (isUsed > 0) {
-                usableAmmo = usableAmmo.concat(
-                    info.ammo.keys[i - 1].slice(0, info.ammo.keys[i - 1].some(x => /RF\+/.test(x)) ? info.ammo.keys[i - 1].length / 2 : info.ammo.keys[i - 1].length),
-                );
-            }
-        }
-        usableAmmo = usableAmmo.concat(Object.keys(info.ammo).filter(x => (weaponType.value === lbg ? /lbg|Wyvernblast/.test(x) : /hbg|Wyverns/.test(x))));
+    if (weaponType.value === lbg || weaponType.value === hbg) {
+        let usableAmmo = info.ammo.keys.map((x, index) => x.filter(x => weaponType.value === lbg && getWeapon().isRapidFire.includes(index + 1) ? /RF\+/.test(x) : getWeapon().usableAmmo[index + 1] > 0 && !/RF\+/.test(x))).toString().split(/,+/);
+        usableAmmo = usableAmmo.concat(Object.keys(info.ammo).filter(x => (weaponType.value === lbg ? /lbg|Wyvernblast(?! before)/.test(x) : /hbg|Wyverns/.test(x))));
         attacks = Object.fromEntries(Object.entries(info.ammo).filter(skill => TimesUsed(skill[0], usableAmmo) > 0));
         return {...attacks };
     }

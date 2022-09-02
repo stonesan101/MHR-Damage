@@ -149,7 +149,7 @@
             display: grid;
             grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-area: 1 / 1 / 2 / -1;
-            max-height: max-content;
+            min-height: max-content;
         }
         
         .meleeContainer>#dpsHead,
@@ -724,8 +724,8 @@
         }
         
         h1.damageHeader {
-            position: sticky;
-            top: 0;
+            /* position: sticky; */
+            /* top: 0; */
         }
         
         .b.meleeTable {
@@ -763,6 +763,7 @@
             display: grid;
             align-items: stretch;
             overflow: visible;
+            max-height: 3.35em;
         }
         
         label {
