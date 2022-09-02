@@ -2809,14 +2809,20 @@
         "PEM": 1,
         "aff": 0
     }],
-    "ElementalExploit": [
-        1,
-        1.1,
-        1.125,
-        1.15
+    "ElementalExploit": [{
+            "PEM": 1
+        },
+        {
+            "PEM": 1.1
+        },
+        {
+            "PEM": 1.125
+        },
+        {
+            "PEM": 1.15
+        }
     ],
     "ElementalReload": [{
-
             "BRM": 1,
             "BR": 0,
             "PRM": 1,
@@ -2836,50 +2842,42 @@
         }
     ],
     "BowgunBarrel": [{
-
             "Power": 1,
             "Silencer": 0,
             "reload": 0
         },
         {
-
             "Power": 1.05,
             "Silencer": 0,
             "reload": 0
         },
         {
-
             "Power": 1.125,
             "Silencer": 0,
             "reload": 0
         },
         {
-
             "Power": 1,
             "Silencer": 1,
             "reload": 1
         },
         {
-
             "Power": 1,
             "Silencer": 0,
             "reload": 0
         }
     ],
     "Barrellbg": [{
-
             "Power": 1,
             "Silencer": 0,
             "reload": 0
         },
         {
-
             "Power": 1.05,
             "Silencer": 0,
             "reload": 0
         },
         {
-
             "Power": 1,
             "Silencer": 1,
             "reload": 1
@@ -2891,19 +2889,16 @@
         }
     ],
     "Barrelhbg": [{
-
             "Power": 1,
             "Silencer": 0,
             "reload": 0
         },
         {
-
             "Power": 1.125,
             "Silencer": 0,
             "reload": 0
         },
         {
-
             "Power": 1,
             "Silencer": 0,
             "reload": 0
@@ -2966,22 +2961,10 @@
         }
     ],
     "FeralDemonMode": [{
-            "BRM": 1,
-            "BR": 0,
-            "PRM": 1,
-            "BEM": 1,
-            "BE": 0,
-            "PEM": 1,
-            "aff": 0
+            "BRM": 1
         },
         {
-            "BRM": 1.2,
-            "BR": 0,
-            "PRM": 1,
-            "BEM": 1,
-            "BE": 0,
-            "PEM": 1,
-            "aff": 0
+            "BRM": 1.2
         }
     ],
     "UpperCrit": [{
@@ -3065,5 +3048,146 @@
             1.3,
             1.25
         ]
-    }
+    },
+    "bombardier": {
+        "ChargeBlade": [
+            [
+                1,
+                1
+            ],
+            [
+                1.1,
+                1.15
+            ],
+            [
+                1.15,
+                1.15
+            ],
+            [
+                1.2,
+                1.16
+            ],
+            [
+                1.25,
+                1.17
+            ]
+        ],
+        "Gunlance": [
+            [
+                1,
+                1
+            ],
+            [
+                1.05,
+                1.05
+            ],
+            [
+                1.1,
+                1.1
+            ],
+            [
+                1.15,
+                1.11
+            ],
+            [
+                1.2,
+                1.12
+            ]
+        ],
+        "LightBowGun": [
+            [
+                1,
+                1,
+                1
+            ],
+            [
+                1.1,
+                1.1,
+                1
+            ],
+            [
+                1.1,
+                1.1,
+                1
+            ],
+            [
+                1.2,
+                1.16,
+                1
+            ],
+            [
+                1.25,
+                1.17,
+                1.1
+            ]
+        ],
+        "HeavyBowGun": [{
+                "Wyvern": [
+                    1,
+                    1,
+                    1
+                ],
+                "Sticky": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "Wyvern": [
+                    1.1,
+                    1.1,
+                    1
+                ],
+                "Sticky": [
+                    1.1,
+                    1.1,
+                    1
+                ]
+            },
+            {
+                "Wyvern": [
+                    1.15,
+                    1.15,
+                    1
+                ],
+                "Sticky": [
+                    1.1,
+                    1.1,
+                    1
+                ]
+            },
+            {
+                "Wyvern": [
+                    1.2,
+                    1.16,
+                    1
+                ],
+                "Sticky": [
+                    1.2,
+                    1.16,
+                    1
+                ]
+            },
+            {
+                "Wyvern": [
+                    1.25,
+                    1.17,
+                    1.1
+                ],
+                "Sticky": [
+                    1.25,
+                    1.17,
+                    1.1
+                ]
+            }
+        ]
+    },
+    "DemonMode": [{
+            "BEM": 1
+        },
+        {
+            "BEM": 1.35
+        }
+    ]
 }
