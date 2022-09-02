@@ -445,7 +445,7 @@ function initialStats(power) {
     power.BEM = 1;
     power.BE = 0;
     power.PEM = 1;
-    power.rawHZV = getHZ()[power.type];
+    power.rawHZV = getHZ()[lower(power.type)];
     // applies Demon Ammo if selected and damage type is sever or blunt
     power.PRM *= $(DemonAmmo).hasClass('blue') && /(Sever|Blunt)/.test(power.type) ? 1.1 : 1;
     1;
@@ -492,7 +492,7 @@ function initialStats(power) {
     // adds Weakness Exploit
     power.aff = power.rawHZV >= 45 ? power.aff + JSON.parse($('#WeaknessExploit').val()) : power.aff;
     power.aff = Math.min(power.aff, 100) / 100;
-    power.rawHZV = getHZ()[power.type] !== undefined ? power.rawHZV : 100;
+    power.rawHZV = getHZ()[lower(power.type)] !== undefined ? power.rawHZV : 100;
     return {...power };
 }
 
@@ -735,7 +735,7 @@ function GetRemainingSkills(power) {
     [sharpnessModifier.PRM, sharpnessModifier.PEM] =
     power.noSharpMod === false && /sever|blunt/.test(lower(power.type)) ? [JSON.parse(Sharpness.value).PRM, JSON.parse(Sharpness.value).PEM] : [1, 1];
     // adds minds eye
-    power.PRM *= ~~(25 / sharpnessModifier.PRM) >= getHZ()[power.type] ? JSON.parse(document.getElementById(['MindsEye']).value).PRM : 1;
+    power.PRM *= ~~(25 / sharpnessModifier.PRM) >= getHZ()[lower(power.type)] ? info.skills.MindsEye[MindsEye.selectedIndex].PRM : 1;
 
     /*
      * Brutal Strike
