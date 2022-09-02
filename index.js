@@ -730,7 +730,7 @@ function GetRemainingSkills(power) {
             getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() == 'Element Exploit' && getHZ()[lower(power.eleType)] >= 25 && lower(power.eleType) !== 'none' ?
             1.15 :
             1;
-        power.PEM *= getHZ()[lower(power.eleType)] >= 20 && lower(power.eleType) !== 'none' && ElementalExploit.selectedIndex > 0 ? info.skills.ElementalExploit[ElementalExploit.selectedIndex] : 1;
+        power.PEM *= getHZ()[lower(power.eleType)] >= 20 && lower(power.eleType) !== 'none' ? info.skills.ElementalExploit[ElementalExploit.selectedIndex].PEM : 1;
     }
 
     // applies Bludgeoner to Base raw depending on sharpness and selectedIndex
@@ -968,8 +968,8 @@ function BuildDamageTable(myDamage, id, e) {
         ) {
             $(`tbody#${id}Body>tr>td:nth-child(2)`).each(function(index, element) {
                 const cell = document.createElement('td');
-                cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" onclick="DecreaseComboCount()" class="inputButton dec"
-				>&#8681</button><button type="button" aria-pressed="false" id="${index}" onclick="IncreaseComboCount()" class="inputButton inc">&#8679</button><output class="label">${element.textContent}</output>`;
+                cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputButton dec"
+				>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputButton inc">&#8679</button><output class="label">${element.textContent}</output>`;
                 cell.id = `b${index}`;
                 this.replaceWith(cell);
                 $(cell).addClass(`b ${index} inputContainer`);
@@ -1327,19 +1327,32 @@ function TimesUsed(isUsed, arr = comboTracker) {
 // $(document).on('click',function (e) {
 // $(e.target).removeClass('hover')
 // })
-function IncreaseComboCount() {
-    if ($('.inputs')[window.event.target.id].value !== '20') {
-        ++$('.inputs')[window.event.target.id].value;
+$(document).on('change', function(e) {
+    if ($(e.target).hasClass('inputs')) {
+        DataCompile(e);
+    }
+});
+$(document).on('mousedown', function(e) {
+    if ($(e.target).hasClass('dec')) {
+        DecreaseComboCount(e);
+    } else if ($(e.target).hasClass('inc')) {
+        IncreaseComboCount(e);
+    }
+});
+
+function IncreaseComboCount(e) {
+    if (+$('.inputs')[e.target.id].value < 20) {
+        ++$('.inputs')[e.target.id].value;
         DataCompile();
     }
 }
 
-function DecreaseComboCount() {
-    if (window.event.target.id === '0' && $('.inputs')[window.event.target.id].value !== '1') {
-        --$('.inputs')[window.event.target.id].value;
+function DecreaseComboCount(e) {
+    if (e.target.id === '0' && +$('.inputs')[e.target.id].value > 1) {
+        --$('.inputs')[e.target.id].value;
         DataCompile();
-    } else if (window.event.target.id !== '0' && $('.inputs')[window.event.target.id].value !== '0') {
-        --$('.inputs')[window.event.target.id].value;
+    } else if (+e.target.id > 0 && +$('.inputs')[e.target.id].value > 0) {
+        --$('.inputs')[e.target.id].value;
         DataCompile();
     }
 }
