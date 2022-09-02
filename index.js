@@ -564,7 +564,7 @@ function applySharpnessSkills(aff, totalSharp = {...getInitialSharpness() }) {
 }
 
 function getTotalComboHits() {
-    let listOfEachAttack = [].concat(comboTracker);
+    let [...listOfEachAttack] = comboTracker;
     if (comboTracker[0] !== undefined && comboTracker[0] !== null) {
         let comboMulti = $('.inputComboRepeat').val();
         // for each pont in the comboMultiplier input, adds another comboTracker [] to the listOfEachAttack
@@ -1302,7 +1302,6 @@ $('.toggle').on('mousedown', function(e) {
 
 function ToggleAmmoTables() {
     dpsTable.style = dpsTable.style.display !== 'none' ? 'display:none' : "display:''";
-
     ammoTable.style = dpsTable.style.display !== 'none' ? 'display:none' : "display:''";
 }
 
@@ -1342,7 +1341,7 @@ function calculateAmmoFrames(power) {
                     ReloadSpeed.selectedIndex +
                     info.skills.BowgunBarrel[BowgunBarrel.selectedIndex].reload +
                     (BowgunBarrel.selectedIndex === 0 && TuneUp.selectedIndex > 0 ? 1 : 0) -
-                    ($('#ElementalReload').hasClass('blue') ? 2 : 0),
+                    ($('#ElementalReload')[0].selectedIndex > 0 ? 2 : 0),
                 ),
             )
         ];
@@ -1527,9 +1526,16 @@ function WeaponTypeSelect() {
 
 function WeaponSelect() {
     $(dropWeapon).empty();
-    $(info[$(weaponType).val()].weapons).each((index, weapon) => {
-        $('#dropWeapon').append($('<option></option>').attr('value', index).text(weapon.weapon));
-    });
+    if (weaponFilter.checked === true) {
+        const rank10 = Object.entries(info[$(weaponType).val()].weapons).filter(x => info.types[weaponType.value].includes(x[1].weapon));
+        rank10.forEach(element => {
+            $('#dropWeapon').append($('<option></option>').attr('value', element[0]).text(element[1].weapon));
+        });
+    } else {
+        $(info[$(weaponType).val()].weapons).each((index, weapon) => {
+            $('#dropWeapon').append($('<option></option>').attr('value', index).text(weapon.weapon));
+        });
+    }
 }
 
 function RampageSelect() {

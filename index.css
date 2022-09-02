@@ -6,6 +6,9 @@
                 border: none;
                 align-items: baseline;
             }
+            h1>div>label {
+                grid-template-columns: auto auto auto;
+            }
             div,
             input,
             select,
@@ -26,9 +29,9 @@
                 grid-area: 1 / 1 / 2 / 4;
             }
             section#section1.contain {
-                /* min-height: max-content; */
+                min-height: max-content;
                 /* max-height: 200vh; */
-                /* min-width: 200vw; */
+                min-width: fit-content;
                 /* justify-self: start; */
                 /* justify-content: start; */
             }
@@ -60,13 +63,6 @@
             th#dpsHead {
                 max-height: 5em;
             }
-            /* div, */
-            /* input, */
-            /* select, */
-            /* label, */
-            /* * { */
-            /* font-size: 95%; */
-            /* } */
             th {
                 min-height: 1.8em;
             }
@@ -262,6 +258,12 @@
             align-content: start;
         }
         
+        #section1>div:nth-child(2)>div {
+            grid-template-columns: 7em 1em;
+        }
+        
+        div {}
+        
         section#section1.contain {
             align-items: start;
             align-content: start;
@@ -436,9 +438,9 @@
         }
         
         #forButtons {
-            grid-area: 4 / 1 / auto / auto;
-            grid-template-columns: repeat(4, 1fr);
-            display: grid;
+            /* grid-area: 4 / 1 / auto / auto; */
+            /* grid-template-columns: repeat(3, 1fr); */
+            /* display: grid; */
             justify-items: center;
         }
         
@@ -470,11 +472,11 @@
         }
         
         button#resetCombo {
-            grid-area: 1 / 3 / 2 / 3;
+            grid-area: 1 / 4 / 2 / 5;
         }
         
         button#resetSkills {
-            grid-area: 1 / 4 / 2 / 5;
+            grid-area: 1 / 3 / 2 / 4;
         }
         
         button#maxSkills {
@@ -514,10 +516,12 @@
         select#dropMonster,
         #statsTable>tr>th,
         tr>th {
+            min-height: fit-content;
             top: 0px;
             position: sticky;
-            min-height: initial;
+            /* min-height: initial; */
             margin: 0px;
+            height: 1.8em;
             display: grid;
             place-content: center;
             justify-items: stretch;
@@ -788,7 +792,17 @@
             border-color: rgb(77, 67, 69);
             color: white;
             box-sizing: border-box;
-            /* font-size: revert; */
+        }
+        
+        input#weaponFilter {
+            /* grid-area: 1/2/2/3; */
+            /* height: 114%; */
+        }
+        
+        button#Qurious {
+            grid-area: 1/3/2/4;
+            margin-left: 26%;
+            width: max-content;
         }
         
         label {
@@ -1013,6 +1027,10 @@
             background-color: rgba(12, 26, 105, 0.85);
         }
         
+        h1>div>label {
+            width: 75%;
+        }
+        
         #weaponSelect>div:nth-child(4)>label {
             grid-column: 1 / -1;
         }
@@ -1191,6 +1209,10 @@
             width: 11em;
         }
         
+        button#Save\ State {
+            grid-area: 1/1;
+        }
+        
          ::-webkit-scrollbar {
             background-color: blueviolet;
         }
@@ -1215,7 +1237,7 @@
         
         label,
         input {
-            /* max-height: 30px; */
+            max-height: 30px;
             margin: 0px;
             display: grid;
         }
@@ -1283,13 +1305,16 @@
             justify-content: center;
         }
         
+        div#section1-4>div#unique.LongSword {
+            grid-area: 1/3/2/6;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
         div#section1-4>div#unique.Bow,
         div#section1-4>div#unique.LightBowGun,
-        div#section1-4>div#unique.ChargeBlade,
-        div#section1-4>div#unique.LongSword {
+        div#section1-4>div#unique.ChargeBlade {
             grid-area: 1/4/2/6;
             grid-template-columns: repeat(2, 1fr);
-            min-width: 16em;
         }
         
         div#section1-4>div#unique.HeavyBowGun,
@@ -1308,12 +1333,12 @@
         div#section1-4>div#unique.SwordNShield {
             display: none;
         }
-        /* div#section1-4>div#dango.HeavyBowGun { */
-        /* grid-area: 1/1/2/7; */
-        /* grid-template-columns: repeat(5, 1fr); */
-        /* } */
         
-        div#section1-4>div#dango.Gunlance,
+        div#section1-4>div#dango.HeavyBowGun {
+            grid-area: 1/1/2/6;
+            grid-template-columns: repeat(5, 1fr);
+        }
+        
         div#section1-4>div#dango.Bow,
         div#section1-4>div#dango.LightBowGun,
         div#section1-4>div#dango.ChargeBlade {
@@ -1322,19 +1347,26 @@
             grid-template-columns: repeat(3, 1fr);
         }
         
+        div#section1-4>div#dango.DualBlades,
+        div#section1-4>div#dango.Lance,
+        div#section1-4>div#dango.Gunlance,
         div#section1-4>div#dango.SwordNShield,
         div#section1-4>div#dango.HuntingHorn,
         div#section1-4>div#dango.Hammer {
             grid-area: 1/2/2/5;
+            display: grid;
+            grid-template-columns: 32.5% 32.5%;
+            justify-content: center;
+        }
+        
+        div#section1-4>div#dango.LongSword {
+            grid-area: 1/1/2/3;
             grid-template-columns: repeat(2, 1fr);
         }
         
-        div#section1-4>div#dango.DualBlades,
-        div#section1-4>div#dango.Lance,
-        div#section1-4>div#dango.LongSword,
         div#section1-4>div#dango.SwitchAxe,
         div#section1-4>div#dango.GreatSword,
         div#section1-4>div#dango.InsectGlaive {
-            grid-area: 1/2/2/4;
-            grid-template-columns: repeat(2, 1fr);
+            grid-area: 1/2/2/5;
+            grid-template-columns: 32.5% 32.5%;
         }

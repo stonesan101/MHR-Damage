@@ -7,11 +7,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta name="MHR-Damage Calculator" content="Monster Hunter Rise Sunbreak Damage Calculations. A site designed to be capable of answering any optimization questions someone might have. Featuring many functions you cant find anywhere else!">
     <meta Cache-Control='no-cache'>
-    <!--<link rel='prefetch' href='/MHR-Damage/json/types.json' as='fetch' />-->
-    <!--<link rel='prefetch' href='/MHR-Damage/json/GreatSword.json' as='fetch' />-->
-    <!--<link rel='prefetch' href='/MHR-Damage/json/quest.json' as='fetch' />-->
-    <!--<link rel='prefetch' href='/MHR-Damage/json/rampage.json' as='fetch' />-->
-    <!--<link rel='prefetch' href='/MHR-Damage/json/monster.json' as='fetch' />-->
     <title>Stone's MHR Sunbreak Damage Calculator</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src='https://www.googletagmanager.com/gtag/js?id=G-CGQJSRYWE1'></script>
@@ -35,8 +30,10 @@
     </div>
     <section id='section1' class='contain'>
         <h1>Weapon Selection</h1>
-        <div style='grid-area:1/1/1/-1; height: 100%; display:grid; justify-content:start; align-content:center; align-items:center'>
-            <button id='Qurious' type='button' aria-pressed='false' class='toggle gray skillButton'>Qurious Augments</button>
+        <div style="grid-area: 1/1;margin-left: 4px;display: grid;margin-top: 9px;">
+            <div><label for="weaponFilter">Weapon Filter</label>
+                <input type="checkbox" id="weaponFilter" checked="true" onclick='WeaponSelect()' name="weaponFilter"></input>
+            </div> <button id="Qurious" type="button" aria-pressed="false" class="toggle skillButton gray">Qurious Augments</button>
         </div>
         <div class='contain' id='weaponSelect'>
             <div id='forWeaponSelects'>

@@ -2815,76 +2815,95 @@
         1.125,
         1.15
     ],
+    "ElementalReload": [{
+
+            "BRM": 1,
+            "BR": 0,
+            "PRM": 1,
+            "BEM": 1,
+            "BE": 0,
+            "PEM": 1,
+            "aff": 0
+        },
+        {
+            "BRM": 1,
+            "BR": 0,
+            "PRM": 1,
+            "BEM": 1,
+            "BE": 0,
+            "PEM": 1.1,
+            "aff": 0
+        }
+    ],
     "BowgunBarrel": [{
-            "Element": 1,
+
             "Power": 1,
             "Silencer": 0,
             "reload": 0
         },
         {
-            "Element": 1,
+
             "Power": 1.05,
             "Silencer": 0,
             "reload": 0
         },
         {
-            "Element": 1,
+
             "Power": 1.125,
             "Silencer": 0,
             "reload": 0
         },
         {
-            "Element": 1,
+
             "Power": 1,
             "Silencer": 1,
             "reload": 1
         },
         {
-            "Element": 1,
+
             "Power": 1,
             "Silencer": 0,
             "reload": 0
         }
     ],
     "Barrellbg": [{
-            "Element": 1,
+
             "Power": 1,
             "Silencer": 0,
             "reload": 0
         },
         {
-            "Element": 1,
+
             "Power": 1.05,
             "Silencer": 0,
             "reload": 0
         },
         {
-            "Element": 1,
+
             "Power": 1,
             "Silencer": 1,
             "reload": 1
         },
         {
-            "Element": 1.1,
             "Power": 1,
             "Silencer": 0,
             "reload": 2
         }
     ],
     "Barrelhbg": [{
-            "Element": 1,
+
             "Power": 1,
             "Silencer": 0,
             "reload": 0
         },
         {
-            "Element": 1,
+
             "Power": 1.125,
             "Silencer": 0,
             "reload": 0
         },
         {
-            "Element": 1,
+
             "Power": 1,
             "Silencer": 0,
             "reload": 0
