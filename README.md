@@ -10,7 +10,7 @@ This even removes sharpness when appropriate
 To use this feature you can either click on the left or right side of an attack name to add or remove an attack from the combo or you can directly change the number displayed by the attack name. The Combo Damage attack name itself acts as a repeat for the entire combo.
 After you enter in all moves used in the combo you can use the Combo Filter button to hide all other skills. 
 
-Save selections to easily re load builds and combos
+Save selections to easily reload builds and combos
 This feature will be improved soon but for now when you click the button it automatically saves an array of information to your clipboard.  When you paste this information into the TA Wiki set builder input it will reload any and all selections you had at the time. 
 
 Bowguns will even tell you how many shots it will take to kill a monster along with the dps uptime needed.
