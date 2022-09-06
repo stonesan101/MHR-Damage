@@ -24,6 +24,6 @@ I still have a lot of ideas for expanding content yet to come!
 + [MHR Damage Optimizer](https://stonesan101.github.io/MHR-Damage/)
 
 # Acknowledgements
-**MechE, dtlnor** - For their patience, advice, and information especially mechE, whom without this project would not have been possible.\
+**MechE, dtlnor** - For their patience, advice, and information especially mechE, whom without this project would not have been possible.
 
 + [MHRise Monster Database](https://github.com/wwylele/mhrice)
