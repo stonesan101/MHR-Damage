@@ -3,7 +3,7 @@ Monster Hunter Rise Damage Calculations
 A site designed to be capable of answering any optimization questions someone might have. Many unique features including
 
 Automatically setting a build from a TA wiki set builder link.
-While making a set on https://mhrise.wiki-db.com/sim/?hl=en every time you hit search it encodes all your currently selected skills and skill levels into the url.  So after you make your set you can copy that url and paste it into the appropriate input to automatically set all relevant skills in the calculator.
+While making a set on + [MHR TA Wiki Set Builder](https://mhrise.wiki-db.com/sim/?hl=en) every time you hit search it encodes all your currently selected skills and skill levels into the url.  So after you make your set you can copy that url and paste it into the appropriate input to automatically set all relevant skills in the calculator.
 
 Set your own combos to allow you to have a better idea on the overall impact a skill makes. 
 This even removes sharpness when appropriate
@@ -18,5 +18,12 @@ Bowguns will even give tell you how many shots it will take to kill a monster al
 For the Quirios Augments just click on where it says quirios augments, then click on the right half of the name to increase and the left half to decrease. 
 
 To switch the active scroll literally just click on the red or blue scroll.
-I still have a lot of ideas for expanding content 
 
+I still have a lot of ideas for expanding content yet to come!
+
++ [MHR Damage Optimizer](https://stonesan101.github.io/MHR-Damage/)
+
+# Acknowledgements
+**MechE, dtlnor** - For their patience, advice, and information especially mechE, whom without this project would not have been possible.\
+
++ [MHRise Monster Database](https://github.com/wwylele/mhrice)
