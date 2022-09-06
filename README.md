@@ -3,7 +3,7 @@ Monster Hunter Rise Damage Calculations
 A site designed to be capable of answering any optimization questions someone might have. Many unique features including
 
 Automatically setting a build from a TA wiki set builder link.
-While making a set on + [MHR TA Wiki Set Builder](https://mhrise.wiki-db.com/sim/?hl=en) every time you hit search it encodes all your currently selected skills and skill levels into the url.  So after you make your set you can copy that url and paste it into the appropriate input to automatically set all relevant skills in the calculator.
+While making a set on [MHR TA Wiki Set Builder](https://mhrise.wiki-db.com/sim/?hl=en) every time you hit search it encodes all your currently selected skills and skill levels into the url.  So after you make your set you can copy that url and paste it into the appropriate input to automatically set all relevant skills in the calculator.
 
 Set your own combos to allow you to have a better idea on the overall impact a skill makes. 
 This even removes sharpness when appropriate
