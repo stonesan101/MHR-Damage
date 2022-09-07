@@ -5,19 +5,25 @@ Automatically setting a build from a TA wiki set builder URL.
 
 While making a set on the [MHR TA Wiki Set Builder](https://mhrise.wiki-db.com/sim/?hl=en) every time you hit search it encodes all your currently selected skills and skill levels into the url.  So after you make your set you can copy that url and paste it into the appropriate input to automatically set all relevant skills in the calculator.
 
-Set your own combos to allow you to have a better idea on the overall impact a skill makes. 
+**Total/Effective Damage** - If an attack hits more then one time per use these columns will include every tic, while the others give the damage for only a single hit.
+
+**Combo Creation** - Set your own combos to allow you to have a better idea on the overall impact a skill makes. 
 This even removes sharpness when appropriate
 To use this feature you can either click on the left or right side of an attack name to add or remove an attack from the combo or you can directly change the number displayed by the attack name. The Combo Damage attack name itself acts as a repeat for the entire combo.
 After you enter in all moves used in the combo you can use the Combo Filter button to hide all other skills. 
 
-Save selections to easily reload builds and combos
+**Save selections** - Allows you to quickly reload builds and combos
 This feature will be improved soon but for now when you click the button it automatically saves an array of information to your clipboard.  When you paste this information into the TA Wiki set builder input it will reload any and all selections you had at the time. 
 
-Bowguns will even tell you how many shots it will take to kill a monster along with the dps uptime needed.
+**Shots To Kill** - Uses your effective damage to calculate the dps uptime needed to kill the selected monster. This assumes optimal timings for your recoil and reload which can vary a bit in actual gameplay. Unless you are doing a 4 Player run where the monster will not be getting to move i recommend you take other factors into account like movement while reloading/shooting, and support ammo available.
 
-For the Quirios Augments just click on where it says quirios augments, then click on the right half of the name to increase and the left half to decrease. 
+**Pierce Damage Adjust** - This adjusts the damage displayed in the Total and Effective columns for Pierce Ammo and Elemental Pierce ammo to give you a more realistic damage output. The Legendary setting is unrealistic to achieve unless the monster has Water Blight.
 
-To switch the active scroll literally just click on the red or blue scroll.
+**Spare Shot Adjust** - Allows you to add up to 10% to the selected Spare Shot activation rate.
+
+**Quirios Augments** - Just click on where it says quirios augments, right above the weapon select drop-down. Then click on the right half of the name to increase and the left half to decrease. 
+
+To switch the active scroll just click on the red or blue scroll icons to toggle the selected color.
 
 I still have a lot of ideas for expanding content yet to come!
 
