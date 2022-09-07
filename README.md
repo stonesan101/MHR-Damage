@@ -1,11 +1,11 @@
 # MHR-Damage
-Monster Hunter Rise Damage Calculations
+**MHR Sunbreak Damage Optimizer**
 A site designed to be capable of answering any optimization questions someone might have. Many unique features including
 Automatically setting a build from a TA wiki set builder URL.
 
 While making a set on the [MHR TA Wiki Set Builder](https://mhrise.wiki-db.com/sim/?hl=en) every time you hit search it encodes all your currently selected skills and skill levels into the url.  So after you make your set you can copy that url and paste it into the appropriate input to automatically set all relevant skills in the calculator.
 
-**Total/Effective Damage** - If an attack hits more then one time per use these columns will include every tic, while the others give the damage for only a single hit.
+**Effective Damage** - If an attack hits more then one time per use the Effective Damage column will include every tic, while the others give the damage for only a single hit.  This column uses EFR and EFE for its output.
 
 **Combo Creation** - Set your own combos to allow you to have a better idea on the overall impact a skill makes. 
 This even removes sharpness when appropriate
@@ -17,7 +17,7 @@ This feature will be improved soon but for now when you click the button it auto
 
 **Shots To Kill** - Uses your effective damage to calculate the dps uptime needed to kill the selected monster. This assumes optimal timings for your recoil and reload which can vary a bit in actual gameplay. Unless you are doing a 4 Player run where the monster will not be getting to move i recommend you take other factors into account like movement while reloading/shooting, and support ammo available.
 
-**Pierce Damage Adjust** - This adjusts the damage displayed in the Total and Effective columns for Pierce Ammo and Elemental Pierce ammo to give you a more realistic damage output. The Legendary setting is unrealistic to achieve unless the monster has Water Blight.
+**Pierce Damage Adjust** - This adjusts the damage displayed in the Effective Damage column for Pierce Ammo and Elemental Pierce ammo to give you a more realistic damage output. The Legendary setting is unrealistic to achieve unless the monster has Water Blight.
 
 **Spare Shot Adjust** - Allows you to add up to 10% to the selected Spare Shot activation rate.
 
@@ -27,7 +27,7 @@ To switch the active scroll just click on the red or blue scroll icons to toggle
 
 I still have a lot of ideas for expanding content yet to come!
 
-+ [MHR Damage Optimizer](https://stonesan101.github.io/MHR-Damage/)
++ [MHR Sunbreak Damage Optimizer](https://stonesan101.github.io/MHR-Damage/)
 
 # Acknowledgements
 **MechE, dtlnor** - For their patience, advice, and information especially mechE, without whom this project would not have been possible.
