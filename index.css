@@ -1294,7 +1294,11 @@ select#weaponRampage5 {
 div#forButtons button {
     min-width: max-content;
     gap: 0.5rem;
-    
+    overflow-y:auto;
+
+
+
+
 }
 
 button#Save\ State {
