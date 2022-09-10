@@ -557,7 +557,7 @@ div#html {
 }
 
 #forButtons {
-    gap: 1.6em;
+    gap: 1em;
     justify-items: center;
 }
 
@@ -809,7 +809,7 @@ td {
 }
 
 div#monDropDowns>div {
-    min-width: max-content;
+    min-width: fit-content;
     width: 105%;
     ;
 }
@@ -1294,7 +1294,7 @@ select#weaponRampage5 {
 div#forButtons button {
     min-width: max-content;
     gap: 0.5rem;
-    width: 11em;
+    
 }
 
 button#Save\ State {
