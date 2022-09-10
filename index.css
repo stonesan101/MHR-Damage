@@ -18,12 +18,12 @@
 }
 
 @media only screen and (max-width: 1200px) {
-    body div {
+    body {
         border: none;
         align-items: baseline;
         max-width: 100vw;
     }
-    * {
+    .contain {
         max-width: 100vw;
     }
     h1>div>label {
@@ -45,14 +45,17 @@
         display: grid;
         grid-area: 10 / 1 / 10 / 3;
     }
-    .contain {
-        /* min-width: 100vw; */
+    div#containAll>div {
+        min-width: 100vw;
+        max-width: 100vw;
+        min-height: fit-content;
+        overflow: auto;
         /* grid-area: 1 / 1 / 2 / 4; */
     }
     .title {
         grid-area: 1/1/2/3;
         min-height: max-content;
-        min-width: fit-content;
+        min-width: max-content;
     }
     div#divComboAttacks {
         width: 10vw;
@@ -72,7 +75,7 @@
     section1.contain {
         grid-auto-rows: 3.3em 11em 12em;
     }
-    div#containAll.shot {
+    div#containAll.shotp {
         grid-template-columns: 48% 4% 48%;
     }
     div#containAll {
@@ -420,7 +423,7 @@ body {
     background-size: 105vw;
     min-height: max-content;
     text-align: center;
-    width: fit-content;
+    width: 100vw;
     gap: 0.6rem;
     image-rendering: -webkit-optimize-contrast;
     border-spacing: 0px;
@@ -559,6 +562,7 @@ div#html {
 #forButtons {
     gap: 1em;
     justify-items: center;
+    max-width: 100vw;
 }
 
 div#forButtonSelect>div:nth-child(2) {
@@ -811,7 +815,6 @@ td {
 div#monDropDowns>div {
     min-width: fit-content;
     width: 105%;
-    ;
 }
 
 div#monDropDowns {
@@ -924,7 +927,11 @@ table#monTable {
     display: inline-table;
     grid-area: 3 / 1 / 4 / auto;
 }
-
+#boxes{
+   max-width:100vw;
+   overflow: auto;
+   min-height: fit-content
+}
 #boxes>div:nth-child(n+1) {
     display: grid;
     gap: 0.25rem;
