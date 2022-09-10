@@ -1,2143 +1,486 @@
-const check = {
-    ammo: 0,
-    LightBowGun: 0,
-    rampage: 0,
-    quest: 0,
-    monster: 0,
-    types: 0,
-    ammo: 0,
-    skills: 0,
-};
-let keyDown = 0;
-let lastEvent = '';
+const _0x40fb26 = _0x1e72;
+(function(_0x30abde, _0x24b1b0) { const _0x922e47 = _0x1e72,
+        _0x5dc956 = _0x30abde(); while (!![]) { try { const _0x5622da = parseInt(_0x922e47(0x11f)) / 0x1 + -parseInt(_0x922e47(0x24c)) / 0x2 + parseInt(_0x922e47(0x15e)) / 0x3 * (-parseInt(_0x922e47(0x146)) / 0x4) + parseInt(_0x922e47(0x204)) / 0x5 + parseInt(_0x922e47(0x21f)) / 0x6 + parseInt(_0x922e47(0xd3)) / 0x7 + parseInt(_0x922e47(0x188)) / 0x8; if (_0x5622da === _0x24b1b0) break;
+            else _0x5dc956['push'](_0x5dc956['shift']()); } catch (_0x14f394) { _0x5dc956['push'](_0x5dc956['shift']()); } } }(_0x1ddd, 0x6502a));
+let keyDown = 0x0,
+    lastEvent = '',
+    comboTracker = [];
+const weaponType = document[_0x40fb26(0xc8)](_0x40fb26(0x240)),
+    weaponTypes = [
+        [_0x40fb26(0x1fb)],
+        [_0x40fb26(0x1e4)],
+        [_0x40fb26(0x1e6)],
+        ['InsectGlaive'],
+        [_0x40fb26(0x16a)],
+        [_0x40fb26(0x218)],
+        [_0x40fb26(0x221)],
+        [_0x40fb26(0x1ae)],
+        [_0x40fb26(0x12e)],
+        [_0x40fb26(0x279)],
+        ['Bow'],
+        [_0x40fb26(0x20a)],
+        ['Gunlance'],
+        [_0x40fb26(0x112)]
+    ],
+    [lbg, gs, cb, ig, sns, db, sa, ls, lance, hbg, bow, hh, gl, ham] = weaponTypes['join']()[_0x40fb26(0x1c7)](','),
+    baseURL = /localhost/ [_0x40fb26(0x22b)](window[_0x40fb26(0x155)][_0x40fb26(0x18c)]) ? _0x40fb26(0x237) : _0x40fb26(0x136),
+    info = {};
+async function getInfo() { const _0x59838f = _0x40fb26; try { WeaponTypeSelect(); const _0x13b9e3 = fetch(baseURL + '/json/monster.json')['then'](_0x80fc7b => _0x80fc7b['json']())[_0x59838f(0x12f)](_0x5e8e2c => { const _0x3f5374 = _0x59838f;
+                info[_0x3f5374(0xca)] = _0x5e8e2c, MonsterSelect(), PartSelect(); }),
+            _0x4ed862 = fetch(baseURL + _0x59838f(0x1fc))[_0x59838f(0x12f)](_0x1310fc => _0x1310fc[_0x59838f(0x127)]())[_0x59838f(0x12f)](_0x281890 => info[_0x59838f(0x27a)] = _0x281890),
+            _0x29bcf9 = fetch(baseURL + '/json/types.json')[_0x59838f(0x12f)](_0x1958ca => _0x1958ca['json']())[_0x59838f(0x12f)](_0x378b53 => info[_0x59838f(0x129)] = _0x378b53),
+            _0x4c7172 = fetch(baseURL + _0x59838f(0x283))[_0x59838f(0x12f)](_0x2af49b => _0x2af49b[_0x59838f(0x127)]())[_0x59838f(0x12f)](_0x10d3dd => info[_0x59838f(0x19f)] = _0x10d3dd),
+            _0x1cb2a4 = fetch(baseURL + '/json/quest.json')['then'](_0x166bf0 => _0x166bf0[_0x59838f(0x127)]())['then'](_0x387077 => { info['quest'] = _0x387077, QuestSelect(), HealthSelect(); }),
+            _0x4b6c84 = fetch(baseURL + _0x59838f(0x284))[_0x59838f(0x12f)](_0x1d4486 => _0x1d4486['json']())[_0x59838f(0x12f)](_0x1b3968 => { const _0x28572b = _0x59838f;
+                info[_0x28572b(0x1fb)] = _0x1b3968; }),
+            _0x44a297 = fetch(baseURL + _0x59838f(0x265))[_0x59838f(0x12f)](_0x4b5883 => _0x4b5883['json']())['then'](_0x58a580 => info[_0x59838f(0x224)] = _0x58a580);
+        Promise['all']([_0x4b6c84, _0x29bcf9, _0x4ed862])[_0x59838f(0x12f)](() => { WeaponSelect(), RampageSelect(); }), await Promise[_0x59838f(0x137)]([_0x13b9e3, _0x29bcf9, _0x4c7172, _0x1cb2a4, _0x4b6c84, _0x44a297, _0x4ed862])[_0x59838f(0x12f)](_0x151f4d => { const _0x432ec6 = _0x59838f;
+            console['log'](Object[_0x432ec6(0x1b7)](info)), classChange(), MonChart(); })['then'](() => { const _0x1521ab = _0x59838f;
+            DataCompile(window[_0x1521ab(0x1df)]); }), baseURL === 'http://localhost:5500' && (weaponTypes[_0x59838f(0x21a)](_0x59838f(0x104)), weaponTypes[_0x59838f(0x21a)](_0x59838f(0xdf))), weaponTypes['slice'](0x1)[_0x59838f(0x262)](_0x35248d => { const _0x374dbd = _0x59838f;
+            fetch(baseURL + _0x374dbd(0x176) + _0x35248d + _0x374dbd(0x19c))[_0x374dbd(0x12f)](_0x57dc8c => _0x57dc8c[_0x374dbd(0x127)]())[_0x374dbd(0x12f)](_0x418a40 => info[_0x35248d] = _0x418a40); }); } catch (_0x1f7a4c) { console['log'](_0x1f7a4c); } }
+const ugh2 = getInfo();
 
-let comboTracker = [];
-const info = {};
-const gs = 'GreatSword';
-const sa = 'SwitchAxe';
-const cb = 'ChargeBlade';
-const ig = 'InsectGlaive';
-const hbg = 'HeavyBowGun';
-const lbg = 'LightBowGun';
-const bow = 'Bow';
-const sns = 'SwordNShield';
-const db = 'DualBlades';
-const ls = 'LongSword';
-const lance = 'Lance';
-const hh = 'HuntingHorn';
-const gl = 'Gunlance';
-const ham = 'Hammer';
-const weaponType = document.getElementById('dropWeaponType');
-const sharpnessMod = {
-    purple: {
-        PRM: 1.39,
-        PEM: 1.25,
-    },
-    white: {
-        PRM: 1.32,
-        PEM: 1.15,
-    },
-    blue: {
-        PRM: 1.2,
-        PEM: 1.0625,
-    },
-    green: {
-        PRM: 1.05,
-        PEM: 1,
-    },
-    yellow: {
-        PRM: 1,
-        PEM: 0.75,
-    },
-    orange: {
-        PRM: 0.75,
-        PEM: 0.5,
-    },
-    red: {
-        PRM: 0.5,
-        PEM: 0.25,
-    },
-};
-const weaponTypes = [
-    ['LightBowGun'],
-    ['GreatSword'],
-    ['ChargeBlade'],
-    ['InsectGlaive'],
-    ['SwordNShield'],
-    ['DualBlades'],
-    ['SwitchAxe'],
-    ['LongSword'],
-    ['Lance'],
-    ['HeavyBowGun'],
-    ['Bow'],
-    ['HuntingHorn'],
-    ['Gunlance'],
-    ['Hammer'],
-];
-const jsons = [
-    ['ammo'],
-    ['monster'],
-    ['types'],
-    ['rampage'],
-    ['quest'],
-    ['skills']
-];
-const baseURL = /localhost/.test(window.location.host) ? 'http://localhost:5500' : 'https://stonesan101.github.io/MHR-Damage';
-$([].concat(jsons, weaponTypes)).each(function() {
-    $.getJSON(`${baseURL}/json/${this}.json`, data => {
-        info[this] = data;
-        if (/monster|types|rampage|quest|LightBowGun|ammo|skills/.test(this)) {
-            ++check[this];
-            jsonsLoaded();
-        }
-    });
-});
-document.createElement('tagName');
+function DataCompile(_0x3e61db = window[_0x40fb26(0x1df)]) { const _0x192f3b = _0x40fb26; /BowGun/ [_0x192f3b(0x22b)](weaponType[_0x192f3b(0x229)]) ? RangedDPS(_0x3e61db): MeleeDPS(_0x3e61db); }
 
-function DataCompile(e = window.event) {
-    if (/BowGun/.test($(weaponType).val())) {
-        RangedDPS(e);
-    } else {
-        MeleeDPS(e);
-    }
-}
-
-function RangedDPS(e) {
-    $('output.elementalAug').val(0);
-    elementalResult.value = '+0';
-
-    $('output.sharpnessAug').val(0);
-    sharpnessResult.value = '+0';
-
-    const rangedDamage = [];
-    const ammoFrameData = [];
-    let power = {};
-    let ammo = {};
-    let pass1 = true;
-    $.each(getUsedAttacks(), function(attackName) {
-        power = {...getWeapon(), ...info.ammo[attackName] };
-        power = getRampageSkills(power);
-        power = initialStats(power);
-        power = GetRemainingSkills(power);
-        power = DamageCalculations(power);
-        if (!/Wyvernblast|Glide|Wyvernsn|Guard/.test(power.attackName)) {
-            ammo = calculateAmmoFrames(power);
-        } else {
-            ammo.ticsAdjust = 1;
-        }
-        const totalEffective = ~~((~~power.efr + ~~power.efe) * ammo.ticsAdjust);
-        const totalCrit = ~~((~~power.rawCrit + ~~power.eleCrit) * ammo.ticsAdjust);
-        const totalNon = ~~((~~power.rawNon + ~~power.eleNon) * ammo.ticsAdjust);
-
-        const shotsToKill = ~~(0.99 + $('#health').val() / totalEffective);
-        // const timeToKill = /(Sticky|Slicing)/.test(power.attackName)
-        // ? 5 + ~~( (60 / ammo.shotsPerMin) * shotsToKill) // Adds delay time for stickies/ slicing;
-        // : ~~( (60 / ammo.shotsPerMin) * shotsToKill);
-        const timeToKill = /Stic|Slic/.test(power.attackName) ?
-            5 + ~~(0.99 + (60 / ammo.shotsPerMin) * shotsToKill) :
-            ~~(0.99 + (60 / ammo.shotsPerMin) * shotsToKill);
-        const rawBoth = [`${~~power.rawNon} / ${~~power.rawCrit}`];
-        const eleBoth = [`${~~power.eleNon} / ${~~power.eleCrit}`];
-        const total = [`${~~totalNon} / ${~~totalCrit}`];
-        const damage = [
-            power.attackName,
-            rawBoth,
-            eleBoth,
-            total, ~~power.efr, ~~power.efe,
-            totalEffective,
-            ammo.shotsPerGain !== 'NaN%' ? ammo.shotsPerGain : 'N / A',
-            shotsToKill,
-            timeToKill,
-        ];
-
-        rangedDamage.push(damage);
-
-        const ammoStats = [
-            power.attackName,
-            power.rawMV,
-            ammo.reloadSpeed !== undefined ? ammo.reloadSpeed : 'N / A',
-            ammo.recoilSpeed !== undefined ? ammo.recoilSpeed : 'N / A',
-            isNaN(ammo.clipSize) ? 'N / A' : ammo.clipSize,
-            power.ticsPer + 1,
-            ammo.shotsPerMinBase !== undefined ? ammo.shotsPerMinBase : 'N / A',
-            ammo.shotsPerMin !== undefined ? ammo.shotsPerMin : 'N / A',
-        ];
-
-        ammoFrameData.push(ammoStats);
-        if (pass1) {
-            const stats = [
-                ['Stat', 'Raw', 'Affinity', 'Ele Pierce'],
-                ['Base', ~~power.baseRaw, ~~power.baseAff, ~~(22 * (1 + power.raw / 100))],
-                ['Total Attack', ~~power.raw, ~~(power.aff * 100), ~~((22 * power.BEM + power.BE) * (1 + power.raw / 100))],
-                [
-                    'Total Damage', ~~(power.raw * getCritBoost(power.Crit, power.aff).PRM * power.PRM * power.augPRM), ~~(power.aff * 100), ~~((22 * power.BEM + power.BE) * (1 + power.raw / 100) * power.PEM * power.augPEM * getCritEle(power.Crit, power.aff).PEM),
-                ],
-
-                [
-                    'Effective', ~~(power.raw * getCritBoost(power.Crit, power.aff).EFR * power.PRM * power.augPRM), ~~(power.aff * 100), ~~((22 * power.BEM + power.BE) * (1 + power.raw / 100) * power.PEM * power.augPEM * getCritEle(power.Crit, power.aff).EFE),
-                ],
+function RangedDPS(_0x5a107e) { const _0x4db503 = _0x40fb26;
+    $(_0x4db503(0x25b))[_0x4db503(0xf4)](0x0), elementalResult['value'] = '+0', $(_0x4db503(0x264))[_0x4db503(0xf4)](0x0), sharpnessResult['value'] = '+0'; const _0x10c936 = [],
+        _0x4bdf23 = []; let _0x464bfa = {},
+        _0x20da33 = !![],
+        _0x4eef25 = getQuriousAugs();
+    [_0x4db503(0x1bf), _0x4db503(0x1c9), _0x4db503(0x194), _0x4db503(0xce)]['forEach'](_0x2af2a8 => _0x4eef25[_0x2af2a8] = initialStats(_0x4eef25, _0x2af2a8)), Object[_0x4db503(0x205)](getUsedAttacks())[_0x4db503(0x262)](function(_0x5792ac) { const _0x39fb9b = _0x4db503; let _0x349a09 = {..._0x4eef25[_0x5792ac['type']], ..._0x5792ac };
+        _0x349a09 = getDependantSkills(_0x349a09), _0x349a09 = GetRemainingSkills(_0x349a09), _0x349a09 = DamageCalculations(_0x349a09);! /Demon|Armor|Wyvernblast|Glide|Wyvernsn|Guard/ [_0x39fb9b(0x22b)](_0x349a09['attackName']) ? _0x464bfa = calculateAmmoFrames(_0x349a09): _0x464bfa['ticsAdjust'] = 0x1; const _0x5f2869 = ~~((~~_0x349a09[_0x39fb9b(0x212)] + ~~_0x349a09[_0x39fb9b(0x158)]) * _0x464bfa[_0x39fb9b(0x159)]),
+            _0x22f0cd = ~~(~~_0x349a09[_0x39fb9b(0x24a)] + ~~_0x349a09['eleCrit']),
+            _0x54e0f1 = ~~(~~_0x349a09[_0x39fb9b(0x18d)] + ~~_0x349a09[_0x39fb9b(0x1cb)]),
+            _0x1621fc = ~~(0.99 + $(_0x39fb9b(0x121))[_0x39fb9b(0xf4)]() / _0x5f2869),
+            _0x52c59e = /Stic|Slic/ [_0x39fb9b(0x22b)](_0x349a09[_0x39fb9b(0x1ac)]) ? 0x5 + ~~(0.99 + 0x3c / _0x464bfa[_0x39fb9b(0x288)] * _0x1621fc) : ~~(0.99 + 0x3c / _0x464bfa[_0x39fb9b(0x288)] * _0x1621fc),
+            _0x187b56 = [~~_0x349a09[_0x39fb9b(0x18d)] + _0x39fb9b(0x289) + ~~_0x349a09[_0x39fb9b(0x24a)]],
+            _0x2280d4 = [~~_0x349a09[_0x39fb9b(0x1cb)] + _0x39fb9b(0x289) + ~~_0x349a09[_0x39fb9b(0x17e)]],
+            _0x4364f6 = [~~_0x54e0f1 + _0x39fb9b(0x289) + ~~_0x22f0cd],
+            _0x3ef535 = [_0x349a09[_0x39fb9b(0x1ac)], _0x187b56, _0x2280d4, _0x4364f6, _0x5f2869, _0x464bfa['shotsPerGain'] !== _0x39fb9b(0x202) ? _0x464bfa['shotsPerGain'] : _0x39fb9b(0x1e1), _0x1621fc, _0x52c59e];
+        _0x10c936[_0x39fb9b(0x21a)](_0x3ef535); const _0x867b04 = [_0x349a09[_0x39fb9b(0x1ac)], _0x349a09[_0x39fb9b(0xc3)], _0x464bfa['reloadSpeed'] !== undefined ? _0x464bfa[_0x39fb9b(0x200)] : _0x39fb9b(0x1e1), _0x464bfa[_0x39fb9b(0x216)] !== undefined ? _0x464bfa[_0x39fb9b(0x216)] : _0x39fb9b(0x1e1), isNaN(_0x464bfa['clipSize']) ? _0x39fb9b(0x1e1) : _0x464bfa[_0x39fb9b(0x19b)], _0x349a09[_0x39fb9b(0x26e)] + 0x1, _0x464bfa[_0x39fb9b(0x226)] !== undefined ? _0x464bfa[_0x39fb9b(0x226)] : _0x39fb9b(0x1e1), _0x464bfa['shotsPerMin'] !== undefined ? _0x464bfa[_0x39fb9b(0x288)] : _0x39fb9b(0x1e1)];
+        _0x4bdf23['push'](_0x867b04); if (_0x20da33) { const _0x4d39b5 = [
+                ['Stat', _0x39fb9b(0x14a), _0x39fb9b(0x131), 'Ele\x20Pierce'],
+                [_0x39fb9b(0x199), ~~_0x349a09[_0x39fb9b(0x138)], ~~_0x349a09[_0x39fb9b(0x10d)], ~~(0x16 * (0x1 + _0x349a09[_0x39fb9b(0x1b2)] / 0x64))],
+                [_0x39fb9b(0x1d4), ~~_0x349a09[_0x39fb9b(0x1b2)], ~~(_0x349a09[_0x39fb9b(0x25d)] * 0x64), ~~((0x16 * _0x349a09['BEM'] + _0x349a09['BE']) * (0x1 + _0x349a09[_0x39fb9b(0x1b2)] / 0x64))],
+                [_0x39fb9b(0x232), ~~(_0x349a09[_0x39fb9b(0x1b2)] * getCritBoost(_0x349a09[_0x39fb9b(0x196)], _0x349a09['aff'])[_0x39fb9b(0x273)] * _0x349a09[_0x39fb9b(0x273)] * _0x349a09[_0x39fb9b(0x250)]), ~~(_0x349a09[_0x39fb9b(0x25d)] * 0x64), ~~((0x16 * _0x349a09[_0x39fb9b(0x26a)] + _0x349a09['BE']) * (0x1 + _0x349a09[_0x39fb9b(0x1b2)] / 0x64) * _0x349a09[_0x39fb9b(0x17a)] * _0x349a09[_0x39fb9b(0x23e)] * getCritEle(_0x349a09[_0x39fb9b(0x196)], _0x349a09['aff'])[_0x39fb9b(0x17a)])],
+                [_0x39fb9b(0x256), ~~(_0x349a09[_0x39fb9b(0x1b2)] * getCritBoost(_0x349a09['Crit'], _0x349a09[_0x39fb9b(0x25d)])[_0x39fb9b(0x203)] * _0x349a09['PRM'] * _0x349a09[_0x39fb9b(0x250)]), ~~(_0x349a09[_0x39fb9b(0x25d)] * 0x64), ~~((0x16 * _0x349a09[_0x39fb9b(0x26a)] + _0x349a09['BE']) * (0x1 + _0x349a09[_0x39fb9b(0x1b2)] / 0x64) * _0x349a09[_0x39fb9b(0x17a)] * _0x349a09[_0x39fb9b(0x23e)] * getCritEle(_0x349a09[_0x39fb9b(0x196)], _0x349a09['aff'])[_0x39fb9b(0xdb)])]
             ];
-            BuildDamageTable(stats, 'stats', e);
-            pass1 = false;
-        }
-    });
-    rangedDamage.splice(0, 0, ['Ammo Type', 'Raw', 'Ele', 'Total', 'EFR', 'EFE', 'Effective', 'RPM Gain', 'Shots \n To Kill', 'Seconds \n To Kill']);
-
-    BuildDamageTable(rangedDamage, 'dps', e);
-    ammoFrameData.splice(0, 0, ['Ammo Type', 'rawMV', 'Reload', 'Recoil', 'Clip Size', 'Procs Per', 'RPM Base', 'Current RPM']);
-    BuildDamageTable(ammoFrameData, 'ammo', e);
-}
-
-function MeleeDPS(e) {
-    const meleeDamage = [
-        ['Combo', 'Attack Name', 'MV', 'Raw', 'Ele', 'Total', 'EFR', 'EFE', 'Effective']
-    ];
-    let comboDamage = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let power = {};
-    let thisIndex = -1;
-    let attacks = {};
-    let comboHitsUsed = [];
-    const lastSharp = Sharpness.selectedIndex;
-
-    $.each(getUsedAttacks(), function(attackID, index) {
-        ++thisIndex;
-        power = {...this, ...getWeapon() };
-        power = {...getRampageSkills(power) };
-        power = initialStats(power);
-
-        if (/input/.test(e.target.className) && power.attackName === 'Combo Damage') {
-            UpdateComboTracker();
-            UpdateComboDisplay();
-        }
-        if (power.attackName === 'Combo Damage') {
-            comboHitsUsed = weaponType.value !== bow ? getComboHitsAndSetSharpness(power.aff) : hitsPerColorSharp()[1];
-        }
-        power = GetRemainingSkills(power);
-        power = DamageCalculations(power);
-        if (comboTracker.includes(thisIndex.toString())) {
-            /* goes through each color sharpness and filters the recorded attacks for the number of times this current attack was used
-             * then applies the given sharpness modifier to the damage if damage type is sever or blunt then multiplies by the times used
-             * saves results in the comboDamage var and += the totals for every sharpness of every attack
-             * to later be used to update the comboDamage in the dpsTable
-             */
-            colorsUsed = Object.fromEntries(Object.entries(comboHitsUsed).filter(x => x[0].length > 0));
-            $(Object.entries(sharpnessMod)).each((_index, color) => {
-                if (TimesUsed(thisIndex, comboHitsUsed[color[0]]) > 0) {
-                    const [sharpPRM, sharpPEM] = power.noSharpMod === false ? [color[1].PRM, color[1].PEM] : [1, 1];
-                    const hitsPerAttackPerSharpness = TimesUsed(thisIndex, comboHitsUsed[color[0]]);
-                    // combo=[rawMV,rawNon,rawCrit,eleNon,eleCrit,totalNon,TotalCrit,EFR,EFE,totalEffective]
-                    comboDamage = [
-                        (comboDamage[0] += Number(~~(power.rawMV * hitsPerAttackPerSharpness * (power.ticsPer + 1)))),
-                        (comboDamage[1] += Number(~~(power.rawNon * sharpPRM) * hitsPerAttackPerSharpness)),
-                        (comboDamage[2] += Number(~~(power.rawCrit * sharpPRM) * hitsPerAttackPerSharpness)),
-                        (comboDamage[3] += Number(~~(power.eleNon * sharpPEM) * hitsPerAttackPerSharpness)),
-                        (comboDamage[4] += Number(~~(power.eleCrit * sharpPEM) * hitsPerAttackPerSharpness)),
-                        (comboDamage[5] += Number(~~(power.rawNon * sharpPRM) * hitsPerAttackPerSharpness + ~~(power.eleNon * sharpPEM) * hitsPerAttackPerSharpness)),
-                        (comboDamage[6] += Number(~~(power.rawCrit * sharpPRM) * hitsPerAttackPerSharpness + ~~(power.eleCrit * sharpPEM) * hitsPerAttackPerSharpness)),
-                        (comboDamage[7] += Number(~~(power.efr * sharpPRM) * hitsPerAttackPerSharpness)),
-                        (comboDamage[8] += Number(~~(power.efe * sharpPEM) * hitsPerAttackPerSharpness)),
-                        (comboDamage[9] += Number(~~(power.efr * sharpPRM) * hitsPerAttackPerSharpness + ~~(power.efe * sharpPEM) * hitsPerAttackPerSharpness)),
-                    ];
-                }
-            });
-        }
-        // damage/meleeDamage adds sharpness to the calculations and arranges them in the array to be used for the damageContainer
-        let sharpnessModifier = power.type === ('Sever' || 'Blunt') && power.noSharpMod === false ? JSON.parse(Sharpness.value) : { PRM: 1, PEM: 1 };
-        if (weaponType.value === 'Bow' && power.type !== 'Shot') {
-            sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Power' ? 1.35 : sharpnessModifier;
-            sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Close Range' ? 1.32 : sharpnessModifier;
-            sharpnessModifier = BowCoating[BowCoating.selectedIndex].text === 'Close Range+' ? 1.39 : sharpnessModifier;
-        } else if (power.type === 'Shot') {
-            sharpnessModifier = { PRM: 1, PEM: 1 };
-        }
-        const damage = [
-            'replaceME',
-            power.attackName,
-            power.rawMV,
-            `${formatNumbers(~~(power.rawNon * sharpnessModifier.PRM))} / ${formatNumbers(~~(power.rawCrit * sharpnessModifier.PRM))}`,
-
-            `${formatNumbers(~~(power.eleNon * sharpnessModifier.PEM))} / ${formatNumbers(~~(power.eleCrit * sharpnessModifier.PEM))}`,
-
-            `${formatNumbers((~~(power.rawNon * sharpnessModifier.PRM) + ~~(power.eleNon * sharpnessModifier.PEM)) * (power.ticsPer + 1))} / ${formatNumbers(
-                (~~(power.rawCrit * sharpnessModifier.PRM) + ~~(power.eleCrit * sharpnessModifier.PEM)) * (power.ticsPer + 1),
-            )}`,
-
-            formatNumbers(~~(power.efr * sharpnessModifier.PRM)),
-
-            formatNumbers(~~(power.efe * sharpnessModifier.PEM)),
-
-            formatNumbers((~~(power.efe * sharpnessModifier.PEM) + ~~(power.efr * sharpnessModifier.PRM)) * (power.ticsPer + 1)),
-        ];
-
-        meleeDamage.push(damage);
-        // stats stores calculations to be used for the statsTable
-        if (thisIndex) {
-            const ele = lower(power.eleType) === 'none' ? 0 : power.ele;
-            const stats = [
-                [
-                    ['Stat'],
-                    ['Raw'],
-                    ['Affinity'],
-                    [power.eleType]
-                ],
-                ['Base', ~~power.baseRaw, power.baseAff, power.baseEle],
-                ['Total Attack', ~~power.raw, ~~(power.aff * 100), ~~ele],
-                [
-                    'Total Damage', ~~(power.raw * getCritBoost(power.Crit, power.aff).PRM * power.PRM * power.augPRM * sharpnessModifier.PRM), ~~(power.aff * 100), ~~(ele * getCritEle(power.Crit, power.aff).PEM * power.PEM * power.augPEM * sharpnessModifier.PEM),
-                ],
-                [
-                    'Effective', ~~(power.raw * getCritBoost(power.Crit, power.aff).EFR * power.PRM * power.augEFR * sharpnessModifier.PRM), ~~(power.aff * 100), ~~(ele * getCritEle(power.Crit, power.aff).EFE * power.PEM * power.augPEM * power.augEFR * sharpnessModifier.PEM),
-                ],
-            ];
-            BuildDamageTable(stats, 'stats', e);
-        }
-    });
-    if ($('#dropWeaponType').val() === 'Gunlance') {
-        GunlanceShelling(meleeDamage, comboDamage, power, e);
-        return;
-    } else {
-        if (
-            lastSharp === Sharpness.selectedIndex &&
-            !/dropWeapon|taWikiSetBuilder/.test(e.target.id) &&
-            e.target !== BowChargePlus &&
-            e.target === dropWeapon &&
-            !weaponType.value === cb
-        ) {
-            if (/input|inputButton/.test(e.target.className)) {
-                document.getElementById('c0').textContent = `${formatNumbers(comboDamage[0])}`;
-                document.getElementById('d0').textContent = `${formatNumbers(comboDamage[1])} / ${formatNumbers(comboDamage[2])}`;
-                document.getElementById('e0').textContent = `${formatNumbers(comboDamage[3])} / ${formatNumbers(comboDamage[4])}`;
-                document.getElementById('f0').textContent = `${formatNumbers(comboDamage[5])} / ${formatNumbers(comboDamage[6])}`;
-                document.getElementById('g0').textContent = `${formatNumbers(comboDamage[7])}`;
-                document.getElementById('h0').textContent = `${formatNumbers(comboDamage[8])}`;
-                document.getElementById('i0').textContent = `${formatNumbers(comboDamage[9])}`;
-            } else {
-                meleeDamage.splice(0, 2, [
-                    'replaceME',
-                    'Combo Damage',
-                    `${formatNumbers(comboDamage[0])}`,
-                    `${formatNumbers(comboDamage[1])} / ${formatNumbers(comboDamage[2])}`,
-                    `${formatNumbers(comboDamage[3])} / ${formatNumbers(comboDamage[4])}`,
-                    `${formatNumbers(comboDamage[5])} / ${formatNumbers(comboDamage[6])}`,
-                    `${formatNumbers(comboDamage[7])}`,
-                    `${formatNumbers(comboDamage[8])}`,
-                    `${formatNumbers(comboDamage[9])}`,
-                ]);
-                let i = 0;
-                $(meleeDamage).each(function() {
-                    this.splice(0, 2);
-                    $(this).each(function() {
-                        Object.values($(dpsBody).children().children()).filter(x => !/a|b/.test(x.className))[i].textContent = this;
-                        ++i;
-                    });
-                });
-            }
-        } else {
-            meleeDamage.splice(1, 1, [
-                'replaceME',
-                'Combo Damage',
-                `${formatNumbers(comboDamage[0])}`,
-                `${formatNumbers(comboDamage[1])} / ${formatNumbers(comboDamage[2])}`,
-                `${formatNumbers(comboDamage[3])} / ${formatNumbers(comboDamage[4])}`,
-                `${formatNumbers(comboDamage[5])} / ${formatNumbers(comboDamage[6])}`,
-                `${formatNumbers(comboDamage[7])}`,
-                `${formatNumbers(comboDamage[8])}`,
-                `${formatNumbers(comboDamage[9])}`,
-            ]);
-            BuildDamageTable(meleeDamage, 'dps', e);
-        }
-    }
-}
-
-function getRampageSkills(power) {
-    if (getWeapon().rampageSlots === 0) {
-        // applies rampage any bonuses that effect base stats
-        $(weaponRampage.children).each((_index, element) => {
-            const rampageSkill = info.rampage['Rampage-Up Skill'][element.value];
-            if (rampageSkill !== undefined) {
-                for (let i = 0; i < Object.keys(rampageSkill).length; i++) {
-                    const stat = Object.keys(rampageSkill)[i];
-                    power[stat] += rampageSkill[stat];
-                }
-            }
-        });
-        // for skills that change the base element
-        if (!/BowGun/.test($('#dropWeaponType').val())) {
-            power.eleType = /Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/.test(weaponRampage.children[1].value) ?
-                weaponRampage.children[1].value.match(/Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/)[0] :
-                power.eleType;
-        }
-    } else {
-        // adds qurious augs
-        power.baseRaw += ($('output.attackAug').val() / 2) * 5;
-        attackResult.value = `+ ${($('output.attackAug').val() / 2) * 5}`;
-        power.aff += ($('output.affinityAug').val() / 3) * 5;
-        affinityResult.value = `+ ${($('output.affinityAug').val() / 3) * 5}`;
-        if (getWeapon().eleType !== 'None') {
-            power.baseEle += $('output.elementalAug').val() * 3;
-            elementalResult.value = `+ ${$('output.elementalAug').val() * 3}`;
-        }
-        $('#rampageResult').text($('output.rampageAug').val() > 0 ? '+1' : '+0');
-    }
-    power.baseAff = power.aff;
-
-    return {...power };
-}
-
-function addDependantSkills(power) {
-    // applies RF/Normal/Pierce/Spread up bonuses to bow and bowgun
-    if (/Bow/.test($(weaponType).val())) {
-        if (/Pierc/.test(power.attackName)) {
-            power.getSkills.push('PierceUp');
-        } else if (/Spread/.test(power.attackName)) {
-            power.getSkills.push('SpreadUp');
-        } else if (/Normal|Rapid/.test(power.attackName)) {
-            power.getSkills.push('NormalRapidUp');
-        }
-        if (/RF+/.test(power.attackName)) {
-            power.getSkills.push('RapidFireUp');
-        }
-        if (/Wyvern|Dragon Piercer/.test(power.attackName)) {
-            power.getSkills.push('SpecialAmmoBoost');
-        }
-    }
-
-    // applies LongSword Charge Level Bonus
-    if ($(weaponType).val() === 'LongSword' && !/Helm Breaker|Serene/.test(power.attackName)) {
-        power.getSkills.push('SpiritGauge');
-    } else if (/Helm Breaker|Serene/.test(power.attackName)) {
-        power.getSkills.push(/Helm Breaker/.test(power.attackName) ? 'Helmbreaker' : 'SerenePose');
-    }
-    // applies GreatSwords Charge Level Bonus
-    const regex = new RegExp(/Charged Slash|Rising Slash|Wide Slash|Strong Charged Slash|True Charged Slash|Rage Slash/);
-    if (regex.test(power.attackName) && $(StrongarmStance)[0].selectedIndex > 0) {
-        power.PRM *= info.skills.StrongarmStance[power.attackName.match(regex)[0]][0];
-        power.PEM *= info.skills.StrongarmStance[power.attackName.match(regex)[0]][1];
-    }
-    if ($(weaponType).val() === 'GreatSword' && /(?<!Tackle )Lv[1-3]/.test(power.attackName)) {
-        power.rawMV *= Number(`1.${power.attackName.match(/(?<=Lv)[1-3]/)[0]}`);
-        power.rawMV = power.rawMV.toFixed(1);
-    }
-    // applies ChargeBlade specific abilities
-    if ($(weaponType).val() === 'ChargeBlade') {
-        if (!/3rd|(?<!Midair |Axe: )UED|(?<!Charged )Sword(?!.*Shield)/.test(power.attackName)) {
-            power.getSkills.push('savageAxe');
-        }
-        getWeapon().phialType === 'Impact Phial' ? power.getSkills.push('impShieldCharge') : power.getSkills.push('eleShieldCharge');
-    }
-    power.aff += weaponRampage0.value === 'Hellion Mode' && weaponType.value === 'DualBlades' ? 20 : 0;
-    if (weaponType.value === 'Bow') {
-        power.getSkills = power.getSkills.concat('UpperCrit', 'HerculesDraw');
-        if (/Stake/.test(power.attackName)) {
-            power.getSkills = power.getSkills.filter(skill => skill != 'BowCoating');
-        }
-    }
-    return {...power };
-}
-
-function getEnrage() {
-    return $('#dropEnraged').val() === 'Enraged' ? Object.values(info.monster.enrage).filter(x => x['Large Monster'] === dropMonster.value)[0]['Player Dmg'] : 1;
-}
-
-function initialStats(power) {
-    if (comboTracker[0] === null) {
-        comboTracker = [];
-    }
-    power.baseRaw += power.Draw === true ? +document.getElementById('PunishingDraw').value : 0;
-    power.BR = 0;
-    power.BRM = 1;
-    power.PRM = 1;
-    power.BEM = 1;
-    power.BE = 0;
-    power.PEM = 1;
-    power.rawHZV = getHZ()[lower(power.type)];
-    // applies Demon Ammo if selected and damage type is sever or blunt
-    power.PRM *= $(DemonAmmo).hasClass('blue') && /(Sever|Blunt)/.test(power.type) ? 1.1 : 1;
-    1;
-    const skills = [];
-    $('.skillButton:not(button#ProtectivePolish)').each(function() {
-        if ($(this).hasClass('blue') && this.id !== 'Qurious') {
-            skills.push(JSON.parse(this.value));
-        }
-    });
-    power.getSkills = [];
-    switch (power.type) {
-        case 'Shot':
-            power.skillType = 'Gunner';
-            break;
-        case 'IgnoreHZV':
-            power.skillType = 'IMPAED';
-            break;
-        default:
-            power.skillType = 'Sever';
-            break;
-    }
-    // adds agitator to getSkills if enraged
-    [...power.getSkills] = info.types[power.skillType].filter(
-        skill =>
-        $(`#${skill}`).css('display') !== 'none' &&
-        document.getElementById(skill).selectedIndex > 0 &&
-        document.getElementById(skill).id !== ('CriticalFirePower' && 'StrongarmStance'),
-    );
-    enrageDisplay.textContent = `${~~(getEnrage() * 100)}%`;
-    if ($('#dropEnraged').val() === 'Enraged') {
-        power.getSkills.push('Agitator');
-        power.PEM *= getEnrage();
-        power.PRM *= getEnrage();
-    }
-
-    addDependantSkills(power);
-
-    power.getSkills = power.getSkills.filter(isUnique);
-    $(power.getSkills).each(function() {
-        skills.push(info.skills[this][document.getElementById(this).selectedIndex]);
-    });
-
-    getStats(power, skills);
-    // applies Water Blight if selected appropriate to the hzv
-    power.rawHZV = $(WaterBlight).hasClass('blue') ? Math.min(100, ~~(Math.max(power.rawHZV, power.rawHZV * 0.63 + 22.2) + 3)) : power.rawHZV;
-    if (weaponRampage0.value === 'Kushala Daora Soul') {
-        power.aff += 15;
-    }
-    // adds Weakness Exploit
-    power.aff = power.rawHZV >= 45 ? power.aff + JSON.parse($('#WeaknessExploit').val()) : power.aff;
-    power.aff = Math.min(power.aff, 100) / 100;
-    power.rawHZV = getHZ()[lower(power.type)] !== undefined ? power.rawHZV : 100;
-    return {...power };
-}
-
-function UpdateComboTracker() {
-    if (!Number.isNaN(+window.event.target.id) && window.event.target.id !== '0') {
-        // if value entered in the e.target combo input > amount stored in comboTracker [] adds attack id to the end of the comboTracker until they are ===
-        let difference = $('.inputs')[window.event.target.id].value - TimesUsed(window.event.target.id);
-        while (difference > 0) {
-            comboTracker.push(window.event.target.id);
-            --difference;
-        }
-        // if value entered in the e.target combo input < amount stored in comboTracker [] removes the last instance of this attack id from the comboTracker until they are ===
-        while (difference < 0) {
-            comboTracker.splice(comboTracker.lastIndexOf(window.event.target.id), 1);
-            ++difference;
-        }
-    }
-}
-
-function UpdateComboDisplay() {
-    $('.comboHits').remove();
-    let comboHit;
-    $(comboTracker).each((_index, element) => {
-        comboHit = document.createElement('output');
-        comboHit.className = 'comboHits';
-        comboHit.textContent = $(`td#b${[element]}>output`).text();
-        $(comboCountDisplay).append(comboHit);
-    });
-}
-
-// finds HitsOfSharpness current sharpness as well as what combo hits were used how many times per color
-// function TotalHitsOfSharpUsed(power) {
-function getInitialSharpness(baseSharp = {...getWeapon().sharpness }) {
-    let increase = [];
-    // gets handicraft.selectedIndex & figures out which color power.handicraft actually applies to then add the extra points appropriately.
-    if (Handicraft.selectedIndex > 0) {
-        if (baseSharp.purple > 0) {
-            increase = ['purple'];
-        } else if (baseSharp.white > 0) {
-            increase = ['white', 'purple'];
-        } else if (baseSharp.blue > 0) {
-            increase = ['blue', 'white', 'purple'];
-        } else if (baseSharp.green > 0) {
-            increase = ['green', 'blue', 'white', 'purple'];
-        } else if (baseSharp.yellow > 0) {
-            increase = ['yellow', 'green', 'blue', 'white'];
-        }
-        let pointsOfHandicraft = Handicraft.selectedIndex;
-        $(getWeapon().handicraft).each((index, element) => {
-            while (element > 0 && pointsOfHandicraft > 0) {
-                baseSharp[increase[index]] += 10;
-                --pointsOfHandicraft;
-                element -= 10;
-            }
-        });
-    }
-    return {...baseSharp };
-}
-
-function applySharpnessSkills(aff, totalSharp = {...getInitialSharpness() }) {
-    let ugh = [];
-    const razorSharp = info.skills.RazorSharp[RazorSharp.selectedIndex].Sharp;
-    let MT = info.skills.MastersTouch[MastersTouch.selectedIndex].Sharp;
-    MT *= aff;
-    // applies the extra hits of sharpness from the Masters Touch skill;
-    const mTBonus = aff > 0 && MastersTouch.selectedIndex > 0 ? sharpnessReduction(MT) * sharpnessReduction(razorSharp) : sharpnessReduction(razorSharp);
-    ugh = Object.entries(totalSharp).map(sharp => ~~(+sharp[1] * +mTBonus));
-    return ugh;
-}
-
-function getTotalComboHits() {
-    let [...listOfEachAttack] = comboTracker;
-    if (comboTracker[0] !== undefined && comboTracker[0] !== null) {
-        let comboMulti = $('.inputComboRepeat').val();
-        // for each pont in the comboMultiplier input, adds another comboTracker [] to the listOfEachAttack
-        while (comboMulti > 1) {
-            listOfEachAttack = listOfEachAttack.concat(comboTracker);
-            --comboMulti;
-        }
-        return listOfEachAttack;
-    }
-}
-
-function getComboHitsAndSetSharpness(affinity = 0) {
-    const [remainingSharp, comboHitsPerColor, total] = hitsPerColorSharp(affinity);
-
-    let sharpnessSet = false;
-    for (let i = 0; i < 7; i++) {
-        const element = remainingSharp[i];
-        const color = $('#sharpnessContainer').children()[6 - i];
-        color.textContent = element < 0.1 ? '' : Number(element).toFixed(0);
-        $(color).width((Number(element).toFixed(0) / total) * $(damageContainer).width() * 0.47);
-        if (element > 0 && !sharpnessSet) {
-            Sharpness.selectedIndex = 7 - i;
-            sharpnessSet = true;
-        }
-    }
-    return comboHitsPerColor;
-}
-
-function hitsPerColorSharp(affinity = 0, hits = getTotalComboHits()) {
-    let comboHitsPerColor = { purple: [], white: [], blue: [], green: [], yellow: [], orange: [], red: [] };
-    const remainingSharp = weaponType.value !== bow ? {...applySharpnessSkills(affinity).reverse() } : [0, 0, 0, 0, 1, 0, 0, 0];
-    const total = Object.values(remainingSharp).reduce((a, b) => a + b);
-    if (hits !== undefined) {
-        hits.forEach(eachAttack => {
-            const attackKey = Object.keys(getUsedAttacks())[eachAttack];
-            if ($('#dropWeaponType').val() !== 'Gunlance' || ($('#dropWeaponType').val() === 'Gunlance' && eachAttack < 28)) {
-                for (let i = 0; i < getAttacks()[attackKey].ticsPer + 1; i++) {
-                    if (remainingSharp[0] > 0.1) {
-                        comboHitsPerColor.purple.push(eachAttack);
-                        remainingSharp[0] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (remainingSharp[1] > 0.1) {
-                        comboHitsPerColor.white.push(eachAttack);
-                        remainingSharp[1] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (remainingSharp[2] > 0.1) {
-                        comboHitsPerColor.blue.push(eachAttack);
-                        remainingSharp[2] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (remainingSharp[3] > 0.1) {
-                        comboHitsPerColor.green.push(eachAttack);
-                        remainingSharp[3] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (remainingSharp[4] > 0.1) {
-                        comboHitsPerColor.yellow.push(eachAttack);
-                        remainingSharp[4] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (remainingSharp[5] > 0.1) {
-                        comboHitsPerColor.orange.push(eachAttack);
-                        remainingSharp[5] -= getHitsPerTic(attackKey, eachAttack);
-                    } else if (remainingSharp[6] > 0.1) {
-                        comboHitsPerColor.red.push(eachAttack);
-                        remainingSharp[6] -= getHitsPerTic(attackKey, eachAttack);
-                    }
-                }
-            }
-        });
-    }
-    return [remainingSharp, comboHitsPerColor, total];
-}
-
-function getHitsPerTic(attackName, index) {
-    if ($(ProtectivePolish).hasClass('gray') && weaponType.value !== bow) {
-        // applies DualBlades Sharpness Reduction
-        if ($(weaponType).val() === 'DualBlades') {
-            return getAttacks()[attackName].hitsOfSharp / 3;
-        } else if (($('#dropWeaponType').val() === 'Gunlance' && index > 27) || $('#dropWeaponType').val() !== 'Gunlance') {
-            return getAttacks()[attackName].hitsOfSharp;
-        }
-        return 1;
-    }
-    return 0;
-}
-
-function GetRemainingSkills(power) {
-    [power.augEFR, power.augPRM, power.augPEM] = [1, 1, 1];
-    power.augPEM *= $('#weaponRampage0').val() === 'Valstrax Soul' && power.eleType === 'Dragon' ? 1.2 : 1;
-    // applies Dulling Strike to Base raw depending on sharpness and if selected
-    [power.augEFR, power.augPRM] = $('#weaponRampage0').val() === 'Dulling Strike' && Sharpness.selectedIndex < 5 ? [1.02, 1.2] : [power.augEFR, power.augPRM];
-    /*
-     * If an anti species type skill is selected it gets the list of monsters applicable and checks
-     *if the selected monster is in the list.If true, it applies the skill.
-     */
-    if (
-        getWeapon().rampageSlots === 0 &&
-        Object.prototype.hasOwnProperty.call(info.types, $('#weaponRampage0').val()) &&
-        Object.prototype.hasOwnProperty.call(info.types[$('#weaponRampage0').val()].Monsters, $('#dropMonster').val())
-    ) {
-        [power.augPRM, power.augPEM] = info.types[$('#weaponRampage0').val()];
-    } else if (
-        dropMonster.value !== 'Toadversary' &&
-        getWeapon().rampageSlots > 0 &&
-        Object.entries(info.types[dropMonster.value]).filter(isSpecies => isSpecies[1] && weaponRampage0.value.match(isSpecies[0])).length > 0
-    ) {
-        power.PRM *= 1.05;
-    }
-    if (/blight Exploit/.test(weaponRampage0.value)) {
-        power.PRM *= 1.1;
-    }
-    if (weaponRampage0.value === 'Magnamalo Soul') {
-        power.BR += 12;
-    }
-    if (weaponType.value === db) {
-        power.BEM *= !/\[Feral Demon Mode\]/.test(power.attackName) ? info.skills.DemonMode[DemonMode.selectedIndex].BEM : 1;
-        power.BRM *= !/\[Demon Mode\]/.test(power.attackName) ? info.skills.FeralDemonMode[FeralDemonMode.selectedIndex].BRM : 1;
-    }
-    if (/BowGun/.test(weaponType.value)) {
-        if (weaponType.value === hbg && power.type === 'IgnoreHZV' && /Sticky|Wyvern/.test(power.attackName)) {
-            Bombardier.selectedIndex = Bombardier.selectedIndex < 0 ? 0 : Bombardier.selectedIndex;
-            power.augEFR *= info.skills.Bombardier[Bombardier.selectedIndex][power.attackName.match('Sticky|Wyvern')[0]][1];
-            power.augPRM *= info.skills.Bombardier[Bombardier.selectedIndex][power.attackName.match('Sticky|Wyvern')[0]][0];
-        }
-        if (dropWeaponType.value === lbg && /Pierce|Spread|Normal/.test(power.attackName) && $(CriticalFirePower)[0].selectedIndex > 0) {
-            if (/Normal/.test(power.attackName)) {
-                power.PRM *= 1.3;
-            } else if (/Spread/.test(power.attackName)) {
-                power.PRM *= 1.2;
-            } else if (/Pierce/.test(power.attackName)) {
-                power.PRM *= 1.1;
-            }
-        }
-        // Power Barrel
-        if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BowgunBarrel.options[BowgunBarrel.selectedIndex].text === 'Power') {
-            power.baseRaw = ~~(power.baseRaw * 1.125);
-        } else if (TuneUp.selectedIndex === 2 && BowgunBarrel.options[BowgunBarrel.selectedIndex].text === 'Power') {
-            power.baseRaw = ~~(power.baseRaw * 1.15);
-        }
-        if ((TuneUp.selectedIndex === 0 || TuneUp.selectedIndex === 1) && BowgunBarrel.options[BowgunBarrel.selectedIndex].text === 'Long') {
-            power.baseRaw = ~~(power.baseRaw * 1.05);
-        } else if (TuneUp.selectedIndex === 2 && BowgunBarrel.options[BowgunBarrel.selectedIndex].text === 'Long') {
-            power.baseRaw = ~~(power.baseRaw * 1.075);
-        }
-    }
-    if ((power.type === 'IgnoreHZV' && (weaponType.value === lbg) || weaponType.value === cb)) {
-        power.augEFR *= info.skills.Bombardier[Bombardier.selectedIndex][1];
-        power.augPRM *= info.skills.Bombardier[Bombardier.selectedIndex][0];
-
-        if (weaponType.value === sa && /Sword|ZSD|ED/.test(power.attackName) && power.phialType === 'Impact Phial') {
-            power.BRM *= 1.15;
-        }
-        if (weaponType.value === sa && /Sword|Elemental|ED/.test(power.attackName) && power.phialType === 'Elemental Phial') {
-            power.BEM *= 1.45;
-        }
-    } // If elemental exploit is selected && power.eleHZV >= 25 applies elemental exploit
-    if (power.eleType !== 'None') {
-        power.PEM *= getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Elemental Exploit' && getHZ()[lower(power.eleType)] >= 25 ? 1.3 : 1;
-        power.PEM *=
-            getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() == 'Element Exploit' && getHZ()[lower(power.eleType)] >= 25 && lower(power.eleType) !== 'none' ?
-            1.15 :
-            1;
-        power.PEM *= getHZ()[lower(power.eleType)] >= 20 && lower(power.eleType) !== 'none' ? info.skills.ElementalExploit[ElementalExploit.selectedIndex].PEM : 1;
-    }
-
-    // applies Bludgeoner to Base raw depending on sharpness and selectedIndex
-
-    if (Sharpness.selectedIndex > 0 && Bludgeoner.selectedIndex > 0) {
-        power.BRM *= Bludgeoner.selectedIndex === 1 && Sharpness.selectedIndex < 4 ? [1.05] : [1];
-        power.BRM *= Bludgeoner.selectedIndex === 2 && Sharpness.selectedIndex < 4 ? [1.1] : [1];
-        power.BRM *= Bludgeoner.selectedIndex === 3 && Sharpness.selectedIndex < 5 ? [1.1] : [1];
-    }
-    // applies sharpnessModifier to sever and blunt type attacks that use at least one hit of sharpness. This makes sure attacks like tackle or Bow skills don't get a sharpness modifier.
-
-    const sharpnessModifier = [];
-    [sharpnessModifier.PRM, sharpnessModifier.PEM] =
-    power.noSharpMod === false && /sever|blunt/.test(lower(power.type)) ? [JSON.parse(Sharpness.value).PRM, JSON.parse(Sharpness.value).PEM] : [1, 1];
-    // adds minds eye
-    power.PRM *= ~~(25 / sharpnessModifier.PRM) >= getHZ()[lower(power.type)] ? info.skills.MindsEye[MindsEye.selectedIndex].PRM : 1;
-
-    /*
-     * Brutal Strike
-     * Converts -Aff to a positive then * chance to proc * dmg modifier then
-     * adds the -dps to the +dps gain to find overall dps difference
-     */
-
-    if (getWeapon().rampageSlots === 0 && $('#weaponRampage0').val() === 'Brutal Strike' && power.aff < 0) {
-        power.efrMulti = 1 + power.aff * -1 * 0.2 * 1.5 - power.aff * -1 * 0.8 * 0.75;
-        power.critBoost = 1.5;
-    } else if (getWeapon().rampageSlots !== 0 && $('#weaponRampage0').val() === 'Brutal Strike' && power.aff < 0) {
-        power.efrMulti = 1 + power.aff * -1 * 0.25 * 2 - power.aff * -1 * 0.75 * 0.75;
-        power.critBoost = 1.5;
-    }
-    if (power.type === 'Shot') {
-        power.augPRM *= info.skills.Marksman[Marksman.selectedIndex][0];
-        power.augEFR *= info.skills.Marksman[Marksman.selectedIndex][1];
-    }
-    return {...power };
-}
-
-function getCritEle(canCrit, affinity) {
-    return canCrit ? {
-        PEM: info.skills.CriticalElement[CriticalElement.selectedIndex].PEM,
-        EFE: 1 + (info.skills.CriticalElement[CriticalElement.selectedIndex].PEM - 1) * affinity,
-    } : { PEM: 1, EFE: 1 };
-}
-
-function getCritBoost(canCrit, affinity) {
-    return canCrit ? {
-        PRM: info.skills.CriticalBoost[CriticalBoost.selectedIndex].PRM,
-        EFR: 1 + (info.skills.CriticalBoost[CriticalBoost.selectedIndex].PRM - 1) * affinity,
-    } : { PRM: 1, EFR: 1 };
-}
-
-function DamageCalculations(power) {
-    if (power.Raw === false) {
-        [power.raw, power.rawNon, power.efr, power.rawCrit] = [0, 0, 0, 0];
-    } else {
-        power.raw = Math.min(power.baseRaw * power.BRM + power.BR, 2600);
-        const rawFormula = (power.raw * power.PRM * power.rawHZV * power.rawMV) / 10000;
-        power.rawNon = Math.max(1, rawFormula * power.augPRM);
-        power.efr = Math.max(1, rawFormula * power.augEFR * getCritBoost(power.Crit, power.aff).EFR);
-        power.rawCrit = Math.max(1, rawFormula * power.augPRM * getCritBoost(power.Crit, power.aff).PRM);
-    }
-
-    if (Object.prototype.hasOwnProperty.call(power, 'NoEleBuff') && power.NoEleBuff === true) {
-        [power.ele, power.eleNon, power.efe, power.eleCrit] = [power.baseEle, power.baseEle, power.baseEle, power.baseEle];
-    } else if (power.Ele === false || (power.eleType === 'None' && !/BowGun/.test(weaponType.value))) {
-        [power.ele, power.eleNon, power.efe, power.eleCrit] = [0, 0, 0, 0];
-    } else {
-        power.eleAmmo = /BowGun/.test($('#dropWeaponType').val()) && power.eleType !== 'None' ? 1 + power.raw / 100 : 1;
-        power.ele = Math.min(power.baseEle * power.BEM + power.BE, 365) * power.eleAmmo;
-        const eleFormula = power.ele * power.PEM * (getHZ()[lower(power.eleType)] / 100) * power.eleMV * power.augPEM;
-        power.eleNon = Math.max(1, eleFormula);
-        power.efe = Math.max(1, eleFormula * getCritEle(power.Crit, power.aff).EFE);
-        power.eleCrit = Math.max(1, eleFormula * getCritEle(power.Crit, power.aff).PEM);
-    }
-    return {...power };
-}
-
-function sharpnessReduction(reduction) {
-    let total = 0;
-    let hits = 1;
-    while (hits >= 0.0001) {
-        total += hits;
-        hits *= reduction;
-    }
-    return total / 1 + 0.001;
-}
-
-function GunlanceShelling(currentDamage, comboDamage, power, e) {
-    const regex = new RegExp(`${getWeapon().shellingType} Lv${getWeapon().shellingLevel}`);
-    let Raw = 1;
-    let EFR = 1;
-    $(Object.entries(getAttacks()).filter(attack => regex.test(attack))).each(function(index) {
-        Raw = ~~(this[1].rawMV * info.skills.Bombardier[Bombardier.selectedIndex][0] * info.skills.Artillery[Artillery.selectedIndex].BRM);
-        EFR = ~~(this[1].rawMV * info.skills.Bombardier[Bombardier.selectedIndex][1] * info.skills.Artillery[Artillery.selectedIndex].BRM);
-        const final = [
-            'replaceME',
-            this[0],
-            0,
-            `${Raw} / ${Raw}`,
-            `${this[1].baseEle} / ${this[1].baseEle}`,
-            `${(Raw + this[1].baseEle) * (this[1].ticsPer + 1)} / ${(Raw + this[1].baseEle) * (this[1].ticsPer + 1)}`,
-            EFR,
-            this[1].baseEle,
-            (EFR + this[1].baseEle) * (this[1].ticsPer + 1),
-        ];
-        currentDamage.push(final);
-        comboDamage[0] += 0;
-        comboDamage[1] += Raw * TimesUsed(index + 28);
-        comboDamage[2] += Raw * TimesUsed(index + 28);
-        comboDamage[3] += this[1].baseEle * TimesUsed(index + 28);
-        comboDamage[4] += this[1].baseEle * TimesUsed(index + 28);
-        comboDamage[5] += (Raw + this[1].baseEle) * (power.ticsPer + 1) * TimesUsed(index + 28);
-        comboDamage[6] += (Raw + this[1].baseEle) * (power.ticsPer + 1) * TimesUsed(index + 28);
-        comboDamage[7] += EFR * TimesUsed(index + 28);
-        comboDamage[8] += this[1].baseEle * TimesUsed(index + 28);
-        comboDamage[9] += (EFR + this[1].baseEle) * (power.ticsPer + 1) * TimesUsed(index + 28);
-    });
-    if (!/Inputs|inputButton/.test(window.event.target.className)) {
-        BuildDamageTable(currentDamage, 'dps', e);
-    }
-    c0.innerHTML = `${formatNumbers(comboDamage[0])}`;
-    d0.innerHTML = `${formatNumbers(comboDamage[1])} / ${formatNumbers(comboDamage[2])}`;
-    e0.innerHTML = `${formatNumbers(comboDamage[3])} / ${formatNumbers(comboDamage[4])}`;
-    f0.innerHTML = `${formatNumbers(comboDamage[5])} / ${formatNumbers(comboDamage[6])}`;
-    g0.innerHTML = `${formatNumbers(comboDamage[7])}`;
-    h0.innerHTML = `${formatNumbers(comboDamage[8])}`;
-    i0.innerHTML = `${formatNumbers(comboDamage[9])}`;
-    return;
-}
-
-function BuildDamageTable(myDamage, id, e) {
-    const currentAmmoTableStyle = ammoTable.style.display;
-    const currentDamageTableStyle = dpsTable.style.display;
-    const inputs = /gray/.test(filterCombo.className) ? document.querySelectorAll('.a') : document.querySelectorAll('.a:not(.gray)');
-    let k = 0;
-    const myHeader = document.querySelector(`#${id}Head`);
-    const myBody = document.querySelector(`#${id}Body`);
-    const table = document.createElement('table');
-    const tHead = document.createElement('thead');
-    const headerRow = document.createElement('tr');
-    const tBody = document.createElement('tbody');
-
-    const myHeaders = myDamage.splice(0, 1);
-    myHeaders[0].forEach(headerText => {
-        const header = document.createElement('th');
-        const textNode = document.createTextNode(headerText);
-
-        header.appendChild(textNode);
-        headerRow.appendChild(header);
-    });
-
-    tHead.appendChild(headerRow);
-    myHeader.replaceWith(tHead);
-    myDamage.forEach(attack => {
-        const row = document.createElement('tr');
-
-        Object.values(attack).forEach(text => {
-            if (text === 'replaceME') {
-                if (
-                    $(previousWeaponType).val() === $(weaponType).val() &&
-                    inputs.length > 0 &&
-                    ((window.event.target === dropWeapon && weaponType.value !== cb) || window.event.target !== dropWeapon) &&
-                    window.event.target.id !== 'BowChargePlus' &&
-                    (($(weaponType).val() === 'Bow' && previousWeapon.value === dropWeapon.value) || $(weaponType).val() !== 'Bow')
-                ) {
-                    row.appendChild(inputs[k]);
-                    ++k;
-                } else {
-                    const cell = document.createElement('td');
-                    const adjuster = document.createElement('input');
-
-                    adjuster.setAttribute('type', 'Number');
-                    adjuster.setAttribute('class', `Combo skill ${k}`);
-                    adjuster.setAttribute('Max', 20);
-                    if ($(weaponType).val() === 'Bow' && previousWeapon.value !== dropWeapon.value) {
-                        comboTracker = [];
-                        UpdateComboDisplay();
-                    }
-                    if (k === 0) {
-                        adjuster.setAttribute('id', 'inputComboRepeat');
-                        adjuster.setAttribute('Min', 1);
-                        adjuster.setAttribute('value', 1);
-                        adjuster.setAttribute('class', 'inputComboRepeat hitsOfSharpInputs inputs');
-                    } else {
-                        adjuster.setAttribute('id', k);
-                        adjuster.setAttribute('class', 'inputs hitsOfSharpInputs');
-                        adjuster.setAttribute('Min', 0);
-                        adjuster.setAttribute('value', 0);
-                    }
-                    ++k;
-                    cell.appendChild(adjuster);
-                    row.appendChild(cell);
-                }
-            } else {
-                const cell = document.createElement('td');
-                const textNode = document.createTextNode(text);
-
-                cell.appendChild(textNode);
-                row.appendChild(cell);
-            }
-        });
-        tBody.appendChild(row);
-        myBody.replaceWith(tBody);
-    });
-    table.setAttribute('id', `${id}Table`);
-    tHead.setAttribute('id', `${id}Head`);
-    tBody.setAttribute('id', `${id}Body`);
-    tBody.className = /(BowGun)/.test($('#dropWeaponType').val()) ? 'rangedTable' : 'meleeTable';
-    damageContainer.className = /(BowGun)/.test($('#dropWeaponType').val()) ? 'rangedContainer' : 'meleeContainer';
-
-    ammoTable.style.display = currentAmmoTableStyle;
-    dpsTable.style.display = currentDamageTableStyle;
-
-    if (id !== 'stats' && id !== 'ammo') {
-        const [len, ...column] = /BowGun/.test($('#dropWeaponType').val()) ? [k, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'] : [k, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
-
-        if (/BowGun/.test($(weaponType).val()) && !/BowGun/.test($(previousWeaponType).val())) {
-            $('#comboCountContainer').hide();
-        } else if (!/BowGun/.test($(weaponType).val()) && /BowGun/.test($(previousWeaponType).val())) {
-            $('#comboCountContainer').show();
-        }
-        $('#previousWeapon').val($('#dropWeapon').val());
-        $('#previousWeaponType').val($('#dropWeaponType').val());
-        for (let i = 0; i < len; ++i) {
-            let j = 0;
-            column.forEach(letter => {
-                $(`#${id}Body`)[0].children[i].children[j].id = letter + i;
-                $(`#${id}Body`)[0].children[i].children[j].className = `${letter} ${i}`;
-                ++j;
-            });
-        }
-
-        if (!/BowGun/.test($(weaponType).val())
-            // && !/inputButton/.test(window.event.target.className)
-        ) {
-            $(`tbody#${id}Body>tr>td:nth-child(2)`).each(function(index, element) {
-                const cell = document.createElement('td');
-                cell.innerHTML = `<button type="button" aria-pressed="false" id="${index}" class="inputButton dec"
-				>&#8681</button><button type="button" aria-pressed="false" id="${index}" class="inputButton inc">&#8679</button><output class="label">${element.textContent}</output>`;
-                cell.id = `b${index}`;
-                this.replaceWith(cell);
-                $(cell).addClass(`b ${index} inputContainer`);
-            });
-        }
-    }
-    if (/blue/.test(filterCombo.className)) {
-        $('.a').each(index => {
-            if ($(`.${index}`)[0].style.display === 'none') {
-                $(`.${index}`).hide();
-            }
-        });
-    }
-    const tableClass = !/BowGun/.test(weaponType.value) ? 'tableRowMelee' : 'tableRowRanged';
-    Object.values(dpsTable.children).forEach(ele => {
-        Object.values(ele.children).forEach(row => {
-            $(row).addClass(tableClass);
-        });
-    });
-    Object.values(damageContainer.children[0].children[1].children).forEach(row => {
-        $(row).children().addClass('cell');
-    });
-}
-
-function MonChart() {
-    if (dropQuest.value !== '') {
-        let mon = [];
-        const type = /Bow/.test(weaponType.value) ? 'shot' : weaponType.value[0] === 'H' ? 'blunt' : 'sever';
-        const headers = [`Spawn Area ${info.quest[dropQuest.value].spawn}`, 'Sever', 'Blunt', 'Shot', 'Fire', 'Water', 'Thunder', 'Ice', 'Dragon'];
-        const table = document.createElement('table');
-        const myTable = document.querySelector('#monTable');
-        const headerRow = document.createElement('tr');
-
-        headers.forEach(headerText => {
-            const header = document.createElement('th');
-            const textNode = document.createTextNode(headerText);
-            header.appendChild(textNode);
-            headerRow.appendChild(header);
-        });
-
-        table.appendChild(headerRow);
-        mon = Object.entries(info.monster.hzv[dropMonster.value]).sort((b, a) => {
-            if (a[1][type] === b[1][type] && document.querySelector('#statsHead > tr > th:nth-child(4)').textContent !== 'none') {
-                return (
-                    a[1][lower(document.querySelector('#statsHead > tr > th:nth-child(4)').textContent)] -
-                    b[1][lower(document.querySelector('#statsHead > tr > th:nth-child(4)').textContent)]
-                );
-            }
-            return a[1][type] - b[1][type];
-        });
-        mon.forEach(element => {
-            const row = document.createElement('tr');
-            const HZV = [`${element[1].part} ${element[1].state}`].concat(Object.values(element[1]).splice(3, 8));
-
-            for (let j = 0; j < 9; ++j) {
-                const cell = document.createElement('td');
-                // adds demon ammo and water blight to displayed HZV
-                if (j !== 0) {
-                    HZV[j] = $(WaterBlight).hasClass('blue') && /1|2|3/.test(j) ? Math.min(100, ~~(Math.max(HZV[j], HZV[j] * 0.63 + 22.2) + 3)) : HZV[j];
-
-                    if (HZV[j] < 14) {
-                        cell.setAttribute('class', 'F');
-                    } else if (HZV[j] < 15) {
-                        cell.setAttribute('class', 'C');
-                    } else if (HZV[j] < 45) {
-                        cell.setAttribute('class', 'B');
-                    } else if (HZV[j] < 65) {
-                        cell.setAttribute('class', 'A');
-                    } else if (HZV[j] >= 65) {
-                        cell.setAttribute('class', 'S');
-                    }
-                    HZV[j] = ~~HZV[j];
-                }
-                const textNode = document.createTextNode(HZV[j]);
-                cell.appendChild(textNode);
-                row.appendChild(cell);
-            }
-            table.appendChild(row);
-        });
-        table.setAttribute('id', 'monTable');
-        myTable.replaceWith(table);
-        Object.values(monTableContainer.children).forEach(ele => {
-            Object.values(ele.children).forEach(row => {
-                row.className = 'tableRow';
-            });
-        });
-    }
-}
-$('select.demon').on('change', function(e) {
-    if (e.target.selectedIndex > 0) {
-        $(`.demon:not(#${e.target.id})`)[0].selectedIndex = 0;
-    }
-});
-$([dropWeapon, weaponType]).on('change', _e => {
-    if (weaponType.value === cb) {
-        classChange();
-    }
-});
-$([dropWeapon, weaponType]).on('change', _e => {
-    if (weaponType.value === 'Bow') {
-        $(BowCoating).empty();
-        const thisArr = [];
-        getWeapon().coatings.forEach(thisCoating => {
-            const thisOption = document.createElement('option');
-            thisOption.textContent = thisCoating;
-            $(BowCoating).append(thisOption);
-            thisArr.push(info.skills[`${thisCoating}`]);
-        });
-        info.skills.BowCoating = thisArr;
-    }
-});
-
-function classChange() {
-    if (Object.values(check).every(keyCard => keyCard)) {
-        $([unique, dango]).toggleClass(previousWeaponType.value + ' ' + weaponType.value);
-        $('#section1-4').toggleClass(previousWeaponType.value + ' ' + weaponType.value);
-        if (previousWeaponType.textContent !== '') {
-            ComboReset();
-        }
-        let ugh = [];
-        // for Chain Crit
-        if (weaponType.value === db) {
-            ugh = info.skills.ChainCritDualBlades;
-        } else if (weaponType.value === bow) {
-            ugh = info.skills.ChainCritBow;
-        } else if (weaponType.value === lbg || weaponType.value === hbg) {
-            ugh = info.skills.ChainCritBowGun;
-        } else {
-            ugh = info.skills.ChainCritStandard;
-        }
-        info.skills.ChainCrit = ugh;
-
-        info.skills.Bombardier = /Gun|Charge/.test(weaponType.value) ? info.skills.bombardier[weaponType.value] : [];
-
-        $('.classSpecific').attr('selectedIndex', 0);
-        $('.classSpecific').hide();
-        $('.classSpecific').parent().hide();
-        weaponId.innerHTML = '';
-        weaponId.innerHTML = $('#dropWeaponType').val();
-        $(`.${$(weaponType).val()}`)
-            .parent()
-            .show();
-        $(`.${$(weaponType).val()}`).show();
-
-        if (/Bow/.test($(weaponType).val())) {
-            $('.Shot').parent().show();
-            $('.Shot').show();
-
-            // getWeapon()['coatings'].forEach((coat, index)=>{
-            // if(coat){
-            // info.skills.BowCoating.push(info.skills[['CloseRange','Power','Poison','Para','Sleep','Blast','Exhaust'][index])
-            // }
-            // })
-            // if=== 1?getWeapon().coatings.push(coat):enums[i]===2?getWeapon().coatings.push('Poison+'):enums[i]===3?getWeapon().coatings.push('Para+'):enums[i]===4?getWeapon().coatings.push('Sleep+'):getWeapon().coatings
-
-            $(ammoTable).hide();
-            UniqueColumnsDisplay();
-        } else {
-            MeleeElements();
-            UniqueColumnsDisplay();
-        }
-        $('.skillButton').each(function() {
-            if (this.style.display === 'none' && $(this).hasClass('blue') && $(this).hasClass('toggle')) {
-                $(this).toggleClass('blue gray');
-            }
-        });
-    }
-}
-
-function MeleeElements() {
-    $('.melee').parent().show();
-    $('.melee').show();
-    if ($('#dropWeaponType').val() === 'ChargeBlade') {
-        if (getWeapon().phialType === 'Impact Phial') {
-            impShieldCharge.parentNode.style = "display:''";
-            eleShieldCharge.parentNode.style = 'display:none';
-            eleShieldCharge.selectedIndex = 0;
-        } else if (getWeapon().phialType === 'Element Phial') {
-            impShieldCharge.parentNode.style = 'display:none';
-            impShieldCharge.selectedIndex = 0;
-            eleShieldCharge.parentNode.style = "display:''";
-        }
-    }
-}
-$(window).on('keypress', e => {
-    keyDown = e.originalEvent.key === '-' ? ++keyDown : 0;
-    if (keyDown === 3) {
-        ResetSkills();
-        DataCompile();
-        keyDown = 0;
-    }
-});
-
-function UniqueColumnsDisplay() {
-    // $('#dango')[0].style =
-    // /Bow/.test(weaponType.value) ?
-    // 'grid-template-columns:repeat(2, 1fr); grid-area: 11/1/13/4;' :
-    // 'grid-template-columns:repeat(3, 1fr); grid-area: 10/1/11/4;';
-    // forButtons.style = /BowGun/.test($(weaponType).val()) ? 'grid-template-columns: repeat(10. 1fr)' : 'grid-template-columns: repeat(6, 1fr)';
-}
-
-function ResetSkills(element = '.skill') {
-    $('.skillButton').each(function() {
-        if ($(this).hasClass('blue')) {
-            $(this).toggleClass('blue gray');
-        }
-    });
-    for (let i = 0; i < $(element).length; ++i) {
-        $(element)[i].selectedIndex = 0;
-    }
-}
-$('#BowChargePlus').on('change', () => {
-    ComboReset();
-    UpdateComboDisplay();
-});
-$(document).on('change', function(e) {
-    if (e.target === ($('#weaponRampage0')[0] || $('.inputs')[0])) {
-        DataCompile(e);
-    } else if (e.target === weaponType) {
-        weaponType.className = /Bow/.test(weaponType.value) ? 'double' : 'single';
-    }
-});
-$('.scroll').on('mousedown', () => {
-    $('.scroll').toggleClass('vis invis');
-    info.skills.MailofHellfire = $(redScroll).hasClass('invis') ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
-    info.skills.Dereliction = $(redScroll).hasClass('invis') ? info.skills.DerelictionSourse.blue : info.skills.DerelictionSourse.red;
-    DataCompile();
-});
-
-$('.toggle').on('mousedown', function(e) {
-    if (/DemonDrug/.test(e.target.id) && /gray/.test(e.target.className) && [DemonDrug.className, MegaDemonDrug.className].some(x => /blue/.test(x))) {
-        $('#DemonDrug').toggleClass('gray blue');
-
-        $('#MegaDemonDrug').toggleClass('gray blue');
-    } else {
-        $(e.target).toggleClass('gray blue');
-    }
-    if (this !== filterCombo) {
-        const ugh = dropHZ.selectedIndex;
-        DataCompile();
-        if (this === WaterBlight) {
-            MonChart();
-            dropHZ.selectedIndex = ugh;
-            // $(dropHZ).
-            // children().
-            // each(function (index) {
-            // if (this.textContent === document.querySelector('#monTable > tr:nth-child(2) > td:nth-child(1)').textContent) {
-            // dropHZ.selectedIndex = index;
-            // }
-            // });
-        }
-    } else if (this === filterCombo) {
-        FilterTableForComboAttacks();
-    }
-});
-
-function ToggleAmmoTables() {
-    dpsTable.style = dpsTable.style.display !== 'none' ? 'display:none' : "display:''";
-    ammoTable.style = dpsTable.style.display !== 'none' ? 'display:none' : "display:''";
-}
-
-function calculateAmmoFrames(power) {
-    let attackName = /sub-Lv|explosion| Procs|\(RF\+\d\)/g.test(power.attackName) ?
-        power.attackName.replace(/sub-| explosion| \(RF\+\d\) Procs| Procs| \(RF\+\d\)/g, '') :
-        power.attackName;
-    attackName = /(?<!Lv)\d/.test(attackName) ? `${attackName.slice(0,attackName.length - 1)}Lv${attackName.slice(-1)}` : attackName;
-    const ammo = {};
-    ammo.ammoIncrease = info.ammo.AmmoUp[attackName][AmmoUP.selectedIndex];
-    // converts to number to find frames used while staying within possible parameters
-    ammo.recoilSpeed =
-        info.ammo.recoil[attackName][
-            Math.max(
-                0,
-                Math.min(
-                    5,
-                    power.recoil -
-                    1 +
-                    RecoilDown.selectedIndex +
-                    (info.skills.BowgunBarrel[BowgunBarrel.selectedIndex].Silencer > 0 ?
-                        TuneUp.selectedIndex + info.skills.BowgunBarrel[BowgunBarrel.selectedIndex].Silencer :
-                        0) -
-                    ($(CriticalFirePower)[0].selectedIndex > 0 ? 2 : 0),
-                ),
-            )
-        ];
-    ammo.recoilSpeed = /\(RF\+\d\)/.test(power.attackName) ? `${ammo.recoilSpeed} ${power.attackName.match(/\(RF\+\d\)/)[0]}` : ammo.recoilSpeed;
-    ammo.recoilFrames = info.ammo.recoil.frames[ammo.recoilSpeed];
-    ammo.reloadSpeed =
-        info.ammo.reload[attackName][
-            Math.max(
-                0,
-                Math.min(
-                    8,
-                    power.reload +
-                    ReloadSpeed.selectedIndex +
-                    info.skills.BowgunBarrel[BowgunBarrel.selectedIndex].reload +
-                    (BowgunBarrel.selectedIndex === 0 && TuneUp.selectedIndex > 0 ? 1 : 0) -
-                    ($('#ElementalReload')[0].selectedIndex > 0 ? 2 : 0),
-                ),
-            )
-        ];
-    ammo.reloadFrames = info.ammo.reload.frames[ammo.reloadSpeed];
-    ammo.clipSize = power.clipSize[power.isUsed] + ammo.ammoIncrease;
-    ammo.spareShot = info.skills.SpareShot[SpareShot.selectedIndex] + +spareAdjust.value;
-    if (/(?<!snipe.*)explosion/.test(attackName) && Bombardier.selectedIndex > 0) {
-        ammo.spareShot += JSON.parse(Bombardier.value)[attackName.match(/Sticky|Wyvern/)[0]][2];
-    }
-
-    const shotsPerTimeLimit = 60;
-    ammo.shotsPerMinBase = shotsCheck(ammo.recoilFrames / 30, ammo.reloadFrames / 30, power.clipSize[power.isUsed], shotsPerTimeLimit);
-    ammo.shotsPerMin = shotsCheck(ammo.recoilFrames / 30, ammo.reloadFrames / 30, ammo.clipSize, shotsPerTimeLimit, 100 / ammo.spareShot);
-    ammo.shotsPerGain = `${Number.parseFloat((ammo.shotsPerMin / ammo.shotsPerMinBase - 1) * 100).toFixed(2)}%`;
-
-    ammo.ticsAdjust = +power.ticsPer + 1;
-    // Reduces total damage from pierce attacks displayed depending on selection
-    // top is for piercing attacks, bottom is for elemental piercing attacks(elemental pierce is reduced by a higher percentage)
-    if (/Pierce Lv|Pierce [1-3]/.test(attackName)) {
-        ammo.ticsAdjust *= JSON.parse(pierceAdjust.value)[0];
-    } else if (/Pierc/.test(attackName)) {
-        ammo.ticsAdjust *= JSON.parse(pierceAdjust.value)[1];
-    }
-    return ammo;
-}
-
-function ComboReset() {
-    // resets the combo inputs to default values
-    if (!/BowGun/.test($(previousWeaponType).val()) && $(previousWeaponType).val() !== '') {
-        $('.comboHits').remove();
-        $('.0:nth-child(n+ 3)').val(0);
-        $('.inputs').val(0);
-        $('.inputComboRepeat').val(1);
-        comboTracker = [];
-        DataCompile();
-    }
-}
-
-function FilterTableForComboAttacks() {
-    $('.inputs').each((index, element) => {
-        if (/blue/.test(filterCombo.className) && (element.value === '0' || element.style === 'display: none;')) {
-            $(`.${index}`).hide();
-        } else {
-            $(`.${index}`).show();
-        }
-    });
-}
-
-function TimesUsed(isUsed, arr = comboTracker) {
-    return arr.filter(attackId => attackId == isUsed).length;
-}
-
-// $('.aug').on('click',function (e) {
-// /inc/.test(e.target.className)?$(`#${e.target.id}Augment`).value+1:$(`#${e.target.id}Augment`).value-1
-// })
-
-// $(document).on('click',function (e) {
-// $(e.target).removeClass('hover')
-// })
-$(document).on('change', function(e) {
-    if ($(e.target).hasClass('inputs')) {
-        DataCompile(e);
-    }
-});
-$(document).on('mousedown', function(e) {
-    if ($(e.target).hasClass('inputButton')) {
-        if ($(e.target).hasClass('dec')) {
-            DecreaseComboCount(e);
-        } else if ($(e.target).hasClass('inc')) {
-            IncreaseComboCount(e);
-        }
-    }
-});
-
-function IncreaseComboCount(e) {
-    if (+$('.inputs')[e.target.id].value < 20) {
-        ++$('.inputs')[e.target.id].value;
-        DataCompile();
-    }
-}
-
-function DecreaseComboCount(e) {
-    if (e.target.id === '0' && +$('.inputs')[e.target.id].value > 1) {
-        --$('.inputs')[e.target.id].value;
-        DataCompile();
-    } else if (+e.target.id > 0 && +$('.inputs')[e.target.id].value > 0) {
-        --$('.inputs')[e.target.id].value;
-        DataCompile();
-    }
-}
-$(document).on('mousedown', e => {
-    const $target = $(e.target);
-    if (!$target.closest(augToggle).length && $('#augToggle').css('display') !== 'none' && e.target !== Qurious) {
-        $('.augToggle').toggleClass('augVis augInvis');
-        $('#Qurious').toggleClass('blue gray');
-    }
-});
-
-$('#Qurious').on('mousedown', () => {
-    $('.augToggle').toggleClass('augVis augInvis');
-});
-$('.augButton').on('mousedown', e => {
-    let ugh = 0;
-    $('.augLabel').each((_x, output) => {
-        ugh += +output.value;
-    });
-    if (
-        $(e.target).hasClass('inc') &&
-        ugh + +e.target.value < 6 &&
-        ((+$(e.target).siblings()[2].value + +e.target.value < 6 && !/elementalAug/.test(e.target.className)) ||
-            (/elementalAug/.test(e.target.className) && +$(e.target).siblings()[2].value < 3))
-    ) {
-        $(e.target).siblings()[2].value = +$(e.target).siblings()[2].value + +e.target.value;
-    } else if ($(e.target).hasClass('dec') && +$(e.target).siblings()[2].value > 0) {
-        $(e.target).siblings()[2].value = +$(e.target).siblings()[2].value - +e.target.value;
-    }
-    DataCompile(e);
-    RampageSelect();
-});
-
-function jsonsLoaded(e) {
-    if (Object.values(check).every(keyCard => keyCard)) {
-        WeaponTypeSelect();
-        WeaponSelect();
-        RampageSelect();
-        MonsterSelect();
-        PartSelect();
-        QuestSelect();
-        HealthSelect();
-        MonChart();
-        classChange();
-        DataCompile(e);
-
-    }
-}
-
-$(taWikiSetBuilder).on('paste', e => {
-    e.preventDefault();
-
-    const pasteurl = (event.clipboardData || window.clipboardData).getData('text');
-    $('select.skill').each(function() {
-        lastEvent = this;
-        resetSkillDescription(this);
-    });
-    decodeURL(pasteurl, e);
-    $(taWikiSetBuilder).text(document.createTextNode('Paste TA Wiki Set Builder Link Here'));
-    DataCompile(e);
-});
-
-function decodeURL(url = taWikiSetBuilder.value, e) {
-    if (/mhrise\.wiki-db\.com/.test(url)) {
-        const decode = decodeURIComponent(url);
-        const skills = decode.match('(?<=skills=)(.*?)(?=&)')[0].split(',');
-        ResetSkills(document.querySelectorAll(`.thisSkill:not(.${$(weaponType).val()})`));
-        $.each(skills, (_index, value) => {
-            const thisSkill = value.split('Lv');
-            thisSkill[0] = thisSkill[0].replace(/(\s)|(\/)/g, '');
-            thisSkill[0] = thisSkill[0].replace(/'s/g, 's');
-            thisSkill[0] = /Fire|Water|Wind|Ice|Dragon/.test(thisSkill[0]) ? 'ElementalAttack' : thisSkill[0];
-            thisSkill[0] = /Kush|Teos|Storm|Thunder|Wind/.test(thisSkill[0]) ? 'ElderEssence' : thisSkill[0];
-            if (document.querySelector(`#${thisSkill[0]}`) !== null && document.querySelector(`#${thisSkill[0]}`).style.display !== 'none') {
-                document.querySelector(`#${thisSkill[0]}`).selectedIndex = thisSkill[1];
-            }
-        });
-    } else if (JSON.parse(url).length === 6) {
-        loadState(url, e);
-    }
-}
-$('#taWikiSetBuilder').on('keyup', e => {
-    e.target.textContent =
-        (e.originalEvent.key === 'v' && e.originalEvent.ctrlKey) || e.originalEvent.metaKey ?
-        (e.target.textContent = 'Build Successfully Decrypted') :
-        'Paste TA Wiki Set Builder Link Here';
-});
-
-function resetWikiText() {
-    $('input#taWikiSetBuilder')[0].value = '';
-    $('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
-}
-
-function PopulateDropDowns(json, dropDown) {
-    $(dropDown).empty();
-    $.each(json, (_key, value) => {
-        $(dropDown).append($('<option></option>').attr('value', value).text(value));
-    });
-}
-
-function WeaponTypeSelect() {
-    PopulateDropDowns(weaponTypes, weaponType);
-}
-
-function WeaponSelect() {
-    $(dropWeapon).empty();
-    if (weaponFilter.checked === true) {
-        const rank10 = Object.entries(info[$(weaponType).val()].weapons).filter(x => info.types[weaponType.value].includes(x[1].weapon));
-        rank10.forEach(element => {
-            $('#dropWeapon').append($('<option></option>').attr('value', element[0]).text(element[1].weapon));
-        });
-    } else {
-        $(info[$(weaponType).val()].weapons).each((index, weapon) => {
-            $('#dropWeapon').append($('<option></option>').attr('value', index).text(weapon.weapon));
-        });
-    }
-}
-
-function RampageSelect() {
-    $(weaponRampage.children).hide();
-    $(weaponRampage0).show();
-    if (getWeapon().rampageSlots !== 0) {
-        const usableDecos = [];
-        $(Object.keys(info.rampage.rampageDecos)).each((_index, deco) => {
-            if (+deco.slice(-1) <= getWeapon().rampageSlots + (+$('output.rampageAug').val() > 0 ? 1 : 0)) {
-                usableDecos.push(info.rampage.rampageDecos[deco]);
-            }
-        });
-        PopulateDropDowns(usableDecos, weaponRampage0);
-        return;
-    } else {
-        $(weaponRampage.children).html('');
-        $(weaponRampage.children).hide();
-        $(weaponRampage0).show();
-        if (/Rampage/.test(getWeapon().weapon)) {
-            $(info.rampage[getWeapon().weapon].Rampage).each(function(index, _rampageSection) {
-                $(weaponRampage.children[index]).show();
-                PopulateDropDowns(Object.values(this), weaponRampage.children[index]);
-            });
-            return;
-        } else {
-            $(getWeapon().rampage).each(function(_index, _rampageSkill) {
-                $(weaponRampage0).append($('<option></option>').attr('value', info.rampage.keys2[this]).text(info.rampage.keys2[this]));
-            });
-            return;
-        }
-    }
-}
-
-function MonsterSelect() {
-    PopulateDropDowns(Object.keys(info.monster.hzv), dropMonster);
-    dropMonster.selectedIndex = Object.keys(info.monster.hzv).indexOf('Toadversary');
-}
-
-function getHZ() {
-    return info.monster.hzv[dropMonster.value][dropHZ.selectedIndex];
-}
-
-const getUsedAttacks = (weapon = weaponType.value) => {
-    let attacks;
-    if ($(weaponType).val() === 'InsectGlaive') {
-        attacks = Object.fromEntries(Object.entries(info.InsectGlaive.attacks).filter(skill => !/Sever|Blunt|Kinsect|Dust|Powder|Mark/.test(skill)));
-
-        return {...attacks };
-    }
-    if ($(weaponType).val() === 'ChargeBlade') {
-        const phialType = getWeapon().phialType === 'Impact Phial' ? 'Element Phial|Elemental Phial' : 'Impact Phial';
-        const regexp = new RegExp(`${phialType}`);
-
-        attacks = Object.fromEntries(Object.entries(info.ChargeBlade.attacks).filter(skill => !regexp.test(skill)));
-
-        return {...attacks };
-
-        //  filters bow attacks for only the usable attacks
-    }
-    if ($('#dropWeaponType').val() === 'Bow') {
-        let usableKeys = '';
-        const totalKeys =
-            document.getElementById('BowChargePlus').selectedIndex === 1 && getWeapon().baseCharge < 4 ? getWeapon().baseCharge + 1 : getWeapon().baseCharge;
-        $(getWeapon().bowShot).each((index, element) => {
-            if (index < totalKeys) {
-                usableKeys += `|Lv${element.match('[1-5]')[0]} ${element.match('Normal|Rapid|Pierce|Spread')[0]}`;
-            }
-        });
-        const regex = new RegExp([usableKeys.slice(1)]);
-        let ugh = Object.entries(info.Bow.attacks).filter(attack => regex.test(attack[0]));
-        ugh = [].concat(Object.entries(info.Bow.attacks).splice(0, 1), ugh);
-        ugh = ugh.concat(Object.entries(info.Bow.attacks).splice(136));
-        attacks = Object.fromEntries(ugh);
-        return {...attacks };
-    }
-    if ($(weaponType).val() === 'Gunlance') {
-        attacks = Object.fromEntries(Object.entries(info.Gunlance.attacks).splice(0, 28));
-        return {...attacks };
-    }
-
-    if (weaponType.value === lbg || weaponType.value === hbg) {
-        let usableAmmo = info.ammo.keys
-            .map((x, index) =>
-                x.filter(x =>
-                    weaponType.value === lbg && getWeapon().isRapidFire.includes(index + 1) ? /RF\+/.test(x) : getWeapon().usableAmmo[index + 1] > 0 && !/RF\+/.test(x),
-                ),
-            )
-            .toString()
-            .split(/,+/);
-        usableAmmo = usableAmmo.concat(Object.keys(info.ammo).filter(x => (weaponType.value === lbg ? /lbg|Wyvernblast(?! before)/.test(x) : /hbg|Wyverns/.test(x))));
-        attacks = Object.fromEntries(Object.entries(info.ammo).filter(skill => TimesUsed(skill[0], usableAmmo) > 0));
-        return {...attacks };
-    }
-    return {...info[weapon].attacks };
-};
-
-const getAttacks = (weapon = weaponType.value) => ({...info[weapon].attacks });
-const getWeapon = (weapon = weaponType.value) => ({...info[weapon].weapons[$('#dropWeapon').val()] });
-
-function PartSelect() {
-    const parts = [];
-    info.monster.hzv[dropMonster.value].forEach(hitzone => {
-        parts.push([`${hitzone.part} ${hitzone.state}`]);
-    });
-    PopulateDropDowns(parts, dropHZ);
-}
-
-function QuestSelect() {
-    $('#HR').empty();
-    $('#MR').empty();
-    $('#dropQuest').empty();
-    const questMR = Object.entries(info.quest).filter(x => x[1].monster === dropMonster.value && x[1].rank === 'MR');
-    const questHR = Object.entries(info.quest).filter(x => x[1].monster === dropMonster.value && x[1].rank === 'HR');
-    questHR.forEach(quest => {
-        $('#HR').append($('<option></option>').attr('value', quest[0]).text(quest[1].quest));
-    });
-    questMR.forEach(quest => {
-        $('#MR').append($('<option></option>').attr('value', quest[0]).text(quest[1].quest));
-    });
-    if (questMR.length > 0) {
-        $('#dropQuest').append($('<option></option>').attr('value', questMR[0][0]).text(questMR[0][1].quest));
-    } else {
-        $('#dropQuest').append($('<option></option>').attr('value', questHR[0][0]).text(questHR[0][1].quest));
-        $('#MR').hide();
-    }
-}
-
-function HealthSelect() {
-    $(health).empty();
-    $.each(getHealthPools(), (_key, value) => {
-        $(health).append($('<option></option>').attr('value', value).text(formatNumbers(value)));
-    });
-}
-
-$('#taWikiSetBuilder').on('mousedown', e => {
-    if ($(e.target).val() == 'Paste TA Wiki Set Builder Link Here') {
-        $(e.target).val('');
-    }
-});
-
-function isUnique(value, index, self) {
-    return self.indexOf(value) === index;
-}
-
-function showMenu() {
-    $('.menu').show();
-    document.querySelector('#MR').children.length > 0 ? $('#divMR').show() : $('#divMR').hide();
-    if (document.querySelector('#HR').children.length > 0) {
-        $('#divHR').show();
-        $('div.menu').css('top', '-46%');
-    }
-    if (document.querySelector('#HR').children.length === 0) {
-        $('#divHR').hide();
-        $('div.menu').css('top', '-93%');
-    }
-}
-
-function updateQuest(_event) {
-    $('select#dropQuest').children()[0].outerHTML = window.event.path[0][window.event.path[0].selectedIndex].outerHTML;
-    $('div.menu').hide();
-    DataCompile();
-}
-
-$(document).on('mousedown', event => {
-    const $target = $(event.target);
-    if (!$target.closest(questButton).length && !$target.closest('.menu').length && !$target.closest(dropQuest).length && $('.menu').is(':visible')) {
-        $('.menu').hide();
-    }
-});
-
-const capitalAll = str => str.replace(/(?<!\w)\w{1}/g, letter => letter.toUpperCase());
-
-function capital(str, index = 0) {
-    return str[index].toUpperCase() + str.slice(1);
-}
-
-function lower(str) {
-    return str[0].toLowerCase() + str.slice(1);
-}
-
-function shotsCheck(convertedRecoilFrames, convertedReloadFrames, clipSize, maxTime = 60, spareShot = 0) {
-    let spareShotAccumulator = 0;
-    spareShotAccumulator += spareShot;
-    let timeUsed = 0;
-    let totalShots = 0;
-    while (timeUsed <= maxTime) {
-        for (let i = 0; i < clipSize; ++i) {
-            timeUsed += convertedRecoilFrames;
-            totalShots += timeUsed <= maxTime ? 1 : 0;
-            if (totalShots >= spareShotAccumulator && spareShot !== 0 && spareShot !== Infinity) {
-                --i;
-                spareShotAccumulator += spareShot;
-            }
-        }
-        timeUsed += convertedReloadFrames;
-    }
-
-    return totalShots;
-}
-
-function getHealthPools() {
-    const healthMod = ~~(info.quest[dropQuest.value][players.value] * ((info.quest[dropQuest.value].min / info.quest[dropQuest.value]['1p'] - 1) * -1)) /
-        info.quest[dropQuest.value].HPScale;
-    let healthPool = [info.quest[dropQuest.value][$('#players').val()]];
-    if (info.quest[dropQuest.value].HPScale === 0) {
-        return healthPool;
-    }
-    if (info.quest[dropQuest.value].HPScale === 1) {
-        healthPool = [
-            [healthPool[0] - healthMod],
-            [healthPool[0]],
-            [healthPool[0] + healthMod]
-        ];
-
-        return healthPool;
-    }
-    healthPool = [
-        [healthPool[0] - healthMod * 2],
-        [healthPool[0] - healthMod],
-        [healthPool[0]],
-        [healthPool[0] + healthMod],
-        [healthPool[0] + healthMod * 2]
-    ];
-
-    return healthPool;
-}
-// function json(arr) {
-// let headers = arr.splice(0, 1);
-// let newjson = {};
-// let i = 0;
-// let ugh = [];
-// let check = '';
-// arr.forEach(function (part, index) {
-// if (check !== '' && check !== part[0]) {
-// newjson[arr[index - 1][0]] = ugh;
-//
-// ugh = [];
-// i = 0;
-// }
-// ugh[i] = {};
-// $(part).each(function (index, element) {
-// if (index > 0) {
-// if (/[1-9]/.test(element)) {
-// ugh[i][headers[0][index]] = Number(element);
-// } else {
-// ugh[i][headers[0][index]] = element;
-// }
-// }
-// });
-// ++i;
-// check = part[0];
-// });
-// console.log(newjson);
-// }
-function saveState() {
-    const ugh = [
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
-    ];
-
-    $('select').each(function() {
-        ugh[0].push($(this)[0].selectedIndex);
-    });
-    $('button.skillButton').each(function() {
-        ugh[1].push($(this).hasClass('blue'));
-    });
-    $('.inputs').each(function() {
-        ugh[2].push(this.value);
-    });
-    ugh[3].push(comboTracker);
-    $('.scroll').each(function() {
-        ugh[4].push(this.className);
-    });
-    ugh[5] = $('output.augLabel').text();
-    const copyText = document.createElement('input');
-    copyText.setAttribute('value', JSON.stringify(ugh));
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); /* For mobile devices */
-    navigator.clipboard.writeText(copyText.value);
-    return ugh;
-}
-
-function loadState(ugh, e) {
-    ugh = JSON.parse(ugh);
-    $('.skillButton').each(function() {
-        if ($(this).hasClass('blue')) {
-            $(this).toggleClass('blue gray');
-        }
-    });
-
-    const ugh2 = document.querySelectorAll('select');
-
-    ugh2[0].selectedIndex = ugh[0][0];
-    classChange();
-    WeaponSelect();
-    for (let i = 0; i < ugh[5].length; i++) {
-        $('output.augLabel')[i].textContent = ugh[5][i];
-    }
-
-    ugh2[3].selectedIndex = ugh[0][3];
-    RampageSelect();
-    ugh2[80].selectedIndex = ugh[0][80];
-    QuestSelect();
-    PartSelect();
-    HealthSelect();
-    $('select').each(function(index) {
-        if (index !== (0 || 3 || 80)) {
-            this.selectedIndex = ugh[0][index];
-        }
-    });
-    $('button.skillButton').each((index, element) => {
-        if (ugh[1][index]) {
-            $(element).toggleClass('blue gray');
-        }
-    });
-
-    $('.inputs').each((index, input) => {
-        input.value = ugh[2][index];
-    });
-    $('.scroll').each(function(index) {
-        this.className = ugh[4][index];
-    });
-    info.skills.MailofHellfire = $(redScroll).hasClass('invis') ? info.skills.MailofHellfireSourse.blue : info.skills.MailofHellfireSourse.red;
-    info.skills.Dereliction = $(redScroll).hasClass('invis') ? info.skills.DerelictionSourse.blue : info.skills.DerelictionSourse.red;
-
-    [...comboTracker] = ugh[3][0];
-    $('.inputs:not(".inputComboRepeat")').each(function() {
-        if (this.value > 0) {
-            let difference = $('.inputs')[this.id].value - TimesUsed(this.id);
-            while (difference > 0) {
-                comboTracker.push(this.id);
-                --difference;
-            }
-            while (difference < 0) {
-                comboTracker.splice(comboTracker.lastIndexOf(this.id), 1);
-                ++difference;
-            }
-        }
-    });
-    DataCompile(e);
-    UpdateComboDisplay();
-    setTimeout(() => {
-        $('input#taWikiSetBuilder')[0].value = 'Paste TA Wiki Set Builder Link Here';
-    }, 2000);
-    $('input#taWikiSetBuilder')[0].value = 'Build Succsefully Loaded';
-
-
-}
-
-function resetSkillDescription() {
-    if (lastEvent !== '') {
-        if (lastEvent === BowCoating && weaponType.value !== 'Bow') {
-            return;
-        }
-        let theseOptions = [];
-        if (Object.values(lastEvent.children).some(x => x.tagName === 'OPTGROUP')) {
-            theseOptions = Object.values($(lastEvent.children).children());
-            theseOptions.splice(-2);
-            theseOptions.splice(0, 0, lastEvent[0]);
-        } else {
-            theseOptions = Object.values(lastEvent.children);
-        }
-        theseOptions.forEach((thisOption, index) => {
-            let newText = '';
-            if (lastEvent === BowCoating) {
-                newText = getWeapon().coatings[index];
-            } else if (lastEvent === BowgunBarrel) {
-                newText = ['----', 'Long', 'Power', 'Silencer', 'Guard-Up'][index];
-            } else if (lastEvent === Dereliction) {
-                newText = [
-                    '----',
-                    'Lv-1 Charge-1',
-                    'Lv-1 Charge-2',
-                    'Lv-1 Charge-3',
-                    'Lv-2 Charge-1',
-                    'Lv-2 Charge-2',
-                    'Lv-2 Charge-3',
-                    'Lv-3 Charge-1',
-                    'Lv-3 Charge-2',
-                    'Lv-3 Charge-3',
-                ][index];
-            } else {
-                newText = `Lv-${index}`;
-            }
-            thisOption.textContent = index === 0 ? '----' : newText;
-        });
-        lastEvent = '';
-    }
-}
-
-$(document).on('mousedown', e => {
-    if (lastEvent !== '' && lastEvent === e.target) {
-        return;
-    }
-    if (lastEvent !== '') {
-        resetSkillDescription();
-    }
-    if (Object.values($('select.skill')).some(x => x.id === e.target.id)) {
-        setSkillDescriptions(e.target);
-    }
-});
-$('select.skill').on('change', e => {
-    resetSkillDescription();
-
-    DataCompile();
-    e.target.blur();
-});
-
-function setSkillDescriptions(thisSkill) {
-    if (Object.values($('select.skill')).some(x => x.id === thisSkill.id)) {
-        const ugh2 = thisSkill.id;
-        if (ugh2 !== 'Dereliction') {
-            $(info.skills[ugh2]).each(function(index) {
-                let option;
-                if (index !== 0) {
-                    if (ugh2 === 'RecoilDown' || ugh2 === 'ReloadSpeed') {
-                        option = /Reload/.test(ugh2) ? `${ugh2.slice(0,6)} ${ugh2.slice(6)} +${index}` : `${ugh2.slice(0,6)} ${ugh2.slice(6)} +${index}`;
-                    } else if (ugh2 === 'AmmoUP' || ugh2 === 'SpareShot') {
-                        const inc = ugh2 === 'AmmoUP' ? ['No Change', 'Lv2 & Ele Ammo', 'Lv3 & Dragon Ammo'] : ['Spare Shot +5%', 'Spare Shot +10%', 'Spare Shot +20%'];
-                        option = `${index}: ${inc[index - 1]}`;
-                    } else if (ugh2 == 'Marksman') {
-                        option = `${index}: ${['Chance 20% Raw  + 5% EFR +1%','Chance 20% Raw+10% EFR +2%','Chance 60% Raw  + 5% EFR +3% ','Chance 40% Raw+10% EFR +4%'][index - 1]}`;
-                    } else if (ugh2 === 'Bombardier') {
-                        if (weaponType.value !== hbg) {
-                            option = `${index}: Raw +${info.skills.Bombardier[index][0]}% EFR +${info.skills.Bombardier[index][1]}`;
-                        } else {
-                            option = ['Bombardier', '1: Raw + 10% EFR + 10%', '2: Sticky+10% Wyvern+15%', '3: Raw + 20% EFR + 16%', '4: Raw + 25% EFR + 17%'][index];
-                        }
-                    } else if (ugh2 == 'BowgunBarrel') {
-                        option = ['Barrels', 'Long: Raw + 5%', 'Power: Raw + 12.5%', 'Silencer: Recoil Down +1', 'Shield: Guard Up'][index];
-                    } else if (ugh2 == 'CriticalFirePower') {
-                        option = ["-", "Normal +30% Spread +20% Pierce +10% Recoil -2"][index];
-                    } else {
-                        let raw = '';
-                        if (this.BR > 0 || this.PRM > 1 || this.BRM > 1) {
-                            raw = 'Raw';
-                            if (this.BR > 0) {
-                                raw += /\d\.?\d/.test(this.BR) ? `+${this.BR}` : ` + ${this.BR}`;
-                            }
-                            if (this.BRM > 1) {
-                                const brm = /\.[1-8]/.test((this.BRM - 1) * 100) ? ((this.BRM - 1) * 100).toFixed(1) : ((this.BRM - 1) * 100).toFixed(0);
-                                raw += /\d\.?\d/.test(brm) ? `+${brm}%` : ` + ${brm}%`;
-                            }
-                            if (this.PRM > 1) {
-                                const prm = /\.[1-8]/.test((this.PRM - 1) * 100) ? ((this.PRM - 1) * 100).toFixed(1) : ((this.PRM - 1) * 100).toFixed(0);
-                                raw +=
-                                    ugh2 === 'CriticalBoost' && /\d\.?\d/.test(prm - 25) ?
-                                    `+${prm - 25}%` :
-                                    ugh2 === 'CriticalBoost' ?
-                                    ` + ${prm - 25}%` :
-                                    /\d\.?\d/.test(prm) ?
-                                    `+${prm}%` :
-                                    ` + ${prm}%`;
-                            }
-                        }
-                        let ele = '';
-                        if (this.BE > 0 || this.PEM > 1 || this.BEM > 1) {
-                            ele = 'Ele';
-                            if (this.BE > 0) {
-                                ele += /\d\.?\d/.test(this.BE) ? `+${this.BE}` : ` + ${this.BE}`;
-                            }
-                            if (this.BEM > 1) {
-                                const bem = /\.[1-8]/.test((this.BEM - 1) * 100) ? ((this.BEM - 1) * 100).toFixed(1) : ((this.BEM - 1) * 100).toFixed(0);
-                                ele += /\d\.?\d/.test(bem) ? `+${bem}%` : ` + ${bem}%`;
-                            }
-                            if (this.PEM > 1) {
-                                const pem = /\.[1-8]/.test((this.PEM - 1) * 100) ? ((this.PEM - 1) * 100).toFixed(1) : ((this.PEM - 1) * 100).toFixed(0);
-                                ele += /\d\.?\d/.test(pem) ? `+${pem}%` : ` + ${pem}%`;
-                            }
-                        }
-                        const aff = this.aff > 0 && /\d\.?\d/.test(this.aff) ? `Aff+${this.aff}` : this.aff > 0 ? `Aff + ${this.aff}` : '';
-                        raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp < 1 ? `Sharp +${this.Sharp * 100}%` : raw;
-                        raw = Object.prototype.hasOwnProperty.call(this, 'Sharp') && this.Sharp > 1 ? `Sharp +${this.Sharp}` : raw;
-                        raw = raw === '' && ele === '' && aff === '' ? 'No Change' : raw;
-                        if (thisSkill === BowCoating) {
-                            const text = getWeapon().coatings;
-                            option = `${text[index]}: ${[raw,ele,aff].join(' ')}`;
-                        } else {
-                            option = `${index}: ${[raw,ele,aff].join(' ')}`;
-                        }
-                    }
-                } else {
-                    option = ugh2;
-                }
-                $(`#${ugh2}`)[0][index].textContent = option;
-            });
-            lastEvent = thisSkill;
-        } else if (thisSkill === Dereliction) {
-            const text = $(redScroll).hasClass('invis') ? [
-                ['1: Raw +15'],
-                ['2: Raw +20'],
-                ['3: Raw +25'],
-                ['1: Raw +20'],
-                ['2: Raw +25'],
-                ['3: Raw +30'],
-                ['1: Raw +25'],
-                ['2: Raw +30'],
-                ['3: Raw +35']
-            ] : [
-                ['1: Ele + 5'],
-                ['2: Ele + 8'],
-                ['3: Ele+12'],
-                ['1: Ele + 7'],
-                ['2: Ele+12'],
-                ['3: Ele+15'],
-                ['1: Ele+10'],
-                ['2: Ele+15'],
-                ['3: Ele+20']
-            ];
-            let index = 0;
-            $('select#Dereliction')
-                .children()
-                .each(function() {
-                    $(this)
-                        .children()
-                        .each(function() {
-                            this.textContent = text[index];
-                            ++index;
-                        });
-                });
-            Dereliction[0].textContent = 'Dereliction';
-        }
-        lastEvent = thisSkill;
-    }
-
-    if (
-        (Object.values($('select.skill').children()).some(x => x.id === thisSkill.id) && thisSkill.children[0].textContent === thisSkill.id) ||
-        !Object.values($('select.skill').children()).some(x => x.id === thisSkill.id || thisSkill)
-    ) {
-        resetSkillDescription(thisSkill);
-    }
-}
-
-function getStats(power, skills) {
-    $(skills).each((_index, skill) => {
-        power.BRM *= skill.BRM;
-        power.BR += skill.BR;
-        power.PRM *= skill.PRM;
-        power.BEM *= skill.BEM;
-        power.BE += skill.BE;
-        power.PEM *= skill.PEM;
-        power.aff += skill.aff;
-    });
-    return power;
-}
-
-function partSelector() {
-    $(dropHZ)
-        .children()
-        .each(function(index) {
-            if (this.textContent === document.querySelector('#monTable > tr:nth-child(2) > td:nth-child(1)').textContent) {
-                dropHZ.selectedIndex = index;
-            }
-        });
-}
-const distanceCalc = (ammo, fps = 60) => {
-    let time = 0;
-    if (ammo.isPierce) {
-        while (time < ammo.TickRate) {
-            time += 1 / fps;
-        }
-    }
-    return (time * ammo.Speed).toFixed(3);
-};
-
-function formatNumbers(num) {
-    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-}
-
-function parseCSV(csv, weapon = undefined) {
-    let ugh2 = {};
-    csv = csv.replace(/\?/g, '');
-    let ugh = csv.split('\n');
-
-    ugh.forEach((row, index) => {
-        if (row.split('\t')[0] !== undefined) {
-            let thisAttack = row.split('\t')[0].replace(/,|New | \(Ripper.*|\?| "$|"|\s\s+|\s$|(?<=\() +| +(?=\))/g, '');
-            if (weapon === cb) {
-                thisAttack = thisAttack.replace(/SAED/, 'UAED');
-            }
-            if (weapon === gs) {
-                thisAttack = thisAttack.replace(/⇒/g, ' ⇒ ');
-
-                thisAttack = thisAttack.replace(/(?<!Lv)2$/, '2nd Hit');
-                thisAttack = thisAttack.replace(/Ⅲ/g, 'Lv3');
-                thisAttack = thisAttack.replace(/Ⅱ/g, 'Lv2');
-                thisAttack = thisAttack.replace(/Ⅰ/g, 'Lv1');
-            }
-            if (/\w+Lv\d$/.test(thisAttack)) {
-                let ugh3 = thisAttack.match(/\w+Lv\d$/)[0];
-
-                thisAttack = `${thisAttack.replace(/.\w+Lv\d$/,'')} (${ugh3.replace(/Lv\d$/,' ' + ugh3.slice(ugh3.length - 3))})`;
-            }
-            thisAttack = thisAttack.replace(/  +/g, ' ');
-            thisAttack = thisAttack.replace(/ ?_ ?/g, ' ');
-            thisAttack = thisAttack.replace(/）$/, ')');
-            thisAttack = capitalAll(thisAttack);
-            ugh2[thisAttack] = csvFilter(row.split('\t'), weapon, thisAttack);
-        }
-    });
-    console.log(Object.fromEntries(Object.entries(ugh2)));
-}
-
-function csvFilter(row, weapon, thisAttack) {
-    const header = [
-        ['rawMV'],
-        ['eleType'],
-        ['baseEle'],
-        ['statusType'],
-        ['baseStatus'],
-        ['type'],
-        ['eleMV'],
-        ['statusMV'],
-        ['hitsOfSharp'],
-        ['Raw'],
-        ['Ele'],
-        ['Crit'],
-        ['noSharpMod'],
-        ['Draw'],
-        ['Wire'],
-        ['NoEleBuff'],
-        ['NoSneak'],
-        ['ChargeMaster'],
-    ];
-    let ugh = {};
-
-    i = 0;
-
-    if (row[0] === '') {
-        return;
-    }
-    ugh.attackName = thisAttack;
-    if (weapon !== undefined) {
-        if (weapon === cb) {}
-        if (info[weapon].attacks[row[0]] !== undefined) {
-            ugh.ticsPer = info[weapon].attacks[row[0]].ticsPer;
-        } else {
-            ugh.ticsPer = /\(SAED\)/.test(thisAttack) ? 4 : 0;
-        }
-        if (/Ticks/.test(thisAttack)) {
-            ugh.ticsPer = 6;
-        }
-    } else {
-        ugh.ticsPer = +row[7].match(/\d/);
-    }
-    let thisKey = row[0].match(/\d/);
-    row.forEach((cell, index) => {
-        if ([15, 16, 17, 18, 19, 28, 33, 34, 39, 45, 46, 47, 48, 49, 50, 51, 52, 53].some(x => x === index)) {
-            key = header[i];
-
-            cell = cell.replace(/New | \(Ripper.*|\?| "$|"| +$|(?<=\() +| +(?=\))/g, '');
-
-            if (/\d/.test(cell) && cell.length < 4) {
-                ugh[key] = +cell;
-            } else if (cell === '■') {
-                ugh[key] = true;
-            } else if (cell === '') {
-                ugh[key] = false;
-            } else {
-                ugh[key] = cell;
-            }
-            i++;
-        }
-    });
-    return {...ugh };
-}
+            BuildDamageTable(_0x4d39b5, 'stats', _0x5a107e), _0x20da33 = ![]; } }), _0x10c936[_0x4db503(0x14f)](0x0, 0x0, ['Ammo\x20Type', _0x4db503(0x14a), 'Ele', 'Total', _0x4db503(0x256), _0x4db503(0x148), _0x4db503(0x27b), 'Seconds\x20\x0a\x20To\x20Kill']), BuildDamageTable(_0x10c936, _0x4db503(0x198), _0x5a107e), _0x4bdf23[_0x4db503(0x14f)](0x0, 0x0, [_0x4db503(0x22d), _0x4db503(0xc3), 'Reload', _0x4db503(0x145), _0x4db503(0x271), _0x4db503(0x220), _0x4db503(0x143), _0x4db503(0x103)]), BuildDamageTable(_0x4bdf23, 'ammo', _0x5a107e); }
+
+function MeleeDPS(_0x192398) { const _0x5245f0 = _0x40fb26,
+        _0x5a66a8 = [
+            ['Combo', _0x5245f0(0x125), 'MV', _0x5245f0(0x14a), _0x5245f0(0x142), 'Total', 'Effective']
+        ]; let _0x17cb9f = [0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0],
+        _0x4c6d9c = -0x1,
+        _0xed174a = {},
+        _0x424a58 = {}; const _0x4c6fc3 = Sharpness[_0x5245f0(0x1fd)]; let _0x31c9b6 = getQuriousAugs();
+    [_0x5245f0(0x1bf), _0x5245f0(0x1c9), _0x5245f0(0x194), _0x5245f0(0xce)][_0x5245f0(0x262)](_0x120d44 => _0x31c9b6[_0x120d44] = initialStats(_0x31c9b6, _0x120d44)), Object['values'](getUsedAttacks())[_0x5245f0(0x262)](function(_0x47eb02) { const _0x320bd7 = _0x5245f0;++_0x4c6d9c; let _0x48ff93 = {..._0x47eb02, ..._0x31c9b6[_0x47eb02['type']] };
+        _0x48ff93 = getDependantSkills(_0x48ff93); /input/ [_0x320bd7(0x22b)](_0x192398[_0x320bd7(0x102)]['className']) && _0x48ff93['attackName'] === _0x320bd7(0x1f0) && (UpdateComboTracker(), UpdateComboDisplay());
+        _0x48ff93['attackName'] === _0x320bd7(0x1f0) && (_0x424a58 = weaponType[_0x320bd7(0x229)] !== bow ? getComboHitsAndSetSharpness(_0x48ff93[_0x320bd7(0x25d)]) : hitsPerColorSharp()[0x1]);
+        _0x48ff93 = GetRemainingSkills(_0x48ff93), _0x48ff93 = DamageCalculations(_0x48ff93);
+        comboTracker[_0x320bd7(0x1a6)](_0x4c6d9c['toString']()) && (colorsUsed = Object[_0x320bd7(0x1b7)](_0x424a58)[_0x320bd7(0x11e)](_0x451f82 => _0x451f82[0x1][_0x320bd7(0x10f)] > 0x0), colorsUsed['forEach'](_0x404f2e => { const _0x4fd1d0 = _0x320bd7; if (TimesUsed(_0x4c6d9c, _0x404f2e[0x1]) > 0x0) { const [_0xd4668, _0x2dff3d] = _0x48ff93[_0x4fd1d0(0x1bc)] === ![] ? [info[_0x4fd1d0(0x19f)][_0x4fd1d0(0xea)][capital(_0x404f2e[0x0])][_0x4fd1d0(0x273)], info[_0x4fd1d0(0x19f)][_0x4fd1d0(0xea)][capital(_0x404f2e[0x0])]['PEM']] : [0x1, 0x1], _0x880174 = TimesUsed(_0x4c6d9c, _0x404f2e[0x1]);
+                _0x17cb9f = [_0x17cb9f[0x0] += Number(~~(_0x48ff93['rawMV'] * _0x880174)), _0x17cb9f[0x1] += Number(~~(_0x48ff93['rawNon'] * _0xd4668) * _0x880174), _0x17cb9f[0x2] += Number(~~(_0x48ff93['rawCrit'] * _0xd4668) * _0x880174), _0x17cb9f[0x3] += Number(~~(_0x48ff93[_0x4fd1d0(0x1cb)] * _0x2dff3d) * _0x880174), _0x17cb9f[0x4] += Number(~~(_0x48ff93[_0x4fd1d0(0x17e)] * _0x2dff3d) * _0x880174), _0x17cb9f[0x5] += Number(~~(_0x48ff93['rawNon'] * _0xd4668) * _0x880174 + ~~(_0x48ff93[_0x4fd1d0(0x1cb)] * _0x2dff3d) * _0x880174), _0x17cb9f[0x6] += Number(~~(_0x48ff93[_0x4fd1d0(0x24a)] * _0xd4668) * _0x880174 + ~~(_0x48ff93[_0x4fd1d0(0x17e)] * _0x2dff3d) * _0x880174), _0x17cb9f[0x7] += Number(~~(_0x48ff93[_0x4fd1d0(0x212)] * _0xd4668) * _0x880174 + ~~(_0x48ff93['efe'] * _0x2dff3d) * _0x880174)]; } })); let _0x5a6233 = info[_0x320bd7(0x19f)][_0x320bd7(0xea)][Sharpness[Sharpness['selectedIndex']]['text']];
+        weaponType[_0x320bd7(0x229)] === _0x320bd7(0x21e) && _0x48ff93['type'] !== _0x320bd7(0x1bf) && (_0x5a6233 = BowCoating[BowCoating[_0x320bd7(0x1fd)]][_0x320bd7(0x11a)] === 'Power' ? 1.35 : _0x5a6233, _0x5a6233 = BowCoating[BowCoating[_0x320bd7(0x1fd)]][_0x320bd7(0x11a)] === _0x320bd7(0x245) ? 1.32 : _0x5a6233, _0x5a6233 = BowCoating[BowCoating[_0x320bd7(0x1fd)]][_0x320bd7(0x11a)] === 'Close\x20Range+' ? 1.39 : _0x5a6233); const _0x237fc5 = ['replaceME', _0x48ff93['attackName'], _0x48ff93[_0x320bd7(0xc3)], formatNumbers(~~(_0x48ff93[_0x320bd7(0x18d)] * _0x5a6233['PRM'])) + '\x20/\x20' + formatNumbers(~~(_0x48ff93[_0x320bd7(0x24a)] * _0x5a6233[_0x320bd7(0x273)])), formatNumbers(~~(_0x48ff93[_0x320bd7(0x1cb)] * _0x5a6233[_0x320bd7(0x17a)])) + _0x320bd7(0x289) + formatNumbers(~~(_0x48ff93['eleCrit'] * _0x5a6233[_0x320bd7(0x17a)])), formatNumbers(~~(_0x48ff93[_0x320bd7(0x18d)] * _0x5a6233[_0x320bd7(0x273)]) + ~~(_0x48ff93[_0x320bd7(0x1cb)] * _0x5a6233[_0x320bd7(0x17a)])) + _0x320bd7(0x289) + formatNumbers(~~(_0x48ff93['rawCrit'] * _0x5a6233['PRM']) + ~~(_0x48ff93[_0x320bd7(0x17e)] * _0x5a6233[_0x320bd7(0x17a)])), formatNumbers((~~(_0x48ff93[_0x320bd7(0x158)] * _0x5a6233[_0x320bd7(0x17a)]) + ~~(_0x48ff93[_0x320bd7(0x212)] * _0x5a6233[_0x320bd7(0x273)])) * (_0x48ff93[_0x320bd7(0x26e)] + 0x1))];
+        _0x5a66a8[_0x320bd7(0x21a)](_0x237fc5); if (_0x4c6d9c) { const _0x15d8ce = lower(_0x48ff93['eleType']) === _0x320bd7(0x1c5) ? 0x0 : _0x48ff93[_0x320bd7(0x1be)],
+                _0x13a112 = [
+                    [
+                        [_0x320bd7(0xf7)],
+                        [_0x320bd7(0x14a)],
+                        ['Affinity'],
+                        [_0x48ff93[_0x320bd7(0x23a)]]
+                    ],
+                    [_0x320bd7(0x199), ~~_0x48ff93[_0x320bd7(0x138)], ~~_0x48ff93['baseAff'], _0x48ff93[_0x320bd7(0x201)]],
+                    [_0x320bd7(0x1d4), ~~_0x48ff93[_0x320bd7(0x1b2)], ~~(_0x48ff93['aff'] * 0x64), ~~_0x15d8ce],
+                    [_0x320bd7(0x232), ~~(_0x48ff93[_0x320bd7(0x1b2)] * getCritBoost(_0x48ff93[_0x320bd7(0x196)], _0x48ff93[_0x320bd7(0x25d)])[_0x320bd7(0x273)] * _0x48ff93[_0x320bd7(0x273)] * _0x48ff93[_0x320bd7(0x250)] * _0x5a6233['PRM']), ~~(_0x48ff93[_0x320bd7(0x25d)] * 0x64), ~~(_0x15d8ce * getCritEle(_0x48ff93['Crit'], _0x48ff93[_0x320bd7(0x25d)])[_0x320bd7(0x17a)] * _0x48ff93[_0x320bd7(0x17a)] * _0x48ff93[_0x320bd7(0x23e)] * _0x5a6233['PEM'])],
+                    ['Effective', ~~(_0x48ff93[_0x320bd7(0x1b2)] * getCritBoost(_0x48ff93[_0x320bd7(0x196)], _0x48ff93['aff'])['EFR'] * _0x48ff93[_0x320bd7(0x273)] * _0x48ff93[_0x320bd7(0x1a1)] * _0x5a6233['PRM']), ~~(_0x48ff93[_0x320bd7(0x25d)] * 0x64), ~~(_0x15d8ce * getCritEle(_0x48ff93['Crit'], _0x48ff93['aff'])[_0x320bd7(0xdb)] * _0x48ff93[_0x320bd7(0x17a)] * _0x48ff93[_0x320bd7(0x23e)] * _0x48ff93[_0x320bd7(0x1a1)] * _0x5a6233[_0x320bd7(0x17a)])]
+                ];
+            BuildDamageTable(_0x13a112, _0x320bd7(0x164), _0x192398); } }); if (weaponType[_0x5245f0(0x229)] === _0x5245f0(0x1cc)) { GunlanceShelling(_0x5a66a8, _0x17cb9f, power, _0x192398); return; } else { if (_0x4c6fc3 === Sharpness[_0x5245f0(0x1fd)] && !/BowChargePlus|dropWeapon|taWikiSetBuilder/ [_0x5245f0(0x22b)](_0x192398[_0x5245f0(0x102)]['id'])) { if (/input|inputButton/ ['test'](_0x192398[_0x5245f0(0x102)][_0x5245f0(0xfd)])) { document['getElementById']('c0')[_0x5245f0(0x252)] = '' + formatNumbers(_0x17cb9f[0x0]), document['getElementById']('d0')['textContent'] = formatNumbers(_0x17cb9f[0x1]) + '\x20/\x20' + formatNumbers(_0x17cb9f[0x2]), document[_0x5245f0(0xc8)]('e0')['textContent'] = formatNumbers(_0x17cb9f[0x3]) + '\x20/\x20' + formatNumbers(_0x17cb9f[0x4]), document[_0x5245f0(0xc8)]('f0')[_0x5245f0(0x252)] = formatNumbers(_0x17cb9f[0x5]) + '\x20/\x20' + formatNumbers(_0x17cb9f[0x6]), document[_0x5245f0(0xc8)]('g0')['textContent'] = '' + formatNumbers(_0x17cb9f[0x7]); return; } else { _0x5a66a8['splice'](0x0, 0x2, [_0x5245f0(0xe9), _0x5245f0(0x1f0), '' + formatNumbers(_0x17cb9f[0x0]), formatNumbers(_0x17cb9f[0x1]) + _0x5245f0(0x289) + formatNumbers(_0x17cb9f[0x2]), formatNumbers(_0x17cb9f[0x3]) + '\x20/\x20' + formatNumbers(_0x17cb9f[0x4]), formatNumbers(_0x17cb9f[0x5]) + _0x5245f0(0x289) + formatNumbers(_0x17cb9f[0x6]), '' + formatNumbers(_0x17cb9f[0x7])]); let _0x3bfa78 = 0x0;
+                $(_0x5a66a8)['each'](function() { this['splice'](0x0, 0x2), $(this)['each'](function() { const _0xf76d4a = _0x1e72;
+                        Object['values']($(dpsBody)[_0xf76d4a(0x266)]()[_0xf76d4a(0x266)]())[_0xf76d4a(0x11e)](_0x26ed11 => !/a|b/ [_0xf76d4a(0x22b)](_0x26ed11['className']))[_0x3bfa78]['textContent'] = this, ++_0x3bfa78; }); }); } } else _0x5a66a8[_0x5245f0(0x14f)](0x1, 0x1, [_0x5245f0(0xe9), 'Combo\x20Damage', '' + formatNumbers(_0x17cb9f[0x0]), formatNumbers(_0x17cb9f[0x1]) + _0x5245f0(0x289) + formatNumbers(_0x17cb9f[0x2]), formatNumbers(_0x17cb9f[0x3]) + _0x5245f0(0x289) + formatNumbers(_0x17cb9f[0x4]), formatNumbers(_0x17cb9f[0x5]) + _0x5245f0(0x289) + formatNumbers(_0x17cb9f[0x6]), '' + formatNumbers(_0x17cb9f[0x7])]), BuildDamageTable(_0x5a66a8, _0x5245f0(0x198), _0x192398); } }
+
+function getRampageSkills(_0x34d84a = {...info[weaponType[_0x40fb26(0x229)]][_0x40fb26(0xfc)][$(_0x40fb26(0xee))[_0x40fb26(0xf4)]()] }) { const _0x5a9670 = _0x40fb26; return $(weaponRampage[_0x5a9670(0x266)])[_0x5a9670(0x1b0)]((_0x49a888, _0x38edf8) => { const _0x35a492 = _0x5a9670,
+            _0x1a777b = info[_0x35a492(0x27a)][_0x35a492(0xfb)][_0x38edf8[_0x35a492(0x229)]]; if (_0x1a777b !== undefined)
+            for (let _0xd6679a = 0x0; _0xd6679a < Object[_0x35a492(0xe3)](_0x1a777b)[_0x35a492(0x10f)]; _0xd6679a++) { const _0x56df78 = Object[_0x35a492(0xe3)](_0x1a777b)[_0xd6679a];
+                _0x34d84a[_0x56df78] += _0x1a777b[_0x56df78]; } }), !/BowGun/ [_0x5a9670(0x22b)](weaponType[_0x5a9670(0x229)]) && (_0x34d84a['eleType'] = /Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/ [_0x5a9670(0x22b)](weaponRampage['children'][0x1][_0x5a9670(0x229)]) ? weaponRampage[_0x5a9670(0x266)][0x1][_0x5a9670(0x229)][_0x5a9670(0x257)](/Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/)[0x0] : _0x34d84a[_0x5a9670(0x23a)]), {..._0x34d84a }; }
+const getQuriousAugs = () => { const _0x247d8d = _0x40fb26; let _0x4435b5 = {...info[weaponType[_0x247d8d(0x229)]][_0x247d8d(0xfc)][dropWeapon[_0x247d8d(0x229)]] }; if (/BowGun/ [_0x247d8d(0x22b)](weaponType[_0x247d8d(0x229)])) { if ((TuneUp[_0x247d8d(0x1fd)] === 0x0 || TuneUp[_0x247d8d(0x1fd)] === 0x1) && BowgunBarrel[_0x247d8d(0x114)][BowgunBarrel[_0x247d8d(0x1fd)]]['text'] === _0x247d8d(0x163)) _0x4435b5[_0x247d8d(0x138)] = ~~(_0x4435b5['baseRaw'] * 1.125);
+        else TuneUp['selectedIndex'] === 0x2 && BowgunBarrel[_0x247d8d(0x114)][BowgunBarrel[_0x247d8d(0x1fd)]][_0x247d8d(0x11a)] === _0x247d8d(0x163) && (_0x4435b5[_0x247d8d(0x138)] = ~~(_0x4435b5['baseRaw'] * 1.15)); if ((TuneUp[_0x247d8d(0x1fd)] === 0x0 || TuneUp[_0x247d8d(0x1fd)] === 0x1) && BowgunBarrel['options'][BowgunBarrel['selectedIndex']][_0x247d8d(0x11a)] === _0x247d8d(0x1e9)) _0x4435b5[_0x247d8d(0x138)] = ~~(_0x4435b5[_0x247d8d(0x138)] * 1.05);
+        else TuneUp['selectedIndex'] === 0x2 && BowgunBarrel['options'][BowgunBarrel[_0x247d8d(0x1fd)]][_0x247d8d(0x11a)] === 'Long' && (_0x4435b5[_0x247d8d(0x138)] = ~~(_0x4435b5[_0x247d8d(0x138)] * 1.075)); } return _0x4435b5[_0x247d8d(0x138)] += Number($(_0x247d8d(0x152))[_0x247d8d(0xf4)]()) / 0x2 * 0x5, attackResult[_0x247d8d(0x229)] = '+\x20' + Number($(_0x247d8d(0x152))[_0x247d8d(0xf4)]() / 0x2) * 0x5, _0x4435b5['aff'] += $(_0x247d8d(0xc6))[_0x247d8d(0xf4)]() / 0x3 * 0x5, affinityResult[_0x247d8d(0x229)] = '+\x20' + $('output.affinityAug')[_0x247d8d(0xf4)]() / 0x3 * 0x5, $(_0x247d8d(0x1c3))[_0x247d8d(0x11a)]($(_0x247d8d(0x147))[_0x247d8d(0xf4)]() > 0x0 ? '+1' : '+0'), info[weaponType[_0x247d8d(0x229)]][_0x247d8d(0xfc)][$(_0x247d8d(0xee))[_0x247d8d(0xf4)]()]['eleType'] !== _0x247d8d(0x111) ? (_0x4435b5[_0x247d8d(0x201)] += $(_0x247d8d(0x25b))[_0x247d8d(0xf4)]() * 0x3, elementalResult[_0x247d8d(0x229)] = '+\x20' + $(_0x247d8d(0x25b))[_0x247d8d(0xf4)]() * 0x3) : $(_0x247d8d(0x25b))[_0x247d8d(0xf4)](0x0), _0x4435b5['baseAff'] = +_0x4435b5['aff'], {..._0x4435b5 }; };
+
+function getDependantSkills(_0x5b8cb2) { const _0x494572 = _0x40fb26,
+        _0x4f4921 = []; if (/Bow/ [_0x494572(0x22b)]($(weaponType)[_0x494572(0xf4)]())) { if (/Pierc/ ['test'](_0x5b8cb2[_0x494572(0x1ac)])) _0x4f4921[_0x494572(0x21a)](info[_0x494572(0x19f)][_0x494572(0x1c8)][PierceUp[_0x494572(0x1fd)]]);
+        else { if (/Spread/ [_0x494572(0x22b)](_0x5b8cb2['attackName'])) _0x4f4921[_0x494572(0x21a)](info[_0x494572(0x19f)][_0x494572(0x18b)][SpreadUp['selectedIndex']]);
+            else /Normal|Rapid/ [_0x494572(0x22b)](_0x5b8cb2[_0x494572(0x1ac)]) && _0x4f4921[_0x494572(0x21a)](info[_0x494572(0x19f)][_0x494572(0x128)][NormalRapidUp[_0x494572(0x1fd)]]); } /RF+/ ['test'](_0x5b8cb2[_0x494572(0x1ac)]) && _0x4f4921[_0x494572(0x21a)](info[_0x494572(0x19f)][_0x494572(0x1db)][RapidFireUp[_0x494572(0x1fd)]]); /Wyvern|Dragon Piercer/ [_0x494572(0x22b)](_0x5b8cb2['attackName']) && _0x4f4921[_0x494572(0x21a)](info['skills'][_0x494572(0x161)][SpecialAmmoBoost[_0x494572(0x1fd)]]); if (/BowGun/ [_0x494572(0x22b)](weaponType['value'])) { weaponType['value'] === hbg && (/Sticky|Wyvern/ ['test'](_0x5b8cb2['attackName']) && (_0x5b8cb2[_0x494572(0x1a1)] *= info[_0x494572(0x19f)][_0x494572(0x26c)][Bombardier['selectedIndex']][_0x5b8cb2['attackName']['match'](_0x494572(0x20f))[0x0]][0x1], _0x5b8cb2[_0x494572(0x250)] *= info[_0x494572(0x19f)][_0x494572(0x26c)][Bombardier[_0x494572(0x1fd)]][_0x5b8cb2['attackName'][_0x494572(0x257)]('Sticky|Wyvern')[0x0]][0x0]), !/snipe|heart|Cluster/ [_0x494572(0x22b)](_0x5b8cb2['attackName']) && (_0x5b8cb2[_0x494572(0x273)] *= info['skills'][_0x494572(0x1a0)][ChargeLevel[_0x494572(0x1fd)]]['PRM'], _0x5b8cb2[_0x494572(0x206)] ? _0x5b8cb2[_0x494572(0x201)] *= info[_0x494572(0x19f)][_0x494572(0x1a0)][ChargeLevel[_0x494572(0x1fd)]][_0x494572(0x17a)] : _0x5b8cb2['PEM'] *= info['skills']['ChargeLevel'][ChargeLevel[_0x494572(0x1fd)]][_0x494572(0x17a)])); if (dropWeaponType[_0x494572(0x229)] === lbg && /Pierce|Spread|Normal/ ['test'](_0x5b8cb2[_0x494572(0x1ac)]) && $(CriticalFirePower)[0x0]['selectedIndex'] > 0x0) { if (/Normal/ [_0x494572(0x22b)](_0x5b8cb2['attackName'])) _0x5b8cb2[_0x494572(0x273)] *= 1.3;
+                else { if (/Spread/ [_0x494572(0x22b)](_0x5b8cb2['attackName'])) _0x5b8cb2[_0x494572(0x273)] *= 1.2;
+                    else /Pierce/ [_0x494572(0x22b)](_0x5b8cb2['attackName']) && (_0x5b8cb2[_0x494572(0x273)] *= 1.1); } } } } if ($(weaponType)['val']() === _0x494572(0x1ae) && !/Helm Breaker|Serene/ ['test'](_0x5b8cb2['attackName'])) _0x4f4921[_0x494572(0x21a)](info[_0x494572(0x19f)][_0x494572(0x236)][SpiritGauge['selectedIndex']]);
+    else /Helm Breaker|Serene/ ['test'](_0x5b8cb2['attackName']) && _0x5b8cb2[_0x494572(0xfe)][_0x494572(0x21a)](/Helm Breaker/ [_0x494572(0x22b)](_0x5b8cb2[_0x494572(0x1ac)]) ? _0x4f4921[_0x494572(0x21a)](info['skills'][_0x494572(0x275)][Helmbreaker[_0x494572(0x1fd)]]) : _0x4f4921['push'](info[_0x494572(0x19f)][_0x494572(0x197)][SerenePose['selectedIndex']])); if ($(weaponType)['val']() === _0x494572(0x1e4)) { const _0x26287b = new RegExp(/Charged Slash|Rising Slash|Wide Slash|Strong Charged Slash|True Charged Slash|Rage Slash/);
+        _0x26287b[_0x494572(0x22b)](_0x5b8cb2[_0x494572(0x1ac)]) && $(StrongarmStance)[0x0][_0x494572(0x1fd)] > 0x0 && (_0x5b8cb2[_0x494572(0x273)] *= info[_0x494572(0x19f)][_0x494572(0x1fe)][_0x5b8cb2[_0x494572(0x1ac)][_0x494572(0x257)](_0x26287b)[0x0]][0x0], _0x5b8cb2[_0x494572(0x17a)] *= info[_0x494572(0x19f)]['StrongarmStance'][_0x5b8cb2[_0x494572(0x1ac)][_0x494572(0x257)](_0x26287b)[0x0]][0x1]), /(?<!Tackle )Lv[1-3]/ ['test'](_0x5b8cb2[_0x494572(0x1ac)]) && (_0x5b8cb2[_0x494572(0xc3)] *= Number('1.' + _0x5b8cb2[_0x494572(0x1ac)]['match'](/(?<=Lv)[1-3]/)[0x0]), _0x5b8cb2[_0x494572(0xc3)] = _0x5b8cb2['rawMV'][_0x494572(0x1a3)](0x1)); } return $(weaponType)[_0x494572(0xf4)]() === _0x494572(0x1e6) && (!/3rd|(?<!Midair |Axe: )UED|(?<!Charged )Sword(?!.*Shield)/ ['test'](_0x5b8cb2[_0x494572(0x1ac)]) && _0x4f4921[_0x494572(0x21a)](info[_0x494572(0x19f)]['savageAxe'][savageAxe[_0x494572(0x1fd)]]), getWeapon()[_0x494572(0x174)] === _0x494572(0x277) ? _0x4f4921['push'](info[_0x494572(0x19f)][_0x494572(0x184)][impShieldCharge[_0x494572(0x1fd)]]) : _0x4f4921['push'](info[_0x494572(0x19f)]['eleShieldCharge'][eleShieldCharge[_0x494572(0x1fd)]])), weaponType === bow && !/Stake/ ['test'](_0x5b8cb2['attackName']) && _0x4f4921[_0x494572(0x21a)](info['skills'][_0x494572(0x1a8)][BowCoating['selectedIndex']]), getStats(_0x4f4921, _0x5b8cb2); }
+
+function _0x1e72(_0x238f81, _0x3864d) { const _0x1ddd99 = _0x1ddd(); return _0x1e72 = function(_0x1e7255, _0x4e44fb) { _0x1e7255 = _0x1e7255 - 0xc1; let _0x272a34 = _0x1ddd99[_0x1e7255]; return _0x272a34; }, _0x1e72(_0x238f81, _0x3864d); }
+
+function getEnrage() { const _0x4eb6d0 = _0x40fb26; return $(_0x4eb6d0(0x231))[_0x4eb6d0(0xf4)]() === _0x4eb6d0(0x1e2) ? Object['values'](info['monster'][_0x4eb6d0(0x1ab)])[_0x4eb6d0(0x11e)](_0x127710 => _0x127710[_0x4eb6d0(0x160)] === dropMonster['value'])[0x0][_0x4eb6d0(0x11c)] : 0x1; }
+
+function initialStats(_0x24c74f, _0x33dd4a) { const _0x5cc1f6 = _0x40fb26;
+    comboTracker[0x0] === null && (comboTracker = []);
+    _0x24c74f[_0x5cc1f6(0x138)] += _0x24c74f[_0x5cc1f6(0xc2)] === !![] ? +document[_0x5cc1f6(0xc8)](_0x5cc1f6(0x179))['value'] : 0x0, _0x24c74f['BR'] = 0x0, _0x24c74f['BRM'] = 0x1, _0x24c74f[_0x5cc1f6(0x273)] = 0x1, _0x24c74f[_0x5cc1f6(0x26a)] = 0x1, _0x24c74f['BE'] = 0x0, _0x24c74f[_0x5cc1f6(0x17a)] = 0x1, _0x24c74f[_0x5cc1f6(0x273)] *= DemonAmmo[_0x5cc1f6(0x172)] && /(Sever|Blunt)/ [_0x5cc1f6(0x22b)](_0x24c74f['type']) ? 1.1 : 0x1, 0x1; const _0x4b7d14 = []; return $(_0x5cc1f6(0xe1))[_0x5cc1f6(0x1b0)](function() { const _0x113765 = _0x5cc1f6;
+        this[_0x113765(0x172)] && this['id'] !== _0x113765(0x175) && _0x4b7d14[_0x113765(0x21a)](JSON[_0x113765(0x251)](this[_0x113765(0x229)])); }), _0x24c74f[_0x5cc1f6(0xfe)] = []['concat'](Object[_0x5cc1f6(0x205)](info[_0x5cc1f6(0x129)][_0x33dd4a])[_0x5cc1f6(0x11e)](_0x40f012 => $('#' + _0x40f012)[_0x5cc1f6(0x191)](_0x5cc1f6(0x228)) !== 'none' && document[_0x5cc1f6(0xc8)](_0x40f012)[_0x5cc1f6(0x1fd)] > 0x0)), enrageDisplay[_0x5cc1f6(0x252)] = ~~(getEnrage() * 0x64) + '%', $(_0x5cc1f6(0x231))['val']() === _0x5cc1f6(0x1e2) && (_0x24c74f[_0x5cc1f6(0xfe)]['push'](_0x5cc1f6(0x156)), _0x24c74f[_0x5cc1f6(0x17a)] *= getEnrage(), _0x24c74f[_0x5cc1f6(0x273)] *= getEnrage()), weaponType['value'] === db && (_0x24c74f[_0x5cc1f6(0x26a)] *= info[_0x5cc1f6(0x19f)]['ArchdemonMode'][ArchdemonMode[_0x5cc1f6(0x1fd)]][_0x5cc1f6(0x26a)], _0x24c74f['BEM'] *= !/\[Feral Demon Mode\]/ [_0x5cc1f6(0x22b)](_0x24c74f[_0x5cc1f6(0x1ac)]) ? info[_0x5cc1f6(0x19f)][_0x5cc1f6(0x20b)][DemonMode[_0x5cc1f6(0x1fd)]]['BEM'] : 0x1, _0x24c74f[_0x5cc1f6(0x219)] *= !/\[Demon Mode\]/ [_0x5cc1f6(0x22b)](_0x24c74f[_0x5cc1f6(0x1ac)]) ? info[_0x5cc1f6(0x19f)][_0x5cc1f6(0x169)][FeralDemonMode['selectedIndex']][_0x5cc1f6(0x219)] : 0x1, _0x24c74f[_0x5cc1f6(0x25d)] += weaponRampage0[_0x5cc1f6(0x229)] === _0x5cc1f6(0x217) ? 0x14 : 0x0), weaponType[_0x5cc1f6(0x229)] === _0x5cc1f6(0x21e) && (_0x24c74f[_0x5cc1f6(0xfe)] = _0x24c74f[_0x5cc1f6(0xfe)][_0x5cc1f6(0x189)]('UpperCrit', _0x5cc1f6(0x27f))), _0x24c74f[_0x5cc1f6(0xfe)] = _0x24c74f[_0x5cc1f6(0xfe)]['filter'](isUnique), $(_0x24c74f[_0x5cc1f6(0xfe)])[_0x5cc1f6(0x1b0)](function() { const _0x564287 = _0x5cc1f6;
+        _0x4b7d14['push'](info[_0x564287(0x19f)][this][document['getElementById'](this)[_0x564287(0x1fd)]]); }), getStats(_0x4b7d14, _0x24c74f), weaponRampage0[_0x5cc1f6(0x229)] === _0x5cc1f6(0x1d1) && (_0x24c74f[_0x5cc1f6(0x25d)] += 0xf), _0x24c74f[_0x5cc1f6(0x25d)] = getRawHZ(_0x24c74f[_0x5cc1f6(0x25c)]) !== undefined && getRawHZ(_0x24c74f[_0x5cc1f6(0x25c)]) >= 0x2d ? _0x24c74f[_0x5cc1f6(0x25d)] + JSON[_0x5cc1f6(0x251)]($('#WeaknessExploit')[_0x5cc1f6(0xf4)]()) : _0x24c74f['aff'], _0x24c74f[_0x5cc1f6(0x25d)] = Math[_0x5cc1f6(0xd2)](_0x24c74f[_0x5cc1f6(0x25d)], 0x64) / 0x64, {..._0x24c74f }; }
+
+function UpdateComboTracker() { const _0x2086e5 = _0x40fb26; if (!Number[_0x2086e5(0x15f)](+window['event']['target']['id']) && window[_0x2086e5(0x1df)][_0x2086e5(0x102)]['id'] !== '0') { let _0x3a5df0 = $(_0x2086e5(0x1e0))[window[_0x2086e5(0x1df)]['target']['id']][_0x2086e5(0x229)] - TimesUsed(window['event'][_0x2086e5(0x102)]['id']); while (_0x3a5df0 > 0x0) { comboTracker['push'](window['event'][_0x2086e5(0x102)]['id']), --_0x3a5df0; } while (_0x3a5df0 < 0x0) { comboTracker[_0x2086e5(0x14f)](comboTracker[_0x2086e5(0x211)](window[_0x2086e5(0x1df)]['target']['id']), 0x1), ++_0x3a5df0; } } }
+
+function UpdateComboDisplay() { const _0x1f50b6 = _0x40fb26;
+    $(_0x1f50b6(0x23c))[_0x1f50b6(0x16e)](); let _0x43a92a;
+    $(comboTracker)[_0x1f50b6(0x1b0)]((_0x34e9ef, _0x56bc15) => { const _0x118dc6 = _0x1f50b6;
+        _0x43a92a = document[_0x118dc6(0x14d)](_0x118dc6(0x1c0)), _0x43a92a[_0x118dc6(0xfd)] = _0x118dc6(0x119), _0x43a92a[_0x118dc6(0x252)] = $(_0x118dc6(0xc7) + [_0x56bc15] + _0x118dc6(0x166))['text'](), $(comboCountDisplay)[_0x118dc6(0x116)](_0x43a92a); }); }
+
+function getInitialSharpness(_0x3ab973 = {...info[weaponType[_0x40fb26(0x229)]][_0x40fb26(0xfc)][dropWeapon[_0x40fb26(0x229)]][_0x40fb26(0x19a)] }) { const _0x4782f2 = _0x40fb26; let _0x3d94bf = []; if (Handicraft[_0x4782f2(0x1fd)] > 0x0) { if (_0x3ab973[_0x4782f2(0x269)] > 0x0) _0x3d94bf = [_0x4782f2(0x269)];
+        else { if (_0x3ab973[_0x4782f2(0x151)] > 0x0) _0x3d94bf = [_0x4782f2(0x151), 'purple'];
+            else { if (_0x3ab973[_0x4782f2(0xe7)] > 0x0) _0x3d94bf = [_0x4782f2(0xe7), 'white', _0x4782f2(0x269)];
+                else { if (_0x3ab973[_0x4782f2(0x168)] > 0x0) _0x3d94bf = ['green', _0x4782f2(0xe7), _0x4782f2(0x151), _0x4782f2(0x269)];
+                    else _0x3ab973[_0x4782f2(0x210)] > 0x0 && (_0x3d94bf = ['yellow', _0x4782f2(0x168), _0x4782f2(0xe7), 'white']); } } } let _0x77d461 = Handicraft[_0x4782f2(0x1fd)];
+        $(getWeapon()['handicraft'])[_0x4782f2(0x1b0)]((_0x79b4b7, _0x1a4056) => { while (_0x1a4056 > 0x0 && _0x77d461 > 0x0) { _0x3ab973[_0x3d94bf[_0x79b4b7]] += 0xa, --_0x77d461, _0x1a4056 -= 0xa; } }); } return {..._0x3ab973 }; }
+
+function applySharpnessSkills(_0xd76761, _0x2c9a7e = {...getInitialSharpness() }) { const _0x562767 = _0x40fb26; let _0xdb1f6 = []; const _0x4bfe69 = info[_0x562767(0x19f)][_0x562767(0x100)][RazorSharp[_0x562767(0x1fd)]]['Sharp']; let _0x10ce78 = info['skills'][_0x562767(0x215)][MastersTouch['selectedIndex']][_0x562767(0xf6)];
+    _0x10ce78 *= _0xd76761; const _0x1e03f4 = _0xd76761 > 0x0 && MastersTouch[_0x562767(0x1fd)] > 0x0 ? sharpnessReduction(_0x10ce78) * sharpnessReduction(_0x4bfe69) : sharpnessReduction(_0x4bfe69); return _0xdb1f6 = Object[_0x562767(0x1b7)](_0x2c9a7e)[_0x562767(0x177)](_0x260503 => ~~(+_0x260503[0x1] * +_0x1e03f4)), _0xdb1f6; }
+
+function getTotalComboHits() { const _0x636c47 = _0x40fb26; let [..._0x41b561] = comboTracker; if (comboTracker[0x0] !== undefined && comboTracker[0x0] !== null) { let _0xb16ec = $('.inputComboRepeat')['val'](); while (_0xb16ec > 0x1) { _0x41b561 = _0x41b561[_0x636c47(0x189)](comboTracker), --_0xb16ec; } return _0x41b561; } }
+
+function getComboHitsAndSetSharpness(_0x4ffc36 = 0x0) { const _0x456b3f = _0x40fb26,
+        [_0x36d419, _0xd5ad4a, _0x4042aa] = hitsPerColorSharp(_0x4ffc36); let _0x514abc = ![]; for (let _0x23cdda = 0x0; _0x23cdda < 0x7; _0x23cdda++) { const _0x403982 = _0x36d419[_0x23cdda],
+            _0x38f824 = $(_0x456b3f(0x186))[_0x456b3f(0x266)]()[0x6 - _0x23cdda];
+        _0x38f824[_0x456b3f(0x252)] = _0x403982 < 0.1 ? '' : Number(_0x403982)[_0x456b3f(0x1a3)](0x0), $(_0x38f824)[_0x456b3f(0x1cd)](Number(_0x403982)[_0x456b3f(0x1a3)](0x0) / _0x4042aa * $(damageContainer)[_0x456b3f(0x1cd)]() * 0.46), _0x403982 > 0x0 && !_0x514abc && (Sharpness[_0x456b3f(0x1fd)] = 0x7 - _0x23cdda, _0x514abc = !![]); } return _0xd5ad4a; }
+
+function hitsPerColorSharp(_0x477357 = 0x0, _0x25358f = getTotalComboHits()) { const _0x277e1c = _0x40fb26; let _0x468a41 = { 'purple': [], 'white': [], 'blue': [], 'green': [], 'yellow': [], 'orange': [], 'red': [] }; const _0x49c53b = weaponType[_0x277e1c(0x229)] !== bow ? {...applySharpnessSkills(_0x477357)[_0x277e1c(0x1f6)]() } : [0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0],
+        _0x1a26eb = Object[_0x277e1c(0x205)](_0x49c53b)['reduce']((_0x1f82d4, _0x567438) => _0x1f82d4 + _0x567438); return _0x25358f !== undefined && _0x25358f[_0x277e1c(0x262)](_0x4872a5 => { const _0x1d1d7a = _0x277e1c,
+            _0x521059 = Object['keys'](getUsedAttacks())[_0x4872a5],
+            _0x4a6275 = getHitsPerTic(_0x521059, _0x4872a5); if (weaponType['value'] !== _0x1d1d7a(0x1cc) || weaponType[_0x1d1d7a(0x229)] === 'Gunlance' && _0x4872a5 < 0x1c)
+            for (let _0x466879 = 0x0; _0x466879 < getAttacks()[_0x521059]['ticsPer'] + 0x1; _0x466879++) { if (_0x49c53b[0x0] > 0.1) _0x468a41[_0x1d1d7a(0x269)][_0x1d1d7a(0x21a)](_0x4872a5), _0x49c53b[0x0] -= _0x4a6275;
+                else { if (_0x49c53b[0x1] > 0.1) _0x468a41['white']['push'](_0x4872a5), _0x49c53b[0x1] -= _0x4a6275;
+                    else { if (_0x49c53b[0x2] > 0.1) _0x468a41[_0x1d1d7a(0xe7)][_0x1d1d7a(0x21a)](_0x4872a5), _0x49c53b[0x2] -= _0x4a6275;
+                        else { if (_0x49c53b[0x3] > 0.1) _0x468a41['green'][_0x1d1d7a(0x21a)](_0x4872a5), _0x49c53b[0x3] -= _0x4a6275;
+                            else { if (_0x49c53b[0x4] > 0.1) _0x468a41[_0x1d1d7a(0x210)][_0x1d1d7a(0x21a)](_0x4872a5), _0x49c53b[0x4] -= _0x4a6275;
+                                else { if (_0x49c53b[0x5] > 0.1) _0x468a41[_0x1d1d7a(0xc9)][_0x1d1d7a(0x21a)](_0x4872a5), _0x49c53b[0x5] -= _0x4a6275;
+                                    else _0x49c53b[0x6] > 0.1 && (_0x468a41[_0x1d1d7a(0xff)][_0x1d1d7a(0x21a)](_0x4872a5), _0x49c53b[0x6] -= _0x4a6275); } } } } } } }), [_0x49c53b, _0x468a41, _0x1a26eb]; }
+
+function getHitsPerTic(_0x5d5002, _0x429a7a) { const _0xa81da7 = _0x40fb26; if (ProtectivePolish['checked'] || weaponType['value'] === bow) return 0x0; if (weaponType['value'] === _0xa81da7(0x1cc) && _0x429a7a > 0x1b || weaponType['value'] !== _0xa81da7(0x1cc)) return weaponType[_0xa81da7(0x229)] !== db ? getAttacks()[_0x5d5002][_0xa81da7(0x276)] : getAttacks()[_0x5d5002]['hitsOfSharp'] / 0x3; return 0x1; }
+
+function GetRemainingSkills(_0x597831) { const _0x25e377 = _0x40fb26;
+    [_0x597831['augEFR'], _0x597831['augPRM'], _0x597831['augPEM']] = [0x1, 0x1, 0x1], _0x597831[_0x25e377(0x23e)] *= $(_0x25e377(0x118))[_0x25e377(0xf4)]() === _0x25e377(0x26f) && _0x597831[_0x25e377(0x23a)] === 'Dragon' ? 1.2 : 0x1, [_0x597831['augEFR'], _0x597831['augPRM']] = $(_0x25e377(0x118))[_0x25e377(0xf4)]() === _0x25e377(0x17c) && Sharpness[_0x25e377(0x1fd)] < 0x5 ? [1.02, 1.2] : [_0x597831[_0x25e377(0x1a1)], _0x597831[_0x25e377(0x250)]];
+    info['types'][dropMonster[_0x25e377(0x229)]][weaponRampage0[_0x25e377(0x229)]['match'](/Aerial|Aquatic|Wyvern|Fanged/)] !== undefined && (_0x597831['PRM'] *= 1.05); /blight Exploit/ [_0x25e377(0x22b)](weaponRampage0[_0x25e377(0x229)]) && (_0x597831[_0x25e377(0x273)] *= 1.1);
+    weaponRampage0['value'] === _0x25e377(0xeb) && (_0x597831['BR'] += 0xc);
+    (_0x597831[_0x25e377(0x25c)] === _0x25e377(0xce) && weaponType[_0x25e377(0x229)] === lbg || weaponType['value'] === cb) && (_0x597831[_0x25e377(0x1a1)] *= info[_0x25e377(0x19f)][_0x25e377(0x26c)][Bombardier['selectedIndex']][0x1], _0x597831[_0x25e377(0x250)] *= info[_0x25e377(0x19f)]['Bombardier'][Bombardier[_0x25e377(0x1fd)]][0x0], weaponType[_0x25e377(0x229)] === sa && /Sword|ZSD|ED/ ['test'](_0x597831[_0x25e377(0x1ac)]) && _0x597831[_0x25e377(0x174)] === _0x25e377(0x277) && (_0x597831[_0x25e377(0x219)] *= 1.15), weaponType[_0x25e377(0x229)] === sa && /Sword|Elemental|ED/ [_0x25e377(0x22b)](_0x597831[_0x25e377(0x1ac)]) && _0x597831[_0x25e377(0x174)] === _0x25e377(0x105) && (_0x597831[_0x25e377(0x26a)] *= 1.45));
+    _0x597831[_0x25e377(0x23a)] !== _0x25e377(0x111) && (_0x597831[_0x25e377(0x17a)] *= getWeapon()[_0x25e377(0xf1)] === 0x0 && $(_0x25e377(0x118))[_0x25e377(0xf4)]() === _0x25e377(0x123) && getEleHZ(_0x597831['eleType']) >= 0x19 ? 1.3 : 0x1, _0x597831[_0x25e377(0x17a)] *= getWeapon()[_0x25e377(0xf1)] !== 0x0 && $(_0x25e377(0x118))[_0x25e377(0xf4)]() == _0x25e377(0x141) && getEleHZ(_0x597831['eleType']) >= 0x19 && lower(_0x597831['eleType']) !== 'none' ? 1.15 : 0x1, _0x597831['PEM'] *= getEleHZ(_0x597831[_0x25e377(0x23a)]) >= 0x14 && lower(_0x597831[_0x25e377(0x23a)]) !== _0x25e377(0x1c5) ? info[_0x25e377(0x19f)]['ElementalExploit'][ElementalExploit[_0x25e377(0x1fd)]]['PEM'] : 0x1);
+    (weaponType['value'] === cb || weaponType[_0x25e377(0x229)] === sa) && (_0x597831['BRM'] *= /Morph Slash|Condensed Spinning|Up Roundslash/ [_0x25e377(0x22b)](_0x597831[_0x25e377(0x1ac)]) ? info[_0x25e377(0x19f)][_0x25e377(0x132)][RapidMorph[_0x25e377(0x1fd)]][_0x25e377(0x219)] : 0x1);
+    Sharpness[_0x25e377(0x1fd)] > 0x0 && Bludgeoner[_0x25e377(0x1fd)] > 0x0 && (_0x597831[_0x25e377(0x219)] *= Bludgeoner[_0x25e377(0x1fd)] === 0x1 && Sharpness[_0x25e377(0x1fd)] < 0x4 ? [1.05] : [0x1], _0x597831['BRM'] *= Bludgeoner[_0x25e377(0x1fd)] === 0x2 && Sharpness['selectedIndex'] < 0x4 ? [1.1] : [0x1], _0x597831[_0x25e377(0x219)] *= Bludgeoner['selectedIndex'] === 0x3 && Sharpness[_0x25e377(0x1fd)] < 0x5 ? [1.1] : [0x1]); if (!/Wyvern/ [_0x25e377(0x22b)](_0x597831[_0x25e377(0x1ac)]) && Object[_0x25e377(0xe3)](info[_0x25e377(0x19f)][_0x25e377(0x22f)])['includes'](weaponType['value']) && _0x597831[_0x25e377(0x22f)] === !![]) _0x597831['BEM'] *= info[_0x25e377(0x19f)][_0x25e377(0x22f)][weaponType[_0x25e377(0x229)]][ChargeMaster[_0x25e377(0x1fd)]]['BEM'];
+    else _0x597831[_0x25e377(0x22f)] === !![] && _0x597831[_0x25e377(0x206)] === !![] && (_0x597831[_0x25e377(0x201)] *= /Wyvern/ [_0x25e377(0x22b)](_0x597831['attackName']) ? info[_0x25e377(0x19f)]['ChargeMaster'][_0x25e377(0x140)][ChargeMaster[_0x25e377(0x1fd)]][_0x25e377(0x26a)] : info[_0x25e377(0x19f)][_0x25e377(0x22f)][weaponType['value']][ChargeMaster[_0x25e377(0x1fd)]]['BEM']); const _0x2ce6c4 = [];
+    [_0x2ce6c4['PRM'], _0x2ce6c4[_0x25e377(0x17a)]] = _0x597831[_0x25e377(0x1bc)] === ![] && /sever|blunt/ [_0x25e377(0x22b)](lower(_0x597831[_0x25e377(0x25c)])) ? [JSON[_0x25e377(0x251)](Sharpness['value'])[_0x25e377(0x273)], JSON[_0x25e377(0x251)](Sharpness[_0x25e377(0x229)])[_0x25e377(0x17a)]] : [0x1, 0x1], _0x597831[_0x25e377(0x273)] *= ~~(0x19 / _0x2ce6c4[_0x25e377(0x273)]) >= getRawHZ(_0x597831['type']) ? info[_0x25e377(0x19f)][_0x25e377(0x267)][MindsEye[_0x25e377(0x1fd)]][_0x25e377(0x273)] : 0x1; if (getWeapon()[_0x25e377(0xf1)] === 0x0 && $('#weaponRampage0')[_0x25e377(0xf4)]() === _0x25e377(0xfa) && _0x597831['aff'] < 0x0) _0x597831['efrMulti'] = 0x1 + _0x597831['aff'] * -0x1 * 0.2 * 1.5 - _0x597831['aff'] * -0x1 * 0.8 * 0.75, _0x597831[_0x25e377(0x1d2)] = 1.5;
+    else getWeapon()[_0x25e377(0xf1)] !== 0x0 && $(_0x25e377(0x118))[_0x25e377(0xf4)]() === _0x25e377(0xfa) && _0x597831['aff'] < 0x0 && (_0x597831[_0x25e377(0x182)] = 0x1 + _0x597831[_0x25e377(0x25d)] * -0x1 * 0.25 * 0x2 - _0x597831[_0x25e377(0x25d)] * -0x1 * 0.75 * 0.75, _0x597831[_0x25e377(0x1d2)] = 1.5); return _0x597831[_0x25e377(0x25c)] === 'Shot' && (_0x597831[_0x25e377(0x250)] *= info['skills'][_0x25e377(0x1e3)][Marksman[_0x25e377(0x1fd)]][0x0], _0x597831[_0x25e377(0x1a1)] *= info[_0x25e377(0x19f)]['Marksman'][Marksman['selectedIndex']][0x1]), !_0x597831['NoSneak'] && (_0x597831[_0x25e377(0x250)] *= info[_0x25e377(0x19f)]['SneakAttack'][SneakAttack[_0x25e377(0x1fd)]][_0x25e377(0x273)], _0x597831[_0x25e377(0x1a1)] *= info['skills'][_0x25e377(0x1e8)][SneakAttack[_0x25e377(0x1fd)]][_0x25e377(0x273)]), {..._0x597831 }; }
+
+function getCritEle(_0x254f57, _0x40b0e4) { const _0x4bc523 = _0x40fb26; return _0x254f57 ? { 'PEM': info[_0x4bc523(0x19f)]['CriticalElement'][CriticalElement['selectedIndex']][_0x4bc523(0x17a)], 'EFE': 0x1 + (info[_0x4bc523(0x19f)][_0x4bc523(0x122)][CriticalElement[_0x4bc523(0x1fd)]]['PEM'] - 0x1) * _0x40b0e4 } : { 'PEM': 0x1, 'EFE': 0x1 }; }
+
+function getCritBoost(_0x2c7fde, _0x876dba) { const _0x40d37b = _0x40fb26; return _0x2c7fde ? { 'PRM': info['skills'][_0x40d37b(0x21d)][CriticalBoost[_0x40d37b(0x1fd)]]['PRM'], 'EFR': 0x1 + (info['skills']['CriticalBoost'][CriticalBoost[_0x40d37b(0x1fd)]][_0x40d37b(0x273)] - 0x1) * _0x876dba } : { 'PRM': 0x1, 'EFR': 0x1 }; }
+
+function DamageCalculations(_0x25582a) { const _0x522470 = _0x40fb26; if (_0x25582a[_0x522470(0x14a)] === ![])[_0x25582a['raw'], _0x25582a['rawNon'], _0x25582a[_0x522470(0x212)], _0x25582a['rawCrit']] = [0x0, 0x0, 0x0, 0x0];
+    else { _0x25582a[_0x522470(0x1b2)] = Math[_0x522470(0xd2)](_0x25582a['baseRaw'] * _0x25582a['BRM'] + _0x25582a['BR'], 0xa28); const _0x9d0772 = _0x25582a['raw'] * _0x25582a[_0x522470(0x273)] * getRawHZ(lower(_0x25582a[_0x522470(0x25c)])) * _0x25582a[_0x522470(0xc3)] / 0x2710;
+        _0x25582a['rawNon'] = Math[_0x522470(0x19e)](0x1, _0x9d0772 * _0x25582a[_0x522470(0x250)]), _0x25582a['efr'] = Math['max'](0x1, _0x9d0772 * _0x25582a[_0x522470(0x1a1)] * getCritBoost(_0x25582a['Crit'], _0x25582a['aff'])[_0x522470(0x203)]), _0x25582a[_0x522470(0x24a)] = Math[_0x522470(0x19e)](0x1, _0x9d0772 * _0x25582a['augPRM'] * getCritBoost(_0x25582a[_0x522470(0x196)], _0x25582a[_0x522470(0x25d)])[_0x522470(0x273)]); } if (Object[_0x522470(0x23f)]['hasOwnProperty'][_0x522470(0x1a5)](_0x25582a, _0x522470(0x206)) && _0x25582a[_0x522470(0x206)] === !![])[_0x25582a[_0x522470(0x1be)], _0x25582a['eleNon'], _0x25582a[_0x522470(0x158)], _0x25582a['eleCrit']] = [_0x25582a[_0x522470(0x201)], _0x25582a['baseEle'], _0x25582a[_0x522470(0x201)], _0x25582a[_0x522470(0x201)]];
+    else { if (_0x25582a[_0x522470(0x142)] === ![] || _0x25582a[_0x522470(0x23a)] === _0x522470(0x111) && !/BowGun/ ['test'](weaponType[_0x522470(0x229)]))[_0x25582a[_0x522470(0x1be)], _0x25582a['eleNon'], _0x25582a[_0x522470(0x158)], _0x25582a[_0x522470(0x17e)]] = [0x0, 0x0, 0x0, 0x0];
+        else { _0x25582a[_0x522470(0x1ee)] = /BowGun/ [_0x522470(0x22b)](weaponType[_0x522470(0x229)]) && _0x25582a[_0x522470(0x23a)] !== _0x522470(0x111) ? 0x1 + _0x25582a[_0x522470(0x1b2)] / 0x64 : 0x1, _0x25582a[_0x522470(0x1be)] = Math[_0x522470(0xd2)](_0x25582a['baseEle'] * _0x25582a[_0x522470(0x26a)] + _0x25582a['BE'], 0x16d) * _0x25582a[_0x522470(0x1ee)]; const _0x3ecfb4 = _0x25582a['ele'] * _0x25582a['PEM'] * (getEleHZ(_0x25582a[_0x522470(0x23a)]) / 0x64) * _0x25582a[_0x522470(0xf9)] * _0x25582a['augPEM'];
+            _0x25582a[_0x522470(0x1cb)] = Math[_0x522470(0x19e)](0x1, _0x3ecfb4), _0x25582a[_0x522470(0x158)] = Math[_0x522470(0x19e)](0x1, _0x3ecfb4 * getCritEle(_0x25582a[_0x522470(0x196)], _0x25582a[_0x522470(0x25d)])[_0x522470(0xdb)]), _0x25582a[_0x522470(0x17e)] = Math['max'](0x1, _0x3ecfb4 * getCritEle(_0x25582a[_0x522470(0x196)], _0x25582a[_0x522470(0x25d)])[_0x522470(0x17a)]); } } return {..._0x25582a }; }
+const sharpnessReduction = _0xb61670 => 0x1 / (0x1 - _0xb61670);
+
+function GunlanceShelling(_0x56dfcb, _0x50b0e6, _0x4c6486, _0x3ed251) { const _0x3e57e4 = _0x40fb26,
+        _0x7976eb = new RegExp(getWeapon()[_0x3e57e4(0x222)] + _0x3e57e4(0x1e7) + getWeapon()[_0x3e57e4(0x1b6)]); let _0x574de7 = 0x1,
+        _0x523a11 = 0x1;
+    $(Object['entries'](getAttacks())[_0x3e57e4(0x11e)](_0x2ccdf2 => _0x7976eb[_0x3e57e4(0x22b)](_0x2ccdf2)))[_0x3e57e4(0x1b0)](function(_0x57d13c) { const _0x3146e5 = _0x3e57e4;
+        _0x574de7 = ~~(this[0x1]['rawMV'] * info[_0x3146e5(0x19f)][_0x3146e5(0x26c)][Bombardier[_0x3146e5(0x1fd)]][0x0] * info['skills'][_0x3146e5(0x17d)][Artillery['selectedIndex']]['BRM']), _0x523a11 = ~~(this[0x1]['rawMV'] * info[_0x3146e5(0x19f)][_0x3146e5(0x26c)][Bombardier['selectedIndex']][0x1] * info[_0x3146e5(0x19f)][_0x3146e5(0x17d)][Artillery[_0x3146e5(0x1fd)]][_0x3146e5(0x219)]); const _0x55fe02 = ['replaceME', this[0x0], 0x0, _0x574de7 + _0x3146e5(0x289) + _0x574de7, this[0x1][_0x3146e5(0x201)] + _0x3146e5(0x289) + this[0x1]['baseEle'], (_0x574de7 + this[0x1][_0x3146e5(0x201)]) * (this[0x1][_0x3146e5(0x26e)] + 0x1) + _0x3146e5(0x289) + (_0x574de7 + this[0x1][_0x3146e5(0x201)]) * (this[0x1]['ticsPer'] + 0x1), _0x523a11, this[0x1][_0x3146e5(0x201)], (_0x523a11 + this[0x1][_0x3146e5(0x201)]) * (this[0x1]['ticsPer'] + 0x1)];
+        _0x56dfcb[_0x3146e5(0x21a)](_0x55fe02), _0x50b0e6[0x0] += 0x0, _0x50b0e6[0x1] += _0x574de7 * TimesUsed(_0x57d13c + 0x1c), _0x50b0e6[0x2] += _0x574de7 * TimesUsed(_0x57d13c + 0x1c), _0x50b0e6[0x3] += this[0x1][_0x3146e5(0x201)] * TimesUsed(_0x57d13c + 0x1c), _0x50b0e6[0x4] += this[0x1][_0x3146e5(0x201)] * TimesUsed(_0x57d13c + 0x1c), _0x50b0e6[0x5] += (_0x574de7 + this[0x1]['baseEle']) * (_0x4c6486[_0x3146e5(0x26e)] + 0x1) * TimesUsed(_0x57d13c + 0x1c), _0x50b0e6[0x6] += (_0x574de7 + this[0x1][_0x3146e5(0x201)]) * (_0x4c6486[_0x3146e5(0x26e)] + 0x1) * TimesUsed(_0x57d13c + 0x1c), _0x50b0e6[0x7] += (_0x523a11 + this[0x1][_0x3146e5(0x201)]) * (_0x4c6486[_0x3146e5(0x26e)] + 0x1) * TimesUsed(_0x57d13c + 0x1c); });! /Inputs|inputButton/ ['test'](window[_0x3e57e4(0x1df)][_0x3e57e4(0x102)][_0x3e57e4(0xfd)]) && BuildDamageTable(_0x56dfcb, _0x3e57e4(0x198), _0x3ed251);
+    c0[_0x3e57e4(0x25e)] = '' + formatNumbers(_0x50b0e6[0x0]), d0[_0x3e57e4(0x25e)] = formatNumbers(_0x50b0e6[0x1]) + _0x3e57e4(0x289) + formatNumbers(_0x50b0e6[0x2]), e0[_0x3e57e4(0x25e)] = formatNumbers(_0x50b0e6[0x3]) + _0x3e57e4(0x289) + formatNumbers(_0x50b0e6[0x4]), f0['innerHTML'] = formatNumbers(_0x50b0e6[0x5]) + '\x20/\x20' + formatNumbers(_0x50b0e6[0x6]), g0[_0x3e57e4(0x25e)] = '' + formatNumbers(_0x50b0e6[0x7]); return; }
+
+function BuildDamageTable(_0x11dd1f, _0xe86c52, _0xbd7259) { const _0x27a18e = _0x40fb26,
+        _0x318afb = ammoTable[_0x27a18e(0xd6)][_0x27a18e(0x228)],
+        _0x4a8fac = dpsTable[_0x27a18e(0xd6)][_0x27a18e(0x228)],
+        _0x3c1140 = /gray/ [_0x27a18e(0x22b)](filterCombo['className']) ? document[_0x27a18e(0x170)]('.a') : document[_0x27a18e(0x170)](_0x27a18e(0x22e)); let _0x19ef49 = 0x0; const _0x2f2436 = document[_0x27a18e(0x1fa)]('#' + _0xe86c52 + 'Head'),
+        _0x5cf6e6 = document[_0x27a18e(0x1fa)]('#' + _0xe86c52 + _0x27a18e(0x1f3)),
+        _0x5c9460 = document[_0x27a18e(0x14d)](_0x27a18e(0x1eb)),
+        _0x220228 = document[_0x27a18e(0x14d)](_0x27a18e(0x15d)),
+        _0x1b8fa7 = document[_0x27a18e(0x14d)]('tr'),
+        _0x5c2eb2 = document[_0x27a18e(0x14d)](_0x27a18e(0x248)),
+        _0x1f3a56 = _0x11dd1f[_0x27a18e(0x14f)](0x0, 0x1);
+    _0x1f3a56[0x0][_0x27a18e(0x262)](_0x1539e8 => { const _0x53ed38 = _0x27a18e,
+            _0x44a737 = document[_0x53ed38(0x14d)]('th'),
+            _0xf86d3e = document[_0x53ed38(0xf2)](_0x1539e8);
+        _0x44a737[_0x53ed38(0xd9)](_0xf86d3e), _0x1b8fa7[_0x53ed38(0xd9)](_0x44a737); }), _0x220228[_0x27a18e(0xd9)](_0x1b8fa7), _0x2f2436['replaceWith'](_0x220228), _0x11dd1f[_0x27a18e(0x262)](_0xd65195 => { const _0x43b10a = _0x27a18e,
+            _0x3ac044 = document['createElement']('tr');
+        Object['values'](_0xd65195)['forEach'](_0x13ad9c => { const _0x12ba23 = _0x1e72; if (_0x13ad9c === _0x12ba23(0xe9)) { if ($(previousWeaponType)[_0x12ba23(0xf4)]() === $(weaponType)[_0x12ba23(0xf4)]() && _0x3c1140[_0x12ba23(0x10f)] > 0x0 && (window['event'][_0x12ba23(0x102)] === dropWeapon && weaponType[_0x12ba23(0x229)] !== cb || window[_0x12ba23(0x1df)][_0x12ba23(0x102)] !== dropWeapon) && window[_0x12ba23(0x1df)][_0x12ba23(0x102)]['id'] !== _0x12ba23(0x286) && ($(weaponType)[_0x12ba23(0xf4)]() === 'Bow' && previousWeapon['value'] === dropWeapon[_0x12ba23(0x229)] || $(weaponType)[_0x12ba23(0xf4)]() !== _0x12ba23(0x21e))) _0x3ac044[_0x12ba23(0xd9)](_0x3c1140[_0x19ef49]), ++_0x19ef49;
+                else { const _0x2f0805 = document[_0x12ba23(0x14d)]('td'),
+                        _0x5c82b1 = document['createElement'](_0x12ba23(0xcd));
+                    _0x5c82b1[_0x12ba23(0x249)]('type', _0x12ba23(0x21c)), _0x5c82b1['setAttribute'](_0x12ba23(0x24d), _0x12ba23(0x19d) + _0x19ef49), _0x5c82b1['setAttribute']('Max', 0x14), $(weaponType)[_0x12ba23(0xf4)]() === 'Bow' && previousWeapon[_0x12ba23(0x229)] !== dropWeapon[_0x12ba23(0x229)] && (comboTracker = [], UpdateComboDisplay()), _0x19ef49 === 0x0 ? (_0x5c82b1[_0x12ba23(0x249)]('id', _0x12ba23(0x241)), _0x5c82b1[_0x12ba23(0x249)]('Min', 0x1), _0x5c82b1[_0x12ba23(0x249)](_0x12ba23(0x229), 0x1), _0x5c82b1[_0x12ba23(0x249)](_0x12ba23(0x24d), _0x12ba23(0x15b))) : (_0x5c82b1[_0x12ba23(0x249)]('id', _0x19ef49), _0x5c82b1[_0x12ba23(0x249)](_0x12ba23(0x24d), _0x12ba23(0xd5)), _0x5c82b1[_0x12ba23(0x249)]('Min', 0x0), _0x5c82b1['setAttribute'](_0x12ba23(0x229), 0x0)), ++_0x19ef49, _0x2f0805[_0x12ba23(0xd9)](_0x5c82b1), _0x3ac044[_0x12ba23(0xd9)](_0x2f0805); } } else { const _0x37c06f = document[_0x12ba23(0x14d)]('td'),
+                    _0x1d903b = document[_0x12ba23(0xf2)](_0x13ad9c);
+                _0x37c06f[_0x12ba23(0xd9)](_0x1d903b), _0x3ac044['appendChild'](_0x37c06f); } }), _0x5c2eb2['appendChild'](_0x3ac044), _0x5cf6e6[_0x43b10a(0x180)](_0x5c2eb2); }), _0x5c9460[_0x27a18e(0x249)]('id', _0xe86c52 + _0x27a18e(0x27c)), _0x220228[_0x27a18e(0x249)]('id', _0xe86c52 + 'Head'), _0x5c2eb2[_0x27a18e(0x249)]('id', _0xe86c52 + _0x27a18e(0x1f3)), _0x5c2eb2[_0x27a18e(0xfd)] = /(BowGun)/ [_0x27a18e(0x22b)](weaponType['value']) ? _0x27a18e(0x162) : _0x27a18e(0xec), damageContainer[_0x27a18e(0xfd)] = /(BowGun)/ ['test'](weaponType['value']) ? _0x27a18e(0xe4) : 'meleeContainer', ammoTable[_0x27a18e(0xd6)][_0x27a18e(0x228)] = _0x318afb, dpsTable[_0x27a18e(0xd6)][_0x27a18e(0x228)] = _0x4a8fac; if (_0xe86c52 !== _0x27a18e(0x164) && _0xe86c52 !== _0x27a18e(0x224)) { const [_0x3918f9, ..._0x4e879a] = /BowGun/ [_0x27a18e(0x22b)](weaponType[_0x27a18e(0x229)]) ? [_0x19ef49, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'] : [_0x19ef49, 'a', 'b', 'c', 'd', 'e', 'f', 'g']; if (/BowGun/ ['test']($(weaponType)[_0x27a18e(0xf4)]()) && !/BowGun/ [_0x27a18e(0x22b)]($(previousWeaponType)[_0x27a18e(0xf4)]())) $(_0x27a18e(0x1b8))[_0x27a18e(0x1c4)]();
+        else !/BowGun/ ['test']($(weaponType)[_0x27a18e(0xf4)]()) && /BowGun/ ['test']($(previousWeaponType)['val']()) && $(_0x27a18e(0x1b8))['show']();
+        $('#previousWeapon')[_0x27a18e(0xf4)]($(_0x27a18e(0xee))[_0x27a18e(0xf4)]()), $(_0x27a18e(0x235))[_0x27a18e(0xf4)](weaponType[_0x27a18e(0x229)]); for (let _0xe70518 = 0x0; _0xe70518 < _0x3918f9; ++_0xe70518) { let _0x108e4b = 0x0;
+            _0x4e879a[_0x27a18e(0x262)](_0xf3fd01 => { const _0x5a796a = _0x27a18e;
+                $('#' + _0xe86c52 + 'Body')[0x0][_0x5a796a(0x266)][_0xe70518][_0x5a796a(0x266)][_0x108e4b]['id'] = _0xf3fd01 + _0xe70518, $('#' + _0xe86c52 + _0x5a796a(0x1f3))[0x0]['children'][_0xe70518][_0x5a796a(0x266)][_0x108e4b][_0x5a796a(0xfd)] = _0xf3fd01 + '\x20' + _0xe70518, ++_0x108e4b; }); }! /BowGun/ [_0x27a18e(0x22b)]($(weaponType)[_0x27a18e(0xf4)]()) && $(_0x27a18e(0x173) + _0xe86c52 + 'Body>tr>td:nth-child(2)')[_0x27a18e(0x1b0)](function(_0x555f5e, _0x426f2e) { const _0x33f954 = _0x27a18e,
+                _0x599544 = document[_0x33f954(0x14d)]('td');
+            _0x599544[_0x33f954(0x25e)] = '<button\x20type=\x22button\x22\x20aria-pressed=\x22false\x22\x20id=\x22' + _0x555f5e + _0x33f954(0x16f) + _0x555f5e + '\x22\x20class=\x22inputButton\x20inc\x22>&#8679</button><output\x20class=\x22label\x22>' + _0x426f2e[_0x33f954(0x252)] + _0x33f954(0x12d), _0x599544['id'] = 'b' + _0x555f5e, this[_0x33f954(0x180)](_0x599544), $(_0x599544)['addClass']('b\x20' + _0x555f5e + _0x33f954(0x230)); }); } /blue/ [_0x27a18e(0x22b)](filterCombo[_0x27a18e(0xfd)]) && $('.a')[_0x27a18e(0x1b0)](_0x30531a => { const _0x91e01 = _0x27a18e;
+        $('.' + _0x30531a)[0x0][_0x91e01(0xd6)][_0x91e01(0x228)] === 'none' && $('.' + _0x30531a)['hide'](); }); const _0x50c1f9 = !/BowGun/ [_0x27a18e(0x22b)](weaponType[_0x27a18e(0x229)]) ? 'tableRowMelee' : _0x27a18e(0x1aa);
+    Object[_0x27a18e(0x205)](dpsTable[_0x27a18e(0x266)])['forEach'](_0x50196a => { const _0x21f640 = _0x27a18e;
+        Object['values'](_0x50196a['children'])[_0x21f640(0x262)](_0x132238 => { const _0x1bfe9d = _0x21f640;
+            $(_0x132238)[_0x1bfe9d(0x1f8)](_0x50c1f9); }); }), Object[_0x27a18e(0x205)](damageContainer[_0x27a18e(0x266)][0x0]['children'][0x1][_0x27a18e(0x266)])['forEach'](_0xcc0086 => { const _0x4705d5 = _0x27a18e;
+        $(_0xcc0086)[_0x4705d5(0x266)]()[_0x4705d5(0x1f8)](_0x4705d5(0x178)); }); }
+
+function MonChart() { const _0x127094 = _0x40fb26; if (dropQuest['value'] !== '') { let _0x4378db = []; const _0x1fc52b = /Bow/ [_0x127094(0x22b)](weaponType[_0x127094(0x229)]) ? _0x127094(0x17f) : weaponType['value'][0x0] === 'H' ? _0x127094(0x213) : 'sever',
+            _0x106f12 = ['Spawn\x20Area\x20' + info['quest'][dropQuest['value']]['spawn'], _0x127094(0x1c9), 'Blunt', _0x127094(0x1bf), 'Fire', _0x127094(0x10e), _0x127094(0x185), _0x127094(0xda), _0x127094(0x23b)],
+            _0x22a4c3 = document['createElement'](_0x127094(0x1eb)),
+            _0x36090e = document[_0x127094(0x1fa)](_0x127094(0x192)),
+            _0x11aa0c = document[_0x127094(0x14d)]('tr');
+        _0x106f12['forEach'](_0x31da4e => { const _0x365941 = _0x127094,
+                _0x79baa7 = document[_0x365941(0x14d)]('th'),
+                _0x4c6c44 = document['createTextNode'](_0x31da4e);
+            _0x79baa7[_0x365941(0xd9)](_0x4c6c44), _0x11aa0c[_0x365941(0xd9)](_0x79baa7); }), _0x22a4c3['appendChild'](_0x11aa0c), _0x4378db = Object[_0x127094(0x1b7)](info['monster'][_0x127094(0x234)][dropMonster[_0x127094(0x229)]])['sort']((_0x37d3f0, _0x1d22b1) => { const _0x5535dd = _0x127094; if (_0x1d22b1[0x1][_0x1fc52b] === _0x37d3f0[0x1][_0x1fc52b] && document[_0x5535dd(0x1fa)]('#statsHead\x20>\x20tr\x20>\x20th:nth-child(4)')['textContent'] !== _0x5535dd(0x1c5)) return _0x1d22b1[0x1][lower(document[_0x5535dd(0x1fa)](_0x5535dd(0xe0))[_0x5535dd(0x252)])] - _0x37d3f0[0x1][lower(document[_0x5535dd(0x1fa)](_0x5535dd(0xe0))[_0x5535dd(0x252)])]; return _0x1d22b1[0x1][_0x1fc52b] - _0x37d3f0[0x1][_0x1fc52b]; }), _0x4378db[_0x127094(0x262)](_0x342ffb => { const _0xd727c9 = _0x127094,
+                _0x6e92bc = document[_0xd727c9(0x14d)]('tr'),
+                _0x50a9bd = [_0x342ffb[0x1][_0xd727c9(0xc4)] + '\x20' + _0x342ffb[0x1]['state']][_0xd727c9(0x189)](Object['values'](_0x342ffb[0x1])[_0xd727c9(0x14f)](0x3, 0x8)); for (let _0x3a32dd = 0x0; _0x3a32dd < 0x9; ++_0x3a32dd) { const _0x8449d9 = document[_0xd727c9(0x14d)]('td'); if (_0x3a32dd !== 0x0) { _0x50a9bd[_0x3a32dd] = WaterBlight[_0xd727c9(0x172)] && /1|2|3/ [_0xd727c9(0x22b)](_0x3a32dd) ? Math[_0xd727c9(0xd2)](0x64, ~~(Math[_0xd727c9(0x19e)](_0x50a9bd[_0x3a32dd], _0x50a9bd[_0x3a32dd] * 0.63 + 22.2) + 0x3)) : _0x50a9bd[_0x3a32dd]; if (_0x50a9bd[_0x3a32dd] < 0xe) _0x8449d9['setAttribute'](_0xd727c9(0x24d), 'F');
+                    else { if (_0x50a9bd[_0x3a32dd] < 0xf) _0x8449d9['setAttribute']('class', 'C');
+                        else { if (_0x50a9bd[_0x3a32dd] < 0x2d) _0x8449d9[_0xd727c9(0x249)](_0xd727c9(0x24d), 'B');
+                            else { if (_0x50a9bd[_0x3a32dd] < 0x41) _0x8449d9[_0xd727c9(0x249)](_0xd727c9(0x24d), 'A');
+                                else _0x50a9bd[_0x3a32dd] >= 0x41 && _0x8449d9['setAttribute']('class', 'S'); } } }
+                    _0x50a9bd[_0x3a32dd] = ~~_0x50a9bd[_0x3a32dd]; } const _0x43692f = document[_0xd727c9(0xf2)](_0x50a9bd[_0x3a32dd]);
+                _0x8449d9[_0xd727c9(0xd9)](_0x43692f), _0x6e92bc[_0xd727c9(0xd9)](_0x8449d9); }
+            _0x22a4c3[_0xd727c9(0xd9)](_0x6e92bc); }), _0x22a4c3[_0x127094(0x249)]('id', 'monTable'), _0x36090e[_0x127094(0x180)](_0x22a4c3), Object[_0x127094(0x205)](monTableContainer[_0x127094(0x266)])['forEach'](_0x5352c1 => { const _0x18d747 = _0x127094;
+            Object['values'](_0x5352c1[_0x18d747(0x266)])[_0x18d747(0x262)](_0x2772cf => { const _0x415bbe = _0x18d747;
+                _0x2772cf[_0x415bbe(0xfd)] = _0x415bbe(0xf8); }); }); } }
+$(_0x40fb26(0x13e))['on'](_0x40fb26(0x18e), function(_0x5040a3) { const _0x2a9590 = _0x40fb26;
+    _0x5040a3[_0x2a9590(0x102)]['selectedIndex'] > 0x0 && ($(_0x2a9590(0xcf) + _0x5040a3[_0x2a9590(0x102)]['id'] + ')')[0x0]['selectedIndex'] = 0x0, $(_0x2a9590(0xcf) + _0x5040a3[_0x2a9590(0x102)]['id'] + ')')[0x1][_0x2a9590(0x1fd)] = 0x0); }), $([dropWeapon, weaponType])['on']('change', _0x3d9fb9 => { const _0x199740 = _0x40fb26;
+    weaponType[_0x199740(0x229)] === cb && classChange(); }), $([dropWeapon, weaponType])['on'](_0x40fb26(0x18e), _0x4c1ba4 => { const _0x44ef5e = _0x40fb26; if (weaponType['value'] === 'Bow') { $(BowCoating)['empty'](); const _0x450f71 = [];
+        getWeapon()[_0x44ef5e(0x242)][_0x44ef5e(0x262)](_0x220317 => { const _0x1d6e98 = _0x44ef5e,
+                _0x2f6e23 = document[_0x1d6e98(0x14d)](_0x1d6e98(0x126));
+            _0x2f6e23[_0x1d6e98(0x252)] = _0x220317, $(BowCoating)[_0x1d6e98(0x116)](_0x2f6e23), _0x450f71[_0x1d6e98(0x21a)](info[_0x1d6e98(0x19f)]['' + _0x220317]); }), info[_0x44ef5e(0x19f)][_0x44ef5e(0x1a8)] = _0x450f71; } });
+
+function classChange() { const _0x51be5c = _0x40fb26;
+    $([unique, dango, section1, section2, ele])[_0x51be5c(0x25f)](previousWeaponType[_0x51be5c(0x229)]), $([unique, dango, section1, section2, ele])[_0x51be5c(0x1f8)](weaponType[_0x51be5c(0x229)]);
+    previousWeaponType[_0x51be5c(0x252)] !== '' && ComboReset(); if (weaponType[_0x51be5c(0x229)] === db) info[_0x51be5c(0x19f)][_0x51be5c(0x1d6)] = info[_0x51be5c(0x19f)][_0x51be5c(0xc5)];
+    else { if (weaponType[_0x51be5c(0x229)] === bow) info[_0x51be5c(0x19f)]['ChainCrit'] = info[_0x51be5c(0x19f)][_0x51be5c(0x10a)];
+        else weaponType['value'] === lbg || weaponType['value'] === hbg ? info[_0x51be5c(0x19f)][_0x51be5c(0x1d6)] = info[_0x51be5c(0x19f)][_0x51be5c(0x153)] : info['skills']['ChainCrit'] = info[_0x51be5c(0x19f)]['ChainCritStandard']; }
+    info[_0x51be5c(0x19f)][_0x51be5c(0x26c)] = /Gun|Charge/ ['test'](weaponType['value']) ? info['skills']['bombardier'][weaponType[_0x51be5c(0x229)]] : [], $(_0x51be5c(0x18f))[_0x51be5c(0xe5)](_0x51be5c(0x1fd), 0x0), $(_0x51be5c(0x18f))['hide'](), $(_0x51be5c(0x18f))[_0x51be5c(0x1f2)]()[_0x51be5c(0x1c4)](), weaponId[_0x51be5c(0x25e)] = '', weaponId[_0x51be5c(0x25e)] = weaponType[_0x51be5c(0x229)], $('.' + $(weaponType)[_0x51be5c(0xf4)]())[_0x51be5c(0x1f2)]()[_0x51be5c(0x101)](), $('.' + $(weaponType)[_0x51be5c(0xf4)]())['show'](), /Bow/ [_0x51be5c(0x22b)]($(weaponType)['val']()) ? ($(_0x51be5c(0x1ce))[_0x51be5c(0x1f2)]()[_0x51be5c(0x101)](), $(_0x51be5c(0x1ce))['show'](), $(ammoTable)[_0x51be5c(0x1c4)]()) : MeleeElements(); }
+
+function MeleeElements() { const _0x5cedc0 = _0x40fb26;
+    $('.melee')[_0x5cedc0(0x1f2)]()[_0x5cedc0(0x101)](), $('.melee')[_0x5cedc0(0x101)](); if (weaponType[_0x5cedc0(0x229)] === _0x5cedc0(0x1e6)) { if (getWeapon()[_0x5cedc0(0x174)] === _0x5cedc0(0x277)) impShieldCharge[_0x5cedc0(0x270)]['style'] = 'display:\x27\x27', eleShieldCharge['parentNode'][_0x5cedc0(0xd6)] = 'display:none', eleShieldCharge[_0x5cedc0(0x1fd)] = 0x0;
+        else getWeapon()['phialType'] === _0x5cedc0(0x193) && (impShieldCharge['parentNode'][_0x5cedc0(0xd6)] = _0x5cedc0(0x24f), impShieldCharge['selectedIndex'] = 0x0, eleShieldCharge[_0x5cedc0(0x270)]['style'] = _0x5cedc0(0xd0)); } }
+$(window)['on'](_0x40fb26(0x254), _0x26da9a => { keyDown = _0x26da9a['originalEvent']['key'] === '-' ? ++keyDown : 0x0, keyDown === 0x3 && (ResetSkills(), DataCompile(), keyDown = 0x0); });
+
+function ResetSkills(_0x43f2f9 = _0x40fb26(0x110)) { const _0x580584 = _0x40fb26;
+    $(_0x580584(0x117))['each'](function() { this['checked'] = ![]; }); for (let _0x80a25b = 0x0; _0x80a25b < $(_0x43f2f9)[_0x580584(0x10f)]; ++_0x80a25b) { $(_0x43f2f9)[_0x80a25b][_0x580584(0x1fd)] = 0x0; } }
+$(_0x40fb26(0x26d))['on'](_0x40fb26(0x18e), () => { ComboReset(), UpdateComboDisplay(); }), $(document)['on'](_0x40fb26(0x18e), function(_0x21c38e) { const _0x4100bd = _0x40fb26; if (_0x21c38e[_0x4100bd(0x102)] === ($(_0x4100bd(0x118))[0x0] || $(_0x4100bd(0x1e0))[0x0])) DataCompile(_0x21c38e);
+    else _0x21c38e[_0x4100bd(0x102)] === weaponType && (weaponType['className'] = /Bow/ [_0x4100bd(0x22b)](weaponType[_0x4100bd(0x229)]) ? _0x4100bd(0xf0) : _0x4100bd(0x1c6)); }), $('.scroll')['on'](_0x40fb26(0x209), () => { const _0x15a70e = _0x40fb26;
+    $(_0x15a70e(0x274))[_0x15a70e(0x27d)]('vis\x20invis'), info[_0x15a70e(0x19f)]['MailofHellfire'] = $(redScroll)[_0x15a70e(0x244)](_0x15a70e(0x144)) ? info['skills'][_0x15a70e(0xe2)]['blue'] : info[_0x15a70e(0x19f)]['MailofHellfireSourse'][_0x15a70e(0xff)], info[_0x15a70e(0x19f)][_0x15a70e(0x21b)] = $(redScroll)[_0x15a70e(0x244)](_0x15a70e(0x144)) ? info['skills']['DerelictionSourse'][_0x15a70e(0xe7)] : info[_0x15a70e(0x19f)][_0x15a70e(0x130)]['red'], DataCompile(); }), $(_0x40fb26(0x165))['on'](_0x40fb26(0x209), function(_0xbe742e) { const _0x37dcb0 = _0x40fb26; /DemonDrug/ ['test'](_0xbe742e[_0x37dcb0(0x102)]['id']) && (_0xbe742e[_0x37dcb0(0x102)]['id'] === _0x37dcb0(0x1f4) ? MegaDemonDrug[_0x37dcb0(0x172)] = ![] : DemonDrug[_0x37dcb0(0x172)] = ![]); if (this !== filterCombo) { const _0x43d2da = dropHZ[_0x37dcb0(0x1fd)];
+        DataCompile(), this === WaterBlight && (MonChart(), dropHZ['selectedIndex'] = _0x43d2da); } else this === filterCombo && FilterTableForComboAttacks(); });
+
+function ToggleAmmoTables() { const _0x53b645 = _0x40fb26;
+    dpsTable[_0x53b645(0xd6)] = dpsTable['style'][_0x53b645(0x228)] !== _0x53b645(0x1c5) ? _0x53b645(0x24f) : _0x53b645(0xd0), ammoTable[_0x53b645(0xd6)] = dpsTable[_0x53b645(0xd6)][_0x53b645(0x228)] !== 'none' ? 'display:none' : _0x53b645(0xd0); }
+
+function calculateAmmoFrames(_0x15566a) { const _0x21fd51 = _0x40fb26; let _0x439f2c = /Sub-Lv|Explosion| Procs|\(RF\+\d\)/g [_0x21fd51(0x22b)](_0x15566a[_0x21fd51(0x1ac)]) ? _0x15566a[_0x21fd51(0x1ac)][_0x21fd51(0x263)](/Sub-| Explosion| \(RF\+\d\) Procs| Procs| \(RF\+\d\)/g, '') : _0x15566a[_0x21fd51(0x1ac)];
+    _0x439f2c = /(?<!Lv)\d/ [_0x21fd51(0x22b)](_0x439f2c) ? _0x439f2c[_0x21fd51(0x1ba)](0x0, _0x439f2c[_0x21fd51(0x10f)] - 0x1) + 'Lv' + _0x439f2c[_0x21fd51(0x1ba)](-0x1) : _0x439f2c; const _0x49a959 = {};
+    _0x49a959[_0x21fd51(0x260)] = info[_0x21fd51(0x224)]['AmmoUp'][_0x439f2c][AmmoUP[_0x21fd51(0x1fd)]], _0x49a959['recoilSpeed'] = info[_0x21fd51(0x224)][_0x21fd51(0x10b)][_0x439f2c][Math[_0x21fd51(0x19e)](0x0, Math[_0x21fd51(0xd2)](0x5, _0x15566a[_0x21fd51(0x10b)] - 0x1 + RecoilDown[_0x21fd51(0x1fd)] + (info[_0x21fd51(0x19f)][_0x21fd51(0x181)][BowgunBarrel[_0x21fd51(0x1fd)]]['Silencer'] > 0x0 ? TuneUp[_0x21fd51(0x1fd)] + info[_0x21fd51(0x19f)][_0x21fd51(0x181)][BowgunBarrel[_0x21fd51(0x1fd)]]['Silencer'] : 0x0) - ($(CriticalFirePower)[0x0][_0x21fd51(0x1fd)] > 0x0 ? 0x2 : 0x0)))], _0x49a959['recoilSpeed'] = /\(RF\+\d\)/ [_0x21fd51(0x22b)](_0x15566a[_0x21fd51(0x1ac)]) ? _0x49a959[_0x21fd51(0x216)] + '\x20' + _0x15566a['attackName'][_0x21fd51(0x257)](/\(RF\+\d\)/)[0x0] : _0x49a959[_0x21fd51(0x216)], _0x49a959['recoilFrames'] = info['ammo']['recoil'][_0x21fd51(0x280)][_0x49a959['recoilSpeed']], _0x49a959[_0x21fd51(0x200)] = info[_0x21fd51(0x224)][_0x21fd51(0x154)][_0x439f2c][Math[_0x21fd51(0x19e)](0x0, Math[_0x21fd51(0xd2)](0x8, _0x15566a[_0x21fd51(0x154)] + ReloadSpeed[_0x21fd51(0x1fd)] + info[_0x21fd51(0x19f)][_0x21fd51(0x181)][BowgunBarrel[_0x21fd51(0x1fd)]][_0x21fd51(0x154)] + (BowgunBarrel['selectedIndex'] === 0x0 && TuneUp[_0x21fd51(0x1fd)] > 0x0 ? 0x1 : 0x0) - ($(_0x21fd51(0x261))[0x0][_0x21fd51(0x1fd)] > 0x0 ? 0x2 : 0x0)))], _0x49a959[_0x21fd51(0x26b)] = info[_0x21fd51(0x224)][_0x21fd51(0x154)][_0x21fd51(0x280)][_0x49a959['reloadSpeed']], _0x49a959[_0x21fd51(0x19b)] = _0x15566a[_0x21fd51(0x19b)][_0x15566a[_0x21fd51(0x24e)]] + _0x49a959[_0x21fd51(0x260)], _0x49a959['spareShot'] = info[_0x21fd51(0x19f)][_0x21fd51(0x16d)][SpareShot['selectedIndex']] + +spareAdjust[_0x21fd51(0x229)]; /(?<!snipe.*)explosion/ [_0x21fd51(0x22b)](_0x439f2c) && Bombardier[_0x21fd51(0x1fd)] > 0x0 && (_0x49a959[_0x21fd51(0x1ec)] += info[_0x21fd51(0x19f)][_0x21fd51(0x26c)][_0x439f2c['match'](/Sticky|Wyvern/)[0x0]][0x2]); const _0x1049ea = 0x3c;
+    _0x49a959[_0x21fd51(0x226)] = shotsCheck(_0x49a959[_0x21fd51(0xde)] / 0x1e, _0x49a959[_0x21fd51(0x26b)] / 0x1e, _0x15566a['clipSize'][_0x15566a[_0x21fd51(0x24e)]], _0x1049ea), _0x49a959[_0x21fd51(0x288)] = shotsCheck(_0x49a959['recoilFrames'] / 0x1e, _0x49a959[_0x21fd51(0x26b)] / 0x1e, _0x49a959[_0x21fd51(0x19b)], _0x1049ea, 0x64 / _0x49a959[_0x21fd51(0x1ec)]), _0x49a959[_0x21fd51(0x10c)] = Number[_0x21fd51(0x1bb)]((_0x49a959[_0x21fd51(0x288)] / _0x49a959[_0x21fd51(0x226)] - 0x1) * 0x64)[_0x21fd51(0x1a3)](0x2) + '%', _0x49a959['ticsAdjust'] = _0x15566a[_0x21fd51(0x26e)] + 0x1; if (/Pierce Lv|Pierce [1-3]/ [_0x21fd51(0x22b)](_0x439f2c)) _0x49a959['ticsAdjust'] *= JSON[_0x21fd51(0x251)](pierceAdjust['value'])[0x0];
+    else /Pierc/ [_0x21fd51(0x22b)](_0x439f2c) && (_0x49a959['ticsAdjust'] *= JSON[_0x21fd51(0x251)](pierceAdjust[_0x21fd51(0x229)])[0x1]); return _0x49a959; }
+
+function ComboReset() { const _0x4ee229 = _0x40fb26;! /BowGun/ [_0x4ee229(0x22b)]($(previousWeaponType)[_0x4ee229(0xf4)]()) && $(previousWeaponType)[_0x4ee229(0xf4)]() !== '' && ($(_0x4ee229(0x23c))['remove'](), $(_0x4ee229(0x12a))[_0x4ee229(0xf4)](0x0), $(_0x4ee229(0x1e0))[_0x4ee229(0xf4)](0x0), $(_0x4ee229(0x1d0))['val'](0x1), comboTracker = [], DataCompile()); }
+
+function FilterTableForComboAttacks() { const _0x2d2557 = _0x40fb26;
+    $(_0x2d2557(0x1e0))[_0x2d2557(0x1b0)]((_0x2deb40, _0x1b1bb4) => { const _0x4df657 = _0x2d2557; /blue/ [_0x4df657(0x22b)](filterCombo[_0x4df657(0xfd)]) && (_0x1b1bb4[_0x4df657(0x229)] === '0' || _0x1b1bb4['style'] === 'display:\x20none;') ? $('.' + _0x2deb40)[_0x4df657(0x1c4)](): $('.' + _0x2deb40)['show'](); }); }
+
+function TimesUsed(_0x23bbb6, _0x1a9c71 = comboTracker) { const _0x36250b = _0x40fb26; return _0x1a9c71[_0x36250b(0x11e)](_0x66cc6f => _0x66cc6f == _0x23bbb6)[_0x36250b(0x10f)]; }
+$(document)['on'](_0x40fb26(0x18e), function(_0x1cf656) { const _0x2b4682 = _0x40fb26;
+    $(_0x1cf656[_0x2b4682(0x102)])[_0x2b4682(0x244)](_0x2b4682(0x255)) && DataCompile(_0x1cf656); }), $(document)['on'](_0x40fb26(0x209), function(_0x37e66f) { const _0x49e74b = _0x40fb26; if ($(_0x37e66f[_0x49e74b(0x102)])[_0x49e74b(0x244)](_0x49e74b(0x1a9))) { if ($(_0x37e66f[_0x49e74b(0x102)])['hasClass']('dec')) DecreaseComboCount(_0x37e66f);
+        else $(_0x37e66f[_0x49e74b(0x102)])[_0x49e74b(0x244)]('inc') && IncreaseComboCount(_0x37e66f); } });
+
+function IncreaseComboCount(_0x292b6d) { const _0x55f8fe = _0x40fb26; + $(_0x55f8fe(0x1e0))[_0x292b6d['target']['id']][_0x55f8fe(0x229)] < 0x14 && (++$(_0x55f8fe(0x1e0))[_0x292b6d['target']['id']]['value'], DataCompile()); }
+
+function DecreaseComboCount(_0x265e54) { const _0x3ef10f = _0x40fb26; if (_0x265e54['target']['id'] === '0' && +$(_0x3ef10f(0x1e0))[_0x265e54[_0x3ef10f(0x102)]['id']][_0x3ef10f(0x229)] > 0x1) --$('.inputs')[_0x265e54[_0x3ef10f(0x102)]['id']][_0x3ef10f(0x229)], DataCompile();
+    else +_0x265e54[_0x3ef10f(0x102)]['id'] > 0x0 && +$(_0x3ef10f(0x1e0))[_0x265e54['target']['id']][_0x3ef10f(0x229)] > 0x0 && (--$(_0x3ef10f(0x1e0))[_0x265e54[_0x3ef10f(0x102)]['id']][_0x3ef10f(0x229)], DataCompile()); }
+$(document)['on']('mousedown', _0x4a776c => { const _0x5e305d = _0x40fb26,
+        _0x6657e0 = $(_0x4a776c[_0x5e305d(0x102)]);!_0x6657e0['closest'](augToggle)[_0x5e305d(0x10f)] && $(_0x5e305d(0x287))[_0x5e305d(0x191)](_0x5e305d(0x228)) !== _0x5e305d(0x1c5) && _0x4a776c[_0x5e305d(0x102)] !== Qurious && $(_0x5e305d(0x1ea))[_0x5e305d(0x27d)](_0x5e305d(0x1ff)); }), $('.Qurious')['on'](_0x40fb26(0x209), _0x52f5a3 => { const _0x17960c = _0x40fb26;
+    _0x52f5a3[_0x17960c(0x20c)](), info[weaponType[_0x17960c(0x229)]][_0x17960c(0xfc)][dropWeapon[_0x17960c(0x229)]][_0x17960c(0xf1)] > 0x0 && ($(_0x17960c(0x1ea))['toggleClass']('augVis\x20augInvis'), $('.rampageAug')[_0x17960c(0x191)](_0x17960c(0x228), getWeapon()['rampageSlots'] == 0x3 ? 'none' : '')); }), $(_0x40fb26(0x14e))['on'](_0x40fb26(0x209), _0x3d5fcd => { const _0x4c5e22 = _0x40fb26; let _0x51c96f = 0x0;
+    $(_0x4c5e22(0x20e))[_0x4c5e22(0x1b0)]((_0x41ef71, _0x40230f) => { const _0x277639 = _0x4c5e22;
+        _0x51c96f += +_0x40230f[_0x277639(0x229)]; }); if ($(_0x3d5fcd['target'])[_0x4c5e22(0x244)](_0x4c5e22(0x1ef)) && _0x51c96f + +_0x3d5fcd[_0x4c5e22(0x102)][_0x4c5e22(0x229)] < 0x6 && (+$(_0x3d5fcd[_0x4c5e22(0x102)])[_0x4c5e22(0x1ad)]()[0x2]['value'] + +_0x3d5fcd['target']['value'] < 0x6 && !/elementalAug/ [_0x4c5e22(0x22b)](_0x3d5fcd['target'][_0x4c5e22(0xfd)]) || /elementalAug/ ['test'](_0x3d5fcd[_0x4c5e22(0x102)]['className']) && +$(_0x3d5fcd[_0x4c5e22(0x102)])[_0x4c5e22(0x1ad)]()[0x2]['value'] < 0x3)) $(_0x3d5fcd[_0x4c5e22(0x102)])[_0x4c5e22(0x1ad)]()[0x2][_0x4c5e22(0x229)] = +$(_0x3d5fcd[_0x4c5e22(0x102)])[_0x4c5e22(0x1ad)]()[0x2]['value'] + +_0x3d5fcd['target'][_0x4c5e22(0x229)];
+    else $(_0x3d5fcd[_0x4c5e22(0x102)])[_0x4c5e22(0x244)](_0x4c5e22(0xd1)) && +$(_0x3d5fcd[_0x4c5e22(0x102)])[_0x4c5e22(0x1ad)]()[0x2][_0x4c5e22(0x229)] > 0x0 && ($(_0x3d5fcd['target'])['siblings']()[0x2][_0x4c5e22(0x229)] = +$(_0x3d5fcd[_0x4c5e22(0x102)])[_0x4c5e22(0x1ad)]()[0x2][_0x4c5e22(0x229)] - +_0x3d5fcd['target'][_0x4c5e22(0x229)]); /ampage/ ['test'](_0x3d5fcd['target']['className']) && RampageSelect(), DataCompile(_0x3d5fcd); }), $(taWikiSetBuilder)['on'](_0x40fb26(0x1d8), _0xac07cb => { const _0x5076b6 = _0x40fb26;
+    _0xac07cb[_0x5076b6(0xef)](); const _0x441934 = (event['clipboardData'] || window[_0x5076b6(0x171)])['getData'](_0x5076b6(0x11a));
+    $('select.skill')[_0x5076b6(0x1b0)](function() { lastEvent = this, resetSkillDescription(this); }), decodeURL(_0x441934, _0xac07cb), $(taWikiSetBuilder)[_0x5076b6(0x11a)](document['createTextNode']('Paste\x20TA\x20Wiki\x20Set\x20Builder\x20Link\x20Here')), DataCompile(_0xac07cb); });
+
+function decodeURL(_0x30078a = taWikiSetBuilder[_0x40fb26(0x229)], _0x507070) { const _0x55c7af = _0x40fb26; if (/mhrise\.wiki-db\.com/ [_0x55c7af(0x22b)](_0x30078a)) { const _0x41387c = decodeURIComponent(_0x30078a),
+            _0x414f05 = _0x41387c[_0x55c7af(0x257)](_0x55c7af(0x1b4))[0x0][_0x55c7af(0x1c7)](',');
+        ResetSkills(document['querySelectorAll']('.thisSkill:not(.' + $(weaponType)['val']() + ')')), $['each'](_0x414f05, (_0x45c7d2, _0x4d098c) => { const _0x5b560b = _0x55c7af,
+                _0x2c554b = _0x4d098c['split']('Lv');
+            _0x2c554b[0x0] = _0x2c554b[0x0][_0x5b560b(0x263)](/(\s)|(\/)/g, ''), _0x2c554b[0x0] = _0x2c554b[0x0][_0x5b560b(0x263)](/'s/g, 's'), _0x2c554b[0x0] = /Fire|Water|Wind|Ice|Dragon/ ['test'](_0x2c554b[0x0]) ? _0x5b560b(0x246) : _0x2c554b[0x0], _0x2c554b[0x0] = /Kush|Teos|Storm|Thunder|Wind/ [_0x5b560b(0x22b)](_0x2c554b[0x0]) ? _0x5b560b(0x17b) : _0x2c554b[0x0], document[_0x5b560b(0x1fa)]('#' + _0x2c554b[0x0]) !== null && document[_0x5b560b(0x1fa)]('#' + _0x2c554b[0x0])[_0x5b560b(0xd6)]['display'] !== _0x5b560b(0x1c5) && (document[_0x5b560b(0x1fa)]('#' + _0x2c554b[0x0])[_0x5b560b(0x1fd)] = _0x2c554b[0x1]); }); } else JSON[_0x55c7af(0x251)](_0x30078a)[_0x55c7af(0x10f)] === 0x6 && loadState(_0x30078a, _0x507070); }
+$(_0x40fb26(0xd8))['on'](_0x40fb26(0x149), _0x515b7a => { const _0x2639b2 = _0x40fb26;
+    _0x515b7a['target'][_0x2639b2(0x252)] = _0x515b7a['originalEvent']['key'] === 'v' && _0x515b7a[_0x2639b2(0xd7)][_0x2639b2(0xcc)] || _0x515b7a[_0x2639b2(0xd7)][_0x2639b2(0x22a)] ? _0x515b7a[_0x2639b2(0x102)][_0x2639b2(0x252)] = _0x2639b2(0x1af) : _0x2639b2(0x27e); });
+
+function resetWikiText() { const _0x5c9243 = _0x40fb26;
+    $(_0x5c9243(0x15a))[0x0][_0x5c9243(0x229)] = '', $(_0x5c9243(0x15a))[0x0]['value'] = 'Paste\x20TA\x20Wiki\x20Set\x20Builder\x20Link\x20Here'; }
+
+function saveState(_0x5334fb = [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+]) { const _0x123ab9 = _0x40fb26;
+    $('select')[_0x123ab9(0x1b0)](function() { const _0x4f6da5 = _0x123ab9;
+        _0x5334fb[0x0][_0x4f6da5(0x21a)]($(this)[0x0]['selectedIndex']); }), $(_0x123ab9(0x165))['each'](function() { const _0x2142a6 = _0x123ab9;
+        _0x5334fb[0x1]['push'](this[_0x2142a6(0x172)]); }), $('.inputs')[_0x123ab9(0x1b0)](function() { _0x5334fb[0x2]['push'](this['value']); }), _0x5334fb[0x3]['push'](comboTracker), $(_0x123ab9(0x274))[_0x123ab9(0x1b0)](function() { const _0x1aabac = _0x123ab9;
+        _0x5334fb[0x4][_0x1aabac(0x21a)](this[_0x1aabac(0xfd)]); }), _0x5334fb[0x5] = $(_0x123ab9(0x1de))['text'](); const _0xa7481d = document['createElement'](_0x123ab9(0xcd)); return _0xa7481d[_0x123ab9(0x249)](_0x123ab9(0x229), JSON['stringify'](_0x5334fb)), _0xa7481d[_0x123ab9(0x259)](), _0xa7481d['setSelectionRange'](0x0, 0x1869f), navigator[_0x123ab9(0x1b5)][_0x123ab9(0x268)](_0xa7481d['value']), _0x5334fb; }
+
+function loadState(_0x39127e, _0x1ea0b7) { const _0x46bdc7 = _0x40fb26;
+    _0x39127e = JSON[_0x46bdc7(0x251)](_0x39127e); const _0x186e90 = document['querySelectorAll'](_0x46bdc7(0x259));
+    _0x186e90[0x0][_0x46bdc7(0x1fd)] = _0x39127e[0x0][0x0], classChange(), WeaponSelect(); for (let _0x5e6cca = 0x0; _0x5e6cca < _0x39127e[0x5][_0x46bdc7(0x10f)]; _0x5e6cca++) { $(_0x46bdc7(0x1de))[_0x5e6cca][_0x46bdc7(0x252)] = _0x39127e[0x5][_0x5e6cca]; }
+    _0x186e90[0x3][_0x46bdc7(0x1fd)] = _0x39127e[0x0][0x3], RampageSelect(), _0x186e90[0x50][_0x46bdc7(0x1fd)] = _0x39127e[0x0][$(_0x46bdc7(0x259))[_0x46bdc7(0x10f)] - 0xa], QuestSelect(), PartSelect(), HealthSelect(), $(_0x46bdc7(0x259))[_0x46bdc7(0x1b0)](function(_0x520138) { const _0x57c406 = _0x46bdc7;
+        _0x520138 !== (0x0 || 0x3 || $('select')[_0x57c406(0x10f)] - 0xa) && (this[_0x57c406(0x1fd)] = _0x39127e[0x0][_0x520138]); }), $(_0x46bdc7(0x165))[_0x46bdc7(0x1b0)]((_0x4f09b2, _0x486385) => { const _0x14eeda = _0x46bdc7;
+        _0x486385[_0x14eeda(0x172)] = _0x39127e[0x1][_0x4f09b2]; }), $(_0x46bdc7(0x1e0))[_0x46bdc7(0x1b0)]((_0x1f1136, _0x3e0a2d) => { const _0x216355 = _0x46bdc7;
+        _0x3e0a2d[_0x216355(0x229)] = _0x39127e[0x2][_0x1f1136]; }), $(_0x46bdc7(0x274))[_0x46bdc7(0x1b0)](function(_0xf1df30) { this['className'] = _0x39127e[0x4][_0xf1df30]; }), info[_0x46bdc7(0x19f)]['MailofHellfire'] = $(redScroll)[_0x46bdc7(0x244)]('invis') ? info[_0x46bdc7(0x19f)][_0x46bdc7(0xe2)][_0x46bdc7(0xe7)] : info['skills'][_0x46bdc7(0xe2)][_0x46bdc7(0xff)], info['skills']['Dereliction'] = $(redScroll)['hasClass'](_0x46bdc7(0x144)) ? info[_0x46bdc7(0x19f)]['DerelictionSourse'][_0x46bdc7(0xe7)] : info[_0x46bdc7(0x19f)][_0x46bdc7(0x130)][_0x46bdc7(0xff)], [...comboTracker] = _0x39127e[0x3][0x0], $(_0x46bdc7(0x13b))[_0x46bdc7(0x1b0)](function() { const _0x6b56a9 = _0x46bdc7; if (this[_0x6b56a9(0x229)] > 0x0) { let _0x5aedac = $(_0x6b56a9(0x1e0))[this['id']][_0x6b56a9(0x229)] - TimesUsed(this['id']); while (_0x5aedac > 0x0) { comboTracker[_0x6b56a9(0x21a)](this['id']), --_0x5aedac; } while (_0x5aedac < 0x0) { comboTracker[_0x6b56a9(0x14f)](comboTracker[_0x6b56a9(0x211)](this['id']), 0x1), ++_0x5aedac; } } }), DataCompile(_0x1ea0b7), UpdateComboDisplay(), setTimeout(() => { const _0x1defd3 = _0x46bdc7;
+        $('input#taWikiSetBuilder')[0x0][_0x1defd3(0x229)] = 'Paste\x20TA\x20Wiki\x20Set\x20Builder\x20Link\x20Here'; }, 0x7d0), $('input#taWikiSetBuilder')[0x0]['value'] = 'Build\x20Succsefully\x20Loaded'; }
+
+function PopulateDropDowns(_0x36d742, _0x29b729) { const _0x395bed = _0x40fb26;
+    $(_0x29b729)['empty'](), $[_0x395bed(0x1b0)](_0x36d742, (_0x3db1c8, _0x507d8d) => { const _0x2579c2 = _0x395bed;
+        $(_0x29b729)[_0x2579c2(0x116)]($(_0x2579c2(0x1da))[_0x2579c2(0xe5)](_0x2579c2(0x229), _0x507d8d)[_0x2579c2(0x11a)](_0x507d8d)); }); }
+
+function WeaponTypeSelect() { PopulateDropDowns(weaponTypes, weaponType); }
+$(weaponFilter)['on']('click', function() { RampageSelect(); });
+
+function WeaponSelect() { const _0x3505ab = _0x40fb26;
+    $(dropWeapon)[_0x3505ab(0x1b3)](); if (weaponFilter['checked'] === !![]) { const _0xd4dbbb = Object[_0x3505ab(0x1b7)](info[weaponType[_0x3505ab(0x229)]][_0x3505ab(0xfc)])[_0x3505ab(0x11e)](_0x4e1b70 => _0x4e1b70[0x1]['rampageSlots'] > 0x0 && _0x4e1b70[0x1]['baseRaw'] >= 0x122);
+        _0xd4dbbb[_0x3505ab(0x262)](_0x4b3f6c => { const _0x47e9a8 = _0x3505ab;
+            $('#dropWeapon')['append']($(_0x47e9a8(0x1da))['attr'](_0x47e9a8(0x229), _0x4b3f6c[0x0])[_0x47e9a8(0x11a)](_0x4b3f6c[0x1][_0x47e9a8(0xf3)])); }); } else $(info[$(weaponType)['val']()][_0x3505ab(0xfc)])['each']((_0x32985a, _0x262146) => { const _0x296f9b = _0x3505ab;
+        $(_0x296f9b(0xee))[_0x296f9b(0x116)]($('<option></option>')[_0x296f9b(0xe5)](_0x296f9b(0x229), _0x32985a)[_0x296f9b(0x11a)](_0x262146[_0x296f9b(0xf3)])); }); }
+
+function RampageSelect() { const _0x31d6b9 = _0x40fb26;
+    $(weaponRampage['children'])[_0x31d6b9(0x1c4)](), $(weaponRampage0)[_0x31d6b9(0x101)](); if (getWeapon()[_0x31d6b9(0xf1)] !== 0x0) { const _0x4eeeba = [];
+        $(Object[_0x31d6b9(0xe3)](info[_0x31d6b9(0x27a)][_0x31d6b9(0x133)]))['each']((_0x512523, _0x286de2) => { const _0x2f5325 = _0x31d6b9; + _0x286de2[_0x2f5325(0x1ba)](-0x1) <= getWeapon()['rampageSlots'] + (+$(_0x2f5325(0x147))[_0x2f5325(0xf4)]() > 0x0 ? 0x1 : 0x0) && _0x4eeeba[_0x2f5325(0x21a)](info[_0x2f5325(0x27a)]['rampageDecos'][_0x286de2]); }), PopulateDropDowns(_0x4eeeba, weaponRampage0); return; } else { $(weaponRampage[_0x31d6b9(0x266)])[_0x31d6b9(0x285)](''), $(weaponRampage['children'])[_0x31d6b9(0x1c4)](), $(weaponRampage0)[_0x31d6b9(0x101)](); if (/Rampage/ [_0x31d6b9(0x22b)](getWeapon()[_0x31d6b9(0xf3)])) { $(info[_0x31d6b9(0x27a)][getWeapon()['weapon']]['Rampage'])['each'](function(_0x282a8e, _0x5d832c) { const _0x3aadbb = _0x31d6b9;
+                $(weaponRampage[_0x3aadbb(0x266)][_0x282a8e])[_0x3aadbb(0x101)](), PopulateDropDowns(Object[_0x3aadbb(0x205)](this), weaponRampage['children'][_0x282a8e]); }); return; } else { $(getWeapon()[_0x31d6b9(0x27a)])[_0x31d6b9(0x1b0)](function(_0x599f2d, _0xce2447) { const _0x302815 = _0x31d6b9;
+                $(weaponRampage0)[_0x302815(0x116)]($(_0x302815(0x1da))[_0x302815(0xe5)]('value', info[_0x302815(0x27a)]['keys2'][this])[_0x302815(0x11a)](info[_0x302815(0x27a)]['keys2'][this])); }); return; } } }
+
+function MonsterSelect() { const _0x3bdb95 = _0x40fb26;
+    PopulateDropDowns(Object['keys'](info['monster']['hzv']), dropMonster), dropMonster[_0x3bdb95(0x1fd)] = Object[_0x3bdb95(0xe3)](info['monster'][_0x3bdb95(0x234)])[_0x3bdb95(0x1b9)](_0x3bdb95(0x223)); }
+
+function getEleHZ(_0x49826d) { const _0x1805d4 = _0x40fb26; return info[_0x1805d4(0xca)][_0x1805d4(0x234)][dropMonster[_0x1805d4(0x229)]][dropHZ[_0x1805d4(0x1fd)]][lower(_0x49826d)]; }
+
+function getRawHZ(_0x1add51) { const _0x4b3f7a = _0x40fb26; if (info[_0x4b3f7a(0xca)][_0x4b3f7a(0x234)][dropMonster[_0x4b3f7a(0x229)]][dropHZ[_0x4b3f7a(0x1fd)]][_0x1add51] === undefined) return 0x64; return WaterBlight['checked'] ? Math[_0x4b3f7a(0xd2)](0x64, ~~(Math[_0x4b3f7a(0x19e)](info[_0x4b3f7a(0xca)]['hzv'][dropMonster[_0x4b3f7a(0x229)]][dropHZ[_0x4b3f7a(0x1fd)]][_0x1add51], info[_0x4b3f7a(0xca)][_0x4b3f7a(0x234)][dropMonster[_0x4b3f7a(0x229)]][dropHZ[_0x4b3f7a(0x1fd)]][_0x1add51] * 0.63 + 22.2) + 0x3)) : info[_0x4b3f7a(0xca)][_0x4b3f7a(0x234)][dropMonster[_0x4b3f7a(0x229)]][dropHZ[_0x4b3f7a(0x1fd)]][_0x1add51]; }
+const getUsedAttacks = (_0x5b3b74 = weaponType[_0x40fb26(0x229)]) => { const _0x13803f = _0x40fb26; let _0x386ca0 = {}; if ($(weaponType)[_0x13803f(0xf4)]() === 'InsectGlaive') return _0x386ca0 = Object['fromEntries'](Object[_0x13803f(0x1b7)](info['InsectGlaive'][_0x13803f(0x272)])[_0x13803f(0x11e)](_0xa937c1 => !/Sever|Blunt|Kinsect|Dust|Powder|Mark/ ['test'](_0xa937c1))), {..._0x386ca0 }; if ($(weaponType)['val']() === _0x13803f(0x1e6)) { const _0x1a38cf = getWeapon()[_0x13803f(0x174)] === 'Impact\x20Phial' ? _0x13803f(0x1c1) : 'Impact\x20Phial',
+                _0x110457 = new RegExp('' + _0x1a38cf); return _0x386ca0 = Object[_0x13803f(0x12b)](Object['entries'](info['ChargeBlade']['attacks'])['filter'](_0x42fc34 => !_0x110457[_0x13803f(0x22b)](_0x42fc34))), {..._0x386ca0 }; } if (weaponType[_0x13803f(0x229)] === _0x13803f(0x21e)) { let _0x18aaa0 = ''; const _0x35e428 = document[_0x13803f(0xc8)](_0x13803f(0x286))['selectedIndex'] === 0x1 && getWeapon()[_0x13803f(0x108)] < 0x4 ? getWeapon()[_0x13803f(0x108)] + 0x1 : getWeapon()[_0x13803f(0x108)];
+            $(getWeapon()['bowShot'])['each']((_0x3c90f4, _0x20fc3b) => { const _0x27ceec = _0x13803f;
+                _0x3c90f4 < _0x35e428 && (_0x18aaa0 += _0x27ceec(0x1cf) + _0x20fc3b[_0x27ceec(0x257)](_0x27ceec(0x113))[0x0] + '\x20' + _0x20fc3b[_0x27ceec(0x257)](_0x27ceec(0x214))[0x0]); }); const _0x5b66b7 = new RegExp([_0x18aaa0[_0x13803f(0x1ba)](0x1)]); let _0x3fc831 = Object[_0x13803f(0x1b7)](info[_0x13803f(0x21e)][_0x13803f(0x272)])[_0x13803f(0x11e)](_0x350ddf => _0x5b66b7['test'](_0x350ddf[0x0])); return _0x3fc831 = [][_0x13803f(0x189)](Object[_0x13803f(0x1b7)](info[_0x13803f(0x21e)][_0x13803f(0x272)])[_0x13803f(0x14f)](0x0, 0x1), _0x3fc831), _0x3fc831 = _0x3fc831[_0x13803f(0x189)](Object['entries'](info[_0x13803f(0x21e)][_0x13803f(0x272)])['splice'](0x88)), _0x386ca0 = Object[_0x13803f(0x12b)](_0x3fc831), {..._0x386ca0 }; } if ($(weaponType)['val']() === 'Gunlance') return _0x386ca0 = Object['fromEntries'](Object[_0x13803f(0x1b7)](info['Gunlance'][_0x13803f(0x272)])[_0x13803f(0x14f)](0x0, 0x1c)), {..._0x386ca0 }; if (weaponType[_0x13803f(0x229)] === lbg || weaponType[_0x13803f(0x229)] === hbg) { let _0x1cb3ed = info[_0x13803f(0x224)][_0x13803f(0xe3)][_0x13803f(0x177)]((_0x767f0, _0xbae037) => _0x767f0[_0x13803f(0x11e)](_0x1c95ee => weaponType[_0x13803f(0x229)] === lbg && getWeapon()[_0x13803f(0x281)][_0x13803f(0x1a6)](_0xbae037 + 0x1) ? /RF\+/ [_0x13803f(0x22b)](_0x1c95ee) : getWeapon()[_0x13803f(0x18a)][_0xbae037 + 0x1] > 0x0 && !/RF\+/ [_0x13803f(0x22b)](_0x1c95ee)))[_0x13803f(0x150)]()['split'](/,+/); return _0x1cb3ed = _0x1cb3ed['concat'](Object['keys'](info['ammo'])[_0x13803f(0x11e)](_0x5358f4 => weaponType[_0x13803f(0x229)] === lbg ? /lbg|Wyvernblast(?! before)/ [_0x13803f(0x22b)](_0x5358f4) : /hbg|Wyverns/ [_0x13803f(0x22b)](_0x5358f4))), _0x386ca0 = Object[_0x13803f(0x12b)](Object[_0x13803f(0x1b7)](info['ammo'])[_0x13803f(0x11e)](_0x348c59 => TimesUsed(_0x348c59[0x0], _0x1cb3ed) > 0x0)), {..._0x386ca0 }; } return {...info[_0x5b3b74][_0x13803f(0x272)] }; },
+    getAttacks = (_0x4b4b27 = weaponType[_0x40fb26(0x229)]) => ({...info[_0x4b4b27][_0x40fb26(0x272)] }),
+    getWeapon = () => info[weaponType[_0x40fb26(0x229)]][_0x40fb26(0xfc)][dropWeapon[_0x40fb26(0x1fd)]][_0x40fb26(0xf1)] > 0x0 ? getQuriousAugs() : getRampageSkills();
+
+function PartSelect() { const _0x2ef538 = _0x40fb26,
+        _0x50386f = [];
+    info[_0x2ef538(0xca)][_0x2ef538(0x234)][dropMonster[_0x2ef538(0x229)]][_0x2ef538(0x262)](_0x17bb50 => { const _0x172e9b = _0x2ef538;
+        _0x50386f[_0x172e9b(0x21a)]([_0x17bb50['part'] + '\x20' + _0x17bb50['state']]); }), PopulateDropDowns(_0x50386f, dropHZ); }
+
+function QuestSelect() { const _0x3a5286 = _0x40fb26;
+    $(_0x3a5286(0x278))[_0x3a5286(0x1b3)](), $('#MR')[_0x3a5286(0x1b3)](), $(_0x3a5286(0x243))[_0x3a5286(0x1b3)](); const _0x7ae314 = Object[_0x3a5286(0x1b7)](info['quest'])['filter'](_0x147466 => _0x147466[0x1][_0x3a5286(0xca)] === dropMonster['value'] && _0x147466[0x1][_0x3a5286(0x1bd)] === 'MR'),
+        _0x53c510 = Object[_0x3a5286(0x1b7)](info[_0x3a5286(0x207)])['filter'](_0x5a8c6d => _0x5a8c6d[0x1][_0x3a5286(0xca)] === dropMonster[_0x3a5286(0x229)] && _0x5a8c6d[0x1][_0x3a5286(0x1bd)] === 'HR');
+    _0x53c510['forEach'](_0x2433ff => { const _0x8bde79 = _0x3a5286;
+        $('#HR')['append']($(_0x8bde79(0x1da))[_0x8bde79(0xe5)](_0x8bde79(0x229), _0x2433ff[0x0])[_0x8bde79(0x11a)](_0x2433ff[0x1][_0x8bde79(0x207)])); }), _0x7ae314[_0x3a5286(0x262)](_0x517213 => { const _0x12649b = _0x3a5286;
+        $('#MR')[_0x12649b(0x116)]($(_0x12649b(0x1da))[_0x12649b(0xe5)](_0x12649b(0x229), _0x517213[0x0])[_0x12649b(0x11a)](_0x517213[0x1][_0x12649b(0x207)])); }), _0x7ae314[_0x3a5286(0x10f)] > 0x0 ? $(_0x3a5286(0x243))['append']($(_0x3a5286(0x1da))['attr']('value', _0x7ae314[0x0][0x0])[_0x3a5286(0x11a)](_0x7ae314[0x0][0x1]['quest'])) : ($('#dropQuest')['append']($(_0x3a5286(0x1da))[_0x3a5286(0xe5)](_0x3a5286(0x229), _0x53c510[0x0][0x0])['text'](_0x53c510[0x0][0x1]['quest'])), $('#MR')['hide']()); }
+
+function HealthSelect() { const _0xf7b94 = _0x40fb26;
+    $(health)[_0xf7b94(0x1b3)](), $[_0xf7b94(0x1b0)](getHealthPools(), (_0x295e92, _0x58d7ea) => { const _0x5cbbbe = _0xf7b94;
+        $(health)[_0x5cbbbe(0x116)]($('<option></option>')[_0x5cbbbe(0xe5)]('value', _0x58d7ea)[_0x5cbbbe(0x11a)](formatNumbers(_0x58d7ea))); }); }
+$('#taWikiSetBuilder')['on'](_0x40fb26(0x209), _0x4cc61a => { const _0x46cb07 = _0x40fb26;
+    $(_0x4cc61a[_0x46cb07(0x102)])[_0x46cb07(0xf4)]() == _0x46cb07(0x27e) && $(_0x4cc61a[_0x46cb07(0x102)])[_0x46cb07(0xf4)](''); });
+
+function isUnique(_0x3c58d6, _0x1b9bff, _0x42872e) { const _0x1da0f8 = _0x40fb26; return _0x42872e[_0x1da0f8(0x1b9)](_0x3c58d6) === _0x1b9bff; }
+
+function showMenu() { const _0x29eae3 = _0x40fb26;
+    $(_0x29eae3(0x190))[_0x29eae3(0x101)](), document[_0x29eae3(0x1fa)](_0x29eae3(0x195))[_0x29eae3(0x266)]['length'] > 0x0 ? $(_0x29eae3(0x120))[_0x29eae3(0x101)]() : $(_0x29eae3(0x120))[_0x29eae3(0x1c4)](), document[_0x29eae3(0x1fa)]('#HR')[_0x29eae3(0x266)][_0x29eae3(0x10f)] > 0x0 && ($(_0x29eae3(0x14b))[_0x29eae3(0x101)](), $(_0x29eae3(0x1d3))[_0x29eae3(0x191)]('top', _0x29eae3(0x24b))), document[_0x29eae3(0x1fa)]('#HR')[_0x29eae3(0x266)][_0x29eae3(0x10f)] === 0x0 && ($(_0x29eae3(0x14b))[_0x29eae3(0x1c4)](), $(_0x29eae3(0x1d3))[_0x29eae3(0x191)](_0x29eae3(0x1ca), _0x29eae3(0x157))); }
+
+function updateQuest(_0x5dce18) { const _0x2b8373 = _0x40fb26;
+    $(_0x2b8373(0x23d))[_0x2b8373(0x266)]()[0x0][_0x2b8373(0x233)] = window[_0x2b8373(0x1df)][_0x2b8373(0x13d)][0x0][window[_0x2b8373(0x1df)][_0x2b8373(0x13d)][0x0][_0x2b8373(0x1fd)]]['outerHTML'], $(_0x2b8373(0x1d3))[_0x2b8373(0x1c4)](), DataCompile(); }
+$(document)['on'](_0x40fb26(0x209), _0x315c12 => { const _0x590e27 = _0x40fb26,
+        _0xca8fbf = $(_0x315c12['target']);!_0xca8fbf[_0x590e27(0x1a2)](questButton)[_0x590e27(0x10f)] && !_0xca8fbf[_0x590e27(0x1a2)](_0x590e27(0x190))[_0x590e27(0x10f)] && !_0xca8fbf[_0x590e27(0x1a2)](dropQuest)[_0x590e27(0x10f)] && $(_0x590e27(0x190))['is'](_0x590e27(0x208)) && $(_0x590e27(0x190))[_0x590e27(0x1c4)](); });
+const capitalAll = _0x15be64 => _0x15be64[_0x40fb26(0x263)](/(?<!\w)\w{1}/g, _0x565a01 => _0x565a01[_0x40fb26(0x115)]());
+
+function capital(_0x16c826, _0x3961c2 = 0x0) { const _0x2f9c60 = _0x40fb26; return _0x16c826[_0x3961c2][_0x2f9c60(0x115)]() + _0x16c826['slice'](0x1); }
+
+function lower(_0x3ea136) { return _0x3ea136[0x0]['toLowerCase']() + _0x3ea136['slice'](0x1); }
+
+function shotsCheck(_0x1ec67d, _0x192a8c, _0x50c6f4, _0x506e26 = 0x3c, _0x422096 = 0x0) { let _0x50be82 = 0x0;
+    _0x50be82 += _0x422096; let _0x3df154 = 0x0,
+        _0xcae2d4 = 0x0; while (_0x3df154 <= _0x506e26) { for (let _0x566ae0 = 0x0; _0x566ae0 < _0x50c6f4; ++_0x566ae0) { _0x3df154 += _0x1ec67d, _0xcae2d4 += _0x3df154 <= _0x506e26 ? 0x1 : 0x0, _0xcae2d4 >= _0x50be82 && _0x422096 !== 0x0 && _0x422096 !== Infinity && (--_0x566ae0, _0x50be82 += _0x422096); }
+        _0x3df154 += _0x192a8c; } return _0xcae2d4; }
+
+function getHealthPools() { const _0x1ebc6a = _0x40fb26,
+        _0x5c8249 = ~~(info['quest'][dropQuest[_0x1ebc6a(0x229)]][players[_0x1ebc6a(0x229)]] * ((info[_0x1ebc6a(0x207)][dropQuest[_0x1ebc6a(0x229)]]['min'] / info['quest'][dropQuest['value']]['1p'] - 0x1) * -0x1)) / info['quest'][dropQuest['value']][_0x1ebc6a(0xcb)]; let _0x40550f = [info[_0x1ebc6a(0x207)][dropQuest['value']][$('#players')['val']()]]; if (info[_0x1ebc6a(0x207)][dropQuest[_0x1ebc6a(0x229)]][_0x1ebc6a(0xcb)] === 0x0) return _0x40550f; if (info[_0x1ebc6a(0x207)][dropQuest[_0x1ebc6a(0x229)]][_0x1ebc6a(0xcb)] === 0x1) return _0x40550f = [
+        [_0x40550f[0x0] - _0x5c8249],
+        [_0x40550f[0x0]],
+        [_0x40550f[0x0] + _0x5c8249]
+    ], _0x40550f; return _0x40550f = [
+        [_0x40550f[0x0] - _0x5c8249 * 0x2],
+        [_0x40550f[0x0] - _0x5c8249],
+        [_0x40550f[0x0]],
+        [_0x40550f[0x0] + _0x5c8249],
+        [_0x40550f[0x0] + _0x5c8249 * 0x2]
+    ], _0x40550f; }
+
+function resetSkillDescription() { const _0x27a5ce = _0x40fb26; if (lastEvent !== '') { if (lastEvent === BowCoating && weaponType['value'] !== _0x27a5ce(0x21e)) return; let _0x17558e = [];
+        Object[_0x27a5ce(0x205)](lastEvent['children'])[_0x27a5ce(0x227)](_0x3e8c4d => _0x3e8c4d['tagName'] === _0x27a5ce(0x20d)) ? (_0x17558e = Object[_0x27a5ce(0x205)]($(lastEvent['children'])[_0x27a5ce(0x266)]()), _0x17558e[_0x27a5ce(0x14f)](-0x2), _0x17558e[_0x27a5ce(0x14f)](0x0, 0x0, lastEvent[0x0])) : _0x17558e = Object[_0x27a5ce(0x205)](lastEvent[_0x27a5ce(0x266)]), _0x17558e[_0x27a5ce(0x262)]((_0x5e848e, _0x15817e) => { const _0x2b9949 = _0x27a5ce; let _0x495cdd = ''; if (lastEvent === BowCoating) _0x495cdd = getWeapon()[_0x2b9949(0x242)][_0x15817e];
+            else { if (lastEvent === BowgunBarrel) _0x495cdd = [_0x2b9949(0x1f7), _0x2b9949(0x1e9), _0x2b9949(0x163), 'Silencer', _0x2b9949(0xe8)][_0x15817e];
+                else lastEvent === Dereliction ? _0x495cdd = [_0x2b9949(0x1f7), _0x2b9949(0x135), _0x2b9949(0x225), _0x2b9949(0x16b), _0x2b9949(0x183), 'Lv-2\x20Charge-2', _0x2b9949(0x11b), _0x2b9949(0x13f), _0x2b9949(0x139), 'Lv-3\x20Charge-3'][_0x15817e] : _0x495cdd = 'Lv-' + _0x15817e; }
+            _0x5e848e[_0x2b9949(0x252)] = _0x15817e === 0x0 ? _0x2b9949(0x1f7) : _0x495cdd; }), lastEvent = ''; } }
+
+function _0x1ddd() { const _0x4dfa9c = ['N\x20/\x20A', 'Enraged', 'Marksman', 'GreatSword', '3:\x20Ele+20', 'ChargeBlade', '\x20Lv', 'SneakAttack', 'Long', '.augToggle', 'table', 'spareShot', '%\x20EFR\x20+', 'eleAmmo', 'inc', 'Combo\x20Damage', 'CriticalFirePower', 'parent', 'Body', 'DemonDrug', '2:\x20Ele+15', 'reverse', '----', 'addClass', '2:\x20Raw\x20+20', 'querySelector', 'LightBowGun', '/json/rampage.json', 'selectedIndex', 'StrongarmStance', 'augVis\x20augInvis', 'reloadSpeed', 'baseEle', 'NaN%', 'EFR', '940760sowPZG', 'values', 'NoEleBuff', 'quest', ':visible', 'mousedown', 'HuntingHorn', 'DemonMode', 'stopImmediatePropagation', 'OPTGROUP', '.augLabel', 'Sticky|Wyvern', 'yellow', 'lastIndexOf', 'efr', 'blunt', 'Normal|Rapid|Pierce|Spread', 'MastersTouch', 'recoilSpeed', 'Hellion\x20Mode', 'DualBlades', 'BRM', 'push', 'Dereliction', 'Number', 'CriticalBoost', 'Bow', '736602IPaqqK', 'Procs\x20Per', 'SwitchAxe', 'shellingType', 'Toadversary', 'ammo', 'Lv-1\x20Charge-2', 'shotsPerMinBase', 'some', 'display', 'value', 'metaKey', 'test', 'Sharp\x20+', 'Ammo\x20Type', '.a:not(.gray)', 'ChargeMaster', '\x20inputContainer', '#dropEnraged', 'Total', 'outerHTML', 'hzv', '#previousWeaponType', 'SpiritGauge', 'http://localhost:5500', '3:\x20Ele+12', '2:\x20Ele\x20+\x208', 'eleType', 'Dragon', '.comboHits', 'select#dropQuest', 'augPEM', 'prototype', 'dropWeaponType', 'inputComboRepeat', 'coatings', '#dropQuest', 'hasClass', 'Close\x20Range', 'ElementalAttack', 'Long:\x20Raw\x20+\x205%', 'tbody', 'setAttribute', 'rawCrit', '-46%', '996446fpfVnM', 'class', 'isUsed', 'display:none', 'augPRM', 'parse', 'textContent', 'Shield:\x20Guard\x20Up', 'keypress', 'inputs', 'Effective', 'match', 'Barrels', 'select', 'Chance\x2040%\x20Raw+10%\x20EFR\x20+4%', 'output.elementalAug', 'type', 'aff', 'innerHTML', 'removeClass', 'ammoIncrease', '#ElementalReload', 'forEach', 'replace', 'output.sharpnessAug', '/json/ammo.json', 'children', 'MindsEye', 'writeText', 'purple', 'BEM', 'reloadFrames', 'Bombardier', '#BowChargePlus', 'ticsPer', 'Valstrax\x20Soul', 'parentNode', 'Clip\x20Size', 'attacks', 'PRM', '.scroll', 'Helmbreaker', 'hitsOfSharp', 'Impact\x20Phial', '#HR', 'HeavyBowGun', 'rampage', 'Shots\x20\x0a\x20To\x20Kill', 'Table', 'toggleClass', 'Paste\x20TA\x20Wiki\x20Set\x20Builder\x20Link\x20Here', 'HerculesDraw', 'frames', 'isRapidFire', 'blur', '/json/skills.json', '/json/LightBowGun.json', 'html', 'BowChargePlus', '#augToggle', 'shotsPerMin', '\x20/\x20', 'Chance\x2020%\x20Raw\x20\x20+\x205%\x20EFR\x20+1%', 'Draw', 'rawMV', 'part', 'ChainCritDualBlades', 'output.affinityAug', 'td#b', 'getElementById', 'orange', 'monster', 'HPScale', 'ctrlKey', 'input', 'IgnoreHZV', '.demon:not(#', 'display:\x27\x27', 'dec', 'min', '2543821AghAdP', '3:\x20Raw\x20+25', 'inputs\x20hitsOfSharpInputs', 'style', 'originalEvent', '#taWikiSetBuilder', 'appendChild', 'Ice', 'EFE', 'Silencer:\x20Recoil\x20Down\x20+1', 'Lv3\x20&\x20Dragon\x20Ammo', 'recoilFrames', 'mhrice', '#statsHead\x20>\x20tr\x20>\x20th:nth-child(4)', 'input.check:not(input#ProtectivePolish)', 'MailofHellfireSourse', 'keys', 'rangedContainer', 'attr', 'Lv2\x20&\x20Ele\x20Ammo', 'blue', 'Guard-Up', 'replaceME', 'Sharpness', 'Magnamalo\x20Soul', 'meleeTable', '2:\x20Sticky+10%\x20Wyvern+15%', '#dropWeapon', 'preventDefault', 'double', 'rampageSlots', 'createTextNode', 'weapon', 'val', '1:\x20Raw\x20+20', 'Sharp', 'Stat', 'tableRow', 'eleMV', 'Brutal\x20Strike', 'Rampage-Up\x20Skill', 'weapons', 'className', 'getSkills', 'red', 'RazorSharp', 'show', 'target', 'Current\x20RPM', 'armor', 'Elemental\x20Phial', '3:\x20Raw\x20+\x2020%\x20EFR\x20+\x2016%', '#monTable\x20>\x20tr:nth-child(2)\x20>\x20td:nth-child(1)', 'baseCharge', '3:\x20Ele+15', 'ChainCritBow', 'recoil', 'shotsPerGain', 'baseAff', 'Water', 'length', '.skill', 'None', 'Hammer', '[1-5]', 'options', 'toUpperCase', 'append', 'label.check', '#weaponRampage0', 'comboHits', 'text', 'Lv-2\x20Charge-3', 'Player\x20Dmg', 'Aff+', 'filter', '162298zbauqj', '#divMR', '#health', 'CriticalElement', 'Elemental\x20Exploit', '3:\x20Raw\x20+35', 'Attack\x20Name', 'option', 'json', 'NormalRapidUp', 'types', '.0:nth-child(n+\x203)', 'fromEntries', '1:\x20Ele\x20+\x205', '</output>', 'Lance', 'then', 'DerelictionSourse', 'Affinity', 'RapidMorph', 'rampageDecos', '2:\x20Raw\x20+25', 'Lv-1\x20Charge-1', 'https://stonesan101.github.io/MHR-Damage', 'all', 'baseRaw', 'Lv-3\x20Charge-2', 'Chance\x2020%\x20Raw+10%\x20EFR\x20+2%', '.inputs:not(\x22.inputComboRepeat\x22)', 'Spare\x20Shot\x20+20%', 'path', 'select.demon', 'Lv-3\x20Charge-1', 'HeavyBowGun\x20Wyvern', 'Element\x20Exploit', 'Ele', 'RPM\x20Base', 'invis', 'Recoil', '616628XBjCLL', 'output.rampageAug', 'RPM\x20Gain', 'keyup', 'Raw', '#divHR', 'Spare\x20Shot\x20+10%', 'createElement', '.augButton', 'splice', 'toString', 'white', 'output.attackAug', 'ChainCritBowGun', 'reload', 'location', 'Agitator', '-93%', 'efe', 'ticsAdjust', 'input#taWikiSetBuilder', 'inputComboRepeat\x20hitsOfSharpInputs\x20inputs', 'ReloadSpeed', 'thead', '9cbiUiK', 'isNaN', 'Large\x20Monster', 'SpecialAmmoBoost', 'rangedTable', 'Power', 'stats', 'input.check', '>output', 'Spare\x20Shot\x20+5%', 'green', 'FeralDemonMode', 'SwordNShield', 'Lv-1\x20Charge-3', 'Chance\x2060%\x20Raw\x20\x20+\x205%\x20EFR\x20+3%\x20', 'SpareShot', 'remove', '\x22\x20class=\x22inputButton\x20dec\x22\x0a\x09\x09\x09\x09>&#8681</button><button\x20type=\x22button\x22\x20aria-pressed=\x22false\x22\x20id=\x22', 'querySelectorAll', 'clipboardData', 'checked', 'tbody#', 'phialType', 'Qurious', '/json/', 'map', 'cell', 'PunishingDraw', 'PEM', 'ElderEssence', 'Dulling\x20Strike', 'Artillery', 'eleCrit', 'shot', 'replaceWith', 'BowgunBarrel', 'efrMulti', 'Lv-2\x20Charge-1', 'impShieldCharge', 'Thunder', '#sharpnessContainer', ':\x20Raw\x20+', '4302496tfLGXd', 'concat', 'usableAmmo', 'SpreadUp', 'host', 'rawNon', 'change', '.classSpecific', '.menu', 'css', '#monTable', 'Element\x20Phial', 'Blunt', '#MR', 'Crit', 'SerenePose', 'dps', 'Base', 'sharpness', 'clipSize', '.json', 'Combo\x20skill\x20', 'max', 'skills', 'ChargeLevel', 'augEFR', 'closest', 'toFixed', '\x20+\x20', 'call', 'includes', 'AmmoUP', 'BowCoating', 'inputButton', 'tableRowRanged', 'enrage', 'attackName', 'siblings', 'LongSword', 'Build\x20Successfully\x20Decrypted', 'each', 'hasOwnProperty', 'raw', 'empty', '(?<=skills=)(.*?)(?=&)', 'clipboard', 'shellingLevel', 'entries', '#comboCountContainer', 'indexOf', 'slice', 'parseFloat', 'noSharpMod', 'rank', 'ele', 'Shot', 'output', 'Element\x20Phial|Elemental\x20Phial', 'join', '#rampageResult', 'hide', 'none', 'single', 'split', 'PierceUp', 'Sever', 'top', 'eleNon', 'Gunlance', 'width', '.Shot', '|Lv', '.inputComboRepeat', 'Kushala\x20Daora\x20Soul', 'critBoost', 'div.menu', 'True', 'Power:\x20Raw\x20+\x2012.5%', 'ChainCrit', 'select.skill', 'paste', 'Aff\x20+\x20', '<option></option>', 'RapidFireUp', '1:\x20Raw\x20+15', '2:\x20Ele+12', 'output.augLabel', 'event', '.inputs'];
+    _0x1ddd = function() { return _0x4dfa9c; }; return _0x1ddd(); }
+$(document)['on'](_0x40fb26(0x209), _0x50f804 => { const _0x5de82a = _0x40fb26; if (lastEvent !== '' && lastEvent === _0x50f804[_0x5de82a(0x102)]) return;
+    lastEvent !== '' && resetSkillDescription(), Object[_0x5de82a(0x205)]($('select.skill'))[_0x5de82a(0x227)](_0x2e3783 => _0x2e3783['id'] === _0x50f804[_0x5de82a(0x102)]['id']) && setSkillDescriptions(_0x50f804[_0x5de82a(0x102)]); }), $(_0x40fb26(0x1d7))['on'](_0x40fb26(0x18e), _0x139114 => { const _0x4b0732 = _0x40fb26;
+    resetSkillDescription(), DataCompile(), _0x139114[_0x4b0732(0x102)][_0x4b0732(0x282)](); });
+
+function setSkillDescriptions(_0x18e912) { const _0xd66f11 = _0x40fb26; if (Object[_0xd66f11(0x205)]($('select.skill'))['some'](_0xd882f5 => _0xd882f5['id'] === _0x18e912['id'])) { const _0x42430d = _0x18e912['id']; if (_0x42430d !== _0xd66f11(0x21b)) $(info[_0xd66f11(0x19f)][_0x42430d])['each'](function(_0x36b476) { const _0xecb1ee = _0xd66f11; let _0x2e9f4c; if (_0x36b476 !== 0x0) { if (_0x42430d === 'RecoilDown' || _0x42430d === _0xecb1ee(0x15c)) _0x2e9f4c = /Reload/ [_0xecb1ee(0x22b)](_0x42430d) ? _0x42430d['slice'](0x0, 0x6) + '\x20' + _0x42430d['slice'](0x6) + '\x20+' + _0x36b476 : _0x42430d[_0xecb1ee(0x1ba)](0x0, 0x6) + '\x20' + _0x42430d['slice'](0x6) + '\x20+' + _0x36b476;
+                else { if (_0x42430d === 'AmmoUP' || _0x42430d === _0xecb1ee(0x16d)) { const _0x5bb353 = _0x42430d === _0xecb1ee(0x1a7) ? ['No\x20Change', _0xecb1ee(0xe6), _0xecb1ee(0xdd)] : [_0xecb1ee(0x167), _0xecb1ee(0x14c), _0xecb1ee(0x13c)];
+                        _0x2e9f4c = _0x36b476 + ':\x20' + _0x5bb353[_0x36b476 - 0x1]; } else { if (_0x42430d == _0xecb1ee(0x1e3)) _0x2e9f4c = _0x36b476 + ':\x20' + [_0xecb1ee(0xc1), _0xecb1ee(0x13a), _0xecb1ee(0x16c), _0xecb1ee(0x25a)][_0x36b476 - 0x1];
+                        else { if (_0x42430d === _0xecb1ee(0x26c)) weaponType[_0xecb1ee(0x229)] !== hbg ? _0x2e9f4c = _0x36b476 + _0xecb1ee(0x187) + info[_0xecb1ee(0x19f)][_0xecb1ee(0x26c)][_0x36b476][0x0] + _0xecb1ee(0x1ed) + info[_0xecb1ee(0x19f)]['Bombardier'][_0x36b476][0x1] : _0x2e9f4c = ['Bombardier', '1:\x20Raw\x20+\x2010%\x20EFR\x20+\x2010%', _0xecb1ee(0xed), _0xecb1ee(0x106), '4:\x20Raw\x20+\x2025%\x20EFR\x20+\x2017%'][_0x36b476];
+                            else { if (_0x42430d == _0xecb1ee(0x181)) _0x2e9f4c = [_0xecb1ee(0x258), _0xecb1ee(0x247), _0xecb1ee(0x1d5), _0xecb1ee(0xdc), _0xecb1ee(0x253)][_0x36b476];
+                                else { if (_0x42430d == _0xecb1ee(0x1f1)) _0x2e9f4c = ['-', 'Normal\x20+30%\x20Spread\x20+20%\x20Pierce\x20+10%\x20Recoil\x20-2'][_0x36b476];
+                                    else { let _0x258161 = ''; if (this['BR'] > 0x0 || this[_0xecb1ee(0x273)] > 0x1 || this[_0xecb1ee(0x219)] > 0x1) { _0x258161 = _0xecb1ee(0x14a);
+                                            this['BR'] > 0x0 && (_0x258161 += /\d\.?\d/ [_0xecb1ee(0x22b)](this['BR']) ? '+' + this['BR'] : '\x20+\x20' + this['BR']); if (this['BRM'] > 0x1) { const _0x5341da = /\.[1-8]/ [_0xecb1ee(0x22b)]((this[_0xecb1ee(0x219)] - 0x1) * 0x64) ? ((this[_0xecb1ee(0x219)] - 0x1) * 0x64)[_0xecb1ee(0x1a3)](0x1) : ((this[_0xecb1ee(0x219)] - 0x1) * 0x64)[_0xecb1ee(0x1a3)](0x0);
+                                                _0x258161 += /\d\.?\d/ [_0xecb1ee(0x22b)](_0x5341da) ? '+' + _0x5341da + '%' : _0xecb1ee(0x1a4) + _0x5341da + '%'; } if (this[_0xecb1ee(0x273)] > 0x1) { const _0x1856f1 = /\.[1-8]/ [_0xecb1ee(0x22b)]((this[_0xecb1ee(0x273)] - 0x1) * 0x64) ? ((this[_0xecb1ee(0x273)] - 0x1) * 0x64)[_0xecb1ee(0x1a3)](0x1) : ((this[_0xecb1ee(0x273)] - 0x1) * 0x64)[_0xecb1ee(0x1a3)](0x0);
+                                                _0x258161 += _0x42430d === _0xecb1ee(0x21d) && /\d\.?\d/ ['test'](_0x1856f1 - 0x19) ? '+' + (_0x1856f1 - 0x19) + '%' : _0x42430d === 'CriticalBoost' ? _0xecb1ee(0x1a4) + (_0x1856f1 - 0x19) + '%' : /\d\.?\d/ [_0xecb1ee(0x22b)](_0x1856f1) ? '+' + _0x1856f1 + '%' : _0xecb1ee(0x1a4) + _0x1856f1 + '%'; } } let _0x60437e = ''; if (this['BE'] > 0x0 || this['PEM'] > 0x1 || this[_0xecb1ee(0x26a)] > 0x1) { _0x60437e = _0xecb1ee(0x142);
+                                            this['BE'] > 0x0 && (_0x60437e += /\d\.?\d/ ['test'](this['BE']) ? '+' + this['BE'] : _0xecb1ee(0x1a4) + this['BE']); if (this[_0xecb1ee(0x26a)] > 0x1) { const _0x121b24 = /\.[1-8]/ [_0xecb1ee(0x22b)]((this[_0xecb1ee(0x26a)] - 0x1) * 0x64) ? ((this[_0xecb1ee(0x26a)] - 0x1) * 0x64)[_0xecb1ee(0x1a3)](0x1) : ((this[_0xecb1ee(0x26a)] - 0x1) * 0x64)['toFixed'](0x0);
+                                                _0x60437e += /\d\.?\d/ ['test'](_0x121b24) ? '+' + _0x121b24 + '%' : _0xecb1ee(0x1a4) + _0x121b24 + '%'; } if (this[_0xecb1ee(0x17a)] > 0x1) { const _0x40cb6e = /\.[1-8]/ [_0xecb1ee(0x22b)]((this['PEM'] - 0x1) * 0x64) ? ((this['PEM'] - 0x1) * 0x64)[_0xecb1ee(0x1a3)](0x1) : ((this[_0xecb1ee(0x17a)] - 0x1) * 0x64)[_0xecb1ee(0x1a3)](0x0);
+                                                _0x60437e += /\d\.?\d/ [_0xecb1ee(0x22b)](_0x40cb6e) ? '+' + _0x40cb6e + '%' : _0xecb1ee(0x1a4) + _0x40cb6e + '%'; } } const _0x3b70eb = this[_0xecb1ee(0x25d)] > 0x0 && /\d\.?\d/ [_0xecb1ee(0x22b)](this[_0xecb1ee(0x25d)]) ? _0xecb1ee(0x11d) + this[_0xecb1ee(0x25d)] : this[_0xecb1ee(0x25d)] > 0x0 ? _0xecb1ee(0x1d9) + this[_0xecb1ee(0x25d)] : '';
+                                        _0x258161 = Object[_0xecb1ee(0x23f)][_0xecb1ee(0x1b1)]['call'](this, 'Sharp') && this['Sharp'] < 0x1 ? _0xecb1ee(0x22c) + this[_0xecb1ee(0xf6)] * 0x64 + '%' : _0x258161, _0x258161 = Object['prototype']['hasOwnProperty']['call'](this, _0xecb1ee(0xf6)) && this[_0xecb1ee(0xf6)] > 0x1 ? 'Sharp\x20+' + this[_0xecb1ee(0xf6)] : _0x258161, _0x258161 = _0x258161 === '' && _0x60437e === '' && _0x3b70eb === '' ? 'No\x20Change' : _0x258161; if (_0x18e912 === BowCoating) { const _0x2bfa1f = getWeapon()[_0xecb1ee(0x242)];
+                                            _0x2e9f4c = _0x2bfa1f[_0x36b476] + ':\x20' + [_0x258161, _0x60437e, _0x3b70eb]['join']('\x20'); } else _0x2e9f4c = _0x36b476 + ':\x20' + [_0x258161, _0x60437e, _0x3b70eb][_0xecb1ee(0x1c2)]('\x20'); } } } } } } } else _0x2e9f4c = _0x42430d;
+            $('#' + _0x42430d)[0x0][_0x36b476][_0xecb1ee(0x252)] = _0x2e9f4c; }), lastEvent = _0x18e912;
+        else { if (_0x18e912 === Dereliction) { const _0x56fe1e = $(redScroll)[_0xd66f11(0x244)](_0xd66f11(0x144)) ? [
+                    [_0xd66f11(0x1dc)],
+                    [_0xd66f11(0x1f9)],
+                    [_0xd66f11(0xd4)],
+                    [_0xd66f11(0xf5)],
+                    [_0xd66f11(0x134)],
+                    ['3:\x20Raw\x20+30'],
+                    ['1:\x20Raw\x20+25'],
+                    ['2:\x20Raw\x20+30'],
+                    [_0xd66f11(0x124)]
+                ] : [
+                    [_0xd66f11(0x12c)],
+                    [_0xd66f11(0x239)],
+                    [_0xd66f11(0x238)],
+                    ['1:\x20Ele\x20+\x207'],
+                    [_0xd66f11(0x1dd)],
+                    [_0xd66f11(0x109)],
+                    ['1:\x20Ele+10'],
+                    [_0xd66f11(0x1f5)],
+                    [_0xd66f11(0x1e5)]
+                ]; let _0x269e5a = 0x0;
+                $('select#Dereliction')[_0xd66f11(0x266)]()[_0xd66f11(0x1b0)](function() { const _0xacd297 = _0xd66f11;
+                    $(this)[_0xacd297(0x266)]()[_0xacd297(0x1b0)](function() { const _0x1e58bd = _0xacd297;
+                        this[_0x1e58bd(0x252)] = _0x56fe1e[_0x269e5a], ++_0x269e5a; }); }), Dereliction[0x0][_0xd66f11(0x252)] = _0xd66f11(0x21b); } }
+        lastEvent = _0x18e912; }(Object[_0xd66f11(0x205)]($(_0xd66f11(0x1d7))[_0xd66f11(0x266)]())[_0xd66f11(0x227)](_0x574eb5 => _0x574eb5['id'] === _0x18e912['id']) && _0x18e912['children'][0x0][_0xd66f11(0x252)] === _0x18e912['id'] || !Object[_0xd66f11(0x205)]($(_0xd66f11(0x1d7))['children']())[_0xd66f11(0x227)](_0x4ddfe3 => _0x4ddfe3['id'] === _0x18e912['id'] || _0x18e912)) && resetSkillDescription(_0x18e912); }
+
+function getStats(_0x1c3834, _0x1073d4 = { 'BRM': 0x0, 'BR': 0x0, 'PRM': 0x0, 'BEM': 0x0, 'BE': 0x0, 'PEM': 0x0, 'af': 0x0 }) { const _0x159c8f = _0x40fb26; return $(_0x1c3834)[_0x159c8f(0x1b0)](function() { const _0x13f97a = _0x159c8f;
+        _0x1073d4[_0x13f97a(0x219)] *= this[_0x13f97a(0x219)], _0x1073d4['BR'] += this['BR'], _0x1073d4[_0x13f97a(0x273)] *= this['PRM'], _0x1073d4['BEM'] *= this[_0x13f97a(0x26a)], _0x1073d4['BE'] += this['BE'], _0x1073d4[_0x13f97a(0x17a)] *= this[_0x13f97a(0x17a)], _0x1073d4[_0x13f97a(0x25d)] += this['aff']; }), _0x1073d4; }
+
+function partSelector() { const _0x1100b5 = _0x40fb26;
+    $(dropHZ)[_0x1100b5(0x266)]()[_0x1100b5(0x1b0)](function(_0x2c2b29) { const _0x1af3e0 = _0x1100b5;
+        this[_0x1af3e0(0x252)] === document['querySelector'](_0x1af3e0(0x107))[_0x1af3e0(0x252)] && (dropHZ['selectedIndex'] = _0x2c2b29); }); }
+
+function formatNumbers(_0x4f691c) { const _0x458e1a = _0x40fb26; return _0x4f691c[_0x458e1a(0x150)]()['replace'](/(\d)(?=(\d{3})+(?!\d))/g, '$1,'); }
