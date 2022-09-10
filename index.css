@@ -6,7 +6,7 @@
         overflow-y: auto;
     }
     #forButtons {
-        max-width: 100vw;
+        
         font-size: 95%;
     }
     button#resetSkills {
