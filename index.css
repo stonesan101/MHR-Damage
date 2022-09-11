@@ -1,39 +1,14 @@
-@media only screen and (max-width: 650px) {
-    div#containAll>div#statsTable {
-        grid-area: 4/1;
-    }
-    .contain {
-        overflow-y: auto;
-    }
-    #forButtons {
-        font-size: 95%;
-    }
-    button#resetSkills {
-        grid-area: 2/1/2;
-    }
-    * {
-        min-height: fit-content;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 600px) {
     body {
         border: none;
         align-items: baseline;
         max-width: 100vw;
     }
     .contain {
-        max-width: 100vw;
+        max-width: 100%;
     }
     h1>div>label {
         grid-template-columns: auto auto auto;
-    }
-    div,
-    input,
-    select,
-    label,
-    * {
-        font-size: 1.1rem;
     }
     button#Qurious {
         grid-area: 1 / 2 / 2 / 3;
@@ -44,15 +19,17 @@
         display: grid;
         grid-area: 10 / 1 / 10 / 3;
     }
+    #forButtons,
+    div.containAll,
     div#containAll>div {
-        min-width: 100vw;
-        max-width: 100vw;
+        min-width: 98vw;
+        max-width: 98vw;
         min-height: fit-content;
         overflow: auto;
         /* grid-area: 1 / 1 / 2 / 4; */
     }
     .title {
-        grid-area: 1/1/2/3;
+        grid-area: 1/1/2/4;
         min-height: max-content;
         min-width: max-content;
     }
@@ -70,7 +47,7 @@
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 600px) {
     section1.contain {
         grid-auto-rows: 3.3em 11em 12em;
     }
@@ -133,10 +110,14 @@
             color: rgb(252, 252, 252);
             z-index: 20;
             font-weight: 900;
-            font-size: 1.5em;
             background-color: rgba(11, 16, 42, 0.74);
         }
     }
+}
+
+* {
+    font-size: clamp(.85em, 1vw, 1.15rem);
+    min-height: fit-content;
 }
 
 .contain {
@@ -234,7 +215,6 @@ output.label {
     min-height: 1.32rem;
     z-index: 5;
     width: 100%;
-    font-size: 9;
     display: grid;
     border: none;
     grid-area: 1 / 1 / 2 / 3;
@@ -291,7 +271,6 @@ button.inputButton:active {
     color: rgb(252, 252, 252);
     z-index: 20;
     font-weight: 900;
-    font-size: 2em;
     background-color: rgba(11, 16, 42, 0.74);
 }
 
@@ -380,7 +359,7 @@ div#containAll {
 
 section#section1.contain>div {
     display: grid;
-    min-width: 75;
+    min-width: fit-content;
 }
 
 section#section1.contain {
@@ -635,7 +614,6 @@ output.comboHits {
 }
 
 tr>th {
-    /* font-size: 106%; */
     min-height: fit-content;
     min-height: 3em;
 }
@@ -902,6 +880,7 @@ select,
 label,
 * {
     text-align: center;
+    gap: 0;
     border-color: rgb(77, 67, 69);
     color: white;
     box-sizing: border-box;
@@ -913,9 +892,7 @@ div#comboCountDisplay {
     display: inline-grid;
 }
 
-label {
-    font-size: 1.05em;
-}
+label {}
 
 #monTable>tr:nth-child(1) {
     position: sticky;
@@ -1084,7 +1061,6 @@ h1.title {
 }
 
 h1 {
-    font-size: 1.3rem;
     height: 1.6em;
     text-align: center;
     width: 35%;
@@ -1358,7 +1334,6 @@ input {
     padding-right: 0.25em;
     padding-left: 0.5em;
     pointer-events: all;
-    /* pointer-events: all; */
     min-width: max-content;
     height: 1.7em;
     align-items: center;
@@ -1411,9 +1386,7 @@ div.menu {
     grid-area: 1 / 1 / 2 / 2;
 }
 
-#redScroll {
-    font-size: 1rem;
-}
+#redScroll {}
 
 div>.vis:hover {
     background: rgb(245, 245, 245);
