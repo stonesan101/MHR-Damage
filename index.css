@@ -1,4 +1,20 @@
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 650px) {
+    div#containAll>div#statsTable {
+        grid-area: 4/1;
+    }
+    /* .contain { */
+    /* overflow-y: auto; */
+}
+
+button#resetSkills {
+    grid-area: 2/1/2;
+}
+
+* {
+    min-height: fit-content;
+}
+
+@media only screen and (max-width: 800px) {
     body {
         border: none;
         align-items: baseline;
@@ -7,9 +23,9 @@
     .contain {
         max-width: 100%;
     }
-    h1>div>label {
-        grid-template-columns: auto auto auto;
-    }
+    /* h1>div>label { */
+    /* grid-template-columns: auto auto auto; */
+    /* } */
     button#Qurious {
         grid-area: 1 / 2 / 2 / 3;
         margin-left: 4%;
@@ -36,7 +52,7 @@
     div#divComboAttacks {
         width: 10vw;
         min-height: 50em;
-        max-height: 130vh;
+        max-height: 133vh;
         grid-area: 2 / 2 / 3 / 3;
     }
     div#discord {
@@ -47,7 +63,7 @@
     }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 800px) {
     section1.contain {
         grid-auto-rows: 3.3em 11em 12em;
     }
