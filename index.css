@@ -6,7 +6,6 @@
         overflow-y: auto;
     }
     #forButtons {
-        
         font-size: 95%;
     }
     button#resetSkills {
@@ -172,6 +171,7 @@ label.weaponFilter {
     display: table-header-group;
     z-index: 20;
     min-block-size: auto;
+    min-height: 3em;
 }
 
 select {
@@ -208,7 +208,8 @@ select {
 .rangedContainer>#dpsHead,
 #dpsTable>th.tableRowRanged,
 #dpsBody>tr.tableRowRanged,
-#dpsHead>tr.tableRowRanged {
+#dpsHead>tr.tableRowRanged,
+#ammoTable>tr.tableRowRanged {
     display: flex;
     grid-area: 1 / 1 / 2 / -1;
     min-height: max-content;
@@ -639,7 +640,9 @@ output.comboHits {
 }
 
 tr>th {
-    font-size: 106%;
+    /* font-size: 106%; */
+    min-height: fit-content;
+    min-height: 3em;
 }
 
 td {
@@ -652,6 +655,14 @@ table#ammoTable * {
     gap: 0px;
     margin: 0px;
     overflow: auto;
+}
+
+#ammoHead>tr {
+    min-height: 3em;
+}
+
+th {
+    min-height: 3em;
 }
 
 output.comboAttack {
@@ -927,11 +938,13 @@ table#monTable {
     display: inline-table;
     grid-area: 3 / 1 / 4 / auto;
 }
-#boxes{
-   max-width:100vw;
-   overflow: auto;
-   min-height: fit-content
+
+#boxes {
+    max-width: 100vw;
+    overflow: auto;
+    min-height: fit-content
 }
+
 #boxes>div:nth-child(n+1) {
     display: grid;
     gap: 0.25rem;
@@ -1301,11 +1314,7 @@ select#weaponRampage5 {
 div#forButtons button {
     min-width: max-content;
     gap: 0.5rem;
-    overflow-y:auto;
-
-
-
-
+    overflow-y: auto;
 }
 
 button#Save\ State {
@@ -1389,12 +1398,11 @@ input.check {
 .rangedTable td:nth-child(1) {
     display: inline-table;
     min-width: max-content;
-    width: 27%;
 }
 
 .rangedTable td:nth-child(n+2) {
     min-width: max-content;
-    width: 4.7em;
+    /* width: 4.7em; */
 }
 
 .augDiv>label {
