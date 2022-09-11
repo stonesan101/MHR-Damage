@@ -132,7 +132,7 @@ button#resetSkills {
 }
 
 * {
-    font-size: clamp(.85em, 1vw, 1.15rem);
+    font-size: clamp(20px, 1vw, 1.15rem);
     min-height: fit-content;
 }
 
