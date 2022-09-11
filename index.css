@@ -1,4 +1,4 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     body {
         border: none;
         align-items: baseline;
@@ -47,7 +47,7 @@
     }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
     section1.contain {
         grid-auto-rows: 3.3em 11em 12em;
     }
