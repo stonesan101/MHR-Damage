@@ -131,7 +131,7 @@
 }
 
 * {
-    font-size: clamp(20px, 1vw, 1.15rem);
+    font-size: clamp(20px, 1vw, 1.05rem);
     min-height: fit-content;
 }
 
@@ -1329,7 +1329,7 @@ select#dropQuest {
 
 label,
 input {
-    max-height: 30px;
+    /* max-height: 30px; */
     margin: 0px;
     display: grid;
 }
