@@ -85,7 +85,7 @@
         align-items: baseline;
     }
     section#section2 {
-        grid-area: 1 / 3 / 2 / 4;
+        grid-area: 1 / 3 / 1 / 4;
         min-height: 71.5em;
         min-width: 41vw;
         max-width: 41vw;
@@ -119,7 +119,7 @@
         grid-area: 1 / 1 / 2 / -1;
     }
     body {
-        grid-template-columns: 1vw 40vw 14vw 41vw 1vw;
+        grid-template-columns: 1vw 48vw 1vw 48vw 1vw;
         display: grid;
     }
     div#license {
@@ -141,10 +141,6 @@
 
 .contain {
     overflow-x: visible;
-}
-
-body {
-    width: 100vw;
 }
 
 label.scroll.vis {
@@ -198,9 +194,10 @@ select {
 
 #ammoHead>tr,
 #ammoHead,
-#ammoBody>tr {
+#ammoBody>tr,
+.tableRowRanged {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2.3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-area: 1 / 1 / 2 / -1;
     max-height: max-content;
 }
@@ -210,7 +207,7 @@ select {
 #dpsBody>tr.tableRowRanged,
 #dpsHead>tr.tableRowRanged,
 #ammoTable>tr.tableRowRanged {
-    display: flex;
+    /* display: flex; */
     grid-area: 1 / 1 / 2 / -1;
     min-height: max-content;
 }
@@ -348,8 +345,6 @@ html div {
     gap: 0.6em;
     grid-template-columns: 1fr 1fr;
 }
-
-#WeaponSelects>div:nth-child(3) {}
 
 #WeaponSelects>div:nth-child(4) {
     grid-area: 3 / 1 / 4 / 2;
@@ -1056,8 +1051,6 @@ select.skill:enabled {
     height: 1.8em;
 }
 
-select#RapidMorph {}
-
 select.skill:focus {
     z-index: 100;
     text-align: center;
@@ -1388,11 +1381,7 @@ input.check {
 
 #dpsHead>tr.tableRowRanged>th:nth-child(n+1) {
     height: 3em;
-    width: 10.59%;
-}
-
-#dpsHead>tr.tableRowRanged>th:nth-child(1) {
-    width: 26.5%;
+    /* width: 10.59%; */
 }
 
 .rangedTable td:nth-child(1) {
@@ -1410,8 +1399,6 @@ input.check {
     z-index: 5;
     height: 2.1em;
 }
-
-* {}
 
 #boxes>h1 {
     grid-area: 1 / 1 / 2 / 5;
