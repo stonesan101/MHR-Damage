@@ -8,6 +8,9 @@
     <meta name="MHR-Damage Calculator" content="Monster Hunter Rise Sunbreak Damage Calculations. A site designed to be capable of answering any optimization questions. Featuring many functions you cant find anywhere else!">
     <meta name="keywords" content="MHR, MHRS, Rise Database, Sunbreak Database, Damage, Optimization, Calculations">
     <meta Cache-Control='no-cache'>
+    <script></script>
+    <script defer src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
+    <script defer src='/MHR-Damage/index.js'></script>
     <title>Stone's Sunbreak Damage Optimizer</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src='https://www.googletagmanager.com/gtag/js?id=G-CGQJSRYWE1'></script>
@@ -796,15 +799,57 @@
             <div class='combo' id='comboCountDisplay'></div>
         </div>
         </div>
+        <div id='setBuilder'>
+            <div>
+                <div><label for='weapon'>Weapon</label><select id='weapon' class='armor' name='weapon' onchange='setDecoSlots()'>
+ </select></div>
+            </div>
+            <div>
+                <div><label for='head'>Helm</label><select id='head' class='armor' name='head' onchange='setDecoSlots()'>
+ </select></div>
+            </div>
+            <div>
+                <div><label for='chest'>Chest</label><select id='chest' class='armor' name='chest' onchange='setDecoSlots()'>
+ </select></div>
+            </div>
+            <div>
+                <div><label for='waist'>Waist</label><select id='waist' class='armor' name='waist' onchange='setDecoSlots()'>
+ </select></div>
+            </div>
+            <div>
+                <div><label for='arm'>Gloves</label><select id='arm' class='armor' name='arm' onchange='setDecoSlots()'>
+ </select></div>
+            </div>
+            <div>
+                <div><label for='leg'>Boots</label><select id='leg' class='armor' name='leg' onchange='setDecoSlots()'>
+ </select></div>
+            </div>
+            <div>Charm 1
+
+                <div><label for='charm1Skill1'>Skill 1</label><select id='charm1Skill1' class='armor' name='charm1Skill1' onchange='setDecoSlots()'>
+ </select> </div>
+                <div><label for='charm1Skill2'>Skill 2</label><select id='charm1Skill2' class='armor' name='charm1Skill2' onchange='setDecoSlots()'>
+ </select></div>
+
+            </div>
+            <div>Charm 2
+                <div><label for='charm2Skill1'>Skill 1</label><select id='charm2Skill1' class='armor' name='charm2Skill1' onchange='setDecoSlots()'>
+<div>
+</select> </div>
+                <div><label for='charm2Skill2'>Skill 2</label><select id='charm2Skill2' class='armor' name='charm2Skill2' onchange='setDecoSlots()'>
+ </select></div>
+            </div>
+
+
+        </div>
         <div id='previousWeapon' value='initial' style='display:none'></div>
         <div id='previousWeaponType' value='initial' style='display:none'></div>
         <div id='license'>
-            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png
+       " /></a><br />This work is licensed under a<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>
         </div>
 </body>
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
-<link href='/MHR-Damage/index.js'>
-<script src='/MHR-Damage/index.js'></script>
+
 <link rel='stylesheet' type='text/css' href='/MHR-Damage/index.css'>
 <link rel='preconnect' href='https://fonts.googleapis.com'>
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
