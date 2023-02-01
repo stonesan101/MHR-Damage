@@ -1,25 +1,20 @@
 # gitignore
 
-node_modules
+# node_modules
 
 # Only apps should have lockfiles
 yarn.lock
-package-lock.json
-hooks.js
-index2.js
-legacy.js
+
+
+
+
 LICENSE.md
 README.md
-.nodemonrc
-.quokka
-.js
-base.js
-whitespaceRules.js
-whitespace.js
-whitespace-async.js
-requires.js
-.npmrc
-.backup.js
+
+
+
+
+
 
 .babelrc
 test
@@ -10039,8 +10034,33 @@ extract/re_chunk_000/natives/STM/enemy/em059/common/act_tbl_user_data/routine/mo
 utilities.js
 mhrice.json
 .gitignore
-eslintrc.json
-json/armor.json
+
+# json/armor.json
 backup.js
-json/charms.json
+setBuilderWorker.js
+setCreation.js
+# json/charms.json
 json/armorHR
+node_modules
+.eslintrc.cjs
+.hintrc
+.jshintrc
+.json
+.prettierrc.json
+cspell.json
+jsconfig.json
+package-lock.json
+playground.js
+postcss.config.cjs
+workspace.code-workspace
+.cspell/custom-dictionary-workspace.txt
+css/new.css
+index_files/new.css
+index_files/playground.js.download
+index_files/setCreation.js.download
+Stone_s Sunbreak Damage Optimizer_files/backup.js.download
+Stone_s Sunbreak Damage Optimizer_files/index.css
+Stone_s Sunbreak Damage Optimizer_files/new.css
+Stone_s Sunbreak Damage Optimizer_files/playground.js.download
+Stone_s Sunbreak Damage Optimizer_files/setCreation.js.download
+Stone_s Sunbreak Damage Optimizer_files/utilities.js.download
