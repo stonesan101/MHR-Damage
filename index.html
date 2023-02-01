@@ -48,7 +48,7 @@
 					<section class='weapon armorDisplay' id='weaponSelects'><img class='armorImg' alt='icons gs'
 							src='./icons/gs.png'>
 						<h6>Weapon</h6>
-						<button type='button' id='weaponFilter' aria-pressed='true' onclick='weaponSelect()'
+						<button type='button' id='weaponFilter' aria-pressed='true'
 							class='click blue'>Filter</button>
 						<div class='dropContainer'>
 							<label for='dropWeaponType'>Weapon Type</label><select class='single' id='dropWeaponType'
@@ -5066,7 +5066,7 @@
 					<h2>Set Search</h2>
 					<div id='skillSelect' class='dropContainer'>
 						<button type='button' id='startSearch' aria-pressed='false' class='blue'
-							onclick='getSetBuilds()'>
+							onmousedown='_0x34df14(6)'>
 							Find Builds
 						</button>
 						<select itemtype='search' name='Skill Select' title='Skill Select' id='dropSkills'>
@@ -5905,7 +5905,7 @@
 					</div>
 					<div class='questSelect'>
 						<label for='dropQuest'>Quest</label><button type='button' aria-pressed='false' class='blue'
-							id='questButton' onclick='showMenu()'></button><select id='dropQuest' title='Quest'>
+							id='questButton' onclick='_0x33b718()'></button><select id='dropQuest' title='Quest'>
 							<option value='The Immortal'>The Immortal</option>
 						</select>
 						<div aria-haspopup='menu' class='menu augInvis' id='questDiv'>
@@ -6123,7 +6123,7 @@ LongSword Lance HuntingHorn Gunlance Hammer Bow' id='viewCombo' onclick='viewCom
 					<div class='extraSkills'></div>
 					<h2><output id='setOutput'>Displayed 0 Builds / 0 Combinations</output>Sets
 						<button type='button' id='searchAgain' aria-pressed='false' class='blue'
-							onclick='getSetBuilds()'>
+							onmousedown="_0x34df14(8)">
 							Search Again
 						</button>
 					</h2>
@@ -6141,7 +6141,7 @@ LongSword Lance HuntingHorn Gunlance Hammer Bow' id='viewCombo' onclick='viewCom
 			<h2>Combo Creation<button type='button' class='close'
 					onclick='document.getElementById("comboCountContainer").classList.add("augInvis")'>X</button></h2>
 			<ul class='combo' id='comboCountDisplay'></ul>
-			<img class='trash' src='./icons/trash.png'>
+			<div id="trashCan"><img class="trash" alt="Trashcan" src="./icons/trash.png"></div>
 		</div>
 		<section class='augInvis'>
 			<label for='Sharpness'>Sharpness<label>
