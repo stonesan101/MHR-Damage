@@ -948,8 +948,8 @@
 						</select><output id='helmSkills'><img class='armorImg armorDeco rampage'
 								src='./icons/skill.png'><output>DivineBlessing +2</output><img
 								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>Resuscitate
-								+1</output></output><button type='button' class='helm inc'>Qurious</button><button
-							type='button' class='helm dec'>Skills</button>
+								+1</output></output><button type='button' class='helm inc qurious'>Qurious</button><button
+							type='button' class='helm dec qurious'>Skills</button>
 						<section class='decoDisplay' id='helmDecos'><img class='armorImg armorDeco lvl2'
 								src='./icons/Lvl2.png'><select class='armorDisplay'>
 								<option> ---- </option>
@@ -1373,7 +1373,7 @@
 								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>WallRunner
 								+1</output><img class='armorImg armorDeco rampage'
 								src='./icons/skill.png'><output>CriticalEye +1</output></output><button type='button'
-							class='chest inc'>Qurious</button><button type='button' class='chest dec'>Skills</button>
+							class='chest inc qurious'>Qurious</button><button type='button' class='chest dec qurious'>Skills</button>
 						<section class='decoDisplay' id='chestDecos'><img class='armorImg armorDeco lvl1'
 								src='./icons/Lvl1.png'><select class='armorDisplay'>
 								<option> ---- </option>
@@ -2022,8 +2022,8 @@
 						</select><output id='waistSkills'><img class='armorImg armorDeco rampage'
 								src='./icons/skill.png'><output>WirebugWhisperer +1</output><img
 								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>CriticalEye
-								+1</output></output><button type='button' class='waist inc'>Qurious</button><button
-							type='button' class='waist dec'>Skills</button>
+								+1</output></output><button type='button' class='waist inc qurious'>Qurious</button><button
+							type='button' class='waist dec qurious'>Skills</button>
 						<section class='decoDisplay' id='waistDecos'><img class='armorImg armorDeco lvl4'
 								src='./icons/Lvl4.png'><select class='armorDisplay'>
 								<option> ---- </option>
@@ -2672,8 +2672,8 @@
 								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>Heroics
 								+1</output><img class='armorImg armorDeco rampage'
 								src='./icons/skill.png'><output>DivineBlessing
-								+1</output></output><button type='button' class='arm inc'>Qurious</button><button
-							type='button' class='arm dec'>Skills</button>
+								+1</output></output><button type='button' class='arm inc qurious'>Qurious</button><button
+							type='button' class='arm dec qurious'>Skills</button>
 						<section class='decoDisplay' id='armDecos'><img class='armorImg armorDeco lvl1'
 								src='./icons/Lvl1.png'><select class='armorDisplay'>
 								<option> ---- </option>
@@ -3096,8 +3096,8 @@
 								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>Resuscitate
 								+1</output><img class='armorImg armorDeco rampage'
 								src='./icons/skill.png'><output>AffinitySliding +1</output></output><button
-							type='button' class='leg inc'>Qurious</button><button type='button'
-							class='leg dec'>Skills</button>
+							type='button' class='leg inc qurious'>Qurious</button><button type='button'
+							class='leg dec qurious'>Skills</button>
 						<section class='decoDisplay' id='legDecos'><img class='armorImg armorDeco lvl2'
 								src='./icons/Lvl2.png'><select class='armorDisplay'>
 								<option> ---- </option>
@@ -5067,7 +5067,16 @@
 						<button type='button' id='startSearch' aria-pressed='false' class='blue' onmousedown="getSetBuilds(7)">
 							Find Builds
 						</button>
-						<select itemtype='search' name='Skill Select' title='Skill Select' id='dropSkills'>
+						<!-- <div class="dropdown"> -->
+							<!-- <input type="text" placeholder="Search..." class="dropdown-search"> -->
+							<!-- <ul class="dropdown-options"> -->
+							  <!-- <li>...</li> -->
+							  <!-- <li>Attack Boost</li> -->
+							<!-- </ul> -->
+						  <!-- </div> -->
+						  
+
+						 <select itemtype='search' name='Skill Select' title='Skill Select' id='dropSkills'>
 							<option>Skill Selector</option>
 							<option value='AttackBoost'>Attack Boost</option>
 							<option value='Agitator'>Agitator</option>
@@ -5209,7 +5218,7 @@
 							<option value='PowderMantle'>Powder Mantle</option>
 							<option value='Berserk'>Berserk</option>
 							<option value='Strife'>Strife</option>
-						</select>
+						</select> 
 						<button type='button' aria-pressed='false' class='blue' id='resetSkills'
 							onclick='resetSkills()'>
 							Reset Skills

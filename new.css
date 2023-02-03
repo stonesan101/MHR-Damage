@@ -12,4 +12,35 @@ div#trashCan {
   right: 0;
   outline: none;
   box-shadow: none !important;
-}button#searchAgain{justify-self:end}div#monTableContainer{box-shadow:none;overflow-x:auto;overflow-y:auto;max-width:90%}button#resetSkills{grid-area:1 / 3 / auto / auto}button#startSearch{grid-area:1 / 1 / auto / auto}img.trash{/* position:absolute; */right:-7em;/* bottom:-2em; */min-height: 17em !important;/* width:19em; */margin: -7em !important;background-size:contain;overflow: hidden;box-shadow:none!important;/* image-orientation: none; */}#weaponSelects>section:nth-child(5){display:flex}#weaponSelects>div,#weaponSelects>section,.decoDisplay{grid-area:auto / 1 / auto / 4;display:inline-grid;width:100%!important;padding:0px!important}div#augToggle{grid-template-columns:1fr 1fr;gap:0.6rem!important}#weaponSelects>select{grid-area:auto / 2 / auto / 5}#weaponSelects>div:not(#scrollSwap,#augToggle){grid-template-columns:1fr 1fr;height:min(18px,1.8em)}.augInvis{opacity:0;visibility:hidden;min-height:0px!important;height:0px!important;transition:height 400ms ease 0s!important}#weaponSelects>section:nth-child(4)>label:nth-child(1){grid-area:1 / 1 / 2 / 2;background:linear-gradient(rgb(25,25,113),rgb(18,18,18))}#weaponSelects>button.click{position:absolute;right:0;height:min(19px,1.8em)}.rampage{width:100%!important}.rampage>div{display:grid;width:100%}#weaponSelects>button:nth-child(4){grid-area:auto / 1 / auto / 3}#Qurious{grid-area:3 / auto / 4 / auto;padding:0}button{user-select:auto!important}.decoDisplay,.rampage{justify-content:stretch;grid-template-columns:min(21px,2em) 1fr;gap:0rem;border:none}tr.tableRow{display:inline-flex;place-items:stretch;margin:0!important;gap:0;flex-direction:column}td.tableHover{color:rgb(255,217,0);background-color:transparent!important;background-image:linear-gradient(90deg,rgb(18,18,18),rgb(4,0,51),rgb(18,18,18),rgb(2,2,3) 86%,rgb(18,18,18))!important}.twoColumn.div.dropContainer{display:grid;grid-template-columns:auto auto auto;grid-template-rows:1fr 1fr}#players{grid-area:2 / 1 / 3 / 2}#health{grid-area:2 / 2 / auto / auto}#BowGunId>label{width:100%}#statsBody>tr>td:nth-child(1){background:linear-gradient(rgb(25,25,113),rgb(18,18,18))}tbody>tr:hover{background-image:linear-gradient(90deg,rgb(18,18,18),rgb(4,0,51),rgb(18,18,18),rgb(2,2,3) 86%,rgb(18,18,18))!important;color:gold!important}section#section1>div#setBuilder{display:inline-grid;grid-template-columns:15em repeat(auto-fit,minmax(20rem,1fr))}div.setResult>button{grid-area:1 / 1 / 2 / -1!important;width:100%!important}div.setResult{grid-template-columns:min(18px,1.8em)1fr;width:24.5%}div#EquipedSkillDisplay{background:linear-gradient(rgb(25,25,113),rgb(18,18,18));color:rgb(255,217,0);width:15em!important;position:sticky;bottom:10px;grid-area:1/1/4/2;z-index:55}.setResult>span{background-image:linear-gradient(rgb(25,25,113),rgb(18,18,18));width:100%}
+}button#searchAgain{justify-self:end}div#monTableContainer{box-shadow:none;overflow-x:auto;overflow-y:auto;max-width:90%}button#resetSkills{grid-area:1 / 3 / auto / auto}button#startSearch{grid-area:1 / 1 / auto / auto}img.trash{/* position:absolute; */right:-7em;/* bottom:-2em; */min-height: 17em !important;/* width:19em; */margin: -7em !important;background-size:contain;overflow: hidden;box-shadow:none!important;/* image-orientation: none; */}#weaponSelects>section:nth-child(5){display:flex}#weaponSelects>div,#weaponSelects>section,.decoDisplay{grid-area:auto / 1 / auto / 4;display:inline-grid;width:100%!important;padding:0px!important}div#augToggle{grid-template-columns:1fr 1fr;gap:0.6rem!important}#weaponSelects>select{grid-area:auto / 2 / auto / 5}#weaponSelects>div:not(#scrollSwap,#augToggle){grid-template-columns:1fr 1fr;height:min(18px,1.8em)}.augInvis{opacity:0;visibility:hidden;min-height:0px!important;height:0px!important;transition:height 400ms ease 0s!important}#weaponSelects>section:nth-child(4)>label:nth-child(1){grid-area:1 / 1 / 2 / 2;background:linear-gradient(rgb(25,25,113),rgb(18,18,18))}#weaponSelects>button.click{position:absolute;right:0;height:min(19px,1.8em)}.rampage{width:100%!important}.rampage>div{display:grid;width:100%}#weaponSelects>button:nth-child(4){grid-area:auto / 1 / auto / 3}#Qurious{grid-area:3 / auto / 4 / auto;padding:0}button{user-select:auto!important}.decoDisplay,.rampage{justify-content:stretch;grid-template-columns:min(21px,2em) 1fr;gap:0rem;border:none}tr.tableRow{display:inline-flex;place-items:stretch;margin:0!important;gap:0;flex-direction:column}td.tableHover{color:rgb(255,217,0);background-color:transparent!important;background-image:linear-gradient(90deg,rgb(18,18,18),rgb(4,0,51),rgb(18,18,18),rgb(2,2,3) 86%,rgb(18,18,18))!important}.twoColumn.div.dropContainer{display:grid;grid-template-columns:auto auto auto;grid-template-rows:1fr 1fr}#players{grid-area:2 / 1 / 3 / 2}#health{grid-area:2 / 2 / auto / auto}#BowGunId>label{width:100%}#statsBody>tr>td:nth-child(1){background:linear-gradient(rgb(25,25,113),rgb(18,18,18))}tbody>tr:hover{background-image:linear-gradient(90deg,rgb(18,18,18),rgb(4,0,51),rgb(18,18,18),rgb(2,2,3) 86%,rgb(18,18,18))!important;color:gold!important}section#section1>div#setBuilder{display:inline-grid;grid-template-columns:15em repeat(auto-fit,minmax(20rem,1fr))}div.setResult>button{grid-area:1 / 1 / 2 / -1!important;width:100%!important}div.setResult{grid-template-columns:min(18px,1.8em)1fr;width:24.5%}div#EquipedSkillDisplay{background:linear-gradient(rgb(25,25,113),rgb(18,18,18));color:rgb(255,217,0);width:15em!important;position:sticky;bottom:10px;grid-area:1/1/4/2;z-index:55}.setResult>span{background-image:linear-gradient(rgb(25,25,113),rgb(18,18,18));width:100%}.dropdown {
+  position: relative;
+}
+
+.dropdown-search {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: scroll;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.dropdown-options li {
+  padding: 10px;
+}
+
+.dropdown-options li input[type="checkbox"] {
+  margin-right: 10px;
+}
