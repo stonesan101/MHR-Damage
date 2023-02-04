@@ -155,16 +155,6 @@ button.equipBuild {
   min-width: 100% !important
 }
 
-table.setResult>tbody>tr {
-  display: inline-flex;
-  justify-content: center;
-  flex-flow: column nowrap
-}
-
-table.setResult {
-  width: 30rem
-}
-
 .charmDiv {
   display: inline-grid
 }
@@ -187,7 +177,7 @@ section#section2 {
   outline: none;
   width: 100%;
   position: relative;
-  grid-area: auto / auto / auto / -1;
+  grid-area: auto/ auto / auto / -1;
   align-items: center
 }
 
@@ -465,7 +455,15 @@ p#spawnArea {
 div#damageContainer>table {
   outline: none;
   width: 100%;
-  min-height: max-content !important
+  /* height: fit-content !important; */
+}
+
+table.augInvis {
+  display: none;
+}
+
+table#ammoTable {
+  display: table-caption;
 }
 
 @media (min-width: 1440px) {
@@ -1153,7 +1151,7 @@ div#damageContainer>table>thead {
   justify-items: center;
   z-index: 50;
   position: sticky;
-  min-width: max-content;
+  /* min-width: max-content; */
   top: 0;
   outline: none;
   width: 100%;
@@ -1985,7 +1983,7 @@ div.setResult>button {
 
 div.setResult {
   grid-template-columns: min(18px, 1.8em)1fr;
-  width: 24.5%
+  width: 31%;
 }
 
 div#EquipedSkillDisplay {

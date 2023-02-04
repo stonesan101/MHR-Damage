@@ -4223,7 +4223,7 @@
         "PEM": 1,
         "aff": 20
     },
-    "CriticalFirePower": {
+    "CriticalFirePower": [{
         "BRM": 1,
         "BR": 0,
         "PRM": 1,
@@ -4231,5 +4231,5 @@
         "BE": 0,
         "PEM": 1,
         "aff": 0
-    }
+    }]
 }
