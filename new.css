@@ -55,6 +55,10 @@ select>option.augInvis {
   user-select: none
 }
 
+div#statsTableDiv tr:first-child {
+  background-image: linear-gradient(90deg, rgb(18, 18, 18), rgb(4, 0, 51), rgb(18, 18, 18), rgb(2, 2, 3) 86%, rgb(18, 18, 18)) !important;
+}
+
 #monTable>tr {
   display: grid
 }
@@ -62,6 +66,10 @@ select>option.augInvis {
 :not(div#sharpnessContainer, div.sharpness, td, .armorImg, img, label.armorDisplay) {
   color: rgb(204, 185, 142)
 }
+
+tbody {}
+
+div#statsTableDiv td:nth-child(1):not(div#statsTableDiv tr:nth-child(1)>td) {background: linear-gradient(rgb(25, 25, 113), rgb(18, 18, 18));}
 
 section.augInvis {
   display: none
@@ -171,7 +179,7 @@ output.comboHits {
 
 section#section2 {
   gap: 1rem;
-  display: flex;
+  display: inline-grid;
   justify-items: center;
   align-content: space-between;
   outline: none;
@@ -309,7 +317,7 @@ div#forButtonSelect {
 
 th {
   color: rgb(232, 205, 111);
-  background-image: linear-gradient(90deg, rgb(18, 18, 18), rgb(4, 0, 51), rgb(18, 18, 18), rgb(2, 2, 3) 86%, rgb(18, 18, 18)) !important
+  background-image: linear-gradient(90deg, rgb(18, 18, 18), rgb(4, 0, 51), rgb(18, 18, 18), rgb(2, 2, 3) 86%, rgb(18, 18, 18)) !important;
 }
 
 th.tableRow {
@@ -431,9 +439,23 @@ div#setBuilder {
 }
 
 div#setBuilder>div:not(#EquipedSkillDisplay) {
-  width: 20rem;
-  display: flex;
-  gap: .8rem
+  /* width: 20rem; */
+  /* display: flex; */
+  /* gap: .8rem; */
+  border-radius: 0 !important;
+}
+
+div#statsTableDiv tr:last-child>td:last-child {
+  grid-column: span 2;
+}
+
+div#statsTableDiv * {
+  border-radius: 0 !important;
+  /* display: inline-grid !important; */
+  justify-items: stretch;
+  /* align-items: center; */
+  /* grid-template-columns: 1fr .7fr .7fr; */
+  /* justify-content: space-around; */
 }
 
 div#monDropDowns {
@@ -455,7 +477,7 @@ p#spawnArea {
 div#damageContainer>table {
   outline: none;
   width: 100%;
-  /* height: fit-content !important; */
+  height: fit-content !important;
 }
 
 table.augInvis {
@@ -465,6 +487,8 @@ table.augInvis {
 table#ammoTable {
   display: table-caption;
 }
+
+table:not(.augInvis) {}
 
 @media (min-width: 1440px) {
   section#section1 {
@@ -1151,7 +1175,7 @@ div#damageContainer>table>thead {
   justify-items: center;
   z-index: 50;
   position: sticky;
-  /* min-width: max-content; */
+  min-width: max-content;
   top: 0;
   outline: none;
   width: 100%;
@@ -1171,7 +1195,8 @@ div.scroll.vis {
 
 div#damageTable>div>table>tbody,
 div#damageTable>div>table>tbody>tr {
-  width: min-content
+  /* width: min-content; */
+  display: grid;
 }
 
 ::-webkit-scrollbar {
@@ -1185,6 +1210,8 @@ div#damageTable>div>table>tbody>tr {
 tbody>tr:not(tr:nth-child(2n)) {
   background-color: darkslategrey
 }
+
+tr {}
 
 tbody>tr:nth-child(2n) {
   background-color: #026e6e
@@ -1212,6 +1239,7 @@ h5 {
   outline-style: double;
   background: linear-gradient(rgb(25, 25, 113), rgba(6, 4, 4, .11));
   margin: 0.4rem !important;
+  position: relative;
   font-size: var(--step-1) !important;
   box-shadow: rgb(255, 217, 0) 0 0 1.2px !important;
   grid-area: 1 / auto / auto / -1 !important
@@ -1242,7 +1270,8 @@ h2 {
   align-content: space-around;
   grid-area: auto / 1 / auto / -1 !important;
   display: grid !important;
-  margin-top: 4px !important
+  margin-top: 4px !important;
+  position: relative;
 }
 
 #section1>h2 {
@@ -1288,13 +1317,14 @@ div.dropContainer>select.skill {
 
 button.close {
   position: absolute;
-  right: .5%;
+  right: 0.9%;
   top: 13%;
   height: 1.5em;
   display: grid;
   background: darkred;
   font: icon;
   width: 1.5em;
+  z-index: 50;
   border-radius: 50% !important
 }
 
@@ -1429,8 +1459,10 @@ tr,
 td,
 th {
   gap: 0;
-  margin: 0px !important
+  margin: 0px !important;
 }
+
+td {}
 
 #monTable>tbody>tr:nth-child(1)>th:nth-child(1) {
   height: 3.25em;
@@ -1438,8 +1470,10 @@ th {
 }
 
 div#statsTableDiv>table>*>tr>td {
-  width: 100% !important
+  /* width: 100% !important; */
 }
+
+td {}
 
 th {
   color: rgb(255, 255, 246) !important
@@ -1474,7 +1508,7 @@ thead>tr,
 th:not(#monTable tr th) {
   z-index: 50 !important;
   position: sticky !important;
-  height: 100% !important
+  height: 100% !important;
 }
 
 section#charm1,
@@ -1516,11 +1550,26 @@ div#containAll>#section1>div:not(div#raw):not(div#boxes):not(div#weaponSelect) {
   margin: 0rem !important
 }
 
-#section1>div,
-#section1>div>div:not(div.dropContainer) {
+div#setSearcher {
+  grid-area: 3/1/4/2;
+  FONT-WEIGHT: 200;
+  FONT-WEIGHT: 200;
+  FONT-WEIGHT: 200;
+}
+
+div#unique {
+  position: relative;
+}
+
+#section1>div, #section1>div>div:not(div.dropContainer,#statsTableDiv) {
   align-items: start;
   width: 100%;
   gap: 1.25rem
+}
+
+div#extraMenus {
+  display: grid;
+  grid-area: 3/1;
 }
 
 div#raw,
@@ -1543,8 +1592,8 @@ div#boxes {
 }
 
 div#setBuilder>div>:not(button) {
-  width: 100%;
-  margin: 0
+  /* width: 100%; */
+  margin: 0;
 }
 
 button.augButton,
@@ -1583,6 +1632,12 @@ ul {
   -webkit-user-drag: auto;
   outline: none !important;
   border: none !important
+}
+
+div#statsTableDiv tbody {
+  /* grid-template-columns: 1fr .7fr .7fr; */
+  display: inline-grid;
+  justify-items: stretch;
 }
 
 div#boxes label {
@@ -1687,17 +1742,29 @@ body {
 }
 
 div#statsTableDiv {
+  /* display: inline-grid; */
+  /* grid-template-columns: 21em; */
+  grid-area: 1/1/4/2;
+  height: 76%;
+  /* gap: 1em; */
   display: inline-grid;
-  grid-template-columns: 21em;
-  justify-content: center
+  align-items: baseline;
+  justify-content: space-around;
+  align-content: stretch;
+}
+
+div#statsTableDiv td {
+  min-width: max-content !important;
+  padding: 0.2em;
 }
 
 div#statsTableDiv>table>*>tr {
   display: grid;
-  width: 100%;
-  grid-template-columns: repeat(4, 1fr) !important;
-  min-width: 100% !important;
-  max-width: 100% !important
+  /* width: 100%; */
+  grid-template-columns: 5.8em 4em 5em;
+  /* min-width: 100% !important; */
+  /* max-width: 100% !important; */
+  /* flex-direction: row; */
 }
 
 select.menu {
@@ -1807,6 +1874,12 @@ div#monTableContainer,
 :not(table, #containAll, #containAll>section, #containAll>section>div, #containAll>section>div>div, input.check, #scrollSwap>div, h1, h2, h3, h4, h5, input.hitsOfSharpInputs) {
   box-shadow: rgb(255, 217, 0) 0 0 .8px
 }
+
+#setBuilder > section:nth-child(10) {
+  grid-area: 1/1/5;
+}
+
+section {}
 
 div#trashCan {
   height: 4.7em;
@@ -1989,10 +2062,10 @@ div.setResult {
 div#EquipedSkillDisplay {
   background: linear-gradient(rgb(25, 25, 113), rgb(18, 18, 18));
   color: rgb(255, 217, 0);
-  width: 15em !important;
-  position: sticky;
-  bottom: 10px;
-  grid-area: 1/1/6/2;
+  /* width: 15em !important; */
+  /* position: sticky; */
+  /* bottom: 10px; */
+  /* grid-area: 2/1/2/2; */
   z-index: 55
 }
 
@@ -2032,4 +2105,15 @@ div#EquipedSkillDisplay {
 
 .dropdown-options li input[type="checkbox"] {
   margin-right: 10px;
+}
+table#damageTable:not('.augInvis'),table#damageTable:not('.augInvis') *{
+  display: grid !important;
+  grid-area: 3/1/4/2;
+}
+table#ammoTable:not('.augInvis'),table#ammoTable:not('.augInvis') *{
+  display: grid !important;
+  /* grid-area: 3/1/4/2; */
+}
+#damageContainer{
+  display: grid !important;
 }
