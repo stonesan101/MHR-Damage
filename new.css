@@ -69,6 +69,8 @@ div#statsTableDiv tr:first-child {
 
 tbody {}
 
+tbody {}
+
 div#statsTableDiv td:nth-child(1):not(div#statsTableDiv tr:nth-child(1)>td) {background: linear-gradient(rgb(25, 25, 113), rgb(18, 18, 18));}
 
 section.augInvis {
@@ -327,11 +329,11 @@ th.tableRow {
 
 table#monTable>tr>td:nth-child(1),
 table#monTable>tr>th:nth-child(1) {
-  padding-inline: .3em;
+  padding-inline: 0.8em;
   min-width: min-content;
-  width: 6em;
+  width: 100%;
   display: grid;
-  min-height: 4.25em !important;
+  min-height: 4.45em !important;
   text-align: center !important
 }
 
@@ -489,6 +491,8 @@ table#ammoTable {
 }
 
 table:not(.augInvis) {}
+
+table#monTable td {padding-inline: 0.4em;}
 
 @media (min-width: 1440px) {
   section#section1 {
@@ -1218,14 +1222,19 @@ tbody>tr:nth-child(2n) {
 }
 
 table#monTable>tr>th {
-  min-width: 6rem;
-  width: 100%
+  /* min-width: 6rem; */
+  /* width: 100%; */
 }
 
 table#monTable {
   display: inline-grid;
-  width: max-content;
-  grid-auto-flow: column
+  /* width: max-content; */
+  grid-auto-flow: column;
+  /* margin: 0 !important; */
+  /* width: 100% !important; */
+  /* gap: 0 !important; */
+  /* justify-items: stretch; */
+  /* justify-content: space-evenly; */
 }
 
 h1,

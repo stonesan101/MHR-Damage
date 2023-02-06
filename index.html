@@ -5973,82 +5973,14 @@
 				</div>
 				<p title='spawnArea' id='spawnArea'><output>Spawn Area Alter 100%</output></p>
 			</div>
-			<div class='is-bordered' id='monTableContainer'>
-				<table id='monTable'>
-					<tr class='tableRow'>
-						<th>Hit Zone</th>
-						<th>Sever</th>
-						<th>Blunt</th>
-						<th>Shot</th>
-						<th>Fire</th>
-						<th>Water</th>
-						<th>Thunder</th>
-						<th>Ice</th>
-						<th>Dragon</th>
-					</tr>
-					<tr class='tableRow'>
-						<td>Head </td>
-						<td class='S'>100</td>
-						<td class='S'>100</td>
-						<td class='S'>100</td>
-						<td class='B'>30</td>
-						<td class='B'>30</td>
-						<td class='B'>30</td>
-						<td class='B'>30</td>
-						<td class='B'>30</td>
-					</tr>
-					<tr class='tableRow'>
-						<td>Neck </td>
-						<td class='S'>80</td>
-						<td class='S'>80</td>
-						<td class='S'>80</td>
-						<td class='B'>25</td>
-						<td class='B'>25</td>
-						<td class='B'>25</td>
-						<td class='B'>25</td>
-						<td class='B'>25</td>
-					</tr>
-					<tr class='tableRow'>
-						<td>Body </td>
-						<td class='A'>60</td>
-						<td class='A'>60</td>
-						<td class='A'>60</td>
-						<td class='B'>20</td>
-						<td class='B'>20</td>
-						<td class='B'>20</td>
-						<td class='B'>20</td>
-						<td class='B'>20</td>
-					</tr>
-					<tr class='tableRow'>
-						<td>Limbs </td>
-						<td class='B'>40</td>
-						<td class='B'>40</td>
-						<td class='B'>40</td>
-						<td class='B'>15</td>
-						<td class='B'>15</td>
-						<td class='B'>15</td>
-						<td class='B'>15</td>
-						<td class='B'>15</td>
-					</tr>
-					<tr class='tableRow'>
-						<td>Shell </td>
-						<td class='B'>20</td>
-						<td class='B'>20</td>
-						<td class='B'>20</td>
-						<td class='F'>5</td>
-						<td class='F'>5</td>
-						<td class='F'>5</td>
-						<td class='F'>5</td>
-						<td class='F'>5</td>
-					</tr>
-				</table>
-			</div>
-			<div id='forButtons'>
+			<div class="is-bordered" id="monTableContainer">
+				<table id="monTable"><tr><th>Hit Zone</th><th>Sever</th><th>Blunt</th><th>Shot</th><th>Fire</th><th>Water</th><th>Thunder</th><th>Ice</th><th>Dragon</th></tr><tr><td>Head </td><td class="S">100</td><td class="S">100</td><td class="S">100</td><td class="B">30</td><td class="B">30</td><td class="B">30</td><td class="B">30</td><td class="B">30</td></tr><tr><td>Neck </td><td class="S">80</td><td class="S">80</td><td class="S">80</td><td class="B">25</td><td class="B">25</td><td class="B">25</td><td class="B">25</td><td class="B">25</td></tr><tr><td>Body </td><td class="A">60</td><td class="A">60</td><td class="A">60</td><td class="B">20</td><td class="B">20</td><td class="B">20</td><td class="B">20</td><td class="B">20</td></tr><tr><td>Limbs </td><td class="B">40</td><td class="B">40</td><td class="B">40</td><td class="B">15</td><td class="B">15</td><td class="B">15</td><td class="B">15</td><td class="B">15</td></tr><tr><td>Shell </td><td class="B">20</td><td class="B">20</td><td class="B">20</td><td class="F">5</td><td class="F">5</td><td class="F">5</td><td class="F">5</td><td class="F">5</td></tr></table>
+			</div><div id='forButtons'>
 				<button type='button' aria-pressed='false' class='blue' id='Save State' onclick='saveState()'>
 					Save Selections
 				</button>
 				<button type='button' aria-pressed='false' class='classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe 
-LongSword Lance HuntingHorn Gunlance Hammer Bow' id='viewCombo' onclick='viewCombo()' style='display: none;'>
+LongSword Lance HuntingHorn Gunlance Hammer Bow' id='viewCombo' onclick='document.getElementById("comboCountContainer").classList.remove("augInvis")' style='display: none;'>
 					Combo Display
 				</button>
 				<button type='button' aria-pressed='false' class='gray toggle classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades 
