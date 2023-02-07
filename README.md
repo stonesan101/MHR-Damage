@@ -36,4 +36,4 @@ I still have a lot of ideas for expanding content yet to come!
 **MHRice** - For the use of their dumped JSON files that I used to gather a large amount of the data used on this site
 
 + [MHRise-Monster Database](https://robomeche.github.io/MHRise-Database/)
-+ [MHRice Database](https://github.com/wwylele/mhrice)
++ [MHRice Database](http://mhrise.mhrice.info/)
