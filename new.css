@@ -256,7 +256,6 @@ body {
     /*! width: 100% !important; */
   }
 }
-
 @media (min-width: 850px) {
   #containAll {
     grid-template-columns: auto auto
