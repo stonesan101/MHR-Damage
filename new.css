@@ -44,7 +44,7 @@
   /*! color-rendering: optimizequality !important; */
   /*! forced-color-adjust: preserve-parent-color !important; */
   box-sizing: border-box !important;
-  border-radius: 1% !important
+  /*! border-radius: 1% !important; */
 }
 
 select>option.augInvis {
@@ -90,7 +90,7 @@ section.decoDisplay {
 }
 
 .extraSkills {
-  overflow-y: auto
+  overflow-y: auto;
 }
 
 output#weaponQurious {
@@ -1828,14 +1828,16 @@ img.invis:hover {
 }
 
 div#setReturn {
-  width: 100%;
+  width: 48%;
   height: 100%;
-  grid-template-rows: auto 25% auto 1fr;
-  position: absolute;
+  grid-template-rows: auto minmax(auto, 25%) auto 1fr;
+  position: fixed;
   display: inline-grid;
-  top: 0;
+  top: 2.5%;
   z-index: 100;
-  background-image: linear-gradient(90deg, rgb(18, 18, 18), rgb(4, 0, 39), rgb(18, 18, 18), rgb(0, 0, 31) 86%, rgb(18, 18, 18)) !important
+  background-image: linear-gradient(90deg, rgb(18, 18, 18), rgb(4, 0, 39), rgb(18, 18, 18), rgb(0, 0, 31) 86%, rgb(18, 18, 18)) !important;
+  right: .3%;
+  max-width: 74em;
 }
 
 div#setReturn>div:nth-child(4)>label {
