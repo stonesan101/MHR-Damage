@@ -1,7 +1,7 @@
 :root {
   --step--2: clamp(.78rem, calc(0.77rem + 0.03vw), .8rem);
   --step--1: clamp(.9rem, calc(.9rem + 0.22vw), 1.11rem);
-  --step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --step-0: clamp(1rem, calc(1rem + 0.22vw), 1.15rem);
   --step-1: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
   --step-2: clamp(1.62rem, calc(1.50rem + 0.58vw), 1.95rem);
   --step-3: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
@@ -24,23 +24,25 @@
   --space-l-xl: clamp(1.88rem, calc(1.14rem + 3.19vw), 4.13rem);
   --space-xl-2xl: clamp(2.81rem, calc(1.93rem + 3.81vw), 5.5rem);
   --space-2xl-3xl: clamp(3.75rem, calc(2.28rem + 6.37vw), 8.25rem);
-  --space-s-l: clamp(.94rem, calc(0.34rem + 2.57vw), 2.75rem)
+  --space-s-l: clamp(.94rem, calc(0.34rem + 2.57vw), 2.75rem);
+  --gradient-b: linear-gradient(to bottom, #111111, midnightblue);
 }
 
 * {
   flex-flow: row wrap;
   font-family: cursive;
   place-content: center;
-  font-weight: 550;
+  font-weight: 599;
   text-align: center !important;
-  min-height: min(20px, 1.8em) !important;
+  min-height: 1.75em !important;
   outline-style: none !important;
   border-style: none !important;
-  font-size: var(--step--1) !important;
-  text-decoration: blink !important;
-  text-rendering: optimizelegibility !important;
-  color-rendering: optimizequality !important;
-  forced-color-adjust: preserve-parent-color !important;
+  font-size: var(--step-0) !important;
+  color:#DBB783;
+  /*! text-decoration: blink !important; */
+  /*! text-rendering: optimizelegibility !important; */
+  /*! color-rendering: optimizequality !important; */
+  /*! forced-color-adjust: preserve-parent-color !important; */
   box-sizing: border-box !important;
   border-radius: 1% !important
 }
@@ -56,7 +58,7 @@ select>option.augInvis {
 }
 
 div#statsTableDiv tr:first-child {
-  background-image: linear-gradient(90deg, rgb(18, 18, 18), rgb(4, 0, 51), rgb(18, 18, 18), rgb(2, 2, 3) 86%, rgb(18, 18, 18)) !important;
+  background-image: var(--gradient-b) !important;
 }
 
 #monTable>tr {
@@ -64,14 +66,15 @@ div#statsTableDiv tr:first-child {
 }
 
 :not(div#sharpnessContainer, div.sharpness, td, .armorImg, img, label.armorDisplay) {
-  color: rgb(204, 185, 142)
 }
 
-tbody {}
+table#ammoTable {
+  grid-area: 1/1/2/2;
+}
 
-tbody {}
-
-div#statsTableDiv td:nth-child(1):not(div#statsTableDiv tr:nth-child(1)>td) {background: linear-gradient(rgb(25, 25, 113), rgb(18, 18, 18));}
+div#statsTableDiv td:nth-child(1):not(div#statsTableDiv tr:nth-child(1)>td) {
+  background-image: var(--gradient-b) !important;
+}
 
 section.augInvis {
   display: none
@@ -87,7 +90,6 @@ section.decoDisplay {
 }
 
 .extraSkills {
-  display: list-item;
   overflow-y: auto
 }
 
@@ -126,7 +128,7 @@ section.armorDisplay>section>*,
 section.armorDisplay>div>*,
 section.armorDisplay>output>output,
 section.armorDisplay>output>output>* {
-  height: min(20px, 1.8em) !important
+  /*! height: min(20px, 1.8em) !important; */
 }
 
 .armorDisplay img {
@@ -134,7 +136,7 @@ section.armorDisplay>output>output>* {
 }
 
 h1.title {
-  width: 100%
+  width: 99.5%;
 }
 
 #charm1>label:nth-child(2),
@@ -146,16 +148,17 @@ label.grade {
   grid-area: 1 / 2 / 2 / 4
 }
 
-section.armorDisplay:not(.charm) {
+section.armorDisplay:not(.charm,img) {
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
-  width: 21em
+  width: 19.5em;
+  gap: .2em;
 }
 
 button.equipBuild {
   border-radius: 0;
   background-color: rgb(18, 18, 18);
-  background-image: none;
+  background-image: none !important;
   color: rgb(255, 217, 0)
 }
 
@@ -239,18 +242,18 @@ div#augToggle>div>label {
 body {
   background-size: cover;
   background-clip: border-box;
-  backdrop-filter: blur(2.96px) brightness(.83) contrast(1.12);
+  backdrop-filter: blur(10px);
   box-shadow: rgb(18, 18, 18) 0 0 2px;
   display: inline-grid;
   justify-items: center;
+  background-image: linear-gradient(90deg, rgb(18, 18, 18), rgb(4, 0, 41), rgb(18, 18, 18), rgb(0, 0, 31) 86%, rgb(18, 18, 18)) !important;
   justify-content: center;
-  background-image: linear-gradient(90deg, rgb(18, 18, 18), rgb(4, 0, 41), rgb(18, 18, 18), rgb(0, 0, 31) 86%, rgb(18, 18, 18)) !important
 }
 
 @media (max-width: 1200px) {
   select {
-    max-width: 21em;
-    width: 100% !important
+    /*! max-width: 21em; */
+    /*! width: 100% !important; */
   }
 }
 
@@ -319,7 +322,7 @@ div#forButtonSelect {
 
 th {
   color: rgb(232, 205, 111);
-  background-image: linear-gradient(90deg, rgb(18, 18, 18), rgb(4, 0, 51), rgb(18, 18, 18), rgb(2, 2, 3) 86%, rgb(18, 18, 18)) !important;
+  background-image: var(--gradient-b) !important;
 }
 
 th.tableRow {
@@ -472,7 +475,7 @@ div#monDropDowns>p#spawnArea {
 p#spawnArea {
   align-content: space-around;
   outline-style: double;
-  background: linear-gradient(rgb(25, 25, 113), rgba(6, 4, 4, .11));
+  background-image: var(--gradient-b) !important;
   display: grid !important
 }
 
@@ -492,7 +495,9 @@ table#ammoTable {
 
 table:not(.augInvis) {}
 
-table#monTable td {padding-inline: 0.4em;}
+table#monTable td {
+  padding-inline: 0.4em;
+}
 
 @media (min-width: 1440px) {
   section#section1 {
@@ -500,7 +505,8 @@ table#monTable td {padding-inline: 0.4em;}
   }
 
   div#containAll {
-    grid-template-columns: 51vw 46vw
+    grid-template-columns: 51vw 46vw;
+    background-image: ;
   }
 }
 
@@ -599,7 +605,7 @@ td.inputContainer>output.label {
   z-index: 0;
   display: inline-flex;
   outline: none;
-  background: linear-gradient(rgb(25, 25, 113), rgb(18, 18, 18));
+  background-image: var(--gradient-b) !important;
   place-content: center;
   width: min(34.5vw, 33rem);
   align-items: center;
@@ -738,7 +744,7 @@ div#comboCountContainer {
   display: grid;
   /* padding-right:15rem; */
   grid-template-columns: 1fr 8em;
-  background-image: linear-gradient(90deg, rgb(18, 18, 18), rgb(4, 0, 39), rgb(18, 18, 18), rgb(0, 0, 31) 86%, rgb(18, 18, 18)) !important
+  background-image: var(--gradient-b) !important;
 }
 
 .extraSkills>button {
@@ -812,7 +818,7 @@ div#raw>div {
 }
 
 div.dropContainer {
-  position: static
+  position: static;
 }
 
 select>option {
@@ -1010,7 +1016,7 @@ div#damageTable>div>table>tbody>tr:not(.tableRowMelee) {
 }
 
 button {
-  background-image: linear-gradient(rgb(25, 25, 113), rgb(18, 18, 18));
+  background-image: var(--gradient-b) !important;
   color: rgb(255, 217, 0) !important;
   pointer-events: all !important;
   border-color: rgb(255, 217, 0) !important;
@@ -1027,7 +1033,7 @@ tr.tableRowRanged>td:nth-child(1),
 #monTable td:nth-child(1),
 tbody#ammoBody>tr>td:nth-child(1),
 #enrageDisplay {
-  background: linear-gradient(rgb(25, 25, 113), rgb(18, 18, 18));
+    background-image: var(--gradient-b);
   margin: 0px !important
 }
 
@@ -1244,7 +1250,7 @@ h5 {
   padding: 4px;
   width: 99.6%;
   align-content: space-around;
-  color: rgb(236, 236, 213);
+  color: rgb(255, 217, 0);
   outline-style: double;
   background: linear-gradient(rgb(25, 25, 113), rgba(6, 4, 4, .11));
   margin: 0.4rem !important;
@@ -1321,7 +1327,7 @@ input {
 }
 
 div.dropContainer>select.skill {
-  width: 10em !important
+  /*! width: 10em !important */
 }
 
 button.close {
@@ -1330,11 +1336,12 @@ button.close {
   top: 13%;
   height: 1.5em;
   display: grid;
-  background: darkred;
+  background: #762323;
   font: icon;
   width: 1.5em;
   z-index: 50;
-  border-radius: 50% !important
+  border-radius: 50% !important;
+  background-image: none !important;
 }
 
 select#dropSkills {
@@ -1494,7 +1501,7 @@ td.inputContainer {
   z-index: 0;
   place-items: center;
   grid-template-columns: 1fr 1fr;
-  background: linear-gradient(rgb(25, 25, 113), rgb(18, 18, 18));
+    background-image: var(--gradient-b);
   width: min(32.5vw, 33rem) !important;
   min-height: fit-content !important
 }
@@ -1520,9 +1527,11 @@ th:not(#monTable tr th) {
   height: 100% !important;
 }
 
+th {}
+
 section#charm1,
 section#charm2 {
-  grid-template-columns: min(21px, 2em);
+  grid-template-columns: min(19px, 2em);
   display: inline-grid
 }
 
@@ -1552,7 +1561,9 @@ select.armor.charms {
   border-style: none;
   text-transform: capitalize;
   justify-items: start;
-  align-content: center
+  grid-area: 1/1/2/2;
+  align-content: center;
+  z-index: 50;
 }
 
 div#containAll>#section1>div:not(div#raw):not(div#boxes):not(div#weaponSelect) {
@@ -1570,7 +1581,8 @@ div#unique {
   position: relative;
 }
 
-#section1>div, #section1>div>div:not(div.dropContainer,#statsTableDiv) {
+#section1>div,
+#section1>div>div:not(div.dropContainer, #statsTableDiv) {
   align-items: start;
   width: 100%;
   gap: 1.25rem
@@ -1884,7 +1896,11 @@ div#monTableContainer,
   box-shadow: rgb(255, 217, 0) 0 0 .8px
 }
 
-#setBuilder > section:nth-child(10) {
+button#questButton {
+  background-image: none !important;
+}
+
+#setBuilder>section:nth-child(10) {
   grid-area: 1/1/5;
 }
 
@@ -1945,7 +1961,7 @@ img.trash {
 .decoDisplay {
   grid-area: auto / 1 / auto / 4;
   display: inline-grid;
-  width: 100% !important;
+  /*! width: 100% !important; */
   padding: 0px !important
 }
 
@@ -1960,7 +1976,7 @@ div#augToggle {
 
 #weaponSelects>div:not(#scrollSwap, #augToggle) {
   grid-template-columns: 1fr 1fr;
-  height: min(18px, 1.8em)
+  /*! height: min(18px, 1.8em) */
 }
 
 .augInvis {
@@ -2007,7 +2023,7 @@ button {
 .decoDisplay,
 .rampage {
   justify-content: stretch;
-  grid-template-columns: min(21px, 2em) 1fr;
+  grid-template-columns: 2em 1fr;
   gap: 0rem;
   border: none
 }
@@ -2055,7 +2071,7 @@ tbody>tr:hover {
 
 section#section1>div#setBuilder {
   display: inline-grid;
-  grid-template-columns: 15em repeat(auto-fit, minmax(22rem, 1fr));
+  grid-template-columns: 15em repeat(auto-fit, minmax(19.5em, 1fr));
 }
 
 div.setResult>button {
@@ -2069,7 +2085,7 @@ div.setResult {
 }
 
 div#EquipedSkillDisplay {
-  background: linear-gradient(rgb(25, 25, 113), rgb(18, 18, 18));
+    background-image: var(--gradient-b);
   color: rgb(255, 217, 0);
   /* width: 15em !important; */
   /* position: sticky; */
@@ -2115,14 +2131,35 @@ div#EquipedSkillDisplay {
 .dropdown-options li input[type="checkbox"] {
   margin-right: 10px;
 }
-table#damageTable:not('.augInvis'),table#damageTable:not('.augInvis') *{
+
+table#damageTable:not('.augInvis'),
+table#damageTable:not('.augInvis') * {
   display: grid !important;
   grid-area: 3/1/4/2;
 }
-table#ammoTable:not('.augInvis'),table#ammoTable:not('.augInvis') *{
+
+table#ammoTable:not('.augInvis'),
+table#ammoTable:not('.augInvis') * {
   display: grid !important;
   /* grid-area: 3/1/4/2; */
 }
-#damageContainer{
+
+#damageContainer {
   display: grid !important;
+}
+
+#searchAgain {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5em;
+  position: fixed;
+  right: .6%;
+}
+#searchAgain>button {
+  min-width: max-content;
+}
+.equipBuild {
+}
+#EquipedSkillDisplay>output {
+  box-shadow: none !important;
 }
