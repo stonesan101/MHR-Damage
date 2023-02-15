@@ -11,8 +11,6 @@
 		<meta http-equiv='X-UA-Compatible' content='ie=edge'>
 		<!-- <script defer='' src='./backup.js'></script> -->
 		<script defer='' src='./ugly/index.js'></script>
-
-
 		<link rel='preload' href='./icons/ramp2.png' as='image'>
 		<link rel='preload' href='./icons/Lvl1.png' as='image'>
 		<link rel='preload' href='./icons/Lvl2.png' as='image'>
@@ -82,7 +80,7 @@
 						<h6>Weapon</h6>
 						<button type='button' id='weaponFilter' aria-pressed='true' class='click blue'>Filter</button>
 						<div class='dropContainer'>
-							<label for='dropWeaponType'>Weapon Type</label><select class='single' id='dropWeaponType'
+							<label for='dropWeaponType'>Weapon Type</label><select id='dropWeaponType'
 								title='weaponTypeSelection'>
 
 
@@ -3921,6 +3919,54 @@
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
 							</select>
+							<img class='armorImg armorDeco lvl1' src='./icons/Lvl2.png'><select
+							class='armorDisplay'>
+							<option> ---- </option>
+							<option class='optTitle'>Lvl-1 Decos</option>
+							<option value='1'>AffinitySliding +1</option>
+							<option value='1'>BlastResistance +1</option>
+							<option value='1'>Bombardier +1</option>
+							<option value='1'>Botanist +1</option>
+							<option value='1'>CarvingPro +1</option>
+							<option value='1'>ChameleosBlessing +1</option>
+							<option value='1'>DefenseBoost +1</option>
+							<option value='1'>Defiance +1</option>
+							<option value='1'>Diversion +1</option>
+							<option value='1'>DragonAttack +1</option>
+							<option value='1'>DragonResistance +1</option>
+							<option value='1'>FireAttack +1</option>
+							<option value='1'>FireResistance +1</option>
+							<option value='1'>FlinchFree +1</option>
+							<option value='1'>FreeMeal +1</option>
+							<option value='1'>Geologist +1</option>
+							<option value='1'>HornMaestro +1</option>
+							<option value='1'>HungerResistance +1</option>
+							<option value='1'>IceAttack +1</option>
+							<option value='1'>IceResistance +1</option>
+							<option value='1'>KushalaBlessing +1</option>
+							<option value='1'>LeapofFaith +1</option>
+							<option value='1'>MuckResistance +1</option>
+							<option value='1'>ParalysisResistance +1</option>
+							<option value='1'>PoisonAttack +1</option>
+							<option value='1'>PoisonResistance +1</option>
+							<option value='1'>RecoilDown +1</option>
+							<option value='1'>RecoilDown +1</option>
+							<option value='1'>RecoverySpeed +1</option>
+							<option value='1'>ReloadSpeed +1</option>
+							<option value='1'>SleepResistance +1</option>
+							<option value='1'>SpeedSharpening +1</option>
+							<option value='1'>SpiribirdsCall +1</option>
+							<option value='1'>StaminaThief +1</option>
+							<option value='1'>Steadiness +1</option>
+							<option value='1'>StunResistance +1</option>
+							<option value='1'>TeostraBlessing +1</option>
+							<option value='1'>ThunderAttack +1</option>
+							<option value='1'>ThunderResistance +1</option>
+							<option value='1'>WallRunner(Boost) +1</option>
+							<option value='1'>WaterAttack +1</option>
+							<option value='1'>WaterResistance +1</option>
+							<option value='1'>Windproof +1</option>
+						</select>
 
 						</section>
 					</section>
@@ -5005,748 +5051,749 @@
 				</div>
 			</section>
 			<section id='section2' class='ChargeBlade DualBlades LightBowGun column container'>
-<section id="damage">
-				<h2>Monster Selection</h2>
-				<div id='monDropDowns'>
-					<div id='dropHeight' class='dropContainer'>
-						<label for='dropMonster'>Monster</label><select id='dropMonster' title='monsterSelection'>
+				<section id="damage">
+					<h2>Monster Selection</h2>
+					<div id='monDropDowns'>
+						<div id='dropHeight' class='dropContainer'>
+							<label for='dropMonster'>Monster</label><select id='dropMonster' title='monsterSelection'>
 
 
-							<option value='Rathian'>Rathian</option>
-							<option value='Gold Rathian'>Gold Rathian</option>
-							<option value='Apex Rathian'>Apex Rathian</option>
-							<option value='Rathalos'>Rathalos</option>
-							<option value='Silver Rathalos'>Silver Rathalos</option>
-							<option value='Apex Rathalos'>Apex Rathalos</option>
-							<option value='Khezu'>Khezu</option>
-							<option value='Basarios'>Basarios</option>
-							<option value='Diablos'>Diablos</option>
-							<option value='Apex Diablos'>Apex Diablos</option>
-							<option value='Daimyo Hermitaur'>Daimyo Hermitaur</option>
-							<option value='Shogun Ceanataur'>Shogun Ceanataur</option>
-							<option value='Rajang'>Rajang</option>
-							<option value='Furious Rajang'>Furious Rajang</option>
-							<option value='Kushala Daora'>Kushala Daora</option>
-							<option value='Risen Kushala Daora'>Risen Kushala Daora</option>
-							<option value='Chameleos'>Chameleos</option>
-							<option value='Risen Chameleos'>Risen Chameleos</option>
-							<option value='Teostra'>Teostra</option>
-							<option value='Risen Teostra'>Risen Teostra</option>
-							<option value='Tigrex'>Tigrex</option>
-							<option value='Nargacuga'>Nargacuga</option>
-							<option value='Lucent Nargacuga'>Lucent Nargacuga</option>
-							<option value='Barioth'>Barioth</option>
-							<option value='Barroth'>Barroth</option>
-							<option value='Royal Ludroth'>Royal Ludroth</option>
-							<option value='Great Baggi'>Great Baggi</option>
-							<option value='Zinogre'>Zinogre</option>
-							<option value='Apex Zinogre'>Apex Zinogre</option>
-							<option value='Great Wroggi'>Great Wroggi</option>
-							<option value='Arzuros'>Arzuros</option>
-							<option value='Apex Arzuros'>Apex Arzuros</option>
-							<option value='Lagombi'>Lagombi</option>
-							<option value='Volvidon'>Volvidon</option>
-							<option value='Gore Magala'>Gore Magala</option>
-							<option value='Chaotic Gore Magala'>Chaotic Gore Magala</option>
-							<option value='Shagaru Magala'>Shagaru Magala</option>
-							<option value='Seregios'>Seregios</option>
-							<option value='Astalos'>Astalos</option>
-							<option value='Mizutsune'>Mizutsune</option>
-							<option value='Violet Mizutsune'>Violet Mizutsune</option>
-							<option value='Apex Mizutsune'>Apex Mizutsune</option>
-							<option value='Crimson Glow Valstrax'>Crimson Glow Valstrax</option>
-							<option value='Risen Crimson Glow Valstrax'>Risen Crimson Glow Valstrax</option>
-							<option value='Magnamalo'>Magnamalo</option>
-							<option value='Scorned Magnamalo'>Scorned Magnamalo</option>
-							<option value='Bishaten'>Bishaten</option>
-							<option value='Blood Orange Bishaten'>Blood Orange Bishaten</option>
-							<option value='Aknosom'>Aknosom</option>
-							<option value='Tetranadon'>Tetranadon</option>
-							<option value='Somnacanth'>Somnacanth</option>
-							<option value='Aurora Somnacanth'>Aurora Somnacanth</option>
-							<option value='Rakna-Kadaki'>Rakna-Kadaki</option>
-							<option value='Pyre Rakna-Kadaki'>Pyre Rakna-Kadaki</option>
-							<option value='Almudron'>Almudron</option>
-							<option value='Magma Almudron'>Magma Almudron</option>
-							<option value='Wind Serpent Ibushi'>Wind Serpent Ibushi</option>
-							<option value='Goss Harag'>Goss Harag</option>
-							<option value='Great Izuchi'>Great Izuchi</option>
-							<option value='Thunder Serpent Narwa'>Thunder Serpent Narwa</option>
-							<option value='Narwa the Allmother'>Narwa the Allmother</option>
-							<option value='Anjanath'>Anjanath</option>
-							<option value='Pukei-Pukei'>Pukei-Pukei</option>
-							<option value='Kulu-Ya-Ku'>Kulu-Ya-Ku</option>
-							<option value='Jyuratodus'>Jyuratodus</option>
-							<option value='Tobi-Kadachi'>Tobi-Kadachi</option>
-							<option value='Bazelgeuse'>Bazelgeuse</option>
-							<option value='Seething Bazelgeuse'>Seething Bazelgeuse</option>
-							<option value='Velkhana'>Velkhana</option>
-							<option value='Malzeno'>Malzeno</option>
-							<option value='Lunagaron'>Lunagaron</option>
-							<option value='Garangolm'>Garangolm</option>
-							<option value='Gaismagorm'>Gaismagorm</option>
-							<option value='Espinas'>Espinas</option>
-							<option value='Flaming Espinas'>Flaming Espinas</option>
-							<option value='Toadversary'>Toadversary</option>
-						</select>
-					</div>
-					<div class='dropContainer'>
-						<label for='dropHZ'>Hit Zone</label><select id='dropHZ' title='hzSelection'>
+								<option value='Rathian'>Rathian</option>
+								<option value='Gold Rathian'>Gold Rathian</option>
+								<option value='Apex Rathian'>Apex Rathian</option>
+								<option value='Rathalos'>Rathalos</option>
+								<option value='Silver Rathalos'>Silver Rathalos</option>
+								<option value='Apex Rathalos'>Apex Rathalos</option>
+								<option value='Khezu'>Khezu</option>
+								<option value='Basarios'>Basarios</option>
+								<option value='Diablos'>Diablos</option>
+								<option value='Apex Diablos'>Apex Diablos</option>
+								<option value='Daimyo Hermitaur'>Daimyo Hermitaur</option>
+								<option value='Shogun Ceanataur'>Shogun Ceanataur</option>
+								<option value='Rajang'>Rajang</option>
+								<option value='Furious Rajang'>Furious Rajang</option>
+								<option value='Kushala Daora'>Kushala Daora</option>
+								<option value='Risen Kushala Daora'>Risen Kushala Daora</option>
+								<option value='Chameleos'>Chameleos</option>
+								<option value='Risen Chameleos'>Risen Chameleos</option>
+								<option value='Teostra'>Teostra</option>
+								<option value='Risen Teostra'>Risen Teostra</option>
+								<option value='Tigrex'>Tigrex</option>
+								<option value='Nargacuga'>Nargacuga</option>
+								<option value='Lucent Nargacuga'>Lucent Nargacuga</option>
+								<option value='Barioth'>Barioth</option>
+								<option value='Barroth'>Barroth</option>
+								<option value='Royal Ludroth'>Royal Ludroth</option>
+								<option value='Great Baggi'>Great Baggi</option>
+								<option value='Zinogre'>Zinogre</option>
+								<option value='Apex Zinogre'>Apex Zinogre</option>
+								<option value='Great Wroggi'>Great Wroggi</option>
+								<option value='Arzuros'>Arzuros</option>
+								<option value='Apex Arzuros'>Apex Arzuros</option>
+								<option value='Lagombi'>Lagombi</option>
+								<option value='Volvidon'>Volvidon</option>
+								<option value='Gore Magala'>Gore Magala</option>
+								<option value='Chaotic Gore Magala'>Chaotic Gore Magala</option>
+								<option value='Shagaru Magala'>Shagaru Magala</option>
+								<option value='Seregios'>Seregios</option>
+								<option value='Astalos'>Astalos</option>
+								<option value='Mizutsune'>Mizutsune</option>
+								<option value='Violet Mizutsune'>Violet Mizutsune</option>
+								<option value='Apex Mizutsune'>Apex Mizutsune</option>
+								<option value='Crimson Glow Valstrax'>Crimson Glow Valstrax</option>
+								<option value='Risen Crimson Glow Valstrax'>Risen Crimson Glow Valstrax</option>
+								<option value='Magnamalo'>Magnamalo</option>
+								<option value='Scorned Magnamalo'>Scorned Magnamalo</option>
+								<option value='Bishaten'>Bishaten</option>
+								<option value='Blood Orange Bishaten'>Blood Orange Bishaten</option>
+								<option value='Aknosom'>Aknosom</option>
+								<option value='Tetranadon'>Tetranadon</option>
+								<option value='Somnacanth'>Somnacanth</option>
+								<option value='Aurora Somnacanth'>Aurora Somnacanth</option>
+								<option value='Rakna-Kadaki'>Rakna-Kadaki</option>
+								<option value='Pyre Rakna-Kadaki'>Pyre Rakna-Kadaki</option>
+								<option value='Almudron'>Almudron</option>
+								<option value='Magma Almudron'>Magma Almudron</option>
+								<option value='Wind Serpent Ibushi'>Wind Serpent Ibushi</option>
+								<option value='Goss Harag'>Goss Harag</option>
+								<option value='Great Izuchi'>Great Izuchi</option>
+								<option value='Thunder Serpent Narwa'>Thunder Serpent Narwa</option>
+								<option value='Narwa the Allmother'>Narwa the Allmother</option>
+								<option value='Anjanath'>Anjanath</option>
+								<option value='Pukei-Pukei'>Pukei-Pukei</option>
+								<option value='Kulu-Ya-Ku'>Kulu-Ya-Ku</option>
+								<option value='Jyuratodus'>Jyuratodus</option>
+								<option value='Tobi-Kadachi'>Tobi-Kadachi</option>
+								<option value='Bazelgeuse'>Bazelgeuse</option>
+								<option value='Seething Bazelgeuse'>Seething Bazelgeuse</option>
+								<option value='Velkhana'>Velkhana</option>
+								<option value='Malzeno'>Malzeno</option>
+								<option value='Lunagaron'>Lunagaron</option>
+								<option value='Garangolm'>Garangolm</option>
+								<option value='Gaismagorm'>Gaismagorm</option>
+								<option value='Espinas'>Espinas</option>
+								<option value='Flaming Espinas'>Flaming Espinas</option>
+								<option value='Toadversary'>Toadversary</option>
+							</select>
+						</div>
+						<div class='dropContainer'>
+							<label for='dropHZ'>Hit Zone</label><select id='dropHZ' title='hzSelection'>
 
 
-							<option value='Head '>Head </option>
-							<option value='Neck '>Neck </option>
-							<option value='Body '>Body </option>
-							<option value='Limbs '>Limbs </option>
-							<option value='Shell '>Shell </option>
-						</select>
-					</div>
-					<div class='questSelect'>
-						<label for='dropQuest'>Quest</label><button type='button' aria-pressed='false' class='blue'
-							id='questButton'></button><select id='dropQuest' title='Quest'>
-							<option value='The Immortal'>The Immortal</option>
-						</select>
-						<div aria-haspopup='menu' class='menu' id='questDiv'>
-							<div id='divMR' class='dropContainer'>
-								<label class='menu' for='MR'>Master Rank</label><select class='menu MR' id='MR'
-									title='MR'>
+								<option value='Head '>Head </option>
+								<option value='Neck '>Neck </option>
+								<option value='Body '>Body </option>
+								<option value='Limbs '>Limbs </option>
+								<option value='Shell '>Shell </option>
+							</select>
+						</div>
+						<div class='questSelect'>
+							<label for='dropQuest'>Quest</label><button type='button' aria-pressed='false' class='blue'
+								id='questButton'></button><select id='dropQuest' title='Quest'>
+								<option value='The Immortal'>The Immortal</option>
+							</select>
+							<div aria-haspopup='menu' class='menu' id='questDiv'>
+								<div id='divMR' class='dropContainer'>
+									<label class='menu' for='MR'>Master Rank</label><select class='menu MR' id='MR'
+										title='MR'>
 
-									<option value='The Immortal'>The Immortal</option>
-								</select>
-							</div>
-							<div id='divHR' class='dropContainer augInvis'>
-								<label class='menu' for='HR'>High Rank</label><select class='menu' id='HR'
-									title='HR'></select>
+										<option value='The Immortal'>The Immortal</option>
+									</select>
+								</div>
+								<div id='divHR' class='dropContainer augInvis'>
+									<label class='menu' for='HR'>High Rank</label><select class='menu' id='HR'
+										title='HR'></select>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class='twoColumn div dropContainer'>
-						<select id='players'>
-							<option value='1p'>1 Player</option>
-							<option value='2p'>2 Player</option>
-							<option value='3p'>3 Player</option>
-							<option value='4p'>4 Player</option>
-						</select>
-						<label class='row1span2' for='health'>Total Health</label>
-						<select id='health'>
+						<div class='twoColumn div dropContainer'>
+							<select id='players'>
+								<option value='1p'>1 Player</option>
+								<option value='2p'>2 Player</option>
+								<option value='3p'>3 Player</option>
+								<option value='4p'>4 Player</option>
+							</select>
+							<label class='row1span2' for='health'>Total Health</label>
+							<select id='health'>
 
-							<option value='98000'>98000</option>
-							<option value='99000'>99000</option>
-							<option value='100000'>100000</option>
-							<option value='101000'>101000</option>
-							<option value='102000'>102000</option>
-						</select>
+								<option value='98000'>98000</option>
+								<option value='99000'>99000</option>
+								<option value='100000'>100000</option>
+								<option value='101000'>101000</option>
+								<option value='102000'>102000</option>
+							</select>
+						</div>
+						<div class='twoColumn div dropContainer' id='divEnrage'>
+							<output id='enrageDisplay'>100%</output>
+							<label class='row1span2' for='dropEnraged'>Enrage Modifier</label>
+							<select id='dropEnraged' title='Enrage'>
+								<option value='1'>Normal</option>
+								<option value='Enraged'>Enraged</option>
+							</select>
+						</div>
+						<p title='spawnArea' id='spawnArea'><output>Spawn Area Alter 100%</output></p>
 					</div>
-					<div class='twoColumn div dropContainer' id='divEnrage'>
-						<output id='enrageDisplay'>100%</output>
-						<label class='row1span2' for='dropEnraged'>Enrage Modifier</label>
-						<select id='dropEnraged' title='Enrage'>
-							<option value='1'>Normal</option>
-							<option value='Enraged'>Enraged</option>
-						</select>
+					<div class='is-bordered' id='monTableContainer'>
+						<table id='monTable'>
+							<tr>
+								<th>Hit Zone</th>
+								<th>Sever</th>
+								<th>Blunt</th>
+								<th>Shot</th>
+								<th>Fire</th>
+								<th>Water</th>
+								<th>Thunder</th>
+								<th>Ice</th>
+								<th>Dragon</th>
+							</tr>
+							<tr>
+								<td>Head </td>
+								<td class='S'>100</td>
+								<td class='S'>100</td>
+								<td class='S'>100</td>
+								<td class='B'>30</td>
+								<td class='B'>30</td>
+								<td class='B'>30</td>
+								<td class='B'>30</td>
+								<td class='B'>30</td>
+							</tr>
+							<tr>
+								<td>Neck </td>
+								<td class='S'>80</td>
+								<td class='S'>80</td>
+								<td class='S'>80</td>
+								<td class='B'>25</td>
+								<td class='B'>25</td>
+								<td class='B'>25</td>
+								<td class='B'>25</td>
+								<td class='B'>25</td>
+							</tr>
+							<tr>
+								<td>Body </td>
+								<td class='A'>60</td>
+								<td class='A'>60</td>
+								<td class='A'>60</td>
+								<td class='B'>20</td>
+								<td class='B'>20</td>
+								<td class='B'>20</td>
+								<td class='B'>20</td>
+								<td class='B'>20</td>
+							</tr>
+							<tr>
+								<td>Limbs </td>
+								<td class='B'>40</td>
+								<td class='B'>40</td>
+								<td class='B'>40</td>
+								<td class='B'>15</td>
+								<td class='B'>15</td>
+								<td class='B'>15</td>
+								<td class='B'>15</td>
+								<td class='B'>15</td>
+							</tr>
+							<tr>
+								<td>Shell </td>
+								<td class='B'>20</td>
+								<td class='B'>20</td>
+								<td class='B'>20</td>
+								<td class='F'>5</td>
+								<td class='F'>5</td>
+								<td class='F'>5</td>
+								<td class='F'>5</td>
+								<td class='F'>5</td>
+							</tr>
+						</table>
 					</div>
-					<p title='spawnArea' id='spawnArea'><output>Spawn Area Alter 100%</output></p>
-				</div>
-				<div class='is-bordered' id='monTableContainer'>
-					<table id='monTable'>
-						<tr>
-							<th>Hit Zone</th>
-							<th>Sever</th>
-							<th>Blunt</th>
-							<th>Shot</th>
-							<th>Fire</th>
-							<th>Water</th>
-							<th>Thunder</th>
-							<th>Ice</th>
-							<th>Dragon</th>
-						</tr>
-						<tr>
-							<td>Head </td>
-							<td class='S'>100</td>
-							<td class='S'>100</td>
-							<td class='S'>100</td>
-							<td class='B'>30</td>
-							<td class='B'>30</td>
-							<td class='B'>30</td>
-							<td class='B'>30</td>
-							<td class='B'>30</td>
-						</tr>
-						<tr>
-							<td>Neck </td>
-							<td class='S'>80</td>
-							<td class='S'>80</td>
-							<td class='S'>80</td>
-							<td class='B'>25</td>
-							<td class='B'>25</td>
-							<td class='B'>25</td>
-							<td class='B'>25</td>
-							<td class='B'>25</td>
-						</tr>
-						<tr>
-							<td>Body </td>
-							<td class='A'>60</td>
-							<td class='A'>60</td>
-							<td class='A'>60</td>
-							<td class='B'>20</td>
-							<td class='B'>20</td>
-							<td class='B'>20</td>
-							<td class='B'>20</td>
-							<td class='B'>20</td>
-						</tr>
-						<tr>
-							<td>Limbs </td>
-							<td class='B'>40</td>
-							<td class='B'>40</td>
-							<td class='B'>40</td>
-							<td class='B'>15</td>
-							<td class='B'>15</td>
-							<td class='B'>15</td>
-							<td class='B'>15</td>
-							<td class='B'>15</td>
-						</tr>
-						<tr>
-							<td>Shell </td>
-							<td class='B'>20</td>
-							<td class='B'>20</td>
-							<td class='B'>20</td>
-							<td class='F'>5</td>
-							<td class='F'>5</td>
-							<td class='F'>5</td>
-							<td class='F'>5</td>
-							<td class='F'>5</td>
-						</tr>
-					</table>
-				</div>
-				<div id='forButtons'>
-					<button type='button' aria-pressed='false' class='blue' id='Save State' onclick='saveState()'>
-						Save Selections
-					</button>
-					<button type='button' aria-pressed='false' class='classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe 
+					<div id='forButtons'>
+						<button type='button' aria-pressed='false' class='blue' id='Save State' onclick='saveState()'>
+							Save Selections
+						</button>
+						<button type='button' aria-pressed='false' class='classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe 
 LongSword Lance HuntingHorn Gunlance Hammer Bow' id='viewCombo'
-						onclick='document.getElementById("comboCountContainer").classList.remove("augInvis")'
-						style='display: none;'>
-						Combo Display
-					</button>
-					<!--class='gray toggle classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer Bow'
+							onclick='document.getElementById("comboCountContainer").classList.remove("augInvis")'
+							style='display: none;'>
+							Combo Display
+						</button>
+						<!--class='gray toggle classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer Bow'
 				-->
-				<button type='button' aria-pressed='false' class="augInvis"
-						id='filterCombo' style='display: none;'>
-						Combo Attack Filter
-					</button>
-					<button type='button' aria-pressed='false'
-						class='classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer Bow'
-						id='resetCombo' onclick='comboReset()' style='display: none;'>
-						Reset Combo
-					</button>
-					<button type='button' aria-pressed='false' class='classSpecific LightBowGun HeavyBowGun'
-						id='ammoChange' onmousedown='toggleAmmoTables()'>
-						Change Ammo Table
-					</button>
-				</div>
-				<div id='forButtonSelect'>
-					<div class='dropContainer'>
-						<label for='pierceAdjust'>Pierce Dmg Adjust</label><select id='pierceAdjust'
-							title='pierceAdjust' class='classSpecific LightBowGun HeavyBowGun'>
-							<option value='[1,1]'>Max Deeps</option>
-							<option value='[0.90,0.72]'>Legendary</option>
-							<option value='[0.79,0.6428]'>SpeedRun</option>
-							<option value='[0.70,0.57]'>Average</option>
-							<option value='[0.60,0.5]'>Casual</option>
-						</select>
+						<button type='button' aria-pressed='false' class="augInvis" id='filterCombo'
+							style='display: none;'>
+							Combo Attack Filter
+						</button>
+						<button type='button' aria-pressed='false'
+							class='classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer Bow'
+							id='resetCombo' onclick='comboReset()' style='display: none;'>
+							Reset Combo
+						</button>
+						<button type='button' aria-pressed='false' class='classSpecific LightBowGun HeavyBowGun'
+							id='ammoChange' onmousedown='toggleAmmoTables()'>
+							Change Ammo Table
+						</button>
 					</div>
-					<div class='dropContainer'>
-						<label for='spareAdjust'>Spare Shot Adjust</label><select id='spareAdjust' title='spareAdjust'
-							class='classSpecific LightBowGun HeavyBowGun'>
-							<option value='0'>---</option>
-							<option value='-5'>-5%</option>
-							<option value='5'>+5%</option>
-							<option value='10'>+10%</option>
-						</select>
+					<div id='forButtonSelect'>
+						<div class='dropContainer'>
+							<label for='pierceAdjust'>Pierce Dmg Adjust</label><select id='pierceAdjust'
+								title='pierceAdjust' class='classSpecific LightBowGun HeavyBowGun'>
+								<option value='[1,1]'>Max Deeps</option>
+								<option value='[0.90,0.72]'>Legendary</option>
+								<option value='[0.79,0.6428]'>SpeedRun</option>
+								<option value='[0.70,0.57]'>Average</option>
+								<option value='[0.60,0.5]'>Casual</option>
+							</select>
+						</div>
+						<div class='dropContainer'>
+							<label for='spareAdjust'>Spare Shot Adjust</label><select id='spareAdjust'
+								title='spareAdjust' class='classSpecific LightBowGun HeavyBowGun'>
+								<option value='0'>---</option>
+								<option value='-5'>-5%</option>
+								<option value='5'>+5%</option>
+								<option value='10'>+10%</option>
+							</select>
+						</div>
 					</div>
-				</div>
-				<div id='sharpnessContainer'
-					class='classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer'
-					style='display: none;'>
-					<div class='sharpness' id='red' style='background-color: red; border-style: none; width: 52.9916px'>
-						30
-					</div>
-					<div class='sharpness' id='orange' style='
+					<div id='sharpnessContainer'
+						class='classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer'
+						style='display: none;'>
+						<div class='sharpness' id='red'
+							style='background-color: red; border-style: none; width: 52.9916px'>
+							30
+						</div>
+						<div class='sharpness' id='orange' style='
 							background-color: orange;
 							border-style: none;
 							width: 123.647px;
 						'>
-						70
-					</div>
-					<div class='sharpness' id='yellow'
-						style='background-color: gold; border-style: none; width: 123.647px'>
-						70
-					</div>
-					<div class='sharpness' id='green' style='
+							70
+						</div>
+						<div class='sharpness' id='yellow'
+							style='background-color: gold; border-style: none; width: 123.647px'>
+							70
+						</div>
+						<div class='sharpness' id='green' style='
 							background-color: forestgreen;
 							border-style: none;
 							width: 105.983px;
 						'>
-						60
-					</div>
-					<div class='sharpness' id='blue'
-						style='background-color: blue; border-style: none; width: 105.983px'>
-						60
-					</div>
-					<div class='sharpness' id='white' style='
+							60
+						</div>
+						<div class='sharpness' id='blue'
+							style='background-color: blue; border-style: none; width: 105.983px'>
+							60
+						</div>
+						<div class='sharpness' id='white' style='
 							background-color: white;
 							border-style: none;
 							width: 88.3193px;
 						'>
-						50
-					</div>
-					<div class='sharpness' id='purple' style='
+							50
+						</div>
+						<div class='sharpness' id='purple' style='
 							background-color: purple;
 							color: white;
 							width: 15.8975px;
 							display: none;
 						'>
-						9
+							9
+						</div>
 					</div>
-				</div>
-				<div class='container contain' id='damageTable'>
-					<h2 class='damageHeader is-size-3'>Damage Results</h2>
-					<div id='damageContainer' class='rangedContainer'>
-						<table id='dpsTable'>
-							<thead class='tableRowRanged' id='dpsHead'>
-								<tr>
-									<th>Ammo Type</th>
-									<th>Raw</th>
-									<th>Element</th>
-									<th>Total</th>
-									<th>Effective</th>
-									<th>RPM Gain</th>
-									<th>Shots
-										To Kill</th>
-									<th>Seconds
-										To Kill</th>
-								</tr>
-							</thead>
-							<tbody id='dpsBody' class='rangedTable'>
-								<tr class='tableRowRanged'>
-									<td>Normal Lv1</td>
-									<td>59 / 74</td>
-									<td>0 / 0</td>
-									<td>59 / 74</td>
-									<td>64</td>
-									<td>No Gain</td>
-									<td>1,532</td>
-									<td>1,532</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Normal Lv2</td>
-									<td>82 / 102</td>
-									<td>0 / 0</td>
-									<td>82 / 102</td>
-									<td>88</td>
-									<td>No Gain</td>
-									<td>1,114</td>
-									<td>1,114</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Normal Lv3</td>
-									<td>126 / 158</td>
-									<td>0 / 0</td>
-									<td>126 / 158</td>
-									<td>136</td>
-									<td>No Gain</td>
-									<td>721</td>
-									<td>721</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Pierce Lv1</td>
-									<td>26 / 32</td>
-									<td>0 / 0</td>
-									<td>26 / 32</td>
-									<td>196</td>
-									<td>No Gain</td>
-									<td>500</td>
-									<td>500</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Pierce Lv2</td>
-									<td>26 / 32</td>
-									<td>0 / 0</td>
-									<td>26 / 32</td>
-									<td>196</td>
-									<td>No Gain</td>
-									<td>500</td>
-									<td>1,000</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Pierce Lv3</td>
-									<td>33 / 42</td>
-									<td>0 / 0</td>
-									<td>33 / 42</td>
-									<td>252</td>
-									<td>No Gain</td>
-									<td>389</td>
-									<td>778</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Spread Lv1</td>
-									<td>26 / 32</td>
-									<td>0 / 0</td>
-									<td>26 / 32</td>
-									<td>84</td>
-									<td>No Gain</td>
-									<td>1,167</td>
-									<td>1,167</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Spread Lv2</td>
-									<td>26 / 32</td>
-									<td>0 / 0</td>
-									<td>26 / 32</td>
-									<td>112</td>
-									<td>No Gain</td>
-									<td>875</td>
-									<td>875</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Spread Lv3</td>
-									<td>37 / 46</td>
-									<td>0 / 0</td>
-									<td>37 / 46</td>
-									<td>200</td>
-									<td>No Gain</td>
-									<td>490</td>
-									<td>980</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Shrapnel Lv1</td>
-									<td>22 / 28</td>
-									<td>0 / 0</td>
-									<td>22 / 28</td>
-									<td>72</td>
-									<td>No Gain</td>
-									<td>1,362</td>
-									<td>1,362</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Shrapnel Lv2</td>
-									<td>19 / 23</td>
-									<td>0 / 0</td>
-									<td>19 / 23</td>
-									<td>80</td>
-									<td>No Gain</td>
-									<td>1,225</td>
-									<td>1,225</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Shrapnel Lv3</td>
-									<td>19 / 23</td>
-									<td>0 / 0</td>
-									<td>19 / 23</td>
-									<td>100</td>
-									<td>No Gain</td>
-									<td>980</td>
-									<td>1,960</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Sticky Lv1</td>
-									<td>4 / 4</td>
-									<td>0 / 0</td>
-									<td>4 / 4</td>
-									<td>4</td>
-									<td>No Gain</td>
-									<td>N / A</td>
-									<td>N / A</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Sticky Lv1 Explosion</td>
-									<td>45 / 45</td>
-									<td>3 / 3</td>
-									<td>48 / 48</td>
-									<td>48</td>
-									<td>No Gain</td>
-									<td>2,042</td>
-									<td>4,089</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Sticky Lv2</td>
-									<td>4 / 4</td>
-									<td>0 / 0</td>
-									<td>4 / 4</td>
-									<td>4</td>
-									<td>No Gain</td>
-									<td>N / A</td>
-									<td>N / A</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Sticky Lv2 Explosion</td>
-									<td>56 / 56</td>
-									<td>5 / 5</td>
-									<td>61 / 61</td>
-									<td>61</td>
-									<td>No Gain</td>
-									<td>1,607</td>
-									<td>3,219</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Sticky Lv3</td>
-									<td>4 / 4</td>
-									<td>0 / 0</td>
-									<td>4 / 4</td>
-									<td>4</td>
-									<td>No Gain</td>
-									<td>N / A</td>
-									<td>N / A</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Sticky Lv3 Explosion</td>
-									<td>70 / 70</td>
-									<td>5 / 5</td>
-									<td>75 / 75</td>
-									<td>75</td>
-									<td>No Gain</td>
-									<td>1,307</td>
-									<td>5,233</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Cluster Lv1</td>
-									<td>4 / 4</td>
-									<td>0 / 0</td>
-									<td>4 / 4</td>
-									<td>4</td>
-									<td>No Gain</td>
-									<td>N / A</td>
-									<td>N / A</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Cluster Sub-Lv1</td>
-									<td>37 / 37</td>
-									<td>5 / 5</td>
-									<td>42 / 42</td>
-									<td>126</td>
-									<td>No Gain</td>
-									<td>778</td>
-									<td>2,334</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Cluster Lv2</td>
-									<td>4 / 4</td>
-									<td>0 / 0</td>
-									<td>4 / 4</td>
-									<td>4</td>
-									<td>No Gain</td>
-									<td>N / A</td>
-									<td>0</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Cluster Sub-Lv2</td>
-									<td>56 / 56</td>
-									<td>8 / 8</td>
-									<td>64 / 64</td>
-									<td>256</td>
-									<td>No Gain</td>
-									<td>383</td>
-									<td>0</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Cluster Lv3</td>
-									<td>4 / 4</td>
-									<td>0 / 0</td>
-									<td>4 / 4</td>
-									<td>4</td>
-									<td>No Gain</td>
-									<td>N / A</td>
-									<td>0</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Cluster Sub-Lv3</td>
-									<td>74 / 74</td>
-									<td>10 / 10</td>
-									<td>84 / 84</td>
-									<td>420</td>
-									<td>No Gain</td>
-									<td>234</td>
-									<td>0</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Poison Lv1</td>
-									<td>4 / 4</td>
-									<td>0 / 0</td>
-									<td>4 / 4</td>
-									<td>4</td>
-									<td>No Gain</td>
-									<td>N / A</td>
-									<td>N / A</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Poison Lv2</td>
-									<td>4 / 4</td>
-									<td>0 / 0</td>
-									<td>4 / 4</td>
-									<td>4</td>
-									<td>No Gain</td>
-									<td>N / A</td>
-									<td>0</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Paralysis Lv1</td>
-									<td>4 / 4</td>
-									<td>0 / 0</td>
-									<td>4 / 4</td>
-									<td>4</td>
-									<td>No Gain</td>
-									<td>N / A</td>
-									<td>N / A</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Exhaust Lv1</td>
-									<td>4 / 4</td>
-									<td>0 / 0</td>
-									<td>4 / 4</td>
-									<td>4</td>
-									<td>No Gain</td>
-									<td>N / A</td>
-									<td>N / A</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Exhaust Lv2</td>
-									<td>4 / 4</td>
-									<td>0 / 0</td>
-									<td>4 / 4</td>
-									<td>4</td>
-									<td>No Gain</td>
-									<td>N / A</td>
-									<td>N / A</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Recover Lv1</td>
-									<td>0 / 0</td>
-									<td>0 / 0</td>
-									<td>0 / 0</td>
-									<td>0</td>
-									<td>No Gain</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Demon</td>
-									<td>0 / 0</td>
-									<td>0 / 0</td>
-									<td>0 / 0</td>
-									<td>0</td>
-									<td>No Gain</td>
-									<td>0</td>
-									<td>0</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Ice</td>
-									<td>59 / 74</td>
-									<td>56 / 56</td>
-									<td>115 / 130</td>
-									<td>120</td>
-									<td>No Gain</td>
-									<td>817</td>
-									<td>817</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Slicing</td>
-									<td>4 / 4</td>
-									<td>0 / 0</td>
-									<td>4 / 4</td>
-									<td>4</td>
-									<td>No Gain</td>
-									<td>N / A</td>
-									<td>N / A</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Slicing Procs</td>
-									<td>52 / 65</td>
-									<td>0 / 0</td>
-									<td>52 / 65</td>
-									<td>168</td>
-									<td>No Gain</td>
-									<td>584</td>
-									<td>1,173</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Wyvern Blast S</td>
-									<td>96 / 96</td>
-									<td>3 / 3</td>
-									<td>99 / 99</td>
-									<td>99</td>
-									<td>No Gain</td>
-									<td>990</td>
-									<td>1,980</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Wyvern Blast M</td>
-									<td>119 / 119</td>
-									<td>5 / 5</td>
-									<td>124 / 124</td>
-									<td>124</td>
-									<td>No Gain</td>
-									<td>791</td>
-									<td>1,582</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Wyvern Blast L</td>
-									<td>182 / 182</td>
-									<td>7 / 7</td>
-									<td>189 / 189</td>
-									<td>189</td>
-									<td>No Gain</td>
-									<td>519</td>
-									<td>1,038</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Counter Wyvern Blast S</td>
-									<td>96 / 96</td>
-									<td>3 / 3</td>
-									<td>99 / 99</td>
-									<td>99</td>
-									<td>No Gain</td>
-									<td>990</td>
-									<td>1,980</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Counter Wyvern Blast M</td>
-									<td>119 / 119</td>
-									<td>5 / 5</td>
-									<td>124 / 124</td>
-									<td>124</td>
-									<td>No Gain</td>
-									<td>791</td>
-									<td>1,582</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Counter Wyvern Blast L</td>
-									<td>182 / 182</td>
-									<td>7 / 7</td>
-									<td>189 / 189</td>
-									<td>189</td>
-									<td>No Gain</td>
-									<td>519</td>
-									<td>1,038</td>
-								</tr>
-								<tr class='tableRowRanged'>
-									<td>Counter Wyvern Blast XL</td>
-									<td>260 / 260</td>
-									<td>13 / 13</td>
-									<td>273 / 273</td>
-									<td>273</td>
-									<td>No Gain</td>
-									<td>359</td>
-									<td>718</td>
-								</tr>
-							</tbody>
-						</table>
-						<table id='ammoTable' class='augInvis'>
-							<thead id='ammoHead'>
-							</thead>
-							<tbody id='ammoBody' class='rangedTable'></tbody>
-						</table>
+					<div class='container contain' id='damageTable'>
+						<h2 class='damageHeader is-size-3'>Damage Results</h2>
+						<div id='damageContainer' class='rangedContainer'>
+							<table id='dpsTable'>
+								<thead class='tableRowRanged' id='dpsHead'>
+									<tr>
+										<th>Ammo Type</th>
+										<th>Raw</th>
+										<th>Element</th>
+										<th>Total</th>
+										<th>Effective</th>
+										<th>RPM Gain</th>
+										<th>Shots
+											To Kill</th>
+										<th>Seconds
+											To Kill</th>
+									</tr>
+								</thead>
+								<tbody id='dpsBody' class='rangedTable'>
+									<tr class='tableRowRanged'>
+										<td>Normal Lv1</td>
+										<td>59 / 74</td>
+										<td>0 / 0</td>
+										<td>59 / 74</td>
+										<td>64</td>
+										<td>No Gain</td>
+										<td>1,532</td>
+										<td>1,532</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Normal Lv2</td>
+										<td>82 / 102</td>
+										<td>0 / 0</td>
+										<td>82 / 102</td>
+										<td>88</td>
+										<td>No Gain</td>
+										<td>1,114</td>
+										<td>1,114</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Normal Lv3</td>
+										<td>126 / 158</td>
+										<td>0 / 0</td>
+										<td>126 / 158</td>
+										<td>136</td>
+										<td>No Gain</td>
+										<td>721</td>
+										<td>721</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Pierce Lv1</td>
+										<td>26 / 32</td>
+										<td>0 / 0</td>
+										<td>26 / 32</td>
+										<td>196</td>
+										<td>No Gain</td>
+										<td>500</td>
+										<td>500</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Pierce Lv2</td>
+										<td>26 / 32</td>
+										<td>0 / 0</td>
+										<td>26 / 32</td>
+										<td>196</td>
+										<td>No Gain</td>
+										<td>500</td>
+										<td>1,000</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Pierce Lv3</td>
+										<td>33 / 42</td>
+										<td>0 / 0</td>
+										<td>33 / 42</td>
+										<td>252</td>
+										<td>No Gain</td>
+										<td>389</td>
+										<td>778</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Spread Lv1</td>
+										<td>26 / 32</td>
+										<td>0 / 0</td>
+										<td>26 / 32</td>
+										<td>84</td>
+										<td>No Gain</td>
+										<td>1,167</td>
+										<td>1,167</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Spread Lv2</td>
+										<td>26 / 32</td>
+										<td>0 / 0</td>
+										<td>26 / 32</td>
+										<td>112</td>
+										<td>No Gain</td>
+										<td>875</td>
+										<td>875</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Spread Lv3</td>
+										<td>37 / 46</td>
+										<td>0 / 0</td>
+										<td>37 / 46</td>
+										<td>200</td>
+										<td>No Gain</td>
+										<td>490</td>
+										<td>980</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Shrapnel Lv1</td>
+										<td>22 / 28</td>
+										<td>0 / 0</td>
+										<td>22 / 28</td>
+										<td>72</td>
+										<td>No Gain</td>
+										<td>1,362</td>
+										<td>1,362</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Shrapnel Lv2</td>
+										<td>19 / 23</td>
+										<td>0 / 0</td>
+										<td>19 / 23</td>
+										<td>80</td>
+										<td>No Gain</td>
+										<td>1,225</td>
+										<td>1,225</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Shrapnel Lv3</td>
+										<td>19 / 23</td>
+										<td>0 / 0</td>
+										<td>19 / 23</td>
+										<td>100</td>
+										<td>No Gain</td>
+										<td>980</td>
+										<td>1,960</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Sticky Lv1</td>
+										<td>4 / 4</td>
+										<td>0 / 0</td>
+										<td>4 / 4</td>
+										<td>4</td>
+										<td>No Gain</td>
+										<td>N / A</td>
+										<td>N / A</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Sticky Lv1 Explosion</td>
+										<td>45 / 45</td>
+										<td>3 / 3</td>
+										<td>48 / 48</td>
+										<td>48</td>
+										<td>No Gain</td>
+										<td>2,042</td>
+										<td>4,089</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Sticky Lv2</td>
+										<td>4 / 4</td>
+										<td>0 / 0</td>
+										<td>4 / 4</td>
+										<td>4</td>
+										<td>No Gain</td>
+										<td>N / A</td>
+										<td>N / A</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Sticky Lv2 Explosion</td>
+										<td>56 / 56</td>
+										<td>5 / 5</td>
+										<td>61 / 61</td>
+										<td>61</td>
+										<td>No Gain</td>
+										<td>1,607</td>
+										<td>3,219</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Sticky Lv3</td>
+										<td>4 / 4</td>
+										<td>0 / 0</td>
+										<td>4 / 4</td>
+										<td>4</td>
+										<td>No Gain</td>
+										<td>N / A</td>
+										<td>N / A</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Sticky Lv3 Explosion</td>
+										<td>70 / 70</td>
+										<td>5 / 5</td>
+										<td>75 / 75</td>
+										<td>75</td>
+										<td>No Gain</td>
+										<td>1,307</td>
+										<td>5,233</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Cluster Lv1</td>
+										<td>4 / 4</td>
+										<td>0 / 0</td>
+										<td>4 / 4</td>
+										<td>4</td>
+										<td>No Gain</td>
+										<td>N / A</td>
+										<td>N / A</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Cluster Sub-Lv1</td>
+										<td>37 / 37</td>
+										<td>5 / 5</td>
+										<td>42 / 42</td>
+										<td>126</td>
+										<td>No Gain</td>
+										<td>778</td>
+										<td>2,334</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Cluster Lv2</td>
+										<td>4 / 4</td>
+										<td>0 / 0</td>
+										<td>4 / 4</td>
+										<td>4</td>
+										<td>No Gain</td>
+										<td>N / A</td>
+										<td>0</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Cluster Sub-Lv2</td>
+										<td>56 / 56</td>
+										<td>8 / 8</td>
+										<td>64 / 64</td>
+										<td>256</td>
+										<td>No Gain</td>
+										<td>383</td>
+										<td>0</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Cluster Lv3</td>
+										<td>4 / 4</td>
+										<td>0 / 0</td>
+										<td>4 / 4</td>
+										<td>4</td>
+										<td>No Gain</td>
+										<td>N / A</td>
+										<td>0</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Cluster Sub-Lv3</td>
+										<td>74 / 74</td>
+										<td>10 / 10</td>
+										<td>84 / 84</td>
+										<td>420</td>
+										<td>No Gain</td>
+										<td>234</td>
+										<td>0</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Poison Lv1</td>
+										<td>4 / 4</td>
+										<td>0 / 0</td>
+										<td>4 / 4</td>
+										<td>4</td>
+										<td>No Gain</td>
+										<td>N / A</td>
+										<td>N / A</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Poison Lv2</td>
+										<td>4 / 4</td>
+										<td>0 / 0</td>
+										<td>4 / 4</td>
+										<td>4</td>
+										<td>No Gain</td>
+										<td>N / A</td>
+										<td>0</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Paralysis Lv1</td>
+										<td>4 / 4</td>
+										<td>0 / 0</td>
+										<td>4 / 4</td>
+										<td>4</td>
+										<td>No Gain</td>
+										<td>N / A</td>
+										<td>N / A</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Exhaust Lv1</td>
+										<td>4 / 4</td>
+										<td>0 / 0</td>
+										<td>4 / 4</td>
+										<td>4</td>
+										<td>No Gain</td>
+										<td>N / A</td>
+										<td>N / A</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Exhaust Lv2</td>
+										<td>4 / 4</td>
+										<td>0 / 0</td>
+										<td>4 / 4</td>
+										<td>4</td>
+										<td>No Gain</td>
+										<td>N / A</td>
+										<td>N / A</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Recover Lv1</td>
+										<td>0 / 0</td>
+										<td>0 / 0</td>
+										<td>0 / 0</td>
+										<td>0</td>
+										<td>No Gain</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Demon</td>
+										<td>0 / 0</td>
+										<td>0 / 0</td>
+										<td>0 / 0</td>
+										<td>0</td>
+										<td>No Gain</td>
+										<td>0</td>
+										<td>0</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Ice</td>
+										<td>59 / 74</td>
+										<td>56 / 56</td>
+										<td>115 / 130</td>
+										<td>120</td>
+										<td>No Gain</td>
+										<td>817</td>
+										<td>817</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Slicing</td>
+										<td>4 / 4</td>
+										<td>0 / 0</td>
+										<td>4 / 4</td>
+										<td>4</td>
+										<td>No Gain</td>
+										<td>N / A</td>
+										<td>N / A</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Slicing Procs</td>
+										<td>52 / 65</td>
+										<td>0 / 0</td>
+										<td>52 / 65</td>
+										<td>168</td>
+										<td>No Gain</td>
+										<td>584</td>
+										<td>1,173</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Wyvern Blast S</td>
+										<td>96 / 96</td>
+										<td>3 / 3</td>
+										<td>99 / 99</td>
+										<td>99</td>
+										<td>No Gain</td>
+										<td>990</td>
+										<td>1,980</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Wyvern Blast M</td>
+										<td>119 / 119</td>
+										<td>5 / 5</td>
+										<td>124 / 124</td>
+										<td>124</td>
+										<td>No Gain</td>
+										<td>791</td>
+										<td>1,582</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Wyvern Blast L</td>
+										<td>182 / 182</td>
+										<td>7 / 7</td>
+										<td>189 / 189</td>
+										<td>189</td>
+										<td>No Gain</td>
+										<td>519</td>
+										<td>1,038</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Counter Wyvern Blast S</td>
+										<td>96 / 96</td>
+										<td>3 / 3</td>
+										<td>99 / 99</td>
+										<td>99</td>
+										<td>No Gain</td>
+										<td>990</td>
+										<td>1,980</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Counter Wyvern Blast M</td>
+										<td>119 / 119</td>
+										<td>5 / 5</td>
+										<td>124 / 124</td>
+										<td>124</td>
+										<td>No Gain</td>
+										<td>791</td>
+										<td>1,582</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Counter Wyvern Blast L</td>
+										<td>182 / 182</td>
+										<td>7 / 7</td>
+										<td>189 / 189</td>
+										<td>189</td>
+										<td>No Gain</td>
+										<td>519</td>
+										<td>1,038</td>
+									</tr>
+									<tr class='tableRowRanged'>
+										<td>Counter Wyvern Blast XL</td>
+										<td>260 / 260</td>
+										<td>13 / 13</td>
+										<td>273 / 273</td>
+										<td>273</td>
+										<td>No Gain</td>
+										<td>359</td>
+										<td>718</td>
+									</tr>
+								</tbody>
+							</table>
+							<table id='ammoTable' class='augInvis'>
+								<thead id='ammoHead'>
+								</thead>
+								<tbody id='ammoBody' class='rangedTable'></tbody>
+							</table>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 				<div id='setReturn' class='augInvis'>
 					<h2><output id='extraOutput'>Found 0 Builds / 0 Combinations</output>Extra Skills<button
 							type='button' class='close'
