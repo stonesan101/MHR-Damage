@@ -9,8 +9,8 @@
 		<meta title='keywords'
 			content='MHR, MHRS, Rise Database, Sunbreak Database, Damage, Optimization, Calculations'>
 		<meta http-equiv='X-UA-Compatible' content='ie=edge'>
-		<!-- <script defer='' src='./backup.js'></script> -->
-		<script defer='' src='./ugly/index.js'></script>
+		<script defer='' src='./backup.js'></script>
+		<!-- <script defer='' src='./ugly/index.js'></script> -->
 		<link rel='preload' href='./icons/ramp2.png' as='image'>
 		<link rel='preload' href='./icons/Lvl1.png' as='image'>
 		<link rel='preload' href='./icons/Lvl2.png' as='image'>
@@ -59,20 +59,83 @@
 		<!-- </div> -->
 		<div id='containAll' class='columns container'>
 			<section id='section1' class='container'>
-				<div id='setBuilder'>
-					<div id='extraMenus'>
+				<h2>Weapon Selection</h2>
 
-						<button id='otherButton' type='button' aria-pressed='false'
-							onclick='document.getElementById("boxes").classList.remove("augInvis")'
-							class='toggle extraMenu'>Consumables/Other Buffs</button>
-						<button id='dangoButton' type='button' aria-pressed='false'
-							onclick='document.getElementById("dango").classList.remove("augInvis")'
-							class='toggle extraMenu'>Dango Skills Menu</button>
-						<button id='uniqueButton' type='button' aria-pressed='false'
-							onclick='document.getElementById("unique").classList.remove("augInvis")'
-							class='toggle extraMenu'>Weapon Unique Buffs</button>
+				<div id='setBuilder'>
+					<section id="sideDisplay">
+						<div>
+						<section id='weaponStats'>
+							<div id='statsTableDiv'>
+								<table>
+									<tbody>
+										<tr>
+											<td>Stat</td>
+											<td>Raw</td>
+											<td>Ele Pierce</td>
+										</tr>
+										<tr>
+											<td>Base</td>
+											<td>290</td>
+											<td>110</td>
+										</tr>
+										<tr>
+											<td>True</td>
+											<td>401</td>
+											<td>110</td>
+										</tr>
+										<tr>
+											<td>eTrue</td>
+											<td>501</td>
+											<td>110</td>
+										</tr>
+										<tr>
+											<td>EFR/EFE</td>
+											<td>451</td>
+											<td>110</td>
+										</tr>
+										<tr>
+											<td>Critical</td>
+											<td>1.125</td>
+											<td>1.00</td>
+										</tr>
+										<tr>
+											<td>Affinity</td>
+											<td>50</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
+						<div id='EquipedSkillDisplay'><output>AffinitySliding: 1<br>CriticalEye:
+								4<br>DivineBlessing:
+								3<br>Heroics: 1<br>Resuscitate: 2<br>WallRunner: 3<br>WirebugWhisperer:
+								3<br></output></div>
+</div>
+					<div id='extraMenus'>
+						<div id='scrollSwap'>
+						
+								<img class='scroll vis' id='redScroll' src='./red.webp' alt='Red Scroll Active'>
+								<img class='scroll invis' id='redNon' src='./rednon.webp' alt='Red Scroll Not Active'>
+								<button type='button' class='scroll invis' for='redNon'>Red Scroll</button>
+							
+							
+								<button type='button' for='blueNon' class='scroll vis'>Blue Scroll</button>
+								<img class='scroll invis' id='blueScroll' src='./blue.webp' alt='Blue Scroll Active'>
+								<img class='scroll vis' id='blueNon' src='./bluenon.webp' alt='Blue Scroll Not Active'>
+						
+						</div>
+						<label for='quriousButton' class='check'>Qurious Skills<input type='checkbox' id='quriousButton'
+								class='check' title='quriousButton'></label>
+						<label for='dangoSkillsButton' class='check'>Dango Skills<input type='checkbox'
+								id='dangoSkillsButton' class='check' title='Dango Skills Menu Button'></label>
+						<label for='otherButton' class='check'>Consumables/Other Buffs<input type='checkbox'
+								id='otherButton' class='check' title='otherButton'></label>
+						<label for='uniqueSkillsButton' class='check'>Weapon Specific Buffs<input type='checkbox'
+								id='uniqueSkillsButton' class='check' title='Unique Skills Button'></label>
+
 
 					</div>
+				</section>
 
 
 					<section class='weapon armorDisplay' id='weaponSelects'><img class='armorImg' alt='icons gs'
@@ -211,20 +274,8 @@
 								<option value='251'>Antique Machina LB</option>
 							</select>
 						</section>
-						<button type='button' class='weapon dec'>Select</button><button id='Qurious' type='button'
-							aria-pressed='false' class='weapon toggle skillButton gray'>Qurious</button>
-						<div id='scrollSwap'>
-							<div class='redScroll'>
-								<img class='scroll vis' id='redScroll' src='./red.webp' alt='Red Scroll Active'>
-								<img class='scroll invis' id='redNon' src='./rednon.webp' alt='Red Scroll Not Active'>
-								<button type='button' class='scroll invis' for='redNon'>Red Scroll</button>
-							</div>
-							<div class='blueScroll'>
-								<img class='scroll invis' id='blueScroll' src='./blue.webp'>
-								<img class='scroll vis' id='blueNon' src='./bluenon.webp' alt='Blue Scroll Not Active'>
-								<button type='button' for='blueNon' class='scroll vis'>Blue Scroll</button>
-							</div>
-						</div>
+
+
 						<div style='display: none;'>
 							<label for='BowCoating'>Bow Coatings</label><select id='BowCoating'
 								class='Bow classSpecific skill' title='Bow Coatings'>
@@ -775,7 +826,7 @@
 								<option value='1'>KushalaBlessing +1</option>
 								<option value='1'>IntrepidHeart +1</option>
 							</select></section>
-						<div id='augToggle' class='augInvis'>
+						<div id='augToggle' class='armorAugment augInvis'>
 							<output id='weaponQurious' value="9">Remaining Augments 9/9</output>
 							<div class='augDiv'>
 								<button value='2' type='button' aria-pressed='false'
@@ -840,13 +891,11 @@
 					</section>
 					<section class='helm armorDisplay'><img class='armorImg' alt='icons helm' src='./icons/helm.png'>
 						<h6>Helm</h6><select id='helm' class='helm armor' title='helm'>
-							
+
 						</select><output id='helmSkills'><img class='armorImg armorDeco rampage'
 								src='./icons/skill.png'><output>DivineBlessing +2</output><img
 								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>Resuscitate
-								+1</output></output><button type='button'
-							class='helm inc qurious'>Qurious</button><button type='button'
-							class='helm dec qurious'>Skills</button>
+								+1</output></output>
 						<section class='decoDisplay' id='helmDecos'><img class='armorImg armorDeco lvl2'
 								src='./icons/Lvl2.png'><select class='armorDisplay'>
 								<option> ---- </option>
@@ -1269,9 +1318,8 @@
 								src='./icons/skill.png'><output>WirebugWhisperer +2</output><img
 								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>WallRunner
 								+1</output><img class='armorImg armorDeco rampage'
-								src='./icons/skill.png'><output>CriticalEye +1</output></output><button type='button'
-							class='chest inc qurious'>Qurious</button><button type='button'
-							class='chest dec qurious'>Skills</button>
+								src='./icons/skill.png'><output>CriticalEye
+								+1</output></output>
 						<section class='decoDisplay' id='chestDecos'><img class='armorImg armorDeco lvl1'
 								src='./icons/Lvl1.png'><select class='armorDisplay'>
 								<option> ---- </option>
@@ -1780,9 +1828,7 @@
 								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>Heroics
 								+1</output><img class='armorImg armorDeco rampage'
 								src='./icons/skill.png'><output>DivineBlessing
-								+1</output></output><button type='button'
-							class='arm inc qurious'>Qurious</button><button type='button'
-							class='arm dec qurious'>Skills</button>
+								+1</output></output>
 						<section class='decoDisplay' id='armDecos'><img class='armorImg armorDeco lvl1'
 								src='./icons/Lvl1.png'><select class='armorDisplay'>
 								<option> ---- </option>
@@ -2055,14 +2101,12 @@
 					</section>
 					<section class='waist armorDisplay'><img class='armorImg' alt='icons waist' src='./icons/waist.png'>
 						<h6>Waist</h6><select id='waist' class='waist armor' title='waist'>
-							
+
 						</select>
 						<output id='waistSkills'><img class='armorImg armorDeco rampage'
 								src='./icons/skill.png'><output>WirebugWhisperer +1</output><img
 								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>CriticalEye
-								+1</output></output><button type='button'
-							class='waist inc qurious'>Qurious</button><button type='button'
-							class='waist dec qurious'>Skills</button>
+								+1</output></output>
 						<section class='decoDisplay' id='waistDecos'><img class='armorImg armorDeco lvl4'
 								src='./icons/Lvl4.png'><select class='armorDisplay'>
 								<option> ---- </option>
@@ -2565,15 +2609,13 @@
 					</section>
 					<section class='leg armorDisplay'><img class='armorImg' alt='icons leg' src='./icons/leg.png'>
 						<h6>Boots</h6><select id='leg' class='leg armor' title='leg'>
-						
+
 						</select><output id='legSkills'><img class='armorImg armorDeco rampage'
 								src='./icons/skill.png'><output>WallRunner +2</output><img
 								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>Resuscitate
 								+1</output><img class='armorImg armorDeco rampage'
-								src='./icons/skill.png'><output>AffinitySliding +1</output></output><button
-							type='button' class='leg inc qurious'>Qurious</button><button type='button'
-							class='leg dec qurious'>Skills</button>
-						<section class='decoDisplay' id='legDecos'><img class='armorImg armorDeco lvl2'
+								src='./icons/skill.png'><output>AffinitySliding +1</output></output>
+								<section class='decoDisplay' id='legDecos'><img class='armorImg armorDeco lvl2'
 								src='./icons/Lvl2.png'><select class='armorDisplay'>
 								<option> ---- </option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-4 Decos</option>
@@ -3335,376 +3377,324 @@
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
 							</select>
-							<img class='armorImg armorDeco lvl1' src='./icons/Lvl2.png'><select
-							class='armorDisplay'>
-							<option> ---- </option>
-							<option class='optTitle'>Lvl-1 Decos</option>
-							<option value='1'>AffinitySliding +1</option>
-							<option value='1'>BlastResistance +1</option>
-							<option value='1'>Bombardier +1</option>
-							<option value='1'>Botanist +1</option>
-							<option value='1'>CarvingPro +1</option>
-							<option value='1'>ChameleosBlessing +1</option>
-							<option value='1'>DefenseBoost +1</option>
-							<option value='1'>Defiance +1</option>
-							<option value='1'>Diversion +1</option>
-							<option value='1'>DragonAttack +1</option>
-							<option value='1'>DragonResistance +1</option>
-							<option value='1'>FireAttack +1</option>
-							<option value='1'>FireResistance +1</option>
-							<option value='1'>FlinchFree +1</option>
-							<option value='1'>FreeMeal +1</option>
-							<option value='1'>Geologist +1</option>
-							<option value='1'>HornMaestro +1</option>
-							<option value='1'>HungerResistance +1</option>
-							<option value='1'>IceAttack +1</option>
-							<option value='1'>IceResistance +1</option>
-							<option value='1'>KushalaBlessing +1</option>
-							<option value='1'>LeapofFaith +1</option>
-							<option value='1'>MuckResistance +1</option>
-							<option value='1'>ParalysisResistance +1</option>
-							<option value='1'>PoisonAttack +1</option>
-							<option value='1'>PoisonResistance +1</option>
-							<option value='1'>RecoilDown +1</option>
-							<option value='1'>RecoilDown +1</option>
-							<option value='1'>RecoverySpeed +1</option>
-							<option value='1'>ReloadSpeed +1</option>
-							<option value='1'>SleepResistance +1</option>
-							<option value='1'>SpeedSharpening +1</option>
-							<option value='1'>SpiribirdsCall +1</option>
-							<option value='1'>StaminaThief +1</option>
-							<option value='1'>Steadiness +1</option>
-							<option value='1'>StunResistance +1</option>
-							<option value='1'>TeostraBlessing +1</option>
-							<option value='1'>ThunderAttack +1</option>
-							<option value='1'>ThunderResistance +1</option>
-							<option value='1'>WallRunner(Boost) +1</option>
-							<option value='1'>WaterAttack +1</option>
-							<option value='1'>WaterResistance +1</option>
-							<option value='1'>Windproof +1</option>
-						</select>
+							<img class='armorImg armorDeco lvl1' src='./icons/Lvl2.png'><select class='armorDisplay'>
+								<option> ---- </option>
+								<option class='optTitle'>Lvl-1 Decos</option>
+								<option value='1'>AffinitySliding +1</option>
+								<option value='1'>BlastResistance +1</option>
+								<option value='1'>Bombardier +1</option>
+								<option value='1'>Botanist +1</option>
+								<option value='1'>CarvingPro +1</option>
+								<option value='1'>ChameleosBlessing +1</option>
+								<option value='1'>DefenseBoost +1</option>
+								<option value='1'>Defiance +1</option>
+								<option value='1'>Diversion +1</option>
+								<option value='1'>DragonAttack +1</option>
+								<option value='1'>DragonResistance +1</option>
+								<option value='1'>FireAttack +1</option>
+								<option value='1'>FireResistance +1</option>
+								<option value='1'>FlinchFree +1</option>
+								<option value='1'>FreeMeal +1</option>
+								<option value='1'>Geologist +1</option>
+								<option value='1'>HornMaestro +1</option>
+								<option value='1'>HungerResistance +1</option>
+								<option value='1'>IceAttack +1</option>
+								<option value='1'>IceResistance +1</option>
+								<option value='1'>KushalaBlessing +1</option>
+								<option value='1'>LeapofFaith +1</option>
+								<option value='1'>MuckResistance +1</option>
+								<option value='1'>ParalysisResistance +1</option>
+								<option value='1'>PoisonAttack +1</option>
+								<option value='1'>PoisonResistance +1</option>
+								<option value='1'>RecoilDown +1</option>
+								<option value='1'>RecoilDown +1</option>
+								<option value='1'>RecoverySpeed +1</option>
+								<option value='1'>ReloadSpeed +1</option>
+								<option value='1'>SleepResistance +1</option>
+								<option value='1'>SpeedSharpening +1</option>
+								<option value='1'>SpiribirdsCall +1</option>
+								<option value='1'>StaminaThief +1</option>
+								<option value='1'>Steadiness +1</option>
+								<option value='1'>StunResistance +1</option>
+								<option value='1'>TeostraBlessing +1</option>
+								<option value='1'>ThunderAttack +1</option>
+								<option value='1'>ThunderResistance +1</option>
+								<option value='1'>WallRunner(Boost) +1</option>
+								<option value='1'>WaterAttack +1</option>
+								<option value='1'>WaterResistance +1</option>
+								<option value='1'>Windproof +1</option>
+							</select>
 
 						</section>
 					</section>
 
-					<section id="sideDisplay">
 
-						<section id='weaponStats'>
-							<div id='statsTableDiv'>
-								<table>
-									<tbody>
-										<tr>
-											<td>Stat</td>
-											<td>Raw</td>
-											<td>Ele Pierce</td>
-										</tr>
-										<tr>
-											<td>Base</td>
-											<td>290</td>
-											<td>110</td>
-										</tr>
-										<tr>
-											<td>True</td>
-											<td>401</td>
-											<td>110</td>
-										</tr>
-										<tr>
-											<td>eTrue</td>
-											<td>501</td>
-											<td>110</td>
-										</tr>
-										<tr>
-											<td>EFR/EFE</td>
-											<td>451</td>
-											<td>110</td>
-										</tr>
-										<tr>
-											<td>Critical</td>
-											<td>1.125</td>
-											<td>1.00</td>
-										</tr>
-										<tr>
-											<td>Affinity</td>
-											<td>50</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</section>
-						<div id='EquipedSkillDisplay'><output>AffinitySliding: 1<br>CriticalEye:
-								4<br>DivineBlessing:
-								3<br>Heroics: 1<br>Resuscitate: 2<br>WallRunner: 3<br>WirebugWhisperer:
-								3<br></output></div>
-					</section>
-				</div>
-				<h2>Weapon Selection</h2>
-
-
-				<!-- 						<input 
+					<!-- 						<input 
 							id='taWikiSetBuilder'
 							contenteditable='true'
 							placeholder='Paste TA Wiki Set Builder Link Here'
 						/> -->
 
-				<div class='augInvis' id='boxes'>
-					<h2>Consumables / Other <button type='button' class='close'
-							onclick='document.getElementById("boxes").classList.add("augInvis")'>X</button></h2>
-					<label for='DemonDrug' class='check'>DemonDrug<input type='checkbox' id='DemonDrug'
-							value='{"BRM":1,"BR":5,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' class='check skillButton'
-							title='DemonDrug'></label>
-					<label for='PowerTalisman' class='check'>PowerTalisman<input type='checkbox' id='PowerTalisman'
-							value='{"BRM":1,"BR":8,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' checked='true'
-							class='check skillButton' title='PowerTalisman'></label>
-					<label for='powerDrum' class='check'>Power Drum<input type='checkbox' id='powerDrum' checked='true'
-							value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' class='check skillButton'
-							title='powerDrum'></label>
-					<label for='DemonAmmo' class='check'>Demon Ammo<input type='checkbox' id='DemonAmmo'
-							value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' class='check skillButton'
-							title='DemonAmmo'></label>
-					<label for='MegaDemonDrug' class='check'>Mega DemonDrug<input type='checkbox' id='MegaDemonDrug'
-							value='{"BRM":1,"BR":7,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' checked='true'
-							class='check skillButton' title='MegaDemonDrug'></label>
-					<label for='palicoaff' class='check'>Palico Affinity<input type='checkbox' id='palicoaff'
-							checked='true' value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":30}'
-							class='check skillButton' title='palicoaff'></label>
-					<label for='PowerCharm' class='check'>PowerCharm<input type='checkbox' id='PowerCharm'
-							checked='true' value='{"BRM":1,"BR":7,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
-							class='check skillButton' title='PowerCharm'></label>
-					<label for='HuntingHornAttack' class='check'>HuntingHorn Attack<input type='checkbox'
-							id='HuntingHornAttack' value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
-							class='check skillButton' title='HuntingHornAttack'></label>
-					<label for='sleepWakeUp' class='check'>Sleep Wake Up<input type='checkbox' id='sleepWakeUp'
-							value='{"BRM":1,"BR":0,"PRM":2,"BEM":1,"BE":0,"PEM":2,"aff":0}' class='check skillButton'
-							title='sleepWakeUp'></label>
-					<label for='Demon Powder' class='check'>Demon Powder<input type='checkbox' id='Demon Powder'
-							value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' checked='true'
-							class='check skillButton' title='Demon Powder'></label>
-					<label for='ProtectivePolish' class='check'>Protective Polish<input type='checkbox'
-							id='ProtectivePolish' class='check' title='ProtectivePolish'></label>
-					<label for='HuntingHornElemental' class='check'>HuntingHorn Element<input type='checkbox'
-							value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}' id='HuntingHornElemental'
-							class='check skillButton' title='HuntingHornElemental'></label>
-					<label for='DemonSeed' class='check'>DemonSeed<input type='checkbox' id='DemonSeed' checked='true'
-							value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' class='check skillButton'
-							title='DemonSeed'></label>
-					<label for='ButterFlame' class='check'>ButterFlame<input type='checkbox' id='ButterFlame'
-							value='{"BRM":1,"BR":25,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' checked='true'
-							class='check skillButton' title='ButterFlame'></label>
-					<label for='HuntingHornAffinity' class='check'>Hunting Horn Affinity<input type='checkbox'
-							value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}' id='HuntingHornAffinity'
-							class='check skillButton' title='HuntingHornAffinity'></label>
-					<label for='WaterBlight' class='check'>Water Blight<input type='checkbox' id='WaterBlight'
-							value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' class='check'
-							title='WaterBlight'></label>
+					<div class='augInvis' id='boxes'>
+						<h2>Consumables / Other <button type='button' class='boxes close'>X</button></h2>
+						<label for='DemonDrug' class='check'>DemonDrug<input type='checkbox' id='DemonDrug'
+								value='{"BRM":1,"BR":5,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
+								class='check skillButton' title='DemonDrug'></label>
+						<label for='PowerTalisman' class='check'>PowerTalisman<input type='checkbox' id='PowerTalisman'
+								value='{"BRM":1,"BR":8,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' checked='true'
+								class='check skillButton' title='PowerTalisman'></label>
+						<label for='powerDrum' class='check'>Power Drum<input type='checkbox' id='powerDrum'
+								checked='true' value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
+								class='check skillButton' title='powerDrum'></label>
+						<label for='DemonAmmo' class='check'>Demon Ammo<input type='checkbox' id='DemonAmmo'
+								value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
+								class='check skillButton' title='DemonAmmo'></label>
+						<label for='MegaDemonDrug' class='check'>Mega DemonDrug<input type='checkbox' id='MegaDemonDrug'
+								value='{"BRM":1,"BR":7,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' checked='true'
+								class='check skillButton' title='MegaDemonDrug'></label>
+						<label for='palicoaff' class='check'>Palico Affinity<input type='checkbox' id='palicoaff'
+								checked='true' value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":30}'
+								class='check skillButton' title='palicoaff'></label>
+						<label for='PowerCharm' class='check'>PowerCharm<input type='checkbox' id='PowerCharm'
+								checked='true' value='{"BRM":1,"BR":7,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
+								class='check skillButton' title='PowerCharm'></label>
+						<label for='HuntingHornAttack' class='check'>HuntingHorn Attack<input type='checkbox'
+								id='HuntingHornAttack' value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
+								class='check skillButton' title='HuntingHornAttack'></label>
+						<label for='sleepWakeUp' class='check'>Sleep Wake Up<input type='checkbox' id='sleepWakeUp'
+								value='{"BRM":1,"BR":0,"PRM":2,"BEM":1,"BE":0,"PEM":2,"aff":0}'
+								class='check skillButton' title='sleepWakeUp'></label>
+						<label for='Demon Powder' class='check'>Demon Powder<input type='checkbox' id='Demon Powder'
+								value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' checked='true'
+								class='check skillButton' title='Demon Powder'></label>
+						<label for='ProtectivePolish' class='check'>Protective Polish<input type='checkbox'
+								id='ProtectivePolish' class='check' title='ProtectivePolish'></label>
+						<label for='HuntingHornElemental' class='check'>HuntingHorn Element<input type='checkbox'
+								value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'
+								id='HuntingHornElemental' class='check skillButton'
+								title='HuntingHornElemental'></label>
+						<label for='DemonSeed' class='check'>DemonSeed<input type='checkbox' id='DemonSeed'
+								checked='true' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
+								class='check skillButton' title='DemonSeed'></label>
+						<label for='ButterFlame' class='check'>ButterFlame<input type='checkbox' id='ButterFlame'
+								value='{"BRM":1,"BR":25,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' checked='true'
+								class='check skillButton' title='ButterFlame'></label>
+						<label for='HuntingHornAffinity' class='check'>Hunting Horn Affinity<input type='checkbox'
+								value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'
+								id='HuntingHornAffinity' class='check skillButton' title='HuntingHornAffinity'></label>
+						<label for='WaterBlight' class='check'>Water Blight<input type='checkbox' id='WaterBlight'
+								value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' class='check'
+								title='WaterBlight'></label>
+					</div>
+					<div class='buildSkills augInvis LightBowGun' id='dango'>
+						<h3 class='is-size-4'>Dango Skills <button type='button' class='dango close'
+								>X</button></h3>
+						<div class='dropContainer'>
+							<label for='Booster'>Booster</label><select class='skill' id='Booster' title='Booster'>
+								<option>----</option>
+								<option></option>
+								<option></option>
+								<option></option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer'>
+							<label for='Bombardier'>Bombardier</label><select id='Bombardier' title='Bombardier'
+								class='skill classSpecific ChargeBlade HeavyBowGun LightBowGun Gunlance'>
+								<option>----</option>
+								<option></option>
+								<option></option>
+								<option></option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer'>
+							<label class='thisWidth' for='Adrenaline'>Adrenaline</label><select class='skill'
+								id='Adrenaline' title='Adrenaline'>
+								<option>----</option>
+								<option>Lv-1</option>
+								<option>Lv-2</option>
+								<option>Lv-3</option>
+								<option>Lv-4</option>
+							</select>
+						</div>
+						<div class='dropContainer'>
+							<label for='DangoTemper'>Temper</label><select id='DangoTemper' title='Dango Temper'
+								class='skill classSpecific LightBowGun HeavyBowGun Bow'>
+								<option>----</option>
+								<option></option>
+								<option></option>
+								<option></option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer'>
+							<label for='Marksman'>Marksman</label><select id='Marksman' title='Marksman'
+								class='skill classSpecific LightBowGun HeavyBowGun Bow'>
+								<option value='[1,1]'>---</option>
+								<option value='[1.05,1.015]'>Lv-1</option>
+								<option value='[1.1,1.03]'>Lv-2</option>
+								<option value='[1.05,1.045]'>Lv-3</option>
+								<option value='[1.1,1.06]'>Lv-4</option>
+							</select>
+						</div>
+					</div>
+					<div class='buildSkills augInvis LightBowGun' id='unique'>
+						<button type='button' class='unique close'>X</button>
+						<h3 id='weaponId'>LightBowGun</h3>
+						<div class='dropContainer' style='display: none;'>
+							<label for='Kinsect Buff'>Kinsect Buff</label><select id='KinsectBuff' title='Kinsect Buff'
+								class='skill classSpecific InsectGlaive'>
+								<option>----</option>
+								<option></option>
+								<option></option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='SpiritGauge'>Spirit Gauge</label><select id='SpiritGauge' title='SpiritGauge'
+								class='skill classSpecific LongSword'>
+								<option>----</option>
+								<option></option>
+								<option></option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='Helmbreaker'>HelmBreaker</label><select id='Helmbreaker' title='LongSword'
+								class='skill classSpecific LongSword'>
+								<option>----</option>
+								<option></option>
+								<option></option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='SerenePose'>Serene Pose</label><select id='SerenePose' title='LongSword'
+								class='skill classSpecific LongSword'>
+								<option>----</option>
+								<option></option>
+								<option></option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='savageAxe'>Savage Axe</label><select id='savageAxe' title='Savage Axe'
+								class='skill classSpecific ChargeBlade'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='impShieldCharge'>Shield Charge</label><select id='impShieldCharge'
+								title='impShieldCharge' class='skill classSpecific ChargeBlade'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='StrongarmStance'>Strongarm Stance</label><select id='StrongarmStance'
+								title='StrongarmStance' class='skill classSpecific GreatSword'>
+								<option>----</option>
+								<option>Active</option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='PowerSheath'>Power Sheath</label><select id='PowerSheath' title='PowerSheath'
+								class='skill classSpecific GreatSword'>
+								<option>----</option>
+								<option>Active</option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='ArchdemonMode'>Archdemon Mode</label><select id='ArchdemonMode'
+								title='ArchdemonMode' class='skill classSpecific DualBlades demon'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='DemonMode'>Demon Mode</label><select id='DemonMode' title='DemonMode'
+								class='skill classSpecific DualBlades demon'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='FeralDemonMode'>Feral Demon Mode</label><select id='FeralDemonMode'
+								title='FeralDemonMode' class='skill classSpecific DualBlades demon'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='eleShieldCharge'>Shield Charge Ele</label><select id='eleShieldCharge'
+								title='eleShieldCharge' class='skill classSpecific ChargeBlade'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer'>
+							<label for='evadeHop'>Evade Hop</label><select id='evadeHop' title='Evade Hop'
+								class='skill classSpecific LightBowGun'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='HerculesDraw'>Hercules Draw</label><select id='HerculesDraw'
+								title='HerculesDraw' class='skill classSpecific Bow'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='UpperCrit'>Upper Critical Distance</label><select id='UpperCrit'
+								title='Upper Crit' class='skill classSpecific Bow'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer'>
+							<label for='fanningManeuver'>Fanning Maneuver</label><select id='fanningManeuver'
+								title='Fanning Maneuver' class='skill classSpecific LightBowGun'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer'>
+							<label for='ElementalReload'>Ele Reload</label><select id='ElementalReload'
+								title='ElementalReload' class='skill classSpecific LightBowGun'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer'>
+							<label for='CriticalFirePower'>Crit Fire Power</label><select id='CriticalFirePower'
+								title='CriticalFirePower' class='skill classSpecific LightBowGun'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='ChargeLevel'>Charge Level</label><select id='ChargeLevel' title='ChargeLevel'
+								class='skill classSpecific HeavyBowGun'>
+								<option>----</option>
+								<option></option>
+								<option></option>
+								<option></option>
+							</select>
+						</div>
+						<div class='dropContainer' style='display: none;'>
+							<label for='LanceCharge'>Lance Charge</label><select id='LanceCharge' title='LanceCharge'
+								class='skill classSpecific Lance'>
+								<option>----</option>
+								<option></option>
+							</select>
+						</div>
+					</div>
 				</div>
-				<div class='buildSkills augInvis LightBowGun' id='dango'>
-					<h3 class='is-size-4'>Dango Skills <button type='button' class='close'
-							onclick='document.getElementById("dango").classList.add("augInvis")'>X</button></h3>
-					<div class='dropContainer'>
-						<label for='Booster'>Booster</label><select class='skill' id='Booster' title='Booster'>
-							<option>----</option>
-							<option></option>
-							<option></option>
-							<option></option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer'>
-						<label for='Bombardier'>Bombardier</label><select id='Bombardier' title='Bombardier'
-							class='skill classSpecific ChargeBlade HeavyBowGun LightBowGun Gunlance'>
-							<option>----</option>
-							<option></option>
-							<option></option>
-							<option></option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer'>
-						<label class='thisWidth' for='Adrenaline'>Adrenaline</label><select class='skill'
-							id='Adrenaline' title='Adrenaline'>
-							<option>----</option>
-							<option>Lv-1</option>
-							<option>Lv-2</option>
-							<option>Lv-3</option>
-							<option>Lv-4</option>
-						</select>
-					</div>
-					<div class='dropContainer'>
-						<label for='DangoTemper'>Temper</label><select id='DangoTemper' title='Dango Temper'
-							class='skill classSpecific LightBowGun HeavyBowGun Bow'>
-							<option>----</option>
-							<option></option>
-							<option></option>
-							<option></option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer'>
-						<label for='Marksman'>Marksman</label><select id='Marksman' title='Marksman'
-							class='skill classSpecific LightBowGun HeavyBowGun Bow'>
-							<option value='[1,1]'>---</option>
-							<option value='[1.05,1.015]'>Lv-1</option>
-							<option value='[1.1,1.03]'>Lv-2</option>
-							<option value='[1.05,1.045]'>Lv-3</option>
-							<option value='[1.1,1.06]'>Lv-4</option>
-						</select>
-					</div>
-				</div>
-				<div class='buildSkills augInvis LightBowGun' id='unique'>
-					<button type='button' class='close'
-						onclick='document.getElementById("unique").classList.add("augInvis")'>X</button>
-					<h3 id='weaponId'>LightBowGun</h3>
-					<div class='dropContainer' style='display: none;'>
-						<label for='Kinsect Buff'>Kinsect Buff</label><select id='KinsectBuff' title='Kinsect Buff'
-							class='skill classSpecific InsectGlaive'>
-							<option>----</option>
-							<option></option>
-							<option></option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='SpiritGauge'>Spirit Gauge</label><select id='SpiritGauge' title='SpiritGauge'
-							class='skill classSpecific LongSword'>
-							<option>----</option>
-							<option></option>
-							<option></option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='Helmbreaker'>HelmBreaker</label><select id='Helmbreaker' title='LongSword'
-							class='skill classSpecific LongSword'>
-							<option>----</option>
-							<option></option>
-							<option></option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='SerenePose'>Serene Pose</label><select id='SerenePose' title='LongSword'
-							class='skill classSpecific LongSword'>
-							<option>----</option>
-							<option></option>
-							<option></option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='savageAxe'>Savage Axe</label><select id='savageAxe' title='Savage Axe'
-							class='skill classSpecific ChargeBlade'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='impShieldCharge'>Shield Charge</label><select id='impShieldCharge'
-							title='impShieldCharge' class='skill classSpecific ChargeBlade'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='StrongarmStance'>Strongarm Stance</label><select id='StrongarmStance'
-							title='StrongarmStance' class='skill classSpecific GreatSword'>
-							<option>----</option>
-							<option>Active</option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='PowerSheath'>Power Sheath</label><select id='PowerSheath' title='PowerSheath'
-							class='skill classSpecific GreatSword'>
-							<option>----</option>
-							<option>Active</option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='ArchdemonMode'>Archdemon Mode</label><select id='ArchdemonMode'
-							title='ArchdemonMode' class='skill classSpecific DualBlades demon'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='DemonMode'>Demon Mode</label><select id='DemonMode' title='DemonMode'
-							class='skill classSpecific DualBlades demon'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='FeralDemonMode'>Feral Demon Mode</label><select id='FeralDemonMode'
-							title='FeralDemonMode' class='skill classSpecific DualBlades demon'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='eleShieldCharge'>Shield Charge Ele</label><select id='eleShieldCharge'
-							title='eleShieldCharge' class='skill classSpecific ChargeBlade'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer'>
-						<label for='evadeHop'>Evade Hop</label><select id='evadeHop' title='Evade Hop'
-							class='skill classSpecific LightBowGun'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='HerculesDraw'>Hercules Draw</label><select id='HerculesDraw' title='HerculesDraw'
-							class='skill classSpecific Bow'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='UpperCrit'>Upper Critical Distance</label><select id='UpperCrit' title='Upper Crit'
-							class='skill classSpecific Bow'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer'>
-						<label for='fanningManeuver'>Fanning Maneuver</label><select id='fanningManeuver'
-							title='Fanning Maneuver' class='skill classSpecific LightBowGun'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer'>
-						<label for='ElementalReload'>Ele Reload</label><select id='ElementalReload'
-							title='ElementalReload' class='skill classSpecific LightBowGun'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer'>
-						<label for='CriticalFirePower'>Crit Fire Power</label><select id='CriticalFirePower'
-							title='CriticalFirePower' class='skill classSpecific LightBowGun'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='ChargeLevel'>Charge Level</label><select id='ChargeLevel' title='ChargeLevel'
-							class='skill classSpecific HeavyBowGun'>
-							<option>----</option>
-							<option></option>
-							<option></option>
-							<option></option>
-						</select>
-					</div>
-					<div class='dropContainer' style='display: none;'>
-						<label for='LanceCharge'>Lance Charge</label><select id='LanceCharge' title='LanceCharge'
-							class='skill classSpecific Lance'>
-							<option>----</option>
-							<option></option>
-						</select>
-					</div>
-				</div>
+
 				<div id='setSearcher'>
 					<h2>Set Search</h2>
 					<div id='skillSelect' class='dropContainer'>
