@@ -132,7 +132,8 @@
 								id='otherButton' class='check' title='otherButton'></label>
 						<label for='uniqueSkillsButton' class='check'>Weapon Specific Buffs<input type='checkbox'
 								id='uniqueSkillsButton' class='check' title='Unique Skills Button'></label>
-
+								<label for='extraCharmDeco' class='check'>Unlock 3ed Charm Slot<input type='checkbox'
+									id='extraCharmDeco' class='check' title='Unlock 3ed Charm Slot'></label>
 
 					</div>
 				</section>
@@ -3377,7 +3378,7 @@
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
 							</select>
-							<img class='armorImg armorDeco lvl1' src='./icons/Lvl2.png'><select class='armorDisplay'>
+							<img  class='armorImg armorDeco lvl1 augInvis charmSlot3' src='./icons/Lvl1.png'><select class='charmSlot3 augInvis'>
 								<option> ---- </option>
 								<option class='optTitle'>Lvl-1 Decos</option>
 								<option value='1'>AffinitySliding +1</option>
@@ -5203,7 +5204,7 @@ LongSword Lance HuntingHorn Gunlance Hammer Bow' id='viewCombo'
 				<div id='setReturn' class='augInvis'>
 					<h2><output id='extraOutput'>Found 0 Builds / 0 Combinations</output>Extra Skills<button
 							type='button' class='close'
-							onclick='document.getElementById("setReturn").classList.add("augInvis")'>X</button></h2>
+							onclick='document.getElementById("setReturn").classList.add("augInvis");    document.getElementById("damage").classList.remove("augInvis");'>X</button></h2>
 					<div class='extraSkills'></div>
 					<h2><output id='setOutput'>Displayed 0 Builds / 0 Combinations</output>Sets
 						<div id='searchAgain'>
