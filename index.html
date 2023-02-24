@@ -5,11 +5,13 @@
 		<meta charset='utf-8'>
 		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 		<meta name='Description'
-			content='The MHR-Sunbreak Set Builder and Damage Calculator is a website that has been created to help you optimize your gameplay. It can answer any optimization questions you may have and help you find the best builds without requiring you to set Charms or Qurious skills. The website's damage table is designed to display the exact amount of damage you can expect to see in-game, allowing you to quickly and easily compare builds.'>
+			content='The MHR-Sunbreak Set Builder and Damage Calculator is a website that has been created to help you optimize your gameplay. It can answer any optimization questions you may have and help you find the best builds without requiring you to set Charms or Qurious skills. The website'
+			s damage table is designed to display the exact amount of damage you can expect to see in-game, allowing you
+			to quickly and easily compare builds.'>
 		<meta title='keywords'
 			content='MHR, MHRS, Rise Database, Monster Hunter, Sunbreak, Set Searcher, Set Builder, Sunbreak Database, Damage, Optimization, Calculations'>
 		<meta http-equiv='X-UA-Compatible' content='ie=edge'>
-		<!-- <script defer='' src='./backup.js'></script> -->
+		<!-- <script defer='' src='./backup.js'></script>  -->
 		<script defer='' src='./ugly/index.js'></script>
 		<link rel='preload' href='./icons/ramp2.png' as='image'>
 		<link rel='preload' href='./icons/Lvl1.png' as='image'>
@@ -50,104 +52,120 @@
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRH4G56" height="0" width="0"
 				style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
-
 		<h1 class='title'>Stone's Sunbreak Set Searcher and Damage Optimizer</h1>
 		<!-- <div class='title'> -->
 		<!-- <div id='discord' style='grid-area:1/1/1/-1; display:grid; justify-content:start; align-content:center; align-items:center'> -->
 		<!-- <a href='https://discord.gg/HhrKVzGftW'><img src='OIP.webp' /></a> -->
 		<!-- </div> -->
 		<!-- </div> -->
+
 		<div id='containAll' class='columns container'>
+
 			<section id='section1' class='container'>
 				<h2>Weapon Selection</h2>
 
 				<div id='setBuilder'>
+
 					<section id="sideDisplay">
+
 						<div>
-						<section id='weaponStats'>
-							<div id='statsTableDiv'>
-								<table>
-									<tbody>
-										<tr>
-											<td>Stat</td>
-											<td>Raw</td>
-											<td>Ele Pierce</td>
-										</tr>
-										<tr>
-											<td>Base</td>
-											<td>290</td>
-											<td>110</td>
-										</tr>
-										<tr>
-											<td>True</td>
-											<td>401</td>
-											<td>110</td>
-										</tr>
-										<tr>
-											<td>eTrue</td>
-											<td>501</td>
-											<td>110</td>
-										</tr>
-										<tr>
-											<td>EFR/EFE</td>
-											<td>451</td>
-											<td>110</td>
-										</tr>
-										<tr>
-											<td>Critical</td>
-											<td>1.125</td>
-											<td>1.00</td>
-										</tr>
-										<tr>
-											<td>Affinity</td>
-											<td>50</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</section>
-						<div id='EquipedSkillDisplay'><output>AffinitySliding: 1<br>CriticalEye:
-								4<br>DivineBlessing:
-								3<br>Heroics: 1<br>Resuscitate: 2<br>WallRunner: 3<br>WirebugWhisperer:
-								3<br></output></div>
-</div>
-					<div id='extraMenus'>
-						<div id='scrollSwap'>
-						
-								<img class='scroll vis' id='redScroll' src='./red.webp' alt='Red Scroll Active'>
-								<img class='scroll invis' id='redNon' src='./rednon.webp' alt='Red Scroll Not Active'>
-								<button type='button' class='scroll invis' for='redNon'>Red Scroll</button>
-							
-							
-								<button type='button' for='blueNon' class='scroll vis'>Blue Scroll</button>
-								<img class='scroll invis' id='blueScroll' src='./blue.webp' alt='Blue Scroll Active'>
-								<img class='scroll vis' id='blueNon' src='./bluenon.webp' alt='Blue Scroll Not Active'>
-						
+
+							<section id='weaponStats'>
+
+								<div id='statsTableDiv'>
+									<table>
+										<tbody>
+											<tr>
+												<td>Stat</td>
+												<td>Raw</td>
+												<td>Ele Pierce</td>
+											</tr>
+											<tr>
+												<td>Base</td>
+												<td>290</td>
+												<td>110</td>
+											</tr>
+											<tr>
+												<td>True</td>
+												<td>401</td>
+												<td>110</td>
+											</tr>
+											<tr>
+												<td>eTrue</td>
+												<td>501</td>
+												<td>110</td>
+											</tr>
+											<tr>
+												<td>EFR/EFE</td>
+												<td>451</td>
+												<td>110</td>
+											</tr>
+											<tr>
+												<td>Critical</td>
+												<td>1.125</td>
+												<td>1.00</td>
+											</tr>
+											<tr>
+												<td>Affinity</td>
+												<td>50</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</section>
+
+							<div id='EquipedSkillDisplay'><output>AffinitySliding: 1<br>CriticalEye:
+									4<br>DivineBlessing: 3<br>Heroics: 1<br>Resuscitate: 2<br>WallRunner:
+									3<br>WirebugWhisperer: 3<br></output></div>
 						</div>
-						<label for='quriousButton' class='check'>Qurious Skills<input type='checkbox' id='quriousButton'
-								class='check' title='quriousButton'></label>
-						<label for='dangoSkillsButton' class='check'>Dango Skills<input type='checkbox'
-								id='dangoSkillsButton' class='check' title='Dango Skills Menu Button'></label>
-						<label for='otherButton' class='check'>Consumables/Other Buffs<input type='checkbox'
-								id='otherButton' class='check' title='otherButton'></label>
-						<label for='uniqueSkillsButton' class='check'>Weapon Specific Buffs<input type='checkbox'
-								id='uniqueSkillsButton' class='check' title='Unique Skills Button'></label>
-								<label for='extraCharmDeco' class='check'>Unlock 3ed Charm Slot<input type='checkbox'
-									id='extraCharmDeco' class='check' title='Unlock 3ed Charm Slot'></label>
 
-					</div>
-				</section>
+						<div id='extraMenus'>
 
+							<div id='scrollSwap'>
 
-					<section class='weapon armorDisplay' id='weaponSelects'><img class='armorImg' alt='icons gs'
-							src='./icons/gs.png'>
+								<img class='scroll vis' id='redScroll' src='./red.webp' alt='Red Scroll Active'>
+
+								<img class='scroll invis' id='redNon' src='./rednon.webp' alt='Red Scroll Not Active'>
+
+								<button type='button' class='scroll invis' for='redNon'>Red Scroll</button>
+
+								<button type='button' for='blueNon' class='scroll vis'>Blue Scroll</button>
+
+								<img class='scroll invis' id='blueScroll' src='./blue.webp' alt='Blue Scroll Active'>
+
+								<img class='scroll vis' id='blueNon' src='./bluenon.webp' alt='Blue Scroll Not Active'>
+							</div>
+							<label for='quriousButton' class='check'>Qurious Skills
+
+								<input type='checkbox' id='quriousButton' class='check' title='quriousButton'></label>
+							<label for='dangoSkillsButton' class='check'>Dango Skills
+
+								<input type='checkbox' id='dangoSkillsButton' class='check'
+									title='Dango Skills Menu Button'></label>
+							<label for='otherButton' class='check'>Consumables/Other Buffs
+
+								<input type='checkbox' id='otherButton' class='check' title='otherButton'></label>
+							<label for='uniqueSkillsButton' class='check'>Weapon Specific Buffs
+
+								<input type='checkbox' id='uniqueSkillsButton' class='check'
+									title='Unique Skills Button'></label>
+							<label for='extraCharmDeco' class='check'>Remove 3ed Charm Slot
+
+								<input type='checkbox' id='extraCharmDeco' class='check'
+									title='Unlock 3ed Charm Slot'></label>
+						</div>
+					</section>
+
+					<section class='weapon armorDisplay' id='weaponSelects'>
+
+						<img class='armorImg' alt='icons gs' src='./icons/gs.png'>
 						<h6>Weapon</h6>
+
 						<button type='button' id='weaponFilter' aria-pressed='true' class='click blue'>Filter</button>
+
 						<div class='dropContainer'>
 							<label for='dropWeaponType'>Weapon Type</label><select id='dropWeaponType'
 								title='weaponTypeSelection'>
-
-
 								<option value='LightBowGun'>LightBowGun</option>
 								<option value='GreatSword'>GreatSword</option>
 								<option value='ChargeBlade'>ChargeBlade</option>
@@ -164,6 +182,7 @@
 								<option value='Hammer'>Hammer</option>
 							</select>
 						</div>
+
 						<section>
 							<!-- <img class='armorImg' alt='icons gs' src='./icons/gs.png'> -->
 							<select id='dropWeapon' class='hitsOfSharp skillinput' title='weaponSelection'>
@@ -276,51 +295,38 @@
 							</select>
 						</section>
 
-
 						<div style='display: none;'>
 							<label for='BowCoating'>Bow Coatings</label><select id='BowCoating'
 								class='Bow classSpecific skill' title='Bow Coatings'>
-								<option value='{"BRM": 1,"BR": 0,"PRM": 1,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>
-									---
+								<option value='{"BRM": 1,"BR": 0,"PRM": 1,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'> ---
 								</option>
-								<option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM":1,"aff":0}'>
-									Close
+								<option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM":1,"aff":0}'> Close
 								</option>
-								<option value='{"BRM": 1,"BR": 0,"PRM": 1.35,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'>
-									Power
+								<option value='{"BRM": 1,"BR": 0,"PRM": 1.35,"BEM": 1,"BE": 0,"PEM": 1,"aff":0}'> Power
 								</option>
-								<option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 0,"aff":0}'>
-									Status
+								<option value='{"BRM": 1,"BR": 0,"PRM": 1.2,"BEM": 1,"BE": 0,"PEM": 0,"aff":0}'> Status
 								</option>
 							</select>
 						</div>
+
 						<div id='BowGunId' class='dropContainer'>
 							<label for='BowgunBarrel'>Gunner Barrel</label><select
 								class='LightBowGun HeavyBowGun classSpecific skill' id='BowgunBarrel'
 								title='BarrelSelection'>
-								<option value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'>
-									----
-								</option>
-								<option value='{"Element":1,"Power":1.05,"Silencer":0,"reload":0}'>
-									Long
-								</option>
-								<option value='{"Element":1,"Power":1.125,"Silencer":0,"reload":0}'>
-									Power
-								</option>
-								<option value='{"Element":1,"Power":1,"Silencer":1,"reload":0}'>
-									Silencer
-								</option>
-								<option value='{"Element":1.1,"Power":1,"Silencer":0,"reload":-2}'>
-									Guard-Up
-								</option>
+								<option value='{"Element":1,"Power":1,"Silencer":0,"reload":0}'> ---- </option>
+								<option value='{"Element":1,"Power":1.05,"Silencer":0,"reload":0}'> Long </option>
+								<option value='{"Element":1,"Power":1.125,"Silencer":0,"reload":0}'> Power </option>
+								<option value='{"Element":1,"Power":1,"Silencer":1,"reload":0}'> Silencer </option>
+								<option value='{"Element":1.1,"Power":1,"Silencer":0,"reload":-2}'> Guard-Up </option>
 							</select>
 						</div>
+
 						<section class='rampage'>
+
 							<img id='rampImg' class='armorImg' src='./icons/ramp2.png' alt=''>
+
 							<section id='weaponRampage'>
 								<select class='skillhitsOfSharp' id='weaponRampage0' title='weaponRampage0'>
-
-
 									<option value='Brutal Strike'>Brutal Strike</option>
 									<option value='Defense Grinder I'>Defense Grinder I</option>
 									<option value='Maximum Volume'>Maximum Volume</option>
@@ -350,8 +356,10 @@
 								<select id='weaponRampage5' title='weaponRampage5' style='display: none;'></select>
 							</section>
 						</section>
-						<section class='decoDisplay' id='weaponDecos'><img class='armorImg armorDeco lvl4'
-								src='./icons/Lvl4.png'><select class='armorDisplay'>
+
+						<section class='decoDisplay' id='weaponDecos'>
+
+							<img class='armorImg armorDeco lvl4' src='./icons/Lvl4.png'><select class='armorDisplay'>
 								<option> ---- </option>
 								<option class='optTitle'>Lvl-4 Decos</option>
 								<option value='4'>FireResistance +3</option>
@@ -588,8 +596,9 @@
 								<option value='1'>TeostraBlessing +1</option>
 								<option value='1'>KushalaBlessing +1</option>
 								<option value='1'>IntrepidHeart +1</option>
-							</select><img class='armorImg armorDeco lvl1' src='./icons/Lvl1.png'><select
-								class='armorDisplay'>
+							</select>
+
+							<img class='armorImg armorDeco lvl1' src='./icons/Lvl1.png'><select class='armorDisplay'>
 								<option> ---- </option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-4 Decos</option>
 								<option value='4' disabled='' style='display: none;'>FireResistance +3</option>
@@ -826,63 +835,68 @@
 								<option value='1'>TeostraBlessing +1</option>
 								<option value='1'>KushalaBlessing +1</option>
 								<option value='1'>IntrepidHeart +1</option>
-							</select></section>
+							</select>
+						</section>
+
 						<div id='augToggle' class='armorAugment augInvis'>
 							<output id='weaponQurious' value="9">Remaining Augments 9/9</output>
+
 							<div class='augDiv'>
+
 								<button value='2' type='button' aria-pressed='false'
-									class='attackAug augButton button dec'>
-									⇩
-								</button>
-								<button value='2' aria-pressed='false' class='attackAug augButton inc'>
-									⇧
-								</button>
+									class='attackAug augButton button dec'> ⇩ </button>
+
+								<button value='2' aria-pressed='false' class='attackAug augButton inc'> ⇧ </button>
 								<label for='attackAug' class=''>Attack Boost</label>
 								<output class='attackAug augLabel label'>0</output>
 								<output id='attackResult' class='label'>+ 0</output>
 							</div>
+
 							<div class='augDiv' style='display: none;'>
+
 								<button value='1' type='button' aria-pressed='false' class='elementalAug augButton dec'>
-									⇩
-								</button>
+									⇩ </button>
+
 								<button value='1' type='button' aria-pressed='false' class='elementalAug augButton inc'>
-									⇧
-								</button>
+									⇧ </button>
 								<label for='elementalAug'>Elemental Boost</label>
 								<output class='elementalAug augLabel label classSpecific GreatSword ChargeBlade InsectGlaive 
 									SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer 
 											Bow'>0</output>
 								<output id='elementalResult' class='label'>+ 0</output>
 							</div>
+
 							<div class='augDiv'>
+
 								<button value='3' type='button' aria-pressed='false' class='affinityAug augButton dec'>
-									⇩
-								</button>
+									⇩ </button>
+
 								<button value='3' type='button' aria-pressed='false' class='affinityAug augButton inc'>
-									⇧
-								</button>
+									⇧ </button>
 								<label for='affinityAug'>Affinity Boost</label>
 								<output class='affinityAug augLabel label'>0</output>
 								<output id='affinityResult' class='label'>+ 0</output>
 							</div>
+
 							<div class='augDiv' style='display: none;'>
+
 								<button value='3' type='button' aria-pressed='false' class='sharpnessAug augButton dec'>
-									⇩
-								</button>
+									⇩ </button>
+
 								<button value='3' type='button' aria-pressed='false' class='sharpnessAug augButton inc'>
-									⇧
-								</button>
+									⇧ </button>
 								<label for='sharpnessAug'>Sharpness Boost</label>
 								<output class='sharpnessAug augLabel label classSpecific GreatSword ChargeBlade InsectGlaive 
 				                    SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer'>0</output>
 								<output id='sharpnessResult' class='label'>+0</output>
 							</div>
+
 							<div class='augDiv'>
-								<button value='4' type='button' aria-pressed='false' class='rampageAug augButton dec'>
-									⇩
+
+								<button value='4' type='button' aria-pressed='false' class='rampageAug augButton dec'> ⇩
 								</button>
-								<button value='4' type='button' aria-pressed='false' class='rampageAug augButton inc'>
-									⇧
+
+								<button value='4' type='button' aria-pressed='false' class='rampageAug augButton inc'> ⇧
 								</button>
 								<label for='rampageAug' class=''>Rampage Slot UP</label>
 								<output class='rampageAug augLabel label'>0</output>
@@ -890,131 +904,25 @@
 							</div>
 						</div>
 					</section>
-					<section class='helm armorDisplay'><img class='armorImg' alt='icons helm' src='./icons/helm.png'>
-						<h6>Helm</h6><select id='helm' class='helm armor' title='helm'>
 
-						</select><output id='helmSkills'><img class='armorImg armorDeco rampage'
-								src='./icons/skill.png'><output>DivineBlessing +2</output><img
-								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>Resuscitate
+					<section class='helm armorDisplay'>
+
+						<img class='armorImg' alt='icons helm' src='./icons/helm.png'>
+						<h6>Helm</h6><select id='helm' class='helm armor' title='helm'>
+						</select><output id='helmSkills'>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>DivineBlessing
+								+2</output>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>Resuscitate
 								+1</output></output>
-						<section class='decoDisplay' id='helmDecos'><img class='armorImg armorDeco lvl2'
-								src='./icons/Lvl2.png'><select class='armorDisplay'>
+
+						<section class='decoDisplay' id='helmDecos'>
+
+							<img class='armorImg armorDeco lvl2' src='./icons/Lvl2.png'><select class='armorDisplay'>
 								<option> ---- </option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-4 Decos</option>
-								<option value='4' style='display: none;' disabled=''>Artillery +2</option>
-								<option value='4' style='display: none;' disabled=''>Ballistics +2</option>
-								<option value='4' style='display: none;' disabled=''>BlastAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>BlastResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>BlightResistance +2</option>
-								<option value='4' style='display: none;' disabled=''>Bombardier +3</option>
-								<option value='4' style='display: none;' disabled=''>Botanist +3</option>
-								<option value='4' style='display: none;' disabled=''>BowChargePlus +1</option>
-								<option value='4' style='display: none;' disabled=''>BubblyDance +2</option>
-								<option value='4' style='display: none;' disabled=''>ChargeMaster +2</option>
-								<option value='4' style='display: none;' disabled=''>Coalescence +2</option>
-								<option value='4' style='display: none;' disabled=''>Constitution +2</option>
-								<option value='4' style='display: none;' disabled=''>Counterstrike +2</option>
-								<option value='4' style='display: none;' disabled=''>CriticalDraw +2</option>
-								<option value='4' style='display: none;' disabled=''>CriticalElement +2</option>
-								<option value='4' style='display: none;' disabled=''>DefenseBoost +5</option>
-								<option value='4' style='display: none;' disabled=''>DivineBlessing +2</option>
-								<option value='4' style='display: none;' disabled=''>DragonAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>DragonResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Earplugs +2</option>
-								<option value='4' style='display: none;' disabled=''>EvadeExtender +2</option>
-								<option value='4' style='display: none;' disabled=''>EvadeWindow +2</option>
-								<option value='4' style='display: none;' disabled=''>FireAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>FireResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>FireResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>FlinchFree +3</option>
-								<option value='4' style='display: none;' disabled=''>Focus +2</option>
-								<option value='4' style='display: none;' disabled=''>FreeMeal +3</option>
-								<option value='4' style='display: none;' disabled=''>Geologist +3</option>
-								<option value='4' style='display: none;' disabled=''>GoodLuck +2</option>
-								<option value='4' style='display: none;' disabled=''>Grinder(S) +2</option>
-								<option value='4' style='display: none;' disabled=''>GuardUp +2</option>
-								<option value='4' style='display: none;' disabled=''>Handicraft +2</option>
-								<option value='4' style='display: none;' disabled=''>HellfireCloak +2</option>
-								<option value='4' style='display: none;' disabled=''>HungerResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>IceAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>IceResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>ItemProlonger +3</option>
-								<option value='4' style='display: none;' disabled=''>LatentPower +2</option>
-								<option value='4' style='display: none;' disabled=''>LoadShells +2</option>
-								<option value='4' style='display: none;' disabled=''>MarathonRunner +2</option>
-								<option value='4' style='display: none;' disabled=''>MastersTouch +2</option>
-								<option value='4' style='display: none;' disabled=''>MaximumMight +2</option>
-								<option value='4' style='display: none;' disabled=''>Mind'sEye +2</option>
-								<option value='4' style='display: none;' disabled=''>Mushroomancer +2</option>
-								<option value='4' style='display: none;' disabled=''>NormalRapidUp +2</option>
-								<option value='4' style='display: none;' disabled=''>OffensiveGuard +2</option>
-								<option value='4' style='display: none;' disabled=''>ParalysisAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>ParalysisResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Partbreaker +2</option>
-								<option value='4' style='display: none;' disabled=''>PeakPerformance +2</option>
-								<option value='4' style='display: none;' disabled=''>PierceUp +2</option>
-								<option value='4' style='display: none;' disabled=''>PoisonAttack +3</option>
-								<option value='4' style='display: none;' disabled=''>PoisonResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>PowerProlonger +2</option>
-								<option value='4' style='display: none;' disabled=''>ProtectivePolish +2</option>
-								<option value='4' style='display: none;' disabled=''>PunishingDraw +2</option>
-								<option value='4' style='display: none;' disabled=''>QuickSheathe +2</option>
-								<option value='4' style='display: none;' disabled=''>RapidMorph +2</option>
-								<option value='4' style='display: none;' disabled=''>RazorSharp +2</option>
-								<option value='4' style='display: none;' disabled=''>RecoverySpeed +3</option>
-								<option value='4' style='display: none;' disabled=''>RecoveryUp +2</option>
-								<option value='4' style='display: none;' disabled=''>Redirection +2</option>
-								<option value='4' style='display: none;' disabled=''>Resuscitate +2</option>
-								<option value='4' style='display: none;' disabled=''>SleepAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>SleepResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Slugger +2</option>
-								<option value='4' style='display: none;' disabled=''>SpecialAmmoBoost +2</option>
-								<option value='4' style='display: none;' disabled=''>SpeedEating +2</option>
-								<option value='4' style='display: none;' disabled=''>SpeedSharpening +3</option>
-								<option value='4' style='display: none;' disabled=''>SpreadUp +2</option>
-								<option value='4' style='display: none;' disabled=''>StaminaSurge +2</option>
-								<option value='4' style='display: none;' disabled=''>StaminaThief +3</option>
-								<option value='4' style='display: none;' disabled=''>Steadiness +2</option>
-								<option value='4' style='display: none;' disabled=''>Steadiness +3</option>
-								<option value='4' style='display: none;' disabled=''>StunResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>ThunderAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>ThunderResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>TremorResistance +2</option>
-								<option value='4' style='display: none;' disabled=''>Tune-Up +2</option>
-								<option value='4' style='display: none;' disabled=''>WallRunner +3</option>
-								<option value='4' style='display: none;' disabled=''>WaterAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>WaterResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Wide-Range +4</option>
-								<option value='4' style='display: none;' disabled=''>Windproof +3</option>
-								<option value='4' style='display: none;' disabled=''>WirebugWhisperer +2</option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-3 Decos</option>
-								<option value='3' style='display: none;' disabled=''>AmmoUp +1</option>
-								<option value='3' style='display: none;' disabled=''>BloodRite +1</option>
-								<option value='3' style='display: none;' disabled=''>CriticalDraw +1</option>
-								<option value='3' style='display: none;' disabled=''>DefenseBoost +3</option>
-								<option value='3' style='display: none;' disabled=''>DragonAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Earplugs +1</option>
-								<option value='3' style='display: none;' disabled=''>FireAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>GoodLuck +1</option>
-								<option value='3' style='display: none;' disabled=''>Grinder(S) +1</option>
-								<option value='3' style='display: none;' disabled=''>Guard +2</option>
-								<option value='3' style='display: none;' disabled=''>Handicraft +1</option>
-								<option value='3' style='display: none;' disabled=''>Handicraft +1</option>
-								<option value='3' style='display: none;' disabled=''>HellfireCloak +1</option>
-								<option value='3' style='display: none;' disabled=''>IceAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>JumpMaster +1</option>
-								<option value='3' style='display: none;' disabled=''>Mushroomancer +1</option>
-								<option value='3' style='display: none;' disabled=''>NormalRapidUp +1</option>
-								<option value='3' style='display: none;' disabled=''>OffensiveGuard +1</option>
-								<option value='3' style='display: none;' disabled=''>PierceUp +1</option>
-								<option value='3' style='display: none;' disabled=''>QuickBreath +1</option>
-								<option value='3' style='display: none;' disabled=''>RapidFireUp +1</option>
-								<option value='3' style='display: none;' disabled=''>Redirection +1</option>
-								<option value='3' style='display: none;' disabled=''>SpreadUp +1</option>
-								<option value='3' style='display: none;' disabled=''>ThunderAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Tune-Up +1</option>
-								<option value='3' style='display: none;' disabled=''>WaterAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Wide-Range +3</option>
 								<option class='optTitle'>Lvl-2 Decos</option>
 								<option value='2'>AdrenalineRush +1</option>
 								<option value='2'>Agitator +1</option>
@@ -1127,7 +1035,9 @@
 								<option value='1'>WaterAttack +1</option>
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
-							</select></section>
+							</select>
+						</section>
+
 						<section class='armorAugment augInvis' id='helmQurious'><output class='currentPoints'>Remaining
 								Points 20/20</output><select class='augmentType'>
 								<option>----</option>
@@ -1167,7 +1077,10 @@
 								<option>+Skill</option>
 							</select><select class='augment'></select></section>
 					</section>
-					<section class='chest armorDisplay'><img class='armorImg' alt='icons chest' src='./icons/chest.png'>
+
+					<section class='chest armorDisplay'>
+
+						<img class='armorImg' alt='icons chest' src='./icons/chest.png'>
 						<h6>Chest</h6><select id='chest' class='chest armor' title='chest'>
 							<option value='0'>Kamura Legacy Garb</option>
 							<option value='1'>Leather Vest X</option>
@@ -1315,198 +1228,24 @@
 							<option value='143'>Risen Kaiser Mail</option>
 							<option value='144'>Chaotic Mail</option>
 							<option value='145'>Nephilim Mail</option>
-						</select><output id='chestSkills'><img class='armorImg armorDeco rampage'
-								src='./icons/skill.png'><output>WirebugWhisperer +2</output><img
-								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>WallRunner
-								+1</output><img class='armorImg armorDeco rampage'
-								src='./icons/skill.png'><output>CriticalEye
+						</select><output id='chestSkills'>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>WirebugWhisperer
+								+2</output>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>WallRunner
+								+1</output>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>CriticalEye
 								+1</output></output>
-						<section class='decoDisplay' id='chestDecos'><img class='armorImg armorDeco lvl1'
-								src='./icons/Lvl1.png'><select class='armorDisplay'>
+
+						<section class='decoDisplay' id='chestDecos'>
+
+							<img class='armorImg armorDeco lvl1' src='./icons/Lvl1.png'><select class='armorDisplay'>
 								<option> ---- </option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-4 Decos</option>
-								<option value='4' style='display: none;' disabled=''>Artillery +2</option>
-								<option value='4' style='display: none;' disabled=''>Ballistics +2</option>
-								<option value='4' style='display: none;' disabled=''>BlastAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>BlastResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>BlightResistance +2</option>
-								<option value='4' style='display: none;' disabled=''>Bombardier +3</option>
-								<option value='4' style='display: none;' disabled=''>Botanist +3</option>
-								<option value='4' style='display: none;' disabled=''>BowChargePlus +1</option>
-								<option value='4' style='display: none;' disabled=''>BubblyDance +2</option>
-								<option value='4' style='display: none;' disabled=''>ChargeMaster +2</option>
-								<option value='4' style='display: none;' disabled=''>Coalescence +2</option>
-								<option value='4' style='display: none;' disabled=''>Constitution +2</option>
-								<option value='4' style='display: none;' disabled=''>Counterstrike +2</option>
-								<option value='4' style='display: none;' disabled=''>CriticalDraw +2</option>
-								<option value='4' style='display: none;' disabled=''>CriticalElement +2</option>
-								<option value='4' style='display: none;' disabled=''>DefenseBoost +5</option>
-								<option value='4' style='display: none;' disabled=''>DivineBlessing +2</option>
-								<option value='4' style='display: none;' disabled=''>DragonAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>DragonResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Earplugs +2</option>
-								<option value='4' style='display: none;' disabled=''>EvadeExtender +2</option>
-								<option value='4' style='display: none;' disabled=''>EvadeWindow +2</option>
-								<option value='4' style='display: none;' disabled=''>FireAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>FireResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>FireResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>FlinchFree +3</option>
-								<option value='4' style='display: none;' disabled=''>Focus +2</option>
-								<option value='4' style='display: none;' disabled=''>FreeMeal +3</option>
-								<option value='4' style='display: none;' disabled=''>Geologist +3</option>
-								<option value='4' style='display: none;' disabled=''>GoodLuck +2</option>
-								<option value='4' style='display: none;' disabled=''>Grinder(S) +2</option>
-								<option value='4' style='display: none;' disabled=''>GuardUp +2</option>
-								<option value='4' style='display: none;' disabled=''>Handicraft +2</option>
-								<option value='4' style='display: none;' disabled=''>HellfireCloak +2</option>
-								<option value='4' style='display: none;' disabled=''>HungerResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>IceAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>IceResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>ItemProlonger +3</option>
-								<option value='4' style='display: none;' disabled=''>LatentPower +2</option>
-								<option value='4' style='display: none;' disabled=''>LoadShells +2</option>
-								<option value='4' style='display: none;' disabled=''>MarathonRunner +2</option>
-								<option value='4' style='display: none;' disabled=''>MastersTouch +2</option>
-								<option value='4' style='display: none;' disabled=''>MaximumMight +2</option>
-								<option value='4' style='display: none;' disabled=''>Mind'sEye +2</option>
-								<option value='4' style='display: none;' disabled=''>Mushroomancer +2</option>
-								<option value='4' style='display: none;' disabled=''>NormalRapidUp +2</option>
-								<option value='4' style='display: none;' disabled=''>OffensiveGuard +2</option>
-								<option value='4' style='display: none;' disabled=''>ParalysisAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>ParalysisResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Partbreaker +2</option>
-								<option value='4' style='display: none;' disabled=''>PeakPerformance +2</option>
-								<option value='4' style='display: none;' disabled=''>PierceUp +2</option>
-								<option value='4' style='display: none;' disabled=''>PoisonAttack +3</option>
-								<option value='4' style='display: none;' disabled=''>PoisonResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>PowerProlonger +2</option>
-								<option value='4' style='display: none;' disabled=''>ProtectivePolish +2</option>
-								<option value='4' style='display: none;' disabled=''>PunishingDraw +2</option>
-								<option value='4' style='display: none;' disabled=''>QuickSheathe +2</option>
-								<option value='4' style='display: none;' disabled=''>RapidMorph +2</option>
-								<option value='4' style='display: none;' disabled=''>RazorSharp +2</option>
-								<option value='4' style='display: none;' disabled=''>RecoverySpeed +3</option>
-								<option value='4' style='display: none;' disabled=''>RecoveryUp +2</option>
-								<option value='4' style='display: none;' disabled=''>Redirection +2</option>
-								<option value='4' style='display: none;' disabled=''>Resuscitate +2</option>
-								<option value='4' style='display: none;' disabled=''>SleepAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>SleepResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Slugger +2</option>
-								<option value='4' style='display: none;' disabled=''>SpecialAmmoBoost +2</option>
-								<option value='4' style='display: none;' disabled=''>SpeedEating +2</option>
-								<option value='4' style='display: none;' disabled=''>SpeedSharpening +3</option>
-								<option value='4' style='display: none;' disabled=''>SpreadUp +2</option>
-								<option value='4' style='display: none;' disabled=''>StaminaSurge +2</option>
-								<option value='4' style='display: none;' disabled=''>StaminaThief +3</option>
-								<option value='4' style='display: none;' disabled=''>Steadiness +2</option>
-								<option value='4' style='display: none;' disabled=''>Steadiness +3</option>
-								<option value='4' style='display: none;' disabled=''>StunResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>ThunderAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>ThunderResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>TremorResistance +2</option>
-								<option value='4' style='display: none;' disabled=''>Tune-Up +2</option>
-								<option value='4' style='display: none;' disabled=''>WallRunner +3</option>
-								<option value='4' style='display: none;' disabled=''>WaterAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>WaterResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Wide-Range +4</option>
-								<option value='4' style='display: none;' disabled=''>Windproof +3</option>
-								<option value='4' style='display: none;' disabled=''>WirebugWhisperer +2</option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-3 Decos</option>
-								<option value='3' style='display: none;' disabled=''>AmmoUp +1</option>
-								<option value='3' style='display: none;' disabled=''>BloodRite +1</option>
-								<option value='3' style='display: none;' disabled=''>CriticalDraw +1</option>
-								<option value='3' style='display: none;' disabled=''>DefenseBoost +3</option>
-								<option value='3' style='display: none;' disabled=''>DragonAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Earplugs +1</option>
-								<option value='3' style='display: none;' disabled=''>FireAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>GoodLuck +1</option>
-								<option value='3' style='display: none;' disabled=''>Grinder(S) +1</option>
-								<option value='3' style='display: none;' disabled=''>Guard +2</option>
-								<option value='3' style='display: none;' disabled=''>Handicraft +1</option>
-								<option value='3' style='display: none;' disabled=''>Handicraft +1</option>
-								<option value='3' style='display: none;' disabled=''>HellfireCloak +1</option>
-								<option value='3' style='display: none;' disabled=''>IceAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>JumpMaster +1</option>
-								<option value='3' style='display: none;' disabled=''>Mushroomancer +1</option>
-								<option value='3' style='display: none;' disabled=''>NormalRapidUp +1</option>
-								<option value='3' style='display: none;' disabled=''>OffensiveGuard +1</option>
-								<option value='3' style='display: none;' disabled=''>PierceUp +1</option>
-								<option value='3' style='display: none;' disabled=''>QuickBreath +1</option>
-								<option value='3' style='display: none;' disabled=''>RapidFireUp +1</option>
-								<option value='3' style='display: none;' disabled=''>Redirection +1</option>
-								<option value='3' style='display: none;' disabled=''>SpreadUp +1</option>
-								<option value='3' style='display: none;' disabled=''>ThunderAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Tune-Up +1</option>
-								<option value='3' style='display: none;' disabled=''>WaterAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Wide-Range +3</option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-2 Decos</option>
-								<option value='2' style='display: none;' disabled=''>AdrenalineRush +1</option>
-								<option value='2' style='display: none;' disabled=''>Agitator +1</option>
-								<option value='2' style='display: none;' disabled=''>Artillery +1</option>
-								<option value='2' style='display: none;' disabled=''>AttackBoost +1</option>
-								<option value='2' style='display: none;' disabled=''>Ballistics +1</option>
-								<option value='2' style='display: none;' disabled=''>BladescaleHone +1</option>
-								<option value='2' style='display: none;' disabled=''>BlastAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>BlightResistance +1</option>
-								<option value='2' style='display: none;' disabled=''>Bludgeoner +1</option>
-								<option value='2' style='display: none;' disabled=''>BubblyDance +1</option>
-								<option value='2' style='display: none;' disabled=''>Burst +1</option>
-								<option value='2' style='display: none;' disabled=''>ChargeMaster +1</option>
-								<option value='2' style='display: none;' disabled=''>Coalescence +1</option>
-								<option value='2' style='display: none;' disabled=''>Constitution +1</option>
-								<option value='2' style='display: none;' disabled=''>Counterstrike +1</option>
-								<option value='2' style='display: none;' disabled=''>CriticalBoost +1</option>
-								<option value='2' style='display: none;' disabled=''>CriticalElement +1</option>
-								<option value='2' style='display: none;' disabled=''>CriticalEye +1</option>
-								<option value='2' style='display: none;' disabled=''>DefenseBoost +2</option>
-								<option value='2' style='display: none;' disabled=''>DivineBlessing +1</option>
-								<option value='2' style='display: none;' disabled=''>DragonAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>ElementExploit +1</option>
-								<option value='2' style='display: none;' disabled=''>EvadeExtender +1</option>
-								<option value='2' style='display: none;' disabled=''>EvadeWindow +1</option>
-								<option value='2' style='display: none;' disabled=''>FireAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>Focus +1</option>
-								<option value='2' style='display: none;' disabled=''>Foray +1</option>
-								<option value='2' style='display: none;' disabled=''>Fortify +1</option>
-								<option value='2' style='display: none;' disabled=''>Guard +1</option>
-								<option value='2' style='display: none;' disabled=''>GuardUp +1</option>
-								<option value='2' style='display: none;' disabled=''>Heroics +1</option>
-								<option value='2' style='display: none;' disabled=''>IceAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>ItemProlonger +1</option>
-								<option value='2' style='display: none;' disabled=''>LatentPower +1</option>
-								<option value='2' style='display: none;' disabled=''>LoadShells +1</option>
-								<option value='2' style='display: none;' disabled=''>MarathonRunner +1</option>
-								<option value='2' style='display: none;' disabled=''>MastersTouch +1</option>
-								<option value='2' style='display: none;' disabled=''>MastersTouch +1</option>
-								<option value='2' style='display: none;' disabled=''>MasterMounter +1</option>
-								<option value='2' style='display: none;' disabled=''>MaximumMight +1</option>
-								<option value='2' style='display: none;' disabled=''>Mind'sEye +1</option>
-								<option value='2' style='display: none;' disabled=''>ParalysisAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>Partbreaker +1</option>
-								<option value='2' style='display: none;' disabled=''>PeakPerformance +1</option>
-								<option value='2' style='display: none;' disabled=''>PowerProlonger +1</option>
-								<option value='2' style='display: none;' disabled=''>ProtectivePolish +1</option>
-								<option value='2' style='display: none;' disabled=''>PunishingDraw +1</option>
-								<option value='2' style='display: none;' disabled=''>QuickSheathe +1</option>
-								<option value='2' style='display: none;' disabled=''>RapidMorph +1</option>
-								<option value='2' style='display: none;' disabled=''>RazorSharp +1</option>
-								<option value='2' style='display: none;' disabled=''>RecoveryUp +1</option>
-								<option value='2' style='display: none;' disabled=''>Resentment +1</option>
-								<option value='2' style='display: none;' disabled=''>Resuscitate +1</option>
-								<option value='2' style='display: none;' disabled=''>SleepAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>Slugger +1</option>
-								<option value='2' style='display: none;' disabled=''>SneakAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>SpareShot +1</option>
-								<option value='2' style='display: none;' disabled=''>SpecialAmmoBoost +1</option>
-								<option value='2' style='display: none;' disabled=''>SpeedEating +1</option>
-								<option value='2' style='display: none;' disabled=''>StaminaSurge +1</option>
-								<option value='2' style='display: none;' disabled=''>ThunderAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>TremorResistance +1</option>
-								<option value='2' style='display: none;' disabled=''>WallRunner +1</option>
-								<option value='2' style='display: none;' disabled=''>WaterAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>WeaknessExploit +1</option>
-								<option value='2' style='display: none;' disabled=''>Wide-Range +1</option>
-								<option value='2' style='display: none;' disabled=''>WirebugWhisperer +1</option>
 								<option class='optTitle'>Lvl-1 Decos</option>
 								<option value='1'>AffinitySliding +1</option>
 								<option value='1'>BlastResistance +1</option>
@@ -1551,192 +1290,13 @@
 								<option value='1'>WaterAttack +1</option>
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
-							</select><img class='armorImg armorDeco lvl1' src='./icons/Lvl1.png'><select
-								class='armorDisplay'>
+							</select>
+
+							<img class='armorImg armorDeco lvl1' src='./icons/Lvl1.png'><select class='armorDisplay'>
 								<option> ---- </option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-4 Decos</option>
-								<option value='4' style='display: none;' disabled=''>Artillery +2</option>
-								<option value='4' style='display: none;' disabled=''>Ballistics +2</option>
-								<option value='4' style='display: none;' disabled=''>BlastAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>BlastResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>BlightResistance +2</option>
-								<option value='4' style='display: none;' disabled=''>Bombardier +3</option>
-								<option value='4' style='display: none;' disabled=''>Botanist +3</option>
-								<option value='4' style='display: none;' disabled=''>BowChargePlus +1</option>
-								<option value='4' style='display: none;' disabled=''>BubblyDance +2</option>
-								<option value='4' style='display: none;' disabled=''>ChargeMaster +2</option>
-								<option value='4' style='display: none;' disabled=''>Coalescence +2</option>
-								<option value='4' style='display: none;' disabled=''>Constitution +2</option>
-								<option value='4' style='display: none;' disabled=''>Counterstrike +2</option>
-								<option value='4' style='display: none;' disabled=''>CriticalDraw +2</option>
-								<option value='4' style='display: none;' disabled=''>CriticalElement +2</option>
-								<option value='4' style='display: none;' disabled=''>DefenseBoost +5</option>
-								<option value='4' style='display: none;' disabled=''>DivineBlessing +2</option>
-								<option value='4' style='display: none;' disabled=''>DragonAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>DragonResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Earplugs +2</option>
-								<option value='4' style='display: none;' disabled=''>EvadeExtender +2</option>
-								<option value='4' style='display: none;' disabled=''>EvadeWindow +2</option>
-								<option value='4' style='display: none;' disabled=''>FireAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>FireResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>FireResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>FlinchFree +3</option>
-								<option value='4' style='display: none;' disabled=''>Focus +2</option>
-								<option value='4' style='display: none;' disabled=''>FreeMeal +3</option>
-								<option value='4' style='display: none;' disabled=''>Geologist +3</option>
-								<option value='4' style='display: none;' disabled=''>GoodLuck +2</option>
-								<option value='4' style='display: none;' disabled=''>Grinder(S) +2</option>
-								<option value='4' style='display: none;' disabled=''>GuardUp +2</option>
-								<option value='4' style='display: none;' disabled=''>Handicraft +2</option>
-								<option value='4' style='display: none;' disabled=''>HellfireCloak +2</option>
-								<option value='4' style='display: none;' disabled=''>HungerResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>IceAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>IceResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>ItemProlonger +3</option>
-								<option value='4' style='display: none;' disabled=''>LatentPower +2</option>
-								<option value='4' style='display: none;' disabled=''>LoadShells +2</option>
-								<option value='4' style='display: none;' disabled=''>MarathonRunner +2</option>
-								<option value='4' style='display: none;' disabled=''>MastersTouch +2</option>
-								<option value='4' style='display: none;' disabled=''>MaximumMight +2</option>
-								<option value='4' style='display: none;' disabled=''>Mind'sEye +2</option>
-								<option value='4' style='display: none;' disabled=''>Mushroomancer +2</option>
-								<option value='4' style='display: none;' disabled=''>NormalRapidUp +2</option>
-								<option value='4' style='display: none;' disabled=''>OffensiveGuard +2</option>
-								<option value='4' style='display: none;' disabled=''>ParalysisAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>ParalysisResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Partbreaker +2</option>
-								<option value='4' style='display: none;' disabled=''>PeakPerformance +2</option>
-								<option value='4' style='display: none;' disabled=''>PierceUp +2</option>
-								<option value='4' style='display: none;' disabled=''>PoisonAttack +3</option>
-								<option value='4' style='display: none;' disabled=''>PoisonResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>PowerProlonger +2</option>
-								<option value='4' style='display: none;' disabled=''>ProtectivePolish +2</option>
-								<option value='4' style='display: none;' disabled=''>PunishingDraw +2</option>
-								<option value='4' style='display: none;' disabled=''>QuickSheathe +2</option>
-								<option value='4' style='display: none;' disabled=''>RapidMorph +2</option>
-								<option value='4' style='display: none;' disabled=''>RazorSharp +2</option>
-								<option value='4' style='display: none;' disabled=''>RecoverySpeed +3</option>
-								<option value='4' style='display: none;' disabled=''>RecoveryUp +2</option>
-								<option value='4' style='display: none;' disabled=''>Redirection +2</option>
-								<option value='4' style='display: none;' disabled=''>Resuscitate +2</option>
-								<option value='4' style='display: none;' disabled=''>SleepAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>SleepResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Slugger +2</option>
-								<option value='4' style='display: none;' disabled=''>SpecialAmmoBoost +2</option>
-								<option value='4' style='display: none;' disabled=''>SpeedEating +2</option>
-								<option value='4' style='display: none;' disabled=''>SpeedSharpening +3</option>
-								<option value='4' style='display: none;' disabled=''>SpreadUp +2</option>
-								<option value='4' style='display: none;' disabled=''>StaminaSurge +2</option>
-								<option value='4' style='display: none;' disabled=''>StaminaThief +3</option>
-								<option value='4' style='display: none;' disabled=''>Steadiness +2</option>
-								<option value='4' style='display: none;' disabled=''>Steadiness +3</option>
-								<option value='4' style='display: none;' disabled=''>StunResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>ThunderAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>ThunderResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>TremorResistance +2</option>
-								<option value='4' style='display: none;' disabled=''>Tune-Up +2</option>
-								<option value='4' style='display: none;' disabled=''>WallRunner +3</option>
-								<option value='4' style='display: none;' disabled=''>WaterAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>WaterResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Wide-Range +4</option>
-								<option value='4' style='display: none;' disabled=''>Windproof +3</option>
-								<option value='4' style='display: none;' disabled=''>WirebugWhisperer +2</option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-3 Decos</option>
-								<option value='3' style='display: none;' disabled=''>AmmoUp +1</option>
-								<option value='3' style='display: none;' disabled=''>BloodRite +1</option>
-								<option value='3' style='display: none;' disabled=''>CriticalDraw +1</option>
-								<option value='3' style='display: none;' disabled=''>DefenseBoost +3</option>
-								<option value='3' style='display: none;' disabled=''>DragonAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Earplugs +1</option>
-								<option value='3' style='display: none;' disabled=''>FireAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>GoodLuck +1</option>
-								<option value='3' style='display: none;' disabled=''>Grinder(S) +1</option>
-								<option value='3' style='display: none;' disabled=''>Guard +2</option>
-								<option value='3' style='display: none;' disabled=''>Handicraft +1</option>
-								<option value='3' style='display: none;' disabled=''>Handicraft +1</option>
-								<option value='3' style='display: none;' disabled=''>HellfireCloak +1</option>
-								<option value='3' style='display: none;' disabled=''>IceAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>JumpMaster +1</option>
-								<option value='3' style='display: none;' disabled=''>Mushroomancer +1</option>
-								<option value='3' style='display: none;' disabled=''>NormalRapidUp +1</option>
-								<option value='3' style='display: none;' disabled=''>OffensiveGuard +1</option>
-								<option value='3' style='display: none;' disabled=''>PierceUp +1</option>
-								<option value='3' style='display: none;' disabled=''>QuickBreath +1</option>
-								<option value='3' style='display: none;' disabled=''>RapidFireUp +1</option>
-								<option value='3' style='display: none;' disabled=''>Redirection +1</option>
-								<option value='3' style='display: none;' disabled=''>SpreadUp +1</option>
-								<option value='3' style='display: none;' disabled=''>ThunderAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Tune-Up +1</option>
-								<option value='3' style='display: none;' disabled=''>WaterAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Wide-Range +3</option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-2 Decos</option>
-								<option value='2' style='display: none;' disabled=''>AdrenalineRush +1</option>
-								<option value='2' style='display: none;' disabled=''>Agitator +1</option>
-								<option value='2' style='display: none;' disabled=''>Artillery +1</option>
-								<option value='2' style='display: none;' disabled=''>AttackBoost +1</option>
-								<option value='2' style='display: none;' disabled=''>Ballistics +1</option>
-								<option value='2' style='display: none;' disabled=''>BladescaleHone +1</option>
-								<option value='2' style='display: none;' disabled=''>BlastAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>BlightResistance +1</option>
-								<option value='2' style='display: none;' disabled=''>Bludgeoner +1</option>
-								<option value='2' style='display: none;' disabled=''>BubblyDance +1</option>
-								<option value='2' style='display: none;' disabled=''>Burst +1</option>
-								<option value='2' style='display: none;' disabled=''>ChargeMaster +1</option>
-								<option value='2' style='display: none;' disabled=''>Coalescence +1</option>
-								<option value='2' style='display: none;' disabled=''>Constitution +1</option>
-								<option value='2' style='display: none;' disabled=''>Counterstrike +1</option>
-								<option value='2' style='display: none;' disabled=''>CriticalBoost +1</option>
-								<option value='2' style='display: none;' disabled=''>CriticalElement +1</option>
-								<option value='2' style='display: none;' disabled=''>CriticalEye +1</option>
-								<option value='2' style='display: none;' disabled=''>DefenseBoost +2</option>
-								<option value='2' style='display: none;' disabled=''>DivineBlessing +1</option>
-								<option value='2' style='display: none;' disabled=''>DragonAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>ElementExploit +1</option>
-								<option value='2' style='display: none;' disabled=''>EvadeExtender +1</option>
-								<option value='2' style='display: none;' disabled=''>EvadeWindow +1</option>
-								<option value='2' style='display: none;' disabled=''>FireAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>Focus +1</option>
-								<option value='2' style='display: none;' disabled=''>Foray +1</option>
-								<option value='2' style='display: none;' disabled=''>Fortify +1</option>
-								<option value='2' style='display: none;' disabled=''>Guard +1</option>
-								<option value='2' style='display: none;' disabled=''>GuardUp +1</option>
-								<option value='2' style='display: none;' disabled=''>Heroics +1</option>
-								<option value='2' style='display: none;' disabled=''>IceAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>ItemProlonger +1</option>
-								<option value='2' style='display: none;' disabled=''>LatentPower +1</option>
-								<option value='2' style='display: none;' disabled=''>LoadShells +1</option>
-								<option value='2' style='display: none;' disabled=''>MarathonRunner +1</option>
-								<option value='2' style='display: none;' disabled=''>MastersTouch +1</option>
-								<option value='2' style='display: none;' disabled=''>MastersTouch +1</option>
-								<option value='2' style='display: none;' disabled=''>MasterMounter +1</option>
-								<option value='2' style='display: none;' disabled=''>MaximumMight +1</option>
-								<option value='2' style='display: none;' disabled=''>Mind'sEye +1</option>
-								<option value='2' style='display: none;' disabled=''>ParalysisAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>Partbreaker +1</option>
-								<option value='2' style='display: none;' disabled=''>PeakPerformance +1</option>
-								<option value='2' style='display: none;' disabled=''>PowerProlonger +1</option>
-								<option value='2' style='display: none;' disabled=''>ProtectivePolish +1</option>
-								<option value='2' style='display: none;' disabled=''>PunishingDraw +1</option>
-								<option value='2' style='display: none;' disabled=''>QuickSheathe +1</option>
-								<option value='2' style='display: none;' disabled=''>RapidMorph +1</option>
-								<option value='2' style='display: none;' disabled=''>RazorSharp +1</option>
-								<option value='2' style='display: none;' disabled=''>RecoveryUp +1</option>
-								<option value='2' style='display: none;' disabled=''>Resentment +1</option>
-								<option value='2' style='display: none;' disabled=''>Resuscitate +1</option>
-								<option value='2' style='display: none;' disabled=''>SleepAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>Slugger +1</option>
-								<option value='2' style='display: none;' disabled=''>SneakAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>SpareShot +1</option>
-								<option value='2' style='display: none;' disabled=''>SpecialAmmoBoost +1</option>
-								<option value='2' style='display: none;' disabled=''>SpeedEating +1</option>
-								<option value='2' style='display: none;' disabled=''>StaminaSurge +1</option>
-								<option value='2' style='display: none;' disabled=''>ThunderAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>TremorResistance +1</option>
-								<option value='2' style='display: none;' disabled=''>WallRunner +1</option>
-								<option value='2' style='display: none;' disabled=''>WaterAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>WeaknessExploit +1</option>
-								<option value='2' style='display: none;' disabled=''>Wide-Range +1</option>
-								<option value='2' style='display: none;' disabled=''>WirebugWhisperer +1</option>
 								<option class='optTitle'>Lvl-1 Decos</option>
 								<option value='1'>AffinitySliding +1</option>
 								<option value='1'>BlastResistance +1</option>
@@ -1781,7 +1341,9 @@
 								<option value='1'>WaterAttack +1</option>
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
-							</select></section>
+							</select>
+						</section>
+
 						<section class='armorAugment augInvis' id='chestQurious'><output class='currentPoints'>Remaining
 								Points 20/20</output><select class='augmentType'>
 								<option>----</option>
@@ -1822,200 +1384,27 @@
 							</select><select class='augment'></select></section>
 					</section>
 
-					<section class='arm armorDisplay'><img class='armorImg' alt='icons arm' src='./icons/arm.png'>
+					<section class='arm armorDisplay'>
+
+						<img class='armorImg' alt='icons arm' src='./icons/arm.png'>
 						<h6>Arm</h6><select id='arm' class='arm armor' title='arm'>
-						</select><output id='armSkills'><img class='armorImg armorDeco rampage'
-								src='./icons/skill.png'><output>CriticalEye +2</output><img
-								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>Heroics
-								+1</output><img class='armorImg armorDeco rampage'
-								src='./icons/skill.png'><output>DivineBlessing
+						</select><output id='armSkills'>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>CriticalEye
+								+2</output>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>Heroics +1</output>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>DivineBlessing
 								+1</output></output>
-						<section class='decoDisplay' id='armDecos'><img class='armorImg armorDeco lvl1'
-								src='./icons/Lvl1.png'><select class='armorDisplay'>
+
+						<section class='decoDisplay' id='armDecos'>
+
+							<img class='armorImg armorDeco lvl1' src='./icons/Lvl1.png'><select class='armorDisplay'>
 								<option> ---- </option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-4 Decos</option>
-								<option value='4' style='display: none;' disabled=''>Artillery +2</option>
-								<option value='4' style='display: none;' disabled=''>Ballistics +2</option>
-								<option value='4' style='display: none;' disabled=''>BlastAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>BlastResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>BlightResistance +2</option>
-								<option value='4' style='display: none;' disabled=''>Bombardier +3</option>
-								<option value='4' style='display: none;' disabled=''>Botanist +3</option>
-								<option value='4' style='display: none;' disabled=''>BowChargePlus +1</option>
-								<option value='4' style='display: none;' disabled=''>BubblyDance +2</option>
-								<option value='4' style='display: none;' disabled=''>ChargeMaster +2</option>
-								<option value='4' style='display: none;' disabled=''>Coalescence +2</option>
-								<option value='4' style='display: none;' disabled=''>Constitution +2</option>
-								<option value='4' style='display: none;' disabled=''>Counterstrike +2</option>
-								<option value='4' style='display: none;' disabled=''>CriticalDraw +2</option>
-								<option value='4' style='display: none;' disabled=''>CriticalElement +2</option>
-								<option value='4' style='display: none;' disabled=''>DefenseBoost +5</option>
-								<option value='4' style='display: none;' disabled=''>DivineBlessing +2</option>
-								<option value='4' style='display: none;' disabled=''>DragonAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>DragonResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Earplugs +2</option>
-								<option value='4' style='display: none;' disabled=''>EvadeExtender +2</option>
-								<option value='4' style='display: none;' disabled=''>EvadeWindow +2</option>
-								<option value='4' style='display: none;' disabled=''>FireAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>FireResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>FireResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>FlinchFree +3</option>
-								<option value='4' style='display: none;' disabled=''>Focus +2</option>
-								<option value='4' style='display: none;' disabled=''>FreeMeal +3</option>
-								<option value='4' style='display: none;' disabled=''>Geologist +3</option>
-								<option value='4' style='display: none;' disabled=''>GoodLuck +2</option>
-								<option value='4' style='display: none;' disabled=''>Grinder(S) +2</option>
-								<option value='4' style='display: none;' disabled=''>GuardUp +2</option>
-								<option value='4' style='display: none;' disabled=''>Handicraft +2</option>
-								<option value='4' style='display: none;' disabled=''>HellfireCloak +2</option>
-								<option value='4' style='display: none;' disabled=''>HungerResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>IceAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>IceResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>ItemProlonger +3</option>
-								<option value='4' style='display: none;' disabled=''>LatentPower +2</option>
-								<option value='4' style='display: none;' disabled=''>LoadShells +2</option>
-								<option value='4' style='display: none;' disabled=''>MarathonRunner +2</option>
-								<option value='4' style='display: none;' disabled=''>MastersTouch +2</option>
-								<option value='4' style='display: none;' disabled=''>MaximumMight +2</option>
-								<option value='4' style='display: none;' disabled=''>Mind'sEye +2</option>
-								<option value='4' style='display: none;' disabled=''>Mushroomancer +2</option>
-								<option value='4' style='display: none;' disabled=''>NormalRapidUp +2</option>
-								<option value='4' style='display: none;' disabled=''>OffensiveGuard +2</option>
-								<option value='4' style='display: none;' disabled=''>ParalysisAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>ParalysisResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Partbreaker +2</option>
-								<option value='4' style='display: none;' disabled=''>PeakPerformance +2</option>
-								<option value='4' style='display: none;' disabled=''>PierceUp +2</option>
-								<option value='4' style='display: none;' disabled=''>PoisonAttack +3</option>
-								<option value='4' style='display: none;' disabled=''>PoisonResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>PowerProlonger +2</option>
-								<option value='4' style='display: none;' disabled=''>ProtectivePolish +2</option>
-								<option value='4' style='display: none;' disabled=''>PunishingDraw +2</option>
-								<option value='4' style='display: none;' disabled=''>QuickSheathe +2</option>
-								<option value='4' style='display: none;' disabled=''>RapidMorph +2</option>
-								<option value='4' style='display: none;' disabled=''>RazorSharp +2</option>
-								<option value='4' style='display: none;' disabled=''>RecoverySpeed +3</option>
-								<option value='4' style='display: none;' disabled=''>RecoveryUp +2</option>
-								<option value='4' style='display: none;' disabled=''>Redirection +2</option>
-								<option value='4' style='display: none;' disabled=''>Resuscitate +2</option>
-								<option value='4' style='display: none;' disabled=''>SleepAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>SleepResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Slugger +2</option>
-								<option value='4' style='display: none;' disabled=''>SpecialAmmoBoost +2</option>
-								<option value='4' style='display: none;' disabled=''>SpeedEating +2</option>
-								<option value='4' style='display: none;' disabled=''>SpeedSharpening +3</option>
-								<option value='4' style='display: none;' disabled=''>SpreadUp +2</option>
-								<option value='4' style='display: none;' disabled=''>StaminaSurge +2</option>
-								<option value='4' style='display: none;' disabled=''>StaminaThief +3</option>
-								<option value='4' style='display: none;' disabled=''>Steadiness +2</option>
-								<option value='4' style='display: none;' disabled=''>Steadiness +3</option>
-								<option value='4' style='display: none;' disabled=''>StunResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>ThunderAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>ThunderResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>TremorResistance +2</option>
-								<option value='4' style='display: none;' disabled=''>Tune-Up +2</option>
-								<option value='4' style='display: none;' disabled=''>WallRunner +3</option>
-								<option value='4' style='display: none;' disabled=''>WaterAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>WaterResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Wide-Range +4</option>
-								<option value='4' style='display: none;' disabled=''>Windproof +3</option>
-								<option value='4' style='display: none;' disabled=''>WirebugWhisperer +2</option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-3 Decos</option>
-								<option value='3' style='display: none;' disabled=''>AmmoUp +1</option>
-								<option value='3' style='display: none;' disabled=''>BloodRite +1</option>
-								<option value='3' style='display: none;' disabled=''>CriticalDraw +1</option>
-								<option value='3' style='display: none;' disabled=''>DefenseBoost +3</option>
-								<option value='3' style='display: none;' disabled=''>DragonAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Earplugs +1</option>
-								<option value='3' style='display: none;' disabled=''>FireAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>GoodLuck +1</option>
-								<option value='3' style='display: none;' disabled=''>Grinder(S) +1</option>
-								<option value='3' style='display: none;' disabled=''>Guard +2</option>
-								<option value='3' style='display: none;' disabled=''>Handicraft +1</option>
-								<option value='3' style='display: none;' disabled=''>Handicraft +1</option>
-								<option value='3' style='display: none;' disabled=''>HellfireCloak +1</option>
-								<option value='3' style='display: none;' disabled=''>IceAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>JumpMaster +1</option>
-								<option value='3' style='display: none;' disabled=''>Mushroomancer +1</option>
-								<option value='3' style='display: none;' disabled=''>NormalRapidUp +1</option>
-								<option value='3' style='display: none;' disabled=''>OffensiveGuard +1</option>
-								<option value='3' style='display: none;' disabled=''>PierceUp +1</option>
-								<option value='3' style='display: none;' disabled=''>QuickBreath +1</option>
-								<option value='3' style='display: none;' disabled=''>RapidFireUp +1</option>
-								<option value='3' style='display: none;' disabled=''>Redirection +1</option>
-								<option value='3' style='display: none;' disabled=''>SpreadUp +1</option>
-								<option value='3' style='display: none;' disabled=''>ThunderAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Tune-Up +1</option>
-								<option value='3' style='display: none;' disabled=''>WaterAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Wide-Range +3</option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-2 Decos</option>
-								<option value='2' style='display: none;' disabled=''>AdrenalineRush +1</option>
-								<option value='2' style='display: none;' disabled=''>Agitator +1</option>
-								<option value='2' style='display: none;' disabled=''>Artillery +1</option>
-								<option value='2' style='display: none;' disabled=''>AttackBoost +1</option>
-								<option value='2' style='display: none;' disabled=''>Ballistics +1</option>
-								<option value='2' style='display: none;' disabled=''>BladescaleHone +1</option>
-								<option value='2' style='display: none;' disabled=''>BlastAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>BlightResistance +1</option>
-								<option value='2' style='display: none;' disabled=''>Bludgeoner +1</option>
-								<option value='2' style='display: none;' disabled=''>BubblyDance +1</option>
-								<option value='2' style='display: none;' disabled=''>Burst +1</option>
-								<option value='2' style='display: none;' disabled=''>ChargeMaster +1</option>
-								<option value='2' style='display: none;' disabled=''>Coalescence +1</option>
-								<option value='2' style='display: none;' disabled=''>Constitution +1</option>
-								<option value='2' style='display: none;' disabled=''>Counterstrike +1</option>
-								<option value='2' style='display: none;' disabled=''>CriticalBoost +1</option>
-								<option value='2' style='display: none;' disabled=''>CriticalElement +1</option>
-								<option value='2' style='display: none;' disabled=''>CriticalEye +1</option>
-								<option value='2' style='display: none;' disabled=''>DefenseBoost +2</option>
-								<option value='2' style='display: none;' disabled=''>DivineBlessing +1</option>
-								<option value='2' style='display: none;' disabled=''>DragonAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>ElementExploit +1</option>
-								<option value='2' style='display: none;' disabled=''>EvadeExtender +1</option>
-								<option value='2' style='display: none;' disabled=''>EvadeWindow +1</option>
-								<option value='2' style='display: none;' disabled=''>FireAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>Focus +1</option>
-								<option value='2' style='display: none;' disabled=''>Foray +1</option>
-								<option value='2' style='display: none;' disabled=''>Fortify +1</option>
-								<option value='2' style='display: none;' disabled=''>Guard +1</option>
-								<option value='2' style='display: none;' disabled=''>GuardUp +1</option>
-								<option value='2' style='display: none;' disabled=''>Heroics +1</option>
-								<option value='2' style='display: none;' disabled=''>IceAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>ItemProlonger +1</option>
-								<option value='2' style='display: none;' disabled=''>LatentPower +1</option>
-								<option value='2' style='display: none;' disabled=''>LoadShells +1</option>
-								<option value='2' style='display: none;' disabled=''>MarathonRunner +1</option>
-								<option value='2' style='display: none;' disabled=''>MastersTouch +1</option>
-								<option value='2' style='display: none;' disabled=''>MastersTouch +1</option>
-								<option value='2' style='display: none;' disabled=''>MasterMounter +1</option>
-								<option value='2' style='display: none;' disabled=''>MaximumMight +1</option>
-								<option value='2' style='display: none;' disabled=''>Mind'sEye +1</option>
-								<option value='2' style='display: none;' disabled=''>ParalysisAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>Partbreaker +1</option>
-								<option value='2' style='display: none;' disabled=''>PeakPerformance +1</option>
-								<option value='2' style='display: none;' disabled=''>PowerProlonger +1</option>
-								<option value='2' style='display: none;' disabled=''>ProtectivePolish +1</option>
-								<option value='2' style='display: none;' disabled=''>PunishingDraw +1</option>
-								<option value='2' style='display: none;' disabled=''>QuickSheathe +1</option>
-								<option value='2' style='display: none;' disabled=''>RapidMorph +1</option>
-								<option value='2' style='display: none;' disabled=''>RazorSharp +1</option>
-								<option value='2' style='display: none;' disabled=''>RecoveryUp +1</option>
-								<option value='2' style='display: none;' disabled=''>Resentment +1</option>
-								<option value='2' style='display: none;' disabled=''>Resuscitate +1</option>
-								<option value='2' style='display: none;' disabled=''>SleepAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>Slugger +1</option>
-								<option value='2' style='display: none;' disabled=''>SneakAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>SpareShot +1</option>
-								<option value='2' style='display: none;' disabled=''>SpecialAmmoBoost +1</option>
-								<option value='2' style='display: none;' disabled=''>SpeedEating +1</option>
-								<option value='2' style='display: none;' disabled=''>StaminaSurge +1</option>
-								<option value='2' style='display: none;' disabled=''>ThunderAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>TremorResistance +1</option>
-								<option value='2' style='display: none;' disabled=''>WallRunner +1</option>
-								<option value='2' style='display: none;' disabled=''>WaterAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>WeaknessExploit +1</option>
-								<option value='2' style='display: none;' disabled=''>Wide-Range +1</option>
-								<option value='2' style='display: none;' disabled=''>WirebugWhisperer +1</option>
 								<option class='optTitle'>Lvl-1 Decos</option>
 								<option value='1'>AffinitySliding +1</option>
 								<option value='1'>BlastResistance +1</option>
@@ -2060,7 +1449,9 @@
 								<option value='1'>WaterAttack +1</option>
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
-							</select></section>
+							</select>
+						</section>
+
 						<section class='armorAugment augInvis' id='armQurious'><output class='currentPoints'>Remaining
 								Points 20/20</output><select class='augmentType'>
 								<option>----</option>
@@ -2100,16 +1491,23 @@
 								<option>+Skill</option>
 							</select><select class='augment'></select></section>
 					</section>
-					<section class='waist armorDisplay'><img class='armorImg' alt='icons waist' src='./icons/waist.png'>
-						<h6>Waist</h6><select id='waist' class='waist armor' title='waist'>
 
+					<section class='waist armorDisplay'>
+
+						<img class='armorImg' alt='icons waist' src='./icons/waist.png'>
+						<h6>Waist</h6><select id='waist' class='waist armor' title='waist'>
 						</select>
-						<output id='waistSkills'><img class='armorImg armorDeco rampage'
-								src='./icons/skill.png'><output>WirebugWhisperer +1</output><img
-								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>CriticalEye
+						<output id='waistSkills'>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>WirebugWhisperer
+								+1</output>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>CriticalEye
 								+1</output></output>
-						<section class='decoDisplay' id='waistDecos'><img class='armorImg armorDeco lvl4'
-								src='./icons/Lvl4.png'><select class='armorDisplay'>
+
+						<section class='decoDisplay' id='waistDecos'>
+
+							<img class='armorImg armorDeco lvl4' src='./icons/Lvl4.png'><select class='armorDisplay'>
 								<option> ---- </option>
 								<option class='optTitle'>Lvl-4 Decos</option>
 								<option value='4'>Artillery +2</option>
@@ -2338,192 +1736,13 @@
 								<option value='1'>WaterAttack +1</option>
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
-							</select><img class='armorImg armorDeco lvl1' src='./icons/Lvl1.png'><select
-								class='armorDisplay'>
+							</select>
+
+							<img class='armorImg armorDeco lvl1' src='./icons/Lvl1.png'><select class='armorDisplay'>
 								<option> ---- </option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-4 Decos</option>
-								<option value='4' style='display: none;' disabled=''>Artillery +2</option>
-								<option value='4' style='display: none;' disabled=''>Ballistics +2</option>
-								<option value='4' style='display: none;' disabled=''>BlastAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>BlastResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>BlightResistance +2</option>
-								<option value='4' style='display: none;' disabled=''>Bombardier +3</option>
-								<option value='4' style='display: none;' disabled=''>Botanist +3</option>
-								<option value='4' style='display: none;' disabled=''>BowChargePlus +1</option>
-								<option value='4' style='display: none;' disabled=''>BubblyDance +2</option>
-								<option value='4' style='display: none;' disabled=''>ChargeMaster +2</option>
-								<option value='4' style='display: none;' disabled=''>Coalescence +2</option>
-								<option value='4' style='display: none;' disabled=''>Constitution +2</option>
-								<option value='4' style='display: none;' disabled=''>Counterstrike +2</option>
-								<option value='4' style='display: none;' disabled=''>CriticalDraw +2</option>
-								<option value='4' style='display: none;' disabled=''>CriticalElement +2</option>
-								<option value='4' style='display: none;' disabled=''>DefenseBoost +5</option>
-								<option value='4' style='display: none;' disabled=''>DivineBlessing +2</option>
-								<option value='4' style='display: none;' disabled=''>DragonAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>DragonResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Earplugs +2</option>
-								<option value='4' style='display: none;' disabled=''>EvadeExtender +2</option>
-								<option value='4' style='display: none;' disabled=''>EvadeWindow +2</option>
-								<option value='4' style='display: none;' disabled=''>FireAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>FireResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>FireResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>FlinchFree +3</option>
-								<option value='4' style='display: none;' disabled=''>Focus +2</option>
-								<option value='4' style='display: none;' disabled=''>FreeMeal +3</option>
-								<option value='4' style='display: none;' disabled=''>Geologist +3</option>
-								<option value='4' style='display: none;' disabled=''>GoodLuck +2</option>
-								<option value='4' style='display: none;' disabled=''>Grinder(S) +2</option>
-								<option value='4' style='display: none;' disabled=''>GuardUp +2</option>
-								<option value='4' style='display: none;' disabled=''>Handicraft +2</option>
-								<option value='4' style='display: none;' disabled=''>HellfireCloak +2</option>
-								<option value='4' style='display: none;' disabled=''>HungerResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>IceAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>IceResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>ItemProlonger +3</option>
-								<option value='4' style='display: none;' disabled=''>LatentPower +2</option>
-								<option value='4' style='display: none;' disabled=''>LoadShells +2</option>
-								<option value='4' style='display: none;' disabled=''>MarathonRunner +2</option>
-								<option value='4' style='display: none;' disabled=''>MastersTouch +2</option>
-								<option value='4' style='display: none;' disabled=''>MaximumMight +2</option>
-								<option value='4' style='display: none;' disabled=''>Mind'sEye +2</option>
-								<option value='4' style='display: none;' disabled=''>Mushroomancer +2</option>
-								<option value='4' style='display: none;' disabled=''>NormalRapidUp +2</option>
-								<option value='4' style='display: none;' disabled=''>OffensiveGuard +2</option>
-								<option value='4' style='display: none;' disabled=''>ParalysisAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>ParalysisResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Partbreaker +2</option>
-								<option value='4' style='display: none;' disabled=''>PeakPerformance +2</option>
-								<option value='4' style='display: none;' disabled=''>PierceUp +2</option>
-								<option value='4' style='display: none;' disabled=''>PoisonAttack +3</option>
-								<option value='4' style='display: none;' disabled=''>PoisonResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>PowerProlonger +2</option>
-								<option value='4' style='display: none;' disabled=''>ProtectivePolish +2</option>
-								<option value='4' style='display: none;' disabled=''>PunishingDraw +2</option>
-								<option value='4' style='display: none;' disabled=''>QuickSheathe +2</option>
-								<option value='4' style='display: none;' disabled=''>RapidMorph +2</option>
-								<option value='4' style='display: none;' disabled=''>RazorSharp +2</option>
-								<option value='4' style='display: none;' disabled=''>RecoverySpeed +3</option>
-								<option value='4' style='display: none;' disabled=''>RecoveryUp +2</option>
-								<option value='4' style='display: none;' disabled=''>Redirection +2</option>
-								<option value='4' style='display: none;' disabled=''>Resuscitate +2</option>
-								<option value='4' style='display: none;' disabled=''>SleepAttack +2</option>
-								<option value='4' style='display: none;' disabled=''>SleepResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Slugger +2</option>
-								<option value='4' style='display: none;' disabled=''>SpecialAmmoBoost +2</option>
-								<option value='4' style='display: none;' disabled=''>SpeedEating +2</option>
-								<option value='4' style='display: none;' disabled=''>SpeedSharpening +3</option>
-								<option value='4' style='display: none;' disabled=''>SpreadUp +2</option>
-								<option value='4' style='display: none;' disabled=''>StaminaSurge +2</option>
-								<option value='4' style='display: none;' disabled=''>StaminaThief +3</option>
-								<option value='4' style='display: none;' disabled=''>Steadiness +2</option>
-								<option value='4' style='display: none;' disabled=''>Steadiness +3</option>
-								<option value='4' style='display: none;' disabled=''>StunResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>ThunderAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>ThunderResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>TremorResistance +2</option>
-								<option value='4' style='display: none;' disabled=''>Tune-Up +2</option>
-								<option value='4' style='display: none;' disabled=''>WallRunner +3</option>
-								<option value='4' style='display: none;' disabled=''>WaterAttack +4</option>
-								<option value='4' style='display: none;' disabled=''>WaterResistance +3</option>
-								<option value='4' style='display: none;' disabled=''>Wide-Range +4</option>
-								<option value='4' style='display: none;' disabled=''>Windproof +3</option>
-								<option value='4' style='display: none;' disabled=''>WirebugWhisperer +2</option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-3 Decos</option>
-								<option value='3' style='display: none;' disabled=''>AmmoUp +1</option>
-								<option value='3' style='display: none;' disabled=''>BloodRite +1</option>
-								<option value='3' style='display: none;' disabled=''>CriticalDraw +1</option>
-								<option value='3' style='display: none;' disabled=''>DefenseBoost +3</option>
-								<option value='3' style='display: none;' disabled=''>DragonAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Earplugs +1</option>
-								<option value='3' style='display: none;' disabled=''>FireAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>GoodLuck +1</option>
-								<option value='3' style='display: none;' disabled=''>Grinder(S) +1</option>
-								<option value='3' style='display: none;' disabled=''>Guard +2</option>
-								<option value='3' style='display: none;' disabled=''>Handicraft +1</option>
-								<option value='3' style='display: none;' disabled=''>Handicraft +1</option>
-								<option value='3' style='display: none;' disabled=''>HellfireCloak +1</option>
-								<option value='3' style='display: none;' disabled=''>IceAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>JumpMaster +1</option>
-								<option value='3' style='display: none;' disabled=''>Mushroomancer +1</option>
-								<option value='3' style='display: none;' disabled=''>NormalRapidUp +1</option>
-								<option value='3' style='display: none;' disabled=''>OffensiveGuard +1</option>
-								<option value='3' style='display: none;' disabled=''>PierceUp +1</option>
-								<option value='3' style='display: none;' disabled=''>QuickBreath +1</option>
-								<option value='3' style='display: none;' disabled=''>RapidFireUp +1</option>
-								<option value='3' style='display: none;' disabled=''>Redirection +1</option>
-								<option value='3' style='display: none;' disabled=''>SpreadUp +1</option>
-								<option value='3' style='display: none;' disabled=''>ThunderAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Tune-Up +1</option>
-								<option value='3' style='display: none;' disabled=''>WaterAttack +3</option>
-								<option value='3' style='display: none;' disabled=''>Wide-Range +3</option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-2 Decos</option>
-								<option value='2' style='display: none;' disabled=''>AdrenalineRush +1</option>
-								<option value='2' style='display: none;' disabled=''>Agitator +1</option>
-								<option value='2' style='display: none;' disabled=''>Artillery +1</option>
-								<option value='2' style='display: none;' disabled=''>AttackBoost +1</option>
-								<option value='2' style='display: none;' disabled=''>Ballistics +1</option>
-								<option value='2' style='display: none;' disabled=''>BladescaleHone +1</option>
-								<option value='2' style='display: none;' disabled=''>BlastAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>BlightResistance +1</option>
-								<option value='2' style='display: none;' disabled=''>Bludgeoner +1</option>
-								<option value='2' style='display: none;' disabled=''>BubblyDance +1</option>
-								<option value='2' style='display: none;' disabled=''>Burst +1</option>
-								<option value='2' style='display: none;' disabled=''>ChargeMaster +1</option>
-								<option value='2' style='display: none;' disabled=''>Coalescence +1</option>
-								<option value='2' style='display: none;' disabled=''>Constitution +1</option>
-								<option value='2' style='display: none;' disabled=''>Counterstrike +1</option>
-								<option value='2' style='display: none;' disabled=''>CriticalBoost +1</option>
-								<option value='2' style='display: none;' disabled=''>CriticalElement +1</option>
-								<option value='2' style='display: none;' disabled=''>CriticalEye +1</option>
-								<option value='2' style='display: none;' disabled=''>DefenseBoost +2</option>
-								<option value='2' style='display: none;' disabled=''>DivineBlessing +1</option>
-								<option value='2' style='display: none;' disabled=''>DragonAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>ElementExploit +1</option>
-								<option value='2' style='display: none;' disabled=''>EvadeExtender +1</option>
-								<option value='2' style='display: none;' disabled=''>EvadeWindow +1</option>
-								<option value='2' style='display: none;' disabled=''>FireAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>Focus +1</option>
-								<option value='2' style='display: none;' disabled=''>Foray +1</option>
-								<option value='2' style='display: none;' disabled=''>Fortify +1</option>
-								<option value='2' style='display: none;' disabled=''>Guard +1</option>
-								<option value='2' style='display: none;' disabled=''>GuardUp +1</option>
-								<option value='2' style='display: none;' disabled=''>Heroics +1</option>
-								<option value='2' style='display: none;' disabled=''>IceAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>ItemProlonger +1</option>
-								<option value='2' style='display: none;' disabled=''>LatentPower +1</option>
-								<option value='2' style='display: none;' disabled=''>LoadShells +1</option>
-								<option value='2' style='display: none;' disabled=''>MarathonRunner +1</option>
-								<option value='2' style='display: none;' disabled=''>MastersTouch +1</option>
-								<option value='2' style='display: none;' disabled=''>MastersTouch +1</option>
-								<option value='2' style='display: none;' disabled=''>MasterMounter +1</option>
-								<option value='2' style='display: none;' disabled=''>MaximumMight +1</option>
-								<option value='2' style='display: none;' disabled=''>Mind'sEye +1</option>
-								<option value='2' style='display: none;' disabled=''>ParalysisAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>Partbreaker +1</option>
-								<option value='2' style='display: none;' disabled=''>PeakPerformance +1</option>
-								<option value='2' style='display: none;' disabled=''>PowerProlonger +1</option>
-								<option value='2' style='display: none;' disabled=''>ProtectivePolish +1</option>
-								<option value='2' style='display: none;' disabled=''>PunishingDraw +1</option>
-								<option value='2' style='display: none;' disabled=''>QuickSheathe +1</option>
-								<option value='2' style='display: none;' disabled=''>RapidMorph +1</option>
-								<option value='2' style='display: none;' disabled=''>RazorSharp +1</option>
-								<option value='2' style='display: none;' disabled=''>RecoveryUp +1</option>
-								<option value='2' style='display: none;' disabled=''>Resentment +1</option>
-								<option value='2' style='display: none;' disabled=''>Resuscitate +1</option>
-								<option value='2' style='display: none;' disabled=''>SleepAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>Slugger +1</option>
-								<option value='2' style='display: none;' disabled=''>SneakAttack +1</option>
-								<option value='2' style='display: none;' disabled=''>SpareShot +1</option>
-								<option value='2' style='display: none;' disabled=''>SpecialAmmoBoost +1</option>
-								<option value='2' style='display: none;' disabled=''>SpeedEating +1</option>
-								<option value='2' style='display: none;' disabled=''>StaminaSurge +1</option>
-								<option value='2' style='display: none;' disabled=''>ThunderAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>TremorResistance +1</option>
-								<option value='2' style='display: none;' disabled=''>WallRunner +1</option>
-								<option value='2' style='display: none;' disabled=''>WaterAttack +2</option>
-								<option value='2' style='display: none;' disabled=''>WeaknessExploit +1</option>
-								<option value='2' style='display: none;' disabled=''>Wide-Range +1</option>
-								<option value='2' style='display: none;' disabled=''>WirebugWhisperer +1</option>
 								<option class='optTitle'>Lvl-1 Decos</option>
 								<option value='1'>AffinitySliding +1</option>
 								<option value='1'>BlastResistance +1</option>
@@ -2568,7 +1787,9 @@
 								<option value='1'>WaterAttack +1</option>
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
-							</select></section>
+							</select>
+						</section>
+
 						<section class='armorAugment augInvis' id='waistQurious'><output class='currentPoints'>Remaining
 								Points 20/20</output><select class='augmentType'>
 								<option>----</option>
@@ -2608,16 +1829,25 @@
 								<option>+Skill</option>
 							</select><select class='augment'></select></section>
 					</section>
-					<section class='leg armorDisplay'><img class='armorImg' alt='icons leg' src='./icons/leg.png'>
-						<h6>Boots</h6><select id='leg' class='leg armor' title='leg'>
 
-						</select><output id='legSkills'><img class='armorImg armorDeco rampage'
-								src='./icons/skill.png'><output>WallRunner +2</output><img
-								class='armorImg armorDeco rampage' src='./icons/skill.png'><output>Resuscitate
-								+1</output><img class='armorImg armorDeco rampage'
-								src='./icons/skill.png'><output>AffinitySliding +1</output></output>
-								<section class='decoDisplay' id='legDecos'><img class='armorImg armorDeco lvl2'
-								src='./icons/Lvl2.png'><select class='armorDisplay'>
+					<section class='leg armorDisplay'>
+
+						<img class='armorImg' alt='icons leg' src='./icons/leg.png'>
+						<h6>Boots</h6><select id='leg' class='leg armor' title='leg'>
+						</select><output id='legSkills'>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>WallRunner
+								+2</output>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>Resuscitate
+								+1</output>
+
+							<img class='armorImg armorDeco rampage' src='./icons/skill.png'><output>AffinitySliding
+								+1</output></output>
+
+						<section class='decoDisplay' id='legDecos'>
+
+							<img class='armorImg armorDeco lvl2' src='./icons/Lvl2.png'><select class='armorDisplay'>
 								<option> ---- </option>
 								<option class='optTitle' disabled='' style='display: none;'>Lvl-4 Decos</option>
 								<option value='4' style='display: none;' disabled=''>Artillery +2</option>
@@ -2846,7 +2076,9 @@
 								<option value='1'>WaterAttack +1</option>
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
-							</select></section>
+							</select>
+						</section>
+
 						<section class='armorAugment augInvis' id='legQurious'><output class='currentPoints'>Remaining
 								Points 20/20</output><select class='augmentType'>
 								<option>----</option>
@@ -2886,9 +2118,12 @@
 								<option>+Skill</option>
 							</select><select class='augment'></select></section>
 					</section>
-					<section id='charm' class='charm armorDisplay'><img class='armorImg' alt='icons charm'
-							src='./icons/charm.png'>
+
+					<section id='charm' class='charm armorDisplay'>
+
+						<img class='armorImg' alt='icons charm' src='./icons/charm.png'>
 						<h6> Charm </h6>
+
 						<img class='armorImg armorDeco rampage' src='./icons/skill.png'><select id='charmSkill1'
 							class='charm' title='charmSkill1'>
 							<option value='B'> ---- </option>
@@ -3004,6 +2239,7 @@
 							<option value='C'>WallRunner(Boost) +1</option>
 							<option value='A'>Burst +2</option>
 						</select>
+
 						<img class='armorImg armorDeco rampage' src='./icons/skill.png'><select id='charmSkill2'
 							class='charm' title='charmSkill2'>
 							<option value='B'> ---- </option>
@@ -3119,8 +2355,10 @@
 							<option value='C'>WallRunner(Boost) +1</option>
 							<option value='A'>Burst +2</option>
 						</select>
-						<section class='decoDisplay' id='charmDecos'><img class='armorImg armorDeco lvl3'
-								src='./icons/Lvl3.png'><select class='armorDisplay'>
+
+						<section class='decoDisplay' id='charmDecos'>
+
+							<img class='armorImg armorDeco lvl3' src='./icons/Lvl3.png'><select class='armorDisplay'>
 								<option> ---- </option>
 								<option class='optTitle'>Lvl-3 Decos</option>
 								<option value='3'>AmmoUp +1</option>
@@ -3262,8 +2500,9 @@
 								<option value='1'>WaterAttack +1</option>
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
-							</select><img class='armorImg armorDeco lvl2' src='./icons/Lvl2.png'><select
-								class='armorDisplay'>
+							</select>
+
+							<img class='armorImg armorDeco lvl1' src='./icons/Lvl2.png'><select class='armorDisplay'>
 								<option> ---- </option>
 								<option class='optTitle'>Lvl-2 Decos</option>
 								<option value='2'>AdrenalineRush +1</option>
@@ -3378,7 +2617,9 @@
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
 							</select>
-							<img  class='armorImg armorDeco lvl1 augInvis charmSlot3' src='./icons/Lvl1.png'><select class='charmSlot3 augInvis'>
+
+							<img class='armorImg armorDeco lvl1 charmSlot3' src='./icons/Lvl1.png'><select
+								class='armorDisplay charmSlot3'>
 								<option> ---- </option>
 								<option class='optTitle'>Lvl-1 Decos</option>
 								<option value='1'>AffinitySliding +1</option>
@@ -3425,11 +2666,8 @@
 								<option value='1'>WaterResistance +1</option>
 								<option value='1'>Windproof +1</option>
 							</select>
-
 						</section>
 					</section>
-
-
 					<!-- 						<input 
 							id='taWikiSetBuilder'
 							contenteditable='true'
@@ -3437,59 +2675,95 @@
 						/> -->
 
 					<div class='augInvis' id='boxes'>
-						<h2>Consumables / Other <button type='button' class='boxes close'>X</button></h2>
-						<label for='DemonDrug' class='check'>DemonDrug<input type='checkbox' id='DemonDrug'
+						<h2>Consumables / Other
+
+							<button type='button' class='boxes close'>X</button>
+						</h2>
+						<label for='DemonDrug' class='check'>DemonDrug
+
+							<input type='checkbox' id='DemonDrug'
 								value='{"BRM":1,"BR":5,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
 								class='check skillButton' title='DemonDrug'></label>
-						<label for='PowerTalisman' class='check'>PowerTalisman<input type='checkbox' id='PowerTalisman'
+						<label for='PowerTalisman' class='check'>PowerTalisman
+
+							<input type='checkbox' id='PowerTalisman'
 								value='{"BRM":1,"BR":8,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' checked='true'
 								class='check skillButton' title='PowerTalisman'></label>
-						<label for='powerDrum' class='check'>Power Drum<input type='checkbox' id='powerDrum'
-								checked='true' value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
+						<label for='powerDrum' class='check'>Power Drum
+
+							<input type='checkbox' id='powerDrum' checked='true'
+								value='{"BRM":1.05,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
 								class='check skillButton' title='powerDrum'></label>
-						<label for='DemonAmmo' class='check'>Demon Ammo<input type='checkbox' id='DemonAmmo'
+						<label for='DemonAmmo' class='check'>Demon Ammo
+
+							<input type='checkbox' id='DemonAmmo'
 								value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
 								class='check skillButton' title='DemonAmmo'></label>
-						<label for='MegaDemonDrug' class='check'>Mega DemonDrug<input type='checkbox' id='MegaDemonDrug'
+						<label for='MegaDemonDrug' class='check'>Mega DemonDrug
+
+							<input type='checkbox' id='MegaDemonDrug'
 								value='{"BRM":1,"BR":7,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' checked='true'
 								class='check skillButton' title='MegaDemonDrug'></label>
-						<label for='palicoaff' class='check'>Palico Affinity<input type='checkbox' id='palicoaff'
-								checked='true' value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":30}'
+						<label for='palicoaff' class='check'>Palico Affinity
+
+							<input type='checkbox' id='palicoaff' checked='true'
+								value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":30}'
 								class='check skillButton' title='palicoaff'></label>
-						<label for='PowerCharm' class='check'>PowerCharm<input type='checkbox' id='PowerCharm'
-								checked='true' value='{"BRM":1,"BR":7,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
+						<label for='PowerCharm' class='check'>PowerCharm
+
+							<input type='checkbox' id='PowerCharm' checked='true'
+								value='{"BRM":1,"BR":7,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
 								class='check skillButton' title='PowerCharm'></label>
-						<label for='HuntingHornAttack' class='check'>HuntingHorn Attack<input type='checkbox'
-								id='HuntingHornAttack' value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
+						<label for='HuntingHornAttack' class='check'>HuntingHorn Attack
+
+							<input type='checkbox' id='HuntingHornAttack'
+								value='{"BRM":1,"BR":0,"PRM":1.1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
 								class='check skillButton' title='HuntingHornAttack'></label>
-						<label for='sleepWakeUp' class='check'>Sleep Wake Up<input type='checkbox' id='sleepWakeUp'
+						<label for='sleepWakeUp' class='check'>Sleep Wake Up
+
+							<input type='checkbox' id='sleepWakeUp'
 								value='{"BRM":1,"BR":0,"PRM":2,"BEM":1,"BE":0,"PEM":2,"aff":0}'
 								class='check skillButton' title='sleepWakeUp'></label>
-						<label for='Demon Powder' class='check'>Demon Powder<input type='checkbox' id='Demon Powder'
+						<label for='Demon Powder' class='check'>Demon Powder
+
+							<input type='checkbox' id='Demon Powder'
 								value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' checked='true'
 								class='check skillButton' title='Demon Powder'></label>
-						<label for='ProtectivePolish' class='check'>Protective Polish<input type='checkbox'
-								id='ProtectivePolish' class='check' title='ProtectivePolish'></label>
-						<label for='HuntingHornElemental' class='check'>HuntingHorn Element<input type='checkbox'
-								value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'
+						<label for='ProtectivePolish' class='check'>Protective Polish
+
+							<input type='checkbox' id='ProtectivePolish' class='check' title='ProtectivePolish'></label>
+						<label for='HuntingHornElemental' class='check'>HuntingHorn Element
+
+							<input type='checkbox' value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1.1,"aff":0}'
 								id='HuntingHornElemental' class='check skillButton'
 								title='HuntingHornElemental'></label>
-						<label for='DemonSeed' class='check'>DemonSeed<input type='checkbox' id='DemonSeed'
-								checked='true' value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
+						<label for='DemonSeed' class='check'>DemonSeed
+
+							<input type='checkbox' id='DemonSeed' checked='true'
+								value='{"BRM":1,"BR":10,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'
 								class='check skillButton' title='DemonSeed'></label>
-						<label for='ButterFlame' class='check'>ButterFlame<input type='checkbox' id='ButterFlame'
+						<label for='ButterFlame' class='check'>ButterFlame
+
+							<input type='checkbox' id='ButterFlame'
 								value='{"BRM":1,"BR":25,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' checked='true'
 								class='check skillButton' title='ButterFlame'></label>
-						<label for='HuntingHornAffinity' class='check'>Hunting Horn Affinity<input type='checkbox'
-								value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'
+						<label for='HuntingHornAffinity' class='check'>Hunting Horn Affinity
+
+							<input type='checkbox' value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":20}'
 								id='HuntingHornAffinity' class='check skillButton' title='HuntingHornAffinity'></label>
-						<label for='WaterBlight' class='check'>Water Blight<input type='checkbox' id='WaterBlight'
+						<label for='WaterBlight' class='check'>Water Blight
+
+							<input type='checkbox' id='WaterBlight'
 								value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}' class='check'
 								title='WaterBlight'></label>
 					</div>
+
 					<div class='buildSkills augInvis LightBowGun' id='dango'>
-						<h3 class='is-size-4'>Dango Skills <button type='button' class='dango close'
-								>X</button></h3>
+						<h3 class='is-size-4'>Dango Skills
+
+							<button type='button' class='dango close'>X</button>
+						</h3>
+
 						<div class='dropContainer'>
 							<label for='Booster'>Booster</label><select class='skill' id='Booster' title='Booster'>
 								<option>----</option>
@@ -3499,6 +2773,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Bombardier'>Bombardier</label><select id='Bombardier' title='Bombardier'
 								class='skill classSpecific ChargeBlade HeavyBowGun LightBowGun Gunlance'>
@@ -3509,6 +2784,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label class='thisWidth' for='Adrenaline'>Adrenaline</label><select class='skill'
 								id='Adrenaline' title='Adrenaline'>
@@ -3519,6 +2795,7 @@
 								<option>Lv-4</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='DangoTemper'>Temper</label><select id='DangoTemper' title='Dango Temper'
 								class='skill classSpecific LightBowGun HeavyBowGun Bow'>
@@ -3529,6 +2806,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Marksman'>Marksman</label><select id='Marksman' title='Marksman'
 								class='skill classSpecific LightBowGun HeavyBowGun Bow'>
@@ -3540,9 +2818,12 @@
 							</select>
 						</div>
 					</div>
+
 					<div class='buildSkills augInvis LightBowGun' id='unique'>
+
 						<button type='button' class='unique close'>X</button>
 						<h3 id='weaponId'>LightBowGun</h3>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='Kinsect Buff'>Kinsect Buff</label><select id='KinsectBuff' title='Kinsect Buff'
 								class='skill classSpecific InsectGlaive'>
@@ -3552,6 +2833,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='SpiritGauge'>Spirit Gauge</label><select id='SpiritGauge' title='SpiritGauge'
 								class='skill classSpecific LongSword'>
@@ -3561,6 +2843,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='Helmbreaker'>HelmBreaker</label><select id='Helmbreaker' title='LongSword'
 								class='skill classSpecific LongSword'>
@@ -3570,6 +2853,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='SerenePose'>Serene Pose</label><select id='SerenePose' title='LongSword'
 								class='skill classSpecific LongSword'>
@@ -3579,6 +2863,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='savageAxe'>Savage Axe</label><select id='savageAxe' title='Savage Axe'
 								class='skill classSpecific ChargeBlade'>
@@ -3586,6 +2871,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='impShieldCharge'>Shield Charge</label><select id='impShieldCharge'
 								title='impShieldCharge' class='skill classSpecific ChargeBlade'>
@@ -3593,6 +2879,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='StrongarmStance'>Strongarm Stance</label><select id='StrongarmStance'
 								title='StrongarmStance' class='skill classSpecific GreatSword'>
@@ -3600,6 +2887,7 @@
 								<option>Active</option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='PowerSheath'>Power Sheath</label><select id='PowerSheath' title='PowerSheath'
 								class='skill classSpecific GreatSword'>
@@ -3607,6 +2895,7 @@
 								<option>Active</option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='ArchdemonMode'>Archdemon Mode</label><select id='ArchdemonMode'
 								title='ArchdemonMode' class='skill classSpecific DualBlades demon'>
@@ -3614,6 +2903,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='DemonMode'>Demon Mode</label><select id='DemonMode' title='DemonMode'
 								class='skill classSpecific DualBlades demon'>
@@ -3621,6 +2911,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='FeralDemonMode'>Feral Demon Mode</label><select id='FeralDemonMode'
 								title='FeralDemonMode' class='skill classSpecific DualBlades demon'>
@@ -3628,6 +2919,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='eleShieldCharge'>Shield Charge Ele</label><select id='eleShieldCharge'
 								title='eleShieldCharge' class='skill classSpecific ChargeBlade'>
@@ -3635,6 +2927,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='evadeHop'>Evade Hop</label><select id='evadeHop' title='Evade Hop'
 								class='skill classSpecific LightBowGun'>
@@ -3642,6 +2935,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='HerculesDraw'>Hercules Draw</label><select id='HerculesDraw'
 								title='HerculesDraw' class='skill classSpecific Bow'>
@@ -3649,6 +2943,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='UpperCrit'>Upper Critical Distance</label><select id='UpperCrit'
 								title='Upper Crit' class='skill classSpecific Bow'>
@@ -3656,6 +2951,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='fanningManeuver'>Fanning Maneuver</label><select id='fanningManeuver'
 								title='Fanning Maneuver' class='skill classSpecific LightBowGun'>
@@ -3663,6 +2959,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='ElementalReload'>Ele Reload</label><select id='ElementalReload'
 								title='ElementalReload' class='skill classSpecific LightBowGun'>
@@ -3670,6 +2967,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='CriticalFirePower'>Crit Fire Power</label><select id='CriticalFirePower'
 								title='CriticalFirePower' class='skill classSpecific LightBowGun'>
@@ -3677,6 +2975,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='ChargeLevel'>Charge Level</label><select id='ChargeLevel' title='ChargeLevel'
 								class='skill classSpecific HeavyBowGun'>
@@ -3686,6 +2985,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='LanceCharge'>Lance Charge</label><select id='LanceCharge' title='LanceCharge'
 								class='skill classSpecific Lance'>
@@ -3698,11 +2998,11 @@
 
 				<div id='setSearcher'>
 					<h2>Set Search</h2>
+
 					<div id='skillSelect' class='dropContainer'>
+
 						<button type='button' id='startSearch' aria-pressed='false' class='blue'
-							onmousedown='getSetBuilds(6)'>
-							Find Builds
-						</button>
+							onmousedown='getSetBuilds(12)'> Find Builds </button>
 						<!-- <div class='dropdown'> -->
 						<!-- <input type='text' placeholder='Search...' class='dropdown-search'> -->
 						<!-- <ul class='dropdown-options'> -->
@@ -3710,10 +3010,7 @@
 						<!-- <li>Attack Boost</li> -->
 						<!-- </ul> -->
 						<!-- </div> -->
-
 						<select itemtype="search" name="Skill Select" title="Skill Select" id="dropSkills">
-
-
 							<option value="AdrenalineRush">Select Skills For Build</option>
 							<option value="AdrenalineRush">AdrenalineRush</option>
 							<option value="AffinitySliding">AffinitySliding</option>
@@ -3858,12 +3155,13 @@
 							<option value="Windproof">Windproof</option>
 							<option value="WirebugWhisperer">WirebugWhisperer</option>
 						</select>
+
 						<button type='button' aria-pressed='false' class='blue' id='resetSkills'
-							onclick='resetSkills()'>
-							Reset Skills
-						</button>
+							onclick='resetSkills()'> Reset Skills </button>
 					</div>
+
 					<div id='raw' class='buildSkills container'>
+
 						<div class='dropContainer'>
 							<label for='AttackBoost'>Attack Boost</label><select id='AttackBoost' title='Attack Boost'
 								class='skill'>
@@ -3877,6 +3175,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='PeakPerformance'>Peak Performance</label><select id='PeakPerformance'
 								title='Peak Performance' class='skill'>
@@ -3886,6 +3185,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Resentment'>Resentment</label><select id='Resentment' title='Resentment'
 								class='skill'>
@@ -3897,6 +3197,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Agitator'>Agitator</label><select id='Agitator' title='Agitator'
 								class='skill hitsOfSharp'>
@@ -3908,6 +3209,7 @@
 								<option>Lv-5</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Resuscitate'>Resuscitate</label><select id='Resuscitate' title='Resuscitate'
 								class='skill'>
@@ -3917,6 +3219,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Coalescence'>Coalescence</label><select id='Coalescence' title='Coalescence'
 								class='skill'>
@@ -3926,6 +3229,7 @@
 								<option>Lv-3</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='CriticalBoost'>Critical Boost</label><select id='CriticalBoost'
 								title='Critical Boost' class='skill crit'>
@@ -3935,6 +3239,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Burst'>Burst</label><select id='Burst' title='Burst' class='skill'>
 								<option>----</option>
@@ -3948,6 +3253,7 @@
 								</optgroup>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Counterstrike'>Counterstrike</label><select id='Counterstrike'
 								title='Counterstrike' class='skill'>
@@ -3957,6 +3263,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Spiribird'>Spiribird</label><select id='Spiribird' title='Spiribird'
 								class='skill'>
@@ -3983,6 +3290,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='PunishingDraw'>Punishing Draw</label><select id='PunishingDraw'
 								title='Punishing Draw'
@@ -3993,6 +3301,7 @@
 								<option value='7'>Lv-3</option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='OffensiveGuard'>Offensive Guard</label><select id='OffensiveGuard'
 								title='Offensive Guard'
@@ -4003,6 +3312,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='Grinder(S)'>Grinder(S)</label><select id='Grinder(S)' title='Grinder(S)'
 								class='skill GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer Sharpness classSpecific'>
@@ -4012,6 +3322,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Heroics'>Heroics</label><select id='Heroics' title='Heroics' class='skill'>
 								<option>----</option>
@@ -4022,6 +3333,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Fortify'>Fortify</label><select id='Fortify' title='Fortify' class='skill'>
 								<option>----</option>
@@ -4029,6 +3341,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='MindsEye'>Minds Eye</label><select id='MindsEye' title='Minds Eye'
 								class='skill GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer Sharpness/HVZ classSpecific'>
@@ -4038,6 +3351,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Artillery'>Artillery</label><select id='Artillery' title='Artillery'
 								class='skill'>
@@ -4047,6 +3361,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='Handicraft'>Handicraft</label><select
 								class='skill GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer Sharpness hitsOfSharp classSpecific'
@@ -4059,6 +3374,7 @@
 								<option>Lv-5</option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='MastersTouch'>Masters Touch</label><select id='MastersTouch'
 								title='Masters Touch'
@@ -4069,6 +3385,7 @@
 								<option value='0.8'>Lv-3</option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='RazorSharp'>Razor Sharp</label><select id='RazorSharp'
 								class='skill GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer hitsOfSharp Sharpness classSpecific'
@@ -4079,6 +3396,7 @@
 								<option value='0.5'>Lv-3</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='WallRunner'>Wall Runner</label><select id='WallRunner' title='Wall Runner'
 								class='skill'>
@@ -4088,6 +3406,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='BowChargePlus'>Mighty Bow</label><select class='skill classSpecific Bow'
 								id='BowChargePlus' title='Mighty Bow'>
@@ -4095,6 +3414,7 @@
 								<option value='true'>Lv-1</option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='Bludgeoner'>Bludgeoner</label><select id='Bludgeoner' title='Bludgeoner'
 								class='skill GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer Sharpness classSpecific'>
@@ -4104,6 +3424,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='PierceUp'>Pierce Up</label><select id='PierceUp' title='Pierce Up'
 								class='skill classSpecific LightBowGun HeavyBowGun Bow'>
@@ -4113,6 +3434,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='SpreadUp'>Spread Up</label><select id='SpreadUp' title='SpreadUp'
 								class='skill classSpecific LightBowGun HeavyBowGun Bow'>
@@ -4122,6 +3444,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='NormalRapidUp'>Normal/Rapid Up</label><select id='NormalRapidUp'
 								title='Normal/Rapid Up' class='skill classSpecific LightBowGun HeavyBowGun Bow'>
@@ -4131,6 +3454,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='RapidFireUp'>Rapid Fire Up</label><select id='RapidFireUp' title='Rapid'
 								class='skill classSpecific LightBowGun HeavyBowGun'>
@@ -4140,6 +3464,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='SpecialAmmoBoost'>Special Ammo Up</label><select id='SpecialAmmoBoost'
 								title='SpecialAmmo Boost' class='skill classSpecific LightBowGun HeavyBowGun Bow'>
@@ -4148,6 +3473,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='SpareShot'>Spare Shot</label><select id='SpareShot' title='Spare Shot'
 								class='skill classSpecific LightBowGun HeavyBowGun Bow'>
@@ -4157,6 +3483,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='AmmoUp'>Ammo Up</label><select id='AmmoUp' title='Ammo UP'
 								class='skill classSpecific HeavyBowGun LightBowGun'>
@@ -4166,6 +3493,7 @@
 								<option>Lv-3</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Tune-Up'>Tune-Up</label><select id='Tune-Up'
 								class='skill classSpecific LightBowGun HeavyBowGun'>
@@ -4174,6 +3502,7 @@
 								<option>Lv-2</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='ReloadSpeed'>Reload Speed</label><select id='ReloadSpeed' title='Reload Speed'
 								class='skill classSpecific LightBowGun HeavyBowGun Bow'>
@@ -4183,6 +3512,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='RecoilDown'>Recoil Down</label><select id='RecoilDown' title='Recoil Down'
 								class='skill classSpecific HeavyBowGun LightBowGun'>
@@ -4192,6 +3522,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='RapidMorph'>Rapid Morph</label><select id='RapidMorph' title='RapidMorph'
 								class='skill classSpecific ChargeBlade SwitchAxe'>
@@ -4201,6 +3532,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Strife'>Strife</label><select id='Strife' title='Strife' class='skill setBonus'>
 								<option>----</option>
@@ -4216,6 +3548,7 @@
 								</optgroup>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Bloodlust'>Bloodlust</label><select id='Bloodlust' title='Bloodlust'
 								class='skill'>
@@ -4232,6 +3565,7 @@
 								</optgroup>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Foray'>Foray</label><select id='Foray' title='Foray' class='skill'>
 								<option>----</option>
@@ -4240,6 +3574,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div id='scrollHeight' class='dropContainer'>
 							<label for='MailofHellfire'>Mail of Hellfire</label>
 							<select id='MailofHellfire' title='Mail of Hellfire' class='skill'>
@@ -4249,6 +3584,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Dereliction'>Dereliction</label>
 							<select id='Dereliction' title='Dereliction' class='skill'>
@@ -4270,6 +3606,7 @@
 								</optgroup>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='Dragonheart'>Dragonheart</label><select id='Dragonheart' title='Dragonheart'
 								class='skill'>
@@ -4281,6 +3618,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='KushalaBlessing'>Kushala Blessing</label><select id='KushalaBlessing'
 								title='KushalaBlessing' class='skill setBonus ice water'>
@@ -4291,6 +3629,7 @@
 								<option>Lv-4</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='StormSoul'>Storm Soul</label><select id='StormSoul' title='StormSoul'
 								class='skill setBonus thunder dragon'>
@@ -4302,6 +3641,7 @@
 								<option>Lv-5</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='TeostraBlessing'>Teostra Blessing</label><select id='TeostraBlessing'
 								title='TeostraBlessing' class='skill setBonus fire'>
@@ -4312,6 +3652,7 @@
 								<option>Lv-4</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='AdrenalineRush'>Adrenaline Rush</label><select id='AdrenalineRush'
 								title='AdrenalineRush' class='skill'>
@@ -4321,6 +3662,7 @@
 								<option>Lv-3</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='SneakAttack'>Sneak Attack</label><select id='SneakAttack' title='SneakAttack'
 								class='skill'>
@@ -4330,6 +3672,7 @@
 								<option>Lv-3</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='ElementExploit'>Element Exploit</label><select id='ElementExploit'
 								title='Element Exploit' class='skill'>
@@ -4339,6 +3682,7 @@
 								<option value='15'>Lv-3</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='IceAttack'>Ice Attack</label><select id='IceAttack' title='IceAttack'
 								class='skill ice'>
@@ -4350,6 +3694,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='WaterAttack'>Water Attack</label><select id='WaterAttack' title='WaterAttack'
 								class='skill water'>
@@ -4361,6 +3706,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='FireAttack'>Fire Attack</label><select id='FireAttack' title='FireAttack'
 								class='skill fire'>
@@ -4372,6 +3718,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='ThunderAttack'>Thunder Attack</label><select id='ThunderAttack'
 								title='ThunderAttack' class='skill thunder'>
@@ -4383,6 +3730,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='DragonAttack'>Dragon Attack</label><select id='DragonAttack'
 								title='DragonAttack' class='skill dragon'>
@@ -4394,6 +3742,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='CriticalElement'>Critical Element</label><select id='CriticalElement'
 								title='Critical Element' class='skill crit'>
@@ -4403,6 +3752,7 @@
 								<option value='10'></option>
 							</select>
 						</div>
+
 						<div class='dropContainer' style='display: none;'>
 							<label for='ChargeMaster'>Charge Master</label><select id='ChargeMaster'
 								class='skill classSpecific Bow ChargeBlade Gunlance Hammer Lance SwordNShield HeavyBowGun LongSword GreatSword'>
@@ -4412,6 +3762,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='WeaknessExploit'>Weakness Exploit</label><select id='WeaknessExploit'
 								title='Weakness Exploit' class='skill hitsOfSharp'>
@@ -4421,6 +3772,7 @@
 								<option value='50'>Lv-3</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='CriticalEye'>Critical Eye</label><select id='CriticalEye' title='Critical Eye'
 								class='skill hitsOfSharp'>
@@ -4434,6 +3786,7 @@
 								<option>Lv-7</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='MaximumMight'>Maximum Might</label><select id='MaximumMight'
 								title='Maximum Might' class='skill hitsOfSharp'>
@@ -4443,6 +3796,7 @@
 								<option></option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='LatentPower'>Latent Power</label><select id='LatentPower' title='Latent Power'
 								class='skill hitsOfSharp'>
@@ -4457,14 +3811,16 @@
 					</div>
 				</div>
 			</section>
+
 			<section id='section2' class='ChargeBlade DualBlades LightBowGun column container'>
+
 				<section id="damage">
 					<h2>Monster Selection</h2>
+
 					<div id='monDropDowns'>
+
 						<div id='dropHeight' class='dropContainer'>
 							<label for='dropMonster'>Monster</label><select id='dropMonster' title='monsterSelection'>
-
-
 								<option value='Rathian'>Rathian</option>
 								<option value='Gold Rathian'>Gold Rathian</option>
 								<option value='Apex Rathian'>Apex Rathian</option>
@@ -4543,10 +3899,9 @@
 								<option value='Toadversary'>Toadversary</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='dropHZ'>Hit Zone</label><select id='dropHZ' title='hzSelection'>
-
-
 								<option value='Head '>Head </option>
 								<option value='Neck '>Neck </option>
 								<option value='Body '>Body </option>
@@ -4554,25 +3909,31 @@
 								<option value='Shell '>Shell </option>
 							</select>
 						</div>
+
 						<div class='questSelect'>
-							<label for='dropQuest'>Quest</label><button type='button' aria-pressed='false' class='blue'
-								id='questButton'></button><select id='dropQuest' title='Quest'>
+							<label for='dropQuest'>Quest</label>
+
+							<button type='button' aria-pressed='false' class='blue' id='questButton'></button><select
+								id='dropQuest' title='Quest'>
 								<option value='The Immortal'>The Immortal</option>
 							</select>
+
 							<div aria-haspopup='menu' class='menu' id='questDiv'>
+
 								<div id='divMR' class='dropContainer'>
 									<label class='menu' for='MR'>Master Rank</label><select class='menu MR' id='MR'
 										title='MR'>
-
 										<option value='The Immortal'>The Immortal</option>
 									</select>
 								</div>
+
 								<div id='divHR' class='dropContainer augInvis'>
 									<label class='menu' for='HR'>High Rank</label><select class='menu' id='HR'
 										title='HR'></select>
 								</div>
 							</div>
 						</div>
+
 						<div class='twoColumn div dropContainer'>
 							<select id='players'>
 								<option value='1p'>1 Player</option>
@@ -4582,7 +3943,6 @@
 							</select>
 							<label class='row1span2' for='health'>Total Health</label>
 							<select id='health'>
-
 								<option value='98000'>98000</option>
 								<option value='99000'>99000</option>
 								<option value='100000'>100000</option>
@@ -4590,6 +3950,7 @@
 								<option value='102000'>102000</option>
 							</select>
 						</div>
+
 						<div class='twoColumn div dropContainer' id='divEnrage'>
 							<output id='enrageDisplay'>100%</output>
 							<label class='row1span2' for='dropEnraged'>Enrage Modifier</label>
@@ -4600,8 +3961,9 @@
 						</div>
 						<p title='spawnArea' id='spawnArea'><output>Spawn Area Alter 100%</output></p>
 					</div>
+
 					<div class='is-bordered' id='monTableContainer'>
-						<table id='monTable'>
+						<table id="monTable">
 							<tr>
 								<th>Hit Zone</th>
 								<th>Sever</th>
@@ -4615,88 +3977,87 @@
 							</tr>
 							<tr>
 								<td>Head </td>
-								<td class='S'>100</td>
-								<td class='S'>100</td>
-								<td class='S'>100</td>
-								<td class='B'>30</td>
-								<td class='B'>30</td>
-								<td class='B'>30</td>
-								<td class='B'>30</td>
-								<td class='B'>30</td>
+								<td class="S">100</td>
+								<td class="S">100</td>
+								<td class="S">100</td>
+								<td class="B">30</td>
+								<td class="B">30</td>
+								<td class="B">30</td>
+								<td class="B">30</td>
+								<td class="B">30</td>
 							</tr>
 							<tr>
 								<td>Neck </td>
-								<td class='S'>80</td>
-								<td class='S'>80</td>
-								<td class='S'>80</td>
-								<td class='B'>25</td>
-								<td class='B'>25</td>
-								<td class='B'>25</td>
-								<td class='B'>25</td>
-								<td class='B'>25</td>
+								<td class="S">80</td>
+								<td class="S">80</td>
+								<td class="S">80</td>
+								<td class="B">25</td>
+								<td class="B">25</td>
+								<td class="B">25</td>
+								<td class="B">25</td>
+								<td class="B">25</td>
 							</tr>
 							<tr>
 								<td>Body </td>
-								<td class='A'>60</td>
-								<td class='A'>60</td>
-								<td class='A'>60</td>
-								<td class='B'>20</td>
-								<td class='B'>20</td>
-								<td class='B'>20</td>
-								<td class='B'>20</td>
-								<td class='B'>20</td>
+								<td class="A">60</td>
+								<td class="A">60</td>
+								<td class="A">60</td>
+								<td class="B">20</td>
+								<td class="B">20</td>
+								<td class="B">20</td>
+								<td class="B">20</td>
+								<td class="B">20</td>
 							</tr>
 							<tr>
 								<td>Limbs </td>
-								<td class='B'>40</td>
-								<td class='B'>40</td>
-								<td class='B'>40</td>
-								<td class='B'>15</td>
-								<td class='B'>15</td>
-								<td class='B'>15</td>
-								<td class='B'>15</td>
-								<td class='B'>15</td>
+								<td class="B">40</td>
+								<td class="B">40</td>
+								<td class="B">40</td>
+								<td class="B">15</td>
+								<td class="B">15</td>
+								<td class="B">15</td>
+								<td class="B">15</td>
+								<td class="B">15</td>
 							</tr>
 							<tr>
 								<td>Shell </td>
-								<td class='B'>20</td>
-								<td class='B'>20</td>
-								<td class='B'>20</td>
-								<td class='F'>5</td>
-								<td class='F'>5</td>
-								<td class='F'>5</td>
-								<td class='F'>5</td>
-								<td class='F'>5</td>
+								<td class="B">20</td>
+								<td class="B">20</td>
+								<td class="B">20</td>
+								<td class="F">5</td>
+								<td class="F">5</td>
+								<td class="F">5</td>
+								<td class="F">5</td>
+								<td class="F">5</td>
 							</tr>
 						</table>
 					</div>
+
 					<div id='forButtons'>
+
 						<button type='button' aria-pressed='false' class='blue' id='Save State' onclick='saveState()'>
-							Save Selections
-						</button>
+							Save Selections </button>
+
 						<button type='button' aria-pressed='false' class='classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe 
 LongSword Lance HuntingHorn Gunlance Hammer Bow' id='viewCombo'
 							onclick='document.getElementById("comboCountContainer").classList.remove("augInvis")'
-							style='display: none;'>
-							Combo Display
-						</button>
+							style='display: none;'> Combo Display </button>
 						<!--class='gray toggle classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer Bow'
 				-->
+
 						<button type='button' aria-pressed='false' class="augInvis" id='filterCombo'
-							style='display: none;'>
-							Combo Attack Filter
-						</button>
+							style='display: none;'> Combo Attack Filter </button>
+
 						<button type='button' aria-pressed='false'
 							class='classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer Bow'
-							id='resetCombo' onclick='comboReset()' style='display: none;'>
-							Reset Combo
-						</button>
+							id='resetCombo' onclick='comboReset()' style='display: none;'> Reset Combo </button>
+
 						<button type='button' aria-pressed='false' class='classSpecific LightBowGun HeavyBowGun'
-							id='ammoChange' onmousedown='toggleAmmoTables()'>
-							Change Ammo Table
-						</button>
+							id='ammoChange' onmousedown='toggleAmmoTables()'> Change Ammo Table </button>
 					</div>
+
 					<div id='forButtonSelect'>
+
 						<div class='dropContainer'>
 							<label for='pierceAdjust'>Pierce Dmg Adjust</label><select id='pierceAdjust'
 								title='pierceAdjust' class='classSpecific LightBowGun HeavyBowGun'>
@@ -4707,6 +4068,7 @@ LongSword Lance HuntingHorn Gunlance Hammer Bow' id='viewCombo'
 								<option value='[0.60,0.5]'>Casual</option>
 							</select>
 						</div>
+
 						<div class='dropContainer'>
 							<label for='spareAdjust'>Spare Shot Adjust</label><select id='spareAdjust'
 								title='spareAdjust' class='classSpecific LightBowGun HeavyBowGun'>
@@ -4717,53 +4079,49 @@ LongSword Lance HuntingHorn Gunlance Hammer Bow' id='viewCombo'
 							</select>
 						</div>
 					</div>
+
 					<div id='sharpnessContainer'
 						class='classSpecific GreatSword ChargeBlade InsectGlaive SwordNShield DualBlades SwitchAxe LongSword Lance HuntingHorn Gunlance Hammer'
 						style='display: none;'>
+
 						<div class='sharpness' id='red'
-							style='background-color: red; border-style: none; width: 52.9916px'>
-							30
-						</div>
+							style='background-color: red; border-style: none; width: 52.9916px'> 30 </div>
+
 						<div class='sharpness' id='orange' style='
 							background-color: orange;
 							border-style: none;
 							width: 123.647px;
-						'>
-							70
-						</div>
+						'> 70 </div>
+
 						<div class='sharpness' id='yellow'
-							style='background-color: gold; border-style: none; width: 123.647px'>
-							70
-						</div>
+							style='background-color: gold; border-style: none; width: 123.647px'> 70 </div>
+
 						<div class='sharpness' id='green' style='
 							background-color: forestgreen;
 							border-style: none;
 							width: 105.983px;
-						'>
-							60
-						</div>
+						'> 60 </div>
+
 						<div class='sharpness' id='blue'
-							style='background-color: blue; border-style: none; width: 105.983px'>
-							60
-						</div>
+							style='background-color: blue; border-style: none; width: 105.983px'> 60 </div>
+
 						<div class='sharpness' id='white' style='
 							background-color: white;
 							border-style: none;
 							width: 88.3193px;
-						'>
-							50
-						</div>
+						'> 50 </div>
+
 						<div class='sharpness' id='purple' style='
 							background-color: purple;
 							color: white;
 							width: 15.8975px;
 							display: none;
-						'>
-							9
-						</div>
+						'> 9 </div>
 					</div>
+
 					<div class='container contain' id='damageTable'>
-						<h2 class='damageHeader is-size-3'>Damage Results</h2>
+						<h2 class='damageHeader'>Damage Results</h2>
+
 						<div id='damageContainer' class='rangedContainer'>
 							<table id='dpsTable'>
 								<thead class='tableRowRanged' id='dpsHead'>
@@ -4774,10 +4132,8 @@ LongSword Lance HuntingHorn Gunlance Hammer Bow' id='viewCombo'
 										<th>Total</th>
 										<th>Effective</th>
 										<th>RPM Gain</th>
-										<th>Shots
-											To Kill</th>
-										<th>Seconds
-											To Kill</th>
+										<th>Shots To Kill</th>
+										<th>Seconds To Kill</th>
 									</tr>
 								</thead>
 								<tbody id='dpsBody' class='rangedTable'>
@@ -5201,85 +4557,80 @@ LongSword Lance HuntingHorn Gunlance Hammer Bow' id='viewCombo'
 						</div>
 					</div>
 				</section>
+
 				<div id='setReturn' class='augInvis'>
-					<h2><output id='extraOutput'>Found 0 Builds / 0 Combinations</output>Extra Skills<button
-							type='button' class='close'
-							onclick='document.getElementById("setReturn").classList.add("augInvis");    document.getElementById("damage").classList.remove("augInvis");'>X</button></h2>
+					<h2><output id='extraOutput'>Found 0 Builds / 0 Combinations</output>Extra Skills
+
+						<button type='button' class='close'
+							onclick='document.getElementById("setReturn").classList.add("augInvis");    document.getElementById("damage").classList.remove("augInvis");'>X</button>
+					</h2>
+
 					<div class='extraSkills'></div>
 					<h2><output id='setOutput'>Displayed 0 Builds / 0 Combinations</output>Sets
+
 						<div id='searchAgain'>
 
 							<button type='button' id='normalSearch' aria-pressed='false' class='blue'
-								onmousedown='getSetBuilds(6)'>
-								Normal Search
-							</button>
+								onmousedown='getSetBuilds(12)'> Normal Search </button>
+
 							<button type='button' id='extendedSearch' aria-pressed='false' class='blue'
-								onmousedown='getSetBuilds(9)'>
-								Extended Search
-							</button>
-							<button type='button' id='extremeSearch' aria-pressed='false' class='blue'
-								onmousedown='getSetBuilds(15)'>
-								Extreme Search
-							</button>
+								onmousedown='getSetBuilds(15)'> Extended Search </button>
 						</div>
 					</h2>
+
 					<div class='grid'>
 					</div>
 				</div>
-
 			</section>
-
 		</div>
+
 		<div>
+
 			<div id='divComboAttacks'></div>
 		</div>
+
 		<div class='combo augInvis' id='comboCountContainer'>
-			<h2>Combo Creation<button type='button' class='close'
-					onclick='document.getElementById("comboCountContainer").classList.add("augInvis")'>X</button></h2>
+			<h2>Combo Creation
+
+				<button type='button' class='close'
+					onclick='document.getElementById("comboCountContainer").classList.add("augInvis")'>X</button>
+			</h2>
 			<ul class='combo' id='comboCountDisplay'></ul>
-			<div id='trashCan'><img class='trash' alt='Trashcan' src='./icons/trash.png'></div>
+
+			<div id='trashCan'>
+
+				<img class='trash' alt='Trashcan' src='./icons/trash.png'>
+			</div>
 		</div>
+
 		<section class='augInvis'>
 			<label for='Sharpness'>Sharpness<label>
 					<select title='Sharpness' id='Sharpness'>
-						<option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>
-							---
-						</option>
-						<option value='{"BRM":1,"BR":0,"PRM":0.5,"BEM":1,"BE":0,"PEM":0.25,"aff":0}'>
-							red
-						</option>
-						<option value='{"BRM":1,"BR":0,"PRM":0.75,"BEM":1,"BE":0,"PEM":0.5,"aff":0}'>
-							Orange
-						</option>
-						<option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":0.75,"aff":0}'>
-							Yellow
-						</option>
-						<option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>
-							Green
-						</option>
-						<option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1.0625,"aff":0}'>
-							Blue
-						</option>
-						<option value='{"BRM":1,"BR":0,"PRM":1.32,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>
-							White
-						</option>
-						<option value='{"BRM":1,"BR":0,"PRM":1.39,"BEM":1,"BE":0,"PEM":1.25,"aff":0}'>
-							Purple
-						</option>
+						<option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'> --- </option>
+						<option value='{"BRM":1,"BR":0,"PRM":0.5,"BEM":1,"BE":0,"PEM":0.25,"aff":0}'> red </option>
+						<option value='{"BRM":1,"BR":0,"PRM":0.75,"BEM":1,"BE":0,"PEM":0.5,"aff":0}'> Orange </option>
+						<option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":0.75,"aff":0}'> Yellow </option>
+						<option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'> Green </option>
+						<option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1.0625,"aff":0}'> Blue </option>
+						<option value='{"BRM":1,"BR":0,"PRM":1.32,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'> White </option>
+						<option value='{"BRM":1,"BR":0,"PRM":1.39,"BEM":1,"BE":0,"PEM":1.25,"aff":0}'> Purple </option>
 					</select>
 				</label></label>
 		</section>
+
 		<div id='previousWeapon' value='initial'></div>
+
 		<div id='previousWeaponType' value='initial'></div>
 		<link defer='' rel='' href='./icons/ramp1.png' as='image'>
 		<link defer='' rel='' href='./icons/ramp3.png' as='image'>
+
 		<div id='license' class='container'>
-			<a rel='license' href='http://creativecommons.org/licenses/by-nc-nd/4.0/'><img
-					alt='Creative Commons License' src='https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png'></a>
+			<a rel='license' href='http://creativecommons.org/licenses/by-nc-nd/4.0/'>
+
+				<img alt='Creative Commons License' src='https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png'></a>
 			<a>This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
 				License</a>
 		</div>
-
 	</body>
 
 </html>
