@@ -10,7 +10,7 @@
         "RazorSharp": 2,
         "SpreadUp": 3,
         "PierceUp": 3,
-        "Normal/RapidUp": 3,
+        "NormalRapidUp": 3,
         "ProtectivePolish": 2,
         "BlastAttack": 2,
         "SleepAttack": 2,
@@ -31,7 +31,7 @@
         "Artillery": 2,
         "MarathonRunner": 2,
         "Focus": 2,
-        "Mind'sEye": 2,
+        "MindsEye": 2,
         "Heroics": 2,
         "SpecialAmmoBoost": 2,
         "LoadShells": 2,
@@ -137,7 +137,7 @@
         "RazorSharp": 2,
         "SpreadUp": 2,
         "PierceUp": 2,
-        "Normal/RapidUp": 2,
+        "NormalRapidUp": 2,
         "ProtectivePolish": 2,
         "BlastAttack": 2,
         "SleepAttack": 2,
@@ -158,7 +158,7 @@
         "Artillery": 2,
         "MarathonRunner": 2,
         "Focus": 2,
-        "Mind'sEye": 2,
+        "MindsEye": 2,
         "Heroics": 2,
         "SpecialAmmoBoost": 2,
         "LoadShells": 2,
@@ -279,7 +279,7 @@
         "RazorSharp": 3,
         "SpareShot": 3,
         "ProtectivePolish": 3,
-        "Mind'sEye": 3,
+        "MindsEye": 3,
         "Ballistics": 3,
         "Bludgeoner": 3,
         "BowChargePlus": 1,
@@ -301,7 +301,7 @@
         "Artillery": 3,
         "LoadShells": 2,
         "SpecialAmmoBoost": 2,
-        "Normal/RapidUp": 3,
+        "NormalRapidUp": 3,
         "PierceUp": 3,
         "SpreadUp": 3,
         "AmmoUp": 3,
@@ -405,7 +405,7 @@
         "CriticalEye": 15,
         "Guts": 15,
         "MastersTouch": 15,
-        "Normal/RapidUp": 15,
+        "NormalRapidUp": 15,
         "PierceUp": 15,
         "RapidFireUp": 15,
         "RazorSharp": 15,
@@ -445,7 +445,7 @@
         "HellfireCloak": 9,
         "Heroics": 9,
         "MailofHellfire": 9,
-        "Mind'sEye": 9,
+        "MindsEye": 9,
         "Mushroomancer": 9,
         "OffensiveGuard": 9,
         "PowderMantle": 9,
@@ -774,7 +774,7 @@
                 "MaximumMight": 1
             },
             {
-                "Mind'sEye": 1
+                "MindsEye": 1
             },
             {
                 "ParalysisAttack": 1
@@ -902,7 +902,7 @@
                 "Mushroomancer": 1
             },
             {
-                "Normal/RapidUp": 1
+                "NormalRapidUp": 1
             },
             {
                 "OffensiveGuard": 1
@@ -1087,13 +1087,13 @@
                 "MaximumMight": 2
             },
             {
-                "Mind'sEye": 2
+                "MindsEye": 2
             },
             {
                 "Mushroomancer": 2
             },
             {
-                "Normal/RapidUp": 2
+                "NormalRapidUp": 2
             },
             {
                 "OffensiveGuard": 2
@@ -1462,7 +1462,7 @@
             "WallRunner(Boost)": 3
         },
         {
-            "Normal/RapidUp": 15,
+            "NormalRapidUp": 15,
             "PierceUp": 15,
             "SpreadUp": 15,
             "MastersTouch": 15,
@@ -1573,7 +1573,7 @@
             "WallRunner(Boost)": 3
         },
         {
-            "Normal/RapidUp": 30,
+            "NormalRapidUp": 30,
             "PierceUp": 30,
             "SpreadUp": 30,
             "MastersTouch": 30,
