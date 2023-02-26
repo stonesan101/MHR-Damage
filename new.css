@@ -94,7 +94,7 @@ div#damageTable>div>table>tbody>tr {
 }
 
 #dpsTable * {
-  z-index: 70;
+  z-index: 40;
 }
 
 section#damage {
@@ -636,8 +636,8 @@ div.inputContainer {
   overflow: hidden
 }
 
-button.inc:hover {
-  z-index: 100
+button.inc:hover,button.dec:hover {
+  z-index: 100 !important;
 }
 
 div#forButtons>button {
