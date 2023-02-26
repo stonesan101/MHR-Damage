@@ -2057,15 +2057,15 @@ div#EquipedSkillDisplay {
   margin-right: 10px
 }
 
-table#damageTable:not('.augInvis'),
-table#damageTable:not('.augInvis') * {
+table#damageTable:not(.augInvis),
+table#damageTable:not(.augInvis) * {
   display: grid !important;
   grid-area: 3/1/4/2
 }
 
 #damageContainer,
-table#ammoTable:not('.augInvis'),
-table#ammoTable:not('.augInvis') * {
+table#ammoTable:not(.augInvis),
+table#ammoTable:not(.augInvis) * {
   display: grid !important
 }
 
