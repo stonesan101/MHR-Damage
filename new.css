@@ -330,7 +330,7 @@ section#section2>div {
 }
 
 div#sharpnessContainer {
-  display: inline-flex;
+  /* display: inline-flex; */
   gap: 0 !important;
   justify-content: center !important;
   width: 66% !important
