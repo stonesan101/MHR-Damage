@@ -28,32 +28,32 @@ label.scroll.vis:hover {
 }
 
 :root {
-  --step--2: clamp(.78rem, calc(0.77rem+0.03vw), .8rem);
-  --step--1: clamp(.9rem, calc(.9rem+0.22vw), 1.11rem);
+  --step--2: clamp(0.78rem, calc(0.77rem+0.03vw), 0.8rem);
+  --step--1: clamp(0.9rem, calc(0.9rem+0.22vw), 1.11rem);
   --step-0: clamp(1.12rem, calc(1.8rem-0.22vw), 2rem);
   --step-1: clamp(1.35rem, calc(1.28rem+0.37vw), 1.56rem);
   --step-2: clamp(1.62rem, calc(1.50rem+0.58vw), 1.95rem);
   --step-3: clamp(1.94rem, calc(1.77rem+0.87vw), 2.44rem);
   --step-4: clamp(2.33rem, calc(2.08rem+1.25vw), 3.05rem);
   --step-5: clamp(2.8rem, calc(2.45rem+1.77vw), 3.82rem);
-  --space-3xs: clamp(.1rem, calc(0.3rem+0.23vw), .5rem);
-  --space-2xs: clamp(.5rem, calc(0.44rem+0.27vw), .69rem);
-  --space-xs: clamp(.69rem, calc(0.56rem+0.53vw), 1.06rem);
-  --space-s: clamp(.94rem, calc(0.79rem+0.62vw), 1.38rem);
+  --space-3xs: clamp(0.1rem, calc(0.3rem+0.23vw), 0.5rem);
+  --space-2xs: clamp(0.5rem, calc(0.44rem+0.27vw), 0.69rem);
+  --space-xs: clamp(0.69rem, calc(0.56rem+0.53vw), 1.06rem);
+  --space-s: clamp(0.94rem, calc(0.79rem+0.62vw), 1.38rem);
   --space-m: clamp(1.44rem, calc(1.23rem+0.88vw), 2.06rem);
   --space-l: clamp(1.88rem, calc(1.59rem+1.24vw), 2.75rem);
   --space-xl: clamp(2.81rem, calc(2.38rem+1.86vw), 4.13rem);
   --space-2xl: clamp(3.75rem, calc(3.18rem+2.48vw), 5.5rem);
   --space-3xl: clamp(5.63rem, calc(4.77rem+3.72vw), 8.25rem);
-  --space-3xs-2xs: clamp(.5rem, calc(1.3rem-0.62vw), 1rem);
-  --space-2xs-xs: clamp(.5rem, calc(0.32rem+0.8vw), 1.06rem);
-  --space-xs-s: clamp(.69rem, calc(0.46rem+0.97vw), 1.38rem);
-  --space-s-m: clamp(.94rem, calc(0.57rem+1.59vw), 2.06rem);
+  --space-3xs-2xs: clamp(0.5rem, calc(1.3rem-0.62vw), 1rem);
+  --space-2xs-xs: clamp(0.5rem, calc(0.32rem+0.8vw), 1.06rem);
+  --space-xs-s: clamp(0.69rem, calc(0.46rem+0.97vw), 1.38rem);
+  --space-s-m: clamp(0.94rem, calc(0.57rem+1.59vw), 2.06rem);
   --space-m-l: clamp(1.44rem, calc(1.01rem+1.86vw), 2.75rem);
   --space-l-xl: clamp(1.88rem, calc(1.14rem+3.19vw), 4.13rem);
   --space-xl-2xl: clamp(2.81rem, calc(1.93rem+3.81vw), 5.5rem);
   --space-2xl-3xl: clamp(3.75rem, calc(2.28rem+6.37vw), 8.25rem);
-  --space-s-l: clamp(.94rem, calc(0.34rem+2.57vw), 2.75rem);
+  --space-s-l: clamp(0.94rem, calc(0.34rem+2.57vw), 2.75rem);
   --gradient-b: linear-gradient(to bottom, #111, midnightblue)
 }
 
@@ -197,7 +197,7 @@ section.armorDisplay:not(.charm, img) {
   grid-template-columns: 1fr;
   width: 19em;
   max-height: min-content !important;
-  row-gap: .25em;
+  row-gap: 0.25em;
 }
 
 button.equipBuild {
@@ -230,7 +230,7 @@ h1,
 h2,
 h3,
 h5 {
-  background: linear-gradient(#191971, rgba(6, 4, 4, .11))
+  background: linear-gradient(#191971, rgba(6, 4, 4, 0.11))
 }
 
 output.comboHits {
@@ -257,7 +257,7 @@ div#forButtons {
 
 div#forButtonSelect {
   display: inline-flex;
-  gap: .5rem;
+  gap: 0.5rem;
   grid-auto-flow: column;
   grid-template-columns: auto
 }
@@ -337,7 +337,7 @@ div#sharpnessContainer {
 }
 
 div#forButtons {
-  gap: .5rem;
+  gap: 0.5rem;
   grid-auto-flow: column;
   place-items: baseline center;
   display: flex;
@@ -357,7 +357,7 @@ th.tableRow {
 
 table#monTable>tr>td:first-child,
 table#monTable>tr>th:first-child {
-  padding-inline: .8em;
+  padding-inline: 0.8em;
   display: grid;
   min-height: 4.45em !important;
   width: clamp(7em, 4em, 7em);
@@ -428,7 +428,7 @@ tbody#dpsBody {
 div#scrollSwap {
   display: inline-grid !important;
   pointer-events: none !important;
-  row-gap: .5em !important;
+  row-gap: 0.5em !important;
   height: 4.25em;
   margin: 0 !important;
   width: 17.5em;
@@ -496,7 +496,7 @@ div#damageContainer>table {
 }
 
 table#monTable td {
-  padding-inline: .4em
+  padding-inline: 0.4em
 }
 
 @media(min-width: 1100px) {
@@ -506,19 +506,19 @@ table#monTable td {
 }
 
 div#containAll {
-  margin-inline: .5em;
-  gap: .4em
+  margin-inline: 0.5em;
+  gap: 0.4em
 }
 
 section#section1 {
   outline: 0;
   /* width: fit-content; */
   display: grid;
-  gap: .5em;
+  gap: 0.5em;
   justify-items: center;
   justify-content: space-evenly;
   align-self: baseline;
-  row-gap: .5em !important;
+  row-gap: 0.5em !important;
 }
 
 html {
@@ -537,15 +537,15 @@ div>section>div#other {
 
 div#boxes>label {
   place-items: center;
-  gap: .3rem;
-  padding-inline: .75rem;
+  gap: 0.3rem;
+  padding-inline: 0.75rem;
   grid-template-columns: 1fr auto;
   display: grid
 }
 
 label,
 output {
-  padding-inline: .4em;
+  padding-inline: 0.4em;
 }
 
 output.leg {
@@ -634,10 +634,10 @@ div.inputContainer {
   place-items: start center;
   place-content: center;
   overflow: hidden
-
 }
 
-button.inc:hover,button.dec:hover {
+button.inc:hover,
+button.dec:hover {
   z-index: 100 !important;
 }
 
@@ -676,7 +676,7 @@ button.dec:not(.armorDisplay>button):hover {
   z-index: 50;
   border-right: none !important;
   background-image: none;
-  -webkit-text-stroke: .4rem
+  -webkit-text-stroke: 0.4rem
 }
 
 div.augDiv>output.label {
@@ -691,7 +691,7 @@ button.inc:not(.armorDisplay>button):hover {
   border-left: none !important;
   background-image: none;
   z-index: 50;
-  -webkit-text-stroke: .4rem
+  -webkit-text-stroke: 0.4rem
 }
 
 #setBuilder>div>button.dec {
@@ -710,7 +710,7 @@ div#dango,
 div#unique,
 #boxes {
   display: inline-flex;
-  gap: .75rem;
+  gap: 0.75rem;
   flex-basis: min-content;
   grid-area: auto/1/auto/-1;
 }
@@ -728,8 +728,8 @@ div#comboCountContainer {
 
 .extraSkills>button {
   border-radius: 0;
-  margin: .8rem !important;
-  margin-block: .8rem !important;
+  margin: 0.8rem !important;
+  margin-block: 0.8rem !important;
   width: 22% !important
 }
 
@@ -752,9 +752,9 @@ div#extraSkills {
   position: relative;
   width: -moz-fit-content;
   width: -webkit-fill-available;
-  width: fit-content; 
-   place-items: stretch end;
-  margin: .7rem !important;
+  width: fit-content;
+  place-items: stretch end;
+  margin: 0.7rem !important;
 }
 
 div#divEnrage {
@@ -856,7 +856,7 @@ div.menu>div#divHR {
 
 div.menu>div#divMR {
   display: inline-grid;
-  margin: 0 0 .1rem !important;
+  margin: 0 0 0.1rem !important;
   gap: 0 !important
 }
 
@@ -1043,10 +1043,10 @@ button,
   background-image: var(--gradient-b);
   color: #ffd900 !important;
   pointer-events: all !important;
-  border: .03em ridge #ffd900 !important;
+  border: 0.03em ridge #ffd900 !important;
   -moz-user-select: auto !important;
- -webkit-user-select: auto !important;
- user-select: auto !important;
+  -webkit-user-select: auto !important;
+  user-select: auto !important;
 }
 
 #enrageDisplay,
@@ -1082,7 +1082,7 @@ div#setBuilder>label.dropContainer {
   display: inline-grid;
   position: sticky;
   justify-content: space-between;
-  padding-inline: .5rem !important;
+  padding-inline: 0.5rem !important;
   min-width: 14vw !important
 }
 
@@ -1114,11 +1114,11 @@ tr.tableRowRanged {
 }
 
 div#setBuilder * {
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 section#sideDisplay {
-    grid: none;
+  grid: none;
 }
 
 #sideDisplay>div:first-child {
@@ -1134,7 +1134,7 @@ select#dropEnraged {
 output#enrageDisplay {
   grid-area: 2/2/2/3;
   display: grid;
-  outline-width: .1rem;
+  outline-width: 0.1rem;
   justify-items: start
 }
 
@@ -1292,7 +1292,7 @@ h3,
 h5 {
   width: 99.6%;
   color: #ffd900;
-  margin: .4rem !important;
+  margin: 0.4rem !important;
   box-shadow: #ffd900 0 0 1.2px !important;
   grid-area: 1/auto/auto/-1 !important
 }
@@ -1322,7 +1322,7 @@ h2 {
 }
 
 button:active {
-  outline-width: .4em !important;
+  outline-width: 0.4em !important;
   color: #f0f8ff !important
 }
 
@@ -1334,13 +1334,13 @@ label.check:hover {
 
 label.check:active {
   color: #f0f8ff;
-  outline-width: .3em !important
+  outline-width: 0.3em !important
 }
 
 button.blue,
 button:hover,
 label.click:checked:hover {
-  -webkit-text-stroke: .015rem;
+  -webkit-text-stroke: 0.015rem;
   color: #ffd900;
   background: linear-gradient(#191971, #420000);
   z-index: 50
@@ -1356,7 +1356,7 @@ select {
 }
 
 button.close {
-  right: .9%;
+  right: 0.9%;
   top: 13%;
   height: 1.5em;
   display: grid;
@@ -1407,7 +1407,7 @@ input#inputs {
 label.scroll {
   grid-area: 1/1/2/2;
   min-width: max-content;
-  padding-inline: .5rem
+  padding-inline: 0.5rem
 }
 
 input#inputComboRepeat,
@@ -1417,7 +1417,7 @@ input.inputs {
 
 div#forButtonSelect {
   display: inline-flex;
-  gap: .5em
+  gap: 0.5em
 }
 
 div.sharpness {
@@ -1556,7 +1556,7 @@ section#charm select {
 }
 
 div>select:not(.weapon select) {
-  filter: blur(.01px)
+  filter: blur(0.01px)
 }
 
 select.armor.charms {
@@ -1567,12 +1567,12 @@ select.armor.charms {
   right: 0;
   border: 0;
   grid-area: 1/2/2/3 !important;
-  min-width: .3vw !important
+  min-width: 0.3vw !important
 }
 
 #dpsTable {
   gap: 0;
-  filter: contrast(1.11) grayscale(.03) saturate(.83) sepia(.02);
+  filter: contrast(1.11) grayscale(0.03) saturate(0.83) sepia(0.02);
   border-style: none;
   text-transform: capitalize;
   justify-items: start;
@@ -1588,7 +1588,7 @@ div#setSearcher {
 #section1>div>div:not(div.dropContainer, #statsTableDiv) {
   align-items: start;
   width: 100%;
-  gap: .5em
+  gap: 0.5em
 }
 
 div#extraMenus {
@@ -1604,8 +1604,8 @@ div#extraMenus {
 div#boxes,
 div#raw {
   display: flex;
-  gap: .4rem;
-  margin-inline: .5rem;
+  gap: 0.4rem;
+  margin-inline: 0.5rem;
   flex-direction: row;
   justify-items: start;
   /* font-size: var(--step--2) !important; */
@@ -1617,7 +1617,7 @@ div#boxes {
   min-width: -moz-fit-content;
   min-width: -webkit-fill-available;
   min-width: fit-content;
-    gap: 1.7rem 1.3rem;
+  gap: 1.7rem 1.3rem;
   width: 96% !important;
   margin: 0 !important
 }
@@ -1704,7 +1704,7 @@ div#comboCountContainer>h3 {
 }
 
 ul {
-  gap: .5rem;
+  gap: 0.5rem;
   overflow-y: auto;
   -webkit-user-drag: none;
   app-region: no-drag;
@@ -1731,8 +1731,8 @@ div#skillSelect * {
 
 div#setReturn>button {
   border-radius: 0;
-  margin: .6rem !important;
-  margin-block: .5rem !important
+  margin: 0.6rem !important;
+  margin-block: 0.5rem !important
 }
 
 .grid {
@@ -1742,7 +1742,7 @@ div#setReturn>button {
   width: 100%;
   max-height: 60em !important;
   border-radius: 0 !important;
-  gap: .5em;
+  gap: 0.5em;
   grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
   align-items: flex-start;
   align-content: flex-start
@@ -1764,13 +1764,13 @@ div#statsTableDiv {
 
 div#statsTableDiv td {
   min-width: max-content !important;
-  padding: .2em
+  padding: 0.2em
 }
 
 div#statsTableDiv>table>*>tr {
   display: grid;
   width: 17em;
-  grid-template-columns: 1fr .8fr 1fr;
+  grid-template-columns: 1fr 0.8fr 1fr;
 }
 
 div#damageTable,
@@ -1788,7 +1788,7 @@ style {
 }
 
 img.invis:hover {
-  opacity: 57;
+  opacity: 57%;
   border-radius: 50%
 }
 
@@ -1797,7 +1797,7 @@ div#setReturn {
   grid-template-rows: auto minmax(auto, 25%) auto 1fr;
   overflow: hidden;
   z-index: 100;
-  right: .3%;
+  right: 0.3%;
   min-width: 100%;
   grid-area: 1/1/2/-1;
 }
@@ -1805,7 +1805,7 @@ div#setReturn {
 div#setReturn>div:nth-child(4)>label {
   width: 100%;
   color: #eacd6f;
-  margin: .4rem !important;
+  margin: 0.4rem !important;
   height: 25px !important;
   background: linear-gradient(0, #00000a 0, #55555e 4%, #00000a 15%, #171721 84%, #58585f 95%) !important
 }
@@ -1841,12 +1841,9 @@ h6 {
   height: min(20px, 2em) !important
 }
 
-#weaponSelects {
-}
-
 :not(table, #containAll, #containAll>section, #containAll>section>div, #containAll>section>div>div, input.check, #scrollSwap>div, h1, h2, h3, h4, h5, input.hitsOfSharpInputs, #damage, #damage>div),
 div#monTableContainer {
-  box-shadow: #ffd900 0 0 .8px
+  box-shadow: #ffd900 0 0 0.8px
 }
 
 section.decoDisplay {
@@ -1926,7 +1923,7 @@ img.trash {
 
 div#augToggle {
   grid-template-columns: 1fr 1fr;
-  gap: .6rem !important
+  gap: 0.6rem !important
 }
 
 #weaponSelects>select {
@@ -1941,7 +1938,7 @@ div#augToggle {
   visibility: hidden;
   min-height: 0 !important;
   height: 0 !important;
-  transition: height .4s !important
+  transition: height 0.4s !important
 }
 
 #weaponSelects>section:nth-child(4)>label:first-child {
@@ -2077,9 +2074,9 @@ table#ammoTable:not(.augInvis) * {
 
 #searchAgain {
   display: grid;
-  gap: .5em;
+  gap: 0.5em;
   position: fixed;
-  right: .6%
+  right: 0.6%
 }
 
 #searchAgain>button {

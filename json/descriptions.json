@@ -1,0 +1,433 @@
+{
+ "BowCoating": [
+ ],
+ "BowgunBarrel": [
+ "Long: Raw + 5%",
+ "Power: Raw + 12.5%",
+ "Silencer: Recoil Down + 1",
+ "Shield: Guard Up"
+ ],
+ "Booster": [
+ "1: Raw + 6 ",
+ "2: Raw + 9 ",
+ "3: Raw + 12 ",
+ "4: Raw + 15 "
+ ],
+ "Bombardier": [
+ "1: Raw + 1.1% EFR + 1.1",
+ "2: Raw + 1.1% EFR + 1.1",
+ "3: Raw + 1.2% EFR + 1.16",
+ "4: Raw + 1.25% EFR + 1.17"
+ ],
+ "Adrenaline": [
+ "1: Raw + 30% ",
+ "2: Raw + 35% ",
+ "3: Raw + 35% ",
+ "4: Raw + 35% "
+ ],
+ "DangoTemper": [
+ "1: Raw + 5% Element + 5% ",
+ "2: Raw + 5% Element + 5% ",
+ "3: Raw + 7.5% Element + 7.5% ",
+ "4: Raw + 7.5% Element + 7.5% "
+ ],
+ "Marksman": [
+ "1: Chance 20% Raw + 5% EFR + 1%",
+ "2: Chance 20% Raw + 10% EFR + 2%",
+ "3: Chance 60% Raw + 5% EFR + 3% ",
+ "4: Chance 40% Raw + 10% EFR + 4%"
+ ],
+ "Spiribird": [
+ "1: Raw + 1 ",
+ "2: Raw + 2 ",
+ "3: Raw + 3 ",
+ "4: Raw + 4 ",
+ "5: Raw + 5 ",
+ "6: Raw + 6 ",
+ "7: Raw + 7 ",
+ "8: Raw + 8 ",
+ "9: Raw + 9 ",
+ "10: Raw + 10 ",
+ "11: Raw + 11 ",
+ "12: Raw + 12 ",
+ "13: Raw + 13 ",
+ "14: Raw + 14 ",
+ "15: Raw + 15 ",
+ "16: Raw + 16 ",
+ "17: Raw + 17 ",
+ "18: Raw + 18 ",
+ "19: Raw + 19 ",
+ "20: Raw + 20 "
+ ],
+ "KinsectBuff": [
+ "1: Raw + 5% ",
+ "2: Raw + 10% ",
+ "3: Raw + 15% "
+ ],
+ "SpiritGauge": [
+ "1: Raw + 4% Element + 4% ",
+ "2: Raw + 8% Element + 8% ",
+ "3: Raw + 12% Element + 12% "
+ ],
+ "Helmbreaker": [
+ "1: Raw + 50% ",
+ "2: Raw + 150% Element + 10% ",
+ "3: Raw + 300% Element + 30% "
+ ],
+ "SerenePose": [
+ "1: Raw + 100% ",
+ "2: Raw + 200% Element + 10% ",
+ "3: Raw + 400% Element + 30% "
+ ],
+ "savageAxe": [
+ "1: Raw + 10% "
+ ],
+ "impShieldCharge": [
+ "1: Raw + 20% "
+ ],
+ "PowerSheath": [
+ "1: Raw + 10% "
+ ],
+ "ArchdemonMode": [
+ "1: Element + 20% "
+ ],
+ "DemonMode": [
+ "1: Element + 35% "
+ ],
+ "FeralDemonMode": [
+ "1: Raw + 20% "
+ ],
+ "ElementShieldCharge": [
+ "1: Element + 30% "
+ ],
+ "evadeHop": [
+ "1: Raw + 10% Element + 10% "
+ ],
+ "HerculesDraw": [
+ "1: Raw + 10% "
+ ],
+ "UpperCrit": [
+ "1: Raw + 15% Element + 10% "
+ ],
+ "fanningManeuver": [
+ "1: Raw + 10% Element + 10% "
+ ],
+ "ElementmentalReload": [
+ "1: Element + 10% "
+ ],
+ "CriticalFirePower": [
+ ],
+ "ChargElementvel": [
+ "1: Raw + 10% Element + 10% ",
+ "2: Raw + 20% Element + 20% ",
+ "3: Raw + 30% Element + 30% "
+ ],
+ "AttackBoost": [
+ "1: Raw + 3 ",
+ "2: Raw + 6 ",
+ "3: Raw + 9 ",
+ "4: Raw + 7 + 5% ",
+ "5: Raw + 8 + 6% ",
+ "6: Raw + 9 + 8% ",
+ "7: Raw + 10 + 10% "
+ ],
+ "PeakPerformance": [
+ "1: Raw + 5 ",
+ "2: Raw + 10 ",
+ "3: Raw + 20 "
+ ],
+ "Resentment": [
+ "1: Raw + 5 ",
+ "2: Raw + 10 ",
+ "3: Raw + 15 ",
+ "4: Raw + 20 ",
+ "5: Raw + 25 "
+ ],
+ "Agitator": [
+ "1: Raw + 4 Affinity + 3",
+ "2: Raw + 8 Affinity + 5",
+ "3: Raw + 12 Affinity + 7",
+ "4: Raw + 16 Affinity + 10",
+ "5: Raw + 20 Affinity + 15"
+ ],
+ "Resuscitate": [
+ "1: Raw + 5 ",
+ "2: Raw + 10 ",
+ "3: Raw + 20 "
+ ],
+ "Coalescence": [
+ "1: Raw + 12 Element + 2 ",
+ "2: Raw + 15 Element + 3 ",
+ "3: Raw + 18 Element + 4 "
+ ],
+ "CriticalBoost": [
+ "1: Raw + 5% ",
+ "2: Raw + 10% ",
+ "3: Raw + 15% "
+ ],
+ "Burst": [
+ "1: Raw + 5 Element + 5 ",
+ "1: Raw + 8 Element + 6 ",
+ "2: Raw + 9 Element + 7 ",
+ "3: Raw + 10 Element + 8 "
+ ],
+ "Counterstrike": [
+ "1: Raw + 10 ",
+ "2: Raw + 15 ",
+ "3: Raw + 25 "
+ ],
+ "PunishingDraw": [
+ "1: Raw + 3 ",
+ "2: Raw + 5 ",
+ "3: Raw + 7 "
+ ],
+ "OffensiveGuard": [
+ "1: Raw + 5% ",
+ "2: Raw + 10% ",
+ "3: Raw + 15% "
+ ],
+ "Grinder(S)": [
+ "1: Raw + 10% Element + 7.5% ",
+ "2: Raw + 10% Element + 7.5% ",
+ "3: Raw + 10% Element + 7.5% "
+ ],
+ "Heroics": [
+ "1: No Change ",
+ "2: Raw + 5% ",
+ "3: Raw + 5% ",
+ "4: Raw + 10% ",
+ "5: Raw + 30% "
+ ],
+ "Fortify": [
+ "1: Raw + 10% ",
+ "2: Raw + 20% "
+ ],
+ "MindsEye": [
+ "1: Raw + 10% Element + 10% ",
+ "2: Raw + 15% Element + 15% ",
+ "3: Raw + 30% Element + 30% "
+ ],
+ "Artillery": [
+ "1: Raw + 15% ",
+ "2: Raw + 30% ",
+ "3: Raw + 50% "
+ ],
+ "Handicraft": [
+ "1: Sharp + 10 ",
+ "2: Sharp + 20 ",
+ "3: Sharp + 30 ",
+ "4: Sharp + 40 ",
+ "5: Sharp + 50 "
+ ],
+ "MastersTouch": [
+ "1: Sharp + 20% ",
+ "2: Sharp + 40% ",
+ "3: Sharp + 80% "
+ ],
+ "RazorSharp": [
+ "1: Sharp + 10% ",
+ "2: Sharp + 25% ",
+ "3: Sharp + 50% "
+ ],
+ "WallRunner": [
+ "1: No Change ",
+ "2: No Change ",
+ "3: Raw + 20 "
+ ],
+ "BowChargePlus": [
+ "1: No Change "
+ ],
+ "Bludgeoner": [
+ "1: Raw + 5% ",
+ "2: Raw + 10% ",
+ "3: Raw + 10% "
+ ],
+ "PierceUp": [
+ "1: Raw + 5% ",
+ "2: Raw + 10% ",
+ "3: Raw + 20% "
+ ],
+ "SpreadUp": [
+ "1: Raw + 5% ",
+ "2: Raw + 10% ",
+ "3: Raw + 20% "
+ ],
+ "NormalRapidUp": [
+ "1: Raw + 5% ",
+ "2: Raw + 10% ",
+ "3: Raw + 20% "
+ ],
+ "RapidFireUp": [
+ "1: Raw + 5% ",
+ "2: Raw + 10% ",
+ "3: Raw + 20% "
+ ],
+ "SpecialAmmoBoost": [
+ "1: Raw + 10% ",
+ "2: Raw + 20% "
+ ],
+ "AmmoUp": [
+ "1: No Change",
+ "2: Lv2 & Element Ammo",
+ "3: Lv3 & Dragon Ammo"
+ ],
+ "ReloadSpeed": [
+ "Reload Speed + 1",
+ "Reload Speed + 2",
+ "Reload Speed + 3"
+ ],
+ "RecoilDown": [
+ "Recoil Down + 1",
+ "Recoil Down + 2",
+ "Recoil Down + 3"
+ ],
+ "RapidMorph": [
+ "1: Raw + 5% ",
+ "2: Raw + 10% ",
+ "3: Raw + 20% "
+ ],
+ "Strife": [
+ "1: Element + 5% Affinity + 5",
+ "2: Element + 10% Affinity + 10",
+ "3: Element + 15% Affinity + 10",
+ "1: Element + 10% Affinity + 10",
+ "2: Element + 15% Affinity + 15",
+ "3: Element + 20% Affinity + 20"
+ ],
+ "Bloodlust": [
+ "1: Raw + 10 Element + 5 ",
+ "2: Raw + 15 Element + 7 ",
+ "3: Raw + 20 Element + 10 ",
+ "1: Affinity + 20",
+ "2: Affinity + 25",
+ "3: Affinity + 25"
+ ],
+ "Foray": [
+ "1: Raw + 10 ",
+ "2: Raw + 10 Affinity + 10",
+ "3: Raw + 15 Affinity + 20"
+ ],
+ "MailofHellfire": [
+ "1: Raw + 15 ",
+ "2: Raw + 25 ",
+ "3: Raw + 30 "
+ ],
+ "Dereliction": [
+ "1: Element + 5 ",
+ "2: Element + 8 ",
+ "3: Element + 12 ",
+ "1: Element + 7 ",
+ "2: Element + 12 ",
+ "3: Element + 15 ",
+ "1: Element + 10 ",
+ "2: Element + 15 ",
+ "3: Element + 20 "
+ ],
+ "Dragonheart": [
+ "1: No Change ",
+ "2: No Change ",
+ "3: No Change ",
+ "4: Raw + 5% ",
+ "5: Raw + 10% "
+ ],
+ "KushalaBlessing": [
+ "1: Element + 5% ",
+ "2: Element + 10% ",
+ "3: Element + 10% ",
+ "4: Element + 10% "
+ ],
+ "StormSoul": [
+ "1: Element + 5% ",
+ "2: Element + 10% ",
+ "3: Element + 15% ",
+ "4: Element + 15% ",
+ "5: Element + 15% "
+ ],
+ "TeostraBlessing": [
+ "1: Element + 5% ",
+ "2: Element + 10% ",
+ "3: Element + 10% ",
+ "4: Element + 10% "
+ ],
+ "AdrenalineRush": [
+ "1: Raw + 15 ",
+ "2: Raw + 20 ",
+ "3: Raw + 30 "
+ ],
+ "SneakAttack": [
+ "1: Raw + 5% ",
+ "2: Raw + 10% ",
+ "3: Raw + 20% "
+ ],
+ "ElementmentExploit": [
+ "1: Element + 10% ",
+ "2: Element + 12.5% ",
+ "3: Element + 15% "
+ ],
+ "IceAttack": [
+ "1: Element + 2 ",
+ "2: Element + 3 ",
+ "3: Element + 4 + 5% ",
+ "4: Element + 4 + 10% ",
+ "5: Element + 4 + 20% "
+ ],
+ "WaterAttack": [
+ "1: Element + 2 ",
+ "2: Element + 3 ",
+ "3: Element + 4 + 5% ",
+ "4: Element + 4 + 10% ",
+ "5: Element + 4 + 20% "
+ ],
+ "FireAttack": [
+ "1: Element + 2 ",
+ "2: Element + 3 ",
+ "3: Element + 4 + 5% ",
+ "4: Element + 4 + 10% ",
+ "5: Element + 4 + 20% "
+ ],
+ "ThunderAttack": [
+ "1: Element + 2 ",
+ "2: Element + 3 ",
+ "3: Element + 4 + 5% ",
+ "4: Element + 4 + 10% ",
+ "5: Element + 4 + 20% "
+ ],
+ "DragonAttack": [
+ "1: Element + 2 ",
+ "2: Element + 3 ",
+ "3: Element + 4 + 5% ",
+ "4: Element + 4 + 10% ",
+ "5: Element + 4 + 20% "
+ ],
+ "CriticalElementment": [
+ "1: Element + 5% ",
+ "2: Element + 10% ",
+ "3: Element + 15% "
+ ],
+ "WeaknessExploit": [
+ "1: Affinity + 15",
+ "2: Affinity + 30",
+ "3: Affinity + 50"
+ ],
+ "CriticalEye": [
+ "1: Affinity + 5",
+ "2: Affinity + 10",
+ "3: Affinity + 15",
+ "4: Affinity + 20",
+ "5: Affinity + 25",
+ "6: Affinity + 30",
+ "7: Affinity + 40"
+ ],
+ "MaximumMight": [
+ "1: Affinity + 10",
+ "2: Affinity + 20",
+ "3: Affinity + 30"
+ ],
+ "LatentPower": [
+ "1: Affinity + 10",
+ "2: Affinity + 20",
+ "3: Affinity + 30",
+ "4: Affinity + 45",
+ "5: Affinity + 50"
+ ]
+}
