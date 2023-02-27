@@ -330,7 +330,7 @@ section#section2>div {
 }
 
 div#sharpnessContainer {
-  /* display: inline-flex; */
+  display: inline-flex;
   gap: 0 !important;
   justify-content: center !important;
   width: 66% !important
@@ -501,7 +501,7 @@ table#monTable td {
 
 @media(min-width: 1100px) {
   div#containAll {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 75.1rem;
   }
 }
 
@@ -634,6 +634,7 @@ div.inputContainer {
   place-items: start center;
   place-content: center;
   overflow: hidden
+
 }
 
 button.inc:hover,button.dec:hover {
@@ -1027,7 +1028,7 @@ table#statsTable>table#statsTable>statshead>tr {
 
 div#damageTable>div>table>tbody>tr:not(.tableRowMelee),
 div#damageTable>div>table>thead>tr:not(.tableRowMelee>tr) {
-  grid-template-columns: min(19.5vw, 16rem) repeat(7, min(11vw, 9rem));
+  grid-template-columns: min(19.5vw, 16rem) repeat(7, min(10vw, 8.25rem));
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
@@ -1114,6 +1115,10 @@ tr.tableRowRanged {
 
 div#setBuilder * {
   transition: all .5s ease;
+}
+
+section#sideDisplay {
+    grid: none;
 }
 
 #sideDisplay>div:first-child {
@@ -1233,7 +1238,7 @@ thead.tableRowMelee>tr {
   display: inline-grid;
   margin: 0;
   align-items: center;
-  grid-template-columns: min(7rem, 12vw) min(34.5vw, 33rem) min(5rem, 10vw) min(10rem, 11vw) min(7.5rem, 8.5vw) min(10rem, 11vw) min(7.5rem, 8.5vw) !important
+  grid-template-columns: min(6rem, 10vw) min(33.5vw, 33rem) min(6rem, 10vw) min(9rem, 10vw) min(6rem, 10vw) min(9rem, 10vw) min(6rem, 10vw) !important;
 }
 
 div#damageContainer>table>thead {
