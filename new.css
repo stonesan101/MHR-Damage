@@ -396,7 +396,7 @@ h5#augLabel {
 }
 
 #extraMenus label.check {
-  display: grid;
+  /* display: grid; */
   justify-content: center;
   align-items: center;
   height: 2em;
