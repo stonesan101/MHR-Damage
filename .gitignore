@@ -10042,11 +10042,11 @@ setCreation.js
 # json/charms.json
 json/armorHR
 node_modules
-.eslintrc.cjs
-.hintrc
-.jshintrc
+# .eslintrc.cjs
+# .hintrc
+# .jshintrc
 .json
-.prettierrc.json
+# .prettierrc.json
 cspell.json
 jsconfig.json
 package-lock.json
@@ -10071,3 +10071,7 @@ utilities.cjs
 unCSS.cjs
 output.css
 json/cd
+.jshintrc
+.eslintrc.cjs
+.hintrc
+.prettierrc.json
