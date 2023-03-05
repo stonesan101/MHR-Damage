@@ -432,7 +432,7 @@ div#monDropDowns {
 
 div#damageContainer>table {
     outline: 0;
-    max-width: 98% !important;
+    max-width: 100% !important;
 }
 
 table#monTable td {
@@ -1563,7 +1563,7 @@ div#damageTable, div#damageTable>* {
     gap: 1.5rem;
     margin-top: 0 !important;
     justify-self: center;
-    max-width: 99%;
+    max-width: 100%;
     max-height: 73%;
     overflow-y: auto;
     overflow-x: clip;
