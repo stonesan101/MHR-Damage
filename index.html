@@ -1542,9 +1542,13 @@
                     <table id=monTable></table>
                 </div>
                 <div id=forButtons>
-                    <button class=blue type=button aria-pressed=false id="saveState">Save
+                    <button data-tooltip="Copies Information to your clipboard that can
+                        be used to reload the build later.
+                        **Temporary**" class=blue type=button aria-pressed=false id="saveState">Save
                         Selections</button>
-                    <button class=blue type=button aria-pressed=false id="loadState">Load
+                    <button class=blue type=button aria-pressed=false id="loadState" data-tooltip="When The saved Information Is the top item on your clipboard 
+                    reloads the build be used to reload the build later.
+                    **Temporary**">Load
                         Selections</button>
                     <button
                         class="classSpecific ChargeBlade Gunlance GreatSword Hammer Lance LongSword SwordNShield DualBlades HuntingHorn InsectGlaive SwitchAxe Bow"
@@ -1558,12 +1562,13 @@
                         type=button aria-pressed=false id=resetCombo onclick=comboReset() style=display:none>Reset
                         Combo</button>
                     <button class="classSpecific LightBowGun HeavyBowGun" type=button aria-pressed=false id=ammoChange
-                        onmousedown=toggleAmmoTables()>Change Ammo Table</button>
+                        onmousedown=toggleAmmoTables()
+                        data-tooltip="toggles between the ammo's damage and statistics">Change Ammo Table</button>
                 </div>
                 <div id=forButtonSelect>
                     <div class=dropContainer>
                         <label for=pierceAdjust
-                            data-tooltip="Adjusts The Pierce And Pierce Ele Effective Damage Output">Pierce Damage
+                            data-tooltip=" Adjusts The Pierce And Pierce Ele Effective Damage Output">Pierce Damage
                             Adjust</label>
                         <select class="classSpecific LightBowGun HeavyBowGun" id=pierceAdjust
                             title="Adjusts The Pierce And Pierce Ele Effective Damage Output">
