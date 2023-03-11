@@ -10075,3 +10075,6 @@ json/cd
 .eslintrc.cjs
 .hintrc
 .prettierrc.json
+babelrc
+*.cjs
+wallaby.js
