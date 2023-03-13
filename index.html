@@ -12,7 +12,7 @@
     <!-- <script defer='' src='./backup.js'></script> -->
     <!-- <script defer='' src='./setCreation.js'></script> -->
     <!-- <script defer='' src='./setBuilderWorker.js'></script> -->
-    <script defer='' src='./ugly/index.js'></script>
+    <script defer='' src='./build.min.js'></script>
     <link rel='preload' href='./icons/ramp2.png' as='image'>
     <link rel='preload' href='./icons/lvl1.png' as='image'>
     <link rel='preload' href='./icons/lvl2.png' as='image'>
@@ -26,7 +26,9 @@
     <link rel='preload' href='./icons/charm.png' as='image'>
     <link rel='preload' href='./icons/gs.png' as='image'>
     <link defer='' rel='stylesheet' content-type='text/css' href='./new.css'>
-    <title>Stone's Sunbreak Damage Optimizer & Set Builder</title><!-- Google Tag Manager -->
+    <title>Stone's Sunbreak Damage Optimizer & Set Builder</title>
+    <!-- <link rel="stylesheet" content-type='text/css' href="./styles.js"> -->
+    <!-- Google Tag Manager -->
     <script
         defer="">(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-WRH4G56');</script>
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-765SZFLYB2"></script>
@@ -76,9 +78,27 @@
                         <label for=uniqueSkillsButton class=check data-tooltip="Toggles Weapon Unique Buffs">Weapon
                             Specific Buffs
                             <input id=uniqueSkillsButton type=checkbox for=extraCharmDeco></label>
-                        <label class=check data-tooltip="Toggles The 3ed Charm Slot
-     For User And Set Builder">Remove 3ed Charm Slot
+                        <label class=check data-tooltip="Allows You To Set The Carm Slots
+      For You And The Set Builder">Set Available Charm Slots
                             <input id=extraCharmDeco type=checkbox class=check></label>
+                        <section id="charmSlots" class="augInvis">
+                            <label for="slot1">Charm Slot 1</label><select id="slot1" class="charmSlot">
+                                <option>---- </option>
+                                <option>Lvl-1 </option>
+                                <option>Lvl-2 </option>
+                                <option>Lvl-3 </option>
+                                <option>Lvl-4 </option>
+                            </select>
+                            <label for="slot2">Charm Slot 2</label><select id="slot2" class="charmSlot">
+                                <option>---- </option>
+                                <option>Lvl-1 </option>
+                                <option>Lvl-2 </option>
+                            </select>
+                            <label for="slot3">Charm Slot 3</label><select id="slot3" class="charmSlot">
+                                <option>---- </option>
+                                <option>Lvl-1 </option>
+                            </select>
+                        </section>
                     </div>
                 </section>
                 <section class="armorDisplay weapon" id=weaponSelects>
@@ -891,12 +911,12 @@
                 <h2>Set Search</h2>
                 <div class=dropContainer id=skillSelect>
                     <button class=blue type=button aria-pressed=false id=startSearch
-                        data-tooltip="Initiate Standard Duration Set Search" onmousedown=getSetBuilds(12)>Find
+                        data-tooltip="Initiate Standard Duration Set Search">Find
                         Builds</button>
                     <select id=dropSkills title="Select Skills Used In The Set Searcher" itemtype=search
                         name="Skill Select"></select>
                     <button class=blue type=button aria-pressed=false id=resetSkills
-                        data-tooltip="Remove All Currently Selected Skills" onclick=resetSkills()>Reset Skills</button>
+                        data-tooltip="Remove All Currently Selected Skills">Reset Skills</button>
                 </div>
                 <div class="container buildSkills" id=raw>
                     <div class=dropContainer>
@@ -1558,11 +1578,10 @@
                     <button class=augInvis type=button aria-pressed=false id=filterCombo style=display:none>Combo Attack
                         Filter</button>
                     <button
-                        class="classSpecific ChargeBlade Gunlance GreatSword Hammer Lance LongSword SwordNShield DualBlades HuntingHorn InsectGlaive SwitchAxe Bow"
-                        type=button aria-pressed=false id=resetCombo onclick=comboReset() style=display:none>Reset
+                        class="classSpecific augInvis ChargeBlade Gunlance GreatSword Hammer Lance LongSword SwordNShield DualBlades HuntingHorn InsectGlaive SwitchAxe Bow"
+                        type=button aria-pressed=false id=resetCombo>Reset
                         Combo</button>
                     <button class="classSpecific LightBowGun HeavyBowGun" type=button aria-pressed=false id=ammoChange
-                        onmousedown=toggleAmmoTables()
                         data-tooltip="toggles between the ammo's damage and statistics">Change Ammo Table</button>
                 </div>
                 <div id=forButtonSelect>
@@ -1632,9 +1651,9 @@
                     <output id=setOutput>Displayed 0 Builds / 0 Combinations</output>Sets
                     <div id=searchAgain>
                         <button class=blue type=button aria-pressed=false id=normalSearch
-                            data-tooltip="Standard Set Search" onmousedown=getSetBuilds(12)>Normal Search</button>
+                            data-tooltip="Standard Set Search">Normal Search</button>
                         <button class=blue type=button aria-pressed=false id=extendedSearch
-                            data-tooltip="Search Including More Armor Pieces" onmousedown=getSetBuilds(15)>Extended
+                            data-tooltip="Search Including More Armor Pieces">Extended
                             Search</button>
                     </div>
                 </h2>
@@ -1671,6 +1690,7 @@
     </section>
     <div id=previousWeapon value=initial></div>
     <div id=previousWeaponType value=initial></div>
+    <!-- <script src="./index.js"></script> -->
     <link as=image defer href=./icons/ramp1.png rel="">
     <link as=image defer href=./icons/ramp3.png rel="">
     <div class=container id=license><a href=http://creativecommons.org/licenses/by-nc-nd/4.0/ rel=license>
