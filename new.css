@@ -1457,8 +1457,8 @@ tr.tableRowMelee {
     z-index: 5;
     display: inline-flex;
     position: relative;
-    min-width: max-content !important;
-    max-width: 100%;
+    /* min-width: max-content !important; */
+    width: 100%;
     grid-template-columns: 1.1fr 5.4fr .95fr 1.5fr 1.4fr 1.8fr 1.4fr;
 }
 
