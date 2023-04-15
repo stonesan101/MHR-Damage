@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://your-github-pages-url/$1",
+      "permanent": true
+    }
+  ]
+}
