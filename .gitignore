@@ -61,9 +61,10 @@ json/cd
 babelrc
 *.cjs
 wallaby.js
-.*.map
+.map
 /srcfiles
 temp.js
 /maps
 /utility
 mhrice.json
+*.map
