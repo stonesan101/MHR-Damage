@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "javascript.format.enable": true,
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "task.allowAutomaticTasks": "on"
+  }
+}
