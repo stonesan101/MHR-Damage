@@ -7,26 +7,24 @@
                 applyAllSkills: () => r
             });
             var i = a("./srcfiles/backup.js");
-            const _ = document.getElementById("dropWeapon"), s = document.getElementById("dropWeaponType");
-            let l = document.getElementById("dropMonster");
-            const r = {
-                DullingStrike: e => (e.stats.augPEM *= "Valstrax Soul" === document.getElementById("weaponRampage0").value && "Dragon" === e.eleType ? 1.2 : 1, 
-                [e.stats.augEFR, e.stats.augPRM] = "Dulling Strike" === document.getElementById("weaponRampage0").value && document.getElementById("Sharpness").selectedIndex < 5 ? [ 1.02, 1.2 ] : [ e.stats.augEFR, e.stats.augPRM ], 
+            const _ = document.getElementById("dropWeapon"), s = document.getElementById("dropWeaponType"), l = document.getElementById("weaponRampage0"), r = {
+                ValstraxSoul(e) {
+                    e.stats.augPEM *= "Valstrax Soul" === l.value && "Dragon" === e.eleType ? 1.2 : 1;
+                },
+                DullingStrike: e => ([e.stats.augEFR, e.stats.augPRM] = "Dulling Strike" === l.value && document.getElementById("Sharpness").selectedIndex < 5 ? [ 1.02, 1.2 ] : [ e.stats.augEFR, e.stats.augPRM ], 
                 e.stats),
                 AntiSpecies(e) {
-                    const t = Object.values(window.info.monster[l.value]?.species);
+                    const t = Object.values(window.info.monster[o.value]?.species);
                     return t && ("Invalid" !== t[1] && "Wyvern Exploit" === document.querySelector("#weaponRampage0").value || document.querySelector("#weaponRampage0").value.includes(t[2]) || "Invalid" !== t[3] && "Fanged Exploit" === document.querySelector("#weaponRampage0").value) && (e.stats.PRM *= 1.05), 
-                    /blight Exploit/.test(document.getElementById("weaponRampage0").value) && (e.stats.PRM *= 1.1), 
                     e.stats;
                 },
-                MagnamaloSoul: e => ("Magnamalo Soul" === document.getElementById("weaponRampage0").value && (e.stats.BR += 12), 
+                ElementalBlightExploit: e => (/blight Exploit/.test(l.value) && (e.stats.PRM *= 1.1), 
                 e.stats),
+                MagnamaloSoul: e => ("Magnamalo Soul" === l.value && (e.stats.BR += 12), e.stats),
                 ElementExploit(e) {
                     const t = window.info[s.value].weapons[_.value].rampageSlots;
-                    return "None" !== e.eleType && (e.stats.PEM *= 0 === t && "Elemental Exploit" === document.getElementById("weaponRampage0").value && (0, 
-                    i.getEleHZ)(e.eleType) >= 25 ? 1.3 : 1, e.stats.PEM *= 0 !== t && "Element Exploit" === document.getElementById("weaponRampage0").value && (0, 
-                    i.getEleHZ)(e.eleType) >= 25 && "none" !== (0, i.lower)(e.eleType) ? 1.15 : 1, e.stats.PEM *= (0, 
-                    i.getEleHZ)(e.eleType) >= 20 && "none" !== (0, i.lower)(e.eleType) ? window.info.skills.ElementExploit[document.getElementById("ElementExploit").selectedIndex].PEM : 1), 
+                    return ("None" !== e.eleType || s.value.includes("BowGun") && /Fire|Water|Ice|Thunder|Dragon/.test(e.attackName)) && ("Elemental Exploit" === t.value && (0, 
+                    i.getEleHZ)(e.eleType) >= 25 && (e.stats.PEM *= 0 === t ? 1.3 : 1.15), (0, i.getEleHZ)(e.eleType) >= 20 && (e.stats.PEM *= window.info.skills.ElementExploit[window.selectedSkills[ElementExploit] || 0].PEM)), 
                     e.stats;
                 },
                 Bludgener: e => (document.getElementById("Sharpness").selectedIndex > 0 && document.getElementById("Bludgeoner").selectedIndex > 0 && (e.stats.BRM *= 1 === document.getElementById("Bludgeoner").selectedIndex && document.getElementById("Sharpness").selectedIndex < 4 ? [ 1.05 ] : [ 1 ], 
@@ -43,8 +41,8 @@
                 },
                 BrutalStrike(e) {
                     const t = (0, i.getWeaponMR)().rampageSlots;
-                    return 0 === t && "Brutal Strike" === document.getElementById("weaponRampage0").value && e.stats.aff < 0 ? (e.efrMulti = 1 + -1 * e.stats.aff * .2 * 1.5 - -1 * e.stats.aff * .8 * .75, 
-                    e.critBoost = 1.5) : 0 !== t && "Brutal Strike" === document.getElementById("weaponRampage0").value && e.stats.aff < 0 && (e.efrMulti = 1 + -1 * e.stats.aff * .25 * 2 - -1 * e.stats.aff * .75 * .75, 
+                    return 0 === t && "Brutal Strike" === t.value && e.stats.aff < 0 ? (e.efrMulti = 1 + -1 * e.stats.aff * .2 * 1.5 - -1 * e.stats.aff * .8 * .75, 
+                    e.critBoost = 1.5) : 0 !== t && "Brutal Strike" === t.value && e.stats.aff < 0 && (e.efrMulti = 1 + -1 * e.stats.aff * .25 * 2 - -1 * e.stats.aff * .75 * .75, 
                     e.critBoost = 1.5), e.stats;
                 },
                 Marksman: e => ("Shot" === e.type && (e.stats.augPRM *= window.info.skills.Marksman[document.getElementById("Marksman").selectedIndex][0], 
@@ -90,6 +88,7 @@
                 /Wyvern|Dragon Piercer/.test(e.attackName) && (e.stats = (0, i.getStats)(e.stats, window.info.skills.SpecialAmmoBoost[document.getElementById("SpecialAmmoBoost").selectedIndex])), 
                 e.stats)
             };
+            let o = document.getElementById("dropMonster");
         },
         "./srcfiles/armorFunctions.js": (e, t, a) => {
             a.r(t), a.d(t, {
@@ -1497,26 +1496,26 @@
         },
         "./srcfiles/setCreation.js": (e, t, a) => {
             a.r(t), a.d(t, {
-                getCharms: () => g,
-                getSetBuilds: () => w,
-                getSetRequirements: () => y,
-                getSkillReq: () => k,
-                testBuild: () => E
+                getCharms: () => y,
+                getSetBuilds: () => h,
+                getSetRequirements: () => k,
+                getSkillReq: () => b,
+                testBuild: () => S
             });
             var i = a("./srcfiles/backup.js"), _ = a("./srcfiles/armorFunctions.js");
             let s = {};
             const l = document.getElementById("dropWeapon"), r = document.getElementById("dropWeaponType");
             let o = 0, n = 0;
             const c = [];
-            let d, m = 0, u = [];
-            const p = new Map;
-            let f, v = 0;
-            const b = e => e.map((e => {
+            let d = 0, m = [];
+            const u = new Map;
+            let p, f = 0;
+            const v = e => e.map((e => {
                 let t = e.usedSkills.slice(-2);
                 return `${t[0][0]}: ${t[0][1]} & ${t[1][0]}: ${t[1][1]}`;
-            })), k = (e = []) => (document.querySelectorAll(".buildSkills>div>.skill").forEach((t => {
+            })), b = (e = []) => (document.querySelectorAll(".buildSkills>div>.skill").forEach((t => {
                 t.selectedIndex > 0 && e.push([ t.id, t.selectedIndex ]);
-            })), e), y = (e = window.info.types) => {
+            })), e), k = (e = window.info.types) => {
                 const t = {}, a = {};
                 let i = new Set;
                 return window.info.charms.forEach((e => Object.keys(e.skills).map((e => i.add(e))))), 
@@ -1535,19 +1534,19 @@
                     skillInfo: a
                 };
             };
-            const g = (e, t, a = []) => (Object.values(window.info.charms).forEach((t => {
+            const y = (e, t, a = []) => (Object.values(window.info.charms).forEach((t => {
                 Object.entries(t.skills).every((([t, a]) => e[t] + a <= 0)) && a.push(t.skills);
-            })), a), h = (e, t) => e >= t ? e : t, w = (e = 19) => {
-                n = performance.now(), u = [], c.forEach((e => e.terminate())), m = 5;
-                for (let e = 0; e < m; e++) c[e] = new Worker("./setBuildWorker.js");
+            })), a), g = (e, t) => e >= t ? e : t, h = (e = 19) => {
+                n = performance.now(), c.forEach((e => e.terminate())), d = 5, m = [ [], [], [], [], [] ];
+                for (let e = 0; e < d; e++) c[e] = new Worker("./setBuildWorker.js");
                 c.forEach((e => {
                     e.addEventListener("message", (e => {
-                        e.target.terminate(), --m, e.data.final.sets.length && (o += e.data.final.count.combos, 
-                        v += e.data.final.count.sets, p.size < 100 && ((e, t) => {
+                        e.target.terminate(), --d, e.data.final.sets.length && (o += e.data.final.count.combos, 
+                        f += e.data.final.count.sets, u.size < 100 && ((e, t) => {
                             for (const t of e) {
-                                if (p.size < 100) {
-                                    p.set(p.size, t);
-                                    const e = b(t);
+                                if (u.size < 100) {
+                                    u.set(u.size, t);
+                                    const e = v(t);
                                     let a = '<button type="button" aria-pressed="false" class="equipBuild">Equip Build</button>';
                                     for (let e = 0; e < 5; e++) a += `<output class="armorImg ${[ "helm", "chest", "arm", "waist", "leg" ][e]}"></output><span>${t[0].armors[e][0]}</span>`;
                                     let i = "";
@@ -1557,28 +1556,28 @@
                                     const _ = document.createElement("div");
                                     _.classList.add("setResult"), _.innerHTML = a, document.querySelector(".grid").appendChild(_);
                                 }
-                                if (100 === p.size) {
+                                if (100 === u.size) {
                                     let e = 0;
-                                    for (let t = 0; t <= 100 && p.has(t); t++) e += p.get(t).length;
-                                    document.getElementById("setOutput").textContent = `Displayed ${Math.min(100, p.size)} Builds / ${e.toLocaleString()} Combinations`, 
-                                    p.set("finished", !0);
+                                    for (let t = 0; t <= 100 && u.has(t); t++) e += u.get(t).length;
+                                    document.getElementById("setOutput").textContent = `Displayed ${Math.min(100, u.size)} Builds / ${e.toLocaleString()} Combinations`, 
+                                    u.set("finished", !0);
                                 }
                             }
                         })(e.data.final.sets));
                         let t = e.data.final.stats;
-                        for (let e = 0; e < 4; e++) s.remainingSlots[e] = h(s.remainingSlots[e] || 0, t.remainingSlots[e]);
-                        for (let e = 0; e < 5; e++) s.quriousSkills[e] = h(s.quriousSkills[e] || 0, t.quriousSkills[e]);
-                        for (const [e, a] of Object.entries(t.armorSkills)) s.armorSkills[e] = h(s.armorSkills[e] || 0, a);
-                        if (!m) {
+                        for (let e = 0; e < 4; e++) s.remainingSlots[e] = g(s.remainingSlots[e] || 0, t.remainingSlots[e]);
+                        for (let e = 0; e < 5; e++) s.quriousSkills[e] = g(s.quriousSkills[e] || 0, t.quriousSkills[e]);
+                        for (const [e, a] of Object.entries(t.armorSkills)) s.armorSkills[e] = g(s.armorSkills[e] || 0, a);
+                        if (!d) {
                             if ((e => {
                                 let t = "";
                                 e.forEach((e => {
                                     0 != e[1] && (t += `<button textContent="${e[0]}">${e[0].replace(/(?<=[a-z])([A-Z])(?![A-Z])/g, " $1")} +${+e[1]}</button>`);
                                 })), document.getElementById("temp") && document.getElementById("temp").remove(), 
-                                document.querySelector(".extraSkills").innerHTML += t, document.getElementById("extraOutput").textContent = `Found ${v.toLocaleString()} Builds / ${o.toLocaleString()} Combinations`, 
-                                console.log((performance.now() - n) / 1e3), console.log(p);
+                                document.querySelector(".extraSkills").innerHTML += t, document.getElementById("extraOutput").textContent = `Found ${f.toLocaleString()} Builds / ${o.toLocaleString()} Combinations`, 
+                                console.log((performance.now() - n) / 1e3), console.log(u);
                             })(((e = window.info.types) => {
-                                const {skills: t} = y(), {armorSkills: a, remainingSlots: i, quriousSkills: _} = s;
+                                const {skills: t} = k(), {armorSkills: a, remainingSlots: i, quriousSkills: _} = s;
                                 for (let t = 0; t < 4; ++t) if (i[t]) for (const [_, s] of Object.entries(e.decoLevels[t])) a[_] = (a[_] || 0) + s * i[t];
                                 Object.entries(e.qurious).forEach((([e, t]) => {
                                     _[~~(t / 3) - 1] && (a[e] = (a[e] || 0) + _[t / 3 - 1]);
@@ -1590,17 +1589,17 @@
                                         l.push([ a, Math.min(+i, _) ]);
                                     } else t[a] || l.push([ a, Math.min(+i, e.maxLevel[a] || window.info.skills[a].length - 1) ]);
                                 })), l.sort();
-                            })()), !p.has("finished")) return document.querySelector(".grid").innerHTML += f, 
-                            f = "", document.getElementById("setOutput").textContent = `Displayed ${Math.min(100, p.size)} Builds / ${o.toLocaleString()} Combinations`, 
-                            void p.set("finished", !0);
+                            })()), !u.has("finished")) return document.querySelector(".grid").innerHTML += p, 
+                            p = "", document.getElementById("setOutput").textContent = `Displayed ${Math.min(100, u.size)} Builds / ${o.toLocaleString()} Combinations`, 
+                            void u.set("finished", !0);
                             o || (document.getElementById("setOutput").textContent = "No Results Found", document.querySelectorAll(".grid>div").forEach((e => e.remove())));
                         }
                     }));
                 }));
-                const t = y();
+                const t = k();
                 t.charmSlots = [ 0, 0, 0, 0 ], document.querySelectorAll(".charmSlot").forEach((e => {
                     e.selectedIndex > 0 && ++t.charmSlots[e.selectedIndex - 1];
-                })), t.thisWeapon = window.info[r.value].weapons[l.value].decos, t.theseCharms = g(t.skills, t.skillInfo), 
+                })), t.thisWeapon = window.info[r.value].weapons[l.value].decos, t.theseCharms = y(t.skills, t.skillInfo), 
                 t.armors = function(e, t, a) {
                     const i = new Map(Object.entries(JSON.parse(JSON.stringify(window.info.armor)))), _ = {}, s = [ 2, 4, 4, 6 ];
                     for (let e = 0; e < 5; e++) {
@@ -1741,6 +1740,7 @@
                     leg: 0,
                     workers: 0
                 };
+                let _ = 0;
                 e: for (;++i.helm < t.armors.helm.length || (i.helm = 0, ++i.chest < t.armors.chest.length || (i.chest = 0, 
                 ++i.arm < t.armors.arm.length || (i.arm = 0, ++i.waist < t.armors.waist.length || (i.waist = 0, 
                 ++i.leg !== t.armors.leg.length)))); ) {
@@ -1751,38 +1751,38 @@
                         for (;s[l - 1] === i[s[l - 2]] && (_ += s[l]), !((l -= 3) < 0); ) ;
                         if (t.skills[e] < _) continue e;
                     }
-                    u.push([ i.helm, i.chest, i.arm, i.waist, i.leg ]);
+                    m[_].push([ i.helm, i.chest, i.arm, i.waist, i.leg ]), ++_ === d && (_ = 0);
                 }
                 for (const e in a) delete t.skills[e];
-                function _(e) {
-                    t.permutations = u.splice(0, d), t.keepSets = p.size < 100, e.postMessage(t);
+                function b(e) {
+                    t.permutations = m.pop(), t.keepSets = u.size < 100, e.postMessage(t);
                 }
-                p.clear(), d = u.length / c.length;
-                for (const e of c) _(e);
-                f = "", document.getElementById("setReturn").classList.remove("augInvis"), document.querySelectorAll(".extraSkills>button").forEach((e => e.remove())), 
+                u.clear();
+                for (const e of c) b(e);
+                p = "", document.getElementById("setReturn").classList.remove("augInvis"), document.querySelectorAll(".extraSkills>button").forEach((e => e.remove())), 
                 document.getElementById("temp") && document.getElementById("temp").remove(), document.querySelector(".extraSkills").innerHTML += "<P2 id='temp' style='font-size:18px !important; height:15em !important;'>Searching...</P2>", 
                 document.getElementsByClassName("grid")[0].innerHTML = "", s = {
                     remainingSlots: [ 0, 0, 0, 0 ],
                     armorSkills: {},
                     quriousSkills: [ 0, 0, 0, 0, 0 ]
-                }, o = 0, v = 0;
+                }, o = 0, f = 0;
             };
-            let x = 0, S = "";
+            let w = 0, x = "";
             document.addEventListener("keypress", (e => {
-                e.key === [ "t", "e", "s", "t" ][Math.min(3, x)] && ++x < 3 || ("Enter" === e.key && x >= 3 ? (E("f" !== S), 
-                S = "", x = 0) : /t|f/.test(e.key) && x >= 3 ? S = e.key : x < 3 && (x = 0));
+                e.key === [ "t", "e", "s", "t" ][Math.min(3, w)] && ++w < 3 || ("Enter" === e.key && w >= 3 ? (S("f" !== x), 
+                x = "", w = 0) : /t|f/.test(e.key) && w >= 3 ? x = e.key : w < 3 && (w = 0));
             }));
-            const E = (e = !0) => ([ "Dereliction", "CriticalEye", "CriticalBoost", "MaximumMight", "RecoilDown", "ReloadSpeed", "RapidFireUp", "PierceUp", "Burst", "Agitator", "AttackBoost", "AmmoUp", "SpareShot" ].forEach((e => (0, 
-            i.createSkillSelections)(e, window.info.types.maxLevel[e]))), w(15), p);
-            Object.values(document.querySelectorAll("#searchAgain, #startSearch")).forEach((e => e.addEventListener("click", (() => w(8))))), 
-            document.getElementById("normalSearch").addEventListener("click", (() => w(8))), 
-            document.getElementById("startSearch").addEventListener("click", (() => w(8))), 
-            document.getElementById("extendedSearch").addEventListener("click", (() => w(12))), 
+            const S = (e = !0) => ([ "Dereliction", "CriticalEye", "CriticalBoost", "MaximumMight", "RecoilDown", "ReloadSpeed", "RapidFireUp", "PierceUp", "Burst", "Agitator", "AttackBoost", "AmmoUp", "SpareShot" ].forEach((e => (0, 
+            i.createSkillSelections)(e, window.info.types.maxLevel[e]))), h(15), u);
+            Object.values(document.querySelectorAll("#searchAgain, #startSearch")).forEach((e => e.addEventListener("click", (() => h(8))))), 
+            document.getElementById("normalSearch").addEventListener("click", (() => h(8))), 
+            document.getElementById("startSearch").addEventListener("click", (() => h(8))), 
+            document.getElementById("extendedSearch").addEventListener("click", (() => h(12))), 
             document.querySelector(".grid").addEventListener("mousedown", (e => {
                 if ("BUTTON" !== e.target.tagName) return;
                 const t = Object.values(document.querySelectorAll("div.grid > div.setResult")).indexOf(e.target.parentElement);
-                if (!p.has(t)) return;
-                const a = p.get(t)[e.target.parentElement.lastElementChild.selectedIndex], s = {};
+                if (!u.has(t)) return;
+                const a = u.get(t)[e.target.parentElement.lastElementChild.selectedIndex], s = {};
                 a.usedSkills.slice(-2).forEach((e => {
                     s[e[0]] = e[1];
                 })), (0, _.equipBuild)(a, s);
@@ -1792,7 +1792,7 @@
                     l[e[0]] ? l[e[0]] += t : l[e[0]] = t;
                 })), document.getElementById("setReturn").classList.add("augInvis"), (0, i.dataCompile)(), 
                 document.querySelectorAll(".extraSkills>button").forEach((e => e.remove())), document.querySelectorAll(".grid>div").forEach((e => e.remove())), 
-                p.clear();
+                u.clear();
             }));
         },
         "./srcfiles/json/LightBowGun.json": e => {

@@ -28,7 +28,7 @@ if (!self.define) {
 define([ "./workbox-267f3b44" ], (function(e) {
     "use strict";
     e.setCacheNameDetails({
-        prefix: "MHR-Damage-v591015"
+        prefix: "MHR-Damage-v359288"
     }), self.skipWaiting(), e.clientsClaim(), e.precacheAndRoute([ {
         url: "././index.html",
         revision: "3d860d586f9ff991717c644a09af0767"
@@ -217,7 +217,7 @@ define([ "./workbox-267f3b44" ], (function(e) {
         revision: "2afea898d1858d642d5d42cc31f6c652"
     }, {
         url: "./index.js",
-        revision: "fb0f51cbd14671866d5b412d006543c6"
+        revision: "c5ed1c7e957590d569db427470232db5"
     }, {
         url: "./index.js.LICENSE.txt",
         revision: "20af1099d203e3d9093786d9bcbfe98c"
