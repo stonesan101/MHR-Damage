@@ -1,6 +1,6 @@
 if (!self.define) {
     let e, n = {};
-    const i = (i, c) => (i = new URL(i + ".js", c).href, n[i] || new Promise((n => {
+    const singleRequire = (i, c) => (i = new URL(i + ".js", c).href, n[i] || new Promise((n => {
         if ("document" in self) {
             const e = document.createElement("script");
             e.src = i, e.onload = n, document.head.appendChild(e);
@@ -10,25 +10,25 @@ if (!self.define) {
         if (!e) throw new Error(`Module ${i} didn’t register its module`);
         return e;
     })));
-    self.define = (c, o) => {
-        const s = e || ("document" in self ? document.currentScript.src : "") || location.href;
-        if (n[s]) return;
-        let r = {};
-        const d = e => i(e, s), a = {
+    self.define = (i, c) => {
+        const o = e || ("document" in self ? document.currentScript.src : "") || location.href;
+        if (n[o]) return;
+        let s = {};
+        const require = e => singleRequire(e, o), r = {
             module: {
-                uri: s
+                uri: o
             },
-            exports: r,
-            require: d
+            exports: s,
+            require
         };
-        n[s] = Promise.all(c.map((e => a[e] || d(e)))).then((e => (o(...e), r)));
+        n[o] = Promise.all(i.map((e => r[e] || require(e)))).then((e => (c(...e), s)));
     };
 }
 
 define([ "./workbox-267f3b44" ], (function(e) {
     "use strict";
     e.setCacheNameDetails({
-        prefix: "MHR-Damage-v210548"
+        prefix: "MHR-Damage-v588281"
     }), self.skipWaiting(), e.clientsClaim(), e.precacheAndRoute([ {
         url: "././index.html",
         revision: "3d860d586f9ff991717c644a09af0767"
@@ -223,7 +223,7 @@ define([ "./workbox-267f3b44" ], (function(e) {
         revision: "2afea898d1858d642d5d42cc31f6c652"
     }, {
         url: "./index.js",
-        revision: "1bd6c8ce0ace2c80a8112de65417636b"
+        revision: "c1076c58d4577d6430c619a20e58e475"
     }, {
         url: "./index.js.LICENSE.txt",
         revision: "20af1099d203e3d9093786d9bcbfe98c"
@@ -301,7 +301,7 @@ define([ "./workbox-267f3b44" ], (function(e) {
         revision: "7c9b2f4c7790fcb45528624f3a6985f5"
     }, {
         url: "./setBuildWorker.js",
-        revision: "8e5e43486ca8eb55fa157cffc56226ec"
+        revision: "76b2032859df07f06ea1a1b3814abb9a"
     }, {
         url: "./setBuildWorker.js.LICENSE.txt",
         revision: "36d1446cf8bf8bc80349179ac3d288fe"
