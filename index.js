@@ -1,7 +1,7 @@
 /*! For license information please see index.js.LICENSE.txt */
 (() => {
     "use strict";
-    var t = {
+    var e = {
         "./srcfiles/addSkills.js": (e, t, a) => {
             a.r(t), a.d(t, {
                 applyAllSkills: () => r
@@ -252,7 +252,7 @@
             const p = e => {
                 const t = e.className.split(" ")[0];
                 e.className.includes("inc") ? document.getElementById(`${t}Qurious`)?.classList.remove("augInvis") : document.getElementById(`${t}Qurious`).classList.add("augInvis");
-            }, f = (e = undefined) => {
+            }, f = (e = void 0) => {
                 const t = document.getElementById("charmSkill1"), a = document.getElementById("charmSkill2");
                 t.selectedOptions[0].textContent.slice(0, -3) === a.selectedOptions[0].textContent.slice(0, -3) && (a.selectedIndex = 0);
                 let i = [ 0, 0, 0 ];
@@ -365,93 +365,93 @@
                 i.textContent = i.textContent.replace(/(?=>\s)?\d+(?=[^/]*\/)/, t).replace(/(?<=\/)\d+/, a);
             }
         },
-        "./srcfiles/backup.js": (t, a, i) => {
-            i.r(a), i.d(a, {
-                addPoints: () => ze,
-                addSpaces: () => E,
-                applyDescription: () => qe,
-                applyEleDescription: () => Te,
-                applyRawDescription: () => Pe,
-                applySharpnessSkills: () => O,
-                buildDamageTable: () => ee,
-                calculateAmmoFrames: () => le,
-                capital: () => Ee,
-                classChange: () => ie,
-                comboReset: () => re,
-                createSkillSelections: () => Ce,
-                createTable: () => Y,
-                damageCalculations: () => $,
-                dataCompile: () => B,
-                dropHZ: () => k,
-                getArmorTypes: () => S,
-                getAttacks: () => ke,
-                getComboHitsAndSetSharpness: () => U,
-                getCritBoost: () => X,
-                getCritEle: () => K,
-                getCurrentArmorSkills: () => He,
-                getDependantSkills: () => L,
-                getDisplayedSkillsStats: () => F,
-                getEleHZ: () => fe,
-                getEnrage: () => N,
-                getHealthPools: () => Me,
-                getHitsPerTick: () => Q,
-                getInitialSharpness: () => D,
-                getInitialStats: () => z,
-                getRampageSkills: () => A,
-                getRawHZ: () => ve,
-                getRemainingSkills: () => V,
-                getSelectedDecoSkills: () => We,
-                getSkillSelects: () => Fe,
-                getStats: () => Le,
-                getUsedAttacks: () => be,
-                getWeapon: () => ye,
-                getWeaponMR: () => q,
-                gunlanceShelling: () => J,
-                healthSelect: () => we,
-                hitsPerColorSharp: () => j,
-                isUnique: () => xe,
-                listOfAllComboHits: () => G,
-                loadState: () => ne,
-                lower: () => Re,
-                meleeDPS: () => I,
-                meleeElements: () => _e,
-                monChart: () => ae,
-                monsterSelect: () => pe,
-                partSelect: () => ge,
-                partSelector: () => Ne,
-                populateDropDowns: () => ue,
-                rampageSelect: () => me,
-                rangedDPS: () => M,
-                resetSkillDescription: () => Ie,
-                saveState: () => oe,
-                setSkillDescriptions: () => Ae,
-                setSpawn: () => te,
-                shotsCheck: () => Be,
-                timesUsed: () => R,
-                updateComboDisplay: () => W,
-                updateComboTracker: () => H,
-                updateOldDropdownSelectedIndex: () => De,
-                updateQuest: () => Se,
-                weaponSelect: () => de,
-                weaponTypeSelect: () => ce
+        "./srcfiles/backup.js": (e, t, a) => {
+            a.r(t), a.d(t, {
+                addPoints: () => Fe,
+                addSpaces: () => S,
+                applyDescription: () => Ae,
+                applyEleDescription: () => qe,
+                applyRawDescription: () => Te,
+                applySharpnessSkills: () => D,
+                buildDamageTable: () => Y,
+                calculateAmmoFrames: () => se,
+                capital: () => Se,
+                classChange: () => ae,
+                comboReset: () => le,
+                createSkillSelections: () => Ne,
+                createTable: () => J,
+                damageCalculations: () => X,
+                dataCompile: () => R,
+                dropHZ: () => b,
+                getArmorTypes: () => x,
+                getAttacks: () => be,
+                getComboHitsAndSetSharpness: () => G,
+                getCritBoost: () => K,
+                getCritEle: () => V,
+                getCurrentArmorSkills: () => ze,
+                getDependantSkills: () => P,
+                getDisplayedSkillsStats: () => C,
+                getEleHZ: () => pe,
+                getEnrage: () => L,
+                getHealthPools: () => Be,
+                getHitsPerTick: () => j,
+                getInitialSharpness: () => W,
+                getInitialStats: () => F,
+                getRampageSkills: () => I,
+                getRawHZ: () => fe,
+                getRemainingSkills: () => Q,
+                getSelectedDecoSkills: () => He,
+                getSkillSelects: () => Ce,
+                getStats: () => Pe,
+                getUsedAttacks: () => ve,
+                getWeapon: () => ke,
+                getWeaponMR: () => A,
+                gunlanceShelling: () => Z,
+                healthSelect: () => he,
+                hitsPerColorSharp: () => U,
+                isUnique: () => we,
+                listOfAllComboHits: () => O,
+                loadState: () => oe,
+                lower: () => Ee,
+                meleeDPS: () => M,
+                meleeElements: () => ie,
+                monChart: () => te,
+                monsterSelect: () => ue,
+                partSelect: () => ye,
+                partSelector: () => Le,
+                populateDropDowns: () => me,
+                rampageSelect: () => de,
+                rangedDPS: () => B,
+                resetSkillDescription: () => Me,
+                saveState: () => re,
+                setSkillDescriptions: () => Ie,
+                setSpawn: () => ee,
+                shotsCheck: () => Re,
+                timesUsed: () => E,
+                updateComboDisplay: () => H,
+                updateComboTracker: () => z,
+                updateOldDropdownSelectedIndex: () => We,
+                updateQuest: () => xe,
+                weaponSelect: () => ce,
+                weaponTypeSelect: () => ne
             });
-            var _ = i("./srcfiles/json/monster.json"), s = i("./srcfiles/json/rampage.json"), l = i("./srcfiles/json/quest.json"), r = i("./srcfiles/json/skills.json"), o = i("./srcfiles/json/types.json"), n = i("./srcfiles/json/armor.json"), c = i("./srcfiles/json/LightBowGun.json"), d = i("./srcfiles/json/ammo.json"), m = i("./srcfiles/json/charms.json"), u = i("./srcfiles/setCreation.js"), p = i("./srcfiles/armorFunctions.js"), f = i("./srcfiles/addSkills.js");
-            window.info = {}, window.applySkills = f.applyAllSkills;
-            let v = "", b = [];
+            var i = a("./srcfiles/json/monster.json"), _ = a("./srcfiles/json/rampage.json"), s = a("./srcfiles/json/quest.json"), l = a("./srcfiles/json/skills.json"), r = a("./srcfiles/json/types.json"), o = a("./srcfiles/json/armor.json"), n = a("./srcfiles/json/LightBowGun.json"), c = a("./srcfiles/json/ammo.json"), d = a("./srcfiles/json/charms.json"), m = a("./srcfiles/setCreation.js"), u = a("./srcfiles/armorFunctions.js"), p = a("./srcfiles/addSkills.js");
+            window.info = {}, window.applySkills = p.applyAllSkills;
+            let f = "", v = [];
             window.selectedSkills = {};
-            const k = document.getElementById("dropHZ"), y = document.getElementById("dropWeapon"), g = document.getElementById("dropWeaponType"), h = document.getElementById("dropMonster"), w = document.getElementById("dropQuest"), x = [ [ "LightBowGun" ], [ "GreatSword" ], [ "ChargeBlade" ], [ "InsectGlaive" ], [ "SwordNShield" ], [ "DualBlades" ], [ "SwitchAxe" ], [ "LongSword" ], [ "Lance" ], [ "HeavyBowGun" ], [ "Bow" ], [ "HuntingHorn" ], [ "Gunlance" ], [ "Hammer" ] ], S = () => [ "helm", "chest", "arm", "waist", "leg" ], E = e => e.replace(/(?<=[a-z])([A-Z])(?![A-Z])/g, " $1");
-            window.info.time = {}, Promise.all([ Promise.resolve(_), Promise.resolve(s), Promise.resolve(o), Promise.resolve(r), Promise.resolve(l), Promise.resolve(n), Promise.resolve(c), Promise.resolve(d), Promise.resolve(m) ]).then((([e, t, a, i, _, s, l, r, o, n]) => {
+            const b = document.getElementById("dropHZ"), k = document.getElementById("dropWeapon"), y = document.getElementById("dropWeaponType"), g = document.getElementById("dropMonster"), h = document.getElementById("dropQuest"), w = [ [ "LightBowGun" ], [ "GreatSword" ], [ "ChargeBlade" ], [ "InsectGlaive" ], [ "SwordNShield" ], [ "DualBlades" ], [ "SwitchAxe" ], [ "LongSword" ], [ "Lance" ], [ "HeavyBowGun" ], [ "Bow" ], [ "HuntingHorn" ], [ "Gunlance" ], [ "Hammer" ] ], x = () => [ "helm", "chest", "arm", "waist", "leg" ], S = e => e.replace(/(?<=[a-z])([A-Z])(?![A-Z])/g, " $1");
+            window.info.time = {}, Promise.all([ Promise.resolve(i), Promise.resolve(_), Promise.resolve(r), Promise.resolve(l), Promise.resolve(s), Promise.resolve(o), Promise.resolve(n), Promise.resolve(c), Promise.resolve(d) ]).then((([e, t, a, i, _, s, l, r, o, n]) => {
                 window.info.monster = e, window.info.rampage = t, window.info.types = a, window.info.skills = i, 
                 window.info.quest = _, window.info.armor = s, window.info.LightBowGun = l, window.info.ammo = r, 
-                window.info.charms = [], ce(), ie(), me(), de(), ue([].concat([ "Select Skills For Set Builder" ], Object.keys(window.info.types.maxLevel).sort()), document.getElementById("dropSkills")), 
-                (0, p.armorSelect)(), pe(), document.querySelectorAll("#dropMonster>option").forEach(((e, t) => {
+                window.info.charms = [], ne(), ae(), de(), ce(), me([].concat([ "Select Skills For Set Builder" ], Object.keys(window.info.types.maxLevel).sort()), document.getElementById("dropSkills")), 
+                (0, u.armorSelect)(), ue(), document.querySelectorAll("#dropMonster>option").forEach(((e, t) => {
                     "Toadversary" === e.textContent && (document.getElementById("dropMonster").selectedIndex = t);
-                })), (0, p.getArmorsDecoArrNSkillsObj)(), he(), w.selectedIndex = 0, ge(), we(), 
-                ae(), B(), (e => {
+                })), (0, u.getArmorsDecoArrNSkillsObj)(), ge(), h.selectedIndex = 0, ye(), he(), 
+                te(), R(), (e => {
                     let t = '<Option value="0">---</Option>', a = '<Option value="0">---</Option>';
                     for (let i = 0, _ = 0; ;) {
-                        if (0 === i && (t += `<option value="${Object.values(e)[_][0]}">${E(Object.keys(e)[_])} +${Object.values(e)[_][0]}</option>`, 
-                        a += `<option value="${Object.values(e)[_][1]}">${E(Object.keys(e)[_])} +${Object.values(e)[_][1]}</option>`), 
+                        if (0 === i && (t += `<option value="${Object.values(e)[_][0]}">${S(Object.keys(e)[_])} +${Object.values(e)[_][0]}</option>`, 
+                        a += `<option value="${Object.values(e)[_][1]}">${S(Object.keys(e)[_])} +${Object.values(e)[_][1]}</option>`), 
                         ++_ === Object.keys(e).length) {
                             if (_ = 0, ++i === Object.keys(e).length) break;
                             1 === i && (document.getElementById("charmSkill1").innerHTML = t, document.getElementById("charmSkill2").innerHTML = a);
@@ -464,35 +464,35 @@
                         });
                     }
                     document.getElementById("slot1").selectedIndex = 2, document.getElementById("slot2").selectedIndex = 2, 
-                    document.getElementById("slot3").selectedIndex = 2, (0, p.setDecoDisplay)("charm", [ 2, 2, 2 ]);
+                    document.getElementById("slot3").selectedIndex = 2, (0, u.setDecoDisplay)("charm", [ 2, 2, 2 ]);
                 })(Object.fromEntries(Object.entries(o).sort(((e, t) => e[0].localeCompare(t[0])))));
             })).catch((e => {
                 console.error(e);
             }));
-            [].concat(x.slice(1), [ "descriptions" ]).forEach((async e => (e => {
+            [].concat(w.slice(1), [ "descriptions" ]).forEach((async e => (e => {
                 const t = window.location.href.slice(0, window.location.href.lastIndexOf("/"));
                 fetch(`${t}/json/${e}.json`).then((e => e.json())).then((t => {
                     window.info[e] = t;
                 }));
             })(e)));
-            const R = (e, t = b, a = 0) => (t.forEach((t => {
+            const E = (e, t = v, a = 0) => (t.forEach((t => {
                 t == e && ++a;
             })), a);
-            function B() {
-                De(), window.selectedSkills = {}, Object.values(document.querySelectorAll("#EquippedSkillDisplay>output output")).forEach((e => {
+            function R(e = window.event) {
+                We(), window.selectedSkills = {}, Object.values(document.querySelectorAll("#EquippedSkillDisplay>output output")).forEach((e => {
                     e.previousElementSibling.textContent.includes("Active") ? window.selectedSkills[e.textContent.replace(/\s/g, "").split(":")[0]] = +e.textContent.slice(-1) : window.selectedSkills[e.textContent.replace(/\s/g, "").split(":")[0]] = 0;
-                })), /BowGun/.test(g.value) ? M() : I();
+                })), /BowGun/.test(y.value) ? B() : M(e);
             }
-            function M() {
+            function B() {
                 document.querySelector("output.elementalAug").value = 0, document.getElementById("elementalResult").value = "+0", 
                 document.querySelector("output.sharpnessAug").value = 0, document.getElementById("sharpnessResult").value = "+0";
                 const e = [], t = [];
                 let a = {}, i = !0;
-                const _ = q();
+                const _ = A();
                 [ "Shot", "Sever", "Blunt", "IgnoreHZV" ].forEach((e => {
-                    _[e] = z(_, e);
+                    _[e] = F(_, e);
                 }));
-                const s = be();
+                const s = ve();
                 for (let l = 0; l < Object.keys(s).length; l++) {
                     let r = {
                         ..._,
@@ -501,7 +501,7 @@
                     r.baseRaw += !0 === r.Draw ? Number(document.getElementById("PunishingDraw").value) : 0, 
                     r.stats = {
                         ...r[r.type]
-                    }, r.stats = L(r), r = V(r), r = $(r), /Demon|Armor|Wyvern Blast|Glide|Wyvernsn|Guard/.test(r.attackName) ? a.ticsAdjust = 1 : a = le(r);
+                    }, r.stats = P(r), r = Q(r), r = X(r), /Demon|Armor|Wyvern Blast|Glide|Wyvernsn|Guard/.test(r.attackName) ? a.ticsAdjust = 1 : a = se(r);
                     const o = ~~((~~r.efr + ~~r.efe) * a.ticsAdjust), n = ~~(~~r.rawCrit + ~~r.eleCrit), c = ~~(~~r.rawNon + ~~r.eleNon), d = (~~(.99 + document.getElementById("health").value / o)).toLocaleString();
                     let m = /Stic|Slic/.test(r.attackName) ? 5 + ~~(.98 + 60 / a.shotsPerMin) * ~~(.99 + document.getElementById("health").value / o) : ~~(.98 + 60 / a.shotsPerMin) * ~~(.99 + document.getElementById("health").value / o);
                     m = m.toLocaleString();
@@ -509,43 +509,43 @@
                     e.push(v);
                     const b = [ r.attackName, r.rawMV.toFixed(1), void 0 === a.reloadSpeed ? " N / A " : a.reloadSpeed, void 0 === a.recoilSpeed ? " N / A " : a.recoilSpeed, isNaN(a.clipSize) ? "N / A" : a.clipSize, r.ticsPer, void 0 === a.shotsPerMinBase ? " N / A " : a.shotsPerMinBase, void 0 === a.shotsPerMin ? " N / A " : a.shotsPerMin ];
                     if (t.push(b), i) {
-                        Y([ [ "Base", ~~r.baseRaw, ~~(22 * (1 + r.raw / 100)) ], [ "True", ~~r.raw, ~~((22 * r.stats.BEM + r.stats.BE) * (1 + r.raw / 100)) ], [ "eTrue", ~~(r.raw * X(r.stats.aff, r.Crit).PRM * r.stats.PRM * r.stats.augPRM), ~~((22 * r.stats.BEM + r.stats.BE) * (1 + r.raw / 100) * r.stats.PEM * r.stats.augPEM * K(r.stats.aff, r.Crit).PEM) ], [ "Effective", ~~(r.raw * X(r.stats.aff, r.Crit).EFR * r.stats.PRM * r.stats.augPRM), ~~((22 * r.stats.BEM + r.stats.BE) * (1 + r.raw / 100) * r.stats.PEM * r.stats.augPEM * K(r.stats.aff, r.Crit).EFE) ], [ "Critical" ].concat(Number(X(r.stats.aff).EFR).toFixed(3), Number(K(r.stats.aff).EFE).toFixed(2)), [ "Affinity", ~~(100 * r.stats.aff) ] ], "ammo"), 
+                        J([ [ "Base", ~~r.baseRaw, ~~(22 * (1 + r.raw / 100)) ], [ "True", ~~r.raw, ~~((22 * r.stats.BEM + r.stats.BE) * (1 + r.raw / 100)) ], [ "eTrue", ~~(r.raw * K(r.stats.aff, r.Crit).PRM * r.stats.PRM * r.stats.augPRM), ~~((22 * r.stats.BEM + r.stats.BE) * (1 + r.raw / 100) * r.stats.PEM * r.stats.augPEM * V(r.stats.aff, r.Crit).PEM) ], [ "Effective", ~~(r.raw * K(r.stats.aff, r.Crit).EFR * r.stats.PRM * r.stats.augPRM), ~~((22 * r.stats.BEM + r.stats.BE) * (1 + r.raw / 100) * r.stats.PEM * r.stats.augPEM * V(r.stats.aff, r.Crit).EFE) ], [ "Critical" ].concat(Number(K(r.stats.aff).EFR).toFixed(3), Number(V(r.stats.aff).EFE).toFixed(2)), [ "Affinity", ~~(100 * r.stats.aff) ] ], "ammo"), 
                         i = !1;
                     }
                 }
                 e.splice(0, 0, [ "Ammo Type", "Raw", "Element", [ "Total", "Combined Damage For a Single Tick" ], [ "Effective", "Sums Every Tick Using EFE/EFR" ], [ "RPM Gain", "The Percentage Increase Of Damage From Both \nAmmo Up And Spare Shot In 60 seconds." ], [ "Shots To Kill", "Use the Pierce Damage Adjust For Accurate Results" ], [ "Time To Kill", "Can Have Variance Due To FPS,\nBut The Percent Gain Or Loss VS\nOther Ammo Types Should Stay Constant" ] ]), 
-                ee(e, "dps"), t.splice(0, 0, [ "Ammo Type", "Raw MV", "Reload", "Recoil", "Clip Size", [ "Procs Per", "Maximum Ticks Per Shot Using Optimal FPS, \nAs Well As The Monsters Smallest Large Gold Crown Size" ], [ "RPM Base", "Shots Per Minuite Including Recoil Down And Reload Speed" ], [ "Current RPM", "Shots Per Minuite With AmmoUp And Spare Shot" ] ]), 
-                ee(t, "ammo");
+                Y(e, "dps"), t.splice(0, 0, [ "Ammo Type", "Raw MV", "Reload", "Recoil", "Clip Size", [ "Procs Per", "Maximum Ticks Per Shot Using Optimal FPS, \nAs Well As The Monsters Smallest Large Gold Crown Size" ], [ "RPM Base", "Shots Per Minuite Including Recoil Down And Reload Speed" ], [ "Current RPM", "Shots Per Minuite With AmmoUp And Spare Shot" ] ]), 
+                Y(t, "ammo");
             }
-            function I() {
+            function M(e) {
                 const t = performance.now(), a = [ [ "Combo", "Attack Name", "MV", "Raw", "Element", "Total", "Effective" ] ];
                 let i = [ 0, 0, 0, 0, 0, 0, 0, 0 ], _ = -1, s = {};
                 document.getElementById("Sharpness").selectedIndex;
-                const l = q();
+                const l = A();
                 let r;
                 [ "Shot", "Sever", "Blunt", "IgnoreHZV" ].forEach((e => {
-                    l[e] = z(l, e);
-                })), Object.values(be()).forEach((t => {
+                    l[e] = F(l, e);
+                })), Object.values(ve()).forEach((t => {
                     if (++_, r = {
                         ...t,
                         ...l
                     }, r.baseRaw += !0 === r.Draw ? Number(document.getElementById("PunishingDraw").value) : 0, 
                     r.stats = {
                         ...r[r.type]
-                    }, r.stats = L(r), /input/.test(e?.target?.className) && "Combo Damage" === r.attackName && (H(), 
-                    W()), "Combo Damage" === r.attackName && (s = "Bow" === g.value ? j()[1] : U(r.stats.aff)), 
-                    r = V(r), r = $(r), b.includes(_.toString())) {
+                    }, r.stats = P(r), /input/.test(e?.target?.className) && "Combo Damage" === r.attackName && (z(), 
+                    H()), "Combo Damage" === r.attackName && (s = "Bow" === y.value ? U()[1] : G(r.stats.aff)), 
+                    r = Q(r), r = X(r), v.includes(_.toString())) {
                         Object.entries(s).filter((e => e[1].length > 0)).forEach((e => {
-                            if (!R(_, e[1])) return;
-                            const {PRM: t, PEM: a} = !1 === r.noSharpMod ? window.info.skills.Sharpness[Ee(e[0])] : {
+                            if (!E(_, e[1])) return;
+                            const {PRM: t, PEM: a} = !1 === r.noSharpMod ? window.info.skills.Sharpness[Se(e[0])] : {
                                 PRM: 1,
                                 PEM: 1
-                            }, s = R(_, e[1]);
+                            }, s = E(_, e[1]);
                             i = [ i[0] += Number(~~(r.rawMV * s)), i[1] += Number(~~(r.rawNon * t) * s), i[2] += Number(~~(r.rawCrit * t) * s), i[3] += Number(~~(r.eleNon * a) * s), i[4] += Number(~~(r.eleCrit * a) * s), i[5] += Number(~~(r.rawNon * t) * s + ~~(r.eleNon * a) * s), i[6] += Number(~~(r.rawCrit * t) * s + ~~(r.eleCrit * a) * s), i[7] += Number(~~(r.efr * t) * s + ~~(r.efe * a) * s) ];
                         }));
                     }
                     let o = window.info.skills.Sharpness[document.getElementById("Sharpness").selectedOptions[0].textContent.trim()];
-                    if ("Bow" === g.value && "Shot" !== r.type) switch (document.getElementById("BowCoating").selectedOptions[0].textContent) {
+                    if ("Bow" === y.value && "Shot" !== r.type) switch (document.getElementById("BowCoating").selectedOptions[0].textContent) {
                       case "Power":
                         o = "1.35";
                         break;
@@ -559,13 +559,13 @@
                     }
                     const n = [ "replaceME", r.attackName, r.rawMV.toFixed(1), `${(~~(r.rawNon * o.PRM)).toLocaleString()} / ${(~~(r.rawCrit * o.PRM)).toLocaleString()}`, `${(~~(r.eleNon * o.PEM)).toLocaleString()} / ${(~~(r.eleCrit * o.PEM)).toLocaleString()}`, `${(~~(r.rawNon * o.PRM) + ~~(r.eleNon * o.PEM)).toLocaleString()} / ${(~~(r.rawCrit * o.PRM) + ~~(r.eleCrit * o.PEM)).toLocaleString()}`, ((~~(r.efe * o.PEM) + ~~(r.efr * o.PRM)) * (r.ticsPer + 1)).toLocaleString() ];
                     a.push(n);
-                    const c = "none" === Re(r.eleType) ? 0 : r.ele;
-                    Y([ [ "Base", ~~r.baseRaw, r.baseEle ], [ "True", ~~r.raw, ~~c ], [ "eTrue", ~~(r.raw * X(r.stats.aff, r.Crit).PRM * r.stats.PRM * r.stats.augPRM * o.PRM), ~~(c * K(r.stats.aff, r.Crit).PEM * r.stats.PEM * r.stats.augPEM * o.PEM) ], [ "Effective", ~~(r.raw * X(r.stats.aff, r.Crit).EFR * r.stats.PRM * r.stats.augEFR * o.PRM), ~~(c * K(r.stats.aff, r.Crit).EFE * r.stats.PEM * r.stats.augPEM * r.stats.augEFR * o.PEM) ], [ "Critical", Number(X(r.stats.aff).EFR).toFixed(3), Number(K(r.stats.aff).EFE).toFixed(2) ], [ "Sharp.", Object.values(window.info.skills.Sharpness)[7 - document.getElementById("Sharpness").selectedIndex].PRM, Object.values(window.info.skills.Sharpness)[7 - document.getElementById("Sharpness").selectedIndex].PEM ], [ "Affinity", ~~(100 * r.stats.aff) ] ], r.eleType);
-                })), "Gunlance" === g.value ? J(a, i, r) : (a.splice(1, 1, [ "replaceME", "Combo Damage", `${i[0].toLocaleString()}`, `${i[1].toLocaleString()} / ${i[2].toLocaleString()}`, `${i[3].toLocaleString()} / ${i[4].toLocaleString()}`, `${i[5].toLocaleString()} / ${i[6].toLocaleString()}`, `${i[7].toLocaleString()}` ]), 
-                ee(a, "dps")), console.log((performance.now() - t) / 1e3);
+                    const c = "none" === Ee(r.eleType) ? 0 : r.ele;
+                    J([ [ "Base", ~~r.baseRaw, r.baseEle ], [ "True", ~~r.raw, ~~c ], [ "eTrue", ~~(r.raw * K(r.stats.aff, r.Crit).PRM * r.stats.PRM * r.stats.augPRM * o.PRM), ~~(c * V(r.stats.aff, r.Crit).PEM * r.stats.PEM * r.stats.augPEM * o.PEM) ], [ "Effective", ~~(r.raw * K(r.stats.aff, r.Crit).EFR * r.stats.PRM * r.stats.augEFR * o.PRM), ~~(c * V(r.stats.aff, r.Crit).EFE * r.stats.PEM * r.stats.augPEM * r.stats.augEFR * o.PEM) ], [ "Critical", Number(K(r.stats.aff).EFR).toFixed(3), Number(V(r.stats.aff).EFE).toFixed(2) ], [ "Sharp.", Object.values(window.info.skills.Sharpness)[7 - document.getElementById("Sharpness").selectedIndex].PRM, Object.values(window.info.skills.Sharpness)[7 - document.getElementById("Sharpness").selectedIndex].PEM ], [ "Affinity", ~~(100 * r.stats.aff) ] ], r.eleType);
+                })), "Gunlance" === y.value ? Z(a, i, r) : (a.splice(1, 1, [ "replaceME", "Combo Damage", `${i[0].toLocaleString()}`, `${i[1].toLocaleString()} / ${i[2].toLocaleString()}`, `${i[3].toLocaleString()} / ${i[4].toLocaleString()}`, `${i[5].toLocaleString()} / ${i[6].toLocaleString()}`, `${i[7].toLocaleString()}` ]), 
+                Y(a, "dps")), console.log((performance.now() - t) / 1e3);
             }
-            function A(e = {
-                ...window.info[g.value].weapons[y.value]
+            function I(e = {
+                ...window.info[y.value].weapons[k.value]
             }) {
                 for (let t = 0; t < 6; t++) {
                     const a = document.querySelectorAll("#weaponRampage>select")[t];
@@ -573,7 +573,7 @@
                     const i = window.info.rampage["Rampage-Up Skill"][a.value];
                     if (void 0 !== i) for (const t of Object.keys(i)) e[t] += i[t];
                 }
-                return /BowGun/.test(g.value) || (e.eleType = /Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/.test(document.getElementById("weaponRampage").children[1].value) ? document.getElementById("weaponRampage").children[1].value.match(/Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/)[0] : e.eleType), 
+                return /BowGun/.test(y.value) || (e.eleType = /Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/.test(document.getElementById("weaponRampage").children[1].value) ? document.getElementById("weaponRampage").children[1].value.match(/Fire|Water|Thunder|Ice|Dragon|Blase|Sleep|Poison|Para/)[0] : e.eleType), 
                 {
                     ...e
                 };
@@ -591,56 +591,56 @@
                 rampageAug: 0,
                 sharpnessAug: 0
             };
-            const q = () => {
-                const e = JSON.parse(JSON.stringify(window.info[g.value].weapons[y.value]));
-                /Bow/.test(g.value) ? "HeavyBowGun" === g.value ? (10 === e.rank && document.getElementById("augUpgrades").checked && (e.baseRaw += 15), 
-                "Power" === document.getElementById("BowgunBarrel")?.selectedOptions[0]?.textContent && (e.baseRaw = ~~(e.baseRaw * (document.getElementById("Tune-Up").selectedIndex < 2 ? 1.125 : 1.15)))) : "LightBowGun" === g.value ? (10 === e.rank && document.getElementById("augUpgrades").checked && (e.baseRaw += 7), 
-                "Long" === document.getElementById("BowgunBarrel")?.selectedOptions[0]?.textContent && (e.baseRaw = ~~(e.baseRaw * (document.getElementById("Tune-Up").selectedIndex < 2 ? 1.05 : 1.075)))) : "Bow" === g.value && 10 === e.rank && (e.baseRaw += 10) : 10 === e.rank && document.getElementById("augUpgrades").checked && !/Water|Ice|Thunder|Fire|Dragon/.test(e.eleType) ? e.baseRaw += 30 : 10 === e.rank && document.getElementById("augUpgrades").checked && (e.baseRaw += 15, 
-                "GreatSword" === g.value ? e.baseEle += 30 : "lance" === g.value || "Gunlance" === g.value ? e.baseEle += 21 : e.baseEle += 18), 
+            const A = () => {
+                const e = JSON.parse(JSON.stringify(window.info[y.value].weapons[k.value]));
+                /Bow/.test(y.value) ? "HeavyBowGun" === y.value ? (10 === e.rank && document.getElementById("augUpgrades").checked && (e.baseRaw += 15), 
+                "Power" === document.getElementById("BowgunBarrel")?.selectedOptions[0]?.textContent && (e.baseRaw = ~~(e.baseRaw * (document.getElementById("Tune-Up").selectedIndex < 2 ? 1.125 : 1.15)))) : "LightBowGun" === y.value ? (10 === e.rank && document.getElementById("augUpgrades").checked && (e.baseRaw += 7), 
+                "Long" === document.getElementById("BowgunBarrel")?.selectedOptions[0]?.textContent && (e.baseRaw = ~~(e.baseRaw * (document.getElementById("Tune-Up").selectedIndex < 2 ? 1.05 : 1.075)))) : "Bow" === y.value && 10 === e.rank && (e.baseRaw += 10) : 10 === e.rank && document.getElementById("augUpgrades").checked && !/Water|Ice|Thunder|Fire|Dragon/.test(e.eleType) ? e.baseRaw += 30 : 10 === e.rank && document.getElementById("augUpgrades").checked && (e.baseRaw += 15, 
+                "GreatSword" === y.value ? e.baseEle += 30 : "lance" === y.value || "Gunlance" === y.value ? e.baseEle += 21 : e.baseEle += 18), 
                 e.baseRaw += +document.querySelector("output.attackAug + output").value.slice(-2);
                 const t = +document.querySelector("output.affinityAug + output").value.slice(-2);
                 if (e.elementalAug = +document.querySelector("output.elementalAug + output").value.slice(-2), 
                 e.aff = (e.aff || 0) + t, "None" !== e.eleType) {
                     let t = 0;
-                    t = "GreatSword" === g.value ? [ 0, 5, 10, 15, 20, 25, 33, 43 ][window.info.augIndex.elementalAug] : "lance" === g?.value || "Gunlance" === g?.value ? [ 0, 3, 6, 10, 14, 18, 24, 32 ][window.info.augIndex.elementalAug] : [ 0, 3, 6, 9, 12, 15, 20, 27 ][window.info.augIndex.elementalAug], 
+                    t = "GreatSword" === y.value ? [ 0, 5, 10, 15, 20, 25, 33, 43 ][window.info.augIndex.elementalAug] : "lance" === y?.value || "Gunlance" === y?.value ? [ 0, 3, 6, 10, 14, 18, 24, 32 ][window.info.augIndex.elementalAug] : [ 0, 3, 6, 9, 12, 15, 20, 27 ][window.info.augIndex.elementalAug], 
                     e.baseEle += t, document.getElementById("elementalResult").value = `+ ${t}`;
                 } else document.querySelector("output.elementalAug").value = 0;
                 return e.baseAff = e.aff, e;
-            }, T = e => {
+            }, q = e => {
                 const t = [];
                 return /Pierc/.test(e.attackName) ? t.push(window.info.skills.PierceUp[document.getElementById("PierceUp").selectedIndex]) : /Spread/.test(e.attackName) ? t.push(window.info.skills.SpreadUp[document.getElementById("SpreadUp").selectedIndex]) : /Normal|Rapid/.test(e.attackName) && t.push(window.info.skills.NormalRapidUp[document.getElementById("NormalRapidUp").selectedIndex]), 
                 /RF+/.test(e.attackName) && t.push(window.info.skills.RapidFireUp[document.getElementById("RapidFireUp").selectedIndex]), 
                 /Wyvern|Dragon Piercer/.test(e.attackName) && t.push(window.info.skills.SpecialAmmoBoost[document.getElementById("SpecialAmmoBoost").selectedIndex]), 
-                /BowGun/.test(g.value) && ("HeavyBowGun" === g.value && (/Sticky|Wyvern/.test(e.attackName) && (e.stats.augEFR *= window.info.skills.Bombardier[document.getElementById("Bombardier").selectedIndex][e.attackName.match("Sticky|Wyvern")[0]][1], 
+                /BowGun/.test(y.value) && ("HeavyBowGun" === y.value && (/Sticky|Wyvern/.test(e.attackName) && (e.stats.augEFR *= window.info.skills.Bombardier[document.getElementById("Bombardier").selectedIndex][e.attackName.match("Sticky|Wyvern")[0]][1], 
                 e.stats.augPRM *= window.info.skills.Bombardier[document.getElementById("Bombardier").selectedIndex][e.attackName.match("Sticky|Wyvern")[0]][0]), 
                 /snipe|heart|Cluster/.test(e.attackName) || (e.stats.PRM *= window.info.skills.ChargeLevel[document.getElementById("ChargeLevel").selectedIndex].PRM, 
                 e.NoEleBuff ? e.baseEle *= window.info.skills.ChargeLevel[document.getElementById("ChargeLevel").selectedIndex].PEM : e.stats.PEM *= window.info.skills.ChargeLevel[document.getElementById("ChargeLevel").selectedIndex].PEM)), 
-                "LightBowGun" === g.value && /Pierce|Spread|Normal/.test(e.attackName) && document.getElementById("CriticalFirePower").selectedIndex > 0 && (/Normal/.test(e.attackName) ? e.stats.PRM *= 1.3 : /Spread/.test(e.attackName) ? e.stats.PRM *= 1.2 : /Pierce/.test(e.attackName) && (e.stats.PRM *= 1.1))), 
-                "Bow" !== g.value || /Stake/.test(e.attackName) || t.push(window.info.skills.BowCoating[document.getElementById("BowCoating").selectedIndex]), 
-                Le(t, e.stats);
-            }, P = e => {
+                "LightBowGun" === y.value && /Pierce|Spread|Normal/.test(e.attackName) && document.getElementById("CriticalFirePower").selectedIndex > 0 && (/Normal/.test(e.attackName) ? e.stats.PRM *= 1.3 : /Spread/.test(e.attackName) ? e.stats.PRM *= 1.2 : /Pierce/.test(e.attackName) && (e.stats.PRM *= 1.1))), 
+                "Bow" !== y.value || /Stake/.test(e.attackName) || t.push(window.info.skills.BowCoating[document.getElementById("BowCoating").selectedIndex]), 
+                Pe(t, e.stats);
+            }, T = e => {
                 const t = [];
-                if ("LongSword" !== g.value || /Helm Breaker|Serene/.test(e.attackName) ? /Helm Breaker|Serene/.test(e.attackName) && t.push(/Helm Breaker/.test(e.attackName) ? window.info.skills.Helmbreaker[document.getElementById("Helmbreaker").selectedIndex] : window.info.skills.SerenePose[document.getElementById("SerenePose").selectedIndex]) : t.push(window.info.skills.SpiritGauge[document.getElementById("SpiritGauge").selectedIndex]), 
-                "GreatSword" === g.value) {
+                if ("LongSword" !== y.value || /Helm Breaker|Serene/.test(e.attackName) ? /Helm Breaker|Serene/.test(e.attackName) && t.push(/Helm Breaker/.test(e.attackName) ? window.info.skills.Helmbreaker[document.getElementById("Helmbreaker").selectedIndex] : window.info.skills.SerenePose[document.getElementById("SerenePose").selectedIndex]) : t.push(window.info.skills.SpiritGauge[document.getElementById("SpiritGauge").selectedIndex]), 
+                "GreatSword" === y.value) {
                     const t = e.attackName.match(/Charged Slash|Rising Slash|Wide Slash|Strong Charged Slash|True Charged Slash|Rage Slash/);
                     t && document.getElementById("StrongarmStance").selectedIndex > 0 && (e.stats.PRM *= window.info.skills.StrongarmStance[t][0], 
                     e.stats.PEM *= window.info.skills.StrongarmStance[t][1]), /(?<!Tackle )Lv[1-3]/.test(e.attackName) && (e.rawMV *= Number(`1.${e.attackName.match(/(?<=Lv)[1-3]/)[0]}`));
                 }
-                return "ChargeBlade" === g.value && (/3rd|(?<!Midair |Axe: )UED|(?<!Charged )Sword(?!.*Shield)/.test(e.attackName) || t.push(window.info.skills.SavageAxe[document.getElementById("SavageAxe").selectedIndex]), 
+                return "ChargeBlade" === y.value && (/3rd|(?<!Midair |Axe: )UED|(?<!Charged )Sword(?!.*Shield)/.test(e.attackName) || t.push(window.info.skills.SavageAxe[document.getElementById("SavageAxe").selectedIndex]), 
                 "Impact Phial" === e.phialType ? t.push(window.info.skills.ImpactShieldCharge[document.getElementById("ImpactShieldCharge").selectedIndex]) : t.push(window.info.skills.EleShieldCharge[document.getElementById("EleShieldCharge").selectedIndex])), 
-                Le(t, e.stats);
+                Pe(t, e.stats);
             };
-            function L(e) {
+            function P(e) {
                 const t = [];
-                return "FireWaterIceThunderDragon".includes(e.eleType) && document.querySelectorAll(`.${Re(e.eleType)}`).forEach((e => {
+                return "FireWaterIceThunderDragon".includes(e.eleType) && document.querySelectorAll(`.${Ee(e.eleType)}`).forEach((e => {
                     e.selectedIndex > 0 && t.push(window.info.skills[e.id][e.selectedIndex]);
-                })), g.value.includes("Bow") ? T(e) : P(e);
+                })), y.value.includes("Bow") ? q(e) : T(e);
             }
-            function N() {
-                return "Enraged" === document.getElementById("dropEnraged").value ? window.info.monster[h.value]?.anger_data : 1;
+            function L() {
+                return "Enraged" === document.getElementById("dropEnraged").value ? window.info.monster[g.value]?.anger_data : 1;
             }
-            const C = e => ve(Re(e)) >= 45 ? window.info.skills.WeaknessExploit[window.selectedSkills.WeaknessExploit || 0].aff : 0;
-            function F(e) {
+            const N = e => fe(Ee(e)) >= 45 ? window.info.skills.WeaknessExploit[window.selectedSkills.WeaknessExploit || 0].aff : 0;
+            function C(e) {
                 let t = {};
                 return Object.values(document.querySelectorAll("#unique select")).forEach((a => {
                     const i = a.id;
@@ -652,8 +652,8 @@
                     e.checked && (t[e.id] = window.info.skills[e.id]);
                 })), t;
             }
-            function z(e, t) {
-                null === b[0] && (b = []), e.stats = {
+            function F(e, t) {
+                null === v[0] && (v = []), e.stats = {
                     BR: 0,
                     BRM: 1,
                     PRM: 1,
@@ -661,37 +661,37 @@
                     BE: 0,
                     PEM: 1
                 }, e.stats.aff = e.baseAff || 0;
-                const a = F(window.info.types[g.value].filter((e => window.info.types[t].includes(e))));
+                const a = C(window.info.types[y.value].filter((e => window.info.types[t].includes(e))));
                 return e.stats.PRM *= document.getElementById("DemonAmmo").checked && /(Sever|Blunt)/.test(e.type) ? 1.1 : 1, 
-                document.getElementById("enrageDisplay").textContent = ~~(100 * N()) + "%", "Enraged" === document.getElementById("dropEnraged").value && (a.Agitator = window.info.skills.Agitator[document.getElementById("Agitator").selectedIndex], 
-                e.stats.PEM *= N(), e.stats.PRM *= N()), "DualBlades" === g.value && (e.stats.BEM *= window.info.skills.ArchdemonMode[document.getElementById("ArchdemonMode").selectedIndex].BEM, 
+                document.getElementById("enrageDisplay").textContent = ~~(100 * L()) + "%", "Enraged" === document.getElementById("dropEnraged").value && (a.Agitator = window.info.skills.Agitator[document.getElementById("Agitator").selectedIndex], 
+                e.stats.PEM *= L(), e.stats.PRM *= L()), "DualBlades" === y.value && (e.stats.BEM *= window.info.skills.ArchdemonMode[document.getElementById("ArchdemonMode").selectedIndex].BEM, 
                 e.stats.BEM *= /\[Feral Demon Mode\]/.test(e.attackName) ? 1 : window.info.skills.DemonMode[document.getElementById("DemonMode").selectedIndex].BEM, 
                 e.stats.BRM *= /\[Demon Mode\]/.test(e.attackName) ? 1 : window.info.skills.FeralDemonMode[document.getElementById("FeralDemonMode").selectedIndex].BRM, 
                 e.stats.aff += "Hellion Mode" === document.getElementById("weaponRampage0").value ? 20 : 0), 
-                "Bow" === g.value && (document.getElementById("HerculesDraw").selectedIndex > 0 && (a.HerculesDraw = window.info.skills.HerculesDraw[document.getElementById("HerculesDraw").selectedIndex]), 
+                "Bow" === y.value && (document.getElementById("HerculesDraw").selectedIndex > 0 && (a.HerculesDraw = window.info.skills.HerculesDraw[document.getElementById("HerculesDraw").selectedIndex]), 
                 document.getElementById("UpperCrit").selectedIndex > 0 && (a.UpperCrit = window.info.skills.UpperCrit[document.getElementById("UpperCrit").selectedIndex])), 
                 Object.entries(a).forEach((([e, t]) => {
                     t || (console.log(e), delete a[e]);
-                })), e.stats = Le(Object.values(a), e.stats), "Kushala Daora Soul" === document.getElementById("weaponRampage0").value && (e.stats.aff += 15), 
-                e.stats.aff += C(Re(t)), e.stats.aff = Math.min(e.stats.aff, 100) / 100, e.stats;
+                })), e.stats = Pe(Object.values(a), e.stats), "Kushala Daora Soul" === document.getElementById("weaponRampage0").value && (e.stats.aff += 15), 
+                e.stats.aff += N(Ee(t)), e.stats.aff = Math.min(e.stats.aff, 100) / 100, e.stats;
             }
-            function H() {
+            function z() {
                 if (!document.getElementsByClassName("inputs")?.length) return;
                 if (Number.isNaN(Number(window?.event?.target.id)) || "0" === window?.event?.target.id) return;
-                let e = document.querySelectorAll(".inputs")[window?.event?.target.id].value - R(window?.event?.target.id);
-                for (;e > 0; ) b.push(window.event.target.id), --e;
-                for (;e < 0; ) b.splice(b.lastIndexOf(window?.event?.target.id), 1), ++e;
+                let e = document.querySelectorAll(".inputs")[window?.event?.target.id].value - E(window?.event?.target.id);
+                for (;e > 0; ) v.push(window.event.target.id), --e;
+                for (;e < 0; ) v.splice(v.lastIndexOf(window?.event?.target.id), 1), ++e;
             }
-            function W() {
+            function H() {
                 let e;
-                document.querySelectorAll("li.comboHits").forEach((e => e.remove())), b.forEach((t => {
+                document.querySelectorAll("li.comboHits").forEach((e => e.remove())), v.forEach((t => {
                     e = document.createElement("li"), e.className = `${t} comboHits`, e.setAttribute("draggable", "true"), 
                     e.textContent = document.querySelector(`td#b${[ t ]}>output`).textContent, document.getElementById("comboCountDisplay").append(e);
                 }));
             }
-            const D = () => {
+            const W = () => {
                 let e = 10 * document.getElementById("Handicraft").selectedIndex;
-                const {sharpness: t, handicraft: a, rank: i} = q(), _ = 10 * (window.info.augIndex.sharpnessAug + (10 === i && document.getElementById("augUpgrades").checked ? 1 : 0));
+                const {sharpness: t, handicraft: a, rank: i} = A(), _ = 10 * (window.info.augIndex.sharpnessAug + (10 === i && document.getElementById("augUpgrades").checked ? 1 : 0));
                 t.orange -= Math.max(0, _ - (t.red - 10)), t.red = Math.max(10, t.red - _);
                 let s = -1 === Object.values(t).indexOf(0) ? 6 : Object.values(t).indexOf(0) - 1;
                 for (0 === t[Object.keys(t)[s]] ? t[Object.keys(t)[s - 1]] += _ : t[Object.keys(t)[s]] += _; e; ) {
@@ -700,28 +700,28 @@
                 }
                 return t;
             };
-            function O(e, t = {
-                ...D()
+            function D(e, t = {
+                ...W()
             }) {
-                const a = window.info.skills.RazorSharp[document.getElementById("RazorSharp").selectedIndex].Sharp, i = window.info.skills.MastersTouch[document.getElementById("MastersTouch").selectedIndex].Sharp * e, _ = e > 0 && document.getElementById("MastersTouch").selectedIndex > 0 ? Z(i) * Z(a) : Z(a);
+                const a = window.info.skills.RazorSharp[document.getElementById("RazorSharp").selectedIndex].Sharp, i = window.info.skills.MastersTouch[document.getElementById("MastersTouch").selectedIndex].Sharp * e, _ = e > 0 && document.getElementById("MastersTouch").selectedIndex > 0 ? $(i) * $(a) : $(a);
                 return Object.entries(t).map((e => ~~(Number(e[1]) * Number(_))));
             }
-            function G() {
-                let [...e] = b;
-                if (null == b[0]) return;
+            function O() {
+                let [...e] = v;
+                if (null == v[0]) return;
                 let t = document.getElementsByClassName("inputComboRepeat")[0].value;
-                for (;t > 1; ) e = e.concat(b), --t;
+                for (;t > 1; ) e = e.concat(v), --t;
                 return e;
             }
-            function U(e = 0) {
-                const [t, a, i] = j(e);
+            function G(e = 0) {
+                const [t, a, i] = U(e);
                 return document.getElementById("Sharpness").selectedIndex = 6 - t.lastIndexOf(0), 
                 t.forEach(((e, t) => {
                     document.querySelector("#sharpnessContainer").children[6 - t].style.width = e / i * 90 + "%", 
                     document.querySelector("#sharpnessContainer").children[6 - t].textContent = e < .1 ? "" : ~~e;
                 })), a;
             }
-            function j(e = 0, t = G()) {
+            function U(e = 0, t = O()) {
                 const a = {
                     purple: [],
                     white: [],
@@ -730,16 +730,16 @@
                     yellow: [],
                     orange: [],
                     red: []
-                }, i = "Bow" !== g.value ? O(e).reverse() : [ 0, 0, 0, 1, 0, 0, 0, 0 ], _ = Object.values(i).reduce(((e, t) => e + t));
+                }, i = "Bow" !== y.value ? D(e).reverse() : [ 0, 0, 0, 1, 0, 0, 0, 0 ], _ = Object.values(i).reduce(((e, t) => e + t));
                 if (t) {
-                    const e = Object.keys(be());
+                    const e = Object.keys(ve());
                     let _ = 0;
-                    const s = Object.keys(a), l = ke();
+                    const s = Object.keys(a), l = be();
                     e: for (const r of t) {
                         const t = e[r];
                         let o = l[t].ticsPer + 1;
-                        const n = Q(l[t].hitsOfSharp, r);
-                        if ("Gunlance" !== g.value || r < 27) for (;o--; ) {
+                        const n = j(l[t].hitsOfSharp, r);
+                        if ("Gunlance" !== y.value || r < 27) for (;o--; ) {
                             if (i[_] < .1 && 7 == ++_) break e;
                             a[s[_]].push(r), i[_] -= n;
                         }
@@ -747,32 +747,32 @@
                 }
                 return [ i, a, _ ];
             }
-            function Q(e, t) {
-                return document.getElementById("ProtectivePolish").checked || "Bow" === g.value ? 0 : "Gunlance" !== g.value || t > 27 ? "DualBlades" !== g.value ? e : e / 3 : 1;
+            function j(e, t) {
+                return document.getElementById("ProtectivePolish").checked || "Bow" === y.value ? 0 : "Gunlance" !== y.value || t > 27 ? "DualBlades" !== y.value ? e : e / 3 : 1;
             }
-            function V(e) {
-                const t = q().rampageSlots;
+            function Q(e) {
+                const t = A().rampageSlots;
                 e.stats.augEFR = 1, e.stats.augPRM = 1, e.stats.augPEM = 1, e.stats.augPEM *= "Valstrax Soul" === document.getElementById("weaponRampage0").value && "Dragon" === e.eleType ? 1.2 : 1, 
                 [e.stats.augEFR, e.stats.augPRM] = "Dulling Strike" === document.getElementById("weaponRampage0").value && document.getElementById("Sharpness").selectedIndex < 5 ? [ 1.02, 1.2 ] : [ e.stats.augEFR, e.stats.augPRM ];
-                const a = Object.values(window.info.monster[h.value]?.species);
+                const a = Object.values(window.info.monster[g.value]?.species);
                 a && ("Invalid" !== a[1] && "Wyvern Exploit" === document.querySelector("#weaponRampage0").value || document.querySelector("#weaponRampage0").value.includes(a[2]) || "Invalid" !== a[3] && "Fanged Exploit" === document.querySelector("#weaponRampage0").value) && (e.stats.PRM *= 1.05), 
                 /blight Exploit/.test(document.getElementById("weaponRampage0").value) && (e.stats.PRM *= 1.1), 
                 "Magnamalo Soul" === document.getElementById("weaponRampage0").value && (e.stats.BR += 12), 
-                "IgnoreHZV" === e.type && "ChargeBlade" === g.value && (e.stats.augEFR *= window.info.skills.Bombardier[document.getElementById("Bombardier").selectedIndex][1], 
+                "IgnoreHZV" === e.type && "ChargeBlade" === y.value && (e.stats.augEFR *= window.info.skills.Bombardier[document.getElementById("Bombardier").selectedIndex][1], 
                 e.stats.augPRM *= window.info.skills.Bombardier[document.getElementById("Bombardier").selectedIndex][0]), 
-                "SwitchAxe" === g.value && /Sword|ZSD|ED/.test(e.attackName) && "Impact Phial" === e.phialType && (e.stats.BRM *= 1.15), 
-                "SwitchAxe" === g.value && /Sword|Elemental|ED/.test(e.attackName) && "Elemental Phial" === e.phialType && (e.stats.BEM *= 1.45), 
-                "None" !== e.eleType && (e.stats.PEM *= 0 === t && "Elemental Exploit" === document.getElementById("weaponRampage0").value && fe(e.eleType) >= 25 ? 1.3 : 1, 
-                e.stats.PEM *= 0 !== t && "Element Exploit" === document.getElementById("weaponRampage0").value && fe(e.eleType) >= 25 && "none" !== Re(e.eleType) ? 1.15 : 1, 
-                e.stats.PEM *= fe(e.eleType) >= 20 && "none" !== Re(e.eleType) ? window.info.skills.ElementExploit[document.getElementById("ElementExploit").selectedIndex].PEM : 1), 
-                "ChargeBlade" !== g.value && "SwitchAxe" !== g.value || (e.stats.BRM *= /Morph Slash|Condensed Spinning|Up Roundslash/.test(e.attackName) ? window.info.skills.RapidMorph[document.getElementById("RapidMorph").selectedIndex].BRM : 1), 
+                "SwitchAxe" === y.value && /Sword|ZSD|ED/.test(e.attackName) && "Impact Phial" === e.phialType && (e.stats.BRM *= 1.15), 
+                "SwitchAxe" === y.value && /Sword|Elemental|ED/.test(e.attackName) && "Elemental Phial" === e.phialType && (e.stats.BEM *= 1.45), 
+                "None" !== e.eleType && (e.stats.PEM *= 0 === t && "Elemental Exploit" === document.getElementById("weaponRampage0").value && pe(e.eleType) >= 25 ? 1.3 : 1, 
+                e.stats.PEM *= 0 !== t && "Element Exploit" === document.getElementById("weaponRampage0").value && pe(e.eleType) >= 25 && "none" !== Ee(e.eleType) ? 1.15 : 1, 
+                e.stats.PEM *= pe(e.eleType) >= 20 && "none" !== Ee(e.eleType) ? window.info.skills.ElementExploit[document.getElementById("ElementExploit").selectedIndex].PEM : 1), 
+                "ChargeBlade" !== y.value && "SwitchAxe" !== y.value || (e.stats.BRM *= /Morph Slash|Condensed Spinning|Up Roundslash/.test(e.attackName) ? window.info.skills.RapidMorph[document.getElementById("RapidMorph").selectedIndex].BRM : 1), 
                 document.getElementById("Sharpness").selectedIndex > 0 && document.getElementById("Bludgeoner").selectedIndex > 0 && (e.stats.BRM *= 1 === document.getElementById("Bludgeoner").selectedIndex && document.getElementById("Sharpness").selectedIndex < 4 ? [ 1.05 ] : [ 1 ], 
                 e.stats.BRM *= 2 === document.getElementById("Bludgeoner").selectedIndex && document.getElementById("Sharpness").selectedIndex < 4 ? [ 1.1 ] : [ 1 ], 
                 e.stats.BRM *= 3 === document.getElementById("Bludgeoner").selectedIndex && document.getElementById("Sharpness").selectedIndex < 5 ? [ 1.1 ] : [ 1 ]), 
-                !/Wyvern/.test(e.attackName) && Object.keys(window.info.skills.ChargeMaster).includes(g.value) && !0 === e.ChargeMaster ? e.stats.BEM *= window.info.skills.ChargeMaster[g.value][document.getElementById("ChargeMaster").selectedIndex].BEM : !0 === e.ChargeMaster && !0 === e.NoEleBuff && (e.baseEle *= /Wyvern/.test(e.attackName) ? window.info.skills.ChargeMaster["HeavyBowGun Wyvern"][document.getElementById("ChargeMaster").selectedIndex].BEM : window.info.skills.ChargeMaster[g.value][document.getElementById("ChargeMaster").selectedIndex].BEM);
+                !/Wyvern/.test(e.attackName) && Object.keys(window.info.skills.ChargeMaster).includes(y.value) && !0 === e.ChargeMaster ? e.stats.BEM *= window.info.skills.ChargeMaster[y.value][document.getElementById("ChargeMaster").selectedIndex].BEM : !0 === e.ChargeMaster && !0 === e.NoEleBuff && (e.baseEle *= /Wyvern/.test(e.attackName) ? window.info.skills.ChargeMaster["HeavyBowGun Wyvern"][document.getElementById("ChargeMaster").selectedIndex].BEM : window.info.skills.ChargeMaster[y.value][document.getElementById("ChargeMaster").selectedIndex].BEM);
                 const i = {};
-                return [i.PRM, i.PEM] = !1 === e.noSharpMod && /sever|blunt/.test(Re(e.type)) ? [ JSON.parse(document.getElementById("Sharpness").value).PRM, JSON.parse(document.getElementById("Sharpness").value).PEM ] : [ 1, 1 ], 
-                e.stats.PRM *= ~~(25 / i.PRM) >= ve(e.type) ? window.info.skills.MindsEye[document.getElementById("MindsEye").selectedIndex].PRM : 1, 
+                return [i.PRM, i.PEM] = !1 === e.noSharpMod && /sever|blunt/.test(Ee(e.type)) ? [ JSON.parse(document.getElementById("Sharpness").value).PRM, JSON.parse(document.getElementById("Sharpness").value).PEM ] : [ 1, 1 ], 
+                e.stats.PRM *= ~~(25 / i.PRM) >= fe(e.type) ? window.info.skills.MindsEye[document.getElementById("MindsEye").selectedIndex].PRM : 1, 
                 0 === t && "Brutal Strike" === document.getElementById("weaponRampage0").value && e.stats.aff < 0 ? (e.efrMulti = 1 + -1 * e.stats.aff * .2 * 1.5 - -1 * e.stats.aff * .8 * .75, 
                 e.critBoost = 1.5) : 0 !== t && "Brutal Strike" === document.getElementById("weaponRampage0").value && e.stats.aff < 0 && (e.efrMulti = 1 + -1 * e.stats.aff * .25 * 2 - -1 * e.stats.aff * .75 * .75, 
                 e.critBoost = 1.5), "Shot" === e.type && (e.stats.augPRM *= window.info.skills.Marksman[document.getElementById("Marksman").selectedIndex][0], 
@@ -783,7 +783,7 @@
                     ...e
                 };
             }
-            function K(e, t = !0) {
+            function V(e, t = !0) {
                 return t ? {
                     PEM: window.info.skills.CriticalElement[document.getElementById("CriticalElement").selectedIndex].PEM,
                     EFE: 1 + (window.info.skills.CriticalElement[document.getElementById("CriticalElement").selectedIndex].PEM - 1) * e
@@ -792,7 +792,7 @@
                     EFE: 1
                 };
             }
-            function X(e, t = !0) {
+            function K(e, t = !0) {
                 return t ? {
                     PRM: window.info.skills.CriticalBoost[document.getElementById("CriticalBoost").selectedIndex].PRM,
                     EFR: 1 + (window.info.skills.CriticalBoost[document.getElementById("CriticalBoost").selectedIndex].PRM - 1) * e
@@ -801,54 +801,54 @@
                     EFR: 1
                 };
             }
-            function $(e) {
+            function X(e) {
                 if (!1 === e.Raw) [e.raw, e.rawNon, e.efr, e.rawCrit] = [ 0, 0, 0, 0 ]; else {
                     e.raw = Math.min(~~(~~(~~e.baseRaw * e.stats.BRM + e.stats.BR + .1) * (document.getElementById("HuntingHornAttack").checked ? 1.1 : 1)), 2600);
-                    const t = e.raw * e.stats.PRM * ve(Re(e.type)) * e.rawMV / 1e4;
-                    e.rawNon = ~~(.5 + Math.max(1, t * e.stats.augPRM)), e.efr = ~~(.5 + Math.max(1, t * e.stats.augEFR * X(e.stats.aff, e.Crit).EFR)), 
-                    e.rawCrit = ~~(.5 + Math.max(1, t * e.stats.augPRM * X(e.stats.aff, e.Crit).PRM));
+                    const t = e.raw * e.stats.PRM * fe(Ee(e.type)) * e.rawMV / 1e4;
+                    e.rawNon = ~~(.5 + Math.max(1, t * e.stats.augPRM)), e.efr = ~~(.5 + Math.max(1, t * e.stats.augEFR * K(e.stats.aff, e.Crit).EFR)), 
+                    e.rawCrit = ~~(.5 + Math.max(1, t * e.stats.augPRM * K(e.stats.aff, e.Crit).PRM));
                 }
-                if (Object.prototype.hasOwnProperty.call(e, "NoEleBuff") && !0 === e.NoEleBuff) [e.ele, e.eleNon, e.efe, e.eleCrit] = [ e.baseEle, e.baseEle, e.baseEle, e.baseEle ]; else if ("Bow" !== !g.value || !1 !== e.Ele && ("None" !== e.eleType || /BowGun/.test(g.value))) {
-                    e.eleAmmo = /BowGun/.test(g.value) && "None" !== e.eleType ? 1 + e.raw / 100 : 1, 
+                if (Object.prototype.hasOwnProperty.call(e, "NoEleBuff") && !0 === e.NoEleBuff) [e.ele, e.eleNon, e.efe, e.eleCrit] = [ e.baseEle, e.baseEle, e.baseEle, e.baseEle ]; else if ("Bow" !== !y.value || !1 !== e.Ele && ("None" !== e.eleType || /BowGun/.test(y.value))) {
+                    e.eleAmmo = /BowGun/.test(y.value) && "None" !== e.eleType ? 1 + e.raw / 100 : 1, 
                     e.ele = ~~(Math.min(~~(e.baseEle * e.stats.BEM + e.stats.BE), 560) + .1);
-                    const t = e.ele * e.stats.PEM * (fe(e.eleType) / 100) * e.eleAmmo * e.eleMV * e.stats.augPEM;
-                    e.eleNon = t > 0 && t < 1 ? 1 : ~~t, e.efe = ~~Math.max(1, t * K(e.stats.aff, e.Crit).EFE), 
-                    e.eleCrit = ~~Math.max(1, t * K(e.stats.aff, e.Crit).PEM);
+                    const t = e.ele * e.stats.PEM * (pe(e.eleType) / 100) * e.eleAmmo * e.eleMV * e.stats.augPEM;
+                    e.eleNon = t > 0 && t < 1 ? 1 : ~~t, e.efe = ~~Math.max(1, t * V(e.stats.aff, e.Crit).EFE), 
+                    e.eleCrit = ~~Math.max(1, t * V(e.stats.aff, e.Crit).PEM);
                 } else [e.ele, e.eleNon, e.efe, e.eleCrit] = [ 0, 0, 0, 0 ];
                 return {
                     ...e
                 };
             }
-            const Z = e => 1 / (1 - e);
-            function J(e, t, a) {
-                const i = new RegExp(`${q().shellingType} Lv${q().shellingLevel}`);
+            const $ = e => 1 / (1 - e);
+            function Z(e, t, a) {
+                const i = new RegExp(`${A().shellingType} Lv${A().shellingLevel}`);
                 let _ = 1, s = 1;
-                Object.entries(ke()).forEach(((l, r) => {
+                Object.entries(be()).forEach(((l, r) => {
                     if (!i.test(l[0])) return;
                     _ = ~~(l[1].rawMV * window.info.skills.Bombardier[document.getElementById("Bombardier").selectedIndex][0] * window.info.skills.Artillery[document.getElementById("Artillery").selectedIndex].BRM), 
                     s = ~~(l[1].rawMV * window.info.skills.Bombardier[document.getElementById("Bombardier").selectedIndex][1] * window.info.skills.Artillery[document.getElementById("Artillery").selectedIndex].BRM);
                     const o = [ "replaceME", l[0], 0, `${_} / ${_}`, `${l[1].baseEle} / ${l[1].baseEle}`, `${(_ + l[1].baseEle) * (l[1].ticsPer + 1)} / ${(_ + l[1].baseEle) * (l[1].ticsPer + 1)}`, s, l[1].baseEle, (s + l[1].baseEle) * (l[1].ticsPer + 1) ];
-                    e.push(o), t[0] += 0, t[1] += _ * R(r + 27), t[2] += _ * R(r + 27), t[3] += l[1].baseEle * R(r + 27), 
-                    t[4] += l[1].baseEle * R(r + 27), t[5] += (_ + l[1].baseEle) * (a.ticsPer + 1) * R(r + 27), 
-                    t[6] += (_ + l[1].baseEle) * (a.ticsPer + 1) * R(r + 27), t[7] += (s + l[1].baseEle) * (a.ticsPer + 1) * R(r + 27);
-                })), /Inputs|inputButton/.test(window?.event?.target.className) || ee(e, "dps"), 
+                    e.push(o), t[0] += 0, t[1] += _ * E(r + 27), t[2] += _ * E(r + 27), t[3] += l[1].baseEle * E(r + 27), 
+                    t[4] += l[1].baseEle * E(r + 27), t[5] += (_ + l[1].baseEle) * (a.ticsPer + 1) * E(r + 27), 
+                    t[6] += (_ + l[1].baseEle) * (a.ticsPer + 1) * E(r + 27), t[7] += (s + l[1].baseEle) * (a.ticsPer + 1) * E(r + 27);
+                })), /Inputs|inputButton/.test(window?.event?.target.className) || Y(e, "dps"), 
                 document.getElementById("c0").innerHTML = `${t[0].toLocaleString()}`, document.getElementById("d0").innerHTML = `${t[1].toLocaleString()} / ${t[2].toLocaleString()}`, 
                 document.getElementById("e0").innerHTML = `${t[3].toLocaleString()} / ${t[4].toLocaleString()}`, 
                 document.getElementById("f0").innerHTML = `${t[5].toLocaleString()} / ${t[6].toLocaleString()}`, 
                 document.getElementById("g0").innerHTML = `${t[7].toLocaleString()}`;
             }
-            function Y(e, t) {
+            function J(e, t) {
                 let a = "";
                 const i = `<img src='./icons/${t}.png'>`;
                 e.forEach(((t, _) => {
                     _ === e.length - 1 ? a += `<div><h5>${t[0]}</h5><img src='./icons/affinity.png'> ${t[1]}%</div>` : a += `<div><h5>${t[0]}</h5><img src='./icons/attack.png'> ${t[1]} ${i} ${t[2]}</div>`;
                 })), document.querySelector("#statsTableDiv").innerHTML = `${a}</table>`;
             }
-            function ee(e, t) {
-                const a = !document.getElementById("ammoTable").classList.contains("augInvis") && g.value.includes("BowGun"), i = document.getElementById("dpsTable").classList.contains("augInvis") || !g.value.includes("BowGun"), _ = /gray/.test(document.getElementById("filterCombo").className) ? document.querySelectorAll(".a") : document.querySelectorAll(".a:not(.gray)");
+            function Y(e, t) {
+                const a = !document.getElementById("ammoTable").classList.contains("augInvis") && y.value.includes("BowGun"), i = document.getElementById("dpsTable").classList.contains("augInvis") || !y.value.includes("BowGun"), _ = /gray/.test(document.getElementById("filterCombo").className) ? document.querySelectorAll(".a") : document.querySelectorAll(".a:not(.gray)");
                 let s = 0;
                 const l = document.querySelector(`#${t}Head`), r = document.querySelector(`#${t}Body`), o = document.createElement("table"), n = document.createElement("thead");
-                /BowGun/.test(g.value) && "stats" !== t ? n.className = "tableRowRanged" : "stats" !== t && (n.className = "tableRowMelee"), 
+                /BowGun/.test(y.value) && "stats" !== t ? n.className = "tableRowRanged" : "stats" !== t && (n.className = "tableRowMelee"), 
                 n.id = `${t}Head`;
                 const c = document.createElement("tr"), d = document.createElement("tbody");
                 d.id = `${t}Body`;
@@ -859,14 +859,14 @@
                     t.appendChild(a), c.appendChild(t);
                 })), n.appendChild(c), l.replaceWith(n), e.forEach((e => {
                     const a = document.createElement("tr");
-                    /BowGun/.test(g.value) && "stats" !== t ? a.className = "tableRowRanged" : "stats" !== t && (a.className = "tableRowMelee"), 
+                    /BowGun/.test(y.value) && "stats" !== t ? a.className = "tableRowRanged" : "stats" !== t && (a.className = "tableRowMelee"), 
                     Object.values(e).forEach((e => {
                         if ("replaceME" === e) {
-                            if (document.getElementById("previousWeaponType").value === g.value && _.length > 0 && (window?.event?.target === y && "ChargeBlade" !== g.value || window?.event?.target !== y) && "BowChargePlus" !== window?.event?.target.id && ("Bow" === g.value && document.getElementById("previousWeapon").value === y.value || "Bow" !== g.value)) a.appendChild(_[s]), 
+                            if (document.getElementById("previousWeaponType").value === y.value && _.length > 0 && (window?.event?.target === k && "ChargeBlade" !== y.value || window?.event?.target !== k) && "BowChargePlus" !== window?.event?.target.id && ("Bow" === y.value && document.getElementById("previousWeapon").value === k.value || "Bow" !== y.value)) a.appendChild(_[s]), 
                             ++s; else {
                                 const e = document.createElement("td"), t = document.createElement("input");
-                                t.type = "Number", t.className = `Combo skill ${s}`, t.Max = 20, "Bow" === g.value && document.getElementById("previousWeapon").value !== y.value && (b = [], 
-                                W()), 0 === s ? (t.id = "inputComboRepeat", t.Min = 1, t.value = 1, t.className = "inputComboRepeat hitsOfSharpInputs inputs") : (t.id = s, 
+                                t.type = "Number", t.className = `Combo skill ${s}`, t.Max = 20, "Bow" === y.value && document.getElementById("previousWeapon").value !== k.value && (v = [], 
+                                H()), 0 === s ? (t.id = "inputComboRepeat", t.Min = 1, t.value = 1, t.className = "inputComboRepeat hitsOfSharpInputs inputs") : (t.id = s, 
                                 t.className = "inputs hitsOfSharpInputs", t.Min = 0, t.value = 0), ++s, e.appendChild(t), 
                                 a.appendChild(e);
                             }
@@ -875,18 +875,18 @@
                         const t = document.createElement("td"), i = document.createTextNode(e);
                         t.appendChild(i), a.appendChild(t);
                     })), d.appendChild(a), r.replaceWith(d);
-                })), o.setAttribute("id", `${t}Table`), d.className = /(BowGun)/.test(g.value) ? "rangedTable" : "meleeTable", 
-                document.getElementById("damageContainer").className = /(BowGun)/.test(g.value) ? "rangedContainer" : "meleeContainer", 
+                })), o.setAttribute("id", `${t}Table`), d.className = /(BowGun)/.test(y.value) ? "rangedTable" : "meleeTable", 
+                document.getElementById("damageContainer").className = /(BowGun)/.test(y.value) ? "rangedContainer" : "meleeContainer", 
                 document.getElementById("ammoTable").classList.toggle("augInvis", a), document.getElementById("dpsTable").classList.toggle("augInvis", !i), 
-                /BowGun/.test(g.value) || document.getElementById("ammoTable").classList.add("augInvis"), 
+                /BowGun/.test(y.value) || document.getElementById("ammoTable").classList.add("augInvis"), 
                 "stats" !== t && "ammo" !== t) {
-                    const [e, ...a] = /BowGun/.test(g.value) ? [ s, "a", "b", "c", "d", "e", "f", "g", "h" ] : [ s, "a", "b", "c", "d", "e", "f", "g" ];
-                    /BowGun/.test(g.value) && !/BowGun/.test(document.getElementById("previousWeaponType").value) ? document.querySelectorAll("#comboCountContainer").forEach((e => e.style.display = "none")) : !/BowGun/.test(g.value) && /BowGun/.test(document.getElementById("previousWeaponType").value) && document.querySelectorAll("#comboCountContainer").forEach((e => e.style.display = "")), 
-                    document.getElementById("previousWeapon").value = y.value, document.getElementById("previousWeaponType").value = g.value;
+                    const [e, ...a] = /BowGun/.test(y.value) ? [ s, "a", "b", "c", "d", "e", "f", "g", "h" ] : [ s, "a", "b", "c", "d", "e", "f", "g" ];
+                    /BowGun/.test(y.value) && !/BowGun/.test(document.getElementById("previousWeaponType").value) ? document.querySelectorAll("#comboCountContainer").forEach((e => e.style.display = "none")) : !/BowGun/.test(y.value) && /BowGun/.test(document.getElementById("previousWeaponType").value) && document.querySelectorAll("#comboCountContainer").forEach((e => e.style.display = "")), 
+                    document.getElementById("previousWeapon").value = k.value, document.getElementById("previousWeaponType").value = y.value;
                     for (let i = 0; i < e; ++i) a.forEach(((e, a) => {
                         document.getElementById(`${t}Body`).children[i].children[a].id = e + i, document.getElementById(`${t}Body`).children[i].children[a].className = `${e} ${i}`;
                     }));
-                    g.value.includes("BowGun") || document.querySelectorAll(`tbody#${t}Body>tr>td:nth-child(2)`).forEach(((e, t) => {
+                    y.value.includes("BowGun") || document.querySelectorAll(`tbody#${t}Body>tr>td:nth-child(2)`).forEach(((e, t) => {
                         const a = document.createElement("td");
                         a.innerHTML = `<button type="button" aria-pressed="false" id="${t}" class="inputButton dec"\n                    >&#8681</button><button type="button" aria-pressed="false" id="${t}" class="inputButton inc">&#8679</button><output class="label">${e.textContent}</output>`, 
                         a.id = `b${t}`, a.className = `b ${t} inputContainer`, e.replaceWith(a);
@@ -896,23 +896,23 @@
                     "none" === document.querySelectorAll(`.${t}`)[0].style.display && document.querySelectorAll(`.${t}`).forEach((e => e.style.display = "none"));
                 }));
             }
-            const te = () => {
-                document.querySelectorAll("#spawnArea>output").forEach((e => e.remove())), window.info.quest[w.value].target.forEach((e => {
-                    e.name === h.value && e.spawn.forEach((e => {
+            const ee = () => {
+                document.querySelectorAll("#spawnArea>output").forEach((e => e.remove())), window.info.quest[h.value].target.forEach((e => {
+                    e.name === g.value && e.spawn.forEach((e => {
                         const t = document.createElement("output");
                         t.textContent = `Spawn Area ${e.block} ${e.lot}%`, document.getElementById("spawnArea").append(t);
                     }));
                 }));
             };
-            function ae() {
-                if (te(), "" === w.value) return;
-                const e = /Bow/.test(g.value) ? "shot" : "H" === g.value[0] ? "blunt" : "sever", t = [ "Hit Zone", "sever", "blunt", "shot", "fire", "water", "thunder", "ice", "dragon" ], a = document.createElement("table"), i = document.querySelector("#monTable"), _ = window.info.monster[h.value].parts.sort(((t, a) => a[e] === t[e] && q().eleType ? a[q().eleType] - t[q().eleType] : a[e] - t[e])), s = document.createElement("tr");
+            function te() {
+                if (ee(), "" === h.value) return;
+                const e = /Bow/.test(y.value) ? "shot" : "H" === y.value[0] ? "blunt" : "sever", t = [ "Hit Zone", "sever", "blunt", "shot", "fire", "water", "thunder", "ice", "dragon" ], a = document.createElement("table"), i = document.querySelector("#monTable"), _ = window.info.monster[g.value].parts.sort(((t, a) => a[e] === t[e] && A().eleType ? a[A().eleType] - t[A().eleType] : a[e] - t[e])), s = document.createElement("tr");
                 t.forEach(((e, t) => {
                     s.innerHTML += t ? `<th class="${e}"></th>` : `<th>${e}</th>`;
                 })), a.appendChild(s), _.forEach((e => {
                     const i = document.createElement("tr");
                     for (let a = 0; a < 9; ++a) {
-                        let _ = 0 === a ? `${e.part} ${e.state}` : e[Re(t[a])];
+                        let _ = 0 === a ? `${e.part} ${e.state}` : e[Ee(t[a])];
                         const s = document.createElement("td");
                         0 !== a && (_ = document.getElementById("WaterBlight").checked && a < 4 ? Math.min(100, ~~(Math.max(_, .63 * _ + 22.2) + 3)) : +_, 
                         +_ < 14 ? s.setAttribute("class", "F") : +_ < 15 ? s.setAttribute("class", "C") : +_ < 45 ? s.setAttribute("class", "B") : +_ < 65 ? s.setAttribute("class", "A") : +_ >= 65 && s.setAttribute("class", "S"), 
@@ -923,10 +923,10 @@
                     a.appendChild(i);
                 })), a.setAttribute("id", "monTable"), i.replaceWith(a);
             }
-            function ie() {
+            function ae() {
                 if (window.info) {
-                    switch (g.value.includes("Bow") && (document.getElementById("Sharpness").selectedIndex = 0), 
-                    document.getElementsByClassName("inputs").length > 0 && re(), g.value) {
+                    switch (y.value.includes("Bow") && (document.getElementById("Sharpness").selectedIndex = 0), 
+                    document.getElementsByClassName("inputs").length > 0 && le(), y.value) {
                       case "DualBlades":
                         window.info.skills.Burst = window.info.skills.BurstDualBlades;
                         break;
@@ -943,19 +943,19 @@
                       default:
                         window.info.skills.Burst = window.info.skills.BurstStandard;
                     }
-                    window.info.skills.Bombardier = /Gun|Charge/.test(g.value) ? window.info.skills.BombardierSource[g.value] : [], 
-                    document.querySelectorAll(`.skill:not(.${g.value})`).forEach((e => e.selectedIndex = 0)), 
+                    window.info.skills.Bombardier = /Gun|Charge/.test(y.value) ? window.info.skills.BombardierSource[y.value] : [], 
+                    document.querySelectorAll(`.skill:not(.${y.value})`).forEach((e => e.selectedIndex = 0)), 
                     document.querySelectorAll(".classSpecific").forEach((e => {
-                        e.style.display = "", e.parentElement.style.display = "", e.classList.contains(g.value) ? "BUTTON" === e.tagName || "DIV" === e.tagName ? e.style.display = "" : e.parentElement.style.display = "" : "BUTTON" === e.tagName || "DIV" === e.tagName ? e.style.display = "none" : e.parentElement.style.display = "none";
+                        e.style.display = "", e.parentElement.style.display = "", e.classList.contains(y.value) ? "BUTTON" === e.tagName || "DIV" === e.tagName ? e.style.display = "" : e.parentElement.style.display = "" : "BUTTON" === e.tagName || "DIV" === e.tagName ? e.style.display = "none" : e.parentElement.style.display = "none";
                     })), document.querySelectorAll("div").forEach((e => {
                         Object.values(e.children).some((t => e.childElementCount <= 3 && "SELECT" === t.tagName && "none" !== e.style.display)) && e.classList.add("dropContainer");
                     }));
                 }
             }
-            function _e() {
-                if ("Impact Phial" === q().phialType) return document.getElementById("ImpactShieldCharge").parentNode.style = 'display:"', 
+            function ie() {
+                if ("Impact Phial" === A().phialType) return document.getElementById("ImpactShieldCharge").parentNode.style = 'display:"', 
                 document.getElementById("EleShieldCharge").parentNode.style = "display:none", void (document.getElementById("EleShieldCharge").selectedIndex = 0);
-                "Element Phial" === q().phialType && (document.getElementById("ImpactShieldCharge").parentNode.style = "display:none", 
+                "Element Phial" === A().phialType && (document.getElementById("ImpactShieldCharge").parentNode.style = "display:none", 
                 document.getElementById("ImpactShieldCharge").selectedIndex = 0, document.getElementById("EleShieldCharge").parentNode.style = 'display:""');
             }
             document.querySelectorAll("select.demon").forEach((e => {
@@ -963,23 +963,23 @@
                     e?.target.selectedIndex > 0 && (document.querySelectorAll(`.demon:not(#${e?.target.id})`)[0].selectedIndex = 0, 
                     document.querySelectorAll(`.demon:not(#${e?.target.id})`)[1].selectedIndex = 0);
                 }));
-            })), document.querySelectorAll(`#${y.id}, #${g.id}`).forEach((e => {
+            })), document.querySelectorAll(`#${k.id}, #${y.id}`).forEach((e => {
                 e.addEventListener("change", (e => {
-                    e.target !== g && "ChargeBlade" !== g.value || ie();
+                    e.target !== y && "ChargeBlade" !== y.value || ae();
                 }));
-            })), document.querySelectorAll(`#${y.id}, #${g.id}`).forEach((e => {
+            })), document.querySelectorAll(`#${k.id}, #${y.id}`).forEach((e => {
                 e.addEventListener("change", (() => {
-                    if ("Bow" !== g.value) return;
+                    if ("Bow" !== y.value) return;
                     document.querySelectorAll("#BowCoating>option").forEach((e => e.remove()));
                     const e = [];
-                    q().coatings.forEach((t => {
+                    A().coatings.forEach((t => {
                         const a = document.createElement("option");
                         a.textContent = t, document.getElementById("BowCoating").append(a), e.push(window.info.skills[t]);
                     })), window.info.skills.BowCoating = e;
                 }));
             }));
-            const se = 60;
-            function le(e) {
+            const _e = 60;
+            function se(e) {
                 let t = /Sub-Lv|Explosion| Procs|\(RF\+\d\)/g.test(e.attackName) ? e.attackName.replace(/Sub-| Explosion| \(RF\+\d\) Procs| Procs| \(RF\+\d\)/g, "") : e.attackName;
                 t = /(?<!Lv)\d/.test(t) ? `${t.slice(0, t.length - 1)}Lv${t.slice(-1)}` : t;
                 const a = {};
@@ -990,8 +990,8 @@
                 a.reloadFrames = window.info.ammo.reload.frames[a.reloadSpeed], a.clipSize = e.clipSize[e.isUsed] + a.ammoIncrease, 
                 a.spareShot = Math.max(0, window.info.skills.SpareShot[document.getElementById("SpareShot").selectedIndex] + Number(document.getElementById("spareAdjust").value)), 
                 /(?<!snipe.*)explosion/.test(t) && document.getElementById("Bombardier").selectedIndex > 0 && (a.spareShot += window.info.skills.Bombardier[t.match(/Sticky|Wyvern/)[0]][2]), 
-                a.shotsPerMinBase = Be(a.recoilFrames / 30, a.reloadFrames / 30, e.clipSize[e.isUsed], se), 
-                a.shotsPerMin = Be(a.recoilFrames / 30, a.reloadFrames / 30, a.clipSize, se, 100 / a.spareShot), 
+                a.shotsPerMinBase = Re(a.recoilFrames / 30, a.reloadFrames / 30, e.clipSize[e.isUsed], _e), 
+                a.shotsPerMin = Re(a.recoilFrames / 30, a.reloadFrames / 30, a.clipSize, _e, 100 / a.spareShot), 
                 a.shotsPerGain = `${(100 * (a.shotsPerMin / a.shotsPerMinBase - 1)).toFixed(2)}%`;
                 const i = {
                     PierceEle: 3,
@@ -999,17 +999,17 @@
                     Pierce2: 1.1,
                     Pierce3: 1
                 };
-                return t = t.replace(/ Lv/, ""), a.ticsAdjust = e.ticsPer += 1, /Pierc/.test(t) && "Toadversary" !== h.value && (e.ticsPer = Math.min(e.ticsPer, Math.ceil(window.info.monster[h.value].size.base_size * window.info.monster[h.value].size.king_boarder / 100 / i[/Pierce[1-3]/.test(t) ? t : "PierceEle"]) * (e.attackName.includes("RF+") ? +e.attackName.trim().slice(-2, -1) : 1))), 
+                return t = t.replace(/ Lv/, ""), a.ticsAdjust = e.ticsPer += 1, /Pierc/.test(t) && "Toadversary" !== g.value && (e.ticsPer = Math.min(e.ticsPer, Math.ceil(window.info.monster[g.value].size.base_size * window.info.monster[g.value].size.king_boarder / 100 / i[/Pierce[1-3]/.test(t) ? t : "PierceEle"]) * (e.attackName.includes("RF+") ? +e.attackName.trim().slice(-2, -1) : 1))), 
                 a;
             }
-            function re() {
+            function le() {
                 document.getElementsByClassName("inputs").length && (/BowGun/.test(document.getElementById("previousWeaponType").value) || "" === document.getElementById("previousWeaponType").value || (document.querySelectorAll(".comboHits").forEach((e => e.remove())), 
                 document.querySelectorAll("#dpsBody>tr:nth-child(1)>td:nth-child(n+3)").forEach((e => e.value = 0)), 
                 document.querySelectorAll(".inputs").forEach((e => e.value = 0)), document.querySelectorAll(".inputComboRepeat").forEach((e => e.value = 1)), 
-                b = []));
+                v = []));
             }
-            const oe = () => {
-                const e = [ y.selectedIndex, g.selectedIndex ];
+            const re = () => {
+                const e = [ k.selectedIndex, y.selectedIndex ];
                 document.querySelectorAll("#skillSelect label").forEach((t => {
                     e.push([ t.textContent, +t.nextElementSibling.textContent.slice(-1) ]);
                 })), (e => {
@@ -1017,78 +1017,78 @@
                     t.value = e, document.body.appendChild(t), t.select(), document.execCommand("copy"), 
                     document.body.removeChild(t);
                 })(JSON.stringify([ [ e ], Object.values(document.querySelectorAll("section.armorDisplay")).map((e => [].concat(Object.values(e.querySelectorAll(".armor,select.augmentType,select.augment")).map((e => e.selectedIndex)), Object.values(e.querySelectorAll("select.armorDisplay")).map((e => e.selectedIndex))))) ]));
-            }, ne = () => {
+            }, oe = () => {
                 navigator.clipboard.readText().then((async e => {
                     const t = JSON.parse(e), a = await t.shift()[0];
-                    y.selectedIndex = await a.shift(), g.selectedIndex = await a.shift(), await me(), 
-                    await a.forEach((e => Ce(e[0], e[1]))), (0, u.getSetBuilds)(15);
+                    k.selectedIndex = await a.shift(), y.selectedIndex = await a.shift(), await de(), 
+                    await a.forEach((e => Ne(e[0], e[1]))), (0, m.getSetBuilds)(15);
                 }));
             };
-            function ce() {
-                ue(x, g);
+            function ne() {
+                me(w, y);
             }
-            function de() {
-                Object.values(y.children).forEach((e => e.remove()));
+            function ce() {
+                Object.values(k.children).forEach((e => e.remove()));
                 const e = document.getElementById("weaponFilter").classList.contains("blue");
                 let t = "";
-                window.info[g.value].weapons.forEach(((a, i) => {
+                window.info[y.value].weapons.forEach(((a, i) => {
                     e && a.rank < 10 || (t += `<option value="${i}">${a.weapon}</option>`);
-                })), y.innerHTML = t;
+                })), k.innerHTML = t;
             }
-            function me() {
-                const e = [], [...t] = window.info[g.value].weapons[y.value].decos;
+            function de() {
+                const e = [], [...t] = window.info[y.value].weapons[k.value].decos;
                 let a = 2;
                 for (let i = 3; i >= 0 && a; i--) for (;t[i] > 0; ) e.push(i + 1), --t[i], --a;
-                if ((0, p.setDecoDisplay)("weapon", e), document.querySelectorAll("#weaponRampage>*").forEach((e => e.style.display = "none")), 
-                document.getElementById("weaponRampage0").style.display = "", q().rampageSlots) {
+                if ((0, u.setDecoDisplay)("weapon", e), document.querySelectorAll("#weaponRampage>*").forEach((e => e.style.display = "none")), 
+                document.getElementById("weaponRampage0").style.display = "", A().rampageSlots) {
                     const e = [];
-                    return document.getElementById("rampImg").src = document.getElementById("rampImg").src.replace(/ramp\d/, `ramp${Math.min(3, q().rampageSlots + window.info.augIndex.rampageAug)}`), 
+                    return document.getElementById("rampImg").src = document.getElementById("rampImg").src.replace(/ramp\d/, `ramp${Math.min(3, A().rampageSlots + window.info.augIndex.rampageAug)}`), 
                     Object.keys(window.info.rampage.rampageDecos).forEach((t => {
-                        Number(t.slice(-1)) <= Math.min(3, q().rampageSlots + window.info.augIndex.rampageAug) && e.push(window.info.rampage.rampageDecos[t]);
-                    })), void ue(e, document.getElementById("weaponRampage0"));
+                        Number(t.slice(-1)) <= Math.min(3, A().rampageSlots + window.info.augIndex.rampageAug) && e.push(window.info.rampage.rampageDecos[t]);
+                    })), void me(e, document.getElementById("weaponRampage0"));
                 }
                 document.querySelectorAll("#weaponRampage>*").forEach((e => {
                     e.selectedIndex = 0, e.style.display = "none";
-                })), document.getElementById("weaponRampage0").style.display = "", /Rampage/.test(q().weapon) ? window.info.rampage[q().weapon].Rampage.forEach(((e, t) => {
-                    document.querySelector("#weaponRampage").children[t].style.display = "", ue(Object.values(e), document.querySelector("#weaponRampage").children[t]);
-                })) : q().rampage.forEach((e => {
+                })), document.getElementById("weaponRampage0").style.display = "", /Rampage/.test(A().weapon) ? window.info.rampage[A().weapon].Rampage.forEach(((e, t) => {
+                    document.querySelector("#weaponRampage").children[t].style.display = "", me(Object.values(e), document.querySelector("#weaponRampage").children[t]);
+                })) : A().rampage.forEach((e => {
                     const t = document.createElement("option");
                     t.value = window.info.rampage.keys2[e], t.textContent = window.info.rampage.keys2[e], 
                     document.getElementById("weaponRampage0").append(t);
                 }));
             }
-            function ue(e, t, a = e) {
+            function me(e, t, a = e) {
                 let i = "";
                 e.forEach(((e, t) => {
                     i += `<option value="${a[t]}">${e}</option>`;
                 })), t.innerHTML = i;
             }
-            function pe() {
-                ue(Object.keys(window.info.monster).sort(), h), h.selectedIndex = Object.keys(window.info.monster).indexOf("Toadversary");
+            function ue() {
+                me(Object.keys(window.info.monster).sort(), g), g.selectedIndex = Object.keys(window.info.monster).indexOf("Toadversary");
             }
-            document.getElementById("saveState")?.addEventListener("click", (() => oe())), document.getElementById("loadState")?.addEventListener("click", (() => ne())), 
-            W();
-            const fe = e => window.info.monster[h.value].parts[k.selectedIndex][Re(e)];
-            function ve(e) {
-                return void 0 === window.info.monster[h.value].parts[k.selectedIndex][Re(e)] ? 100 : document.getElementById("WaterBlight").checked ? Math.min(100, ~~(Math.max(window.info.monster[h.value].parts[k.selectedIndex][Re(e)], .63 * window.info.monster[h.value].parts[k.selectedIndex][Re(e)] + 22.2) + 3)) : window.info.monster[h.value].parts[k.selectedIndex][Re(e)];
+            document.getElementById("saveState")?.addEventListener("click", (() => re())), document.getElementById("loadState")?.addEventListener("click", (() => oe())), 
+            H();
+            const pe = e => window.info.monster[g.value].parts[b.selectedIndex][Ee(e)];
+            function fe(e) {
+                return void 0 === window.info.monster[g.value].parts[b.selectedIndex][Ee(e)] ? 100 : document.getElementById("WaterBlight").checked ? Math.min(100, ~~(Math.max(window.info.monster[g.value].parts[b.selectedIndex][Ee(e)], .63 * window.info.monster[g.value].parts[b.selectedIndex][Ee(e)] + 22.2) + 3)) : window.info.monster[g.value].parts[b.selectedIndex][Ee(e)];
             }
-            const be = (e = g.value) => {
+            const ve = (e = y.value) => {
                 let t = {};
-                if ("InsectGlaive" === g.value) return t = Object.fromEntries(Object.entries(window.info.InsectGlaive.attacks).filter((e => !/Sever|Blunt|Kinsect|Dust|Powder|Mark/.test(e)))), 
+                if ("InsectGlaive" === y.value) return t = Object.fromEntries(Object.entries(window.info.InsectGlaive.attacks).filter((e => !/Sever|Blunt|Kinsect|Dust|Powder|Mark/.test(e)))), 
                 {
                     ...t
                 };
-                if ("ChargeBlade" === g.value) {
-                    const e = "Impact Phial" === q().phialType ? "Element Phial|Elemental Phial" : "Impact Phial", a = new RegExp(`${e}`);
+                if ("ChargeBlade" === y.value) {
+                    const e = "Impact Phial" === A().phialType ? "Element Phial|Elemental Phial" : "Impact Phial", a = new RegExp(`${e}`);
                     return t = Object.fromEntries(Object.entries(window.info.ChargeBlade.attacks).filter((e => !a.test(e)))), 
                     {
                         ...t
                     };
                 }
-                if ("Bow" === g.value) {
+                if ("Bow" === y.value) {
                     let e = "";
-                    const a = 1 === document.getElementById("BowChargePlus").selectedIndex && q().baseCharge < 4 ? q().baseCharge + 1 : q().baseCharge;
-                    q().bowShot.forEach(((t, i) => {
+                    const a = 1 === document.getElementById("BowChargePlus").selectedIndex && A().baseCharge < 4 ? A().baseCharge + 1 : A().baseCharge;
+                    A().bowShot.forEach(((t, i) => {
                         i < a && (e += `|Lv${t.match("[1-5]")[0]} ${t.match("Normal|Rapid|Pierce|Spread")[0]}`);
                     }));
                     const i = new RegExp([ e.slice(1) ]);
@@ -1098,16 +1098,16 @@
                         ...t
                     };
                 }
-                if ("Gunlance" === g.value) return t = Object.fromEntries(Object.entries(window.info.Gunlance.attacks).splice(0, 27)), 
+                if ("Gunlance" === y.value) return t = Object.fromEntries(Object.entries(window.info.Gunlance.attacks).splice(0, 27)), 
                 {
                     ...t
                 };
-                if ("LightBowGun" === g.value || "HeavyBowGun" === g.value) {
-                    const {isRapidFire: e, clipSize: a} = window.info[g.value].weapons[y.value];
+                if ("LightBowGun" === y.value || "HeavyBowGun" === y.value) {
+                    const {isRapidFire: e, clipSize: a} = window.info[y.value].weapons[k.value];
                     let i = [], _ = 0;
                     for (const t of window.info.ammo.keys) a[++_] && i.push(e?.indexOf(t[0]) >= 0 ? t[1] : t[0]);
-                    return i = i.concat(Object.keys(window.info.ammo).filter((e => "LightBowGun" === g.value ? /lbg|Wyvern Blast(?! before)/.test(e) : /hbg|Wyverns/.test(e)))), 
-                    t = Object.fromEntries(Object.entries(window.info.ammo).filter((e => R(e[0], i) > 0))), 
+                    return i = i.concat(Object.keys(window.info.ammo).filter((e => "LightBowGun" === y.value ? /lbg|Wyvern Blast(?! before)/.test(e) : /hbg|Wyverns/.test(e)))), 
+                    t = Object.fromEntries(Object.entries(window.info.ammo).filter((e => E(e[0], i) > 0))), 
                     {
                         ...t
                     };
@@ -1115,24 +1115,24 @@
                 return {
                     ...window.info[e].attacks
                 };
-            }, ke = (e = g.value) => ({
+            }, be = (e = y.value) => ({
                 ...window.info[e].attacks
-            }), ye = () => window.info[g.value].weapons[y.selectedIndex].rampageSlots > 0 ? q() : A();
-            function ge() {
+            }), ke = () => window.info[y.value].weapons[k.selectedIndex].rampageSlots > 0 ? A() : I();
+            function ye() {
                 document.querySelectorAll("#dropHZ>option").forEach((e => e.remove()));
                 const e = [];
-                window.info.monster[h.value].parts.forEach((t => {
+                window.info.monster[g.value].parts.forEach((t => {
                     e.push([ `${t.part} ${t.state}` ]);
-                })), ue(e, k);
+                })), me(e, b);
             }
-            function he() {
+            function ge() {
                 document.querySelectorAll("#HR>option").forEach((e => e.remove())), document.querySelectorAll("#MR>option").forEach((e => e.remove()));
-                for (let e of Object.values(window.info.quest)) e.target?.some((e => e.name === h.selectedOptions[0].textContent)) && (document.getElementById(e.rank).innerHTML = `<option value="${e.quest}">${e.quest}</option>`);
-                Se(document.querySelectorAll("#MR>option")?.length > 0 ? document.querySelectorAll("#MR>option")[0].textContent : document.querySelectorAll("#HR>option")[0].textContent), 
+                for (let e of Object.values(window.info.quest)) e.target?.some((e => e.name === g.selectedOptions[0].textContent)) && (document.getElementById(e.rank).innerHTML = `<option value="${e.quest}">${e.quest}</option>`);
+                xe(document.querySelectorAll("#MR>option")?.length > 0 ? document.querySelectorAll("#MR>option")[0].textContent : document.querySelectorAll("#HR>option")[0].textContent), 
                 document.querySelectorAll("MR>option")?.length ? document.getElementById("MR")?.classList.remove("augInvis") : document.getElementById("MR")?.classList.add("augInvis"), 
                 document.querySelectorAll("HR>option")?.length ? document.getElementById("HR")?.classList.remove("augInvis") : document.getElementById("HR")?.classList.add("augInvis");
             }
-            function we() {
+            function he() {
                 let e = 1;
                 switch (document.getElementById("players").selectedOptions[0].value) {
                   case "1p":
@@ -1150,21 +1150,21 @@
                   case "4p":
                     e = 2;
                 }
-                window.info.quest[w.value].target.forEach((t => {
-                    if (t.name === h.value) {
-                        ue(t.hp.map((t => t * e)), document.getElementById("health"));
+                window.info.quest[h.value].target.forEach((t => {
+                    if (t.name === g.value) {
+                        me(t.hp.map((t => t * e)), document.getElementById("health"));
                     }
                 }));
             }
-            function xe(e, t, a) {
+            function we(e, t, a) {
                 return a.indexOf(e) === t;
             }
-            function Se(e) {
+            function xe(e) {
                 document.getElementById("dropQuest").selectedOptions[0].value = e, document.getElementById("dropQuest").selectedOptions[0].textContent = e, 
                 document.getElementById("questDiv")?.classList.add("augInvis");
             }
-            const Ee = (e, t = 0) => e[t].toUpperCase() + e.slice(1), Re = e => e[0].toLowerCase() + e.slice(1);
-            function Be(e, t, a, i = 60, _ = 0) {
+            const Se = (e, t = 0) => e[t].toUpperCase() + e.slice(1), Ee = e => e[0].toLowerCase() + e.slice(1);
+            function Re(e, t, a, i = 60, _ = 0) {
                 let s = 0;
                 s += _;
                 let l = 0, r = 0;
@@ -1175,48 +1175,48 @@
                 }
                 return r;
             }
-            function Me(e = [ [], [], [], [] ]) {
-                return window.info.quest.filter((e => e.quest === w.value)).target[h.value].hp.forEach((t => {
+            function Be(e = [ [], [], [], [] ]) {
+                return window.info.quest.filter((e => e.quest === h.value)).target[g.value].hp.forEach((t => {
                     e[0].push(t), e[1].push(~~(1.35 * t)), e[2].push(~~(1.7 * t)), e[3].push(~~(2 * t));
                 })), e;
             }
-            function Ie() {
-                if ("" === v || v === document.getElementById("BowCoating") && "Bow" !== g.value) return;
+            function Me() {
+                if ("" === f || f === document.getElementById("BowCoating") && "Bow" !== y.value) return;
                 let e = [];
-                Object.values(v.children).some((e => "OPTGROUP" === e.tagName)) ? (e = document.querySelectorAll(`${v.id}>*>*`), 
-                e.splice(-2), e.splice(0, 0, v[0])) : e = Object.values(v.children), e.forEach(((e, t) => {
+                Object.values(f.children).some((e => "OPTGROUP" === e.tagName)) ? (e = document.querySelectorAll(`${f.id}>*>*`), 
+                e.splice(-2), e.splice(0, 0, f[0])) : e = Object.values(f.children), e.forEach(((e, t) => {
                     let a = "";
-                    if (v === document.getElementById("BowCoating")) a = q().coatings[t]; else if (v === document.getElementById("BowgunBarrel")) a = [ "----", "Long", "Power", "Silencer", "Guard-Up" ][t]; else if (v === document.getElementById("Dereliction")) a = [ "----", "Lv-1-1", "Lv-1-2", "Lv-1-3", "Lv-2-1", "Lv-2-2", "Lv-2-3", "Lv-3-1", "Lv-3-2", "Lv-3-3" ][t]; else {
+                    if (f === document.getElementById("BowCoating")) a = A().coatings[t]; else if (f === document.getElementById("BowgunBarrel")) a = [ "----", "Long", "Power", "Silencer", "Guard-Up" ][t]; else if (f === document.getElementById("Dereliction")) a = [ "----", "Lv-1-1", "Lv-1-2", "Lv-1-3", "Lv-2-1", "Lv-2-2", "Lv-2-3", "Lv-3-1", "Lv-3-2", "Lv-3-3" ][t]; else {
                         let e = t + 0;
-                        "OPTGROUP" === v.children[1].tagName && 0 !== t && (e = "Burst" === v.id && t >= 2 ? t - 1 : t % 3 == 0 ? 3 : t % 3), 
-                        a = "Burst" === v.id && 1 === t ? "Base Bonus" : `Lv-${e}`;
+                        "OPTGROUP" === f.children[1].tagName && 0 !== t && (e = "Burst" === f.id && t >= 2 ? t - 1 : t % 3 == 0 ? 3 : t % 3), 
+                        a = "Burst" === f.id && 1 === t ? "Base Bonus" : `Lv-${e}`;
                     }
                     e.textContent = 0 === t ? "----" : a;
-                })), v = "";
+                })), f = "";
             }
-            function Ae(e) {
+            function Ie(e) {
                 e.classList.contains("skill") && Array.isArray(window.info.skills[e.id]) && (window.info.skills[e.id].forEach(((t, a) => {
                     let i;
                     if (0 === a) i = e.id; else if ("RecoilDown" === e.id || "ReloadSpeed" === e.id) i = `${e.id.slice(0, 6)} ${e.id.slice(6)} +${a}`; else if ("AmmoUp" === e.id || "SpareShot" === e.id) {
                         i = `${a}: ${("AmmoUp" === e.id ? [ "No Change", "Lv2 & Ele Ammo", "Lv3 & Dragon Ammo" ] : [ "Spare Shot +5%", "Spare Shot +10%", "Spare Shot +20%" ])[a - 1]}`;
-                    } else i = "Marksman" === e.id ? `${a}: ${[ "Chance 20% Raw  + 5% EFR +1%", "Chance 20% Raw+10% EFR +2%", "Chance 60% Raw  + 5% EFR +3% ", "Chance 40% Raw+10% EFR +4%" ][a - 1]}` : "Bombardier" === e.id ? "HeavyBowGun" === g.value ? [ "Bombardier", "1: Raw + 10% EFR + 10%", "2: Sticky+10% Wyvern+15%", "3: Raw + 20% EFR + 16%", "4: Raw + 25% EFR + 17%" ][a] : `${a}: Raw +${window.info.skills.Bombardier[a][0]}% EFR +${window.info.skills.Bombardier[a][1]}` : "BowgunBarrel" === e.id ? [ "Barrels", "Long: Raw + 5%", "Power: Raw + 12.5%", "Silencer: Recoil Down +1", "Shield: Guard Up" ][a] : "CriticalFirePower" === e.id ? [ "-", "Normal +30% Spread +20% Pierce +10% Recoil -2" ][a] : qe(t, e, i, a);
+                    } else i = "Marksman" === e.id ? `${a}: ${[ "Chance 20% Raw  + 5% EFR +1%", "Chance 20% Raw+10% EFR +2%", "Chance 60% Raw  + 5% EFR +3% ", "Chance 40% Raw+10% EFR +4%" ][a - 1]}` : "Bombardier" === e.id ? "HeavyBowGun" === y.value ? [ "Bombardier", "1: Raw + 10% EFR + 10%", "2: Sticky+10% Wyvern+15%", "3: Raw + 20% EFR + 16%", "4: Raw + 25% EFR + 17%" ][a] : `${a}: Raw +${window.info.skills.Bombardier[a][0]}% EFR +${window.info.skills.Bombardier[a][1]}` : "BowgunBarrel" === e.id ? [ "Barrels", "Long: Raw + 5%", "Power: Raw + 12.5%", "Silencer: Recoil Down +1", "Shield: Guard Up" ][a] : "CriticalFirePower" === e.id ? [ "-", "Normal +30% Spread +20% Pierce +10% Recoil -2" ][a] : Ae(t, e, i, a);
                     window.info.description || (window.info.description = {}), window.info.description[e.id] || (window.info.description[e.id] = []), 
                     window.info.description[e.id].push(i), document.getElementById(e.id)[a].textContent = i;
-                })), v = e);
+                })), f = e);
             }
-            function qe(e, t, a, i) {
-                let _ = Pe(e, t), s = Te(e);
+            function Ae(e, t, a, i) {
+                let _ = Te(e, t), s = qe(e);
                 const l = e.aff > 0 && /\d\.?\d/.test(e.aff) ? `Aff+${e.aff}` : e.aff > 0 ? `Aff + ${e.aff}` : "";
                 if (_ = Object.prototype.hasOwnProperty.call(e, "Sharp") && e.Sharp < 1 ? `Sharp +${100 * e.Sharp}%` : _, 
                 _ = Object.prototype.hasOwnProperty.call(e, "Sharp") && e.Sharp > 1 ? `Sharp +${e.Sharp}` : _, 
                 _ = "" === _ && "" === s && "" === l ? "No Change" : _, t === document.getElementById("BowCoating")) {
-                    return `${q().coatings[i]}: ${[ _, s, l ].join(" ")}`;
+                    return `${A().coatings[i]}: ${[ _, s, l ].join(" ")}`;
                 }
                 let r = i + 0;
                 return "OPTGROUP" === t.children[1].tagName && 0 !== i && (r = "Burst" === t.id && i >= 2 ? i - 1 : i % 3 == 0 ? 3 : i % 3), 
                 `${r}: ${[ _, s, l ].join(" ")}`;
             }
-            function Te(e) {
+            function qe(e) {
                 let t = "";
                 if (e.BE > 0 || e.PEM > 1 || e.BEM > 1) {
                     if (t = "Ele", e.BE > 0 && (t += /\d\.?\d/.test(e.BE) ? `+${e.BE}` : ` + ${e.BE}`), 
@@ -1231,7 +1231,7 @@
                 }
                 return t;
             }
-            function Pe(e, t) {
+            function Te(e, t) {
                 let a = "";
                 if (e.BR > 0 || e.PRM > 1 || e.BRM > 1) {
                     if (a = "Raw", e.BR > 0 && (a += /\d\.?\d/.test(e.BR) ? `+${e.BR}` : ` + ${e.BR}`), 
@@ -1246,7 +1246,7 @@
                 }
                 return a;
             }
-            function Le(e, t = {
+            function Pe(e, t = {
                 BRM: 1,
                 BR: 0,
                 PRM: 1,
@@ -1260,18 +1260,18 @@
                     t.PEM *= +e.PEM, t.aff += +e.aff;
                 })), t;
             }
-            function Ne() {
+            function Le() {
                 document.querySelectorAll("dropHZ>*").forEach(((e, t) => {
-                    e.textContent === ye().eleType && (document.getElementById("dropHZ").selectedIndex = t);
+                    e.textContent === ke().eleType && (document.getElementById("dropHZ").selectedIndex = t);
                 }));
             }
-            document.querySelectorAll(".buildSkills").forEach((e => e.addEventListener("mousedown", (e => {
-                ("" === v || v !== e?.target || e.target.className.includes("augment")) && ("" !== v && Ie(), 
-                e.target.classList.contains("skill") && Ae(e?.target), "INPUT" === e.target.tagName && e.target.className.includes("skillInput") && (v = e.target));
+            document.querySelectorAll(".buildSkills").forEach((e => e.addEventListener("mousedown", ((e = window.event) => {
+                ("" === f || f !== e?.target || e.target.className.includes("augment")) && ("" !== f && Me(), 
+                e.target.classList.contains("skill") && Ie(e?.target), "INPUT" === e?.target.tagName && e.target.className.includes("skillInput") && (f = e.target));
             })))), document.querySelectorAll("select.skill").forEach((e => e.addEventListener("change", (e => {
-                Ie(), e?.target.blur();
+                Me(), e?.target.blur();
             }))));
-            const Ce = (e, t = 0, a = undefined) => {
+            const Ne = (e, t = 0, a = void 0) => {
                 if ("Select" === e) return;
                 if (null !== document.getElementById(`${e}Select`)) return void document.getElementById("dropSkills").after(document.getElementById(`${e}Select`));
                 const i = document.createElement("div"), _ = document.createElement("label");
@@ -1286,53 +1286,53 @@
                 r.type = "button", r.setAttribute("aria-pressed", "false"), r.id = `${e}Inc`, r.className = `skillInput ${e} inc`, 
                 r.dataset.tooltip = "Increase Skill Level", r.innerHTML += "&#8679", i.appendChild(_), 
                 i.appendChild(s), i.appendChild(l), i.appendChild(r), i.id = `${e}Select`, document.getElementById("dropSkills").after(i);
-            }, Fe = () => {
+            }, Ce = () => {
                 document.querySelectorAll("select.skill").forEach((e => {
-                    e.selectedIndex > 0 && Ce(e.id, e.selectedIndex);
+                    e.selectedIndex > 0 && Ne(e.id, e.selectedIndex);
                 }));
             };
             document.getElementById("dropSkills")?.addEventListener("change", (e => {
-                document.getElementById(e.target.value)?.className.includes("classSpecific") && !document.getElementById(e.target.value)?.className.includes(g.value) || Ce(e.target.value, window.info.types.maxLevel[e.target.value]);
+                document.getElementById(e?.target.value)?.className.includes("classSpecific") && !document.getElementById(e?.target.value)?.className.includes(y.value) || Ne(e?.target.value, window.info.types.maxLevel[e.target.value]);
             }));
-            const ze = ([e, t]) => {
+            const Fe = ([e, t]) => {
                 e = e.replace(/\s/g, "").replace(/['-/#.:()[\]]/g, "\\$&");
                 const a = document.querySelector(`output.${e}`);
-                a ? a.textContent = `Lv-${Math.min(window.info.types.maxLevel[e] || window.info.skills[e].length - 1, a.textContent.slice(-1) + +t)}` : Ce(e, t);
-            }, He = (e = {}) => (S().forEach((t => {
+                a ? a.textContent = `Lv-${Math.min(window.info.types.maxLevel[e] || window.info.skills[e].length - 1, a.textContent.slice(-1) + +t)}` : Ne(e, t);
+            }, ze = (e = {}) => (x().forEach((t => {
                 Object.values(document.querySelectorAll(`section.${t} .skillDiv>output`)).forEach((t => {
                     const a = t.textContent?.slice(0, -2).trim(), i = +t.textContent.slice(-2);
                     i && (e[a] = (e[a] || 0) + i);
                 }));
-            })), e), We = (e = {}) => (Object.values(document.querySelectorAll(".decoDisplay>select,select.charm")).map((t => {
+            })), e), He = (e = {}) => (Object.values(document.querySelectorAll(".decoDisplay>select,select.charm")).map((t => {
                 if (!t.selectedOptions[0]) return;
                 const a = t.selectedOptions[0].textContent?.slice(0, -2).trim(), i = +t.selectedOptions[0].textContent?.slice(-2);
                 i > 0 && (e[a] = (e[a] || 0) + i);
-            })), e), De = () => {
+            })), e), We = () => {
                 window.info.armor && Object.values(document.querySelectorAll("#EquippedSkillDisplay>output output")).forEach((e => {
                     const [t, a] = e.textContent.replace(/\s/g, "").split(":");
-                    "SELECT" === document.getElementById(t)?.tagName && (document.getElementById(t).selectedIndex = window.info.types[g.value].includes(t) && "Active" === e.previousElementSibling.textContent ? Math.min(window.info.types.maxLevel[t] || window.info.skills[t].length - 1, +a) : 0);
+                    "SELECT" === document.getElementById(t)?.tagName && (document.getElementById(t).selectedIndex = window.info.types[y.value].includes(t) && "Active" === e.previousElementSibling.textContent ? Math.min(window.info.types.maxLevel[t] || window.info.skills[t].length - 1, +a) : 0);
                 }));
             };
-            g.addEventListener("change", (() => {
-                de(), ie(), me(), ae();
-            })), y.addEventListener("change", (() => me())), document.querySelectorAll("select.menu").forEach((e => e.addEventListener("change", (e => {
-                Se(e.target.selectedOptions[0].value), ae(), we();
-            })))), document.getElementById("players")?.addEventListener("change", (() => we())), 
-            w.addEventListener("change", (() => {
-                ae(), we();
-            })), h.addEventListener("change", (() => {
-                ge(), he(), we(), ae();
+            y.addEventListener("change", (() => {
+                ce(), ae(), de(), te();
+            })), k.addEventListener("change", (() => de())), document.querySelectorAll("select.menu").forEach((e => e.addEventListener("change", (e => {
+                xe(e.target.selectedOptions[0].value), te(), he();
+            })))), document.getElementById("players")?.addEventListener("change", (() => he())), 
+            h.addEventListener("change", (() => {
+                te(), he();
+            })), g.addEventListener("change", (() => {
+                ye(), ge(), he(), te();
             }));
             document.addEventListener("dragstart", (e => {
                 var t;
                 e.dataTransfer.setData("text/plain", (t = e.target, Object.values(document.getElementById("comboCountDisplay").children).indexOf(t)));
             })), document.addEventListener("dragover", (e => {
                 e.preventDefault(), e.dataTransfer.dropEffect = "move";
-            })), document.addEventListener("drop", (e => {
+            })), document.addEventListener("drop", ((e = window.event) => {
                 e.preventDefault();
                 const t = e.dataTransfer?.getData("text/plain");
                 "comboCountDisplay" === e.target.parentElement.id && e.target.before(Object.values(e.target.parentElement.children)[+t]), 
-                b = Object.values(document.getElementById("comboCountDisplay").children).map((e => e.className.split(" ")[0]));
+                v = Object.values(document.getElementById("comboCountDisplay").children).map((e => e.className.split(" ")[0]));
             }));
         },
         "./srcfiles/eventListener.js": (e, t, a) => {
@@ -1422,6 +1422,7 @@
                     e.classList.contains("augInvis") && (e.nextElementSibling.selectedIndex = 0);
                 }));
             })), document.querySelector("#EquippedSkillDisplay").addEventListener("mouseover", (e => {
+                if (!window.info?.descriptions) return;
                 let [t, a] = e.target.textContent.replace(/[\s\n\t]/g, "").split(":");
                 a && window.info.descriptions[t] && (e.target.dataset.tooltip = window.info.descriptions[t][a - 1]);
             })), document.getElementById("setSearcher").addEventListener("mouseover", (e => {
@@ -1722,8 +1723,9 @@
                             }
                         }));
                     })), Object.values(_).forEach((t => t.forEach((t => {
-                        t.startingAugs = [ ...t.augs ], t.startingQuriousPoints = t.quriousPoints, 5 - Object.keys(t.skills).length - (6 - t.augs.length) < 0 && (t.skillLimitation = 5 - Object.keys(t.skills).length - (6 - t.augs.length), 
-                        t.limitedSkills = Object.keys(t.skills).filter((t => e[t])));
+                        5 - Object.keys(t.skills).length - (6 - t.augs.length) < 0 && (t.skillLimitation = 5 - Object.keys(t.skills).length - (6 - t.augs.length), 
+                        t.limitedSkills = Object.keys(t.skills).filter((t => e[t]))), t.startingAugs = Object.values(t.augs).map((e => Object.entries(e))), 
+                        t.startingQuriousPoints = t.quriousPoints, t.skills = Object.entries(t.skills);
                     })))), _;
                 }(t.skills, t.skillInfo, e);
                 const a = {};
@@ -1822,27 +1824,27 @@
         "./srcfiles/json/types.json": e => {
             e.exports = JSON.parse('{"decos":{"AffinitySliding":1,"BlastResistance":1,"Bombardier":1,"Botanist":1,"CarvingPro":1,"ChameleosBlessing":1,"DefenseBoost":1,"Defiance":1,"Diversion":1,"DragonAttack":1,"DragonResistance":1,"FireAttack":1,"FireResistance":1,"FlinchFree":1,"FreeMeal":1,"Geologist":1,"HornMaestro":1,"HungerResistance":1,"IceAttack":1,"IceResistance":1,"IntrepidHeart":1,"KushalaBlessing":1,"LeapofFaith":1,"MuckResistance":1,"ParalysisResistance":1,"PoisonAttack":1,"PoisonResistance":1,"RecoilDown":1,"RecoverySpeed":1,"ReloadSpeed":1,"ShockAbsorber":1,"SleepResistance":1,"SpeedSharpening":1,"SpiribirdsCall":1,"StaminaThief":1,"Steadiness":1,"StunResistance":1,"TeostraBlessing":1,"ThunderAttack":1,"ThunderResistance":1,"WallRunner(Boost)":1,"WaterAttack":1,"WaterResistance":1,"Windproof":1,"AdrenalineRush":2,"Agitator":2,"Artillery":2,"AttackBoost":2,"Ballistics":2,"BladescaleHone":2,"BlastAttack":2,"BlightResistance":2,"Bludgeoner":2,"BubblyDance":2,"Burst":2,"ChargeMaster":2,"Coalescence":2,"Constitution":2,"Counterstrike":2,"CriticalBoost":2,"CriticalElement":2,"CriticalEye":2,"DivineBlessing":2,"ElementExploit":2,"Embolden":2,"EvadeExtender":2,"EvadeWindow":2,"Focus":2,"Foray":2,"Fortify":2,"Guard":2,"GuardUp":2,"Heroics":2,"ItemProlonger":2,"LatentPower":2,"LoadShells":2,"MarathonRunner":2,"MasterMounter":2,"MastersTouch":2,"MaximumMight":2,"MindsEye":2,"ParalysisAttack":2,"Partbreaker":2,"PeakPerformance":2,"PowerProlonger":2,"ProtectivePolish":2,"PunishingDraw":2,"QuickSheathe":2,"RapidMorph":2,"RazorSharp":2,"RecoveryUp":2,"Resentment":2,"Resuscitate":2,"SleepAttack":2,"Slugger":2,"SneakAttack":2,"SpareShot":2,"SpecialAmmoBoost":2,"SpeedEating":2,"StaminaSurge":2,"TremorResistance":2,"WallRunner":2,"WeaknessExploit":2,"Wide-Range":2,"WirebugWhisperer":2,"AmmoUp":3,"BloodRite":3,"CriticalDraw":3,"Earplugs":3,"GoodLuck":3,"Grinder(S)":3,"Handicraft":3,"HellfireCloak":3,"JumpMaster":3,"Mushroomancer":3,"Normal/RapidUp":3,"OffensiveGuard":3,"PierceUp":3,"QuickBreath":3,"RapidFireUp":3,"Redirection":3,"SpreadUp":3,"StatusTrigger":3,"Tune-Up":3,"Bloodlust":4,"BowChargePlus":4,"Dragonheart":4},"maxLevel":{"AttackBoost":7,"Agitator":5,"PeakPerformance":3,"Resentment":5,"Resuscitate":3,"CriticalEye":7,"CriticalBoost":3,"WeaknessExploit":3,"LatentPower":5,"MaximumMight":3,"CriticalElement":3,"MastersTouch":3,"FireAttack":5,"WaterAttack":5,"IceAttack":5,"ThunderAttack":5,"DragonAttack":5,"PoisonAttack":3,"ParalysisAttack":3,"SleepAttack":3,"BlastAttack":3,"Handicraft":5,"RazorSharp":3,"SpareShot":3,"ProtectivePolish":3,"MindsEye":3,"Ballistics":3,"Bludgeoner":3,"BowChargePlus":1,"Focus":3,"PowerProlonger":3,"MarathonRunner":3,"Constitution":5,"StaminaSurge":3,"Guard":5,"GuardUp":3,"OffensiveGuard":3,"CriticalDraw":3,"PunishingDraw":3,"QuickSheathe":3,"Slugger":3,"StaminaThief":3,"AffinitySliding":1,"HornMaestro":1,"Artillery":3,"LoadShells":2,"SpecialAmmoBoost":2,"Normal/RapidUp":3,"PierceUp":3,"SpreadUp":3,"AmmoUp":3,"ReloadSpeed":3,"RecoilDown":3,"Steadiness":3,"RapidFireUp":3,"DefenseBoost":7,"DivineBlessing":3,"RecoveryUp":3,"RecoverySpeed":3,"SpeedEating":3,"Earplugs":5,"Windproof":3,"TremorResistance":3,"BubblyDance":3,"EvadeWindow":5,"EvadeExtender":3,"FireResistance":3,"WaterResistance":3,"IceResistance":3,"ThunderResistance":3,"DragonResistance":3,"BlightResistance":3,"PoisonResistance":3,"ParalysisResistance":3,"SleepResistance":3,"StunResistance":3,"MuckResistance":2,"BlastResistance":3,"Botanist":4,"Geologist":3,"Partbreaker":3,"CaptureMaster":1,"CarvingMaster":1,"GoodLuck":3,"SpeedSharpening":3,"Bombardier":3,"Mushroomancer":3,"ItemProlonger":3,"Wide-Range":5,"FreeMeal":3,"Heroics":5,"Fortify":1,"FlinchFree":3,"JumpMaster":1,"CarvingPro":1,"HungerResistance":3,"LeapofFaith":1,"Diversion":1,"MasterMounter":1,"ChameleosBlessing":4,"KushalaBlessing":4,"TeostraBlessing":4,"Dragonheart":5,"WirebugWhisperer":3,"WallRunner":3,"Counterstrike":3,"RapidMorph":3,"HellfireCloak":4,"WindAlignment":5,"ThunderAlignment":5,"Stormsoul":5,"BloodRite":3,"Dereliction":3,"Furious":3,"MailofHellfire":3,"Coalescence":3,"Bloodlust":3,"Defiance":5,"SneakAttack":3,"AdrenalineRush":3,"Redirection":2,"SpiribirdsCall":1,"ChargeMaster":3,"Foray":3,"Tune-Up":2,"Grinder(S)":3,"BladescaleHone":3,"WallRunner(Boost)":1,"QuickBreath":1,"ElementExploit":3,"Burst":3,"Guts":3,"StatusTrigger":3,"IntrepidHeart":2,"BuildupBoost":3,"Embolden":3,"WindMantle":3,"PowderMantle":3,"Berserk":2,"Strife":3,"Frostcraft":3,"DragonConversion":3,"Heaven-Sent":3,"FrenziedBloodlust":3,"ShockAbsorber":1},"qurious":{"AmmoUp":15,"AttackBoost":15,"CriticalBoost":15,"CriticalEye":15,"Guts":15,"MastersTouch":15,"Normal/RapidUp":15,"PierceUp":15,"RapidFireUp":15,"RazorSharp":15,"SpareShot":15,"SpreadUp":15,"WeaknessExploit":15,"Agitator":12,"Artillery":12,"BloodRite":12,"Bloodlust":12,"BuildupBoost":12,"Burst":12,"Coalescence":12,"DragonConversion":12,"Frostcraft":12,"GoodLuck":12,"Handicraft":12,"LatentPower":12,"MaximumMight":12,"PeakPerformance":12,"RapidMorph":12,"Resentment":12,"Resuscitate":12,"SneakAttack":12,"Tune-Up":12,"AdrenalineRush":9,"Ballistics":9,"BladescaleHone":9,"ChargeMaster":9,"CriticalDraw":9,"CriticalElement":9,"Dragonheart":9,"Earplugs":9,"ElementExploit":9,"Focus":9,"Foray":9,"Furious":9,"Grinder(S)":9,"HellfireCloak":9,"Heroics":9,"MailofHellfire":9,"MindsEye":9,"Mushroomancer":9,"OffensiveGuard":9,"PowderMantle":9,"PowerProlonger":9,"ProtectivePolish":9,"Redirection":9,"StatusTrigger":9,"Strife":9,"WindMantle":9,"WirebugWhisperer":9,"BlastAttack":6,"BubblyDance":6,"ChameleosBlessing":6,"Constitution":6,"Counterstrike":6,"Defiance":6,"Embolden":6,"EvadeExtender":6,"EvadeWindow":6,"Guard":6,"GuardUp":6,"IntrepidHeart":6,"KushalaBlessing":6,"LoadShells":6,"MarathonRunner":6,"ParalysisAttack":6,"Partbreaker":6,"PoisonAttack":6,"PunishingDraw":6,"QuickSheathe":6,"RecoilDown":6,"ReloadSpeed":6,"SleepAttack":6,"Slugger":6,"SpecialAmmoBoost":6,"SpeedEating":6,"StaminaSurge":6,"Steadiness":6,"TeostraBlessing":6,"TremorResistance":6,"WallRunner":6,"AffinitySliding":3,"BlastResistance":3,"BlightResistance":3,"DefenseBoost":3,"Diversion":3,"DivineBlessing":3,"DragonAttack":3,"FireAttack":3,"FlinchFree":3,"Fortify":3,"FreeMeal":3,"HornMaestro":3,"HungerResistance":3,"IceAttack":3,"ItemProlonger":3,"LeapofFaith":3,"MasterMounter":3,"MuckResistance":3,"ParalysisResistance":3,"PoisonResistance":3,"RecoverySpeed":3,"RecoveryUp":3,"SleepResistance":3,"SpeedSharpening":3,"SpiribirdsCall":3,"StaminaThief":3,"StunResistance":3,"ThunderAttack":3,"WallRunner(Boost)":3,"WaterAttack":3,"Wide-Range":3,"Windproof":3},"decoLevels":[[{"AffinitySliding":1},{"BlastResistance":1},{"Bombardier":1},{"Botanist":1},{"CarvingPro":1},{"ChameleosBlessing":1},{"DefenseBoost":1},{"Defiance":1},{"Diversion":1},{"DragonAttack":1},{"DragonResistance":1},{"FireAttack":1},{"FireResistance":1},{"FlinchFree":1},{"FreeMeal":1},{"Geologist":1},{"HornMaestro":1},{"HungerResistance":1},{"IceAttack":1},{"IceResistance":1},{"IntrepidHeart":1},{"KushalaBlessing":1},{"LeapofFaith":1},{"MuckResistance":1},{"ParalysisResistance":1},{"PoisonAttack":1},{"PoisonResistance":1},{"RecoilDown":1},{"RecoverySpeed":1},{"ReloadSpeed":1},{"ShockAbsorber":1},{"SleepResistance":1},{"SpeedSharpening":1},{"SpiribirdsCall":1},{"StaminaThief":1},{"Steadiness":1},{"StunResistance":1},{"TeostraBlessing":1},{"ThunderAttack":1},{"ThunderResistance":1},{"WallRunner(Boost)":1},{"WaterAttack":1},{"WaterResistance":1},{"Windproof":1}],[{"AdrenalineRush":1},{"Agitator":1},{"Artillery":1},{"AttackBoost":1},{"Ballistics":1},{"BladescaleHone":1},{"BlastAttack":1},{"BlightResistance":1},{"Bludgeoner":1},{"BubblyDance":1},{"Burst":1},{"ChargeMaster":1},{"Coalescence":1},{"Constitution":1},{"Counterstrike":1},{"CriticalBoost":1},{"CriticalElement":1},{"CriticalEye":1},{"DefenseBoost":2},{"DivineBlessing":1},{"DragonAttack":2},{"ElementExploit":1},{"Embolden":1},{"EvadeExtender":1},{"EvadeWindow":1},{"FireAttack":2},{"Focus":1},{"Foray":1},{"Fortify":1},{"Guard":1},{"GuardUp":1},{"Heroics":1},{"IceAttack":2},{"ItemProlonger":1},{"LatentPower":1},{"LoadShells":1},{"MarathonRunner":1},{"MasterMounter":1},{"MastersTouch":1},{"MaximumMight":1},{"MindsEye":1},{"ParalysisAttack":1},{"Partbreaker":1},{"PeakPerformance":1},{"PowerProlonger":1},{"ProtectivePolish":1},{"PunishingDraw":1},{"QuickSheathe":1},{"RapidMorph":1},{"RazorSharp":1},{"RecoveryUp":1},{"Resentment":1},{"Resuscitate":1},{"SleepAttack":1},{"Slugger":1},{"SneakAttack":1},{"SpareShot":1},{"SpecialAmmoBoost":1},{"SpeedEating":1},{"StaminaSurge":1},{"ThunderAttack":2},{"TremorResistance":1},{"WallRunner":1},{"WaterAttack":2},{"WeaknessExploit":1},{"Wide-Range":1},{"WirebugWhisperer":1}],[{"AmmoUp":1},{"BloodRite":1},{"CriticalDraw":1},{"DefenseBoost":3},{"DragonAttack":3},{"Earplugs":1},{"FireAttack":3},{"GoodLuck":1},{"Grinder(S)":1},{"Guard":2},{"Handicraft":1},{"HellfireCloak":1},{"IceAttack":3},{"IntrepidHeart":2},{"JumpMaster":1},{"Mushroomancer":1},{"Normal/RapidUp":1},{"OffensiveGuard":1},{"PierceUp":1},{"QuickBreath":1},{"RapidFireUp":1},{"Redirection":1},{"SpreadUp":1},{"StatusTrigger":1},{"ThunderAttack":3},{"Tune-Up":1},{"WaterAttack":3},{"Wide-Range":3}],[{"AdrenalineRush":2},{"Agitator":2},{"AmmoUp":2},{"Artillery":2},{"AttackBoost":2},{"Ballistics":2},{"BladescaleHone":2},{"BlastAttack":2},{"BlastResistance":3},{"BlightResistance":2},{"Bloodlust":1},{"Bombardier":3},{"Botanist":3},{"BowChargePlus":1},{"BubblyDance":2},{"Burst":2},{"ChargeMaster":2},{"Coalescence":2},{"Constitution":2},{"Counterstrike":2},{"CriticalDraw":2},{"CriticalElement":2},{"CriticalEye":2},{"DefenseBoost":5},{"Defiance":3},{"DivineBlessing":2},{"DragonAttack":4},{"DragonResistance":3},{"Dragonheart":1},{"Earplugs":2},{"ElementExploit":2},{"Embolden":2},{"EvadeExtender":2},{"EvadeWindow":2},{"FireAttack":4},{"FireResistance":3},{"FlinchFree":3},{"Focus":2},{"Foray":2},{"FreeMeal":3},{"Geologist":3},{"GoodLuck":2},{"Grinder(S)":2},{"GuardUp":2},{"Handicraft":2},{"HellfireCloak":2},{"Heroics":2},{"HungerResistance":3},{"IceAttack":4},{"IceResistance":3},{"ItemProlonger":3},{"LatentPower":2},{"LoadShells":2},{"MarathonRunner":2},{"MastersTouch":2},{"MaximumMight":2},{"MindsEye":2},{"Mushroomancer":2},{"Normal/RapidUp":2},{"OffensiveGuard":2},{"ParalysisAttack":2},{"ParalysisResistance":3},{"Partbreaker":2},{"PeakPerformance":2},{"PierceUp":2},{"PoisonAttack":3},{"PoisonResistance":3},{"PowerProlonger":2},{"ProtectivePolish":2},{"PunishingDraw":2},{"QuickSheathe":2},{"RapidMorph":2},{"RazorSharp":2},{"RecoverySpeed":3},{"RecoveryUp":2},{"Redirection":2},{"Resentment":2},{"Resuscitate":2},{"SleepAttack":2},{"SleepResistance":3},{"Slugger":2},{"SneakAttack":2},{"SpecialAmmoBoost":2},{"SpeedEating":2},{"SpeedSharpening":3},{"SpreadUp":2},{"StaminaSurge":2},{"StaminaThief":3},{"StatusTrigger":2},{"Steadiness":2},{"Steadiness":3},{"StunResistance":3},{"ThunderAttack":4},{"ThunderResistance":3},{"TremorResistance":2},{"Tune-Up":2},{"WallRunner":3},{"WaterAttack":4},{"WaterResistance":3},{"Wide-Range":4},{"Windproof":3},{"WirebugWhisperer":2}]],"IgnoreHZV":["AttackBoost","Dragonheart","OffensiveGuard","Fortify","Heroics","Resentment","Resuscitate","PeakPerformance","Counterstrike","WallRunner","Spiribird","Artillery","Coalescence","MailofHellfire","Booster","Dereliction","Burst","Foray","Adrenaline","Bloodlust","Strife","AdrenalineRush"],"Shot":["ElementalReload","Dragonheart","OffensiveGuard","Fortify","Resentment","Resuscitate","PeakPerformance","Counterstrike","Heroics","AttackBoost","Spiribird","WallRunner","CriticalEye","MaximumMight","LatentPower","DangoTemper","Dereliction","FanningManeuver","EvadeHop","Coalescence","Bloodlust","MailofHellfire","Foray","Adrenaline","Booster","Burst","AdrenalineRush","Strife","SneakAttack"],"Sever":["Dragonheart","OffensiveGuard","Fortify","Resentment","Resuscitate","PeakPerformance","Counterstrike","Dereliction","Heroics","AttackBoost","Spiribird","WallRunner","CriticalEye","MaximumMight","LatentPower","Coalescence","Bloodlust","MailofHellfire","Booster","Grinder(S)","Foray","Adrenaline","Burst","AdrenalineRush","Strife","PowerSheath"],"Blunt":["Dragonheart","OffensiveGuard","Fortify","Resentment","Resuscitate","PeakPerformance","Counterstrike","Dereliction","Heroics","AttackBoost","Spiribird","WallRunner","CriticalEye","MaximumMight","LatentPower","Coalescence","Bloodlust","MailofHellfire","Booster","Grinder(S)","Foray","Adrenaline","Burst","AdrenalineRush","Strife","PowerSheath"],"pointsPerSlot":[{"Bombardier":1,"Botanist":1,"CarvingPro":1,"DragonResistance":1,"FireResistance":1,"Geologist":1,"IceResistance":1,"ShockAbsorber":1,"ThunderResistance":1,"WaterResistance":1,"ChameleosBlessing":1,"Defiance":1,"IntrepidHeart":1,"KushalaBlessing":1,"PoisonAttack":1,"RecoilDown":1,"ReloadSpeed":1,"Steadiness":1,"TeostraBlessing":1,"AffinitySliding":1,"BlastResistance":1,"DefenseBoost":1,"Diversion":1,"DragonAttack":1,"FireAttack":1,"FlinchFree":1,"FreeMeal":1,"HornMaestro":1,"HungerResistance":1,"IceAttack":1,"LeapofFaith":1,"MuckResistance":1,"ParalysisResistance":1,"PoisonResistance":1,"RecoverySpeed":1,"SleepResistance":1,"SpeedSharpening":1,"SpiribirdsCall":1,"StaminaThief":1,"StunResistance":1,"ThunderAttack":1,"WallRunner(Boost)":1,"WaterAttack":1,"Windproof":1},{"Bludgeoner":1,"AttackBoost":1,"CriticalBoost":1,"CriticalEye":1,"MastersTouch":1,"RazorSharp":1,"SpareShot":1,"WeaknessExploit":1,"Agitator":1,"Artillery":1,"Burst":1,"Coalescence":1,"LatentPower":1,"MaximumMight":1,"PeakPerformance":1,"RapidMorph":1,"Resentment":1,"Resuscitate":1,"SneakAttack":1,"AdrenalineRush":1,"Ballistics":1,"BladescaleHone":1,"ChargeMaster":1,"CriticalElement":1,"ElementExploit":1,"Focus":1,"Foray":1,"Heroics":1,"MindsEye":1,"PowerProlonger":1,"ProtectivePolish":1,"WirebugWhisperer":1,"BlastAttack":1,"BubblyDance":1,"Constitution":1,"Counterstrike":1,"Embolden":1,"EvadeExtender":1,"EvadeWindow":1,"Guard":1,"GuardUp":1,"LoadShells":1,"MarathonRunner":1,"ParalysisAttack":1,"Partbreaker":1,"PunishingDraw":1,"QuickSheathe":1,"SleepAttack":1,"Slugger":1,"SpecialAmmoBoost":1,"SpeedEating":1,"StaminaSurge":1,"TremorResistance":1,"WallRunner":1,"ChameleosBlessing":1,"Defiance":1,"IntrepidHeart":1,"KushalaBlessing":1,"PoisonAttack":1,"RecoilDown":1,"ReloadSpeed":1,"Steadiness":1,"TeostraBlessing":1,"DefenseBoost":2,"DragonAttack":2,"FireAttack":2,"IceAttack":2,"ThunderAttack":2,"WaterAttack":2,"BlightResistance":1,"DivineBlessing":1,"Fortify":1,"ItemProlonger":1,"MasterMounter":1,"RecoveryUp":1,"Wide-Range":1,"AffinitySliding":1,"BlastResistance":1,"Diversion":1,"FlinchFree":1,"FreeMeal":1,"HornMaestro":1,"HungerResistance":1,"LeapofFaith":1,"MuckResistance":1,"ParalysisResistance":1,"PoisonResistance":1,"RecoverySpeed":1,"SleepResistance":1,"SpeedSharpening":1,"SpiribirdsCall":1,"StaminaThief":1,"StunResistance":1,"WallRunner(Boost)":1,"Windproof":1},{"JumpMaster":1,"QuickBreath":1,"AmmoUp":1,"Normal/RapidUp":1,"PierceUp":1,"RapidFireUp":1,"SpreadUp":1,"AttackBoost":1,"CriticalBoost":1,"CriticalEye":1,"MastersTouch":1,"RazorSharp":1,"SpareShot":1,"WeaknessExploit":1,"BloodRite":1,"GoodLuck":1,"Handicraft":1,"Tune-Up":1,"Agitator":1,"Artillery":1,"Burst":1,"Coalescence":1,"LatentPower":1,"MaximumMight":1,"PeakPerformance":1,"RapidMorph":1,"Resentment":1,"Resuscitate":1,"SneakAttack":1,"Guard":2,"IntrepidHeart":2,"CriticalDraw":1,"Earplugs":1,"Grinder(S)":1,"HellfireCloak":1,"Mushroomancer":1,"OffensiveGuard":1,"Redirection":1,"StatusTrigger":1,"AdrenalineRush":1,"Ballistics":1,"BladescaleHone":1,"ChargeMaster":1,"CriticalElement":1,"ElementExploit":1,"Focus":1,"Foray":1,"Heroics":1,"MindsEye":1,"PowerProlonger":1,"ProtectivePolish":1,"WirebugWhisperer":1,"DefenseBoost":3,"DragonAttack":3,"FireAttack":3,"IceAttack":3,"ThunderAttack":3,"WaterAttack":3,"Wide-Range":3,"ChameleosBlessing":1,"Defiance":1,"KushalaBlessing":1,"PoisonAttack":1,"RecoilDown":1,"ReloadSpeed":1,"Steadiness":1,"TeostraBlessing":1,"BlastAttack":1,"BubblyDance":1,"Constitution":1,"Counterstrike":1,"Embolden":1,"EvadeExtender":1,"EvadeWindow":1,"GuardUp":1,"LoadShells":1,"MarathonRunner":1,"ParalysisAttack":1,"Partbreaker":1,"PunishingDraw":1,"QuickSheathe":1,"SleepAttack":1,"Slugger":1,"SpecialAmmoBoost":1,"SpeedEating":1,"StaminaSurge":1,"TremorResistance":1,"WallRunner":1,"AffinitySliding":1,"BlastResistance":1,"Diversion":1,"FlinchFree":1,"FreeMeal":1,"HornMaestro":1,"HungerResistance":1,"LeapofFaith":1,"MuckResistance":1,"ParalysisResistance":1,"PoisonResistance":1,"RecoverySpeed":1,"SleepResistance":1,"SpeedSharpening":1,"SpiribirdsCall":1,"StaminaThief":1,"StunResistance":1,"WallRunner(Boost)":1,"Windproof":1,"BlightResistance":1,"DivineBlessing":1,"Fortify":1,"ItemProlonger":1,"MasterMounter":1,"RecoveryUp":1},{"BowChargePlus":1,"AmmoUp":2,"AttackBoost":2,"CriticalEye":2,"MastersTouch":2,"Normal/RapidUp":2,"PierceUp":2,"RazorSharp":2,"SpreadUp":2,"Agitator":2,"Artillery":2,"Burst":2,"Coalescence":2,"GoodLuck":2,"Handicraft":2,"LatentPower":2,"MaximumMight":2,"PeakPerformance":2,"RapidMorph":2,"Resentment":2,"Resuscitate":2,"SneakAttack":2,"Tune-Up":2,"AdrenalineRush":2,"Ballistics":2,"BladescaleHone":2,"ChargeMaster":2,"CriticalDraw":2,"CriticalElement":2,"Earplugs":2,"ElementExploit":2,"Focus":2,"Foray":2,"Grinder(S)":2,"HellfireCloak":2,"Heroics":2,"MindsEye":2,"Mushroomancer":2,"OffensiveGuard":2,"PowerProlonger":2,"ProtectivePolish":2,"Redirection":2,"StatusTrigger":2,"WirebugWhisperer":2,"Defiance":3,"PoisonAttack":3,"Steadiness":2,"WallRunner":3,"CriticalBoost":1,"SpareShot":1,"WeaknessExploit":1,"RapidFireUp":1,"DefenseBoost":5,"Bloodlust":1,"BloodRite":1,"BlastAttack":2,"BubblyDance":2,"Constitution":2,"Counterstrike":2,"Embolden":2,"EvadeExtender":2,"EvadeWindow":2,"GuardUp":2,"LoadShells":2,"MarathonRunner":2,"ParalysisAttack":2,"Partbreaker":2,"PunishingDraw":2,"QuickSheathe":2,"SleepAttack":2,"Slugger":2,"SpecialAmmoBoost":2,"SpeedEating":2,"StaminaSurge":2,"TremorResistance":2,"IntrepidHeart":2,"Guard":2,"DragonAttack":4,"FireAttack":4,"IceAttack":4,"ThunderAttack":4,"WaterAttack":4,"Wide-Range":4,"Dragonheart":1,"BlastResistance":3,"FlinchFree":3,"FreeMeal":3,"HungerResistance":3,"ItemProlonger":3,"ParalysisResistance":3,"PoisonResistance":3,"RecoverySpeed":3,"SleepResistance":3,"SpeedSharpening":3,"StaminaThief":3,"StunResistance":3,"Windproof":3,"ChameleosBlessing":1,"KushalaBlessing":1,"RecoilDown":1,"ReloadSpeed":1,"TeostraBlessing":1,"BlightResistance":2,"DivineBlessing":2,"RecoveryUp":2,"AffinitySliding":1,"Diversion":1,"HornMaestro":1,"LeapofFaith":1,"MuckResistance":1,"SpiribirdsCall":1,"WallRunner(Boost)":1,"Fortify":1,"MasterMounter":1}],"lvl4":{"AttackBoost":2,"Agitator":2,"PeakPerformance":2,"Resentment":2,"Resuscitate":2,"CriticalEye":2,"CriticalBoost":null,"WeaknessExploit":null,"LatentPower":2,"MaximumMight":2,"CriticalElement":2,"MastersTouch":2,"FireAttack":4,"WaterAttack":4,"IceAttack":4,"ThunderAttack":4,"DragonAttack":4,"PoisonAttack":3,"ParalysisAttack":2,"SleepAttack":2,"BlastAttack":2,"Handicraft":2,"RazorSharp":2,"SpareShot":null,"ProtectivePolish":2,"MindsEye":2,"Ballistics":2,"Bludgeoner":null,"BowChargePlus":1,"Focus":2,"PowerProlonger":2,"MarathonRunner":2,"Constitution":2,"StaminaSurge":2,"Guard":null,"GuardUp":2,"OffensiveGuard":2,"CriticalDraw":2,"PunishingDraw":2,"QuickSheathe":2,"Slugger":2,"StaminaThief":3,"AffinitySliding":null,"HornMaestro":null,"Artillery":2,"LoadShells":2,"SpecialAmmoBoost":2,"Normal/RapidUp":2,"PierceUp":2,"SpreadUp":2,"AmmoUp":2,"ReloadSpeed":null,"RecoilDown":null,"Steadiness":2,"RapidFireUp":null,"DefenseBoost":5,"DivineBlessing":2,"RecoveryUp":2,"RecoverySpeed":3,"SpeedEating":2,"Earplugs":2,"Windproof":3,"TremorResistance":2,"BubblyDance":2,"EvadeWindow":2,"EvadeExtender":2,"FireResistance":3,"WaterResistance":3,"IceResistance":3,"ThunderResistance":3,"DragonResistance":3,"BlightResistance":2,"PoisonResistance":3,"ParalysisResistance":3,"SleepResistance":3,"StunResistance":3,"MuckResistance":null,"BlastResistance":3,"Botanist":3,"Geologist":3,"Partbreaker":2,"CaptureMaster":null,"CarvingMaster":null,"GoodLuck":2,"SpeedSharpening":3,"Bombardier":3,"Mushroomancer":2,"ItemProlonger":3,"Wide-Range":4,"FreeMeal":3,"Heroics":2,"Fortify":null,"FlinchFree":3,"JumpMaster":null,"CarvingPro":null,"HungerResistance":3,"LeapofFaith":null,"Diversion":null,"MasterMounter":null,"ChameleosBlessing":null,"KushalaBlessing":null,"TeostraBlessing":null,"Dragonheart":1,"WirebugWhisperer":2,"WallRunner":3,"Counterstrike":2,"RapidMorph":2,"HellfireCloak":2,"WindAlignment":null,"ThunderAlignment":null,"Stormsoul":null,"BloodRite":null,"Dereliction":null,"Furious":null,"MailofHellfire":null,"Coalescence":2,"Bloodlust":1,"Defiance":3,"SneakAttack":2,"AdrenalineRush":2,"Redirection":2,"SpiribirdsCall":null,"ChargeMaster":2,"Foray":2,"Tune-Up":2,"Grinder(S)":2,"BladescaleHone":2,"WallRunner(Boost)":null,"QuickBreath":null,"ElementExploit":2,"Burst":2,"Guts":null,"StatusTrigger":2,"IntrepidHeart":null,"BuildupBoost":null,"Embolden":2,"WindMantle":null,"PowderMantle":null,"Berserk":null,"Strife":null,"Frostcraft":null,"DragonConversion":null,"Heaven-Sent":null,"FrenziedBloodlust":null,"ShockAbsorber":null},"Bow":["Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Booster","BowChargePlus","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","DangoTemper","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","HerculesDraw","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","Marksman","MaximumMight","NormalRapidUp","PeakPerformance","PierceUp","PunishingDraw","ReloadSpeed","Resentment","Resuscitate","SneakAttack","SpareShot","SpecialAmmoBoost","Spiribird","SpreadUp","StormSoul","Strife","TeostraBlessing","ThunderAttack","UpperCrit","WallRunner","WaterAttack","WeaknessExploit"],"ChargeBlade":["Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Bombardier","Booster","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","EleShieldCharge","ElementExploit","FireAttack","Foray","Fortify","Grinder(S)","Handicraft","Heroics","IceAttack","ImpactShieldCharge","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RapidMorph","RazorSharp","Resentment","Resuscitate","SavageAxe","SneakAttack","Spiribird","StormSoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"DualBlades":["Adrenaline","AdrenalineRush","Agitator","ArchdemonMode","Artillery","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","DemonMode","Dereliction","DragonAttack","Dragonheart","ElementExploit","FeralDemonMode","FireAttack","Foray","Fortify","Grinder(S)","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","StormSoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"GreatSword":["Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","Grinder(S)","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PowerSheath","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","StormSoul","Strife","StrongarmStance","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"Gunlance":["Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Bombardier","Booster","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","Grinder(S)","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","StormSoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"Hammer":["Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","Grinder(S)","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","StormSoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"HeavyBowGun":["Adrenaline","AdrenalineRush","Agitator","AmmoUp","Artillery","AttackBoost","Bloodlust","Bombardier","Booster","BowgunBarrel","Burst","ChargeLevel","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","DangoTemper","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","Marksman","MaximumMight","NormalRapidUp","OffensiveGuard","PeakPerformance","PierceUp","RapidFireUp","RecoilDown","ReloadSpeed","Resentment","Resuscitate","SneakAttack","SpareShot","SpecialAmmoBoost","Spiribird","SpreadUp","StormSoul","Strife","TeostraBlessing","ThunderAttack","Tune-Up","WallRunner","WaterAttack","WeaknessExploit"],"HuntingHorn":["Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","Grinder(S)","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","StormSoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"InsectGlaive":["Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","Grinder(S)","Handicraft","Heroics","IceAttack","KinsectBuff","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","StormSoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"Lance":["Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","Grinder(S)","Handicraft","Heroics","IceAttack","KushalaBlessing","LanceCharge","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","StormSoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"LightBowGun":["Adrenaline","AdrenalineRush","Agitator","AmmoUp","Artillery","AttackBoost","Bloodlust","Bombardier","Booster","BowgunBarrel","Burst","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","CriticalFirePower","DangoTemper","Dereliction","DragonAttack","Dragonheart","ElementExploit","ElementalReload","EvadeHop","FanningManeuver","FireAttack","Foray","Fortify","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","Marksman","MaximumMight","NormalRapidUp","PeakPerformance","PierceUp","RapidFireUp","RecoilDown","ReloadSpeed","Resentment","Resuscitate","SneakAttack","SpareShot","SpecialAmmoBoost","Spiribird","SpreadUp","StormSoul","Strife","TeostraBlessing","ThunderAttack","Tune-Up","WallRunner","WaterAttack","WeaknessExploit"],"LongSword":["Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","Grinder(S)","Handicraft","Helmbreaker","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SerenePose","SneakAttack","Spiribird","SpiritGauge","StormSoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"SwitchAxe":["Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","Grinder(S)","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RapidMorph","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","StormSoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"SwordNShield":["Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","Grinder(S)","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","StormSoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"]}');
         }
-    }, a = {};
-    function i(e) {
-        var _ = a[e];
+    }, t = {};
+    function a(i) {
+        var _ = t[i];
         if (void 0 !== _) return _.exports;
-        var s = a[e] = {
+        var s = t[i] = {
             exports: {}
         };
-        return t[e](s, s.exports, i), s.exports;
+        return e[i](s, s.exports, a), s.exports;
     }
-    i.d = (e, t) => {
-        for (var a in t) i.o(t, a) && !i.o(e, a) && Object.defineProperty(e, a, {
+    a.d = (e, t) => {
+        for (var i in t) a.o(t, i) && !a.o(e, i) && Object.defineProperty(e, i, {
             enumerable: !0,
-            get: t[a]
+            get: t[i]
         });
-    }, i.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), i.r = e => {
+    }, a.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), a.r = e => {
         "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
             value: "Module"
         }), Object.defineProperty(e, "__esModule", {
             value: !0
         });
-    }, i("./srcfiles/backup.js"), i("./srcfiles/armorFunctions.js"), i("./srcfiles/setCreation.js");
-    i("./srcfiles/eventListener.js");
+    }, a("./srcfiles/backup.js"), a("./srcfiles/armorFunctions.js"), a("./srcfiles/setCreation.js");
+    a("./srcfiles/eventListener.js");
 })();
 //# sourceMappingURL=index.js.map

@@ -25,8 +25,27 @@
     (() => {
         a.r(r);
         var e = a("./srcfiles/json/types.json");
-        const {maxLevel: t, qurious: i, pointsPerSlot: n} = e;
-        let s = (e, t, a, r = {}) => {
+        const {decos: t, lvl4: i, maxLevel: n, qurious: s, pointsPerSlot: o} = e;
+        function l(e, t) {
+            let a = [];
+            [ 0, 3, 2, 1 ].forEach((r => {
+                for (const [i, n] of o[r]) {
+                    if (!t[r]) break;
+                    if (!e[i]) continue;
+                    const s = Math.min(t[r], ~~(-e[i] / n));
+                    s && (e[i] += s * n, t[r] -= s, a.push([ i, n, `Slot lvl${r + 1}`, s ]));
+                }
+            }));
+            let r = {}, i = 0;
+            return Object.entries(e).forEach((([e, t]) => {
+                if (!t) return;
+                const a = ~~(s[e] / 3);
+                r[a] || (r[a] = {
+                    total: 0
+                }), r[a].total -= t, r[a][e] = -t, i += s[e] >= 9 ? t : .5 * t;
+            })), [ a, r, i ];
+        }
+        let c = (e, t, a, r = {}) => {
             let i = [ 0, 0, 0, 0 ];
             const n = Object.keys(e).sort();
             let s, o, l;
@@ -62,7 +81,7 @@
             }
             return i;
         };
-        function o(e, t, a, r) {
+        function u(e, t, a, r) {
             let i = [ 0, 0, 0, 0 ];
             const n = Object.keys(e).sort();
             let s;
@@ -78,17 +97,16 @@
             }
             return i;
         }
-        const l = (e, t) => {
+        const d = (e, t) => {
             let a = Object.keys(e);
             for (let e = a.length; e >= 0; --e) if (+a[e] <= t) return [ [ +a[e] ], +a[e] ];
-        }, c = (e, t) => {
-            let a = 0;
-            e.fodderSkills.length > 0 && (++a, ++e.skillsRemovedCount);
-            const r = 5 * (1 + a), i = a ? e.fodderSkills[e.skillsRemovedCount] : r, n = a ? "-Skill" : "-Def";
-            e.augs.push({
-                [n]: i
-            }), t.push([ i, n, e.name, 1 ]), e.quriousPoints += r, e.unBloatedPoints = ~~(e.quriousPoints / 3);
-        }, u = (e, t, a, r) => {
+        }, g = (e, t) => {
+            e.fodderSkills.length > 0 ? (e.augs.push({
+                "-Skill": e.fodderSkills[++e.skillsRemovedCount]
+            }), t.push([ e.fodderSkills[e.skillsRemovedCount], "-Skill", e.name, 1 ]), e.quriousPoints += 10) : (e.augs.push({
+                "-Def": 5
+            }), t.push([ 5, "-Def", e.name, 1 ]), e.quriousPoints += 5), e.unBloatedPoints = ~~(e.quriousPoints / 3);
+        }, h = (e, t, a, r) => {
             for (const i of e) {
                 const [e, n] = Array.isArray(i) ? i : [ Object.keys(a[i])[1], i ];
                 if (t.innateSkills.has(e)) t.innateSkills.add(e); else if (5 === t.innateSkills.size) return console.log(t.name, e), 
@@ -97,18 +115,67 @@
                     "+Skill": e
                 }), r.push([ e, 1, t.name, 1 ]), 0 == --a[n].total ? delete a[n] : 0 == --a[n][e] && delete a[n][e];
             }
-        }, d = (e, t) => {
+        }, k = (e, t) => {
             let a = 0;
             for (let r = 0; e && r < t.length; ++r) {
                 const i = Math.min(t[r][1].total, e);
                 a += i * +t[r][0], e -= i;
             }
             return a;
-        }, g = (e, t) => e >= t ? e : t, h = (e, t) => {
+        }, S = (e, t) => {
+            const a = [ 0, 0, 0, 0, 0 ];
+            let [r, i, n] = e, s = Object.values(i).reduce(((e, t) => e + t.total), 0);
+            for (const e of t) if (e.augs.length < 6) {
+                const t = Object.entries(i);
+                let a, n = Math.min(6 - e.augs.length, s), o = s < 6 - e.augs.length ? 6 - e.augs.length - s : 0;
+                for (;n && k(n, t) > e.unBloatedPoints; ) ++o, --n;
+                if (!n) continue;
+                for (;o--; ) g(e, r);
+                if (3 === n) a = c(i, e.unBloatedPoints, 0); else if (2 === n) a = u(i, e.unBloatedPoints, 0); else {
+                    if (!(1 === n && e.unBloatedPoints >= t[0][0])) continue;
+                    a = d(i, e.unBloatedPoints);
+                }
+                ((e.quriousPoints -= 3 * a[1]) < 0 || void 0 === e.quriousPoints) && console.log(`${e.name} has ${e.quriousPoints} points}`, e), 
+                s -= a[0].length, h(a[0], e, i, r);
+            }
+            const o = (e, t) => {
+                e.augs.splice(t, 1);
+                const a = d(i, ~~(e.quriousPoints / 3));
+                a[0] && (e.quriousPoints -= 3 * a[1], --s, h(a[0], e, i, r));
+            };
+            for (const e of t) if (s > 0) {
+                if (e.innateSkills.size > 4 && Object.values(i).every((t => Object.keys(t[1]).every((t => !e.innateSkills.has(t)))))) continue;
+                if (!Object.keys(i).length) break;
+                for (let t = e.augs.length - 1; t >= 0 && e.quriousPoints > 8; t--) e.augs[t]["-Def"] && e.quriousPoints - 5 >= 3 * +Object.keys(i)[0] ? (e.quriousPoints -= 5, 
+                o(e, t)) : e.augs[t]["-Skill"] && e.quriousPoints - 10 >= 3 * +Object.keys(i)[0] && (e.quriousPoints -= 10, 
+                o(e, t));
+            }
+            if (Object.keys(i).length) return {
+                quriousAugs: 0,
+                finalSkillCheck: 0,
+                returnArmors: 0,
+                arr: !1
+            };
+            for (const e of t) {
+                if (e.innateSkills.size > 4 || e.quriousPoints < 8) continue;
+                let t = 0, r = 1;
+                for (let a in e.augs) "-Def" === a && ++t;
+                let i = e.augs.length, n = i < 6 ? 0 : --t > 0 ? 5 : 10, s = e.quriousPoints;
+                for (;(s -= n) > 3 * r; ) a[~~(s / (3 * r))] = a[~~(s / (3 * r))] || 0 + ++r, i < 6 && ++i, 
+                n = i < 6 - r ? 0 : --t > 0 ? 5 : 10;
+            }
+            return {
+                quriousAugs: r,
+                theseExtraPoints: a,
+                newArmorSkills: {},
+                newDecoSkills: [ 0, 0, 0, 0 ],
+                arr: !s
+            };
+        }, p = (e, t) => e >= t ? e : t, f = (e, t) => {
             for (const a of e) {
-                for (let e = 0; e < 4; e++) t.remainingSlots[e] = g(t.remainingSlots[e] || 0, a.remainingSlots[e]);
-                for (let e = 0; e < 5; e++) t.quriousSkills[e] = g(t.quriousSkills[e] || 0, a.quriousSkills[e]);
-                for (const [e, r] of Object.entries(a.armorSkills)) t.armorSkills[e] = g(t.armorSkills[e] || 0, r);
+                for (let e = 0; e < 4; e++) t.remainingSlots[e] = p(t.remainingSlots[e] || 0, a.remainingSlots[e]);
+                for (let e = 0; e < 5; e++) t.quriousSkills[e] = p(t.quriousSkills[e] || 0, a.quriousSkills[e]);
+                for (const [e, r] of Object.entries(a.armorSkills)) t.armorSkills[e] = p(t.armorSkills[e] || 0, r);
             }
         };
         self.addEventListener("message", (e => {
@@ -124,138 +191,82 @@
                     remainingSlots: [ 0, 0, 0, 0 ]
                 }
             };
-            e.data.requiredSkills = Object.entries(e.data.skills), n.forEach(((t, a) => {
-                n[a] = Object.entries(t).filter((t => e.data.skills[t[0]]));
+            e.data.requiredSkills = Object.entries(e.data.skills), o.forEach(((t, a) => {
+                o[a] = Object.entries(t).filter((t => e.data.skills[t[0]]));
             }));
             for (const a of e.data.permutations) {
-                e.data.theseArmors = [ e.data.armors.helm[a[0]], e.data.armors.chest[a[1]], e.data.armors.arm[a[2]], e.data.armors.waist[a[3]], e.data.armors.leg[a[4]] ];
-                const r = k(e.data);
-                r && (h(r, t.stats), t.count.combos += r.length, ++t.count.sets, t.sets.length < 25 && t.sets.push(r));
+                e.data.theseArmors = [ e.data.armors.helm[a[0]], e.data.armors.chest[a[1]], e.data.armors.arm[a[2]], e.data.armors.waist[a[3]], e.data.armors.leg[a[4]] ], 
+                e.data.skills = Object.fromEntries(e.data.requiredSkills);
+                const r = m(e.data);
+                r && (f(r, t.stats), t.count.combos += r.length, ++t.count.sets, t.sets.length < 25 && t.sets.push(r));
             }
             postMessage({
                 type: "rerun",
                 final: t
             }), self.terminate;
         }));
-        const k = e => {
-            const {thisWeapon: a, theseCharms: r, requiredSkills: g, skillInfo: h, theseArmors: k, skills: S} = e;
-            let p = h.charmNeeded ? Object.entries(h.charmNeeded) : [];
-            const m = {};
-            for (const e of k) for (const [t, a] of Object.entries(e.skills)) S[t] && (m[t] = (m[t] || 0) + a);
-            const f = [ 0, 0, 0, 0 ];
-            [ a, k[0].decos, k[1].decos, k[2].decos, k[3].decos, k[4].decos, e.charmSlots ].forEach((e => e.forEach(((e, t) => f[t] += e))));
-            const A = [];
-            if (r.forEach((e => {
-                if (p?.some((t => (m[t[0]] || 0) + (e[t[0]] || 0) < t[1])) || Object.entries(e).some((e => (m[e[0]] || 0) + e[1] > t[e[0]]))) return;
-                const a = {};
-                g.forEach((t => {
-                    t[1] + (m[t[0]] || 0) + (e[t[0]] || 0) < 0 && (a[t[0]] = t[1] + (m[t[0]] || 0) + (e[t[0]] || 0));
+        const m = e => {
+            const {thisWeapon: a, theseCharms: r, requiredSkills: o, skillInfo: d, theseArmors: g, skills: h} = e;
+            let k = new Map, p = d.charmNeeded ? Object.entries(d.charmNeeded) : [];
+            const f = {};
+            for (const e of g) for (const [t, a] of e.skills) h[t] && (f[t] = (f[t] || 0) + a);
+            const m = [ 0, 0, 0, 0 ];
+            [ a, g[0].decos, g[1].decos, g[2].decos, g[3].decos, g[4].decos, e.charmSlots ].forEach((e => e.forEach(((e, t) => m[t] += e))));
+            let R = [];
+            for (const e of r) {
+                if (p?.some((t => (f[t[0]] || 0) + (e[t[0]] || 0) < t[1])) || Object.entries(e).some((e => (f[e[0]] || 0) + e[1] > n[e[0]]))) continue;
+                let a = "";
+                if (Object.entries(e).forEach((e => {
+                    a += `${s[e[0]]}-${t[e[0]]}-${i[e[0]]}-${e[1]}`;
+                })), "fail" === k.get(a)) continue;
+                o.forEach((t => {
+                    t[1] + (f[t[0]] || 0) + (e[t[0]] || 0) < 0 ? h[t[0]] = t[1] + (f[t[0]] || 0) + (e[t[0]] || 0) : h[t[0]] = 0;
                 }));
-                for (const e of k) {
-                    if (e.augs = [ ...e.startingAugs ], e.quriousPoints = e.startingQuriousPoints, e.skillsRemovedCount = e.fodderCount < 3 ? e.fodderCount : 3, 
-                    e.unBloatedPoints = ~~e.quriousPoints / 3, e.innateSkills = new Set(Object.keys(e.skills)), 
-                    !e.skillLimitation) continue;
-                    let t = {}, r = {};
-                    for (let [e, r] of Object.entries(a)) i[e] && (t[~~i[e] / 3] ? t[~~i[e] / 3].total < -r && (t[~~i[e] / 3].total = Math.max(t[~~i[e] / 3].total, -r), 
-                    t[~~i[e] / 3].skill = e) : t[~~i[e] / 3] = {
-                        total: -r,
-                        skill: e
-                    });
-                    e.limitedSkills.forEach((e => {
-                        r[~~i[e] / 3] || (r[~~i[e] / 3] = {
+                for (const e of g) {
+                    if (e.augs = e.startingAugs.map((e => Object.fromEntries(e))), e.quriousPoints = e.startingQuriousPoints, 
+                    e.skillsRemovedCount = e.fodderCount < 3 ? e.fodderCount : 3, e.unBloatedPoints = ~~e.quriousPoints / 3, 
+                    e.innateSkills = new Set(e.skills.map((e => e[0]))), void 0 === e.skillLimitation && 5 - Object.keys(e.skills).length - (6 - e.augs.length) >= 0) continue;
+                    let t = {}, a = {};
+                    for (let [e, a] of Object.entries(h)) {
+                        if (!s[e] || !a) continue;
+                        const r = ~~(s[e] / 3);
+                        t[r] ? t[r].total < -a && (t[r].total = Math.max(t[r].total, -a), t[r].skill = e) : t[r] = {
+                            total: -a,
+                            skill: e
+                        };
+                    }
+                    e.limitedSkills?.forEach((e => {
+                        if (!s[e] || !h[e]) return;
+                        const t = ~~(s[e] / 3);
+                        a[t] || (a[t] = {
                             total: 0
-                        }), r[~~i[e] / 3].total += -a[e];
+                        }), a[t].total -= h[e];
                     }));
-                    let n = [];
-                    6 - e.augs.length == 3 ? n = s(t, e.unBloatedPoints, 5 - Object.keys(e.skills).length, r) : 6 - e.augs.length == 2 && (n = o(t, e.unBloatedPoints, 5 - Object.keys(e.skills).length, r)), 
-                    n[0][0] && (e.quriousPoints -= n[1], n[0].forEach((r => {
-                        let n = t[r].skill;
-                        for (let t of e.innateSkills) if (i[t] === r && a[t]) {
-                            n = t;
+                    let r = [];
+                    6 - e.augs.length == 3 ? r = c(t, e.unBloatedPoints, 5 - e.skills.length, a) : 6 - e.augs.length == 2 && (r = u(t, e.unBloatedPoints, 5 - e.skills.length, a)), 
+                    r[1] && (e.quriousPoints -= 3 * r[1], r[0].forEach((a => {
+                        let r = t[a].skill;
+                        for (let t of e.innateSkills) if (s[t] === 3 * a && h[t]) {
+                            r = t;
                             break;
                         }
-                        ++a[n], e.augs.push({
-                            "+Skill": n
+                        ++h[r], e.augs.push({
+                            "+Skill": r
                         });
                     })));
                 }
-                const r = function(e, t) {
-                    let a = [];
-                    [ 0, 3, 2, 1 ].forEach((r => {
-                        for (const [i, s] of n[r]) {
-                            if (!t[r]) break;
-                            if (!e[i]) continue;
-                            const n = Math.min(t[r], ~~(-e[i] / s));
-                            n && (e[i] += n * s, t[r] -= n, a.push([ i, s, `Slot lvl${r + 1}`, n ]));
-                        }
-                    }));
-                    let r = {}, s = 0;
-                    return Object.entries(e).forEach((([e, t]) => {
-                        t && (r[~~i[e] / 3] || (r[~~i[e] / 3] = {
-                            total: 0
-                        }), r[~~i[e] / 3].total -= t, r[~~i[e] / 3][e] = -t, s += i[e] >= 9 ? t : .5 * t);
-                    })), [ a, r, s ];
-                }(a, f.slice(0)), {quriousAugs: h, theseExtraPoints: S, newArmorSkills: R, newDecoSkills: B, arr: P} = ((e, t) => {
-                    const a = [ 0, 0, 0, 0, 0 ];
-                    let [r, i, n] = e, g = Object.values(i).reduce(((e, t) => e + t.total), 0);
-                    for (const e of t) if (e.augs.length < 6) {
-                        const t = Object.entries(i);
-                        let a, n = Math.min(6 - e.augs.length, g), h = g < 6 - e.augs.length ? 6 - e.augs.length - g : 0;
-                        for (;n && d(n, t) > e.unBloatedPoints; ) ++h, --n;
-                        if (!n) continue;
-                        for (;h--; ) c(e, r);
-                        if (6 - e.augs.length - (5 - Object.keys(e.skills).length) > 0 && console.log("Armor Limitation found"), 
-                        3 === n) a = s(i, e.unBloatedPoints, 0); else if (2 === n) a = o(i, e.unBloatedPoints, 0); else {
-                            if (!(1 === n && e.unBloatedPoints >= t[0][0])) continue;
-                            a = l(i, e.unBloatedPoints);
-                        }
-                        ((e.quriousPoints -= 3 * a[1]) < 0 || void 0 === e.quriousPoints) && console.log(`${e.name} has ${e.quriousPoints} points}`, e), 
-                        g -= a[0].length, u(a[0], e, i, r);
-                    }
-                    const h = (e, t) => {
-                        e.augs.splice(t, 1);
-                        const a = l(i, ~~(e.quriousPoints / 3));
-                        a[0] && (e.quriousPoints -= 3 * a[1], --g, u(a[0], e, i, r));
-                    };
-                    for (const e of t) if (g > 0) {
-                        if (e.skills.size > 4 && Object.entries(i).filter((t => Object.keys(t[1]).every((t => !e.innateSkills.has(t)))))) continue;
-                        if (!Object.keys(i).length) break;
-                        for (let t = e.augs.length - 1; t >= 0 && e.quriousPoints > 8; t--) e.augs[t]["-Def"] && e.quriousPoints - 5 >= 3 * +Object.keys(i)[0] ? (e.quriousPoints -= 5, 
-                        h(e, t)) : e.augs[t]["-Skill"] && e.quriousPoints - 10 >= 3 * +Object.keys(i)[0] && (e.quriousPoints -= 10, 
-                        h(e, t));
-                    }
-                    if (Object.keys(i).length) return {
-                        quriousAugs: 0,
-                        finalSkillCheck: 0,
-                        returnArmors: 0,
-                        arr: !1
-                    };
-                    for (const e of t) {
-                        if (e.innateSkills.size > 4 || e.quriousPoints < 8) continue;
-                        let t = 0, r = 1;
-                        for (let a in e.augs) "-Def" === a && ++t;
-                        let i = e.augs.length, n = i < 6 ? 0 : --t > 0 ? 5 : 10, s = e.quriousPoints;
-                        for (;(s -= n) > 3 * r; ) a[~~(s / (3 * r))] = a[~~(s / (3 * r))] || 0 + ++r, i < 6 && ++i, 
-                        n = i < 6 - r ? 0 : --t > 0 ? 5 : 10;
-                    }
-                    return {
-                        quriousAugs: r,
-                        theseExtraPoints: a,
-                        newArmorSkills: {},
-                        newDecoSkills: [ 0, 0, 0, 0 ],
-                        arr: !g
-                    };
-                })(r, k);
-                P && (k.some((e => null == e.name)) && console.log(k), A.push({
-                    usedSkills: [].concat(h, Object.entries(m), Object.entries(e)),
-                    armors: [ [ k[0].name, k[0] ], [ k[1].name, k[1] ], [ k[2].name, k[2] ], [ k[3].name, k[3] ], [ k[4]?.name, k[4] ] ],
-                    remainingSlots: B,
-                    quriousSkills: S,
-                    armorSkills: R,
+                const r = l(h, m.slice(0)), {quriousAugs: d, theseExtraPoints: A, newArmorSkills: B, newDecoSkills: P, arr: M} = S(r, g);
+                M ? (g.some((e => null == e.name)) && console.log(g), R.push({
+                    usedSkills: [].concat(d, Object.entries(f), Object.entries(e)),
+                    armors: [ [ g[0].name, g[0] ], [ g[1].name, g[1] ], [ g[2].name, g[2] ], [ g[3].name, g[3] ], [ g[4]?.name, g[4] ] ],
+                    remainingSlots: P,
+                    quriousSkills: A,
+                    armorSkills: B,
                     thisCharm: e,
-                    decoArr: f
-                }));
-            })), A.length) return A;
+                    decoArr: m
+                })) : k.set(a, "fail");
+            }
+            if (R.length) return R;
         };
     })();
 })();

@@ -28,7 +28,7 @@ if (!self.define) {
 define([ "./workbox-267f3b44" ], (function(e) {
     "use strict";
     e.setCacheNameDetails({
-        prefix: "MHR-Damage-v359288"
+        prefix: "MHR-Damage-v940333"
     }), self.skipWaiting(), e.clientsClaim(), e.precacheAndRoute([ {
         url: "././index.html",
         revision: "3d860d586f9ff991717c644a09af0767"
@@ -77,6 +77,9 @@ define([ "./workbox-267f3b44" ], (function(e) {
     }, {
         url: "./icons/SwitchAxe.png",
         revision: "0a21161fa193b76e93a98087966b049d"
+    }, {
+        url: "./icons/SwordNShield.png",
+        revision: "c99acf64bce8e6b5d231f2f5a5e69d38"
     }, {
         url: "./icons/affinity.png",
         revision: "0ec419a3333e362e573f3d19a43029ff"
@@ -156,6 +159,9 @@ define([ "./workbox-267f3b44" ], (function(e) {
         url: "./icons/lvl4.png",
         revision: "8f49c6489ed1b118e8f4fc34a964d6e2"
     }, {
+        url: "./icons/none.png",
+        revision: "2267444d8a540c49e4869c3cf1a77572"
+    }, {
         url: "./icons/poison.png",
         revision: "274ad71e99002b5909328126552bdbde"
     }, {
@@ -217,7 +223,7 @@ define([ "./workbox-267f3b44" ], (function(e) {
         revision: "2afea898d1858d642d5d42cc31f6c652"
     }, {
         url: "./index.js",
-        revision: "c5ed1c7e957590d569db427470232db5"
+        revision: "3611cc84201b7d53662d35d44656332d"
     }, {
         url: "./index.js.LICENSE.txt",
         revision: "20af1099d203e3d9093786d9bcbfe98c"
@@ -295,7 +301,7 @@ define([ "./workbox-267f3b44" ], (function(e) {
         revision: "7c9b2f4c7790fcb45528624f3a6985f5"
     }, {
         url: "./setBuildWorker.js",
-        revision: "e2e5675d8c3c16c711e52e901af74c50"
+        revision: "8e5e43486ca8eb55fa157cffc56226ec"
     }, {
         url: "./setBuildWorker.js.LICENSE.txt",
         revision: "36d1446cf8bf8bc80349179ac3d288fe"
