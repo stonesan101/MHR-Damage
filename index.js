@@ -160,7 +160,7 @@
                     t += +i.value;
                 }
                 return w(e, t, a.quriousPoints), y([ e ]), b(e), function(e) {
-                    let t = window.info.armor[e][document.getElementById(e).value].def;
+                    let t = v(e).def;
                     document.querySelectorAll(`#${e}Qurious .augmentType`).forEach((e => {
                         1 === e.selectedIndex && (t -= [ 0, 6, 12 ][Math.max(0, e.nextElementSibling.selectedIndex)]);
                     }));
@@ -232,10 +232,10 @@
                     }
                 })((e => {
                     const t = [ [], [], [], [] ];
-                    for (let [a, _, s, l] of e) {
-                        if (!s.includes("Slot lvl")) break;
-                        const e = s.slice(-1) - 1;
-                        for (;l--; ) t[e].push((0, i.addSpaces)(a));
+                    for (let [a, , _, s] of e) {
+                        if (!_?.includes("Slot lvl")) continue;
+                        const e = _.slice(-1) - 1;
+                        for (;s--; ) t[e].push((0, i.addSpaces)(a));
                     }
                     return t;
                 })(_)), s(), (0, i.dataCompile)();
@@ -259,12 +259,9 @@
                 document.querySelectorAll(".charmSlot").forEach(((e, t) => {
                     i[t] = Math.max(0, e.selectedIndex);
                 })), h("charm", i);
-            }, v = e => ({
-                ...window.info.armor[e][document.getElementById(e).value]
-            }), b = (e, t = 0) => {
+            }, v = e => JSON.parse(JSON.stringify(window.info.armor[e][document.getElementById(e).value])), b = (e, t = 0) => {
                 if (!e) return;
                 const a = v(e);
-                document.getElementById(`${e}Qurious`);
                 t += a.quriousPoints;
                 const i = document.querySelectorAll(`#${e}Qurious .augment`), _ = document.querySelectorAll(`#${e}Qurious .augmentType`);
                 for (let e = 0; e < 6; e++) t + +i[e].value.match(/[+-]\d+/) < 0 && (i[e].selectedIndex = 0, 
@@ -273,7 +270,6 @@
             }, k = (e, t) => {
                 [ 2, 3, 4, 0, 1 ].forEach(((a, _) => {
                     const s = document.querySelectorAll(`section.${e} .skillDiv>output`)[a];
-                    a[_];
                     if (!Object.keys(t)[_]) return s.textContent = "", s.parentElement.style.display = "none", 
                     void (s.nextElementSibling.style.display = "none");
                     s.textContent = (0, i.addSpaces)(Object.entries(t)[_].join(" +")), s.parentElement.style.display = "grid", 
@@ -1414,8 +1410,8 @@
                 const e = window.info[l.value].weapons[s.value];
                 document.querySelector(".weapon .div6 output").textContent = e.baseRaw + " Base Raw", 
                 e.baseEle ? (document.querySelector(".weapon .div7 output").textContent = e.baseEle + " Base Element", 
-                document.querySelector(".weapon .div7 img").classList += e.eleType) : l.value.includes("BowGun") ? (document.querySelector(".weapon .div7 img").classList += "ammo", 
-                document.querySelector(".weapon .div7 output").textContent = "Ammo") : (document.querySelector(".weapon .div7 img").src = "./icons/none.png", 
+                document.querySelector(".weapon .div7 img").src = `${window.location.href}icons/${e.baseEle}.png`) : l.value.includes("BowGun") ? (document.querySelector(".weapon .div7 output").textContent = "Ammo", 
+                document.querySelector(".weapon .div7 img").src = `${window.location.href}icons/ammo.png`) : (document.querySelector(".weapon .div7 img").src = "./icons/none.png", 
                 document.querySelector(".weapon .div7 output").textContent = " Non Elemental"), 
                 document.querySelector(".weapon .div8 output").textContent = e.aff + " Base Affinity", 
                 document.querySelectorAll("#weapon .decoDisplay img").forEach((e => {
@@ -1463,16 +1459,18 @@
                 window.info.augIndex[t]--, i.textContent = _[a - 1][0], i.nextElementSibling.textContent = `+${_[a - 1][1]}`;
                 let s = Object.entries(window.info.augs).reduce(((e, [t, a]) => e + a[window.info.augIndex[t]][0]), 0);
                 document.getElementById("weaponQurious").textContent = `Remaining Weapon Augments ${9 - s}/9`;
-            })(e.target))))), document.getElementById("settingsMenuButton").addEventListener("click", (e => document.getElementById("settingsMenu").classList.toggle("augInvis"))), 
-            document.getElementById("skillsMenu").addEventListener("mousedown", (() => {
+            })(e.target))))), document.getElementById("settingsMenuButton").addEventListener("click", (e => {
+                e.target.textContent.includes("Open") ? e.target.textContent = "Close Settings" : e.target.textContent = "Open Settings", 
+                document.getElementById("settingsMenu").classList.toggle("augInvis"), document.getElementById("settingsMenu").style["mix-blend-mode"] = "";
+            })), document.getElementById("skillsMenu").addEventListener("mousedown", (() => {
                 document.getElementById("skillSettings").classList.remove("augInvis"), document.getElementById("monsterSettings").classList.add("augInvis"), 
-                document.getElementById("infoSettings").classList.add("augInvis");
+                document.getElementById("infoSettings").classList.add("augInvis"), document.getElementById("settingsMenu").style["mix-blend-mode"] = "";
             })), document.getElementById("monsterMenu").addEventListener("mousedown", (() => {
                 document.getElementById("skillSettings").classList.add("augInvis"), document.getElementById("monsterSettings").classList.remove("augInvis"), 
-                document.getElementById("infoSettings").classList.add("augInvis");
+                document.getElementById("infoSettings").classList.add("augInvis"), document.getElementById("settingsMenu").style["mix-blend-mode"] = "unset";
             })), document.getElementById("infoMenu").addEventListener("mousedown", (() => {
                 document.getElementById("skillSettings").classList.add("augInvis"), document.getElementById("monsterSettings").classList.add("augInvis"), 
-                document.getElementById("infoSettings").classList.remove("augInvis");
+                document.getElementById("infoSettings").classList.remove("augInvis"), document.getElementById("settingsMenu").style["mix-blend-mode"] = "unset";
             })), document.querySelector("#questButton").addEventListener("mousedown", (() => c())), 
             document.querySelector(".extraSkills").addEventListener("mousedown", (e => {
                 "BUTTON" !== e.target.tagName || e.target?.classList[0] || ((0, i.addPoints)(e.target.textContent.split(" +")), 
