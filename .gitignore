@@ -3,7 +3,6 @@ yarn.lock
 LICENSE.md
 README.md
 .babelrc
-test
 target
 whitespaceRulesreact
 react
@@ -30,11 +29,10 @@ setBuilderWorker.js
 setCreation.js
 json/armorHR
 node_modules
-# .eslintrc.cjs
+.eslintrc.cjs
 # .hintrc
 # .jshintrc
-.json
-# .prettierrc.json
+.prettierrc.json
 cspell.json
 jsconfig.json
 package-lock.json
@@ -52,16 +50,14 @@ Stone_s Sunbreak Damage Optimizer_files/new.css
 Stone_s Sunbreak Damage Optimizer_files/playground.js.download
 Stone_s Sunbreak Damage Optimizer_files/setCreation.js.download
 Stone_s Sunbreak Damage Optimizer_files/utilities.js.download
-.eslintrc.json
 qurious.js
 json/cd
 .jshintrc
 .hintrc
-.prettierrc.json
 babelrc
 *.cjs
-wallaby.js
 .map
+test.js
 /srcfiles
 temp.js
 /maps
@@ -82,3 +78,4 @@ coverage/lcov-report/sorter.js
 coverage/lcov.info
 quokka.json
 viet.config.js
+wallaby.js
