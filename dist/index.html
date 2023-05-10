@@ -1,4 +1,4 @@
-<meta charset='utf-8'>
+<head><script defer src="/index.js"></script><script defer src="/setBuildWorker.js"></script><link href="/index.css" rel="stylesheet"></head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <meta name="description" content="MHR-Sunbreak Set Builder and Damage Calculator a website created to help you 
 optimize your game-play. It can answer any optimization questions you may have and help you 
@@ -8,7 +8,16 @@ in-game, allowing you to quickly and easily compare builds.">
 <meta name='keywords' content='MHR, MHR-S, Rise Database, Monster Hunter, Sunbreak, Set Searcher, Set Builder, 
 Sunbreak Database, Damage, Optimization, Calculations'>
 <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-<link rel="stylesheet" type="text/css" href="./dist/index.css">
+<link rel="preload" href="./srcfiles/json/monster.json" as="fetch" type="application/json" crossorigin="anonymous" />
+<link rel="preload" href="./srcfiles/json/rampage.json" as="fetch" type="application/json" crossorigin="anonymous" />
+<link rel="preload" href="./srcfiles/json/quest.json" as="fetch" type="application/json" crossorigin="anonymous" />
+<link rel="preload" href="./srcfiles/json/skills.json" as="fetch" type="application/json" crossorigin="anonymous" />
+<link rel="preload" href="./srcfiles/json/types.json" as="fetch" type="application/json" crossorigin="anonymous" />
+<link rel="preload" href="./srcfiles/json/armor.json" as="fetch" type="application/json" crossorigin="anonymous" />
+<link rel="preload" href="./srcfiles/json/LightBowGun.json" as="fetch" type="application/json" crossorigin="anonymous" />
+<link rel="preload" href="./srcfiles/json/ammo.json" as="fetch" type="application/json" crossorigin="anonymous" />
+<link rel="preload" href="./srcfiles/json/charms.json" as="fetch" type="application/json" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="./srcfiles/styles.css">
 <link rel='preload' href='./srcfiles/icons/ramp2.png' as='image'>
 <link rel='preload' href='./srcfiles/icons/lvl1.png' as='image'>
 <link rel='preload' href='./srcfiles/icons/lvl2.png' as='image'>
@@ -35,6 +44,7 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 
 </script>
 <!-- <script defer type="text/javascript" src="/_vercel/insights/script.js"></script> -->
+
 
 <body>
     <noscript><iframe height=0 src="https://www.googletagmanager.com/ns.html?id=GTM-WRH4G56"
@@ -133,43 +143,43 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 
                             <div class="dropContainer Bow">
 
-                                <label for="BowCoating">Bow Coatings</label>
+                                <label for="BowCoating">Bow Coatings
 
-                                <select class="skill classSpecific Bow" id="BowCoating" title="Bow Coatings">
+                                    <select class="skill classSpecific Bow" id="BowCoating" title="Bow Coatings">
 
-                                    <option>Close-range</option>
+                                        <option>Close-range</option>
 
-                                    <option>Power</option>
-                                </select>
+                                        <option>Power</option>
+                                    </select>
                             </div>
 
                             <div id="BowGunId" class="dropContainer div2 NewArmorDisplay">
 
-                                <label for="BowgunBarrel" class="NewArmorDisplay"> Gun Barrel</label>
+                                <label for="BowgunBarrel" class="NewArmorDisplay"> Gun Barrel
 
-                                <select class="LightBowGun HeavyBowGun classSpecific skill NewArmorDisplay"
-                                        id="BowgunBarrel" title="BarrelSelection">
+                                    <select class="LightBowGun HeavyBowGun classSpecific skill NewArmorDisplay"
+                                            id="BowgunBarrel" title="BarrelSelection">
 
-                                    <option value="{&quot;Element&quot;:1,&quot;Power&quot;:1,&quot;Silencer&quot;:0,&quot;reload&quot;:0}"
-                                            class="NewArmorDisplay">
-                                        ----
+                                        <option value="{&quot;Element&quot;:1,&quot;Power&quot;:1,&quot;Silencer&quot;:0,&quot;reload&quot;:0}"
+                                                class="NewArmorDisplay">
+                                            ----
 
-                                    <option value="{&quot;Element&quot;:1,&quot;Power&quot;:1.05,&quot;Silencer&quot;:0,&quot;reload&quot;:0}"
-                                            class="NewArmorDisplay">
-                                        Long
+                                        <option value="{&quot;Element&quot;:1,&quot;Power&quot;:1.05,&quot;Silencer&quot;:0,&quot;reload&quot;:0}"
+                                                class="NewArmorDisplay">
+                                            Long
 
-                                    <option value="{&quot;Element&quot;:1,&quot;Power&quot;:1.125,&quot;Silencer&quot;:0,&quot;reload&quot;:0}"
-                                            class="NewArmorDisplay">
-                                        Power
+                                        <option value="{&quot;Element&quot;:1,&quot;Power&quot;:1.125,&quot;Silencer&quot;:0,&quot;reload&quot;:0}"
+                                                class="NewArmorDisplay">
+                                            Power
 
-                                    <option value="{&quot;Element&quot;:1,&quot;Power&quot;:1,&quot;Silencer&quot;:1,&quot;reload&quot;:0}"
-                                            class="NewArmorDisplay">
-                                        Silencer
+                                        <option value="{&quot;Element&quot;:1,&quot;Power&quot;:1,&quot;Silencer&quot;:1,&quot;reload&quot;:0}"
+                                                class="NewArmorDisplay">
+                                            Silencer
 
-                                    <option value="{&quot;Element&quot;:1.1,&quot;Power&quot;:1,&quot;Silencer&quot;:0,&quot;reload&quot;:-2}"
-                                            class="NewArmorDisplay">
-                                        Guard-Up
-                                </select>
+                                        <option value="{&quot;Element&quot;:1.1,&quot;Power&quot;:1,&quot;Silencer&quot;:0,&quot;reload&quot;:-2}"
+                                                class="NewArmorDisplay">
+                                            Guard-Up
+                                    </select>
                             </div>
 
                             <div class="div3 NewArmorDisplay">
@@ -267,7 +277,7 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 
                             <div class="skillDiv div7 NewArmorDisplay">
 
-                                <output class="NewArmorDisplay"> 0 </output>
+                                <output class="NewArmorDisplay"> 0 Element</output>
 
                                 <img class="armorImg armorDeco rampage NewArmorDisplay" src="./srcfiles/icons/none.png"
                                      alt="Weapon Element">
@@ -337,12 +347,12 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 
                                     <button class="augButton inc attackAug" aria-pressed=false value=2>⇧</button>
 
-                                    <label for=attackAug>Attack Boost</label>
+                                    <label for=attackAug>Attack Boost
 
-                                    <output class="label augLabel attackAug">0</output>
+                                        <output class="label augLabel attackAug">0</output>
 
-                                    <output class=label id=attackResult>+
-                                        0</output>
+                                        <output class=label id=attackResult>+
+                                            0</output>
                                 </div>
 
                                 <div class=augDiv style=display:none>
@@ -353,12 +363,12 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                                     <button class="augButton inc elementalAug" type=button aria-pressed=false
                                             value=1>⇧</button>
 
-                                    <label for=elementalAug>Elemental Boost</label>
+                                    <label for=elementalAug>Elemental Boost
 
-                                    <output
-                                            class="classSpecific ChargeBlade Gunlance GreatSword Hammer Lance LongSword SwordNShield DualBlades HuntingHorn InsectGlaive SwitchAxe Bow augLabel elementalAug label">0</output>
+                                        <output
+                                                class="classSpecific ChargeBlade Gunlance GreatSword Hammer Lance LongSword SwordNShield DualBlades HuntingHorn InsectGlaive SwitchAxe Bow augLabel elementalAug label">0</output>
 
-                                    <output class=label id=elementalResult>+ 0</output>
+                                        <output class=label id=elementalResult>+ 0</output>
                                 </div>
 
                                 <div class=augDiv>
@@ -369,11 +379,11 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                                     <button class="augButton inc affinityAug" type=button aria-pressed=false
                                             value=3>⇧</button>
 
-                                    <label for=affinityAug>Affinity Boost</label>
+                                    <label for=affinityAug>Affinity Boost
 
-                                    <output class="label augLabel affinityAug">0</output>
+                                        <output class="label augLabel affinityAug">0</output>
 
-                                    <output class=label id=affinityResult>+ 0</output>
+                                        <output class=label id=affinityResult>+ 0</output>
                                 </div>
 
                                 <div class=augDiv style=display:none>
@@ -384,12 +394,12 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                                     <button class="augButton inc sharpnessAug" type=button aria-pressed=false
                                             value=3>⇧</button>
 
-                                    <label for=sharpnessAug>Sharpness Boost</label>
+                                    <label for=sharpnessAug>Sharpness Boost
 
-                                    <output
-                                            class="classSpecific ChargeBlade Gunlance GreatSword Hammer Lance LongSword SwordNShield DualBlades HuntingHorn InsectGlaive SwitchAxe augLabel label sharpnessAug">0</output>
+                                        <output
+                                                class="classSpecific ChargeBlade Gunlance GreatSword Hammer Lance LongSword SwordNShield DualBlades HuntingHorn InsectGlaive SwitchAxe augLabel label sharpnessAug">0</output>
 
-                                    <output class=label id=sharpnessResult>+0</output>
+                                        <output class=label id=sharpnessResult>+0</output>
                                 </div>
 
                                 <div class=augDiv>
@@ -400,11 +410,12 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                                     <button class="augButton inc rampageAug" type=button aria-pressed=false
                                             value=4>⇧</button>
 
-                                    <label for=rampageAug>Rampage Slot UP</label>
+                                    <label for=rampageAug>Rampage Slot
+                                        UP
 
-                                    <output class="label augLabel rampageAug">0</output>
+                                        <output class="label augLabel rampageAug">0</output>
 
-                                    <output class=label id=rampageResult>+0</output>
+                                        <output class=label id=rampageResult>+0</output>
                                 </div>
                             </section>
                         </section>
@@ -1768,26 +1779,28 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 
         <section class=augInvis>
 
-            <label for=Sharpness>Sharpness</label>
+            <label for=Sharpness>Sharpness
 
-            <select id=Sharpness title=Sharpness>
+                <label>
 
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---
+                    <select id=Sharpness title=Sharpness>
 
-                <option value='{"BRM":1,"BR":0,"PRM":0.5,"BEM":1,"BE":0,"PEM":0.25,"aff":0}'>red
+                        <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":1,"aff":0}'>---
 
-                <option value='{"BRM":1,"BR":0,"PRM":0.75,"BEM":1,"BE":0,"PEM":0.5,"aff":0}'>Orange
+                        <option value='{"BRM":1,"BR":0,"PRM":0.5,"BEM":1,"BE":0,"PEM":0.25,"aff":0}'>red
 
-                <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":0.75,"aff":0}'>Yellow
+                        <option value='{"BRM":1,"BR":0,"PRM":0.75,"BEM":1,"BE":0,"PEM":0.5,"aff":0}'>Orange
 
-                <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Green
+                        <option value='{"BRM":1,"BR":0,"PRM":1,"BEM":1,"BE":0,"PEM":0.75,"aff":0}'>Yellow
 
-                <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1.0625,"aff":0}'>Blue
+                        <option value='{"BRM":1,"BR":0,"PRM":1.05,"BEM":1,"BE":0,"PEM":1,"aff":0}'>Green
 
-                <option value='{"BRM":1,"BR":0,"PRM":1.32,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>White
+                        <option value='{"BRM":1,"BR":0,"PRM":1.2,"BEM":1,"BE":0,"PEM":1.0625,"aff":0}'>Blue
 
-                <option value='{"BRM":1,"BR":0,"PRM":1.39,"BEM":1,"BE":0,"PEM":1.25,"aff":0}'>Purple
-            </select>
+                        <option value='{"BRM":1,"BR":0,"PRM":1.32,"BEM":1,"BE":0,"PEM":1.15,"aff":0}'>White
+
+                        <option value='{"BRM":1,"BR":0,"PRM":1.39,"BEM":1,"BE":0,"PEM":1.25,"aff":0}'>Purple
+                    </select>
         </section>
 
         <section id=section2>
@@ -2010,251 +2023,264 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                         <label for="DemonDrug" class="check">DemonDrug
 
                             <input id="DemonDrug" type="checkbox" class="check skillButton" data-tooltip="DemonDrug"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:5,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
-                                   checked=""></label>
+                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:5,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
 
-                        <label for="MegaDemonDrug" class="check">Mega DemonDrug
+                            <label for="MegaDemonDrug" class="check">Mega DemonDrug
 
-                            <input id="MegaDemonDrug" type="checkbox" class="check skillButton"
-                                   data-tooltip="Mega DemonDrug"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:7,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
-                                   checked="checked"></label>
+                                <input id="MegaDemonDrug" type="checkbox" class="check skillButton"
+                                       data-tooltip="Mega DemonDrug"
+                                       value="{&quot;BRM&quot;:1,&quot;BR&quot;:7,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
+                                       checked="checked">
 
-                        <label for="PowerCharm" class="check">PowerCharm
+                                <label for="PowerCharm" class="check">PowerCharm
 
-                            <input id="PowerCharm" type="checkbox" class="check skillButton" data-tooltip="Power Charm"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:7,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
-                                   checked="checked"></label>
+                                    <input id="PowerCharm" type="checkbox" class="check skillButton"
+                                           data-tooltip="Power Charm"
+                                           value="{&quot;BRM&quot;:1,&quot;BR&quot;:7,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
+                                           checked="checked">
 
-                        <label for="PowerTalisman" class="check">PowerTalisman
+                                    <label for="PowerTalisman" class="check">PowerTalisman
 
-                            <input id="PowerTalisman" type="checkbox" class="check skillButton"
-                                   data-tooltip="Power Talisman"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:8,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
-                                   checked="checked"></label>
+                                        <input id="PowerTalisman" type="checkbox" class="check skillButton"
+                                               data-tooltip="Power Talisman"
+                                               value="{&quot;BRM&quot;:1,&quot;BR&quot;:8,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
+                                               checked="checked">
 
-                        <label for="DemonSeed" class="check">DemonSeed
+                                        <label for="DemonSeed" class="check">DemonSeed
 
-                            <input id="DemonSeed" type="checkbox" class="check skillButton" data-tooltip="Demon Seed"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
-                                   checked="checked"></label>
+                                            <input id="DemonSeed" type="checkbox" class="check skillButton"
+                                                   data-tooltip="Demon Seed"
+                                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
+                                                   checked="checked">
 
-                        <label for="Demon Powder" class="check">Demon Powder
+                                            <label for="Demon Powder" class="check">Demon Powder
 
-                            <input id="Demon Powder" type="checkbox" class="check skillButton"
-                                   data-tooltip="Demon Powder"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
-                                   checked="checked"></label>
+                                                <input id="Demon Powder" type="checkbox" class="check skillButton"
+                                                       data-tooltip="Demon Powder"
+                                                       value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
+                                                       checked="checked">
 
-                        <label for="powerDrum" class="check">Power Drum
+                                                <label for="powerDrum" class="check">Power Drum
 
-                            <input id="powerDrum" type="checkbox" class="check skillButton" data-tooltip="Power Drum"
-                                   value="{&quot;BRM&quot;:1.05,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
-                                   checked=""></label>
+                                                    <input id="powerDrum" type="checkbox" class="check skillButton"
+                                                           data-tooltip="Power Drum"
+                                                           value="{&quot;BRM&quot;:1.05,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
+                                                           checked="checked">
 
-                        <label for="palicoaff" class="check">Palico Affinity
+                                                    <label for="palicoaff" class="check">Palico Affinity
 
-                            <input id="palicoaff" type="checkbox" class="check skillButton"
-                                   data-tooltip="Palico Affinity Buff"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:30}"
-                                   checked=""></label>
+                                                        <input id="palicoaff" type="checkbox" class="check skillButton"
+                                                               data-tooltip="Palico Affinity Buff"
+                                                               value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:30}"
+                                                               checked="checked">
 
-                        <label for="DemonAmmo" class="check">Demon Ammo
+                                                        <label for="DemonAmmo" class="check">Demon Ammo
 
-                            <input id="DemonAmmo" type="checkbox" class="check skillButton" data-tooltip="Demon Ammo"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
-                                   checked=""></label>
+                                                            <input id="DemonAmmo" type="checkbox"
+                                                                   class="check skillButton" data-tooltip="Demon Ammo"
+                                                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:10,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
 
-                        <label for="ButterFlame" class="check">ButterFlame
+                                                            <label for="ButterFlame" class="check">ButterFlame
 
-                            <input id="ButterFlame" type="checkbox" class="check skillButton" data-tooltip="ButterFlame"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:25,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
-                                   checked=""></label>
+                                                                <input id="ButterFlame" type="checkbox"
+                                                                       class="check skillButton"
+                                                                       data-tooltip="ButterFlame"
+                                                                       value="{&quot;BRM&quot;:1,&quot;BR&quot;:25,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
+                                                                       checked="checked">
 
-                        <label for="WaterBlight" class="check">Water Blight
+                                                                <label for="WaterBlight" class="check">Water Blight
 
-                            <input id="WaterBlight" type="checkbox" class="check" data-tooltip="Water Blight"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
-                                   checked=""></label>
+                                                                    <input id="WaterBlight" type="checkbox"
+                                                                           class="check" data-tooltip="Water Blight"
+                                                                           value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
 
-                        <label for="sleepWakeUp" class="check">Sleep Wake Up
+                                                                    <label for="sleepWakeUp" class="check">Sleep Wake Up
 
-                            <input id="sleepWakeUp" type="checkbox" class="check skillButton"
-                                   data-tooltip="Sleep Wake-Up"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:2,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:2,&quot;aff&quot;:0}"
-                                   checked=""></label>
+                                                                        <input id="sleepWakeUp" type="checkbox"
+                                                                               class="check skillButton"
+                                                                               data-tooltip="Sleep Wake-Up"
+                                                                               value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:2,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:2,&quot;aff&quot;:0}">
 
-                        <label for="HuntingHornAttack" class="check">HuntingHorn Attack
+                                                                        <label for="HuntingHornAttack"
+                                                                               class="check">HuntingHorn Attack
 
-                            <input id="HuntingHornAttack" type="checkbox" class="check skillButton"
-                                   data-tooltip="HuntingHorn Attack Buff"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}"
-                                   checked=""></label>
+                                                                            <input id="HuntingHornAttack"
+                                                                                   type="checkbox"
+                                                                                   class="check skillButton"
+                                                                                   data-tooltip="HuntingHorn Attack Buff"
+                                                                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1.1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:0}">
 
-                        <label for="HuntingHornAffinity" class="check">Hunting Horn Affinity
+                                                                            <label for="HuntingHornAffinity"
+                                                                                   class="check">Hunting Horn Affinity
 
-                            <input id="HuntingHornAffinity" type="checkbox" class="check skillButton"
-                                   data-tooltip="HuntingHorn Affinity"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:20}"
-                                   checked=""></label>
+                                                                                <input id="HuntingHornAffinity"
+                                                                                       type="checkbox"
+                                                                                       class="check skillButton"
+                                                                                       data-tooltip="HuntingHorn Affinity"
+                                                                                       value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1,&quot;aff&quot;:20}">
 
-                        <label for="HuntingHornElemental" class="check">HuntingHorn Element
+                                                                                <label for="HuntingHornElemental"
+                                                                                       class="check">HuntingHorn Element
 
-                            <input id="HuntingHornElemental" type="checkbox" class="check skillButton"
-                                   data-tooltip="HuntingHorn Elemental"
-                                   value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.1,&quot;aff&quot;:0}"
-                                   checked=""></label>
+                                                                                    <input id="HuntingHornElemental"
+                                                                                           type="checkbox"
+                                                                                           class="check skillButton"
+                                                                                           data-tooltip="HuntingHorn Elemental"
+                                                                                           value="{&quot;BRM&quot;:1,&quot;BR&quot;:0,&quot;PRM&quot;:1,&quot;BEM&quot;:1,&quot;BE&quot;:0,&quot;PEM&quot;:1.1,&quot;aff&quot;:0}">
 
-                        <label for="ProtectivePolish" class="check">Protective
-                            Polish
+                                                                                    <label for="ProtectivePolish"
+                                                                                           class="check">Protective
+                                                                                        Polish
 
-                            <input id="ProtectivePolish" type="checkbox" class="check" data-tooltip="Protective Polish"
-                                   checked=""></label>
+                                                                                        <input id="ProtectivePolish"
+                                                                                               type="checkbox"
+                                                                                               class="check"
+                                                                                               data-tooltip="Protective Polish">
                     </div>
 
                     <div class="LightBowGun buildSkills" id="dango">
 
                         <div class="dropContainer">
 
-                            <label for="Booster">Booster</label>
+                            <label for="Booster">Booster
 
-                            <select class="skill" id="Booster" title="Booster">
+                                <select class="skill" id="Booster" title="Booster">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option>Lv-1</option>
+                                    <option>Lv-1</option>
 
-                                <option>Lv-2</option>
+                                    <option>Lv-2</option>
 
-                                <option>Lv-3</option>
+                                    <option>Lv-3</option>
 
-                                <option>Lv-4</option>
-                            </select>
+                                    <option>Lv-4</option>
+                                </select>
                         </div>
 
                         <div class="dropContainer">
 
-                            <label for="Bombardier">Bombardier</label>
+                            <label for="Bombardier">Bombardier
 
-                            <select class="skill classSpecific LightBowGun HeavyBowGun ChargeBlade Gunlance"
-                                    id="Bombardier" title="Bombardier">
+                                <select class="skill classSpecific LightBowGun HeavyBowGun ChargeBlade Gunlance"
+                                        id="Bombardier" title="Bombardier">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option>Lv-1</option>
+                                    <option>Lv-1</option>
 
-                                <option>Lv-2</option>
+                                    <option>Lv-2</option>
 
-                                <option>Lv-3</option>
+                                    <option>Lv-3</option>
 
-                                <option>Lv-4</option>
-                            </select>
+                                    <option>Lv-4</option>
+                                </select>
                         </div>
 
                         <div class="dropContainer">
 
-                            <label for="Adrenaline" class="thisWidth">Adrenaline</label>
+                            <label for="Adrenaline" class="thisWidth">Adrenaline
 
-                            <select class="skill" id="Adrenaline" title="Adrenaline">
+                                <select class="skill" id="Adrenaline" title="Adrenaline">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option>Lv-1</option>
+                                    <option>Lv-1</option>
 
-                                <option>Lv-2</option>
+                                    <option>Lv-2</option>
 
-                                <option>Lv-3</option>
+                                    <option>Lv-3</option>
 
-                                <option>Lv-4</option>
-                            </select>
+                                    <option>Lv-4</option>
+                                </select>
                         </div>
 
                         <div class="dropContainer">
 
-                            <label for="DangoTemper">Temper</label>
+                            <label for="DangoTemper">Temper
 
-                            <select class="skill classSpecific LightBowGun HeavyBowGun Bow" id="DangoTemper"
-                                    title="Dango Temper">
+                                <select class="skill classSpecific LightBowGun HeavyBowGun Bow" id="DangoTemper"
+                                        title="Dango Temper">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option>Lv-1</option>
+                                    <option>Lv-1</option>
 
-                                <option>Lv-2</option>
+                                    <option>Lv-2</option>
 
-                                <option>Lv-3</option>
+                                    <option>Lv-3</option>
 
-                                <option>Lv-4</option>
-                            </select>
+                                    <option>Lv-4</option>
+                                </select>
                         </div>
 
                         <div class="dropContainer">
 
-                            <label for="Marksman">Marksman</label>
+                            <label for="Marksman">Marksman
 
-                            <select class="skill classSpecific LightBowGun HeavyBowGun Bow" id="Marksman"
-                                    title="Marksman">
+                                <select class="skill classSpecific LightBowGun HeavyBowGun Bow" id="Marksman"
+                                        title="Marksman">
 
-                                <option value="[1,1]">----</option>
+                                    <option value="[1,1]">----</option>
 
-                                <option value="[1.05,1.015]">Lv-1</option>
+                                    <option value="[1.05,1.015]">Lv-1</option>
 
-                                <option value="[1.1,1.03]">Lv-2</option>
+                                    <option value="[1.1,1.03]">Lv-2</option>
 
-                                <option value="[1.05,1.045]">Lv-3</option>
+                                    <option value="[1.05,1.045]">Lv-3</option>
 
-                                <option value="[1.1,1.06]">Lv-4</option>
-                            </select>
+                                    <option value="[1.1,1.06]">Lv-4</option>
+                                </select>
                         </div>
 
                         <div class="dropContainer">
 
-                            <label for="Spiribird">Spiribird</label>
+                            <label for="Spiribird">Spiribird
 
-                            <select class="skill" id="Spiribird" title="Spiribird">
+                                <select class="skill" id="Spiribird" title="Spiribird">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option>Lv-1</option>
+                                    <option>Lv-1</option>
 
-                                <option>Lv-2</option>
+                                    <option>Lv-2</option>
 
-                                <option>Lv-3</option>
+                                    <option>Lv-3</option>
 
-                                <option>Lv-4</option>
+                                    <option>Lv-4</option>
 
-                                <option>Lv-5</option>
+                                    <option>Lv-5</option>
 
-                                <option>Lv-6</option>
+                                    <option>Lv-6</option>
 
-                                <option>Lv-7</option>
+                                    <option>Lv-7</option>
 
-                                <option>Lv-8</option>
+                                    <option>Lv-8</option>
 
-                                <option>Lv-9</option>
+                                    <option>Lv-9</option>
 
-                                <option>Lv-10</option>
+                                    <option>Lv-10</option>
 
-                                <option>Lv-11</option>
+                                    <option>Lv-11</option>
 
-                                <option>Lv-12</option>
+                                    <option>Lv-12</option>
 
-                                <option>Lv-13</option>
+                                    <option>Lv-13</option>
 
-                                <option>Lv-14</option>
+                                    <option>Lv-14</option>
 
-                                <option>Lv-15</option>
+                                    <option>Lv-15</option>
 
-                                <option>Lv-16</option>
+                                    <option>Lv-16</option>
 
-                                <option>Lv-17</option>
+                                    <option>Lv-17</option>
 
-                                <option>Lv-18</option>
+                                    <option>Lv-18</option>
 
-                                <option>Lv-19</option>
+                                    <option>Lv-19</option>
 
-                                <option>Lv-20</option>
-                            </select>
+                                    <option>Lv-20</option>
+                                </select>
                         </div>
                     </div>
 
@@ -2262,272 +2288,282 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="Kinsect Buff">Kinsect Buff</label>
+                            <label for="Kinsect Buff">Kinsect
+                                Buff
 
-                            <select class="skill classSpecific InsectGlaive" id="KinsectBuff" title="Kinsect Buff">
+                                <select class="skill classSpecific InsectGlaive" id="KinsectBuff" title="Kinsect Buff">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
+                                    <option></option>
 
-                                <option></option>
+                                    <option></option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="SpiritGauge">Spirit Gauge</label>
+                            <label for="SpiritGauge">Spirit
+                                Gauge
 
-                            <select class="skill classSpecific LongSword" id="SpiritGauge" title="SpiritGauge">
+                                <select class="skill classSpecific LongSword" id="SpiritGauge" title="SpiritGauge">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
+                                    <option></option>
 
-                                <option></option>
+                                    <option></option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="Helmbreaker">HelmBreaker</label>
+                            <label for="Helmbreaker">HelmBreaker
 
-                            <select class="skill classSpecific LongSword" id="Helmbreaker" title="LongSword">
+                                <select class="skill classSpecific LongSword" id="Helmbreaker" title="LongSword">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
+                                    <option></option>
 
-                                <option></option>
+                                    <option></option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="SerenePose">Serene Pose</label>
+                            <label for="SerenePose">Serene
+                                Pose
 
-                            <select class="skill classSpecific LongSword" id="SerenePose" title="LongSword">
+                                <select class="skill classSpecific LongSword" id="SerenePose" title="LongSword">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
+                                    <option></option>
 
-                                <option></option>
+                                    <option></option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="SavageAxe">Savage Axe</label>
+                            <label for="SavageAxe">Savage Axe
 
-                            <select class="skill classSpecific ChargeBlade" id="SavageAxe" title="Savage Axe">
+                                <select class="skill classSpecific ChargeBlade" id="SavageAxe" title="Savage Axe">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="ImpactShieldCharge">Shield Charge</label>
+                            <label for="ImpactShieldCharge">Shield
+                                Charge
 
-                            <select class="skill classSpecific ChargeBlade" id="ImpactShieldCharge"
-                                    title="ImpactShieldCharge">
+                                <select class="skill classSpecific ChargeBlade" id="ImpactShieldCharge"
+                                        title="ImpactShieldCharge">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="StrongarmStance">StrongarmStance</label>
+                            <label for="StrongarmStance">&gt;StrongarmStance
 
-                            <select class="skill classSpecific GreatSword" id="StrongarmStance" title="StrongarmStance">
+                                <select class="skill classSpecific GreatSword" id="StrongarmStance"
+                                        title="StrongarmStance">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option>Active</option>
-                            </select>
+                                    <option>Active</option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="PowerSheath">Power Sheath</label>
+                            <label for="PowerSheath">Power
+                                Sheath
 
-                            <select class="skill classSpecific GreatSword" id="PowerSheath" title="PowerSheath">
+                                <select class="skill classSpecific GreatSword" id="PowerSheath" title="PowerSheath">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option>Active</option>
-                            </select>
+                                    <option>Active</option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="ArchdemonMode">Archdemon Mode</label>
+                            <label for="ArchdemonMode">Archdemon
+                                Mode
 
-                            <select class="skill classSpecific demon DualBlades" id="ArchdemonMode"
-                                    title="ArchdemonMode">
+                                <select class="skill classSpecific demon DualBlades" id="ArchdemonMode"
+                                        title="ArchdemonMode">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="DemonMode">Demon Mode</label>
+                            <label for="DemonMode">Demon Mode
 
-                            <select class="skill classSpecific demon DualBlades" id="DemonMode" title="DemonMode">
+                                <select class="skill classSpecific demon DualBlades" id="DemonMode" title="DemonMode">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="FeralDemonMode">Feral Demon Mode</label>
+                            <label for="FeralDemonMode">Feral Demon
+                                Mode
 
-                            <select class="skill classSpecific demon DualBlades" id="FeralDemonMode"
-                                    title="FeralDemonMode">
+                                <select class="skill classSpecific demon DualBlades" id="FeralDemonMode"
+                                        title="FeralDemonMode">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="EleShieldCharge">Shield Charge</label>
-                            Ele
+                            <label for="EleShieldCharge">Shield Charge
+                                Ele
 
-                            <select class="skill classSpecific ChargeBlade" id="EleShieldCharge"
-                                    title="EleShieldCharge">
+                                <select class="skill classSpecific ChargeBlade" id="EleShieldCharge"
+                                        title="EleShieldCharge">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer">
 
-                            <label for="EvadeHop">Evade Hop</label>
+                            <label for="EvadeHop">Evade Hop
 
-                            <select class="skill classSpecific LightBowGun" id="EvadeHop" title="Evade Hop">
+                                <select class="skill classSpecific LightBowGun" id="EvadeHop" title="Evade Hop">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option>Lv-1</option>
-                            </select>
+                                    <option>Lv-1</option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="HerculesDraw">Hercules</label>
-                            Draw
+                            <label for="HerculesDraw">Hercules
+                                Draw
 
-                            <select class="skill classSpecific Bow" id="HerculesDraw" title="HerculesDraw">
+                                <select class="skill classSpecific Bow" id="HerculesDraw" title="HerculesDraw">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="UpperCrit">Upper Critical</label>
-                            Distance
+                            <label for="UpperCrit">Upper Critical
+                                Distance
 
-                            <select class="skill classSpecific Bow" id="UpperCrit" title="Upper Crit">
+                                <select class="skill classSpecific Bow" id="UpperCrit" title="Upper Crit">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer">
 
-                            <label for="FanningManeuver">Fanning Maneuver</label>
+                            <label for="FanningManeuver">Fanning Maneuver
 
-                            <select class="skill classSpecific LightBowGun" id="FanningManeuver"
-                                    title="Fanning Maneuver">
+                                <select class="skill classSpecific LightBowGun" id="FanningManeuver"
+                                        title="Fanning Maneuver">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer">
 
-                            <label for="ElementalReload">Ele Reload</label>
+                            <label for="ElementalReload">Ele Reload
 
-                            <select class="skill classSpecific LightBowGun" id="ElementalReload"
-                                    title="ElementalReload">
+                                <select class="skill classSpecific LightBowGun" id="ElementalReload"
+                                        title="ElementalReload">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option>Lv-1</option>
-                            </select>
+                                    <option>Lv-1</option>
+                                </select>
                         </div>
 
                         <div class="dropContainer">
 
-                            <label for="CriticalFirePower">Crit Fire Power</label>
+                            <label for="CriticalFirePower">Crit Fire Power
 
-                            <select class="skill classSpecific LightBowGun" id="CriticalFirePower"
-                                    title="CriticalFirePower">
+                                <select class="skill classSpecific LightBowGun" id="CriticalFirePower"
+                                        title="CriticalFirePower">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option>Lv-1</option>
-                            </select>
+                                    <option>Lv-1</option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="ChargeLevel">Charge Level</label>
+                            <label for="ChargeLevel">Charge
+                                Level
 
-                            <select class="skill classSpecific HeavyBowGun" id="ChargeLevel" title="ChargeLevel">
+                                <select class="skill classSpecific HeavyBowGun" id="ChargeLevel" title="ChargeLevel">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
+                                    <option></option>
 
-                                <option></option>
+                                    <option></option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
 
                         <div class="dropContainer" style="display: none;">
 
-                            <label for="LanceCharge">Lance Charge</label>
+                            <label for="LanceCharge">Lance
+                                Charge
 
-                            <select class="skill classSpecific Lance" id="LanceCharge" title="LanceCharge">
+                                <select class="skill classSpecific Lance" id="LanceCharge" title="LanceCharge">
 
-                                <option>----</option>
+                                    <option>----</option>
 
-                                <option></option>
-                            </select>
+                                    <option></option>
+                                </select>
                         </div>
                     </div>
 
@@ -2624,14 +2660,14 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                         <label class="check" data-tooltip="Adds The Extra Stats Gained From
  Weapon Augment Upgrades" for="augUpgrades">Weapon Augment Bonuses
 
-                            <input id="augUpgrades" type="checkbox" class="check"></label>
+                            <input id="augUpgrades" type="checkbox" class="check">
 
                             <label data-tooltip="Allows You To Set The Charm Slots
- For You And The Set Builder">Set Available Charm Slots</label>
+ For You And The Set Builder">Set Available Charm Slots
 
                                 <section id="charmSlots">
 
-                                    <label for="skillsLimit">Limit Build Augments</label>
+                                    <label for="skillsLimit">Charm Slot 1</label>
 
                                     <select id="skillsLimit" class="setLimiter">
 
@@ -2646,44 +2682,44 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                                         <option>Occasional Slots Only</option>
                                     </select>
 
-                                    <label for="slot1">Charm Slot 1</label>
+                                    <label for="slot1">Charm Slot 1
 
-                                    <select id="slot1" class="charmSlot">
+                                        <select id="slot1" class="charmSlot">
 
-                                        <option>----</option>
+                                            <option>----</option>
 
-                                        <option>Lvl-1</option>
+                                            <option>Lvl-1</option>
 
-                                        <option>Lvl-2</option>
+                                            <option>Lvl-2</option>
 
-                                        <option>Lvl-3</option>
+                                            <option>Lvl-3</option>
 
-                                        <option>Lvl-4</option>
-                                    </select>
+                                            <option>Lvl-4</option>
+                                        </select>
 
-                                    <label for="slot2">Charm Slot 2</label>
+                                        <label for="slot2">Charm Slot 2
 
-                                    <select id="slot2" class="charmSlot">
+                                            <select id="slot2" class="charmSlot">
 
-                                        <option>----</option>
+                                                <option>----</option>
 
-                                        <option>Lvl-1</option>
+                                                <option>Lvl-1</option>
 
-                                        <option>Lvl-2</option>
+                                                <option>Lvl-2</option>
 
-                                        <option>Lvl-3</option>
-                                    </select>
+                                                <option>Lvl-3</option>
+                                            </select>
 
-                                    <label for="slot3">Charm Slot 3</label>
+                                            <label for="slot3">Charm Slot 3
 
-                                    <select id="slot3" class="charmSlot">
+                                                <select id="slot3" class="charmSlot">
 
-                                        <option>----</option>
+                                                    <option>----</option>
 
-                                        <option>Lvl-1</option>
+                                                    <option>Lvl-1</option>
 
-                                        <option>Lvl-2</option>
-                                    </select>
+                                                    <option>Lvl-2</option>
+                                                </select>
                                 </section>
                     </div>
                 </div>
@@ -2695,214 +2731,213 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 
                     <div class="dropContainer" id="dropHeight">
 
-                        <label for="dropMonster">Monster</label>
+                        <label for="dropMonster">Monster
 
-                        <select id="dropMonster" title="Monster Selection">
+                            <select id="dropMonster" title="Monster Selection">
 
-                            <option value="Aknosom">Aknosom</option>
+                                <option value="Aknosom">Aknosom</option>
 
-                            <option value="Almudron">Almudron</option>
+                                <option value="Almudron">Almudron</option>
 
-                            <option value="Anjanath">Anjanath</option>
+                                <option value="Anjanath">Anjanath</option>
 
-                            <option value="Apex Arzuros">Apex Arzuros</option>
+                                <option value="Apex Arzuros">Apex Arzuros</option>
 
-                            <option value="Apex Diablos">Apex Diablos</option>
+                                <option value="Apex Diablos">Apex Diablos</option>
 
-                            <option value="Apex Mizutsune">Apex Mizutsune</option>
+                                <option value="Apex Mizutsune">Apex Mizutsune</option>
 
-                            <option value="Apex Rathalos">Apex Rathalos</option>
+                                <option value="Apex Rathalos">Apex Rathalos</option>
 
-                            <option value="Apex Rathian">Apex Rathian</option>
+                                <option value="Apex Rathian">Apex Rathian</option>
 
-                            <option value="Apex Zinogre">Apex Zinogre</option>
+                                <option value="Apex Zinogre">Apex Zinogre</option>
 
-                            <option value="Arzuros">Arzuros</option>
+                                <option value="Arzuros">Arzuros</option>
 
-                            <option value="Astalos">Astalos</option>
+                                <option value="Astalos">Astalos</option>
 
-                            <option value="Aurora Somnacanth">Aurora Somnacanth</option>
+                                <option value="Aurora Somnacanth">Aurora Somnacanth</option>
 
-                            <option value="Barioth">Barioth</option>
+                                <option value="Barioth">Barioth</option>
 
-                            <option value="Barroth">Barroth</option>
+                                <option value="Barroth">Barroth</option>
 
-                            <option value="Basarios">Basarios</option>
+                                <option value="Basarios">Basarios</option>
 
-                            <option value="Bazelgeuse">Bazelgeuse</option>
+                                <option value="Bazelgeuse">Bazelgeuse</option>
 
-                            <option value="Bishaten">Bishaten</option>
+                                <option value="Bishaten">Bishaten</option>
 
-                            <option value="Blood Orange Bishaten">Blood Orange Bishaten</option>
+                                <option value="Blood Orange Bishaten">Blood Orange Bishaten</option>
 
-                            <option value="Chameleos">Chameleos</option>
+                                <option value="Chameleos">Chameleos</option>
 
-                            <option value="Chaotic Gore Magala">Chaotic Gore Magala</option>
+                                <option value="Chaotic Gore Magala">Chaotic Gore Magala</option>
 
-                            <option value="Crimson Glow Valstrax">Crimson Glow Valstrax</option>
+                                <option value="Crimson Glow Valstrax">Crimson Glow Valstrax</option>
 
-                            <option value="Daimyo Hermitaur">Daimyo Hermitaur</option>
+                                <option value="Daimyo Hermitaur">Daimyo Hermitaur</option>
 
-                            <option value="Diablos">Diablos</option>
+                                <option value="Diablos">Diablos</option>
 
-                            <option value="Espinas">Espinas</option>
+                                <option value="Espinas">Espinas</option>
 
-                            <option value="Flaming Espinas">Flaming Espinas</option>
+                                <option value="Flaming Espinas">Flaming Espinas</option>
 
-                            <option value="Furious Rajang">Furious Rajang</option>
+                                <option value="Furious Rajang">Furious Rajang</option>
 
-                            <option value="Gaismagorm">Gaismagorm</option>
+                                <option value="Gaismagorm">Gaismagorm</option>
 
-                            <option value="Garangolm">Garangolm</option>
+                                <option value="Garangolm">Garangolm</option>
 
-                            <option value="Gold Rathian">Gold Rathian</option>
+                                <option value="Gold Rathian">Gold Rathian</option>
 
-                            <option value="Gore Magala">Gore Magala</option>
+                                <option value="Gore Magala">Gore Magala</option>
 
-                            <option value="Goss Harag">Goss Harag</option>
+                                <option value="Goss Harag">Goss Harag</option>
 
-                            <option value="Great Baggi">Great Baggi</option>
+                                <option value="Great Baggi">Great Baggi</option>
 
-                            <option value="Great Izuchi">Great Izuchi</option>
+                                <option value="Great Izuchi">Great Izuchi</option>
 
-                            <option value="Great Wroggi">Great Wroggi</option>
+                                <option value="Great Wroggi">Great Wroggi</option>
 
-                            <option value="Jyuratodus">Jyuratodus</option>
+                                <option value="Jyuratodus">Jyuratodus</option>
 
-                            <option value="Khezu">Khezu</option>
+                                <option value="Khezu">Khezu</option>
 
-                            <option value="Kulu-Ya-Ku">Kulu-Ya-Ku</option>
+                                <option value="Kulu-Ya-Ku">Kulu-Ya-Ku</option>
 
-                            <option value="Kushala Daora">Kushala Daora</option>
+                                <option value="Kushala Daora">Kushala Daora</option>
 
-                            <option value="Lagombi">Lagombi</option>
+                                <option value="Lagombi">Lagombi</option>
 
-                            <option value="Lucent Nargacuga">Lucent Nargacuga</option>
+                                <option value="Lucent Nargacuga">Lucent Nargacuga</option>
 
-                            <option value="Lunagaron">Lunagaron</option>
+                                <option value="Lunagaron">Lunagaron</option>
 
-                            <option value="Magma Almudron">Magma Almudron</option>
+                                <option value="Magma Almudron">Magma Almudron</option>
 
-                            <option value="Magnamalo">Magnamalo</option>
+                                <option value="Magnamalo">Magnamalo</option>
 
-                            <option value="Malzeno">Malzeno</option>
+                                <option value="Malzeno">Malzeno</option>
 
-                            <option value="Mizutsune">Mizutsune</option>
+                                <option value="Mizutsune">Mizutsune</option>
 
-                            <option value="Nargacuga">Nargacuga</option>
+                                <option value="Nargacuga">Nargacuga</option>
 
-                            <option value="Narwa the Allmother">Narwa the Allmother</option>
+                                <option value="Narwa the Allmother">Narwa the Allmother</option>
 
-                            <option value="Pukei-Pukei">Pukei-Pukei</option>
+                                <option value="Pukei-Pukei">Pukei-Pukei</option>
 
-                            <option value="Pyre Rakna-Kadaki">Pyre Rakna-Kadaki</option>
+                                <option value="Pyre Rakna-Kadaki">Pyre Rakna-Kadaki</option>
 
-                            <option value="Rajang">Rajang</option>
+                                <option value="Rajang">Rajang</option>
 
-                            <option value="Rakna-Kadaki">Rakna-Kadaki</option>
+                                <option value="Rakna-Kadaki">Rakna-Kadaki</option>
 
-                            <option value="Rathalos">Rathalos</option>
+                                <option value="Rathalos">Rathalos</option>
 
-                            <option value="Rathian">Rathian</option>
+                                <option value="Rathian">Rathian</option>
 
-                            <option value="Risen Chameleos">Risen Chameleos</option>
+                                <option value="Risen Chameleos">Risen Chameleos</option>
 
-                            <option value="Risen Crimson Glow Valstrax">Risen Crimson Glow Valstrax</option>
+                                <option value="Risen Crimson Glow Valstrax">Risen Crimson Glow Valstrax</option>
 
-                            <option value="Risen Kushala Daora">Risen Kushala Daora</option>
+                                <option value="Risen Kushala Daora">Risen Kushala Daora</option>
 
-                            <option value="Risen Teostra">Risen Teostra</option>
+                                <option value="Risen Teostra">Risen Teostra</option>
 
-                            <option value="Royal Ludroth">Royal Ludroth</option>
+                                <option value="Royal Ludroth">Royal Ludroth</option>
 
-                            <option value="Scorned Magnamalo">Scorned Magnamalo</option>
+                                <option value="Scorned Magnamalo">Scorned Magnamalo</option>
 
-                            <option value="Seething Bazelgeuse">Seething Bazelgeuse</option>
+                                <option value="Seething Bazelgeuse">Seething Bazelgeuse</option>
 
-                            <option value="Seregios">Seregios</option>
+                                <option value="Seregios">Seregios</option>
 
-                            <option value="Shagaru Magala">Shagaru Magala</option>
+                                <option value="Shagaru Magala">Shagaru Magala</option>
 
-                            <option value="Shogun Ceanataur">Shogun Ceanataur</option>
+                                <option value="Shogun Ceanataur">Shogun Ceanataur</option>
 
-                            <option value="Silver Rathalos">Silver Rathalos</option>
+                                <option value="Silver Rathalos">Silver Rathalos</option>
 
-                            <option value="Somnacanth">Somnacanth</option>
+                                <option value="Somnacanth">Somnacanth</option>
 
-                            <option value="Teostra">Teostra</option>
+                                <option value="Teostra">Teostra</option>
 
-                            <option value="Tetranadon">Tetranadon</option>
+                                <option value="Tetranadon">Tetranadon</option>
 
-                            <option value="Thunder Serpent Narwa">Thunder Serpent Narwa</option>
+                                <option value="Thunder Serpent Narwa">Thunder Serpent Narwa</option>
 
-                            <option value="Tigrex">Tigrex</option>
+                                <option value="Tigrex">Tigrex</option>
 
-                            <option value="Toadversary">Toadversary</option>
+                                <option value="Toadversary">Toadversary</option>
 
-                            <option value="Tobi-Kadachi">Tobi-Kadachi</option>
+                                <option value="Tobi-Kadachi">Tobi-Kadachi</option>
 
-                            <option value="Velkhana">Velkhana</option>
+                                <option value="Velkhana">Velkhana</option>
 
-                            <option value="Violet Mizutsune">Violet Mizutsune</option>
+                                <option value="Violet Mizutsune">Violet Mizutsune</option>
 
-                            <option value="Volvidon">Volvidon</option>
+                                <option value="Volvidon">Volvidon</option>
 
-                            <option value="Wind Serpent Ibushi">Wind Serpent Ibushi</option>
+                                <option value="Wind Serpent Ibushi">Wind Serpent Ibushi</option>
 
-                            <option value="Zinogre">Zinogre</option>
-                        </select>
+                                <option value="Zinogre">Zinogre</option>
+                            </select>
                     </div>
 
                     <div class="dropContainer">
 
-                        <label for="dropHZ">Hit Zone</label>
+                        <label for="dropHZ">Hit Zone
 
-                        <select id="dropHZ" title="Hit Zone Selection">
+                            <select id="dropHZ" title="Hit Zone Selection">
 
-                            <option value="Head ">Head </option>
-                        </select>
+                                <option value="Head ">Head </option>
+                            </select>
                     </div>
 
                     <div class="questSelect">
 
-                        <label for="dropQuest">Quest</label>
+                        <label for="dropQuest">Quest
 
-                        <button class="blue" type="button" aria-pressed="false" id="questButton"></button>
+                            <button class="blue" type="button" aria-pressed="false" id="questButton"></button>
 
-                        <select id="dropQuest" title="Quests">
+                            <select id="dropQuest" title="Quests">
 
-                            <option value="Burn Brighter Than the Sun">Burn Brighter Than the Sun</option>
-                        </select>
+                                <option value="Burn Brighter Than the Sun">Burn Brighter Than the Sun</option>
+                            </select>
 
-                        <div class="menu augInvis" id="questDiv" aria-haspopup="menu">
+                            <div class="menu augInvis" id="questDiv" aria-haspopup="menu">
 
-                            <div class="dropContainer" id="divMR">
-                                </label>
+                                <div class="dropContainer" id="divMR">
 
-                                <label for="MR" class="menu">Master Rank</label>
+                                    <label for="MR" class="menu">Master Rank
 
-                                <select class="menu MR" id="MR" title="Master Rank">
+                                        <select class="menu MR" id="MR" title="Master Rank">
 
-                                    <option value="Emperor of Flame">Emperor of Flame</option>
+                                            <option value="Emperor of Flame">Emperor of Flame</option>
 
-                                    <option value="The Immortal">The Immortal</option>
-                                </select>
+                                            <option value="The Immortal">The Immortal</option>
+                                        </select>
+                                </div>
+
+                                <div class="dropContainer" id="divHR">
+
+                                    <label for="HR" class="menu">High Rank
+
+                                        <select class="menu" id="HR" title="High Rank">
+
+                                            <option value="Scorching Showdown">Scorching Showdown</option>
+
+                                            <option value="The Emperor of Flame">The Emperor of Flame</option>
+
+                                            <option value="Heart of Might">Heart of Might</option>
+                                        </select>
+                                </div>
                             </div>
-
-                            <div class="dropContainer" id="divHR">
-
-                                <label for="HR" class="menu">High Rank</label>
-
-                                <select class="menu" id="HR" title="High Rank">
-
-                                    <option value="Scorching Showdown">Scorching Showdown</option>
-
-                                    <option value="The Emperor of Flame">The Emperor of Flame</option>
-
-                                    <option value="Heart of Might">Heart of Might</option>
-                                </select>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="dropContainer div twoColumn">
@@ -2918,34 +2953,35 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                             <option value="4p">4 Player</option>
                         </select>
 
-                        <label for="health" class="row1span2">Total Health</label>
+                        <label for="health" class="row1span2">Total Health
 
-                        <select id="health">
+                            <select id="health">
 
-                            <option value="36120">36120</option>
+                                <option value="36120">36120</option>
 
-                            <option value="36980">36980</option>
+                                <option value="36980">36980</option>
 
-                            <option value="37840">37840</option>
+                                <option value="37840">37840</option>
 
-                            <option value="39560">39560</option>
+                                <option value="39560">39560</option>
 
-                            <option value="40850">40850</option>
-                        </select>
+                                <option value="40850">40850</option>
+                            </select>
                     </div>
 
                     <div class="dropContainer div twoColumn" id="divEnrage">
 
                         <output id="enrageDisplay">100%</output>
 
-                        <label for="dropEnraged" class="row1span2">Enrage Modifier</label>
+                        <label for="dropEnraged" class="row1span2">Enrage
+                            Modifier
 
-                        <select id="dropEnraged" title="Sets Monster Enrage State">
+                            <select id="dropEnraged" title="Sets Monster Enrage State">
 
-                            <option value="1">Normal</option>
+                                <option value="1">Normal</option>
 
-                            <option value="Enraged">Enraged</option>
-                        </select>
+                                <option value="Enraged">Enraged</option>
+                            </select>
                     </div>
                     <p data-tooltip="Monster Spawn Area" id="spawnArea">
 
@@ -3108,6 +3144,12 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                 </div>
             </section>
         </section>
+
+      
+
+      
+
+      
 
 <div class="container buildSkills augInvis" id=raw>
 
@@ -4110,8 +4152,13 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 <div id=previousWeapon value=initial class="augInvis"></div>
 
 <div id=previousWeaponType value=initial class="augInvis"></div>
+<script defer type="module" src="./srcfiles/backup.js"></script>
 
-<script defer type="module" src="./dist/index.js"></script>
+<script defer type="module" src="./srcfiles/armorFunctions.js"></script>
+<script defer type="module" src="./srcfiles/setCreation.js"></script>
+<script defer type="module" src="./srcfiles/eventListener.js"></script>
+
+
 
 <div class=container id=license><a href='https://creativecommons.org/licenses/by-nc-nd/4.0/' rel=license>
 
