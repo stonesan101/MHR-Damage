@@ -1,12 +1,12 @@
-import { assert, describe, test, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
+
 const findBestSum3 = (
   costs,
   remainingSkills,
-  budget
+  budget,
+  sameIndexLimitation = 0
 ) => {
   let previous = [[], 0];
-  const sumOfIndexes = [0, 0];
-  let a, b, c;
   /*  uses previous[1] to allow the i = 0 through the 
 first time
  This gives better chances of taking from the middle of 
@@ -23,207 +23,306 @@ shortcut */
       // return i back to 0 to try the first index
       i = 0;
     }
-    a = +costs[i];
-    }
+    let a = +costs[i];
+
     bLoop: for (let j = i; j < len; j++) {
-      b = +costs[j];
+      let b = +costs[j];
+      if (a === b && remainingSkills[b].total === 1) {
+        continue;
+      }
+      for (let k = j; k < len; k++) {
+        let c = +costs[k];
 
-      if (a === b &&  remainingSkills[b].total === 1) continue;
-      cLoop: for (let k = j; k < len; k++) {
-        c = +costs[k];
-
-        if (a + b + c > budget) continue bLoop;
-        if (a + b + c <= previous[1]) continue;
-
-        switch (remainingSkills[c].total) {
-          case 1:
-            if (c === a || c === b) continue cLoop;
-            break;
-          case 2:
-            if (c === a && c === b) continue cLoop;
-            break;
-          default:
-            break;
+        // array is sorted so everything else will fail
+        if (a + b + c > budget) {
+          continue bLoop;
         }
-          previous = [[a, b, c], a + b + c];
-          if (previous[1] === budget) return previous;
+
+        // if current total not higher than the previous best continue
+        if (a + b + c <= previous[1]) {
           continue;
         }
+
+        let numberUsingSameIndex = 0;
+
+        if (a === b && remainingSkills[a].total < 1 + ++numberUsingSameIndex) {
+          //if not enough spaces continue
+          continue;
+        }
+
+        if (a === c && remainingSkills[a].total < 1 + ++numberUsingSameIndex) {
+          continue;
+        } else if (
+          numberUsingSameIndex !== 2
+          && b === c
+          && remainingSkills[c].total < Math.min(3, 1 + ++numberUsingSameIndex)
+        ) {
+          continue;
+        }
+
+        if (
+          sameIndexLimitation
+          && numberUsingSameIndex + sameIndexLimitation < 3
+        )
+          continue;
+
+        previous = [[a, b, c], a + b + c];
+        if (previous[1] === budget) return previous;
+        continue;
       }
+    }
+  }
 
   return previous;
 };
-function test_findBestSum3(testCase) {
-  testCase.costs = [...Object.keys(testCase.remainingSkills)].sort();
-  // testCase.costs.push(testCase.costs.shift());
-  const result = findBestSum3(
-    testCase.costs,
-    testCase.remainingSkills,
-    testCase.budget
-  );
-  expect(JSON.stringify(result)).toEqual(JSON.stringify(testCase.expected));
-}
-const testCase3_1 = {
-  remainingSkills: {
-    2: { total: 2 },
-    3: { total: 1 },
-    4: { total: 1 },
-  },
-  budget: 13,
-  sameIndexCount: 2,
-  expected: [[2, 2, 4], 8],
-  description: "Test 3_1:",
-};
-
-const testCase3_2 = {
-  remainingSkills: {
-    1: { total: 2 },
-    2: { total: 0 },
-    3: { total: 0 },
-    4: { total: 0 },
-    5: { total: 0 },
-  },
-  budget: 13,
-  sameIndexCount: 1,
-  expected: [[], 1],
-  description: "Test 3_2:",
-};
-
-const testCase3_3 = {
-  remainingSkills: {
-    1: { total: 1 },
-    2: { total: 1 },
-    3: { total: 1 },
-  },
-  budget: 5,
-  sameIndexCount: 0,
-  expected: [[], 1],
-  description: "Test 3_3:",
-};
-
-const testCase3_4 = {
-  remainingSkills: {
+findBestSum3(
+  [1, 2, 3],
+  {
     1: { total: 2 },
     2: { total: 2 },
     3: { total: 2 },
   },
-  budget: 6,
-  sameIndexCount: 0,
-  expected: [[2, 2, 2], 6],
-  description: "Test 3_4:",
-};
+  6,
+  0
+);
+// let ugh = findBestSum3(findBestSum3(
+// [1, 2, 3, 4, 5],
+// {
+// 1: { total: 3 },
+// 2: { total: 3 },
+// 3: { total: 3 },
+// 4: { total: 3 },
+// 5: { total: 3 },
+// },
+// 13,
+// 1
+// ))
+// console.log(ugh)
+describe("testCase3_13", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [1, 2, 3, 4, 5],
+        {
+          1: { total: 3 },
+          2: { total: 3 },
+          3: { total: 3 },
+          4: { total: 3 },
+          5: { total: 3 },
+        },
+        13,
+        1
+      )
+    ).toStrictEqual([[4, 4, 4], 12]);
+  });
+});
 
-const testCase3_5 = {
-  remainingSkills: {
-    1: { total: 1 },
-    2: { total: 1 },
-    3: { total: 1 },
-  },
-  budget: 10,
-  sameIndexCount: 0,
-  expected: [[1, 2, 3], 6],
-  description: "Test 3_5:",
-};
+describe("testCase3_1", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [2, 3, 4],
+        {
+          2: { total: 2 },
+          3: { total: 1 },
+          4: { total: 1 },
+        },
+        13,
+        2
+      )
+    ).toStrictEqual([[2, 2, 4], 8]);
+  });
+});
 
-const testCase3_6 = {
-  remainingSkills: {
-    1: { total: 1 },
-    2: { total: 1 },
-    3: { total: 1 },
-  },
-  budget: 2,
-  sameIndexCount: 0,
-  expected: [[], 1],
-  description: "Test 3_6:",
-};
-const testCase3_7 = {
-  remainingSkills: {
-    1: { total: 2 },
-    2: { total: 1 },
-    3: { total: 1 },
-  },
-  budget: 6,
-  sameIndexCount: 2,
-  expected: [[1, 1, 3], 5],
-  description: "Test 3_7:",
-};
+describe("testCase3_2", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [1],
+        {
+          1: { total: 2 },
+        },
+        13,
+        1
+      )
+    ).toStrictEqual([[], 1]);
+  });
+});
 
-const testCase3_8 = {
-  remainingSkills: {
-    1: { total: 2 },
-    2: { total: 1 },
-    3: { total: 1 },
-  },
-  budget: 6,
-  sameIndexCount: 1,
-  expected: [[], 1],
-  description: "Test 3_8:",
-};
+describe("testCase3_3", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [1, 2, 3],
+        {
+          1: { total: 1 },
+          2: { total: 1 },
+          3: { total: 1 },
+        },
+        5,
+        0
+      )
+    ).toStrictEqual([[], 1]);
+  });
+});
 
-const testCase3_9 = {
-  remainingSkills: {
-    1: { total: 3 },
-    2: { total: 1 },
-    3: { total: 1 },
-  },
-  budget: 6,
-  sameIndexCount: 1,
-  expected: [[1, 1, 1], 3],
-  description: "Test 3_9:",
-};
+describe("testCase3_4", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [1, 2, 3],
+        {
+          1: { total: 2 },
+          2: { total: 2 },
+          3: { total: 2 },
+        },
+        6,
+        0
+      )
+    ).toStrictEqual([[1, 2, 3], 6]);
+  });
+});
 
-const testCase3_10 = {
-  remainingSkills: {
-    2: { total: 3 },
-    3: { total: 3 },
-    4: { total: 3 },
-    5: { total: 3 },
-  },
-  budget: 13,
-  sameIndexCount: 1,
-  expected: [[4, 4, 4], 12],
-  description: "Test 3_10:",
-};
+describe("testCase3_5", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [1, 2, 3],
+        {
+          1: { total: 1 },
+          2: { total: 1 },
+          3: { total: 1 },
+        },
+        10,
+        0
+      )
+    ).toStrictEqual([[1, 2, 3], 6]);
+  });
+});
 
-const testCase3_11 = {
-  remainingSkills: {
-    2: { total: 3 },
-    3: { total: 3 },
-    4: { total: 3 },
-    5: { total: 3 },
-  },
-  budget: 12,
-  sameIndexCount: 0,
-  expected: [[3, 4, 5], 12],
-  description: "Test 3_11:",
-};
+describe("testCase3_6", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [1, 2, 3],
+        {
+          1: { total: 1 },
+          2: { total: 1 },
+          3: { total: 1 },
+        },
+        2,
+        0
+      )
+    ).toStrictEqual([[], 1]);
+  });
+});
 
-const testCase3_12 = {
-  remainingSkills: {
-    2: { total: 3 },
-    3: { total: 3 },
-    4: { total: 3 },
-    5: { total: 3 },
-  },
-  budget: 12,
-  sameIndexCount: 2,
-  expected: [[4, 4, 4], 12],
-  description: "Test 3_12:",
-};
+describe("testCase3_7", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [1, 2, 3],
+        {
+          1: { total: 2 },
+          2: { total: 1 },
+          3: { total: 1 },
+        },
+        6,
+        2
+      )
+    ).toStrictEqual([[1, 1, 3], 5]);
+  });
+});
+describe("testCase3_8", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [1, 2, 3],
+        {
+          1: { total: 2 },
+          2: { total: 1 },
+          3: { total: 1 },
+        },
+        6,
+        1
+      )
+    ).toStrictEqual([[], 1]);
+  });
+});
 
-const testCase3_13 = {
-  remainingSkills: {
-    1: { total: 3 },
-    2: { total: 3 },
-    3: { total: 3 },
-    4: { total: 3 },
-    5: { total: 3 },
-  },
-  budget: 13,
-  sameIndexCount: 1,
-  expected: [[4, 4, 4], 12],
-  description: "Test 3_13:",
-};
+describe("testCase3_9", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [1, 2, 3],
+        {
+          1: { total: 3 },
+          2: { total: 1 },
+          3: { total: 1 },
+        },
+        6,
+        1
+      )
+    ).toStrictEqual([[1, 1, 1], 3]);
+  });
+});
+
+describe("testCase3_10", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [2, 3, 4, 5],
+        {
+          2: { total: 3 },
+          3: { total: 3 },
+          4: { total: 3 },
+          5: { total: 3 },
+        },
+        13,
+        1
+      )
+    ).toStrictEqual([[4, 4, 4], 12]);
+  });
+});
+
+describe("testCase3_11", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [2, 3, 4, 5],
+        {
+          2: { total: 3 },
+          3: { total: 3 },
+          4: { total: 3 },
+          5: { total: 3 },
+        },
+        12,
+        0
+      )
+    ).toStrictEqual([[3, 4, 5], 12]);
+  });
+});
+
+describe("testCase3_12", () => {
+  it("test_findBestSum3", () => {
+    expect(
+      findBestSum3(
+        [2, 3, 4, 5],
+        {
+          2: { total: 3 },
+          3: { total: 3 },
+          4: { total: 3 },
+          5: { total: 3 },
+        },
+        12,
+        2
+      )
+    ).toStrictEqual([[4, 4, 4], 12]);
+  });
+});
+
+/*
+
 const testCases3 = [
   testCase3_1,
   testCase3_2,
@@ -239,48 +338,12 @@ const testCases3 = [
   testCase3_12,
   testCase3_13,
 ];
-testCases3.forEach((testCase, index) => {
-  test(`Test 3_${index + 1}`, () => {
-    test_findBestSum3(testCase);
-  });
-});
+// testCases3.forEach((testCase, index) => {
+// test(`Test 3_${index + 1}`, () => {
+// test_findBestSum3(testCase);
+// });
+// });
 
-function findBestSum2(
-  costs,
-  remainingSkills,
-  budget,
-  maxSameI,
-  freeSpaces = {}
-) {
-  let previous = [[], 0];
-
-  for (let i = 0, len = costs.length; i < len; ++i) {
-    const a = +costs[i];
-    if ((freeSpaces[a]?.total || 0) + remainingSkills[a].total < 1) continue;
-    for (let j = i; j < len; j++) {
-      const b = +costs[j];
-      if (a === b && !freeSpaces[b] && remainingSkills[b].total === 1) continue;
-      if (a !== b && maxSameI && !freeSpaces[a] && !freeSpaces[b]) continue;
-      if (
-        a === b
-        && ((!freeSpaces[b] && remainingSkills[b].total < 1)
-          || (freeSpaces[b]?.total === 1 && remainingSkills[b].total < 1)
-          || (maxSameI
-            && (freeSpaces[b]?.total || 0) + remainingSkills[b].total < 1))
-      ) {
-        continue;
-      }
-
-      if (a + b > budget || a + b <= previous[1]) continue;
-
-      previous = [[a, b], a + b];
-      if (previous[1] === budget) return previous;
-      // }
-    }
-  }
-
-  return previous;
-}
 function test_findBestSum2(testCase) {
   testCase.costs = [...Object.keys(testCase.remainingSkills)].sort();
   // testCase.costs.push(testCase.costs.shift());
@@ -296,179 +359,192 @@ function test_findBestSum2(testCase) {
 }
 
 const testCase2_1 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     2: { total: 2 },
     3: { total: 2 },
     4: { total: 4 },
     5: { total: 0 },
   },
-  budget: 9,
-  sameIndexCount: 1,
+   9,
+   1,
   freeSpaces: { 5: { total: 1 } },
-  expected: [[4, 5], 9],
-  description: "Test 3_1:",
+  )).toStrictEqual(  [[4, 5], 9])
+  ,
 };
 
 const testCase2_2 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     1: { total: 2 },
     2: { total: 2 },
     3: { total: 2 },
     4: { total: 2 },
     5: { total: 2 },
   },
-  budget: 9,
-  sameIndexCount: 1,
+   9,
+   1,
   freeSpaces: {},
-  expected: [[4, 4], 8],
-  description: "Test 3_2:",
+  )).toStrictEqual(  [[4, 4], 8])
+  ,
 };
 
 const testCase2_3 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     1: { total: 1 },
     2: { total: 1 },
     3: { total: 1 },
   },
-  budget: 2,
-  sameIndexCount: 0,
+   2,
+   0,
   freeSpaces: {},
-  expected: [[], 0],
-  description: "Test 3_3:",
+  )).toStrictEqual(  [[], 0])
+  ,
 };
 
 const testCase2_4 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     1: { total: 2 },
     2: { total: 2 },
     3: { total: 2 },
   },
-  budget: 3,
-  sameIndexCount: 0,
+   3,
+   0,
   freeSpaces: { 3: { total: 1 } },
-  expected: [[1, 2], 3],
-  description: "Test 3_4:",
+  )).toStrictEqual(  [[1, 2], 3])
+  ,
 };
 
 const testCase2_5 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     1: { total: 1 },
     2: { total: 1 },
     3: { total: 1 },
   },
-  budget: 5,
-  sameIndexCount: 0,
+   5,
+   0,
   freeSpaces: {},
-  expected: [[2, 3], 5],
-  description: "Test 3_5:",
+  )).toStrictEqual(  [[2, 3], 5])
+  ,
 };
 
 const testCase2_6 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     1: { total: 1 },
     2: { total: 1 },
     3: { total: 1 },
   },
-  budget: 1,
-  sameIndexCount: 0,
+   1,
+   0,
   freeSpaces: {},
-  expected: [[], 0],
-  description: "Test 3_6:",
+  )).toStrictEqual(  [[], 0])
+  ,
 };
 const testCase2_7 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     1: { total: 1 },
     2: { total: 1 },
     3: { total: 1 },
   },
-  budget: 2,
-  sameIndexCount: 1,
+   2,
+   1,
   freeSpaces: { 1: { total: 1 } },
-  expected: [[1, 1], 2],
-  description: "Test 3_7:",
+  )).toStrictEqual(  [[1, 1], 2])
+  ,
 };
 
 const testCase2_8 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     1: { total: 2 },
     2: { total: 1 },
     3: { total: 1 },
   },
-  budget: 6,
-  sameIndexCount: 1,
+   6,
+   1,
   freeSpaces: { 3: { total: 1 } },
-  expected: [[3, 3], 6],
-  description: "Test 3_8:",
+  )).toStrictEqual(  [[3, 3], 6])
+  ,
 };
 
 const testCase2_9 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     1: { total: 2 },
     2: { total: 1 },
     3: { total: 0 },
   },
-  budget: 8,
-  sameIndexCount: 1,
+   8,
+   1,
   freeSpaces: { 3: { total: 1 } },
-  expected: [[2, 3], 5],
-  description: "Test 3_9:",
+  )).toStrictEqual(  [[2, 3], 5])
+  ,
 };
 
 const testCase2_10 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     2: { total: 2 },
     3: { total: 2 },
     4: { total: 2 },
     5: { total: 2 },
   },
-  budget: 4,
-  sameIndexCount: 1,
+   4,
+   1,
   freeSpaces: {},
-  expected: [[2, 2], 4],
-  description: "Test 3_10:",
+  )).toStrictEqual(  [[2, 2], 4])
+  ,
 };
 
 const testCase2_11 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     2: { total: 2 },
     3: { total: 2 },
     4: { total: 2 },
     5: { total: 2 },
   },
-  budget: 10,
-  sameIndexCount: 1,
+   10,
+   1,
   freeSpaces: {},
-  expected: [[5, 5], 10],
-  description: "Test 3_11:",
+  )).toStrictEqual(  [[5, 5], 10])
+  ,
 };
 
 const testCase2_12 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     2: { total: 2 },
     3: { total: 2 },
     4: { total: 2 },
     5: { total: 1 },
   },
-  budget: 9,
-  sameIndexCount: 0,
+   9,
+   0,
   freeSpaces: {},
-  expected: [[4, 5], 9],
-  description: "Test 3_12:",
+  )).toStrictEqual(  [[4, 5], 9])
+  ,
 };
 
 const testCase2_13 = {
-  remainingSkills: {
+ expect(
+    findBestSum3([1, 2, 3, 4, 5], {
     1: { total: 2 },
     2: { total: 2 },
     3: { total: 2 },
     4: { total: 0 },
     5: { total: 2 },
   },
-  budget: 9,
-  sameIndexCount: 1,
+   9,
+   1,
   freeSpaces: { 4: { total: 1 } },
-  expected: [[4, 5], 9],
-  description: "Test 3_13:",
+  )).toStrictEqual(  [[4, 5], 9])
+  ,
 };
 const testCases2 = [
   testCase2_1,
@@ -485,9 +561,11 @@ const testCases2 = [
   testCase2_12,
   testCase2_13,
 ];
-
-testCases2.forEach((testCase, index) => {
-  test(`Test 2_${index + 1}`, () => {
-    test_findBestSum2(testCase);
-  });
-});
+//
+// testCases2.forEach((testCase, index) => {
+// test(`Test 2_${index + 1}`, () => {
+// test_findBestSum2(testCase);
+// });
+// });
+//
+ */

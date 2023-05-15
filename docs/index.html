@@ -1817,6 +1817,10 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                 <div class=rangedContainer id=damageContainer>
                     <table id=dpsTable>
                         <thead id=dpsHead class=tableRowRanged>
+                            <button class="classSpecific LightBowGun HeavyBowGun" type="button" aria-pressed="false"
+                                    id="ammoChange"
+                                    data-tooltip="toggles between the ammo's damage and statistics">Change
+                                Ammo Table</button>
                         <tbody class=rangedTable id=dpsBody>
                     </table>
                     <table id=ammoTable class=augInvis>
@@ -2221,15 +2225,15 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                         <div id="resistances">
 
                             <div>
-
+<label for="resistances">Dango Resistance</label>
                                 <label for="FireRes">Fire Resistance:</label>
 
                                 <select id="FireRes">
                                 <option value="0">----</option>
 
-                                    <option disabled>Dango Fire Res (Lo)</option>
+                                    <option disabled>Fire Res (Lo)</option>
 
-                                    <option value='3' value='3'>Fire Res +3</option>
+                                    <option value='3' value='3'>Fire Res </option>
 
                                     <option value='5'>Fire Res +5</option>
 
@@ -2237,7 +2241,7 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 
                                     <option value='10'>Fire Res +10</option>
 
-                                    <option disabled>Dango Fire Res (Hi)</option>
+                                    <option disabled>Fire Res (Hi)</option>
 
                                     <option value='8'>Fire Res +8</option>
 
@@ -2256,7 +2260,7 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                                 <select id="WaterRes">
                                 <option value="0">----</option>
 
-                                    <option disabled>Dango Water Res (Lo)</option>
+                                    <option disabled>Water Res (Lo)</option>
 
                                     <option value='3'>Water Res +3</option>
 
@@ -2266,7 +2270,7 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 
                                     <option value='10'>Water Res +10</option>
 
-                                    <option disabled>Dango Water Res (Hi)</option>
+                                    <option disabled>Water Res (Hi)</option>
 
                                     <option value='8'>Water Res +8</option>
 
@@ -2285,7 +2289,7 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                                 <select id="ThunderRes">
                                 <option value="0">----</option>
 
-                                    <option disabled>Dango Thunder Res (Lo)</option>
+                                    <option disabled>Thunder Res (Lo)</option>
 
                                     <option value='3'>Thunder Res +3</option>
 
@@ -2295,7 +2299,7 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 
                                     <option value='10'>Thunder Res +10</option>
 
-                                    <option disabled>Dango Thunder Res (Hi)</option>
+                                    <option disabled>Thunder Res (Hi)</option>
 
                                     <option value='8'>Thunder Res +8</option>
 
@@ -2314,7 +2318,7 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                                 <select id="IceRes">
                                 <option value="0">----</option>
 
-                                    <option disabled>Dango Ice Res (Lo)</option>
+                                    <option disabled>Ice Res (Lo)</option>
 
                                     <option value='3'>Ice Res +3</option>
 
@@ -2324,7 +2328,7 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 
                                     <option value='10'>Ice Res +10</option>
 
-                                    <option disabled>Dango Ice Res (Hi)</option>
+                                    <option disabled>Ice Res (Hi)</option>
 
                                     <option value='8'>Ice Res +8</option>
 
@@ -2343,7 +2347,7 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                                 <select id="DragonRes">
                                 <option value="0">----</option>
 
-                                    <option disabled>Dango Dragon Res (Lo)</option>
+                                    <option disabled>Dragon Res (Lo)</option>
 
                                     <option value='3'>Dragon Res +3</option>
 
@@ -2353,7 +2357,7 @@ Sunbreak Database, Damage, Optimization, Calculations'>
 
                                     <option value='10'>Dragon Res +10</option>
 
-                                    <option disabled>Dango Dragon Res (Hi)</option>
+                                    <option disabled>Dragon Res (Hi)</option>
 
                                     <option value='8'>Dragon Res +8</option>
 
@@ -2661,10 +2665,9 @@ Sunbreak Database, Damage, Optimization, Calculations'>
                                     type="button" aria-pressed="false" id="resetCombo" style="display: none;">Reset
                                 Combo</button>
 
-                            <button class="classSpecific LightBowGun HeavyBowGun" type="button" aria-pressed="false"
-                                    id="ammoChange"
-                                    data-tooltip="toggles between the ammo's damage and statistics">Change
-                                Ammo Table</button>
+
+
+
                         </div>
 
                         <div id="forButtonSelect">

@@ -60,6 +60,7 @@ babelrc
 test.js
 /srcfiles
 temp.js
+tests/*
 /maps
 /utility
 mhrice.json
@@ -79,3 +80,5 @@ coverage/lcov.info
 quokka.json
 viet.config.js
 wallaby.js
+vitest.config.js
+tests/bestSum3.test.js
