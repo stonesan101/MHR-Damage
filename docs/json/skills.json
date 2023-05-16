@@ -1119,7 +1119,7 @@
       "aff": 0
     }
   ],
-  "Grinder(S)": [
+  "GrinderS": [
     {
       "BRM": 1,
       "BR": 0,
@@ -2074,6 +2074,186 @@
       "aff": 0
     }
   ],
+  "ParalyzeAttack": [
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 1,
+      "BE": 0,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 1,
+      "BE": 0,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 5,
+      "BE": 1,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 10,
+      "BE": 2,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 1.2,
+      "BE": 5,
+      "PEM": 1,
+      "aff": 0
+    }
+  ],
+  "PoisonAttack": [
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 1,
+      "BE": 0,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 1,
+      "BE": 0,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 5,
+      "BE": 1,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 10,
+      "BE": 2,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 1.2,
+      "BE": 5,
+      "PEM": 1,
+      "aff": 0
+    }
+  ],
+  "SleepAttack": [
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 1,
+      "BE": 0,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 1,
+      "BE": 0,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 5,
+      "BE": 1,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 10,
+      "BE": 2,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 1.2,
+      "BE": 5,
+      "PEM": 1,
+      "aff": 0
+    }
+  ],
+  "BlastAttack": [
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 1,
+      "BE": 0,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 5,
+      "BE": 1,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 10,
+      "BE": 2,
+      "PEM": 1,
+      "aff": 0
+    },
+    {
+      "BRM": 1,
+      "BR": 0,
+      "PRM": 1,
+      "BEM": 1.2,
+      "BE": 5,
+      "PEM": 1,
+      "aff": 0
+    }
+  ],
+
   "DragonAttack": [
     {
       "BRM": 1,
