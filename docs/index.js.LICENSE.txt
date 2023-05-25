@@ -1,10 +1,28 @@
-/*! ./addSkills.js */
+/*! !!../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js!./styles.css */
+
+/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+
+/*! !../node_modules/style-loader/dist/runtime/insertBySelector.js */
+
+/*! !../node_modules/style-loader/dist/runtime/insertStyleElement.js */
+
+/*! !../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */
+
+/*! !../node_modules/style-loader/dist/runtime/styleDomAPI.js */
+
+/*! !../node_modules/style-loader/dist/runtime/styleTagTransform.js */
+
+/*! ../node_modules/css-loader/dist/runtime/api.js */
+
+/*! ../node_modules/css-loader/dist/runtime/sourceMaps.js */
 
 /*! ./armorFunctions.js */
 
 /*! ./backup.js */
 
-/*! ./eventListener.js */
+/*! ./getUsedAttacks.js */
+
+/*! ./getWeaponMR.js */
 
 /*! ./json/LightBowGun.json */
 
@@ -24,7 +42,21 @@
 
 /*! ./json/types.json */
 
-/*! ./setCreation.js */
+/*! ./meleeSkills.js */
+
+/*! ./rangedSkills.js */
+
+/*! ./sharpness.js */
+
+/*! ./styles.css */
+
+/*! ./util.js */
+
+/*! ./weaponRampage.js */
+
+/*!**************************!*\
+  !*** ./srcfiles/util.js ***!
+  \**************************/
 
 /*!****************************!*\
   !*** ./srcfiles/backup.js ***!
@@ -35,11 +67,19 @@
   \*****************************/
 
 /*!*******************************!*\
-  !*** ./srcfiles/addSkills.js ***!
+  !*** ./srcfiles/sharpness.js ***!
   \*******************************/
 
 /*!*********************************!*\
+  !*** ./srcfiles/getWeaponMR.js ***!
+  \*********************************/
+
+/*!*********************************!*\
   !*** ./srcfiles/json/ammo.json ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./srcfiles/meleeSkills.js ***!
   \*********************************/
 
 /*!*********************************!*\
@@ -58,6 +98,10 @@
   !*** ./srcfiles/json/types.json ***!
   \**********************************/
 
+/*!**********************************!*\
+  !*** ./srcfiles/rangedSkills.js ***!
+  \**********************************/
+
 /*!***********************************!*\
   !*** ./srcfiles/eventListener.js ***!
   \***********************************/
@@ -70,8 +114,16 @@
   !*** ./srcfiles/json/skills.json ***!
   \***********************************/
 
+/*!***********************************!*\
+  !*** ./srcfiles/weaponRampage.js ***!
+  \***********************************/
+
 /*!************************************!*\
   !*** ./srcfiles/armorFunctions.js ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./srcfiles/getUsedAttacks.js ***!
   \************************************/
 
 /*!************************************!*\
@@ -85,3 +137,39 @@
 /*!****************************************!*\
   !*** ./srcfiles/json/LightBowGun.json ***!
   \****************************************/
+
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/sourceMaps.js ***!
+  \************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
+  \***************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertBySelector.js ***!
+  \********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
+  \*********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
+  \**********************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+
+/*!**********************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
+  \**********************************************************************************/
+
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./srcfiles/styles.css ***!
+  \*************************************************************************************************************/
