@@ -2565,5 +2565,17 @@
     "Dragon": [
         "DragonAttack",
         "Stormsoul"
+    ],
+    "Bomb": [
+        "BlastAttack"
+    ],
+    "Para": [
+        "ParalysisAttack"
+    ],
+    "Sleep": [
+        "SleepAttack"
+    ],
+    "Poison": [
+        "PoisonAttack"
     ]
 }
