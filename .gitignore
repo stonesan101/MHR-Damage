@@ -30,3 +30,4 @@ wallaby.js
 .github/workflows/rebase.yml
 .github/workflows/require-allow-edits.yml
 .eslintrc.json
+MHRDamage.code-workspace
