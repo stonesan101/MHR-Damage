@@ -1,7 +1,6 @@
 {
     "---": {},
-    "Adrenaline": [
-        {
+    "Adrenaline": [{
             "BRM": 1
         },
         {
@@ -17,8 +16,7 @@
             "BRM": 1.35
         }
     ],
-    "AdrenalineRush": [
-        {},
+    "AdrenalineRush": [{},
         {
             "BR": 15
         },
@@ -29,14 +27,12 @@
             "BR": 30
         }
     ],
-    "AffinitySliding": [
-        {},
+    "AffinitySliding": [{},
         {
             "aff": 40
         }
     ],
-    "Agitator": [
-        {
+    "Agitator": [{
             "BR": 0,
             "aff": 0
         },
@@ -61,8 +57,7 @@
             "aff": 15
         }
     ],
-    "AmmoUp": [
-        {
+    "AmmoUp": [{
             "Lv": 0
         },
         {
@@ -75,24 +70,21 @@
             "Lv": 3
         }
     ],
-    "AntiSpecies": [
-        {
+    "AntiSpecies": [{
             "PRM": 1
         },
         {
             "PRM": 1.05
         }
     ],
-    "ArchdemonMode": [
-        {
+    "ArchdemonMode": [{
             "BEM": 1
         },
         {
             "BEM": 1.2
         }
     ],
-    "Artillery": [
-        {
+    "Artillery": [{
             "BRM": 1
         },
         {
@@ -105,8 +97,7 @@
             "BRM": 1.5
         }
     ],
-    "AttackBoost": [
-        {},
+    "AttackBoost": [{},
         {
             "BR": 3
         },
@@ -133,8 +124,7 @@
             "BR": 10
         }
     ],
-    "Barrelhbg": [
-        {
+    "Barrelhbg": [{
             "Power": 1,
             "Silencer": 0,
             "reload": 0
@@ -150,8 +140,7 @@
             "reload": 0
         }
     ],
-    "Barrellbg": [
-        {
+    "Barrellbg": [{
             "Power": 1,
             "Silencer": 0,
             "reload": 0
@@ -176,8 +165,7 @@
         "PRM": 1,
         "PEM": 1
     },
-    "BlastAttack": [
-        {},
+    "BlastAttack": [{},
         {
             "BEM": 1.05,
             "BE": 1
@@ -191,8 +179,7 @@
             "BE": 5
         }
     ],
-    "Bloodlust": [
-        {},
+    "Bloodlust": [{},
         {
             "BR": 10,
             "BE": 5,
@@ -209,8 +196,7 @@
             "aff": 25
         }
     ],
-    "Bludgeoner": [
-        {
+    "Bludgeoner": [{
             "BRM": 1
         },
         {
@@ -224,8 +210,7 @@
         }
     ],
     "BombardierSource": {
-        "ChargeBlade": [
-            {
+        "ChargeBlade": [{
                 "PRM": 1,
                 "EFR": 1
             },
@@ -268,8 +253,7 @@
                 1.12
             ]
         ],
-        "BowGun": [
-            {
+        "BowGun": [{
                 "EFR": 1,
                 "EFE": 1
             },
@@ -290,8 +274,7 @@
                 "EFE": 1.17
             }
         ],
-        "HeavyBowGun": [
-            {
+        "HeavyBowGun": [{
                 "Wyvern": [
                     1,
                     1,
@@ -353,8 +336,7 @@
             }
         ]
     },
-    "Booster": [
-        {},
+    "Booster": [{},
         {
             "BR": 6
         },
@@ -372,14 +354,11 @@
         false,
         true
     ],
-    "BowCoating": [
-        {
-            "PRM": 1,
-            "PEM": 1
-        }
-    ],
-    "BowgunBarrel": [
-        {
+    "BowCoating": [{
+        "PRM": 1,
+        "PEM": 1
+    }],
+    "BowgunBarrel": [{
             "Power": 1,
             "Silencer": 0,
             "reload": 0
@@ -405,8 +384,7 @@
             "reload": 0
         }
     ],
-    "Burst": [
-        {},
+    "Burst": [{},
         {
             "BR": 5,
             "BE": 5
@@ -424,8 +402,7 @@
             "BE": 8
         }
     ],
-    "BurstBow": [
-        {},
+    "BurstBow": [{},
         {
             "BR": 5,
             "BE": 5
@@ -443,8 +420,7 @@
             "BE": 10
         }
     ],
-    "BurstBowGun": [
-        {},
+    "BurstBowGun": [{},
         {
             "BR": 5,
             "BE": 5
@@ -462,8 +438,7 @@
             "BE": 8
         }
     ],
-    "BurstDualBlades": [
-        {},
+    "BurstDualBlades": [{},
         {
             "BR": 5,
             "BE": 5
@@ -481,8 +456,7 @@
             "BE": 12
         }
     ],
-    "BurstStandard": [
-        {},
+    "BurstStandard": [{},
         {
             "BR": 5,
             "BE": 5
@@ -503,8 +477,7 @@
     "ButterFlame": {
         "BR": 25
     },
-    "ChargeLevel": [
-        {
+    "ChargeLevel": [{
             "PEM": 1
         },
         {
@@ -521,8 +494,7 @@
         }
     ],
     "ChargeMaster": {
-        "LongSword": [
-            {
+        "LongSword": [{
                 "BSM": 1
             },
             {
@@ -538,8 +510,7 @@
                 "BSM": 1.3
             }
         ],
-        "GreatSword": [
-            {
+        "GreatSword": [{
                 "BSM": 1
             },
             {
@@ -555,8 +526,7 @@
                 "BSM": 1.5
             }
         ],
-        "ChargeBlade": [
-            {
+        "ChargeBlade": [{
                 "BSM": 1
             },
             {
@@ -572,8 +542,7 @@
                 "BSM": 1.5
             }
         ],
-        "SwordnShield": [
-            {
+        "SwordnShield": [{
                 "BSM": 1
             },
             {
@@ -589,8 +558,7 @@
                 "BSM": 1.5
             }
         ],
-        "Lance": [
-            {
+        "Lance": [{
                 "BSM": 1
             },
             {
@@ -606,8 +574,7 @@
                 "BSM": 1.75
             }
         ],
-        "Gunlance": [
-            {
+        "Gunlance": [{
                 "BSM": 1
             },
             {
@@ -623,8 +590,7 @@
                 "BSM": 1
             }
         ],
-        "Hammer": [
-            {
+        "Hammer": [{
                 "BSM": 1
             },
             {
@@ -640,8 +606,7 @@
                 "BSM": 1.15
             }
         ],
-        "Bow": [
-            {
+        "Bow": [{
                 "BSM": 1
             },
             {
@@ -657,8 +622,7 @@
                 "BSM": 1.15
             }
         ],
-        "HeavyBowGun": [
-            {
+        "HeavyBowGun": [{
                 "BSM": 1
             },
             {
@@ -674,8 +638,7 @@
                 "BSM": 1.15
             }
         ],
-        "LightBowGun": [
-            {
+        "LightBowGun": [{
                 "BSM": 1
             },
             {
@@ -691,8 +654,7 @@
                 "BSM": 1.15
             }
         ],
-        "HeavyBowGun Wyvern": [
-            {
+        "HeavyBowGun Wyvern": [{
                 "BSM": 1
             },
             {
@@ -709,8 +671,7 @@
             }
         ]
     },
-    "ChargedShot": [
-        {
+    "ChargedShot": [{
             "BRM": 1
         },
         {
@@ -734,8 +695,7 @@
         "PRM": 1.2,
         "PEM": 1
     },
-    "Coalescence": [
-        {
+    "Coalescence": [{
             "BR": 0,
             "BE": 0
         },
@@ -752,8 +712,7 @@
             "BE": 4
         }
     ],
-    "Counterstrike": [
-        {},
+    "Counterstrike": [{},
         {
             "BR": 10
         },
@@ -764,8 +723,7 @@
             "BR": 25
         }
     ],
-    "CriticalBoost": [
-        {
+    "CriticalBoost": [{
             "PRM": 1.25
         },
         {
@@ -778,8 +736,7 @@
             "PRM": 1.4
         }
     ],
-    "CriticalElement": [
-        {
+    "CriticalElement": [{
             "PEM": 1
         },
         {
@@ -792,8 +749,7 @@
             "PEM": 1.15
         }
     ],
-    "CriticalEye": [
-        {},
+    "CriticalEye": [{},
         {
             "aff": 5
         },
@@ -816,21 +772,18 @@
             "aff": 40
         }
     ],
-    "CriticalFirePower": [
-        {
-            "Normal": {
-                "PRM": 1.3
-            },
-            "Pierce": {
-                "PRM": 1.2
-            },
-            "Spread": {
-                "PRM": 1.1
-            }
+    "CriticalFirePower": [{
+        "Normal": {
+            "PRM": 1.3
+        },
+        "Pierce": {
+            "PRM": 1.2
+        },
+        "Spread": {
+            "PRM": 1.1
         }
-    ],
-    "DangoTemper": [
-        {
+    }],
+    "DangoTemper": [{
             "BRM": 1,
             "BEM": 1
         },
@@ -860,8 +813,7 @@
     "DemonDrug": {
         "BR": 5
     },
-    "DemonMode": [
-        {
+    "DemonMode": [{
             "BEM": 1
         },
         {
@@ -871,8 +823,7 @@
     "DemonSeed": {
         "BR": 10
     },
-    "Dereliction": [
-        {},
+    "Dereliction": [{},
         {
             "BE": 5
         },
@@ -902,10 +853,8 @@
         }
     ],
     "DerelictionSource": {
-        "red": [
-            {},
-            [
-                {},
+        "red": [{},
+            [{},
                 {
                     "BE": 5
                 },
@@ -916,8 +865,7 @@
                     "BE": 12
                 }
             ],
-            [
-                {},
+            [{},
                 {
                     "BE": 7
                 },
@@ -928,8 +876,7 @@
                     "BE": 15
                 }
             ],
-            [
-                {},
+            [{},
                 {
                     "BE": 10
                 },
@@ -941,10 +888,8 @@
                 }
             ]
         ],
-        "blue": [
-            {},
-            [
-                {},
+        "blue": [{},
+            [{},
                 {
                     "BR": 15
                 },
@@ -955,8 +900,7 @@
                     "BR": 25
                 }
             ],
-            [
-                {},
+            [{},
                 {
                     "BR": 20
                 },
@@ -967,8 +911,7 @@
                     "BR": 30
                 }
             ],
-            [
-                {},
+            [{},
                 {
                     "BR": 25
                 },
@@ -981,8 +924,7 @@
             ]
         ]
     },
-    "DragonAttack": [
-        {},
+    "DragonAttack": [{},
         {
             "BE": 2
         },
@@ -1002,8 +944,9 @@
             "BE": 4
         }
     ],
-    "DragonResistance": [
-        {},
+    "DragonResistance": [{
+            "Resist": 0
+        },
         {
             "Resist": 6
         },
@@ -1015,44 +958,46 @@
             "Defence": 10
         }
     ],
-    "Dragonheart": [
-        {
-            "BRM": 1
+    "Dragonheart": [{
+            "BRM": 1,
+            "Resist": 30
         },
         {
-            "BRM": 1
+            "BRM": 1,
+            "Resist": 50
         },
         {
-            "BRM": 1
+            "BRM": 1,
+            "Resist": 50
         },
         {
-            "BRM": 1
+            "BRM": 1,
+            "Resist": 50
         },
         {
-            "BRM": 1.05
+            "BRM": 1.05,
+            "Resist": 50
         },
         {
-            "BRM": 1.1
+            "BRM": 1.1,
+            "Resist": 50
         }
     ],
-    "Dulling Strike": [
-        {
+    "Dulling Strike": [{
             "PRM": 1
         },
         {
             "PRM": 1.2
         }
     ],
-    "EleShieldCharge": [
-        {
+    "EleShieldCharge": [{
             "BEM": 1
         },
         {
             "BEM": 1.3
         }
     ],
-    "ElementExploit": [
-        {
+    "ElementExploit": [{
             "PEM": 1
         },
         {
@@ -1065,24 +1010,21 @@
             "PEM": 1.15
         }
     ],
-    "ElementalBlightExploit": [
-        {
+    "ElementalBlightExploit": [{
             "PRM": 1
         },
         {
             "PRM": 1.1
         }
     ],
-    "ElementalReload": [
-        {
+    "ElementalReload": [{
             "PEM": 1
         },
         {
             "PEM": 1.1
         }
     ],
-    "EvadeHop": [
-        {
+    "EvadeHop": [{
             "BRM": 1
         },
         {
@@ -1094,8 +1036,7 @@
         "PRM": 1,
         "PEM": 1
     },
-    "FanningManeuver": [
-        {
+    "FanningManeuver": [{
             "BRM": 1
         },
         {
@@ -1103,16 +1044,14 @@
             "PEM": 1.1
         }
     ],
-    "FeralDemonMode": [
-        {
+    "FeralDemonMode": [{
             "BRM": 1
         },
         {
             "BRM": 1.2
         }
     ],
-    "FireAttack": [
-        {},
+    "FireAttack": [{},
         {
             "BE": 2
         },
@@ -1132,8 +1071,9 @@
             "BE": 4
         }
     ],
-    "FireResistance": [
-        {},
+    "FireResistance": [{
+            "Resist": 0
+        },
         {
             "Resist": 6
         },
@@ -1145,8 +1085,7 @@
             "Defence": 10
         }
     ],
-    "Foray": [
-        {},
+    "Foray": [{},
         {
             "BR": 10
         },
@@ -1159,8 +1098,7 @@
             "aff": 20
         }
     ],
-    "Fortify": [
-        {
+    "Fortify": [{
             "BRM": 1
         },
         {
@@ -1171,8 +1109,7 @@
         }
     ],
     "Frostcraft": {
-        "melee": [
-            {
+        "melee": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1189,8 +1126,7 @@
                 "PRM": 1.3
             }
         ],
-        "Bow": [
-            {
+        "Bow": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1207,8 +1143,7 @@
                 "PRM": 1.25
             }
         ],
-        "HeavyBowGun": [
-            {
+        "HeavyBowGun": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1225,8 +1160,7 @@
                 "PRM": 1.3
             }
         ],
-        "LightBowGun": [
-            {
+        "LightBowGun": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1243,8 +1177,7 @@
                 "PRM": 1.25
             }
         ],
-        "Normal": [
-            {
+        "Normal": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1261,8 +1194,7 @@
                 "PRM": 1.25
             }
         ],
-        "Pierce": [
-            {
+        "Pierce": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1279,8 +1211,7 @@
                 "PRM": 1.25
             }
         ],
-        "Spread": [
-            {
+        "Spread": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1297,8 +1228,7 @@
                 "PRM": 1.25
             }
         ],
-        "Shrapnel": [
-            {
+        "Shrapnel": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1315,8 +1245,7 @@
                 "PRM": 1.25
             }
         ],
-        "Sticky": [
-            {
+        "Sticky": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1333,8 +1262,7 @@
                 "PRM": 1.25
             }
         ],
-        "Ice": [
-            {
+        "Ice": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1351,8 +1279,7 @@
                 "PRM": 1.25
             }
         ],
-        "Fire": [
-            {
+        "Fire": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1369,8 +1296,7 @@
                 "PRM": 1.25
             }
         ],
-        "Water": [
-            {
+        "Water": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1387,8 +1313,7 @@
                 "PRM": 1.25
             }
         ],
-        "Thunder": [
-            {
+        "Thunder": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1405,8 +1330,7 @@
                 "PRM": 1.25
             }
         ],
-        "Dragon": [
-            {
+        "Dragon": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1423,8 +1347,7 @@
                 "PRM": 1.25
             }
         ],
-        "Slicing": [
-            {
+        "Slicing": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1441,8 +1364,7 @@
                 "PRM": 1.25
             }
         ],
-        "Tranq": [
-            {
+        "Tranq": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1459,8 +1381,7 @@
                 "PRM": 1
             }
         ],
-        "Paralysis": [
-            {
+        "Paralysis": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1477,8 +1398,7 @@
                 "PRM": 1.25
             }
         ],
-        "Sleep": [
-            {
+        "Sleep": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1495,8 +1415,7 @@
                 "PRM": 1.25
             }
         ],
-        "Poison": [
-            {
+        "Poison": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1513,8 +1432,7 @@
                 "PRM": 1.25
             }
         ],
-        "Exhaust": [
-            {
+        "Exhaust": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1531,8 +1449,7 @@
                 "PRM": 1.25
             }
         ],
-        "Demon": [
-            {
+        "Demon": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1549,8 +1466,7 @@
                 "PRM": 1
             }
         ],
-        "Armor": [
-            {
+        "Armor": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1567,8 +1483,7 @@
                 "PRM": 1
             }
         ],
-        "Recover": [
-            {
+        "Recover": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1585,8 +1500,7 @@
                 "PRM": 1
             }
         ],
-        "Wyvern": [
-            {
+        "Wyvern": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1603,8 +1517,7 @@
                 "PRM": 1.15
             }
         ],
-        "Cluster": [
-            {
+        "Cluster": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1621,8 +1534,7 @@
                 "PRM": 1.15
             }
         ],
-        "Wyvernheart": [
-            {
+        "Wyvernheart": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1639,8 +1551,7 @@
                 "PRM": 1.25
             }
         ],
-        "(Recovery)": [
-            {
+        "(Recovery)": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1657,8 +1568,7 @@
                 "PRM": 1.25
             }
         ],
-        "Wyvernsnipe": [
-            {
+        "Wyvernsnipe": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1675,8 +1585,7 @@
                 "PRM": 1.25
             }
         ],
-        "Counter": [
-            {
+        "Counter": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1693,8 +1602,7 @@
                 "PRM": 1.25
             }
         ],
-        "WyvernBlast": [
-            {
+        "WyvernBlast": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1711,8 +1619,7 @@
                 "PRM": 1.15
             }
         ],
-        "Silkbind": [
-            {
+        "Silkbind": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1729,8 +1636,7 @@
                 "PRM": 1.15
             }
         ],
-        "Mech": [
-            {
+        "Mech": [{
                 "PEM": 1,
                 "PRM": 1
             },
@@ -1748,8 +1654,7 @@
             }
         ]
     },
-    "GrinderS": [
-        {},
+    "GrinderS": [{},
         {
             "BRM": 1.1,
             "BEM": 1.075
@@ -1763,8 +1668,7 @@
             "BEM": 1.075
         }
     ],
-    "Handicraft": [
-        {
+    "Handicraft": [{
             "Sharp": 0
         },
         {
@@ -1783,8 +1687,7 @@
             "Sharp": 50
         }
     ],
-    "Helmbreaker": [
-        {
+    "Helmbreaker": [{
             "BRM": 1
         },
         {
@@ -1799,16 +1702,14 @@
             "BEM": 1.3
         }
     ],
-    "HerculesDraw": [
-        {
+    "HerculesDraw": [{
             "PRM": 1
         },
         {
             "PRM": 1.1
         }
     ],
-    "Heroics": [
-        {
+    "Heroics": [{
             "BRM": 1
         },
         {
@@ -1836,8 +1737,7 @@
     "HuntingHornElemental": {
         "PEM": 1.1
     },
-    "IceAttack": [
-        {},
+    "IceAttack": [{},
         {
             "BE": 2
         },
@@ -1857,8 +1757,9 @@
             "BE": 4
         }
     ],
-    "IceResistance": [
-        {},
+    "IceResistance": [{
+            "Resist": 0
+        },
         {
             "Resist": 6
         },
@@ -1870,16 +1771,14 @@
             "Defence": 10
         }
     ],
-    "ImpactShieldCharge": [
-        {
+    "ImpactShieldCharge": [{
             "BRM": 1
         },
         {
             "BRM": 1.2
         }
     ],
-    "KinsectBuff": [
-        {
+    "KinsectBuff": [{
             "BRM": 1
         },
         {
@@ -1892,8 +1791,7 @@
             "BRM": 1.15
         }
     ],
-    "KushalaBlessing": [
-        {},
+    "KushalaBlessing": [{},
         {
             "BEM": 1.05
         },
@@ -1907,14 +1805,12 @@
             "BEM": 1.1
         }
     ],
-    "KushalaDaoraSoul": [
-        {},
+    "KushalaDaoraSoul": [{},
         {
             "aff": 15
         }
     ],
-    "LatentPower": [
-        {},
+    "LatentPower": [{},
         {
             "aff": 10
         },
@@ -1931,14 +1827,12 @@
             "aff": 50
         }
     ],
-    "Magnamalo Soul": [
-        {},
+    "Magnamalo Soul": [{},
         {
             "BR": 12
         }
     ],
-    "MailofHellfire": [
-        {},
+    "MailofHellfire": [{},
         {
             "BR": 15
         },
@@ -1950,8 +1844,7 @@
         }
     ],
     "MailofHellfireSource": {
-        "red": [
-            {},
+        "red": [{},
             {
                 "BR": 15
             },
@@ -1962,8 +1855,7 @@
                 "BR": 30
             }
         ],
-        "blue": [
-            {
+        "blue": [{
                 "PEM": 1
             },
             {
@@ -1977,8 +1869,7 @@
             }
         ]
     },
-    "Marksman": [
-        {
+    "Marksman": [{
             "PRM": 1,
             "EFR": 1
         },
@@ -1999,8 +1890,7 @@
             "EFR": 1.06
         }
     ],
-    "MastersTouch": [
-        {
+    "MastersTouch": [{
             "Sharp": 0
         },
         {
@@ -2013,8 +1903,7 @@
             "Sharp": 0.8
         }
     ],
-    "MaximumMight": [
-        {},
+    "MaximumMight": [{},
         {
             "aff": 10
         },
@@ -2028,8 +1917,7 @@
     "MegaDemonDrug": {
         "BR": 7
     },
-    "MindsEye": [
-        {
+    "MindsEye": [{
             "PRM": 1,
             "PEM": 1
         },
@@ -2046,8 +1934,7 @@
             "PEM": 1.3
         }
     ],
-    "NormalRapidUp": [
-        {
+    "NormalRapidUp": [{
             "PRM": 1
         },
         {
@@ -2060,8 +1947,7 @@
             "PRM": 1.2
         }
     ],
-    "OffensiveGuard": [
-        {
+    "OffensiveGuard": [{
             "BRM": 1
         },
         {
@@ -2082,8 +1968,7 @@
         "PRM": 1,
         "PEM": 1
     },
-    "ParalysisAttack": [
-        {},
+    "ParalysisAttack": [{},
         {
             "BEM": 1.05,
             "BE": 1
@@ -2097,8 +1982,7 @@
             "BE": 5
         }
     ],
-    "PeakPerformance": [
-        {},
+    "PeakPerformance": [{},
         {
             "BR": 5
         },
@@ -2109,8 +1993,7 @@
             "BR": 20
         }
     ],
-    "PierceUp": [
-        {
+    "PierceUp": [{
             "PRM": 1
         },
         {
@@ -2131,8 +2014,7 @@
         "PRM": 1,
         "PEM": 1
     },
-    "PoisonAttack": [
-        {},
+    "PoisonAttack": [{},
         {
             "BEM": 1.05,
             "BE": 1
@@ -2153,8 +2035,7 @@
     "PowerCharm": {
         "BR": 7
     },
-    "PowerSheath": [
-        {
+    "PowerSheath": [{
             "BRM": 1
         },
         {
@@ -2164,8 +2045,7 @@
     "PowerTalisman": {
         "BR": 8
     },
-    "PunishingDraw": [
-        {
+    "PunishingDraw": [{
             "BR": 0
         },
         {
@@ -2178,8 +2058,7 @@
             "BR": 7
         }
     ],
-    "RapidFireUp": [
-        {
+    "RapidFireUp": [{
             "PRM": 1
         },
         {
@@ -2192,8 +2071,7 @@
             "PRM": 1.2
         }
     ],
-    "RapidMorph": [
-        {
+    "RapidMorph": [{
             "BRM": 1
         },
         {
@@ -2206,8 +2084,7 @@
             "BRM": 1.2
         }
     ],
-    "RazorSharp": [
-        {
+    "RazorSharp": [{
             "Sharp": 0
         },
         {
@@ -2220,8 +2097,7 @@
             "Sharp": 0.5
         }
     ],
-    "RecoilDown": [
-        {
+    "RecoilDown": [{
             "Lv": 0
         },
         {
@@ -2234,8 +2110,7 @@
             "Lv": 3
         }
     ],
-    "ReloadSpeed": [
-        {
+    "ReloadSpeed": [{
             "Lv": 0
         },
         {
@@ -2248,8 +2123,7 @@
             "Lv": 3
         }
     ],
-    "Resentment": [
-        {},
+    "Resentment": [{},
         {
             "BR": 5
         },
@@ -2266,8 +2140,7 @@
             "BR": 25
         }
     ],
-    "Resuscitate": [
-        {
+    "Resuscitate": [{
             "BR": 0
         },
         {
@@ -2280,16 +2153,14 @@
             "BR": 20
         }
     ],
-    "SavageAxe": [
-        {
+    "SavageAxe": [{
             "BRM": 1
         },
         {
             "BRM": 1.1
         }
     ],
-    "SerenePose": [
-        {
+    "SerenePose": [{
             "BRM": 1
         },
         {
@@ -2322,6 +2193,7 @@
             "PEM": 1
         },
         "Yellow": {
+            "PRM": 1,
             "PEM": 0.75
         },
         "Orange": {
@@ -2344,8 +2216,7 @@
         "PRM": 1,
         "PEM": 1
     },
-    "SleepAttack": [
-        {},
+    "SleepAttack": [{},
         {
             "BEM": 1.05,
             "BE": 1
@@ -2359,8 +2230,7 @@
             "BE": 5
         }
     ],
-    "SneakAttack": [
-        {
+    "SneakAttack": [{
             "PRM": 1
         },
         {
@@ -2379,8 +2249,7 @@
         10,
         20
     ],
-    "SpecialAmmoBoost": [
-        {
+    "SpecialAmmoBoost": [{
             "PRM": 1
         },
         {
@@ -2390,8 +2259,7 @@
             "PRM": 1.2
         }
     ],
-    "Spiribird": [
-        {},
+    "Spiribird": [{},
         {
             "BR": 1
         },
@@ -2453,8 +2321,7 @@
             "BR": 20
         }
     ],
-    "SpiritGauge": [
-        {
+    "SpiritGauge": [{
             "BRM": 1
         },
         {
@@ -2470,8 +2337,7 @@
             "BEM": 1.12
         }
     ],
-    "SpreadUp": [
-        {
+    "SpreadUp": [{
             "PRM": 1
         },
         {
@@ -2484,8 +2350,7 @@
             "PRM": 1.2
         }
     ],
-    "Stormsoul": [
-        {},
+    "Stormsoul": [{},
         {
             "BEM": 1.05
         },
@@ -2503,8 +2368,7 @@
         }
     ],
     "Strife": {
-        "High": [
-            {},
+        "High": [{},
             {
                 "BEM": 1.05,
                 "aff": 5
@@ -2518,8 +2382,7 @@
                 "aff": 10
             }
         ],
-        "Low": [
-            {},
+        "Low": [{},
             {
                 "BEM": 1.1,
                 "aff": 10
@@ -2560,8 +2423,7 @@
             "PEM": 1.25
         }
     },
-    "TeostraBlessing": [
-        {},
+    "TeostraBlessing": [{},
         {
             "BEM": 1.05
         },
@@ -2575,8 +2437,7 @@
             "BEM": 1.1
         }
     ],
-    "ThunderAttack": [
-        {},
+    "ThunderAttack": [{},
         {
             "BE": 2
         },
@@ -2596,8 +2457,9 @@
             "BE": 4
         }
     ],
-    "ThunderResistance": [
-        {},
+    "ThunderResistance": [{
+            "Resist": 0
+        },
         {
             "Resist": 6
         },
@@ -2609,8 +2471,7 @@
             "Defence": 10
         }
     ],
-    "UpperCrit": [
-        {
+    "UpperCrit": [{
             "PRM": 1,
             "PEM": 1
         },
@@ -2619,24 +2480,21 @@
             "PEM": 1.1
         }
     ],
-    "Valstrax Soul": [
-        {
+    "Valstrax Soul": [{
             "PRM": 1
         },
         {
             "PRM": 1.2
         }
     ],
-    "WallRunner": [
-        {},
+    "WallRunner": [{},
         {},
         {},
         {
             "BR": 20
         }
     ],
-    "WaterAttack": [
-        {},
+    "WaterAttack": [{},
         {
             "BE": 2
         },
@@ -2656,8 +2514,9 @@
             "BE": 4
         }
     ],
-    "WaterResistance": [
-        {},
+    "WaterResistance": [{
+            "Resist": 0
+        },
         {
             "Resist": 6
         },
@@ -2669,8 +2528,7 @@
             "Defence": 10
         }
     ],
-    "WeaknessExploit": [
-        {
+    "WeaknessExploit": [{
             "aff": 0
         },
         {
@@ -2683,9 +2541,7 @@
             "aff": 50
         }
     ],
-    "dropDereliction": [
-        {}
-    ],
+    "dropDereliction": [{}],
     "palicoaff": {
         "aff": 30
     },
