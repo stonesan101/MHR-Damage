@@ -30,3 +30,8 @@ wallaby.js
 .github/workflows/require-allow-edits.yml
 .eslintrc.json
 MHRDamage.code-workspace
+bench**
+**history**
+**temp**
+**Test**
+**hint**
