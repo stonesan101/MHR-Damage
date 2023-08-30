@@ -1,1 +1,404 @@
-{"---":{},"Adrenaline":[{"BRM":1},{"BRM":1.3},{"BRM":1.35},{"BRM":1.35},{"BRM":1.35}],"AdrenalineRush":[{},{"BR":15},{"BR":20},{"BR":30}],"AffinitySliding":[{},{"aff":40}],"Agitator":[{"BR":0,"aff":0},{"BR":4,"aff":3},{"BR":8,"aff":5},{"BR":12,"aff":7},{"BR":16,"aff":10},{"BR":20,"aff":15}],"AmmoUp":[{"Lv":0},{"LV":1},{"LV":2},{"Lv":3}],"AntiSpecies":[{"PRM":1},{"PRM":1.05}],"ArchdemonMode":[{"BEM":1},{"BEM":1.2}],"Artillery":[{"BRM":1},{"BRM":1.15},{"BRM":1.3},{"BRM":1.5}],"AttackBoost":[{},{"BR":3},{"BR":6},{"BR":9},{"BRM":1.05,"BR":7},{"BRM":1.06,"BR":8},{"BRM":1.08,"BR":9},{"BRM":1.1,"BR":10}],"Barrelhbg":[{"Power":1,"Silencer":0,"reload":0},{"Power":1.125,"Silencer":0,"reload":0},{"Power":1,"Silencer":0,"reload":0}],"Barrellbg":[{"Power":1,"Silencer":0,"reload":0},{"Power":1.05,"Silencer":0,"reload":0},{"Power":1,"Silencer":1,"reload":1},{"Power":1,"Silencer":0,"reload":2}],"Blast":{"PRM":1,"PEM":1},"BlastAttack":[{},{"BEM":1.05,"BE":1},{"BEM":1.1,"BE":2},{"BEM":1.2,"BE":5}],"Bloodlust":[{},{"BR":10,"BE":5,"aff":20},{"BR":15,"BE":7,"aff":25},{"BR":20,"BE":10,"aff":25}],"Bludgeoner":[{"BRM":1},{"BRM":1.05},{"BRM":1.1},{"BRM":1.1}],"BombardierSource":{"ChargeBlade":[{"PRM":1,"EFR":1},{"PRM":1.1,"EFR":1.15},{"PRM":1.15,"EFR":1.15},{"PRM":1.2,"EFR":1.16},{"PRM":1.25,"EFR":1.1}],"Gunlance":[[1,1],[1.05,1.05],[1.1,1.1],[1.15,1.11],[1.2,1.12]],"BowGun":[{"EFR":1,"EFE":1},{"EFR":1.1,"EFE":1.1},{"EFR":1.1,"EFE":1.1},{"EFR":1.2,"EFE":1.16},{"EFR":1.25,"EFE":1.17}],"HeavyBowGun":[{"Wyvern":[1,1,1],"Sticky":[1,1,1]},{"Wyvern":[1.1,1.1,1],"Sticky":[1.1,1.1,1]},{"Wyvern":[1.15,1.15,1],"Sticky":[1.1,1.1,1]},{"Wyvern":[1.2,1.16,1],"Sticky":[1.2,1.16,1]},{"Wyvern":[1.25,1.17,1.1],"Sticky":[1.25,1.17,1.1]}]},"Booster":[{},{"BR":6},{"BR":9},{"BR":12},{"BR":15}],"BowChargePlus":[false,true],"BowCoating":[{"PRM":1,"PEM":1}],"BowgunBarrel":[{"Power":1,"Silencer":0,"reload":0},{"Power":1.05,"Silencer":0,"reload":0},{"Power":1.125,"Silencer":0,"reload":0},{"Power":1,"Silencer":1,"reload":1},{"Power":1,"Silencer":0,"reload":0}],"Burst":[{},{"BR":5,"BE":5},{"BR":8,"BE":6},{"BR":9,"BE":7},{"BR":10,"BE":8}],"BurstBow":[{},{"BR":5,"BE":5},{"BR":8,"BE":6},{"BR":9,"BE":8},{"BR":10,"BE":10}],"BurstBowGun":[{},{"BR":5,"BE":5},{"BR":8,"BE":6},{"BR":9,"BE":7},{"BR":10,"BE":8}],"BurstDualBlades":[{},{"BR":5,"BE":5},{"BR":10,"BE":6},{"BR":12,"BE":8},{"BR":15,"BE":12}],"BurstStandard":[{},{"BR":5,"BE":5},{"BR":10,"BE":8},{"BR":12,"BE":10},{"BR":15,"BE":15}],"ButterFlame":{"BR":25},"ChargeLevel":[{"PEM":1},{"PRM":1.1,"PEM":1.1},{"PRM":1.2,"PEM":1.2},{"PRM":1.3,"PEM":1.3}],"ChargeMaster":{"LongSword":[{"BSM":1},{"BEM":1.1,"BSM":1.1},{"BEM":1.2,"BSM":1.2},{"BEM":1.3,"BSM":1.3}],"GreatSword":[{"BSM":1},{"BEM":1.1,"BSM":1.1},{"BEM":1.3,"BSM":1.3},{"BEM":1.5,"BSM":1.5}],"ChargeBlade":[{"BSM":1},{"BEM":1.1,"BSM":1.1},{"BEM":1.3,"BSM":1.3},{"BEM":1.5,"BSM":1.5}],"SwordnShield":[{"BSM":1},{"BEM":1.5,"BSM":1.2},{"BEM":1.75,"BSM":1.3},{"BEM":2,"BSM":1.5}],"Lance":[{"BSM":1},{"BEM":1.3,"BSM":1.3},{"BEM":1.5,"BSM":1.5},{"BEM":1.75,"BSM":1.75}],"Gunlance":[{"BSM":1},{"BEM":1.3,"BSM":1},{"BEM":1.5,"BSM":1},{"BEM":1.75,"BSM":1}],"Hammer":[{"BSM":1},{"BEM":1.1,"BSM":1.05},{"BEM":1.15,"BSM":1.1},{"BEM":1.2,"BSM":1.15}],"Bow":[{"BSM":1},{"BEM":1.05,"BSM":1.05},{"BEM":1.1,"BSM":1.1},{"BEM":1.15,"BSM":1.15}],"HeavyBowGun":[{"BSM":1},{"BEM":1.05,"BSM":1.05},{"BEM":1.1,"BSM":1.1},{"BEM":1.15,"BSM":1.15}],"LightBowGun":[{"BSM":1},{"BEM":1.05,"BSM":1.05},{"BEM":1.1,"BSM":1.1},{"BEM":1.15,"BSM":1.15}],"HeavyBowGun Wyvern":[{"BSM":1},{"BEM":1.5,"BSM":1},{"BEM":1.75,"BSM":1},{"BEM":2,"BSM":1}]},"ChargedShot":[{"BRM":1},{"BRM":1.1,"BEM":1.1},{"BRM":1.2,"BEM":1.2},{"BRM":1.3,"BEM":1.3}],"Close-range+":{"PRM":1.2,"PEM":1},"Close-range":{"PRM":1.2,"PEM":1},"Coalescence":[{"BR":0,"BE":0},{"BR":12,"BE":2},{"BR":15,"BE":3},{"BR":18,"BE":4}],"Counterstrike":[{},{"BR":10},{"BR":15},{"BR":25}],"CriticalBoost":[{"PRM":1.25},{"PRM":1.3},{"PRM":1.35},{"PRM":1.4}],"CriticalElement":[{"PEM":1},{"PEM":1.05},{"PEM":1.1},{"PEM":1.15}],"CriticalEye":[{},{"aff":5},{"aff":10},{"aff":15},{"aff":20},{"aff":25},{"aff":30},{"aff":40}],"CriticalFirePower":[{"Normal":{"PRM":1.3},"Pierce":{"PRM":1.2},"Spread":{"PRM":1.1}}],"DangoTemper":[{"BRM":1,"BEM":1},{"PRM":1.05,"PEM":1.05},{"PRM":1.05,"PEM":1.05},{"PRM":1.075,"PEM":1.075},{"PRM":1.075,"PEM":1.075}],"DemonPowder":{"BR":10},"DemonAmmo":{"BR":10},"DemonDrug":{"BR":5},"DemonMode":[{"BEM":1},{"BEM":1.35}],"DemonSeed":{"BR":10},"Dereliction":[{},{"BE":5},{"BE":8},{"BE":12},{"BE":7},{"BE":12},{"BE":15},{"BE":10},{"BE":15},{"BE":20}],"DerelictionSource":{"red":[{},[{},{"BE":5},{"BE":8},{"BE":12}],[{},{"BE":7},{"BE":12},{"BE":15}],[{},{"BE":10},{"BE":15},{"BE":20}]],"blue":[{},[{},{"BR":15},{"BR":20},{"BR":25}],[{},{"BR":20},{"BR":25},{"BR":30}],[{},{"BR":25},{"BR":30},{"BR":35}]]},"DragonAttack":[{},{"BE":2},{"BE":3},{"BEM":1.05,"BE":4},{"BEM":1.1,"BE":4},{"BEM":1.2,"BE":4}],"DragonResistance":[{"Resist":0},{"Resist":6},{"Resist":12},{"Resist":20,"Defence":10}],"Dragonheart":[{"BRM":1,"Resist":30},{"BRM":1,"Resist":50},{"BRM":1,"Resist":50},{"BRM":1,"Resist":50},{"BRM":1.05,"Resist":50},{"BRM":1.1,"Resist":50}],"DullingStrike":[{"PRM":1},{"PRM":1.2}],"EleShieldCharge":[{"BEM":1},{"BEM":1.3}],"ElementExploit":[{"PEM":1},{"PEM":1.1},{"PEM":1.125},{"PEM":1.15}],"ElementalBlightExploit":[{"PRM":1},{"PRM":1.1}],"ElementalReload":[{"PEM":1},{"PEM":1.1}],"EvadeHop":[{"BRM":1},{"PRM":1.1,"PEM":1.1}],"Exhaust":{"PRM":1,"PEM":1},"FanningManeuver":[{"BRM":1},{"PRM":1.1,"PEM":1.1}],"FeralDemonMode":[{"BRM":1},{"BRM":1.2}],"FireAttack":[{},{"BE":2},{"BE":3},{"BEM":1.05,"BE":4},{"BEM":1.1,"BE":4},{"BEM":1.2,"BE":4}],"FireResistance":[{"Resist":0},{"Resist":6},{"Resist":12},{"Resist":20,"Defence":10}],"Foray":[{},{"BR":10},{"BR":10,"aff":10},{"BR":15,"aff":20}],"Fortify":[{"BRM":1},{"BRM":1.1},{"BRM":1.2}],"Frostcraft":{"melee":[{"PEM":1,"PRM":1},{"PEM":1.05,"PRM":1.05},{"PEM":1.2,"PRM":1.2},{"PEM":1.3,"PRM":1.3}],"Bow":[{"PEM":1,"PRM":1},{"PEM":1.05,"PRM":1.05},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"HeavyBowGun":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.3,"PRM":1.3}],"LightBowGun":[{"PEM":1,"PRM":1},{"PEM":1.05,"PRM":1.05},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Normal":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Pierce":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Spread":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Shrapnel":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Sticky":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Ice":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Fire":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Water":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Thunder":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Dragon":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Slicing":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Tranq":[{"PEM":1,"PRM":1},{"PEM":1,"PRM":1},{"PEM":1,"PRM":1},{"PEM":1,"PRM":1}],"Paralysis":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Sleep":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Poison":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Exhaust":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Demon":[{"PEM":1,"PRM":1},{"PEM":1,"PRM":1},{"PEM":1,"PRM":1},{"PEM":1,"PRM":1}],"Armor":[{"PEM":1,"PRM":1},{"PEM":1,"PRM":1},{"PEM":1,"PRM":1},{"PEM":1,"PRM":1}],"Recover":[{"PEM":1,"PRM":1},{"PEM":1,"PRM":1},{"PEM":1,"PRM":1},{"PEM":1,"PRM":1}],"Wyvern":[{"PEM":1,"PRM":1},{"PEM":1.05,"PRM":1.05},{"PEM":1.1,"PRM":1.1},{"PEM":1.15,"PRM":1.15}],"Cluster":[{"PEM":1,"PRM":1},{"PEM":1.05,"PRM":1.05},{"PEM":1.1,"PRM":1.1},{"PEM":1.15,"PRM":1.15}],"Wyvernheart":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"(Recovery)":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Wyvernsnipe":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"Counter":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}],"WyvernBlast":[{"PEM":1,"PRM":1},{"PEM":1.05,"PRM":1.05},{"PEM":1.1,"PRM":1.1},{"PEM":1.15,"PRM":1.15}],"Silkbind":[{"PEM":1,"PRM":1},{"PEM":1.05,"PRM":1.05},{"PEM":1.1,"PRM":1.1},{"PEM":1.15,"PRM":1.15}],"Mech":[{"PEM":1,"PRM":1},{"PEM":1.1,"PRM":1.1},{"PEM":1.2,"PRM":1.2},{"PEM":1.25,"PRM":1.25}]},"GrinderS":[{},{"BRM":1.1,"BEM":1.075},{"BRM":1.1,"BEM":1.075},{"BRM":1.1,"BEM":1.075}],"Handicraft":[{"Sharp":0},{"Sharp":10},{"Sharp":20},{"Sharp":30},{"Sharp":40},{"Sharp":50}],"Helmbreaker":[{"BRM":1},{"BRM":1.5},{"BRM":2.5,"BEM":1.1},{"BRM":4,"BEM":1.3}],"HerculesDraw":[{"PRM":1},{"PRM":1.1}],"Heroics":[{"BRM":1},{"BRM":1},{"BRM":1.05},{"BRM":1.05},{"BRM":1.1},{"BRM":1.3}],"HuntingHornAffinity":{"aff":20},"HuntingHornAttack":{"PRM":1.1},"HuntingHornElemental":{"PEM":1.1},"IceAttack":[{},{"BE":2},{"BE":3},{"BEM":1.05,"BE":4},{"BEM":1.1,"BE":4},{"BEM":1.2,"BE":4}],"IceResistance":[{"Resist":0},{"Resist":6},{"Resist":12},{"Resist":20,"Defence":10}],"Inspiration":[{},{"BE":10}],"ImpactShieldCharge":[{"BRM":1},{"BRM":1.2}],"KinsectBuff":[{"BRM":1},{"BRM":1.05},{"BRM":1.1},{"BRM":1.15}],"KushalaBlessing":[{},{"BEM":1.05},{"BEM":1.1},{"BEM":1.1},{"BEM":1.1}],"KushalaDaoraSoul":[{},{"aff":15}],"LatentPower":[{},{"aff":10},{"aff":20},{"aff":30},{"aff":45},{"aff":50}],"MagnamaloSoul":[{},{"BR":12}],"MailofHellfire":[{},{"BR":15},{"BR":25},{"BR":30}],"MailofHellfireSource":{"red":[{},{"BR":15},{"BR":25},{"BR":30}],"blue":[{"PEM":1},{"PEM":1.05},{"PEM":1.1},{"PEM":1.2}]},"Marksman":[{"PRM":1,"EFR":1},{"PRM":1.05,"EFR":1.015},{"PRM":1.1,"EFR":1.03},{"PRM":1.05,"EFR":1.045},{"PRM":1.1,"EFR":1.06}],"MastersTouch":[{"Sharp":0},{"Sharp":0.2},{"Sharp":0.4},{"Sharp":0.8}],"MaximumMight":[{},{"aff":10},{"aff":20},{"aff":30}],"MegaDemonDrug":{"BR":7},"MindsEye":[{"PRM":1,"PEM":1},{"PRM":1.1,"PEM":1.1},{"PRM":1.15,"PEM":1.15},{"PRM":1.3,"PEM":1.3}],"NormalRapidUp":[{"PRM":1},{"PRM":1.05},{"PRM":1.1},{"PRM":1.2}],"OffensiveGuard":[{"BRM":1},{"BRM":1.05},{"BRM":1.1},{"BRM":1.15}],"Para+":{"PRM":1,"PEM":1},"Para":{"PRM":1,"PEM":1},"ParalysisAttack":[{},{"BEM":1.05,"BE":1},{"BEM":1.1,"BE":2},{"BEM":1.2,"BE":5}],"PeakPerformance":[{},{"BR":5},{"BR":10},{"BR":20}],"PierceUp":[{"PRM":1},{"PRM":1.05},{"PRM":1.1},{"PRM":1.2}],"Poison+":{"PRM":1,"PEM":1},"Poison":{"PRM":1,"PEM":1},"PoisonAttack":[{},{"BEM":1.05,"BE":1},{"BEM":1.1,"BE":2},{"BEM":1.2,"BE":5}],"Power":{"PRM":1.35,"PEM":1},"PowerCharm":{"BR":7},"PowerSheath":[{"BRM":1},{"BRM":1.1}],"PowerTalisman":{"BR":8},"PunishingDraw":[{"BR":0},{"BR":3},{"BR":5},{"BR":7}],"RapidFireUp":[{"PRM":1},{"PRM":1.05},{"PRM":1.1},{"PRM":1.2}],"RapidMorph":[{"BRM":1},{"BRM":1.05},{"BRM":1.1},{"BRM":1.2}],"RazorSharp":[{"Sharp":0},{"Sharp":0.1},{"Sharp":0.25},{"Sharp":0.5}],"RecoilDown":[{"Lv":0},{"LV":1},{"LV":2},{"Lv":3}],"ReloadSpeed":[{"Lv":0},{"LV":1},{"LV":2},{"Lv":3}],"Resentment":[{},{"BR":5},{"BR":10},{"BR":15},{"BR":20},{"BR":25}],"Resuscitate":[{"BR":0},{"BR":5},{"BR":10},{"BR":20}],"SavageAxe":[{"BRM":1},{"BRM":1.1}],"SerenePose":[{"BRM":1},{"BRM":2},{"BRM":3,"BEM":1.1},{"BRM":5,"BEM":1.3}],"Sharpness":{"Purple":{"PRM":1.39,"PEM":1.25},"White":{"PRM":1.32,"PEM":1.15},"Blue":{"PRM":1.2,"PEM":1.0625},"Green":{"PRM":1.05,"PEM":1},"Yellow":{"PRM":1,"PEM":0.75},"Orange":{"PRM":0.75,"PEM":0.5},"Red":{"PRM":0.5,"PEM":0.25},"---":{"PEM":1}},"LanceCharge":[{},{"BRM":1.1}],"Sleep+":{"PRM":1,"PEM":1},"Sleep":{"PRM":1,"PEM":1},"SleepAttack":[{},{"BEM":1.05,"BE":1},{"BEM":1.1,"BE":2},{"BEM":1.2,"BE":5}],"SneakAttack":[{"PRM":1},{"PRM":1.05},{"PRM":1.1},{"PRM":1.2}],"SpareShot":[0,5,10,20],"SpecialAmmoBoost":[{"PRM":1},{"PRM":1.1},{"PRM":1.2}],"Spiribird":[{},{"BR":1},{"BR":2},{"BR":3},{"BR":4},{"BR":5},{"BR":6},{"BR":7},{"BR":8},{"BR":9},{"BR":10},{"BR":11},{"BR":12},{"BR":13},{"BR":14},{"BR":15},{"BR":16},{"BR":17},{"BR":18},{"BR":19},{"BR":20}],"SpiritGauge":[{"BRM":1},{"BRM":1.04,"BEM":1.04},{"BRM":1.08,"BEM":1.08},{"BRM":1.12,"BEM":1.12}],"SpreadUp":[{"PRM":1},{"PRM":1.05},{"PRM":1.1},{"PRM":1.2}],"Stormsoul":[{},{"BEM":1.05},{"BEM":1.1},{"BEM":1.15},{"BEM":1.15},{"BEM":1.15}],"Strife":{"High":[{},{"BEM":1.05,"aff":5},{"BEM":1.1,"aff":10},{"BEM":1.15,"aff":10}],"Low":[{},{"BEM":1.1,"aff":10},{"BEM":1.15,"aff":15},{"BEM":1.2,"aff":20}]},"StrongarmStance":{"Charged Slash":{"PRM":1.25,"PEM":1.2},"Rising Slash":{"PRM":1.25,"PEM":1.3},"Wide Slash":{"PRM":1.25,"PEM":1.3},"Strong Charged Slash":{"PRM":1.2,"PEM":1.2},"True Charged Slash":{"PRM":1.35,"PEM":1.3},"Rage Slash":{"PRM":1.3,"PEM":1.25}},"TeostraBlessing":[{},{"BEM":1.05},{"BEM":1.1},{"BEM":1.1},{"BEM":1.1}],"ThunderAttack":[{},{"BE":2},{"BE":3},{"BEM":1.05,"BE":4},{"BEM":1.1,"BE":4},{"BEM":1.2,"BE":4}],"ThunderResistance":[{"Resist":0},{"Resist":6},{"Resist":12},{"Resist":20,"Defence":10}],"UpperCrit":[{"PRM":1,"PEM":1},{"PRM":1.15,"PEM":1.1}],"ValstraxSoul":[{"PEM":1},{"PEM":1.2}],"WallRunner":[{},{},{},{"BR":20}],"WaterAttack":[{},{"BE":2},{"BE":3},{"BEM":1.05,"BE":4},{"BEM":1.1,"BE":4},{"BEM":1.2,"BE":4}],"WaterResistance":[{"Resist":0},{"Resist":6},{"Resist":12},{"Resist":20,"Defence":10}],"WeaknessExploit":[{"aff":0},{"aff":15},{"aff":30},{"aff":50}],"dropDereliction":[{}],"palicoaff":{"aff":30},"powerDrum":{"BRM":1.05},"sleepWakeUp":{"PRM":2,"PEM":2}}
+{
+  "---":                    {},
+  "Adrenaline":             [{"BRM": 1}, {"BRM": 1.3}, {"BRM": 1.35}, {"BRM": 1.35}, {"BRM": 1.35}],
+  "AdrenalineRush":         [{}, {"BR": 15}, {"BR": 20}, {"BR": 30}],
+  "AffinitySliding":        [{}, {"aff": 40}],
+  "Agitator":               [
+    {"BR": 0, "aff": 0},
+    {"BR": 4, "aff": 3},
+    {"BR": 8, "aff": 5},
+    {"BR": 12, "aff": 7},
+    {"BR": 16, "aff": 10},
+    {"BR": 20, "aff": 15}
+  ],
+  "AmmoUp":                 [{"Lv": 0}, {"LV": 1}, {"LV": 2}, {"Lv": 3}],
+  "AntiSpecies":            [{"PRM": 1}, {"PRM": 1.05}],
+  "ArchdemonMode":          [{"BEM": 1}, {"BEM": 1.2}],
+  "Artillery":              [{"BRM": 1}, {"BRM": 1.15}, {"BRM": 1.3}, {"BRM": 1.5}],
+  "AttackBoost":            [
+    {},
+    {"BR": 3},
+    {"BR": 6},
+    {"BR": 9},
+    {"BRM": 1.05, "BR": 7},
+    {"BRM": 1.06, "BR": 8},
+    {"BRM": 1.08, "BR": 9},
+    {"BRM": 1.1, "BR": 10}
+  ],
+  "Barrelhbg":              [
+    {"Power": 1, "Silencer": 0, "reload": 0},
+    {"Power": 1.125, "Silencer": 0, "reload": 0},
+    {"Power": 1, "Silencer": 0, "reload": 0}
+  ],
+  "Barrellbg":              [
+    {"Power": 1, "Silencer": 0, "reload": 0},
+    {"Power": 1.05, "Silencer": 0, "reload": 0},
+    {"Power": 1, "Silencer": 1, "reload": 1},
+    {"Power": 1, "Silencer": 0, "reload": 2}
+  ],
+  "Blast":                  {"PRM": 1, "PEM": 1},
+  "BlastAttack":            [{}, {"BEM": 1.05, "BE": 1}, {"BEM": 1.1, "BE": 2}, {"BEM": 1.2, "BE": 5}],
+  "Bloodlust":              [
+    {}, {"BR": 10, "BE": 5, "aff": 20}, {"BR": 15, "BE": 7, "aff": 25}, {"BR": 20, "BE": 10, "aff": 25}
+  ],
+  "Bludgeoner":             [{"BRM": 1}, {"BRM": 1.05}, {"BRM": 1.1}, {"BRM": 1.1}],
+  "BombardierSource":       {
+    "ChargeBlade":    [
+      {"PRM": 1, "EFR": 1},
+      {"PRM": 1.1, "EFR": 1.15},
+      {"PRM": 1.15, "EFR": 1.15},
+      {"PRM": 1.2, "EFR": 1.16},
+      {"PRM": 1.25, "EFR": 1.1}
+    ], "Gunlance":    [[1, 1], [1.05, 1.05], [1.1, 1.1], [1.15, 1.11], [1.2, 1.12]], "BowGun": [
+      {"EFR": 1, "EFE": 1},
+      {"EFR": 1.1, "EFE": 1.1},
+      {"EFR": 1.1, "EFE": 1.1},
+      {"EFR": 1.2, "EFE": 1.16},
+      {"EFR": 1.25, "EFE": 1.17}
+    ], "HeavyBowGun": [
+      {"Wyvern": [1, 1, 1], "Sticky": [1, 1, 1]},
+      {"Wyvern": [1.1, 1.1, 1], "Sticky": [1.1, 1.1, 1]},
+      {"Wyvern": [1.15, 1.15, 1], "Sticky": [1.1, 1.1, 1]},
+      {"Wyvern": [1.2, 1.16, 1], "Sticky": [1.2, 1.16, 1]},
+      {"Wyvern": [1.25, 1.17, 1.1], "Sticky": [1.25, 1.17, 1.1]}
+    ]
+  },
+  "Booster":                [{}, {"BR": 6}, {"BR": 9}, {"BR": 12}, {"BR": 15}],
+  "BowChargePlus":          [0, 1],
+  "BowCoating":             [{"PRM": 1, "PEM": 1}],
+  "BowgunBarrel":           [
+    {"Power": 1, "Silencer": 0, "reload": 0},
+    {"Power": 1.05, "Silencer": 0, "reload": 0},
+    {"Power": 1.125, "Silencer": 0, "reload": 0},
+    {"Power": 1, "Silencer": 1, "reload": 1},
+    {"Power": 1, "Silencer": 0, "reload": 0}
+  ],
+  "Burst":                  [{}, {"BR": 5, "BE": 5}, {"BR": 8, "BE": 6}, {"BR": 9, "BE": 7}, {"BR": 10, "BE": 8}],
+  "BurstBow":               [{}, {"BR": 5, "BE": 5}, {"BR": 8, "BE": 6}, {"BR": 9, "BE": 8}, {"BR": 10, "BE": 10}],
+  "BurstBowGun":            [{}, {"BR": 5, "BE": 5}, {"BR": 8, "BE": 6}, {"BR": 9, "BE": 7}, {"BR": 10, "BE": 8}],
+  "BurstDualBlades":        [{}, {"BR": 5, "BE": 5}, {"BR": 10, "BE": 6}, {"BR": 12, "BE": 8}, {"BR": 15, "BE": 12}],
+  "BurstStandard":          [{}, {"BR": 5, "BE": 5}, {"BR": 10, "BE": 8}, {"BR": 12, "BE": 10}, {"BR": 15, "BE": 15}],
+  "ButterFlame":            {"BR": 25},
+  "ChargeLevel":            [{"PEM": 1}, {"PRM": 1.1, "PEM": 1.1}, {"PRM": 1.2, "PEM": 1.2}, {"PRM": 1.3, "PEM": 1.3}],
+  "ChargeMaster":           {
+    "LongSword":          [{"BSM": 1}, {"BEM": 1.1, "BSM": 1.1}, {"BEM": 1.2, "BSM": 1.2}, {"BEM": 1.3, "BSM": 1.3}],
+    "GreatSword":         [{"BSM": 1}, {"BEM": 1.1, "BSM": 1.1}, {"BEM": 1.3, "BSM": 1.3}, {"BEM": 1.5, "BSM": 1.5}],
+    "ChargeBlade":        [{"BSM": 1}, {"BEM": 1.1, "BSM": 1.1}, {"BEM": 1.3, "BSM": 1.3}, {"BEM": 1.5, "BSM": 1.5}],
+    "SwordnShield":       [{"BSM": 1}, {"BEM": 1.5, "BSM": 1.2}, {"BEM": 1.75, "BSM": 1.3}, {"BEM": 2, "BSM": 1.5}],
+    "Lance":              [{"BSM": 1}, {"BEM": 1.3, "BSM": 1.3}, {"BEM": 1.5, "BSM": 1.5}, {"BEM": 1.75, "BSM": 1.75}],
+    "Gunlance":           [{"BSM": 1}, {"BEM": 1.3, "BSM": 1}, {"BEM": 1.5, "BSM": 1}, {"BEM": 1.75, "BSM": 1}],
+    "Hammer":             [{"BSM": 1}, {"BEM": 1.1, "BSM": 1.05}, {"BEM": 1.15, "BSM": 1.1}, {"BEM": 1.2, "BSM": 1.15}],
+    "Bow":                [
+      {"BSM": 1}, {"BEM": 1.05, "BSM": 1.05}, {"BEM": 1.1, "BSM": 1.1}, {"BEM": 1.15, "BSM": 1.15}
+    ],
+    "HeavyBowGun":        [
+      {"BSM": 1}, {"BEM": 1.05, "BSM": 1.05}, {"BEM": 1.1, "BSM": 1.1}, {"BEM": 1.15, "BSM": 1.15}
+    ],
+    "LightBowGun":        [
+      {"BSM": 1}, {"BEM": 1.05, "BSM": 1.05}, {"BEM": 1.1, "BSM": 1.1}, {"BEM": 1.15, "BSM": 1.15}
+    ],
+    "HeavyBowGun Wyvern": [{"BSM": 1}, {"BEM": 1.5, "BSM": 1}, {"BEM": 1.75, "BSM": 1}, {"BEM": 2, "BSM": 1}]
+  },
+  "ChargedShot":            [{"BRM": 1}, {"BRM": 1.1, "BEM": 1.1}, {"BRM": 1.2, "BEM": 1.2}, {"BRM": 1.3, "BEM": 1.3}],
+  "Close-range+":           {"PRM": 1.2, "PEM": 1},
+  "Close-range":            {"PRM": 1.2, "PEM": 1},
+  "Coalescence":            [{"BR": 0, "BE": 0}, {"BR": 12, "BE": 2}, {"BR": 15, "BE": 3}, {"BR": 18, "BE": 4}],
+  "Counterstrike":          [{}, {"BR": 10}, {"BR": 15}, {"BR": 25}],
+  "CriticalBoost":          [{"PRM": 1.25}, {"PRM": 1.3}, {"PRM": 1.35}, {"PRM": 1.4}],
+  "CriticalElement":        [{"PEM": 1}, {"PEM": 1.05}, {"PEM": 1.1}, {"PEM": 1.15}],
+  "CriticalEye":            [
+    {}, {"aff": 5}, {"aff": 10}, {"aff": 15}, {"aff": 20}, {"aff": 25}, {"aff": 30}, {"aff": 40}
+  ],
+  "CriticalFirePower":      [{"Normal": {"PRM": 1.3}, "Pierce": {"PRM": 1.2}, "Spread": {"PRM": 1.1}}],
+  "DangoTemper":            [
+    {"BRM": 1, "BEM": 1},
+    {"PRM": 1.05, "PEM": 1.05},
+    {"PRM": 1.05, "PEM": 1.05},
+    {"PRM": 1.075, "PEM": 1.075},
+    {"PRM": 1.075, "PEM": 1.075}
+  ],
+  "DefenseBoost":           [
+    {"Resist": 0},
+    {"Resist": 0},
+    {"Resist": 0},
+    {"Resist": 0},
+    {"Resist": 3},
+    {"Resist": 3},
+    {"Resist": 5},
+    {"Resist": 5}
+  ],
+  "DemonPowder":            {"BR": 10},
+  "DemonAmmo":              {"BR": 10},
+  "DemonDrug":              {"BR": 5},
+  "DemonMode":              [{"BEM": 1}, {"BEM": 1.35}],
+  "DemonSeed":              {"BR": 10},
+  "Dereliction":            [
+    {}, {"BE": 5}, {"BE": 8}, {"BE": 12}, {"BE": 7}, {"BE": 12}, {"BE": 15}, {"BE": 10}, {"BE": 15}, {"BE": 20}
+  ],
+  "DerelictionSource":      {
+    "red":     [
+      {},
+      [{}, {"BE": 5}, {"BE": 8}, {"BE": 12}],
+      [{}, {"BE": 7}, {"BE": 12}, {"BE": 15}],
+      [{}, {"BE": 10}, {"BE": 15}, {"BE": 20}]
+    ], "blue": [
+      {},
+      [{}, {"BR": 15}, {"BR": 20}, {"BR": 25}],
+      [{}, {"BR": 20}, {"BR": 25}, {"BR": 30}],
+      [{}, {"BR": 25}, {"BR": 30}, {"BR": 35}]
+    ]
+  },
+  "DragonAttack":           [
+    {}, {"BE": 2}, {"BE": 3}, {"BEM": 1.05, "BE": 4}, {"BEM": 1.1, "BE": 4}, {"BEM": 1.2, "BE": 4}
+  ],
+  "DragonResistance":       [{"Resist": 0}, {"Resist": 6}, {"Resist": 12}, {"Resist": 20, "Defense": 10}],
+  "Dragonheart":            [
+    {"BRM": 0, "Resist": 0},
+    {"BRM": 1, "Resist": 30},
+    {"BRM": 1, "Resist": 50},
+    {"BRM": 1, "Resist": 50},
+    {"BRM": 1.05, "Resist": 50},
+    {"BRM": 1.1, "Resist": 50}
+  ],
+  "DullingStrike":          [{"PRM": 1}, {"PRM": 1.2}],
+  "EleShieldCharge":        [{"BEM": 1}, {"BEM": 1.3}],
+  "ElementExploit":         [{"PEM": 1}, {"PEM": 1.1}, {"PEM": 1.125}, {"PEM": 1.15}],
+  "ElementalBlightExploit": [{"PRM": 1}, {"PRM": 1.1}],
+  "ElementalReload":        [{"PEM": 1}, {"PEM": 1.1}],
+  "EvadeHop":               [{"BRM": 1}, {"PRM": 1.1, "PEM": 1.1}],
+  "Exhaust":                {"PRM": 1, "PEM": 1},
+  "FanningManeuver":        [{"BRM": 1}, {"PRM": 1.1, "PEM": 1.1}],
+  "FeralDemonMode":         [{"BRM": 1}, {"BRM": 1.2}],
+  "FireAttack":             [
+    {}, {"BE": 2}, {"BE": 3}, {"BEM": 1.05, "BE": 4}, {"BEM": 1.1, "BE": 4}, {"BEM": 1.2, "BE": 4}
+  ],
+  "FireResistance":         [{"Resist": 0}, {"Resist": 6}, {"Resist": 12}, {"Resist": 20, "Defense": 10}],
+  "Foray":                  [{}, {"BR": 10}, {"BR": 10, "aff": 10}, {"BR": 15, "aff": 20}],
+  "Fortify":                [{"BRM": 1}, {"BRM": 1.1}, {"BRM": 1.2}],
+  "Frostcraft":             {
+    "melee":          [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.05, "PRM": 1.05}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.3, "PRM": 1.3}
+    ],
+    "Bow":            [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.05, "PRM": 1.05}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "HeavyBowGun":    [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.3, "PRM": 1.3}
+    ],
+    "LightBowGun":    [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.05, "PRM": 1.05}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Normal":         [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Pierce":         [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Spread":         [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Shrapnel":       [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Sticky":         [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Ice":            [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Fire":           [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Water":          [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Thunder":        [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Dragon":         [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Slicing":        [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Tranq":          [{"PEM": 1, "PRM": 1}, {"PEM": 1, "PRM": 1}, {"PEM": 1, "PRM": 1}, {"PEM": 1, "PRM": 1}],
+    "Paralysis":      [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Sleep":          [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Poison":         [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Exhaust":        [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Demon":          [{"PEM": 1, "PRM": 1}, {"PEM": 1, "PRM": 1}, {"PEM": 1, "PRM": 1}, {"PEM": 1, "PRM": 1}],
+    "Armor":          [{"PEM": 1, "PRM": 1}, {"PEM": 1, "PRM": 1}, {"PEM": 1, "PRM": 1}, {"PEM": 1, "PRM": 1}],
+    "Recover":        [{"PEM": 1, "PRM": 1}, {"PEM": 1, "PRM": 1}, {"PEM": 1, "PRM": 1}, {"PEM": 1, "PRM": 1}],
+    "Wyvern":         [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.05, "PRM": 1.05}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.15, "PRM": 1.15}
+    ],
+    "Cluster":        [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.05, "PRM": 1.05}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.15, "PRM": 1.15}
+    ],
+    "Wyvernheart":    [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "(Recovery)":     [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Wyvernsnipe":    [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "Counter":        [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ],
+    "WyvernBlast":    [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.05, "PRM": 1.05}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.15, "PRM": 1.15}
+    ],
+    "Silkbind":       [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.05, "PRM": 1.05}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.15, "PRM": 1.15}
+    ],
+    "Mech":           [
+      {"PEM": 1, "PRM": 1}, {"PEM": 1.1, "PRM": 1.1}, {"PEM": 1.2, "PRM": 1.2}, {"PEM": 1.25, "PRM": 1.25}
+    ]
+  },
+  "Furious":                [{"Resist": 0}, {"Resist": 5}, {"Resist": 10}, {"Resist": 20}],
+  "DragonConversion":       [{"Resist": 0}, {"Resist": 3}, {"Resist": 5}, {"Resist": 10}],
+  "GrinderS":               [{}, {"BRM": 1.1, "BEM": 1.075}, {"BRM": 1.1, "BEM": 1.075}, {"BRM": 1.1, "BEM": 1.075}],
+  "Handicraft":             [{"Sharp": 0}, {"Sharp": 10}, {"Sharp": 20}, {"Sharp": 30}, {"Sharp": 40}, {"Sharp": 50}],
+  "Helmbreaker":            [{"BRM": 1}, {"BRM": 1.5}, {"BRM": 2.5, "BEM": 1.1}, {"BRM": 4, "BEM": 1.3}],
+  "HerculesDraw":           [{"PRM": 1}, {"PRM": 1.1}],
+  "Heroics":                [{"BRM": 1}, {"BRM": 1}, {"BRM": 1.05}, {"BRM": 1.05}, {"BRM": 1.1}, {"BRM": 1.3}],
+  "HuntingHornAffinity":    {"aff": 20},
+  "HuntingHornAttack":      {"PRM": 1.1},
+  "HuntingHornElemental":   {"PEM": 1.1},
+  "IceAttack":              [
+    {}, {"BE": 2}, {"BE": 3}, {"BEM": 1.05, "BE": 4}, {"BEM": 1.1, "BE": 4}, {"BEM": 1.2, "BE": 4}
+  ],
+  "IceResistance":          [{"Resist": 0}, {"Resist": 6}, {"Resist": 12}, {"Resist": 20, "Defense": 10}],
+  "Inspiration":            [{}, {"BE": 10}],
+  "ImpactShieldCharge":     [{"BRM": 1}, {"BRM": 1.2}],
+  "KinsectBuff":            [{"BRM": 1}, {"BRM": 1.05}, {"BRM": 1.1}, {"BRM": 1.15}],
+  "KushalaBlessing":        [{}, {"BEM": 1.05}, {"BEM": 1.1}, {"BEM": 1.1}, {"BEM": 1.1}],
+  "KushalaDaoraSoul":       [{}, {"aff": 15}],
+  "LatentPower":            [{}, {"aff": 10}, {"aff": 20}, {"aff": 30}, {"aff": 45}, {"aff": 50}],
+  "MagnamaloSoul":          [{}, {"BR": 12}],
+  "MailofHellfire":         [{}, {"BR": 15}, {"BR": 25}, {"BR": 30}],
+  "MailofHellfireSource":   {
+    "red": [{}, {"BR": 15}, {"BR": 25}, {"BR": 30}], "blue": [{"PEM": 1}, {"PEM": 1.05}, {"PEM": 1.1}, {"PEM": 1.2}]
+  },
+  "Marksman":               [
+    {"PRM": 1, "EFR": 1},
+    {"PRM": 1.05, "EFR": 1.015},
+    {"PRM": 1.1, "EFR": 1.03},
+    {"PRM": 1.05, "EFR": 1.045},
+    {"PRM": 1.1, "EFR": 1.06}
+  ],
+  "MastersTouch":           [{"Sharp": 0}, {"Sharp": 0.2}, {"Sharp": 0.4}, {"Sharp": 0.8}],
+  "MaximumMight":           [{}, {"aff": 10}, {"aff": 20}, {"aff": 30}],
+  "MegaDemonDrug":          {"BR": 7},
+  "MindsEye":               [
+    {"PRM": 1, "PEM": 1}, {"PRM": 1.1, "PEM": 1.1}, {"PRM": 1.15, "PEM": 1.15}, {"PRM": 1.3, "PEM": 1.3}
+  ],
+  "NormalRapidUp":          [{"PRM": 1}, {"PRM": 1.05}, {"PRM": 1.1}, {"PRM": 1.2}],
+  "OffensiveGuard":         [{"BRM": 1}, {"BRM": 1.05}, {"BRM": 1.1}, {"BRM": 1.15}],
+  "Para+":                  {"PRM": 1, "PEM": 1},
+  "Para":                   {"PRM": 1, "PEM": 1},
+  "ParalysisAttack":        [{}, {"BEM": 1.05, "BE": 1}, {"BEM": 1.1, "BE": 2}, {"BEM": 1.2, "BE": 5}],
+  "PeakPerformance":        [{}, {"BR": 5}, {"BR": 10}, {"BR": 20}],
+  "PierceUp":               [{"PRM": 1}, {"PRM": 1.05}, {"PRM": 1.1}, {"PRM": 1.2}],
+  "Poison+":                {"PRM": 1, "PEM": 1},
+  "Poison":                 {"PRM": 1, "PEM": 1},
+  "PoisonAttack":           [{}, {"BEM": 1.05, "BE": 1}, {"BEM": 1.1, "BE": 2}, {"BEM": 1.2, "BE": 5}],
+  "Power":                  {"PRM": 1.35, "PEM": 1},
+  "PowerCharm":             {"BR": 7},
+  "PowerSheath":            [{"BRM": 1}, {"BRM": 1.1}],
+  "PowerTalisman":          {"BR": 8},
+  "PunishingDraw":          [{"BR": 0}, {"BR": 3}, {"BR": 5}, {"BR": 7}],
+  "RapidFireUp":            [{"PRM": 1}, {"PRM": 1.05}, {"PRM": 1.1}, {"PRM": 1.2}],
+  "RapidMorph":             [{"BRM": 1}, {"BRM": 1.05}, {"BRM": 1.1}, {"BRM": 1.2}],
+  "RazorSharp":             [{"Sharp": 0}, {"Sharp": 0.1}, {"Sharp": 0.25}, {"Sharp": 0.5}],
+  "RecoilDown":             [{"Lv": 0}, {"LV": 1}, {"LV": 2}, {"Lv": 3}],
+  "ReloadSpeed":            [{"Lv": 0}, {"LV": 1}, {"LV": 2}, {"Lv": 3}],
+  "Resentment":             [{}, {"BR": 5}, {"BR": 10}, {"BR": 15}, {"BR": 20}, {"BR": 25}],
+  "Resuscitate":            [{"BR": 0}, {"BR": 5}, {"BR": 10}, {"BR": 20}],
+  "SavageAxe":              [{"BRM": 1}, {"BRM": 1.1}],
+  "SerenePose":             [{"BRM": 1}, {"BRM": 2}, {"BRM": 3, "BEM": 1.1}, {"BRM": 5, "BEM": 1.3}],
+  "Sharpness":              {
+    "Purple": {"PRM": 1.39, "PEM": 1.25},
+    "White":  {"PRM": 1.32, "PEM": 1.15},
+    "Blue":   {"PRM": 1.2, "PEM": 1.0625},
+    "Green":  {"PRM": 1.05, "PEM": 1},
+    "Yellow": {"PRM": 1, "PEM": 0.75},
+    "Orange": {"PRM": 0.75, "PEM": 0.5},
+    "Red":    {"PRM": 0.5, "PEM": 0.25},
+    "---":    {"PEM": 1}
+  },
+  "LanceCharge":            [{}, {"BRM": 1.1}],
+  "Sleep+":                 {"PRM": 1, "PEM": 1},
+  "Sleep":                  {"PRM": 1, "PEM": 1},
+  "SleepAttack":            [{}, {"BEM": 1.05, "BE": 1}, {"BEM": 1.1, "BE": 2}, {"BEM": 1.2, "BE": 5}],
+  "SneakAttack":            [{"PRM": 1}, {"PRM": 1.05}, {"PRM": 1.1}, {"PRM": 1.2}],
+  "SpareShot":              [0, 5, 10, 20],
+  "SpecialAmmoBoost":       [{"PRM": 1}, {"PRM": 1.1}, {"PRM": 1.2}],
+  "Spiribird":              [
+    {},
+    {"BR": 1},
+    {"BR": 2},
+    {"BR": 3},
+    {"BR": 4},
+    {"BR": 5},
+    {"BR": 6},
+    {"BR": 7},
+    {"BR": 8},
+    {"BR": 9},
+    {"BR": 10},
+    {"BR": 11},
+    {"BR": 12},
+    {"BR": 13},
+    {"BR": 14},
+    {"BR": 15},
+    {"BR": 16},
+    {"BR": 17},
+    {"BR": 18},
+    {"BR": 19},
+    {"BR": 20}
+  ],
+  "SpiritGauge":            [
+    {"BRM": 1}, {"BRM": 1.04, "BEM": 1.04}, {"BRM": 1.08, "BEM": 1.08}, {"BRM": 1.12, "BEM": 1.12}
+  ],
+  "SpreadUp":               [{"PRM": 1}, {"PRM": 1.05}, {"PRM": 1.1}, {"PRM": 1.2}],
+  "Stormsoul":              [{}, {"BEM": 1.05}, {"BEM": 1.1}, {"BEM": 1.15}, {"BEM": 1.15}, {"BEM": 1.15}],
+  "Strife":                 {
+    "High": [{}, {"BEM": 1.05, "aff": 5}, {"BEM": 1.1, "aff": 10}, {"BEM": 1.15, "aff": 10}],
+    "Low":  [{}, {"BEM": 1.1, "aff": 10}, {"BEM": 1.15, "aff": 15}, {"BEM": 1.2, "aff": 20}]
+  },
+  "StrongarmStance":        {
+    "Charged Slash":        {"PRM": 1.25, "PEM": 1.2},
+    "Rising Slash":         {"PRM": 1.25, "PEM": 1.3},
+    "Wide Slash":           {"PRM": 1.25, "PEM": 1.3},
+    "Strong Charged Slash": {"PRM": 1.2, "PEM": 1.2},
+    "1 Charged Slash":      {"PRM": 1.35, "PEM": 1.3},
+    "Rage Slash":           {"PRM": 1.3, "PEM": 1.25}
+  },
+  "TeostraBlessing":        [{}, {"BEM": 1.05}, {"BEM": 1.1}, {"BEM": 1.1}, {"BEM": 1.1}],
+  "ThunderAttack":          [
+    {}, {"BE": 2}, {"BE": 3}, {"BEM": 1.05, "BE": 4}, {"BEM": 1.1, "BE": 4}, {"BEM": 1.2, "BE": 4}
+  ],
+  "ThunderResistance":      [{"Resist": 0}, {"Resist": 6}, {"Resist": 12}, {"Resist": 20, "Defense": 10}],
+  "UpperCrit":              [{"PRM": 1, "PEM": 1}, {"PRM": 1.15, "PEM": 1.1}],
+  "ValstraxSoul":           [{"PEM": 1}, {"PEM": 1.2}],
+  "WallRunner":             [{}, {}, {}, {"BR": 20}],
+  "WaterAttack":            [
+    {}, {"BE": 2}, {"BE": 3}, {"BEM": 1.05, "BE": 4}, {"BEM": 1.1, "BE": 4}, {"BEM": 1.2, "BE": 4}
+  ],
+  "WaterResistance":        [{"Resist": 0}, {"Resist": 6}, {"Resist": 12}, {"Resist": 20, "Defense": 10}],
+  "WeaknessExploit":        [{"aff": 0}, {"aff": 15}, {"aff": 30}, {"aff": 50}],
+  "dropDereliction":        [{}],
+  "palicoaff":              {"aff": 30},
+  "powerDrum":              {"BRM": 1.05},
+  "sleepWakeUp":            {"PRM": 2, "PEM": 2}
+}
