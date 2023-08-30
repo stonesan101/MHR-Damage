@@ -39,3 +39,7 @@ bench**
 **fleet**
 **mhrdamage**
 **qodana.yaml
+*.yml
+*.log
+{
+*.ini
