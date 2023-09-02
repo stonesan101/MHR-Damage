@@ -1,1 +1,2583 @@
-{"decos":{"MastersTouch":2,"Handicraft":3,"GoodLuck":3,"HellfireCloak":3,"JumpMaster":3,"RapidFireUp":3,"SpareShot":2,"RazorSharp":2,"SpreadUp":3,"PierceUp":3,"NormalRapidUp":3,"ProtectivePolish":2,"BlastAttack":2,"SleepAttack":2,"ParalysisAttack":2,"LatentPower":2,"Resuscitate":2,"Resentment":2,"PeakPerformance":2,"Agitator":2,"WeaknessExploit":2,"CriticalBoost":2,"AmmoUp":3,"OffensiveGuard":3,"Mushroomancer":3,"CriticalDraw":3,"Ballistics":2,"CriticalElement":2,"Artillery":2,"MarathonRunner":2,"Focus":2,"MindsEye":2,"Heroics":2,"SpecialAmmoBoost":2,"LoadShells":2,"GuardUp":2,"Guard":2,"StaminaSurge":2,"PowerProlonger":2,"MaximumMight":2,"AttackBoost":2,"CriticalEye":2,"RapidMorph":2,"RecoilDown":1,"Bludgeoner":2,"ReloadSpeed":1,"StunResistance":1,"TremorResistance":2,"Earplugs":3,"Counterstrike":2,"BubblyDance":2,"Steadiness":1,"PunishingDraw":2,"EvadeExtender":2,"EvadeWindow":2,"FlinchFree":1,"QuickSheathe":2,"Windproof":1,"Slugger":2,"Wide-Range":2,"Partbreaker":2,"BlightResistance":2,"SpeedEating":2,"DivineBlessing":2,"WallRunner":2,"WirebugWhisperer":2,"SpeedSharpening":1,"ItemProlonger":2,"RecoverySpeed":1,"RecoveryUp":2,"HornMaestro":1,"StaminaThief":1,"Constitution":2,"PoisonAttack":1,"AffinitySliding":1,"Bombardier":1,"FireAttack":1,"WaterAttack":1,"ThunderAttack":1,"IceAttack":1,"DragonAttack":1,"DefenseBoost":1,"CarvingPro":1,"MasterMounter":2,"HungerResistance":1,"FreeMeal":1,"MuckResistance":1,"Diversion":1,"LeapofFaith":1,"Fortify":2,"Geologist":1,"Botanist":1,"BlastResistance":1,"SleepResistance":1,"ParalysisResistance":1,"PoisonResistance":1,"FireResistance":1,"WaterResistance":1,"ThunderResistance":1,"IceResistance":1,"DragonResistance":1,"QuickBreath":3,"BladescaleHone":2,"Redirection":3,"WallRunnerBoost":1,"BowChargePlus":4,"ChargeMaster":2,"Defiance":1,"Tune-Up":3,"SpiribirdsCall":1,"GrinderS":3,"Coalescence":2,"Foray":2,"Burst":2,"ChameleosBlessing":1,"TeostraBlessing":1,"KushalaBlessing":1,"ElementExploit":2,"SneakAttack":2,"AdrenalineRush":2,"BloodRite":3,"Embolden":2,"Dragonheart":4,"IntrepidHeart":1,"StatusTrigger":3,"ShockAbsorber":1,"Bloodlust":4,"Inspiration":1},"maxLevel":{"AdrenalineRush":3,"AffinitySliding":1,"Agitator":5,"AmmoUp":3,"Artillery":3,"AttackBoost":7,"Ballistics":3,"Berserk":2,"BladescaleHone":3,"BlastAttack":3,"BlastResistance":3,"BlightResistance":3,"BloodAwakening":3,"BloodRite":3,"Bloodlust":3,"Bludgeoner":3,"Bombardier":3,"Botanist":4,"BowChargePlus":1,"BubblyDance":3,"BuildupBoost":3,"Burst":3,"CaptureMaster":1,"CarvingMaster":1,"CarvingPro":1,"ChameleosBlessing":4,"ChargeMaster":3,"Coalescence":3,"Constitution":5,"Counterstrike":3,"CriticalBoost":3,"CriticalDraw":3,"CriticalElement":3,"CriticalEye":7,"DefenseBoost":7,"Defiance":5,"Dereliction":3,"Diversion":1,"DivineBlessing":3,"DragonAttack":5,"DragonConversion":3,"DragonResistance":3,"Dragonheart":5,"Earplugs":5,"ElementExploit":3,"Embolden":3,"EvadeExtender":3,"EvadeWindow":5,"FireAttack":5,"FireResistance":3,"FlinchFree":3,"Focus":3,"Foray":3,"Fortify":1,"FreeMeal":3,"FrenziedBloodlust":3,"Frostcraft":3,"Furious":3,"Geologist":3,"GoodLuck":3,"GrinderS":3,"Guard":5,"GuardUp":3,"Guts":3,"Handicraft":5,"Heaven-Sent":3,"HellfireCloak":4,"Heroics":5,"HornMaestro":1,"HungerResistance":3,"IceAttack":5,"IceResistance":3,"Inspiration":1,"IntrepidHeart":2,"ItemProlonger":3,"JumpMaster":1,"KushalaBlessing":4,"LatentPower":5,"LeapofFaith":1,"LoadShells":2,"MailofHellfire":3,"MarathonRunner":3,"MasterMounter":1,"MastersTouch":3,"MaximumMight":3,"MindsEye":3,"MuckResistance":2,"Mushroomancer":3,"NormalRapidUp":3,"OffensiveGuard":3,"ParalysisAttack":3,"ParalysisResistance":3,"Partbreaker":3,"PeakPerformance":3,"PierceUp":3,"PoisonAttack":3,"PoisonResistance":3,"PowderMantle":3,"PowerProlonger":3,"ProtectivePolish":3,"PunishingDraw":3,"QuickBreath":1,"QuickSheathe":3,"RapidFireUp":3,"RapidMorph":3,"RazorSharp":3,"RecoilDown":3,"RecoverySpeed":3,"RecoveryUp":3,"Redirection":2,"ReloadSpeed":3,"Resentment":5,"Resuscitate":3,"ShockAbsorber":1,"SleepAttack":3,"SleepResistance":3,"Slugger":3,"SneakAttack":3,"SpareShot":3,"SpecialAmmoBoost":2,"SpeedEating":3,"SpeedSharpening":3,"SpiribirdsCall":1,"SpreadUp":3,"StaminaSurge":3,"StaminaThief":3,"StatusTrigger":3,"Steadiness":3,"Stormsoul":5,"Strife":3,"StunResistance":3,"TeostraBlessing":4,"ThunderAlignment":5,"ThunderAttack":5,"ThunderResistance":3,"TremorResistance":3,"Tune-Up":2,"WallRunner":3,"WallRunnerBoost":1,"WaterAttack":5,"WaterResistance":3,"WeaknessExploit":3,"Wide-Range":5,"WindAlignment":5,"WindMantle":3,"Windproof":3,"WirebugWhisperer":3},"qurious":{"CriticalEye":15,"CriticalBoost":15,"WeaknessExploit":15,"MastersTouch":15,"RazorSharp":15,"SpareShot":15,"NormalRapidUp":15,"PierceUp":15,"SpreadUp":15,"AmmoUp":15,"RapidFireUp":15,"AttackBoost":15,"Guts":15,"Handicraft":12,"Agitator":12,"PeakPerformance":12,"Resentment":12,"Resuscitate":12,"Coalescence":12,"LatentPower":12,"MaximumMight":12,"GoodLuck":12,"Burst":12,"Tune-Up":12,"RapidMorph":12,"Artillery":12,"SneakAttack":12,"BloodRite":12,"Bloodlust":12,"BuildupBoost":12,"Frostcraft":12,"DragonConversion":12,"ProtectivePolish":9,"Mushroomancer":9,"MindsEye":9,"CriticalElement":9,"Ballistics":9,"CriticalDraw":9,"Focus":9,"PowerProlonger":9,"OffensiveGuard":9,"Earplugs":9,"Heroics":9,"HellfireCloak":9,"WirebugWhisperer":9,"ChargeMaster":9,"Foray":9,"GrinderS":9,"BladescaleHone":9,"Redirection":9,"ElementExploit":9,"AdrenalineRush":9,"Furious":9,"StatusTrigger":9,"Dragonheart":9,"MailofHellfire":9,"Strife":9,"PowderMantle":9,"WindMantle":9,"FrenziedBloodlust":9,"LoadShells":6,"Guard":6,"GuardUp":6,"PoisonAttack":6,"ParalysisAttack":6,"SleepAttack":6,"BlastAttack":6,"MarathonRunner":6,"Constitution":6,"StaminaSurge":6,"PunishingDraw":6,"QuickSheathe":6,"Slugger":6,"SpecialAmmoBoost":6,"Steadiness":6,"SpeedEating":6,"TremorResistance":6,"BubblyDance":6,"EvadeWindow":6,"EvadeExtender":6,"Partbreaker":6,"WallRunner":6,"Counterstrike":6,"Defiance":6,"ReloadSpeed":6,"RecoilDown":6,"ChameleosBlessing":6,"KushalaBlessing":6,"TeostraBlessing":6,"Embolden":6,"IntrepidHeart":6,"FlinchFree":3,"StaminaThief":3,"FireAttack":3,"WaterAttack":3,"IceAttack":3,"ThunderAttack":3,"DragonAttack":3,"AffinitySliding":3,"HornMaestro":3,"DefenseBoost":3,"DivineBlessing":3,"RecoveryUp":3,"RecoverySpeed":3,"Windproof":3,"BlightResistance":3,"PoisonResistance":3,"ParalysisResistance":3,"SleepResistance":3,"StunResistance":3,"MuckResistance":3,"BlastResistance":3,"SpeedSharpening":3,"ItemProlonger":3,"Wide-Range":3,"FreeMeal":3,"Fortify":3,"HungerResistance":3,"LeapofFaith":3,"Diversion":3,"MasterMounter":3,"SpiribirdsCall":3,"WallRunnerBoost":3},"decoLevels":[[{"AffinitySliding":1},{"BlastResistance":1},{"Bombardier":1},{"Botanist":1},{"CarvingPro":1},{"ChameleosBlessing":1},{"DefenseBoost":1},{"Defiance":1},{"Diversion":1},{"DragonAttack":1},{"DragonResistance":1},{"FireAttack":1},{"FireResistance":1},{"FlinchFree":1},{"FreeMeal":1},{"Geologist":1},{"HornMaestro":1},{"HungerResistance":1},{"IceAttack":1},{"IceResistance":1},{"Inspiration":1},{"IntrepidHeart":1},{"KushalaBlessing":1},{"LeapofFaith":1},{"MuckResistance":1},{"ParalysisResistance":1},{"PoisonAttack":1},{"PoisonResistance":1},{"RecoilDown":1},{"RecoverySpeed":1},{"ReloadSpeed":1},{"ShockAbsorber":1},{"SleepResistance":1},{"SpeedSharpening":1},{"SpiribirdsCall":1},{"StaminaThief":1},{"Steadiness":1},{"StunResistance":1},{"TeostraBlessing":1},{"ThunderAttack":1},{"ThunderResistance":1},{"WallRunnerBoost":1},{"WaterAttack":1},{"WaterResistance":1},{"Windproof":1}],[{"AdrenalineRush":1},{"Agitator":1},{"Artillery":1},{"AttackBoost":1},{"Ballistics":1},{"BladescaleHone":1},{"BlastAttack":1},{"BlightResistance":1},{"Bludgeoner":1},{"BubblyDance":1},{"Burst":1},{"ChargeMaster":1},{"Coalescence":1},{"Constitution":1},{"Counterstrike":1},{"CriticalBoost":1},{"CriticalElement":1},{"CriticalEye":1},{"DefenseBoost":2},{"DivineBlessing":1},{"DragonAttack":2},{"ElementExploit":1},{"Embolden":1},{"EvadeExtender":1},{"EvadeWindow":1},{"FireAttack":2},{"Focus":1},{"Foray":1},{"Fortify":1},{"Guard":1},{"GuardUp":1},{"Heroics":1},{"IceAttack":2},{"ItemProlonger":1},{"LatentPower":1},{"LoadShells":1},{"MarathonRunner":1},{"MasterMounter":1},{"MastersTouch":1},{"MaximumMight":1},{"MindsEye":1},{"ParalysisAttack":1},{"Partbreaker":1},{"PeakPerformance":1},{"PowerProlonger":1},{"ProtectivePolish":1},{"PunishingDraw":1},{"QuickSheathe":1},{"RapidMorph":1},{"RazorSharp":1},{"RecoveryUp":1},{"Resentment":1},{"Resuscitate":1},{"SleepAttack":1},{"Slugger":1},{"SneakAttack":1},{"SpareShot":1},{"SpecialAmmoBoost":1},{"SpeedEating":1},{"StaminaSurge":1},{"ThunderAttack":2},{"TremorResistance":1},{"WallRunner":1},{"WaterAttack":2},{"WeaknessExploit":1},{"Wide-Range":1},{"WirebugWhisperer":1}],[{"AmmoUp":1},{"BloodRite":1},{"CriticalDraw":1},{"DefenseBoost":3},{"DragonAttack":3},{"Earplugs":1},{"FireAttack":3},{"GoodLuck":1},{"GrinderS":1},{"Guard":2},{"Handicraft":1},{"HellfireCloak":1},{"IceAttack":3},{"IntrepidHeart":2},{"JumpMaster":1},{"Mushroomancer":1},{"NormalRapidUp":1},{"OffensiveGuard":1},{"PierceUp":1},{"QuickBreath":1},{"RapidFireUp":1},{"Redirection":1},{"SpreadUp":1},{"StatusTrigger":1},{"ThunderAttack":3},{"Tune-Up":1},{"WaterAttack":3},{"Wide-Range":3}],[{"AdrenalineRush":2},{"Agitator":2},{"AmmoUp":2},{"Artillery":2},{"AttackBoost":2},{"Ballistics":2},{"BladescaleHone":2},{"BlastAttack":2},{"BlastResistance":3},{"BlightResistance":2},{"BloodRite":2},{"Bloodlust":1},{"Bombardier":3},{"Botanist":3},{"BowChargePlus":1},{"BubblyDance":2},{"Burst":2},{"ChargeMaster":2},{"Coalescence":2},{"Constitution":2},{"Counterstrike":2},{"CriticalDraw":2},{"CriticalElement":2},{"CriticalEye":2},{"DefenseBoost":5},{"Defiance":3},{"DivineBlessing":2},{"DragonAttack":4},{"DragonResistance":3},{"Dragonheart":1},{"Earplugs":2},{"ElementExploit":2},{"Embolden":2},{"EvadeExtender":2},{"EvadeWindow":2},{"FireAttack":4},{"FireResistance":3},{"FlinchFree":3},{"Focus":2},{"Foray":2},{"FreeMeal":3},{"Geologist":3},{"GoodLuck":2},{"GrinderS":2},{"GuardUp":2},{"Handicraft":2},{"HellfireCloak":2},{"Heroics":2},{"HungerResistance":3},{"IceAttack":4},{"IceResistance":3},{"ItemProlonger":3},{"LatentPower":2},{"LoadShells":2},{"MarathonRunner":2},{"MastersTouch":2},{"MaximumMight":2},{"MindsEye":2},{"Mushroomancer":2},{"NormalRapidUp":2},{"OffensiveGuard":2},{"ParalysisAttack":2},{"ParalysisResistance":3},{"Partbreaker":2},{"PeakPerformance":2},{"PierceUp":2},{"PoisonAttack":3},{"PoisonResistance":3},{"PowerProlonger":2},{"ProtectivePolish":2},{"PunishingDraw":2},{"QuickSheathe":2},{"RapidMorph":2},{"RazorSharp":2},{"RecoverySpeed":3},{"RecoveryUp":2},{"Redirection":2},{"Resentment":2},{"Resuscitate":2},{"SleepAttack":2},{"SleepResistance":3},{"Slugger":2},{"SneakAttack":2},{"SpareShot":2},{"SpecialAmmoBoost":2},{"SpeedEating":2},{"SpeedSharpening":3},{"SpreadUp":2},{"StaminaSurge":2},{"StaminaThief":3},{"StatusTrigger":2},{"Steadiness":3},{"StunResistance":3},{"ThunderAttack":4},{"ThunderResistance":3},{"TremorResistance":2},{"Tune-Up":2},{"WallRunner":3},{"WaterAttack":4},{"WaterResistance":3},{"Wide-Range":4},{"Windproof":3},{"WirebugWhisperer":2}]],"Invalid":[],"IgnoreHZV":["AttackBoost","Dragonheart","Fortify","Heroics","Frostcraft","Resentment","Resuscitate","Bombardier","PeakPerformance","Counterstrike","WallRunner","Spiribird","Artillery","Coalescence","MailofHellfire","Booster","Dereliction","Burst","Foray","Adrenaline","Bloodlust","Strife","AdrenalineRush"],"Shot":["AffinitySliding","ElementalReload","Dragonheart","Frostcraft","Fortify","NormalRapidUp","PierceUp","RapidFireUp","SpecialAmmoBoost","SpreadUp","Resentment","Resuscitate","PeakPerformance","Counterstrike","Heroics","AttackBoost","Spiribird","WallRunner","CriticalEye","MaximumMight","LatentPower","DangoTemper","Dereliction","FanningManeuver","EvadeHop","Coalescence","Bloodlust","MailofHellfire","Foray","Adrenaline","Booster","Burst","AdrenalineRush","Strife","SneakAttack"],"Sever":["AffinitySliding","Dragonheart","Frostcraft","Fortify","Resentment","Resuscitate","PeakPerformance","Counterstrike","Dereliction","Heroics","AttackBoost","Spiribird","WallRunner","CriticalEye","MaximumMight","LatentPower","Coalescence","Bloodlust","MailofHellfire","Booster","GrinderS","Foray","Adrenaline","Burst","AdrenalineRush","Strife","PowerSheath"],"Blunt":["AffinitySliding","Dragonheart","Fortify","Frostcraft","Resentment","Resuscitate","PeakPerformance","Counterstrike","Dereliction","Heroics","AttackBoost","Spiribird","WallRunner","CriticalEye","MaximumMight","LatentPower","Coalescence","Bloodlust","MailofHellfire","Booster","GrinderS","Foray","Adrenaline","Burst","AdrenalineRush","Strife","PowerSheath"],"pointsPerSlot":[{"RecoilDown":1,"ReloadSpeed":1,"Steadiness":1,"PoisonAttack":1,"Defiance":1,"ChameleosBlessing":1,"TeostraBlessing":1,"KushalaBlessing":1,"IntrepidHeart":1,"StunResistance":1,"FlinchFree":1,"Windproof":1,"SpeedSharpening":1,"RecoverySpeed":1,"HornMaestro":1,"StaminaThief":1,"AffinitySliding":1,"FireAttack":1,"WaterAttack":1,"ThunderAttack":1,"IceAttack":1,"DragonAttack":1,"DefenseBoost":1,"HungerResistance":1,"FreeMeal":1,"MuckResistance":1,"Diversion":1,"LeapofFaith":1,"BlastResistance":1,"SleepResistance":1,"ParalysisResistance":1,"PoisonResistance":1,"WallRunnerBoost":1,"SpiribirdsCall":1,"Bombardier":1,"CarvingPro":1,"Geologist":1,"Botanist":1,"FireResistance":1,"WaterResistance":1,"ThunderResistance":1,"IceResistance":1,"DragonResistance":1,"ShockAbsorber":1,"Inspiration":1},{"MastersTouch":1,"SpareShot":1,"RazorSharp":1,"WeaknessExploit":1,"CriticalBoost":1,"AttackBoost":1,"CriticalEye":1,"LatentPower":1,"Resuscitate":1,"Resentment":1,"PeakPerformance":1,"Agitator":1,"Artillery":1,"MaximumMight":1,"RapidMorph":1,"Coalescence":1,"Burst":1,"SneakAttack":1,"ProtectivePolish":1,"Ballistics":1,"CriticalElement":1,"Focus":1,"MindsEye":1,"Heroics":1,"PowerProlonger":1,"WirebugWhisperer":1,"BladescaleHone":1,"ChargeMaster":1,"Foray":1,"ElementExploit":1,"AdrenalineRush":1,"BlastAttack":1,"SleepAttack":1,"ParalysisAttack":1,"MarathonRunner":1,"SpecialAmmoBoost":1,"LoadShells":1,"GuardUp":1,"Guard":1,"StaminaSurge":1,"TremorResistance":1,"Counterstrike":1,"BubblyDance":1,"PunishingDraw":1,"EvadeExtender":1,"EvadeWindow":1,"QuickSheathe":1,"Slugger":1,"Partbreaker":1,"SpeedEating":1,"WallRunner":1,"Constitution":1,"Embolden":1,"RecoilDown":1,"ReloadSpeed":1,"Steadiness":1,"PoisonAttack":1,"FireAttack":2,"WaterAttack":2,"ThunderAttack":2,"IceAttack":2,"DragonAttack":2,"DefenseBoost":2,"Defiance":1,"ChameleosBlessing":1,"TeostraBlessing":1,"KushalaBlessing":1,"IntrepidHeart":1,"Wide-Range":1,"BlightResistance":1,"DivineBlessing":1,"ItemProlonger":1,"RecoveryUp":1,"MasterMounter":1,"Fortify":1,"StunResistance":1,"FlinchFree":1,"Windproof":1,"SpeedSharpening":1,"RecoverySpeed":1,"HornMaestro":1,"StaminaThief":1,"AffinitySliding":1,"HungerResistance":1,"FreeMeal":1,"MuckResistance":1,"Diversion":1,"LeapofFaith":1,"BlastResistance":1,"SleepResistance":1,"ParalysisResistance":1,"PoisonResistance":1,"WallRunnerBoost":1,"SpiribirdsCall":1,"Bludgeoner":1,"Bombardier":1,"CarvingPro":1,"Geologist":1,"Botanist":1,"FireResistance":1,"WaterResistance":1,"ThunderResistance":1,"IceResistance":1,"DragonResistance":1,"ShockAbsorber":1,"Inspiration":1},{"RapidFireUp":1,"SpreadUp":1,"PierceUp":1,"NormalRapidUp":1,"AmmoUp":1,"MastersTouch":1,"SpareShot":1,"RazorSharp":1,"WeaknessExploit":1,"CriticalBoost":1,"AttackBoost":1,"CriticalEye":1,"Handicraft":1,"GoodLuck":1,"Tune-Up":1,"BloodRite":1,"LatentPower":1,"Resuscitate":1,"Resentment":1,"PeakPerformance":1,"Agitator":1,"Artillery":1,"Guard":2,"MaximumMight":1,"RapidMorph":1,"Coalescence":1,"Burst":1,"SneakAttack":1,"IntrepidHeart":2,"HellfireCloak":1,"OffensiveGuard":1,"Mushroomancer":1,"CriticalDraw":1,"Earplugs":1,"Redirection":1,"GrinderS":1,"StatusTrigger":1,"ProtectivePolish":1,"Ballistics":1,"CriticalElement":1,"Focus":1,"MindsEye":1,"Heroics":1,"PowerProlonger":1,"Wide-Range":3,"WirebugWhisperer":1,"BladescaleHone":1,"ChargeMaster":1,"Foray":1,"ElementExploit":1,"AdrenalineRush":1,"FireAttack":3,"WaterAttack":3,"ThunderAttack":3,"IceAttack":3,"DragonAttack":3,"DefenseBoost":3,"BlastAttack":1,"SleepAttack":1,"ParalysisAttack":1,"MarathonRunner":1,"SpecialAmmoBoost":1,"LoadShells":1,"GuardUp":1,"StaminaSurge":1,"TremorResistance":1,"Counterstrike":1,"BubblyDance":1,"PunishingDraw":1,"EvadeExtender":1,"EvadeWindow":1,"QuickSheathe":1,"Slugger":1,"Partbreaker":1,"SpeedEating":1,"WallRunner":1,"Constitution":1,"Embolden":1,"RecoilDown":1,"ReloadSpeed":1,"Steadiness":1,"PoisonAttack":1,"Defiance":1,"ChameleosBlessing":1,"TeostraBlessing":1,"KushalaBlessing":1,"BlightResistance":1,"DivineBlessing":1,"ItemProlonger":1,"RecoveryUp":1,"MasterMounter":1,"Fortify":1,"StunResistance":1,"FlinchFree":1,"Windproof":1,"SpeedSharpening":1,"RecoverySpeed":1,"HornMaestro":1,"StaminaThief":1,"AffinitySliding":1,"HungerResistance":1,"FreeMeal":1,"MuckResistance":1,"Diversion":1,"LeapofFaith":1,"BlastResistance":1,"SleepResistance":1,"ParalysisResistance":1,"PoisonResistance":1,"WallRunnerBoost":1,"SpiribirdsCall":1,"JumpMaster":1,"QuickBreath":1,"Bludgeoner":1,"Bombardier":1,"CarvingPro":1,"Geologist":1,"Botanist":1,"FireResistance":1,"WaterResistance":1,"ThunderResistance":1,"IceResistance":1,"DragonResistance":1,"ShockAbsorber":1,"Inspiration":1},{"SpreadUp":2,"PierceUp":2,"NormalRapidUp":2,"AmmoUp":2,"MastersTouch":2,"SpareShot":2,"RazorSharp":2,"AttackBoost":2,"CriticalEye":2,"Handicraft":2,"GoodLuck":2,"Tune-Up":2,"BloodRite":2,"LatentPower":2,"Resuscitate":2,"Resentment":2,"PeakPerformance":2,"Agitator":2,"Artillery":2,"MaximumMight":2,"RapidMorph":2,"Coalescence":2,"Burst":2,"SneakAttack":2,"HellfireCloak":2,"OffensiveGuard":2,"Mushroomancer":2,"CriticalDraw":2,"Earplugs":2,"Redirection":2,"GrinderS":2,"StatusTrigger":2,"ProtectivePolish":2,"Ballistics":2,"CriticalElement":2,"Focus":2,"MindsEye":2,"Heroics":2,"PowerProlonger":2,"WallRunner":3,"WirebugWhisperer":2,"BladescaleHone":2,"ChargeMaster":2,"Foray":2,"ElementExploit":2,"AdrenalineRush":2,"Steadiness":3,"PoisonAttack":3,"Defiance":3,"RapidFireUp":1,"WeaknessExploit":1,"CriticalBoost":1,"DefenseBoost":5,"Bloodlust":1,"BlastAttack":2,"SleepAttack":2,"ParalysisAttack":2,"MarathonRunner":2,"SpecialAmmoBoost":2,"LoadShells":2,"GuardUp":2,"Guard":2,"StaminaSurge":2,"TremorResistance":2,"Counterstrike":2,"BubblyDance":2,"PunishingDraw":2,"EvadeExtender":2,"EvadeWindow":2,"QuickSheathe":2,"Slugger":2,"Wide-Range":4,"Partbreaker":2,"SpeedEating":2,"Constitution":2,"Embolden":2,"FireAttack":4,"WaterAttack":4,"ThunderAttack":4,"IceAttack":4,"DragonAttack":4,"IntrepidHeart":2,"Dragonheart":1,"ItemProlonger":3,"StunResistance":3,"FlinchFree":3,"Windproof":3,"SpeedSharpening":3,"RecoverySpeed":3,"StaminaThief":3,"HungerResistance":3,"FreeMeal":3,"BlastResistance":3,"SleepResistance":3,"ParalysisResistance":3,"PoisonResistance":3,"BlightResistance":2,"DivineBlessing":2,"RecoveryUp":2,"RecoilDown":1,"ReloadSpeed":1,"ChameleosBlessing":1,"TeostraBlessing":1,"KushalaBlessing":1,"MasterMounter":1,"Fortify":1,"HornMaestro":1,"AffinitySliding":1,"MuckResistance":1,"Diversion":1,"LeapofFaith":1,"WallRunnerBoost":1,"SpiribirdsCall":1,"BowChargePlus":1,"JumpMaster":1,"QuickBreath":1,"Bludgeoner":1,"Bombardier":3,"CarvingPro":1,"Geologist":3,"Botanist":3,"FireResistance":3,"WaterResistance":3,"ThunderResistance":3,"IceResistance":3,"DragonResistance":3,"ShockAbsorber":1,"Inspiration":1}],"lvl4":{"MastersTouch":2,"Handicraft":2,"GoodLuck":2,"HellfireCloak":2,"JumpMaster":1,"RapidFireUp":1,"SpareShot":2,"RazorSharp":2,"SpreadUp":2,"PierceUp":2,"NormalRapidUp":2,"ProtectivePolish":2,"BlastAttack":2,"SleepAttack":2,"ParalysisAttack":2,"LatentPower":2,"Resuscitate":2,"Resentment":2,"PeakPerformance":2,"Agitator":2,"WeaknessExploit":1,"CriticalBoost":1,"AmmoUp":2,"OffensiveGuard":2,"Mushroomancer":2,"CriticalDraw":2,"Ballistics":2,"CriticalElement":2,"Artillery":2,"MarathonRunner":2,"Focus":2,"MindsEye":2,"Heroics":2,"SpecialAmmoBoost":2,"LoadShells":2,"GuardUp":2,"Guard":2,"StaminaSurge":2,"PowerProlonger":2,"MaximumMight":2,"AttackBoost":2,"CriticalEye":2,"RapidMorph":2,"RecoilDown":1,"Bludgeoner":1,"ReloadSpeed":1,"StunResistance":3,"TremorResistance":2,"Earplugs":2,"Counterstrike":2,"BubblyDance":2,"Steadiness":3,"PunishingDraw":2,"EvadeExtender":2,"EvadeWindow":2,"FlinchFree":3,"QuickSheathe":2,"Windproof":3,"Slugger":2,"Wide-Range":4,"Partbreaker":2,"BlightResistance":2,"SpeedEating":2,"DivineBlessing":2,"WallRunner":3,"WirebugWhisperer":2,"SpeedSharpening":3,"ItemProlonger":3,"RecoverySpeed":3,"RecoveryUp":2,"HornMaestro":1,"StaminaThief":3,"Constitution":2,"PoisonAttack":3,"AffinitySliding":1,"Bombardier":3,"FireAttack":4,"WaterAttack":4,"ThunderAttack":4,"IceAttack":4,"DragonAttack":4,"DefenseBoost":5,"CarvingPro":1,"MasterMounter":1,"HungerResistance":3,"FreeMeal":3,"MuckResistance":1,"Diversion":1,"LeapofFaith":1,"Fortify":1,"Geologist":3,"Botanist":3,"BlastResistance":3,"SleepResistance":3,"ParalysisResistance":3,"PoisonResistance":3,"FireResistance":3,"WaterResistance":3,"ThunderResistance":3,"IceResistance":3,"DragonResistance":3,"QuickBreath":1,"BladescaleHone":2,"Redirection":2,"WallRunnerBoost":1,"BowChargePlus":1,"ChargeMaster":2,"Defiance":3,"Tune-Up":2,"SpiribirdsCall":1,"GrinderS":2,"Coalescence":2,"Foray":2,"Burst":2,"ChameleosBlessing":1,"TeostraBlessing":1,"KushalaBlessing":1,"ElementExploit":2,"SneakAttack":2,"AdrenalineRush":2,"BloodRite":2,"Embolden":2,"Dragonheart":1,"IntrepidHeart":2,"StatusTrigger":2,"ShockAbsorber":1,"Bloodlust":1,"Inspiration":1,"Berserk":null,"BloodAwakening":null,"BuildupBoost":null,"CaptureMaster":null,"CarvingMaster":null,"Dereliction":null,"DragonConversion":null,"FrenziedBloodlust":null,"Frostcraft":null,"Furious":null,"Guts":null,"Heaven-Sent":null,"MailofHellfire":null,"PowderMantle":null,"Stormsoul":null,"Strife":null,"ThunderAlignment":null,"WindAlignment":null,"WindMantle":null},"Bow":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","AttackBoost","Inspiration","Bloodlust","Booster","BowChargePlus","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","DangoTemper","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","HerculesDraw","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","Marksman","MaximumMight","NormalRapidUp","PeakPerformance","PierceUp","PunishingDraw","ReloadSpeed","Resentment","Resuscitate","SneakAttack","SpareShot","SpecialAmmoBoost","Spiribird","SpreadUp","Stormsoul","Strife","TeostraBlessing","ThunderAttack","UpperCrit","WallRunner","WaterAttack","WeaknessExploit"],"ChargeBlade":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Bombardier","Booster","Inspiration","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","EleShieldCharge","ElementExploit","FireAttack","Foray","Fortify","GrinderS","Handicraft","Heroics","IceAttack","ImpactShieldCharge","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RapidMorph","RazorSharp","Resentment","Resuscitate","SavageAxe","SneakAttack","Spiribird","Stormsoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"DualBlades":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","ArchdemonMode","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","Coalescence","Counterstrike","CriticalBoost","Inspiration","CriticalElement","CriticalEye","DemonMode","Dereliction","DragonAttack","Dragonheart","ElementExploit","FeralDemonMode","FireAttack","Foray","Fortify","GrinderS","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","Stormsoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"GreatSword":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Inspiration","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","GrinderS","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PowerSheath","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","Stormsoul","Strife","StrongarmStance","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"Gunlance":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Inspiration","Bombardier","Booster","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","GrinderS","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","Stormsoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"Hammer":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","AttackBoost","Bloodlust","Bludgeoner","Booster","Inspiration","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","GrinderS","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","Stormsoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"HeavyBowGun":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","AmmoUp","Artillery","AttackBoost","Bloodlust","Bombardier","Booster","BowgunBarrel","Inspiration","Burst","ChargeLevel","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","DangoTemper","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","Marksman","MaximumMight","NormalRapidUp","OffensiveGuard","PeakPerformance","PierceUp","RapidFireUp","RecoilDown","ReloadSpeed","Resentment","Resuscitate","SneakAttack","SpareShot","SpecialAmmoBoost","Spiribird","SpreadUp","Stormsoul","Strife","TeostraBlessing","ThunderAttack","Tune-Up","WallRunner","WaterAttack","WeaknessExploit"],"HuntingHorn":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","AttackBoost","Inspiration","Bloodlust","Bludgeoner","Booster","Burst","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","GrinderS","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","Stormsoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"InsectGlaive":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","Inspiration","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","GrinderS","Handicraft","Heroics","IceAttack","KinsectBuff","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","Stormsoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"Lance":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","Inspiration","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","GrinderS","Handicraft","Heroics","IceAttack","KushalaBlessing","LanceCharge","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","Stormsoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"LightBowGun":["Adrenaline","AdrenalineRush","AffinitySliding","Agitator","AttackBoost","Bloodlust","Booster","Burst","Marksman","ButterFlame","Inspiration","Coalescence","Counterstrike","CriticalEye","Demon Powder","DemonAmmo","DemonDrug","DemonSeed","Dereliction","Dragonheart","ElementalReload","EvadeHop","FanningManeuver","Foray","Fortify","Frostcraft","Heroics","HuntingHornAffinity","HuntingHornAttack","HuntingHornElemental","LatentPower","MailofHellfire","MaximumMight","MegaDemonDrug","PeakPerformance","PowerCharm","PowerTalisman","Resentment","Resuscitate","Spiribird","Strife","WallRunner","WeaknessExploit","palicoaff","powerDrum","sleepWakeUp"],"LongSword":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","AttackBoost","Bloodlust","Bludgeoner","Inspiration","Booster","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","GrinderS","Handicraft","Helmbreaker","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SerenePose","SneakAttack","Spiribird","SpiritGauge","Stormsoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"SwitchAxe":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","Artillery","AttackBoost","Bloodlust","Bludgeoner","Booster","Inspiration","Burst","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","GrinderS","Handicraft","Heroics","IceAttack","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","PeakPerformance","PunishingDraw","RapidMorph","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","Stormsoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"SwordNShield":["AffinitySliding","Adrenaline","AdrenalineRush","Agitator","AttackBoost","Bloodlust","Bludgeoner","Booster","Burst","ChargeMaster","Coalescence","Counterstrike","CriticalBoost","CriticalElement","CriticalEye","Dereliction","DragonAttack","Dragonheart","ElementExploit","FireAttack","Foray","Fortify","GrinderS","Handicraft","Heroics","IceAttack","Inspiration","KushalaBlessing","LatentPower","MailofHellfire","MastersTouch","MaximumMight","MindsEye","OffensiveGuard","PeakPerformance","PunishingDraw","RazorSharp","Resentment","Resuscitate","SneakAttack","Spiribird","Stormsoul","Strife","TeostraBlessing","ThunderAttack","WallRunner","WaterAttack","WeaknessExploit"],"Fire":["FireAttack","TeostraBlessing"],"Water":["WaterAttack","KushalaBlessing"],"Ice":["IceAttack","KushalaBlessing"],"Thunder":["ThunderAttack","Stormsoul"],"Dragon":["DragonAttack","Stormsoul"],"Bomb":["BlastAttack","TeostraBlessing"],"Para":["ParalysisAttack"],"Sleep":["SleepAttack"],"Poison":["PoisonAttack"]}
+{
+  "decos": {
+    "MastersTouch": 2,
+    "Handicraft": 3,
+    "GoodLuck": 3,
+    "HellfireCloak": 3,
+    "JumpMaster": 3,
+    "RapidFireUp": 3,
+    "SpareShot": 2,
+    "RazorSharp": 2,
+    "SpreadUp": 3,
+    "PierceUp": 3,
+    "NormalRapidUp": 3,
+    "ProtectivePolish": 2,
+    "BlastAttack": 2,
+    "SleepAttack": 2,
+    "ParalysisAttack": 2,
+    "LatentPower": 2,
+    "Resuscitate": 2,
+    "Resentment": 2,
+    "PeakPerformance": 2,
+    "Agitator": 2,
+    "WeaknessExploit": 2,
+    "CriticalBoost": 2,
+    "AmmoUp": 3,
+    "OffensiveGuard": 3,
+    "Mushroomancer": 3,
+    "CriticalDraw": 3,
+    "Ballistics": 2,
+    "CriticalElement": 2,
+    "Artillery": 2,
+    "MarathonRunner": 2,
+    "Focus": 2,
+    "MindsEye": 2,
+    "Heroics": 2,
+    "SpecialAmmoBoost": 2,
+    "LoadShells": 2,
+    "GuardUp": 2,
+    "Guard": 2,
+    "StaminaSurge": 2,
+    "PowerProlonger": 2,
+    "MaximumMight": 2,
+    "AttackBoost": 2,
+    "CriticalEye": 2,
+    "RapidMorph": 2,
+    "RecoilDown": 1,
+    "Bludgeoner": 2,
+    "ReloadSpeed": 1,
+    "StunResistance": 1,
+    "TremorResistance": 2,
+    "Earplugs": 3,
+    "Counterstrike": 2,
+    "BubblyDance": 2,
+    "Steadiness": 1,
+    "PunishingDraw": 2,
+    "EvadeExtender": 2,
+    "EvadeWindow": 2,
+    "FlinchFree": 1,
+    "QuickSheathe": 2,
+    "Windproof": 1,
+    "Slugger": 2,
+    "Wide-Range": 2,
+    "Partbreaker": 2,
+    "BlightResistance": 2,
+    "SpeedEating": 2,
+    "DivineBlessing": 2,
+    "WallRunner": 2,
+    "WirebugWhisperer": 2,
+    "SpeedSharpening": 1,
+    "ItemProlonger": 2,
+    "RecoverySpeed": 1,
+    "RecoveryUp": 2,
+    "HornMaestro": 1,
+    "StaminaThief": 1,
+    "Constitution": 2,
+    "PoisonAttack": 1,
+    "AffinitySliding": 1,
+    "Bombardier": 1,
+    "FireAttack": 1,
+    "WaterAttack": 1,
+    "ThunderAttack": 1,
+    "IceAttack": 1,
+    "DragonAttack": 1,
+    "DefenseBoost": 1,
+    "CarvingPro": 1,
+    "MasterMounter": 2,
+    "HungerResistance": 1,
+    "FreeMeal": 1,
+    "MuckResistance": 1,
+    "Diversion": 1,
+    "LeapofFaith": 1,
+    "Fortify": 2,
+    "Geologist": 1,
+    "Botanist": 1,
+    "BlastResistance": 1,
+    "SleepResistance": 1,
+    "ParalysisResistance": 1,
+    "PoisonResistance": 1,
+    "FireResistance": 1,
+    "WaterResistance": 1,
+    "ThunderResistance": 1,
+    "IceResistance": 1,
+    "DragonResistance": 1,
+    "QuickBreath": 3,
+    "BladescaleHone": 2,
+    "Redirection": 3,
+    "WallRunnerBoost": 1,
+    "BowChargePlus": 4,
+    "ChargeMaster": 2,
+    "Defiance": 1,
+    "Tune-Up": 3,
+    "SpiribirdsCall": 1,
+    "GrinderS": 3,
+    "Coalescence": 2,
+    "Foray": 2,
+    "Burst": 2,
+    "ChameleosBlessing": 1,
+    "TeostraBlessing": 1,
+    "KushalaBlessing": 1,
+    "ElementExploit": 2,
+    "SneakAttack": 2,
+    "AdrenalineRush": 2,
+    "BloodRite": 3,
+    "Embolden": 2,
+    "Dragonheart": 4,
+    "IntrepidHeart": 1,
+    "StatusTrigger": 3,
+    "ShockAbsorber": 1,
+    "Bloodlust": 4,
+    "Inspiration": 1
+  },
+  "maxLevel": {
+    "AdrenalineRush": 3,
+    "AffinitySliding": 1,
+    "Agitator": 5,
+    "AmmoUp": 3,
+    "Artillery": 3,
+    "AttackBoost": 7,
+    "Ballistics": 3,
+    "Berserk": 2,
+    "BladescaleHone": 3,
+    "BlastAttack": 3,
+    "BlastResistance": 3,
+    "BlightResistance": 3,
+    "BloodAwakening": 3,
+    "BloodRite": 3,
+    "Bloodlust": 3,
+    "Bludgeoner": 3,
+    "Bombardier": 3,
+    "Botanist": 4,
+    "BowChargePlus": 1,
+    "BubblyDance": 3,
+    "BuildupBoost": 3,
+    "Burst": 3,
+    "CaptureMaster": 1,
+    "CarvingMaster": 1,
+    "CarvingPro": 1,
+    "ChameleosBlessing": 4,
+    "ChargeMaster": 3,
+    "Coalescence": 3,
+    "Constitution": 5,
+    "Counterstrike": 3,
+    "CriticalBoost": 3,
+    "CriticalDraw": 3,
+    "CriticalElement": 3,
+    "CriticalEye": 7,
+    "DefenseBoost": 7,
+    "Defiance": 5,
+    "Dereliction": 3,
+    "Diversion": 1,
+    "DivineBlessing": 3,
+    "DragonAttack": 5,
+    "DragonConversion": 3,
+    "DragonResistance": 3,
+    "Dragonheart": 5,
+    "Earplugs": 5,
+    "ElementExploit": 3,
+    "Embolden": 3,
+    "EvadeExtender": 3,
+    "EvadeWindow": 5,
+    "FireAttack": 5,
+    "FireResistance": 3,
+    "FlinchFree": 3,
+    "Focus": 3,
+    "Foray": 3,
+    "Fortify": 1,
+    "FreeMeal": 3,
+    "FrenziedBloodlust": 3,
+    "Frostcraft": 3,
+    "Furious": 3,
+    "Geologist": 3,
+    "GoodLuck": 3,
+    "GrinderS": 3,
+    "Guard": 5,
+    "GuardUp": 3,
+    "Guts": 3,
+    "Handicraft": 5,
+    "Heaven-Sent": 3,
+    "HellfireCloak": 4,
+    "Heroics": 5,
+    "HornMaestro": 1,
+    "HungerResistance": 3,
+    "IceAttack": 5,
+    "IceResistance": 3,
+    "Inspiration": 1,
+    "IntrepidHeart": 2,
+    "ItemProlonger": 3,
+    "JumpMaster": 1,
+    "KushalaBlessing": 4,
+    "LatentPower": 5,
+    "LeapofFaith": 1,
+    "LoadShells": 2,
+    "MailofHellfire": 3,
+    "MarathonRunner": 3,
+    "MasterMounter": 1,
+    "MastersTouch": 3,
+    "MaximumMight": 3,
+    "MindsEye": 3,
+    "MuckResistance": 2,
+    "Mushroomancer": 3,
+    "NormalRapidUp": 3,
+    "OffensiveGuard": 3,
+    "ParalysisAttack": 3,
+    "ParalysisResistance": 3,
+    "Partbreaker": 3,
+    "PeakPerformance": 3,
+    "PierceUp": 3,
+    "PoisonAttack": 3,
+    "PoisonResistance": 3,
+    "PowderMantle": 3,
+    "PowerProlonger": 3,
+    "ProtectivePolish": 3,
+    "PunishingDraw": 3,
+    "QuickBreath": 1,
+    "QuickSheathe": 3,
+    "RapidFireUp": 3,
+    "RapidMorph": 3,
+    "RazorSharp": 3,
+    "RecoilDown": 3,
+    "RecoverySpeed": 3,
+    "RecoveryUp": 3,
+    "Redirection": 2,
+    "ReloadSpeed": 3,
+    "Resentment": 5,
+    "Resuscitate": 3,
+    "ShockAbsorber": 1,
+    "SleepAttack": 3,
+    "SleepResistance": 3,
+    "Slugger": 3,
+    "SneakAttack": 3,
+    "SpareShot": 3,
+    "SpecialAmmoBoost": 2,
+    "SpeedEating": 3,
+    "SpeedSharpening": 3,
+    "SpiribirdsCall": 1,
+    "SpreadUp": 3,
+    "StaminaSurge": 3,
+    "StaminaThief": 3,
+    "StatusTrigger": 3,
+    "Steadiness": 3,
+    "Stormsoul": 5,
+    "Strife": 3,
+    "StunResistance": 3,
+    "TeostraBlessing": 4,
+    "ThunderAlignment": 5,
+    "ThunderAttack": 5,
+    "ThunderResistance": 3,
+    "TremorResistance": 3,
+    "Tune-Up": 2,
+    "WallRunner": 3,
+    "WallRunnerBoost": 1,
+    "WaterAttack": 5,
+    "WaterResistance": 3,
+    "WeaknessExploit": 3,
+    "Wide-Range": 5,
+    "WindAlignment": 5,
+    "WindMantle": 3,
+    "Windproof": 3,
+    "WirebugWhisperer": 3
+  },
+  "qurious": {
+    "CriticalEye": 15,
+    "CriticalBoost": 15,
+    "WeaknessExploit": 15,
+    "MastersTouch": 15,
+    "RazorSharp": 15,
+    "SpareShot": 15,
+    "NormalRapidUp": 15,
+    "PierceUp": 15,
+    "SpreadUp": 15,
+    "AmmoUp": 15,
+    "RapidFireUp": 15,
+    "AttackBoost": 15,
+    "Guts": 15,
+    "Handicraft": 12,
+    "Agitator": 12,
+    "PeakPerformance": 12,
+    "Resentment": 12,
+    "Resuscitate": 12,
+    "Coalescence": 12,
+    "LatentPower": 12,
+    "MaximumMight": 12,
+    "GoodLuck": 12,
+    "Burst": 12,
+    "Tune-Up": 12,
+    "RapidMorph": 12,
+    "Artillery": 12,
+    "SneakAttack": 12,
+    "BloodRite": 12,
+    "Bloodlust": 12,
+    "BuildupBoost": 12,
+    "Frostcraft": 12,
+    "DragonConversion": 12,
+    "ProtectivePolish": 9,
+    "Mushroomancer": 9,
+    "MindsEye": 9,
+    "CriticalElement": 9,
+    "Ballistics": 9,
+    "CriticalDraw": 9,
+    "Focus": 9,
+    "PowerProlonger": 9,
+    "OffensiveGuard": 9,
+    "Earplugs": 9,
+    "Heroics": 9,
+    "HellfireCloak": 9,
+    "WirebugWhisperer": 9,
+    "ChargeMaster": 9,
+    "Foray": 9,
+    "GrinderS": 9,
+    "BladescaleHone": 9,
+    "Redirection": 9,
+    "ElementExploit": 9,
+    "AdrenalineRush": 9,
+    "Furious": 9,
+    "StatusTrigger": 9,
+    "Dragonheart": 9,
+    "MailofHellfire": 9,
+    "Strife": 9,
+    "PowderMantle": 9,
+    "WindMantle": 9,
+    "FrenziedBloodlust": 9,
+    "LoadShells": 6,
+    "Guard": 6,
+    "GuardUp": 6,
+    "PoisonAttack": 6,
+    "ParalysisAttack": 6,
+    "SleepAttack": 6,
+    "BlastAttack": 6,
+    "MarathonRunner": 6,
+    "Constitution": 6,
+    "StaminaSurge": 6,
+    "PunishingDraw": 6,
+    "QuickSheathe": 6,
+    "Slugger": 6,
+    "SpecialAmmoBoost": 6,
+    "Steadiness": 6,
+    "SpeedEating": 6,
+    "TremorResistance": 6,
+    "BubblyDance": 6,
+    "EvadeWindow": 6,
+    "EvadeExtender": 6,
+    "Partbreaker": 6,
+    "WallRunner": 6,
+    "Counterstrike": 6,
+    "Defiance": 6,
+    "ReloadSpeed": 6,
+    "RecoilDown": 6,
+    "ChameleosBlessing": 6,
+    "KushalaBlessing": 6,
+    "TeostraBlessing": 6,
+    "Embolden": 6,
+    "IntrepidHeart": 6,
+    "FlinchFree": 3,
+    "StaminaThief": 3,
+    "FireAttack": 3,
+    "WaterAttack": 3,
+    "IceAttack": 3,
+    "ThunderAttack": 3,
+    "DragonAttack": 3,
+    "AffinitySliding": 3,
+    "HornMaestro": 3,
+    "DefenseBoost": 3,
+    "DivineBlessing": 3,
+    "RecoveryUp": 3,
+    "RecoverySpeed": 3,
+    "Windproof": 3,
+    "BlightResistance": 3,
+    "PoisonResistance": 3,
+    "ParalysisResistance": 3,
+    "SleepResistance": 3,
+    "StunResistance": 3,
+    "MuckResistance": 3,
+    "BlastResistance": 3,
+    "SpeedSharpening": 3,
+    "ItemProlonger": 3,
+    "Wide-Range": 3,
+    "FreeMeal": 3,
+    "Fortify": 3,
+    "HungerResistance": 3,
+    "LeapofFaith": 3,
+    "Diversion": 3,
+    "MasterMounter": 3,
+    "SpiribirdsCall": 3,
+    "WallRunnerBoost": 3
+  },
+  "decoLevels": [
+    [
+      {
+        "AffinitySliding": 1
+      },
+      {
+        "BlastResistance": 1
+      },
+      {
+        "Bombardier": 1
+      },
+      {
+        "Botanist": 1
+      },
+      {
+        "CarvingPro": 1
+      },
+      {
+        "ChameleosBlessing": 1
+      },
+      {
+        "DefenseBoost": 1
+      },
+      {
+        "Defiance": 1
+      },
+      {
+        "Diversion": 1
+      },
+      {
+        "DragonAttack": 1
+      },
+      {
+        "DragonResistance": 1
+      },
+      {
+        "FireAttack": 1
+      },
+      {
+        "FireResistance": 1
+      },
+      {
+        "FlinchFree": 1
+      },
+      {
+        "FreeMeal": 1
+      },
+      {
+        "Geologist": 1
+      },
+      {
+        "HornMaestro": 1
+      },
+      {
+        "HungerResistance": 1
+      },
+      {
+        "IceAttack": 1
+      },
+      {
+        "IceResistance": 1
+      },
+      {
+        "Inspiration": 1
+      },
+      {
+        "IntrepidHeart": 1
+      },
+      {
+        "KushalaBlessing": 1
+      },
+      {
+        "LeapofFaith": 1
+      },
+      {
+        "MuckResistance": 1
+      },
+      {
+        "ParalysisResistance": 1
+      },
+      {
+        "PoisonAttack": 1
+      },
+      {
+        "PoisonResistance": 1
+      },
+      {
+        "RecoilDown": 1
+      },
+      {
+        "RecoverySpeed": 1
+      },
+      {
+        "ReloadSpeed": 1
+      },
+      {
+        "ShockAbsorber": 1
+      },
+      {
+        "SleepResistance": 1
+      },
+      {
+        "SpeedSharpening": 1
+      },
+      {
+        "SpiribirdsCall": 1
+      },
+      {
+        "StaminaThief": 1
+      },
+      {
+        "Steadiness": 1
+      },
+      {
+        "StunResistance": 1
+      },
+      {
+        "TeostraBlessing": 1
+      },
+      {
+        "ThunderAttack": 1
+      },
+      {
+        "ThunderResistance": 1
+      },
+      {
+        "WallRunnerBoost": 1
+      },
+      {
+        "WaterAttack": 1
+      },
+      {
+        "WaterResistance": 1
+      },
+      {
+        "Windproof": 1
+      }
+    ],
+    [
+      {
+        "AdrenalineRush": 1
+      },
+      {
+        "Agitator": 1
+      },
+      {
+        "Artillery": 1
+      },
+      {
+        "AttackBoost": 1
+      },
+      {
+        "Ballistics": 1
+      },
+      {
+        "BladescaleHone": 1
+      },
+      {
+        "BlastAttack": 1
+      },
+      {
+        "BlightResistance": 1
+      },
+      {
+        "Bludgeoner": 1
+      },
+      {
+        "BubblyDance": 1
+      },
+      {
+        "Burst": 1
+      },
+      {
+        "ChargeMaster": 1
+      },
+      {
+        "Coalescence": 1
+      },
+      {
+        "Constitution": 1
+      },
+      {
+        "Counterstrike": 1
+      },
+      {
+        "CriticalBoost": 1
+      },
+      {
+        "CriticalElement": 1
+      },
+      {
+        "CriticalEye": 1
+      },
+      {
+        "DefenseBoost": 2
+      },
+      {
+        "DivineBlessing": 1
+      },
+      {
+        "DragonAttack": 2
+      },
+      {
+        "ElementExploit": 1
+      },
+      {
+        "Embolden": 1
+      },
+      {
+        "EvadeExtender": 1
+      },
+      {
+        "EvadeWindow": 1
+      },
+      {
+        "FireAttack": 2
+      },
+      {
+        "Focus": 1
+      },
+      {
+        "Foray": 1
+      },
+      {
+        "Fortify": 1
+      },
+      {
+        "Guard": 1
+      },
+      {
+        "GuardUp": 1
+      },
+      {
+        "Heroics": 1
+      },
+      {
+        "IceAttack": 2
+      },
+      {
+        "ItemProlonger": 1
+      },
+      {
+        "LatentPower": 1
+      },
+      {
+        "LoadShells": 1
+      },
+      {
+        "MarathonRunner": 1
+      },
+      {
+        "MasterMounter": 1
+      },
+      {
+        "MastersTouch": 1
+      },
+      {
+        "MaximumMight": 1
+      },
+      {
+        "MindsEye": 1
+      },
+      {
+        "ParalysisAttack": 1
+      },
+      {
+        "Partbreaker": 1
+      },
+      {
+        "PeakPerformance": 1
+      },
+      {
+        "PowerProlonger": 1
+      },
+      {
+        "ProtectivePolish": 1
+      },
+      {
+        "PunishingDraw": 1
+      },
+      {
+        "QuickSheathe": 1
+      },
+      {
+        "RapidMorph": 1
+      },
+      {
+        "RazorSharp": 1
+      },
+      {
+        "RecoveryUp": 1
+      },
+      {
+        "Resentment": 1
+      },
+      {
+        "Resuscitate": 1
+      },
+      {
+        "SleepAttack": 1
+      },
+      {
+        "Slugger": 1
+      },
+      {
+        "SneakAttack": 1
+      },
+      {
+        "SpareShot": 1
+      },
+      {
+        "SpecialAmmoBoost": 1
+      },
+      {
+        "SpeedEating": 1
+      },
+      {
+        "StaminaSurge": 1
+      },
+      {
+        "ThunderAttack": 2
+      },
+      {
+        "TremorResistance": 1
+      },
+      {
+        "WallRunner": 1
+      },
+      {
+        "WaterAttack": 2
+      },
+      {
+        "WeaknessExploit": 1
+      },
+      {
+        "Wide-Range": 1
+      },
+      {
+        "WirebugWhisperer": 1
+      }
+    ],
+    [
+      {
+        "AmmoUp": 1
+      },
+      {
+        "BloodRite": 1
+      },
+      {
+        "CriticalDraw": 1
+      },
+      {
+        "DefenseBoost": 3
+      },
+      {
+        "DragonAttack": 3
+      },
+      {
+        "Earplugs": 1
+      },
+      {
+        "FireAttack": 3
+      },
+      {
+        "GoodLuck": 1
+      },
+      {
+        "GrinderS": 1
+      },
+      {
+        "Guard": 2
+      },
+      {
+        "Handicraft": 1
+      },
+      {
+        "HellfireCloak": 1
+      },
+      {
+        "IceAttack": 3
+      },
+      {
+        "IntrepidHeart": 2
+      },
+      {
+        "JumpMaster": 1
+      },
+      {
+        "Mushroomancer": 1
+      },
+      {
+        "NormalRapidUp": 1
+      },
+      {
+        "OffensiveGuard": 1
+      },
+      {
+        "PierceUp": 1
+      },
+      {
+        "QuickBreath": 1
+      },
+      {
+        "RapidFireUp": 1
+      },
+      {
+        "Redirection": 1
+      },
+      {
+        "SpreadUp": 1
+      },
+      {
+        "StatusTrigger": 1
+      },
+      {
+        "ThunderAttack": 3
+      },
+      {
+        "Tune-Up": 1
+      },
+      {
+        "WaterAttack": 3
+      },
+      {
+        "Wide-Range": 3
+      }
+    ],
+    [
+      {
+        "AdrenalineRush": 2
+      },
+      {
+        "Agitator": 2
+      },
+      {
+        "AmmoUp": 2
+      },
+      {
+        "Artillery": 2
+      },
+      {
+        "AttackBoost": 2
+      },
+      {
+        "Ballistics": 2
+      },
+      {
+        "BladescaleHone": 2
+      },
+      {
+        "BlastAttack": 2
+      },
+      {
+        "BlastResistance": 3
+      },
+      {
+        "BlightResistance": 2
+      },
+      {
+        "BloodRite": 2
+      },
+      {
+        "Bloodlust": 1
+      },
+      {
+        "Bombardier": 3
+      },
+      {
+        "Botanist": 3
+      },
+      {
+        "BowChargePlus": 1
+      },
+      {
+        "BubblyDance": 2
+      },
+      {
+        "Burst": 2
+      },
+      {
+        "ChargeMaster": 2
+      },
+      {
+        "Coalescence": 2
+      },
+      {
+        "Constitution": 2
+      },
+      {
+        "Counterstrike": 2
+      },
+      {
+        "CriticalDraw": 2
+      },
+      {
+        "CriticalElement": 2
+      },
+      {
+        "CriticalEye": 2
+      },
+      {
+        "DefenseBoost": 5
+      },
+      {
+        "Defiance": 3
+      },
+      {
+        "DivineBlessing": 2
+      },
+      {
+        "DragonAttack": 4
+      },
+      {
+        "DragonResistance": 3
+      },
+      {
+        "Dragonheart": 1
+      },
+      {
+        "Earplugs": 2
+      },
+      {
+        "ElementExploit": 2
+      },
+      {
+        "Embolden": 2
+      },
+      {
+        "EvadeExtender": 2
+      },
+      {
+        "EvadeWindow": 2
+      },
+      {
+        "FireAttack": 4
+      },
+      {
+        "FireResistance": 3
+      },
+      {
+        "FlinchFree": 3
+      },
+      {
+        "Focus": 2
+      },
+      {
+        "Foray": 2
+      },
+      {
+        "FreeMeal": 3
+      },
+      {
+        "Geologist": 3
+      },
+      {
+        "GoodLuck": 2
+      },
+      {
+        "GrinderS": 2
+      },
+      {
+        "GuardUp": 2
+      },
+      {
+        "Handicraft": 2
+      },
+      {
+        "HellfireCloak": 2
+      },
+      {
+        "Heroics": 2
+      },
+      {
+        "HungerResistance": 3
+      },
+      {
+        "IceAttack": 4
+      },
+      {
+        "IceResistance": 3
+      },
+      {
+        "ItemProlonger": 3
+      },
+      {
+        "LatentPower": 2
+      },
+      {
+        "LoadShells": 2
+      },
+      {
+        "MarathonRunner": 2
+      },
+      {
+        "MastersTouch": 2
+      },
+      {
+        "MaximumMight": 2
+      },
+      {
+        "MindsEye": 2
+      },
+      {
+        "Mushroomancer": 2
+      },
+      {
+        "NormalRapidUp": 2
+      },
+      {
+        "OffensiveGuard": 2
+      },
+      {
+        "ParalysisAttack": 2
+      },
+      {
+        "ParalysisResistance": 3
+      },
+      {
+        "Partbreaker": 2
+      },
+      {
+        "PeakPerformance": 2
+      },
+      {
+        "PierceUp": 2
+      },
+      {
+        "PoisonAttack": 3
+      },
+      {
+        "PoisonResistance": 3
+      },
+      {
+        "PowerProlonger": 2
+      },
+      {
+        "ProtectivePolish": 2
+      },
+      {
+        "PunishingDraw": 2
+      },
+      {
+        "QuickSheathe": 2
+      },
+      {
+        "RapidMorph": 2
+      },
+      {
+        "RazorSharp": 2
+      },
+      {
+        "RecoverySpeed": 3
+      },
+      {
+        "RecoveryUp": 2
+      },
+      {
+        "Redirection": 2
+      },
+      {
+        "Resentment": 2
+      },
+      {
+        "Resuscitate": 2
+      },
+      {
+        "SleepAttack": 2
+      },
+      {
+        "SleepResistance": 3
+      },
+      {
+        "Slugger": 2
+      },
+      {
+        "SneakAttack": 2
+      },
+      {
+        "SpareShot": 2
+      },
+      {
+        "SpecialAmmoBoost": 2
+      },
+      {
+        "SpeedEating": 2
+      },
+      {
+        "SpeedSharpening": 3
+      },
+      {
+        "SpreadUp": 2
+      },
+      {
+        "StaminaSurge": 2
+      },
+      {
+        "StaminaThief": 3
+      },
+      {
+        "StatusTrigger": 2
+      },
+      {
+        "Steadiness": 3
+      },
+      {
+        "StunResistance": 3
+      },
+      {
+        "ThunderAttack": 4
+      },
+      {
+        "ThunderResistance": 3
+      },
+      {
+        "TremorResistance": 2
+      },
+      {
+        "Tune-Up": 2
+      },
+      {
+        "WallRunner": 3
+      },
+      {
+        "WaterAttack": 4
+      },
+      {
+        "WaterResistance": 3
+      },
+      {
+        "Wide-Range": 4
+      },
+      {
+        "Windproof": 3
+      },
+      {
+        "WirebugWhisperer": 2
+      }
+    ]
+  ],
+  "Invalid": [],
+  "IgnoreHZV": [
+    "AttackBoost",
+    "Dragonheart",
+    "Fortify",
+    "Heroics",
+    "Frostcraft",
+    "Resentment",
+    "Resuscitate",
+    "Bombardier",
+    "PeakPerformance",
+    "Counterstrike",
+    "WallRunner",
+    "Spiribird",
+    "Artillery",
+    "Coalescence",
+    "MailofHellfire",
+    "Booster",
+    "Dereliction",
+    "Burst",
+    "Foray",
+    "Adrenaline",
+    "Bloodlust",
+    "Strife",
+    "AdrenalineRush"
+  ],
+  "Shot": [
+    "AffinitySliding",
+    "ElementalReload",
+    "Dragonheart",
+    "Frostcraft",
+    "Fortify",
+    "NormalRapidUp",
+    "PierceUp",
+    "RapidFireUp",
+    "SpecialAmmoBoost",
+    "SpreadUp",
+    "Resentment",
+    "Resuscitate",
+    "PeakPerformance",
+    "Counterstrike",
+    "Heroics",
+    "AttackBoost",
+    "Spiribird",
+    "WallRunner",
+    "CriticalEye",
+    "MaximumMight",
+    "LatentPower",
+    "DangoTemper",
+    "Dereliction",
+    "FanningManeuver",
+    "EvadeHop",
+    "Coalescence",
+    "Bloodlust",
+    "MailofHellfire",
+    "Foray",
+    "Adrenaline",
+    "Booster",
+    "Burst",
+    "AdrenalineRush",
+    "Strife",
+    "SneakAttack"
+  ],
+  "Sever": [
+    "AffinitySliding",
+    "Dragonheart",
+    "Frostcraft",
+    "Fortify",
+    "Resentment",
+    "Resuscitate",
+    "PeakPerformance",
+    "Counterstrike",
+    "Dereliction",
+    "Heroics",
+    "AttackBoost",
+    "Spiribird",
+    "WallRunner",
+    "CriticalEye",
+    "MaximumMight",
+    "LatentPower",
+    "Coalescence",
+    "Bloodlust",
+    "MailofHellfire",
+    "Booster",
+    "GrinderS",
+    "Foray",
+    "Adrenaline",
+    "Burst",
+    "AdrenalineRush",
+    "Strife",
+    "PowerSheath"
+  ],
+  "Blunt": [
+    "AffinitySliding",
+    "Dragonheart",
+    "Fortify",
+    "Frostcraft",
+    "Resentment",
+    "Resuscitate",
+    "PeakPerformance",
+    "Counterstrike",
+    "Dereliction",
+    "Heroics",
+    "AttackBoost",
+    "Spiribird",
+    "WallRunner",
+    "CriticalEye",
+    "MaximumMight",
+    "LatentPower",
+    "Coalescence",
+    "Bloodlust",
+    "MailofHellfire",
+    "Booster",
+    "GrinderS",
+    "Foray",
+    "Adrenaline",
+    "Burst",
+    "AdrenalineRush",
+    "Strife",
+    "PowerSheath"
+  ],
+  "pointsPerSlot": [
+    {
+      "RecoilDown": 1,
+      "ReloadSpeed": 1,
+      "Steadiness": 1,
+      "PoisonAttack": 1,
+      "Defiance": 1,
+      "ChameleosBlessing": 1,
+      "TeostraBlessing": 1,
+      "KushalaBlessing": 1,
+      "IntrepidHeart": 1,
+      "StunResistance": 1,
+      "FlinchFree": 1,
+      "Windproof": 1,
+      "SpeedSharpening": 1,
+      "RecoverySpeed": 1,
+      "HornMaestro": 1,
+      "StaminaThief": 1,
+      "AffinitySliding": 1,
+      "FireAttack": 1,
+      "WaterAttack": 1,
+      "ThunderAttack": 1,
+      "IceAttack": 1,
+      "DragonAttack": 1,
+      "DefenseBoost": 1,
+      "HungerResistance": 1,
+      "FreeMeal": 1,
+      "MuckResistance": 1,
+      "Diversion": 1,
+      "LeapofFaith": 1,
+      "BlastResistance": 1,
+      "SleepResistance": 1,
+      "ParalysisResistance": 1,
+      "PoisonResistance": 1,
+      "WallRunnerBoost": 1,
+      "SpiribirdsCall": 1,
+      "Bombardier": 1,
+      "CarvingPro": 1,
+      "Geologist": 1,
+      "Botanist": 1,
+      "FireResistance": 1,
+      "WaterResistance": 1,
+      "ThunderResistance": 1,
+      "IceResistance": 1,
+      "DragonResistance": 1,
+      "ShockAbsorber": 1,
+      "Inspiration": 1
+    },
+    {
+      "MastersTouch": 1,
+      "SpareShot": 1,
+      "RazorSharp": 1,
+      "WeaknessExploit": 1,
+      "CriticalBoost": 1,
+      "AttackBoost": 1,
+      "CriticalEye": 1,
+      "LatentPower": 1,
+      "Resuscitate": 1,
+      "Resentment": 1,
+      "PeakPerformance": 1,
+      "Agitator": 1,
+      "Artillery": 1,
+      "MaximumMight": 1,
+      "RapidMorph": 1,
+      "Coalescence": 1,
+      "Burst": 1,
+      "SneakAttack": 1,
+      "ProtectivePolish": 1,
+      "Ballistics": 1,
+      "CriticalElement": 1,
+      "Focus": 1,
+      "MindsEye": 1,
+      "Heroics": 1,
+      "PowerProlonger": 1,
+      "WirebugWhisperer": 1,
+      "BladescaleHone": 1,
+      "ChargeMaster": 1,
+      "Foray": 1,
+      "ElementExploit": 1,
+      "AdrenalineRush": 1,
+      "BlastAttack": 1,
+      "SleepAttack": 1,
+      "ParalysisAttack": 1,
+      "MarathonRunner": 1,
+      "SpecialAmmoBoost": 1,
+      "LoadShells": 1,
+      "GuardUp": 1,
+      "Guard": 1,
+      "StaminaSurge": 1,
+      "TremorResistance": 1,
+      "Counterstrike": 1,
+      "BubblyDance": 1,
+      "PunishingDraw": 1,
+      "EvadeExtender": 1,
+      "EvadeWindow": 1,
+      "QuickSheathe": 1,
+      "Slugger": 1,
+      "Partbreaker": 1,
+      "SpeedEating": 1,
+      "WallRunner": 1,
+      "Constitution": 1,
+      "Embolden": 1,
+      "RecoilDown": 1,
+      "ReloadSpeed": 1,
+      "Steadiness": 1,
+      "PoisonAttack": 1,
+      "FireAttack": 2,
+      "WaterAttack": 2,
+      "ThunderAttack": 2,
+      "IceAttack": 2,
+      "DragonAttack": 2,
+      "DefenseBoost": 2,
+      "Defiance": 1,
+      "ChameleosBlessing": 1,
+      "TeostraBlessing": 1,
+      "KushalaBlessing": 1,
+      "IntrepidHeart": 1,
+      "Wide-Range": 1,
+      "BlightResistance": 1,
+      "DivineBlessing": 1,
+      "ItemProlonger": 1,
+      "RecoveryUp": 1,
+      "MasterMounter": 1,
+      "Fortify": 1,
+      "StunResistance": 1,
+      "FlinchFree": 1,
+      "Windproof": 1,
+      "SpeedSharpening": 1,
+      "RecoverySpeed": 1,
+      "HornMaestro": 1,
+      "StaminaThief": 1,
+      "AffinitySliding": 1,
+      "HungerResistance": 1,
+      "FreeMeal": 1,
+      "MuckResistance": 1,
+      "Diversion": 1,
+      "LeapofFaith": 1,
+      "BlastResistance": 1,
+      "SleepResistance": 1,
+      "ParalysisResistance": 1,
+      "PoisonResistance": 1,
+      "WallRunnerBoost": 1,
+      "SpiribirdsCall": 1,
+      "Bludgeoner": 1,
+      "Bombardier": 1,
+      "CarvingPro": 1,
+      "Geologist": 1,
+      "Botanist": 1,
+      "FireResistance": 1,
+      "WaterResistance": 1,
+      "ThunderResistance": 1,
+      "IceResistance": 1,
+      "DragonResistance": 1,
+      "ShockAbsorber": 1,
+      "Inspiration": 1
+    },
+    {
+      "RapidFireUp": 1,
+      "SpreadUp": 1,
+      "PierceUp": 1,
+      "NormalRapidUp": 1,
+      "AmmoUp": 1,
+      "MastersTouch": 1,
+      "SpareShot": 1,
+      "RazorSharp": 1,
+      "WeaknessExploit": 1,
+      "CriticalBoost": 1,
+      "AttackBoost": 1,
+      "CriticalEye": 1,
+      "Handicraft": 1,
+      "GoodLuck": 1,
+      "Tune-Up": 1,
+      "BloodRite": 1,
+      "LatentPower": 1,
+      "Resuscitate": 1,
+      "Resentment": 1,
+      "PeakPerformance": 1,
+      "Agitator": 1,
+      "Artillery": 1,
+      "Guard": 2,
+      "MaximumMight": 1,
+      "RapidMorph": 1,
+      "Coalescence": 1,
+      "Burst": 1,
+      "SneakAttack": 1,
+      "IntrepidHeart": 2,
+      "HellfireCloak": 1,
+      "OffensiveGuard": 1,
+      "Mushroomancer": 1,
+      "CriticalDraw": 1,
+      "Earplugs": 1,
+      "Redirection": 1,
+      "GrinderS": 1,
+      "StatusTrigger": 1,
+      "ProtectivePolish": 1,
+      "Ballistics": 1,
+      "CriticalElement": 1,
+      "Focus": 1,
+      "MindsEye": 1,
+      "Heroics": 1,
+      "PowerProlonger": 1,
+      "Wide-Range": 3,
+      "WirebugWhisperer": 1,
+      "BladescaleHone": 1,
+      "ChargeMaster": 1,
+      "Foray": 1,
+      "ElementExploit": 1,
+      "AdrenalineRush": 1,
+      "FireAttack": 3,
+      "WaterAttack": 3,
+      "ThunderAttack": 3,
+      "IceAttack": 3,
+      "DragonAttack": 3,
+      "DefenseBoost": 3,
+      "BlastAttack": 1,
+      "SleepAttack": 1,
+      "ParalysisAttack": 1,
+      "MarathonRunner": 1,
+      "SpecialAmmoBoost": 1,
+      "LoadShells": 1,
+      "GuardUp": 1,
+      "StaminaSurge": 1,
+      "TremorResistance": 1,
+      "Counterstrike": 1,
+      "BubblyDance": 1,
+      "PunishingDraw": 1,
+      "EvadeExtender": 1,
+      "EvadeWindow": 1,
+      "QuickSheathe": 1,
+      "Slugger": 1,
+      "Partbreaker": 1,
+      "SpeedEating": 1,
+      "WallRunner": 1,
+      "Constitution": 1,
+      "Embolden": 1,
+      "RecoilDown": 1,
+      "ReloadSpeed": 1,
+      "Steadiness": 1,
+      "PoisonAttack": 1,
+      "Defiance": 1,
+      "ChameleosBlessing": 1,
+      "TeostraBlessing": 1,
+      "KushalaBlessing": 1,
+      "BlightResistance": 1,
+      "DivineBlessing": 1,
+      "ItemProlonger": 1,
+      "RecoveryUp": 1,
+      "MasterMounter": 1,
+      "Fortify": 1,
+      "StunResistance": 1,
+      "FlinchFree": 1,
+      "Windproof": 1,
+      "SpeedSharpening": 1,
+      "RecoverySpeed": 1,
+      "HornMaestro": 1,
+      "StaminaThief": 1,
+      "AffinitySliding": 1,
+      "HungerResistance": 1,
+      "FreeMeal": 1,
+      "MuckResistance": 1,
+      "Diversion": 1,
+      "LeapofFaith": 1,
+      "BlastResistance": 1,
+      "SleepResistance": 1,
+      "ParalysisResistance": 1,
+      "PoisonResistance": 1,
+      "WallRunnerBoost": 1,
+      "SpiribirdsCall": 1,
+      "JumpMaster": 1,
+      "QuickBreath": 1,
+      "Bludgeoner": 1,
+      "Bombardier": 1,
+      "CarvingPro": 1,
+      "Geologist": 1,
+      "Botanist": 1,
+      "FireResistance": 1,
+      "WaterResistance": 1,
+      "ThunderResistance": 1,
+      "IceResistance": 1,
+      "DragonResistance": 1,
+      "ShockAbsorber": 1,
+      "Inspiration": 1
+    },
+    {
+      "SpreadUp": 2,
+      "PierceUp": 2,
+      "NormalRapidUp": 2,
+      "AmmoUp": 2,
+      "MastersTouch": 2,
+      "SpareShot": 2,
+      "RazorSharp": 2,
+      "AttackBoost": 2,
+      "CriticalEye": 2,
+      "Handicraft": 2,
+      "GoodLuck": 2,
+      "Tune-Up": 2,
+      "BloodRite": 2,
+      "LatentPower": 2,
+      "Resuscitate": 2,
+      "Resentment": 2,
+      "PeakPerformance": 2,
+      "Agitator": 2,
+      "Artillery": 2,
+      "MaximumMight": 2,
+      "RapidMorph": 2,
+      "Coalescence": 2,
+      "Burst": 2,
+      "SneakAttack": 2,
+      "HellfireCloak": 2,
+      "OffensiveGuard": 2,
+      "Mushroomancer": 2,
+      "CriticalDraw": 2,
+      "Earplugs": 2,
+      "Redirection": 2,
+      "GrinderS": 2,
+      "StatusTrigger": 2,
+      "ProtectivePolish": 2,
+      "Ballistics": 2,
+      "CriticalElement": 2,
+      "Focus": 2,
+      "MindsEye": 2,
+      "Heroics": 2,
+      "PowerProlonger": 2,
+      "WallRunner": 3,
+      "WirebugWhisperer": 2,
+      "BladescaleHone": 2,
+      "ChargeMaster": 2,
+      "Foray": 2,
+      "ElementExploit": 2,
+      "AdrenalineRush": 2,
+      "Steadiness": 3,
+      "PoisonAttack": 3,
+      "Defiance": 3,
+      "RapidFireUp": 1,
+      "WeaknessExploit": 1,
+      "CriticalBoost": 1,
+      "DefenseBoost": 5,
+      "Bloodlust": 1,
+      "BlastAttack": 2,
+      "SleepAttack": 2,
+      "ParalysisAttack": 2,
+      "MarathonRunner": 2,
+      "SpecialAmmoBoost": 2,
+      "LoadShells": 2,
+      "GuardUp": 2,
+      "Guard": 2,
+      "StaminaSurge": 2,
+      "TremorResistance": 2,
+      "Counterstrike": 2,
+      "BubblyDance": 2,
+      "PunishingDraw": 2,
+      "EvadeExtender": 2,
+      "EvadeWindow": 2,
+      "QuickSheathe": 2,
+      "Slugger": 2,
+      "Wide-Range": 4,
+      "Partbreaker": 2,
+      "SpeedEating": 2,
+      "Constitution": 2,
+      "Embolden": 2,
+      "FireAttack": 4,
+      "WaterAttack": 4,
+      "ThunderAttack": 4,
+      "IceAttack": 4,
+      "DragonAttack": 4,
+      "IntrepidHeart": 2,
+      "Dragonheart": 1,
+      "ItemProlonger": 3,
+      "StunResistance": 3,
+      "FlinchFree": 3,
+      "Windproof": 3,
+      "SpeedSharpening": 3,
+      "RecoverySpeed": 3,
+      "StaminaThief": 3,
+      "HungerResistance": 3,
+      "FreeMeal": 3,
+      "BlastResistance": 3,
+      "SleepResistance": 3,
+      "ParalysisResistance": 3,
+      "PoisonResistance": 3,
+      "BlightResistance": 2,
+      "DivineBlessing": 2,
+      "RecoveryUp": 2,
+      "RecoilDown": 1,
+      "ReloadSpeed": 1,
+      "ChameleosBlessing": 1,
+      "TeostraBlessing": 1,
+      "KushalaBlessing": 1,
+      "MasterMounter": 1,
+      "Fortify": 1,
+      "HornMaestro": 1,
+      "AffinitySliding": 1,
+      "MuckResistance": 1,
+      "Diversion": 1,
+      "LeapofFaith": 1,
+      "WallRunnerBoost": 1,
+      "SpiribirdsCall": 1,
+      "BowChargePlus": 1,
+      "JumpMaster": 1,
+      "QuickBreath": 1,
+      "Bludgeoner": 1,
+      "Bombardier": 3,
+      "CarvingPro": 1,
+      "Geologist": 3,
+      "Botanist": 3,
+      "FireResistance": 3,
+      "WaterResistance": 3,
+      "ThunderResistance": 3,
+      "IceResistance": 3,
+      "DragonResistance": 3,
+      "ShockAbsorber": 1,
+      "Inspiration": 1
+    }
+  ],
+  "lvl4": {
+    "MastersTouch": 2,
+    "Handicraft": 2,
+    "GoodLuck": 2,
+    "HellfireCloak": 2,
+    "JumpMaster": 1,
+    "RapidFireUp": 1,
+    "SpareShot": 2,
+    "RazorSharp": 2,
+    "SpreadUp": 2,
+    "PierceUp": 2,
+    "NormalRapidUp": 2,
+    "ProtectivePolish": 2,
+    "BlastAttack": 2,
+    "SleepAttack": 2,
+    "ParalysisAttack": 2,
+    "LatentPower": 2,
+    "Resuscitate": 2,
+    "Resentment": 2,
+    "PeakPerformance": 2,
+    "Agitator": 2,
+    "WeaknessExploit": 1,
+    "CriticalBoost": 1,
+    "AmmoUp": 2,
+    "OffensiveGuard": 2,
+    "Mushroomancer": 2,
+    "CriticalDraw": 2,
+    "Ballistics": 2,
+    "CriticalElement": 2,
+    "Artillery": 2,
+    "MarathonRunner": 2,
+    "Focus": 2,
+    "MindsEye": 2,
+    "Heroics": 2,
+    "SpecialAmmoBoost": 2,
+    "LoadShells": 2,
+    "GuardUp": 2,
+    "Guard": 2,
+    "StaminaSurge": 2,
+    "PowerProlonger": 2,
+    "MaximumMight": 2,
+    "AttackBoost": 2,
+    "CriticalEye": 2,
+    "RapidMorph": 2,
+    "RecoilDown": 1,
+    "Bludgeoner": 1,
+    "ReloadSpeed": 1,
+    "StunResistance": 3,
+    "TremorResistance": 2,
+    "Earplugs": 2,
+    "Counterstrike": 2,
+    "BubblyDance": 2,
+    "Steadiness": 3,
+    "PunishingDraw": 2,
+    "EvadeExtender": 2,
+    "EvadeWindow": 2,
+    "FlinchFree": 3,
+    "QuickSheathe": 2,
+    "Windproof": 3,
+    "Slugger": 2,
+    "Wide-Range": 4,
+    "Partbreaker": 2,
+    "BlightResistance": 2,
+    "SpeedEating": 2,
+    "DivineBlessing": 2,
+    "WallRunner": 3,
+    "WirebugWhisperer": 2,
+    "SpeedSharpening": 3,
+    "ItemProlonger": 3,
+    "RecoverySpeed": 3,
+    "RecoveryUp": 2,
+    "HornMaestro": 1,
+    "StaminaThief": 3,
+    "Constitution": 2,
+    "PoisonAttack": 3,
+    "AffinitySliding": 1,
+    "Bombardier": 3,
+    "FireAttack": 4,
+    "WaterAttack": 4,
+    "ThunderAttack": 4,
+    "IceAttack": 4,
+    "DragonAttack": 4,
+    "DefenseBoost": 5,
+    "CarvingPro": 1,
+    "MasterMounter": 1,
+    "HungerResistance": 3,
+    "FreeMeal": 3,
+    "MuckResistance": 1,
+    "Diversion": 1,
+    "LeapofFaith": 1,
+    "Fortify": 1,
+    "Geologist": 3,
+    "Botanist": 3,
+    "BlastResistance": 3,
+    "SleepResistance": 3,
+    "ParalysisResistance": 3,
+    "PoisonResistance": 3,
+    "FireResistance": 3,
+    "WaterResistance": 3,
+    "ThunderResistance": 3,
+    "IceResistance": 3,
+    "DragonResistance": 3,
+    "QuickBreath": 1,
+    "BladescaleHone": 2,
+    "Redirection": 2,
+    "WallRunnerBoost": 1,
+    "BowChargePlus": 1,
+    "ChargeMaster": 2,
+    "Defiance": 3,
+    "Tune-Up": 2,
+    "SpiribirdsCall": 1,
+    "GrinderS": 2,
+    "Coalescence": 2,
+    "Foray": 2,
+    "Burst": 2,
+    "ChameleosBlessing": 1,
+    "TeostraBlessing": 1,
+    "KushalaBlessing": 1,
+    "ElementExploit": 2,
+    "SneakAttack": 2,
+    "AdrenalineRush": 2,
+    "BloodRite": 2,
+    "Embolden": 2,
+    "Dragonheart": 1,
+    "IntrepidHeart": 2,
+    "StatusTrigger": 2,
+    "ShockAbsorber": 1,
+    "Bloodlust": 1,
+    "Inspiration": 1,
+    "Berserk": null,
+    "BloodAwakening": null,
+    "BuildupBoost": null,
+    "CaptureMaster": null,
+    "CarvingMaster": null,
+    "Dereliction": null,
+    "DragonConversion": null,
+    "FrenziedBloodlust": null,
+    "Frostcraft": null,
+    "Furious": null,
+    "Guts": null,
+    "Heaven-Sent": null,
+    "MailofHellfire": null,
+    "PowderMantle": null,
+    "Stormsoul": null,
+    "Strife": null,
+    "ThunderAlignment": null,
+    "WindAlignment": null,
+    "WindMantle": null
+  },
+  "Bow": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "AttackBoost",
+    "Inspiration",
+    "Bloodlust",
+    "Booster",
+    "BowChargePlus",
+    "Burst",
+    "ChargeMaster",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "CriticalElement",
+    "CriticalEye",
+    "DangoTemper",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "ElementExploit",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "HerculesDraw",
+    "Heroics",
+    "IceAttack",
+    "KushalaBlessing",
+    "LatentPower",
+    "MailofHellfire",
+    "Marksman",
+    "MaximumMight",
+    "NormalRapidUp",
+    "PeakPerformance",
+    "PierceUp",
+    "PunishingDraw",
+    "ReloadSpeed",
+    "Resentment",
+    "Resuscitate",
+    "SneakAttack",
+    "SpareShot",
+    "SpecialAmmoBoost",
+    "Spiribird",
+    "SpreadUp",
+    "Stormsoul",
+    "Strife",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "UpperCrit",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "ChargeBlade": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "Artillery",
+    "AttackBoost",
+    "Bloodlust",
+    "Bludgeoner",
+    "Bombardier",
+    "Booster",
+    "Inspiration",
+    "Burst",
+    "ChargeMaster",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "CriticalElement",
+    "CriticalEye",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "EleShieldCharge",
+    "ElementExploit",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "GrinderS",
+    "Handicraft",
+    "Heroics",
+    "IceAttack",
+    "ImpactShieldCharge",
+    "KushalaBlessing",
+    "LatentPower",
+    "MailofHellfire",
+    "MastersTouch",
+    "MaximumMight",
+    "MindsEye",
+    "OffensiveGuard",
+    "PeakPerformance",
+    "PunishingDraw",
+    "RapidMorph",
+    "RazorSharp",
+    "Resentment",
+    "Resuscitate",
+    "SavageAxe",
+    "SneakAttack",
+    "Spiribird",
+    "Stormsoul",
+    "Strife",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "DualBlades": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "ArchdemonMode",
+    "AttackBoost",
+    "Bloodlust",
+    "Bludgeoner",
+    "Booster",
+    "Burst",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "Inspiration",
+    "CriticalElement",
+    "CriticalEye",
+    "DemonMode",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "ElementExploit",
+    "FeralDemonMode",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "GrinderS",
+    "Handicraft",
+    "Heroics",
+    "IceAttack",
+    "KushalaBlessing",
+    "LatentPower",
+    "MailofHellfire",
+    "MastersTouch",
+    "MaximumMight",
+    "MindsEye",
+    "PeakPerformance",
+    "PunishingDraw",
+    "RazorSharp",
+    "Resentment",
+    "Resuscitate",
+    "SneakAttack",
+    "Spiribird",
+    "Stormsoul",
+    "Strife",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "GreatSword": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "AttackBoost",
+    "Bloodlust",
+    "Bludgeoner",
+    "Booster",
+    "Burst",
+    "ChargeMaster",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "CriticalElement",
+    "CriticalEye",
+    "Inspiration",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "ElementExploit",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "GrinderS",
+    "Handicraft",
+    "Heroics",
+    "IceAttack",
+    "KushalaBlessing",
+    "LatentPower",
+    "MailofHellfire",
+    "MastersTouch",
+    "MaximumMight",
+    "MindsEye",
+    "OffensiveGuard",
+    "PeakPerformance",
+    "PowerSheath",
+    "PunishingDraw",
+    "RazorSharp",
+    "Resentment",
+    "Resuscitate",
+    "SneakAttack",
+    "Spiribird",
+    "Stormsoul",
+    "Strife",
+    "StrongarmStance",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "Gunlance": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "Artillery",
+    "AttackBoost",
+    "Bloodlust",
+    "Bludgeoner",
+    "Inspiration",
+    "Bombardier",
+    "Booster",
+    "Burst",
+    "ChargeMaster",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "CriticalElement",
+    "CriticalEye",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "ElementExploit",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "GrinderS",
+    "Handicraft",
+    "Heroics",
+    "IceAttack",
+    "KushalaBlessing",
+    "LatentPower",
+    "MailofHellfire",
+    "MastersTouch",
+    "MaximumMight",
+    "MindsEye",
+    "OffensiveGuard",
+    "PeakPerformance",
+    "PunishingDraw",
+    "RazorSharp",
+    "Resentment",
+    "Resuscitate",
+    "SneakAttack",
+    "Spiribird",
+    "Stormsoul",
+    "Strife",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "Hammer": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "AttackBoost",
+    "Bloodlust",
+    "Bludgeoner",
+    "Booster",
+    "Inspiration",
+    "Burst",
+    "ChargeMaster",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "CriticalElement",
+    "CriticalEye",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "ElementExploit",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "GrinderS",
+    "Handicraft",
+    "Heroics",
+    "IceAttack",
+    "KushalaBlessing",
+    "LatentPower",
+    "MailofHellfire",
+    "MastersTouch",
+    "MaximumMight",
+    "MindsEye",
+    "PeakPerformance",
+    "PunishingDraw",
+    "RazorSharp",
+    "Resentment",
+    "Resuscitate",
+    "SneakAttack",
+    "Spiribird",
+    "Stormsoul",
+    "Strife",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "HeavyBowGun": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "AmmoUp",
+    "Artillery",
+    "AttackBoost",
+    "Bloodlust",
+    "Bombardier",
+    "Booster",
+    "BowgunBarrel",
+    "Inspiration",
+    "Burst",
+    "ChargeLevel",
+    "ChargeMaster",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "CriticalElement",
+    "CriticalEye",
+    "DangoTemper",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "ElementExploit",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "Heroics",
+    "IceAttack",
+    "KushalaBlessing",
+    "LatentPower",
+    "MailofHellfire",
+    "Marksman",
+    "MaximumMight",
+    "NormalRapidUp",
+    "OffensiveGuard",
+    "PeakPerformance",
+    "PierceUp",
+    "RapidFireUp",
+    "RecoilDown",
+    "ReloadSpeed",
+    "Resentment",
+    "Resuscitate",
+    "SneakAttack",
+    "SpareShot",
+    "SpecialAmmoBoost",
+    "Spiribird",
+    "SpreadUp",
+    "Stormsoul",
+    "Strife",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "Tune-Up",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "HuntingHorn": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "AttackBoost",
+    "Inspiration",
+    "Bloodlust",
+    "Bludgeoner",
+    "Booster",
+    "Burst",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "CriticalElement",
+    "CriticalEye",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "ElementExploit",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "GrinderS",
+    "Handicraft",
+    "Heroics",
+    "IceAttack",
+    "KushalaBlessing",
+    "LatentPower",
+    "MailofHellfire",
+    "MastersTouch",
+    "MaximumMight",
+    "MindsEye",
+    "PeakPerformance",
+    "PunishingDraw",
+    "RazorSharp",
+    "Resentment",
+    "Resuscitate",
+    "SneakAttack",
+    "Spiribird",
+    "Stormsoul",
+    "Strife",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "InsectGlaive": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "AttackBoost",
+    "Bloodlust",
+    "Bludgeoner",
+    "Booster",
+    "Burst",
+    "Inspiration",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "CriticalElement",
+    "CriticalEye",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "ElementExploit",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "GrinderS",
+    "Handicraft",
+    "Heroics",
+    "IceAttack",
+    "KinsectBuff",
+    "KushalaBlessing",
+    "LatentPower",
+    "MailofHellfire",
+    "MastersTouch",
+    "MaximumMight",
+    "MindsEye",
+    "PeakPerformance",
+    "PunishingDraw",
+    "RazorSharp",
+    "Resentment",
+    "Resuscitate",
+    "SneakAttack",
+    "Spiribird",
+    "Stormsoul",
+    "Strife",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "Lance": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "Inspiration",
+    "AttackBoost",
+    "Bloodlust",
+    "Bludgeoner",
+    "Booster",
+    "Burst",
+    "ChargeMaster",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "CriticalElement",
+    "CriticalEye",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "ElementExploit",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "GrinderS",
+    "Handicraft",
+    "Heroics",
+    "IceAttack",
+    "KushalaBlessing",
+    "LanceCharge",
+    "LatentPower",
+    "MailofHellfire",
+    "MastersTouch",
+    "MaximumMight",
+    "MindsEye",
+    "OffensiveGuard",
+    "PeakPerformance",
+    "PunishingDraw",
+    "RazorSharp",
+    "Resentment",
+    "Resuscitate",
+    "SneakAttack",
+    "Spiribird",
+    "Stormsoul",
+    "Strife",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "LightBowGun": [
+    "Adrenaline",
+    "AdrenalineRush",
+    "AffinitySliding",
+    "Agitator",
+    "AttackBoost",
+    "Bloodlust",
+    "Booster",
+    "Burst",
+    "Marksman",
+    "ButterFlame",
+    "Inspiration",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalEye",
+    "Demon Powder",
+    "DemonAmmo",
+    "DemonDrug",
+    "DemonSeed",
+    "Dereliction",
+    "Dragonheart",
+    "ElementalReload",
+    "EvadeHop",
+    "FanningManeuver",
+    "Foray",
+    "Fortify",
+    "Frostcraft",
+    "Heroics",
+    "HuntingHornAffinity",
+    "HuntingHornAttack",
+    "HuntingHornElemental",
+    "LatentPower",
+    "MailofHellfire",
+    "MaximumMight",
+    "MegaDemonDrug",
+    "PeakPerformance",
+    "PowerCharm",
+    "PowerTalisman",
+    "Resentment",
+    "Resuscitate",
+    "Spiribird",
+    "Strife",
+    "WallRunner",
+    "WeaknessExploit",
+    "palicoaff",
+    "powerDrum",
+    "sleepWakeUp"
+  ],
+  "LongSword": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "AttackBoost",
+    "Bloodlust",
+    "Bludgeoner",
+    "Inspiration",
+    "Booster",
+    "Burst",
+    "ChargeMaster",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "CriticalElement",
+    "CriticalEye",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "ElementExploit",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "GrinderS",
+    "Handicraft",
+    "Helmbreaker",
+    "Heroics",
+    "IceAttack",
+    "KushalaBlessing",
+    "LatentPower",
+    "MailofHellfire",
+    "MastersTouch",
+    "MaximumMight",
+    "MindsEye",
+    "PeakPerformance",
+    "PunishingDraw",
+    "RazorSharp",
+    "Resentment",
+    "Resuscitate",
+    "SerenePose",
+    "SneakAttack",
+    "Spiribird",
+    "SpiritGauge",
+    "Stormsoul",
+    "Strife",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "SwitchAxe": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "Artillery",
+    "AttackBoost",
+    "Bloodlust",
+    "Bludgeoner",
+    "Booster",
+    "Inspiration",
+    "Burst",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "CriticalElement",
+    "CriticalEye",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "ElementExploit",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "GrinderS",
+    "Handicraft",
+    "Heroics",
+    "IceAttack",
+    "KushalaBlessing",
+    "LatentPower",
+    "MailofHellfire",
+    "MastersTouch",
+    "MaximumMight",
+    "MindsEye",
+    "PeakPerformance",
+    "PunishingDraw",
+    "RapidMorph",
+    "RazorSharp",
+    "Resentment",
+    "Resuscitate",
+    "SneakAttack",
+    "Spiribird",
+    "Stormsoul",
+    "Strife",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "SwordNShield": [
+    "AffinitySliding",
+    "Adrenaline",
+    "AdrenalineRush",
+    "Agitator",
+    "AttackBoost",
+    "Bloodlust",
+    "Bludgeoner",
+    "Booster",
+    "Burst",
+    "ChargeMaster",
+    "Coalescence",
+    "Counterstrike",
+    "CriticalBoost",
+    "CriticalElement",
+    "CriticalEye",
+    "Dereliction",
+    "DragonAttack",
+    "Dragonheart",
+    "ElementExploit",
+    "FireAttack",
+    "Foray",
+    "Fortify",
+    "GrinderS",
+    "Handicraft",
+    "Heroics",
+    "IceAttack",
+    "Inspiration",
+    "KushalaBlessing",
+    "LatentPower",
+    "MailofHellfire",
+    "MastersTouch",
+    "MaximumMight",
+    "MindsEye",
+    "OffensiveGuard",
+    "PeakPerformance",
+    "PunishingDraw",
+    "RazorSharp",
+    "Resentment",
+    "Resuscitate",
+    "SneakAttack",
+    "Spiribird",
+    "Stormsoul",
+    "Strife",
+    "TeostraBlessing",
+    "ThunderAttack",
+    "WallRunner",
+    "WaterAttack",
+    "WeaknessExploit"
+  ],
+  "Fire": [
+    "FireAttack",
+    "TeostraBlessing"
+  ],
+  "Water": [
+    "WaterAttack",
+    "KushalaBlessing"
+  ],
+  "Ice": [
+    "IceAttack",
+    "KushalaBlessing"
+  ],
+  "Thunder": [
+    "ThunderAttack",
+    "Stormsoul"
+  ],
+  "Dragon": [
+    "DragonAttack",
+    "Stormsoul"
+  ],
+  "Bomb": [
+    "BlastAttack",
+    "TeostraBlessing"
+  ],
+  "Para": [
+    "ParalysisAttack"
+  ],
+  "Sleep": [
+    "SleepAttack"
+  ],
+  "Poison": [
+    "PoisonAttack"
+  ]
+}

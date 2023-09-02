@@ -404,7 +404,7 @@ button.equipBuild {
 }
 
 div#comboCountContainer,td.inputContainer>output.label {
-    /*background-image: var(--gradient-b);*/
+    background-image: var(--gradient-b);
 }
 
 .currentPoints,h1,h2,h3:not(.info),h4,h5:not(.info),h6 {
