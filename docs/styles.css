@@ -31,24 +31,24 @@
     --space-xl-2xl: max(2.81em, min(calc(1.93em + 3.81vw), 5.5em))
 }
 
-tbody>tr:not(tr:nth-child(n+1)) {
+tbody > tr:not(tr:nth-child(n+1)) {
     background-image: var(--gradient-h)
 }
 
 th {
     background-color: var(--header-bg);
     background-image: var(--gradient-h);
-    box-shadow: 0 0 1.2px var(--header-text)!important;
+    box-shadow: 0 0 1.2px var(--header-text) !important;
     color: var(--header-text)
 }
 
 td {
     color: var(--body-text);
-    box-shadow: 0 0 1.2px var(--text-g)!important
+    box-shadow: 0 0 1.2px var(--text-g) !important
 }
 
-div #augToggle *,select #BowgunBarrel {
-    min-width: 100%!important
+#augToggle *, #BowgunBarrel, select {
+    width: 100%;
 }
 
 * {
@@ -63,7 +63,7 @@ div #augToggle *,select #BowgunBarrel {
     user-select: none
 }
 
-.setBuilder section,button {
+.setBuilder section, button {
     opacity: 1;
     transition: .5s
 }
@@ -72,7 +72,7 @@ div #augToggle *,select #BowgunBarrel {
     opacity: 1
 }
 
-.check:hover,button:hover {
+.check:hover, button:hover {
     cursor: pointer;
     opacity: .9;
     transition: .3s
@@ -81,13 +81,13 @@ div #augToggle *,select #BowgunBarrel {
 div#forButtons {
     display: grid;
     gap: 1.5rem;
-    grid-area: auto/1/auto/-1;
+    grid-area: auto / 1 /auto/ -1;
     grid-template-columns: inherit;
     justify-content: space-evenly;
     width: 98vw
 }
 
-section#settingsMenu ul,section#tabButtons {
+section#settingsMenu ul, section#tabButtons {
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 4.75em;
@@ -101,7 +101,7 @@ section#tabButtons {
     font-size: 12px
 }
 
-section#tabButtons>div {
+section#tabButtons > div {
     background: oklch(.178 0 89.876deg);
     box-shadow: 0 0 1px 2px var(--outline-g);
     font-size: 20px;
@@ -137,11 +137,11 @@ section#infoSettings {
     overflow-y: scroll
 }
 
-#infoSettings h2:first-child,#infoSettings h5 {
-    font-size: 18px!important
+#infoSettings h2:first-child, #infoSettings h5 {
+    font-size: 18px !important
 }
 
-#monDropDowns,#monsterSettings {
+#monDropDowns, #monsterSettings {
     display: grid;
     gap: 1em;
     grid-gap: 1em;
@@ -159,19 +159,19 @@ section#infoSettings {
 }
 
 #license {
-    grid-area: auto/1/auto/-1;
-    margin-top: 8em!important
+    grid-area: auto / 1 /auto/ -1;
+    margin-top: 8em !important
 }
 
 #charmDecos {
     display: grid;
-    grid-area: 1/auto/4/auto;
-    max-width: 98.5vw!important;
-    padding: 0!important
+    grid-area: 1 /auto/ 4 / auto;
+    max-width: 98.5vw !important;
+    padding: 0 !important
 }
 
-.skillDiv *,#license,section.decoDisplay * {
-    display: grid!important
+.skillDiv *, #license, section.decoDisplay * {
+    display: grid !important
 }
 
 .augInvis:not(.decoDisplay *) {
@@ -183,13 +183,13 @@ section.armorAugment .augmentType {
     grid-area: 1/1/2/2
 }
 
-#extraSkills,#skillSelect,.augToggle,.grid {
-    transition: ease-in!important
+#extraSkills, #skillSelect, .augToggle, .grid {
+    transition: ease-in !important
 }
 
 #monsterSettings label {
     gap: 0;
-    margin: 0!important;
+    margin: 0 !important;
     padding-left: 1em;
     padding-right: 1em
 }
@@ -200,7 +200,7 @@ section.NewArmorDisplay :not(.charmDisplay,.armorIcon,.armorAugment,.augDiv,.qur
 
 output.armorImg {
     background-size: contain;
-    grid-area: auto/1/auto/1
+    grid-area: auto / 1 /auto/ 1
 }
 
 div#monDropDowns {
@@ -208,7 +208,7 @@ div#monDropDowns {
 }
 
 .decoDisplay {
-    align-content: space-between!important
+    align-content: space-between !important
 }
 
 #spawnArea {
@@ -218,7 +218,7 @@ div#monDropDowns {
 div#monDropDowns div:not(.questSelect,.questSelect div) {
     display: grid;
     gap: 0;
-    grid-template-columns: auto 1fr auto auto!important;
+    grid-template-columns: auto 1fr auto auto !important;
     height: 21px;
     margin: 0;
     min-height: 21px;
@@ -229,15 +229,15 @@ div#monDropDowns div {
     width: 100%
 }
 
-#forButtonSelect>.dropContainer:first-child {
+#forButtonSelect > .dropContainer:first-child {
     grid-area: a
 }
 
-#forButtonSelect>.dropContainer:nth-child(2) {
+#forButtonSelect > .dropContainer:nth-child(2) {
     grid-area: c
 }
 
-div#forButtonSelect,section#skillSettings {
+div#forButtonSelect, section#skillSettings {
     gap: 1.5em 0;
     grid-gap: 1.5em 0;
     display: grid;
@@ -245,7 +245,7 @@ div#forButtonSelect,section#skillSettings {
 }
 
 div#forButtonSelect {
-    grid-area: auto/1/auto/-1;
+    grid-area: auto / 1 /auto/ -1;
     grid-template-areas: "a b c""d d d ""e e e";
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
@@ -266,13 +266,13 @@ div#forButtonSelect label.check {
 
 @media (max-width: 800px) {
     div#forButtonSelect {
-        display:flex;
+        display: flex;
         flex-wrap: wrap;
         width: 98vw
     }
 }
 
-div#forButtons>button {
+div#forButtons > button {
     justify-self: center;
     padding-left: 1em;
     padding-right: 1em;
@@ -289,48 +289,50 @@ section#weaponRampage {
     height: var(--base-h)
 }
 
-#EquippedSkillDisplay>output {
+#EquippedSkillDisplay > output {
     gap: .3em 0;
-    grid-template-columns: repeat(auto-fit,5.9em 11em);
-    width: 100%
+    grid-template-columns: repeat(auto-fill, 6em 10em);
+    width: max(51.4em, min(45em, 98.5vw));
+    max-width: 100vw;
 }
 
-#EquippedSkillDisplay,section.currentPoints.NewArmorDisplay {
+#EquippedSkillDisplay, section.currentPoints.NewArmorDisplay {
     display: grid;
     grid-template-columns: 1fr
 }
 
 #EquippedSkillDisplay {
-    width: 98%
+    width: max(51.4em, min(45em, 98.5vw));
+    max-width: 98vw !important;
 }
 
 div#EquippedSkillDisplay button {
     margin-left: .5em
 }
 
-div#raw>div,img.augInvis,select>option.augInvis {
-    display: none!important
+div#raw > div, img.augInvis, select > option.augInvis {
+    display: none !important
 }
 
 section.armorAugment * {
     color: var(--outline-g)
 }
 
-#weaponQurious,section.currentPoints.NewArmorDisplay {
+#weaponQurious, section.currentPoints.NewArmorDisplay {
     color: var(--outline-g);
     cursor: pointer;
     pointer-events: all
 }
 
-#monTable>tr {
+#monTable > tr {
     display: grid;
-    grid-template-columns: 5fr repeat(8,1fr)
+    grid-template-columns: 5fr repeat(8, 1fr)
 }
 
 section#damage {
     gap: 1em;
     justify-items: center;
-    max-width: 88.5vw!important
+    max-width: 88.5vw !important
 }
 
 table#ammoTable {
@@ -342,20 +344,20 @@ table#ammoTable {
     display: none
 }
 
-.extraSkills,section#damage {
+.extraSkills, section#damage {
     display: grid
 }
 
 .extraSkills {
     align-content: baseline;
     grid-area: 2/1/3/-1;
-    grid-template-columns: repeat(auto-fill,minmax(17em,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
     max-height: 25em;
     min-width: 100%;
-    overflow-x: hidden
+    overflow-x: auto;
 }
 
-select.augment,select.augmentType.NewArmorDisplay {
+select.augment, select.augmentType.NewArmorDisplay {
     z-index: 50
 }
 
@@ -363,7 +365,7 @@ output.currentPoints {
     pointer-events: all
 }
 
-div#augToggle>div,div>div.dropContainer,label:not(.check,div.dropContainer>label),output,section#section2,section.armorAugment,select,select.menu,table#statsTable,thead#statsHead>tr>th {
+div#augToggle > div, div > div.dropContainer, label:not(.check,div.dropContainer>label), output, section#section2, section.armorAugment, select, select.menu, table#statsTable, thead#statsHead > tr > th {
     display: grid
 }
 
@@ -371,19 +373,19 @@ div#augToggle>div,div>div.dropContainer,label:not(.check,div.dropContainer>label
     z-index: 80
 }
 
-p>output,table#monTable td {
+p > output, table#monTable td {
     padding-left: .4em;
     padding-right: .4em
 }
 
-#forButtonSelect>label:nth-child(5) {
+#forButtonSelect > label:nth-child(5) {
     background-image: none;
     justify-self: center;
     max-width: fit-content;
     padding: 0
 }
 
-output.skillLevel,select,select>option {
+output.skillLevel, select, select > option {
     background: #111
 }
 
@@ -398,52 +400,52 @@ label.grade {
 
 button.equipBuild {
     background-color: oklch(.182 0 89.876deg);
-    background-image: none!important;
+    background-image: none !important;
     border-radius: 0;
     color: oklch(.891 .183 96.187deg);
     grid-area: 1/1/2/-1
 }
 
-div#comboCountContainer,td.inputContainer>output.label {
+div#comboCountContainer, td.inputContainer > output.label {
     background-image: var(--gradient-b)
 }
 
-.currentPoints,h1,h2,h3:not(.info),h4,h5:not(.info),h6 {
+.currentPoints, h1, h2, h3:not(.info), h4, h5:not(.info), h6 {
     background-image: var(--gradient-h);
-    width: 100%
+    width: 100%;
 }
 
-div#augToggle>div,section#section2 {
+div#augToggle > div, section#section2 {
     align-items: center
 }
 
 section#section2 {
     align-content: baseline;
-    grid-area: auto/auto/2/-1;
+    grid-area: auto /auto/ 2 / -1;
     outline: 0;
     position: relative
 }
 
 select#dropWeapon {
-    grid-area: auto/3/auto/1;
+    grid-area: auto / 3 /auto/ 1;
     height: 100%;
     margin: 0;
     padding: 0;
     width: 100%
 }
 
-div#augToggle>div {
+div#augToggle > div {
     grid-template-columns: 1fr 1fr;
-    margin: 0!important
+    margin: 0 !important
 }
 
-body,option,section#section2 {
+body, option, section#section2 {
     justify-items: center
 }
 
 body {
-    background-image: linear-gradient(90deg,oklch(.178 0 89.876deg),oklch(.2 .071 272.765deg),oklch(.178 0 89.876deg),oklch(.2 .071 272.765deg) 80%,oklch(.178 0 89.876deg))!important;
-    justify-content: flex-start!important;
+    background-image: linear-gradient(90deg, oklch(.178 0 89.876deg), oklch(.2 .071 272.765deg), oklch(.178 0 89.876deg), oklch(.2 .071 272.765deg) 80%, oklch(.178 0 89.876deg)) !important;
+    justify-content: flex-start !important;
     margin: 0;
     max-width: 98.5vw;
     min-width: 98.5vw;
@@ -457,51 +459,51 @@ option {
     outline-style: outset
 }
 
-section#section2,section#section2>div {
+section#section2, section#section2 > div {
     grid-template-columns: 1fr
 }
 
-section#section2>div {
-    grid-area: auto/1/auto/-1;
+section#section2 > div {
+    grid-area: auto / 1 /auto/ -1;
     justify-content: space-evenly;
     max-width: 98.5vw
 }
 
 div#sharpnessContainer {
     display: flex;
-    gap: 0!important;
+    gap: 0 !important;
     grid-area: 2/1/3/-1;
-    grid-template-columns: repeat(7,auto);
+    grid-template-columns: repeat(7, auto);
     justify-self: center;
-    margin-bottom: 1em!important;
-    max-width: 90%!important;
-    min-width: 76%!important
+    margin-bottom: 1em !important;
+    max-width: 90% !important;
+    min-width: 76% !important
 }
 
 #meleeContainer tr {
     display: grid;
-    grid-template-columns: 14vw repeat(7,6vw)
+    grid-template-columns: 14vw repeat(7, 6vw)
 }
 
-table#monTable>tr>td:first-child,table#monTable>tr>th:first-child {
+table#monTable > tr > td:first-child, table#monTable > tr > th:first-child {
     display: grid;
     padding-left: .8em;
     padding-right: .8em;
-    text-align: center!important
+    text-align: center !important
 }
 
 tr.tableRow:not(#monTable>tr) {
-    grid-template-columns: min(21em,25vw) repeat(8,min(7em,9vw))
+    grid-template-columns: min(21em, 25vw) repeat(8, min(7em, 9vw))
 }
 
 .scroll:not(.augInvis) {
-    height: 3.675em!important;
+    height: 3.675em !important;
     pointer-events: all
 }
 
 .scroll:hover {
     border-radius: 50%;
-    box-shadow: 0 0 2px 1px oklch(.998 .012 106.611deg)!important
+    box-shadow: 0 0 2px 1px oklch(.998 .012 106.611deg) !important
 }
 
 .scroll.augInvis {
@@ -515,15 +517,15 @@ tr.tableRow:not(#monTable>tr) {
 
 #scrollSwap {
     column-gap: .2em;
-    display: grid!important;
+    display: grid !important;
     grid-area: b;
     grid-template-columns: auto 1fr auto;
     justify-self: center;
-    pointer-events: none!important;
-    row-gap: .5em!important
+    pointer-events: none !important;
+    row-gap: .5em !important
 }
 
-div#setBuilder>div>:not(button),h5#augLabel {
+div#setBuilder > div > :not(button), h5#augLabel {
     margin: auto
 }
 
@@ -534,10 +536,10 @@ section#weaponSelects {
 }
 
 #statsAffinity span {
-    min-height: calc(var(--base-h)*2)
+    min-height: calc(var(--base-h) * 2)
 }
 
-#extraMenus label.check,html {
+#extraMenus label.check, html {
     display: grid;
     justify-content: center
 }
@@ -563,30 +565,30 @@ a {
 }
 
 html {
-    border-radius: 0!important;
+    border-radius: 0 !important;
     font-size: 11px;
     margin: auto;
-    max-width: 98.5vw!important;
+    max-width: 98.5vw !important;
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth
 }
 
-img#redNon,img#redScroll {
+img#redNon, img#redScroll {
     grid-area: 1/1/3/2
 }
 
-img#blueNon,img#blueScroll {
+img#blueNon, img#blueScroll {
     grid-area: 1/3/3/4
 }
 
-#questButton,button.augButton.inc {
-    border: 0!important
+#questButton, button.augButton.inc {
+    border: 0 !important
 }
 
 @media (min-width: 1100px) {
     div#containAll {
-        display:grid;
+        display: grid;
         grid-gap: .3em;
         grid-template-columns: 1fr 1fr
     }
@@ -594,28 +596,28 @@ img#blueNon,img#blueScroll {
 
 @media (max-width: 1100px) {
     div#containAll {
-        display:grid;
+        display: grid;
         grid-row-gap: .75em;
         grid-template-columns: 1fr
     }
 
     #section2 {
-        grid-area: 2/auto/2/-1!important
+        grid-area: 2 /auto/ 2 / -1 !important
     }
 }
 
 @media (max-width: 540px) {
-    #armorSet section.armorDisplay .skillDiv output,#armorSet section.armorDisplay .skillDiv select,#section2 * {
-        font-size:11px
+    #armorSet section.armorDisplay .skillDiv output, #armorSet section.armorDisplay .skillDiv select, #section2 * {
+        font-size: 11px
     }
 }
 
-#boxes>label,#section1 {
+#boxes > label, #section1 {
     display: grid;
     justify-items: center
 }
 
-#boxes>label {
+#boxes > label {
     align-items: center;
     gap: .3em;
     grid-gap: .3em;
@@ -627,12 +629,12 @@ img#blueNon,img#blueScroll {
 
 #section1 {
     align-self: baseline;
-    grid-area: 1/1/auto/auto;
+    grid-area: 1 / 1 /auto/ auto;
     grid-template-columns: 1fr;
     text-align: justify
 }
 
-div>section>div#other {
+div > section > div#other {
     display: grid;
     justify-content: space-around
 }
@@ -667,7 +669,7 @@ output.helm {
     width: 100%
 }
 
-.augDiv>output.augLabel,div.augDiv>label,div.inputContainer>label,output.label {
+.augDiv > output.augLabel, div.augDiv > label, div.inputContainer > label, output.label {
     grid-area: 1/1/2/3
 }
 
@@ -679,7 +681,7 @@ output.label {
     z-index: 5
 }
 
-td.inputContainer>output.label {
+td.inputContainer > output.label {
     align-content: center;
     align-items: center;
     height: 100%;
@@ -692,18 +694,18 @@ td.inputContainer>output.label {
     z-index: 70
 }
 
-.augDiv>output.augLabel,div.inputContainer>label {
+.augDiv > output.augLabel, div.inputContainer > label {
     display: grid
 }
 
-.augDiv>output.augLabel {
+.augDiv > output.augLabel {
     align-items: baseline;
     justify-content: flex-start;
     padding-left: 5px;
     position: relative
 }
 
-div.augDiv>label,div.inputContainer>label {
+div.augDiv > label, div.inputContainer > label {
     background: 0;
     font: menu;
     pointer-events: none;
@@ -711,34 +713,34 @@ div.augDiv>label,div.inputContainer>label {
     z-index: 6
 }
 
-div.augDiv,div.inputContainer {
+div.augDiv, div.inputContainer {
     align-items: start;
     justify-items: center;
     position: relative;
     z-index: 15
 }
 
-#questButton,button.dec:hover,button.inc:hover {
+#questButton, button.dec:hover, button.inc:hover {
     background-color: transparent;
-    background-image: none!important
+    background-image: none !important
 }
 
-button.dec:hover,button.inc:hover {
-    z-index: 90!important
+button.dec:hover, button.inc:hover {
+    z-index: 90 !important
 }
 
 button.inc:hover {
-    border-left: none!important
+    border-left: none !important
 }
 
 button#questButton {
-    display: grid!important;
+    display: grid !important;
     grid-area: 1/2/2/3
 }
 
-.augButton:active,.inputButton:active {
-    background: linear-gradient(oklch(.289 .145 272.662deg),oklch(.389 .149 27.79deg));
-    color: oklch(.991 0 89.876deg)!important;
+.augButton:active, .inputButton:active {
+    background: linear-gradient(oklch(.289 .145 272.662deg), oklch(.389 .149 27.79deg));
+    color: oklch(.991 0 89.876deg) !important;
     font-weight: 900;
     z-index: 20
 }
@@ -751,7 +753,7 @@ button.inc:not(.armorDisplay>button) {
     align-content: center;
     align-items: baseline;
     border-radius: 0;
-    display: grid!important;
+    display: grid !important;
     gap: 0;
     grid-area: 1/2/2/3;
     grid-gap: 0;
@@ -762,18 +764,18 @@ button.inc:not(.armorDisplay>button) {
 
 button.dec:not(.armorDisplay>button):hover {
     background-image: none;
-    border-right: none!important;
+    border-right: none !important;
     z-index: 50
 }
 
-div.augDiv>output.label:not(.augLabel) {
+div.augDiv > output.label:not(.augLabel) {
     outline: 0;
-    padding-left: 10px!important
+    padding-left: 10px !important
 }
 
-div.augDiv>output.label.augLabel,div.augDiv>output.label:not(.augLabel) {
+div.augDiv > output.label.augLabel, div.augDiv > output.label:not(.augLabel) {
     align-content: center;
-    box-shadow: none!important;
+    box-shadow: none !important;
     font-variant-numeric: lining-nums;
     padding-right: 5px;
     pointer-events: none;
@@ -783,29 +785,29 @@ div.augDiv>output.label.augLabel,div.augDiv>output.label:not(.augLabel) {
     z-index: 10
 }
 
-#setBuilder>div>button.dec {
+#setBuilder > div > button.dec {
     display: grid;
     width: 47%
 }
 
 button.dec:not(.skillInput,#setBuilder>section>button) {
-    grid-area: 1/1/2/2!important;
+    grid-area: 1/1/2/2 !important;
     margin: 0;
     padding: 0
 }
 
 .augDiv button {
-    border: 0!important;
-    box-shadow: none!important;
-    outline: 0!important;
+    border: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
     z-index: 0
 }
 
-#BowGunId>label,.setResult>label,button.augButton {
+#BowGunId > label, .setResult > label, button.augButton {
     width: 100%
 }
 
-#boxes,div#dango,div#unique {
+#boxes, div#dango, div#unique {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
@@ -829,44 +831,44 @@ div#comboCountContainer {
     z-index: 100
 }
 
-div#comboCountContainer>h2 {
+div#comboCountContainer > h2 {
     position: sticky;
     right: 2px;
     top: 0
 }
 
-.extraSkills>button {
+.extraSkills > button {
     border-radius: 0;
-    margin: 2em .8em 0!important
+    margin: 2em .8em 0 !important
 }
 
 div#extraSkills {
-    margin-top: 0!important;
+    margin-top: 0 !important;
     width: 100%
 }
 
-#skillSelect>div,#skillSelect>div>div {
+#skillSelect > div, #skillSelect > div > div {
     display: grid
 }
 
-#skillSelect>div>div {
+#skillSelect > div > div {
     grid-template-columns: 100%;
     height: 100%;
     min-width: max-content;
     width: 80%
 }
 
-#skillSelect>div {
+#skillSelect > div {
     align-items: stretch;
     grid-template-columns: 1fr 1fr max-content;
     justify-items: end;
-    margin: .7em!important;
+    margin: .7em !important;
     place-items: stretch end;
     position: relative;
     width: fit-content
 }
 
-body>div:nth-child(8) {
+body > div:nth-child(8) {
     box-shadow: none
 }
 
@@ -892,20 +894,20 @@ div#comboCountDisplay {
     z-index: 100
 }
 
-input.skillInput,select#dropQuest {
+input.skillInput, select#dropQuest {
     pointer-events: all
 }
 
 img {
-    aspect-ratio: 1!important;
-    background-size: contain!important
+    aspect-ratio: 1 !important;
+    background-size: contain !important
 }
 
 .questSelect div {
     grid-template-columns: 10em 1fr
 }
 
-#setReturn>h2 {
+#setReturn > h2 {
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr;
     left: 1px;
@@ -916,36 +918,38 @@ div#searchAgain {
     grid-template-columns: 1fr 1fr
 }
 
-#dropQuest select,div>div.dropContainer>select:not(#players,#health,#dropEnraged) {
-    grid-area: auto/2/auto/3
+#dropQuest select, div > div.dropContainer > select:not(#players,#health,#dropEnraged) {
+    grid-area: auto / 2 /auto/ 3
 }
 
 section#sideDisplay {
-    box-shadow: none!important;
+    box-shadow: none !important;
     display: grid;
     gap: .9em;
     grid: none;
     grid-gap: .9em;
-    grid-template-columns: 1fr!important;
-    justify-items: center
+    width: max(51.4em, min(45em, 98.5vw));
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+    max-width: 99vw;
 }
 
-#setReturn>h3,div.questSelect,h1,h3,h5 {
+#setReturn > h3, div.questSelect, h1, h3, h5 {
     position: relative
 }
 
-div.questSelect>label {
+div.questSelect > label {
     grid-area: 1/1/2/2
 }
 
 div#weaponRampage {
-    display: contents!important;
-    grid-area: 1/5/2/6!important;
-    padding: 0!important;
-    width: 100%!important
+    display: contents !important;
+    grid-area: 1/5/2/6 !important;
+    padding: 0 !important;
+    width: 100% !important
 }
 
-button.inputButton.dec,button.inputButton.inc {
+button.inputButton.dec, button.inputButton.inc {
     font-weight: 500;
     margin: 0;
     min-width: 100%;
@@ -956,47 +960,47 @@ button.inputButton.dec,button.inputButton.inc {
     z-index: 0
 }
 
-div#augDiv>*,div.augDiv>label,div>.augButton {
+div#augDiv > *, div.augDiv > label, div > .augButton {
     display: grid;
-    text-align: center!important
+    text-align: center !important
 }
 
-#dpsTable,body>div,ul {
+#dpsTable, body > div, ul {
     align-content: center
 }
 
 div#containAll {
     display: grid;
-    max-width: 98.5vw!important;
+    max-width: 98.5vw !important;
     min-width: 98.5vw
 }
 
-#monTable .S:nth-child(2),#monTable .S:nth-child(3),#monTable .S:nth-child(4) {
+#monTable .S:nth-child(2), #monTable .S:nth-child(3), #monTable .S:nth-child(4) {
     background-color: oklch(.646 .194 41.116deg);
     color: oklch(0 0 0deg)
 }
 
-#monTable .A:nth-child(2),#monTable .A:nth-child(3),#monTable .A:nth-child(4) {
+#monTable .A:nth-child(2), #monTable .A:nth-child(3), #monTable .A:nth-child(4) {
     background-color: oklch(.705 .187 47.604deg);
     color: oklch(.206 .002 17.285deg)
 }
 
-#monTable .B:nth-child(2),#monTable .B:nth-child(3),#monTable .B:nth-child(4) {
+#monTable .B:nth-child(2), #monTable .B:nth-child(3), #monTable .B:nth-child(4) {
     background-color: oklch(.758 .159 55.934deg);
     color: oklch(.333 0 89.876deg)
 }
 
-#monTable .C:nth-child(2),#monTable .C:nth-child(3),#monTable .C:nth-child(4) {
+#monTable .C:nth-child(2), #monTable .C:nth-child(3), #monTable .C:nth-child(4) {
     background-color: oklch(.837 .117 66.29deg);
     color: oklch(.62 0 89.876deg)
 }
 
-#monTable .F:nth-child(2),#monTable .F:nth-child(3),#monTable .F:nth-child(4) {
+#monTable .F:nth-child(2), #monTable .F:nth-child(3), #monTable .F:nth-child(4) {
     background-color: oklch(.901 .073 70.697deg);
     color: oklch(.712 0 89.876deg)
 }
 
-#monTable .A:nth-child(5),#monTable .B:nth-child(5) {
+#monTable .A:nth-child(5), #monTable .B:nth-child(5) {
     background-color: oklch(.444 .161 26.899deg);
     color: oklch(.991 0 89.876deg)
 }
@@ -1011,7 +1015,7 @@ div#containAll {
     color: oklch(.482 0 89.876deg)
 }
 
-#monTable .A:nth-child(6),#monTable .B:nth-child(6) {
+#monTable .A:nth-child(6), #monTable .B:nth-child(6) {
     background-color: oklch(.488 .217 264.376deg);
     color: oklch(.979 0 89.876deg)
 }
@@ -1026,7 +1030,7 @@ div#containAll {
     color: oklch(.309 0 89.876deg)
 }
 
-#monTable .A:nth-child(7),#monTable .B:nth-child(7) {
+#monTable .A:nth-child(7), #monTable .B:nth-child(7) {
     background-color: oklch(.861 .173 91.936deg);
     color: oklch(.129 0 89.876deg)
 }
@@ -1041,7 +1045,7 @@ div#containAll {
     color: oklch(.482 0 89.876deg)
 }
 
-#monTable .A:nth-child(8),#monTable .B:nth-child(8) {
+#monTable .A:nth-child(8), #monTable .B:nth-child(8) {
     background-color: oklch(.588 .139 241.966deg);
     color: oklch(0 0 0deg)
 }
@@ -1056,7 +1060,7 @@ div#containAll {
     color: oklch(.482 0 89.876deg)
 }
 
-#monTable .A:nth-child(9),#monTable .B:nth-child(9) {
+#monTable .A:nth-child(9), #monTable .B:nth-child(9) {
     background-color: oklch(.432 .211 292.759deg);
     color: oklch(1 0 89.876deg)
 }
@@ -1071,47 +1075,47 @@ div#containAll {
     color: oklch(.748 0 89.876deg)
 }
 
-div#damageTable>div>table>tbody>tr:not(.tableRowMelee),div#damageTable>div>table>thead>tr:not(.tableRowMelee>tr) {
+div#damageTable > div > table > tbody > tr:not(.tableRowMelee), div#damageTable > div > table > thead > tr:not(.tableRowMelee>tr) {
     color: var(--header-text)
 }
 
-.tableRowRanged tr,div#damageTable>div>table>tbody>tr:not(.tableRowMelee),div#damageTable>div>table>thead>tr:not(.tableRowMelee>tr) {
-    box-shadow: 0 0 1.2px var(--header-text)!important;
-    display: grid!important;
-    grid-area: auto/1/auto/-1!important;
-    grid-template-columns: 1.5fr repeat(7,1fr)!important;
+.tableRowRanged tr, div#damageTable > div > table > tbody > tr:not(.tableRowMelee), div#damageTable > div > table > thead > tr:not(.tableRowMelee>tr) {
+    box-shadow: 0 0 1.2px var(--header-text) !important;
+    display: grid !important;
+    grid-area: auto / 1 /auto/ -1 !important;
+    grid-template-columns: 1.5fr repeat(7, 1fr) !important;
     justify-content: end;
     justify-items: stretch;
     user-select: none;
-    width: 100%!important
+    width: 100% !important
 }
 
-.check,button {
-    background-image: var(--gradient-b)!important;
-    color: oklch(.891 .183 96.187deg)!important;
-    pointer-events: all!important;
-    user-select: auto!important
+.check, button {
+    background-image: var(--gradient-b) !important;
+    color: oklch(.891 .183 96.187deg) !important;
+    pointer-events: all !important;
+    user-select: auto !important
 }
 
-#forButtonSelect>label.check:last-child {
-    display: none!important
+#forButtonSelect > label.check:last-child {
+    display: none !important
 }
 
-#enrageDisplay,#monTable td:first-child,label,tbody#ammoBody>tr>td:first-child,tr.tableRowRanged>td:first-child {
-    background-image: var(--gradient-b)!important;
-    box-shadow: 0 0 1.2px var(--outline-g)!important;
+#enrageDisplay, #monTable td:first-child, label, tbody#ammoBody > tr > td:first-child, tr.tableRowRanged > td:first-child {
+    background-image: var(--gradient-b) !important;
+    box-shadow: 0 0 1.2px var(--outline-g) !important;
     color: var(--text-g);
-    margin: 0!important;
+    margin: 0 !important;
     position: unset
 }
 
-#monTable>tbody {
+#monTable > tbody {
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: none!important
+    grid-template-rows: none !important
 }
 
-#monTable td:first-child,#monTable>tbody {
+#monTable td:first-child, #monTable > tbody {
     align-content: center
 }
 
@@ -1119,36 +1123,36 @@ div#damageTable>div>table>tbody>tr:not(.tableRowMelee),div#damageTable>div>table
     display: grid
 }
 
-div#searcherSkills>label.dropContainer {
+div#searcherSkills > label.dropContainer {
     display: grid;
     justify-content: space-between;
     min-width: max-content;
-    padding-left: .5em!important;
-    padding-right: .5em!important;
+    padding-left: .5em !important;
+    padding-right: .5em !important;
     position: sticky
 }
 
-div#setBuilder>label {
-    margin-left: 1em!important;
-    margin-right: 1em!important;
+div#setBuilder > label {
+    margin-left: 1em !important;
+    margin-right: 1em !important;
     min-width: 14vw
 }
 
 @media (max-width: 500px) {
-    #armorSet *,#section2 * {
-        font-size:10px!important
+    #armorSet *, #section2 * {
+        font-size: 10px !important
     }
 
-    .skillDiv>img.NewArmorDisplay.armorImg:not(#weapon img) {
-        display: none!important
+    .skillDiv > img.NewArmorDisplay.armorImg:not(#weapon img) {
+        display: none !important
     }
 
-    .skillDiv>output.NewArmorDisplay:not(#weapon output) {
+    .skillDiv > output.NewArmorDisplay:not(#weapon output) {
         grid-area: 1/1/2/3
     }
 }
 
-div#armorSet div:not(.armorAugment div),div#armorSet h6,div#armorSet label,div#armorSet select {
+div#armorSet div:not(.armorAugment div), div#armorSet h6, div#armorSet label, div#armorSet select {
     max-height: var(--base-h)
 }
 
@@ -1156,13 +1160,13 @@ div#armorSet div:not(.armorAugment div),div#armorSet h6,div#armorSet label,div#a
     grid-area: 4/1/5/3
 }
 
-#damageTable th,#damageTable tr,#monDisplay div,.armorDisplay :not(#weaponRampage *,#weaponRampage,:has(:not(option))),.armorDisplay:not(#charm),select {
-    box-shadow: 0 0 2px .01px var(--outline-g)!important;
+#damageTable th, #damageTable tr, #monDisplay div, .armorDisplay :not(#weaponRampage *,#weaponRampage,:has(:not(option))), .armorDisplay:not(#charm), select {
+    box-shadow: 0 0 2px .01px var(--outline-g) !important;
     overflow: visible
 }
 
 button.augButton {
-    animation-timing-function: ease-in-out!important;
+    animation-timing-function: ease-in-out !important;
     background-color: transparent;
     background-image: none;
     position: relative;
@@ -1170,7 +1174,7 @@ button.augButton {
 }
 
 .decoDisplay {
-    display: grid!important
+    display: grid !important
 }
 
 section.rampage {
@@ -1182,6 +1186,10 @@ select#charmSkill1 {
     grid-area: 2/2/3/3
 }
 
+#charm select {
+    max-width: 42vw;
+}
+
 select#charmSkill2 {
     grid-area: 3/2/4/3
 }
@@ -1191,11 +1199,11 @@ select#charmSkill2 {
     min-width: 100%
 }
 
-.armorDisplay>div:not(div:has(img)) {
-    grid-template-columns: 1fr!important
+.armorDisplay > div:not(div:has(img)) {
+    grid-template-columns: 1fr !important
 }
 
-#charmSlots,.armorDisplay>div,h6,label,select#dropEnraged,td,th {
+#charmSlots, .armorDisplay > div, h6, label, select#dropEnraged, td, th {
     display: grid
 }
 
@@ -1207,7 +1215,7 @@ select#charmSkill2 {
     row-gap: .4em
 }
 
-#sideDisplay>div:first-child {
+#sideDisplay > div:first-child {
     width: max-content
 }
 
@@ -1233,7 +1241,7 @@ select#dropQuest {
 }
 
 div.questSelect {
-    display: grid!important;
+    display: grid !important;
     gap: 0;
     grid-area: span 1/span 1;
     grid-template-columns: 7.3em 1fr;
@@ -1245,14 +1253,14 @@ div.questSelect {
 div#questDiv select {
     border: 0;
     gap: 0;
-    margin: 0!important
+    margin: 0 !important
 }
 
 div.menu {
     display: grid;
     grid-area: 1/1/3/3;
     grid-template-columns: 1fr;
-    top: 0!important;
+    top: 0 !important;
     z-index: 55
 }
 
@@ -1262,30 +1270,30 @@ label.label.skillInput {
     justify-content: center;
     place-content: center;
     pointer-events: none;
-    width: min(20vw,17em)!important;
+    width: min(30vw, 17em) !important;
     z-index: 5
 }
 
 .questSelect label {
-    grid-area: auto/1/auto/2
+    grid-area: auto / 1 /auto/ 2
 }
 
-.augDiv>label,h6:not(.charm>h6),select#dropSkills {
+.augDiv > label, h6:not(.charm>h6), select#dropSkills {
     grid-area: 1/1/2/4
 }
 
-.charm>h6 {
+.charm > h6 {
     grid-area: 1/2/2/3
 }
 
-.augDiv>label {
-    gap: 0!important;
-    padding: 0!important;
+.augDiv > label {
+    gap: 0 !important;
+    padding: 0 !important;
     position: relative;
     z-index: 20
 }
 
-tbody>tr.tableRowMelee,thead.tableRowMelee>tr {
+tbody > tr.tableRowMelee, thead.tableRowMelee > tr {
     align-content: center;
     align-items: center;
     display: grid;
@@ -1293,12 +1301,12 @@ tbody>tr.tableRowMelee,thead.tableRowMelee>tr {
     margin: 0
 }
 
-div#damageContainer>table>thead {
-    box-shadow: 0 0 1.2px var(--outline-g)!important;
+div#damageContainer > table > thead {
+    box-shadow: 0 0 1.2px var(--outline-g) !important;
     color: var(--outline-g);
-    flex-flow: row nowrap;
-    height: var(--base-h);
-    justify-content: space-evenly;
+    /* flex-flow: row nowrap; */
+    /* height: var(--base-h); */
+    /* justify-content: space-evenly; */
     justify-items: center;
     margin: 0;
     outline: 0;
@@ -1311,9 +1319,9 @@ div#damageContainer>table>thead {
     background-color: oklch(.15 .251 303.503deg)
 }
 
-div#EquippedSkillDisplay>output>* {
+div#EquippedSkillDisplay > output > * {
     box-shadow: 0 0 1px var(--outline-g);
-    height: 100%!important
+    height: 100% !important
 }
 
 ::-webkit-scrollbar-track {
@@ -1323,33 +1331,34 @@ div#EquippedSkillDisplay>output>* {
 table#monTable {
     box-shadow: inset 1px 0 1px 2px var(--outline-g);
     display: grid;
-    gap: .06em 1.06em!important;
-    grid-gap: .06em 1.06em!important;
+    gap: .06em 1.06em !important;
+    grid-gap: .06em 1.06em !important;
     grid-template-columns: 1fr
 }
 
-#extraMenus dropcontainer:not(#sideDisplay div),#setBuilder section:not(#sideDisplay,#weaponStats,#charm),button,h3,h4,h5,h6,img:not(.scroll),output:not(#sideDisplay output),span {
-    box-shadow: 0 0 2px var(--outline-g)!important
+#extraMenus dropcontainer:not(#sideDisplay div), #setBuilder section:not(#sideDisplay,#weaponStats,#charm), button, h3, h4, h5, h6, img:not(.scroll), output:not(#sideDisplay output), span {
+    box-shadow: 0 0 2px var(--outline-g) !important
 }
 
 output.augLabel {
     padding-left: 5px
 }
 
-h1,h2,h3,h4,h5 {
-    box-shadow: 0 0 1.2px var(--outline-g)!important;
+h1, h2, h3, h4, h5 {
+    box-shadow: 0 0 1.2px var(--outline-g) !important;
     color: var(--outline-g);
     display: grid;
     margin: 0
 }
 
-h2,h3 {
+h2, h3 {
     font-size: var(--step-1);
     height: 2.2em;
-    padding-inline:.25em}
+    padding-inline: .25em
+}
 
-#extraSkillsHeader,h1,h2 {
-    grid-area: 1/1/2/-1!important
+#extraSkillsHeader, h1, h2 {
+    grid-area: 1/1/2/-1 !important
 }
 
 .title {
@@ -1366,45 +1375,46 @@ h2,h3 {
 
 #setReturn h3 {
     grid-template-columns: 1fr auto 1fr;
-    margin-block:.25em;position: sticky;
+    margin-block: .5em;
+    position: sticky;
     top: 0;
-    width: 100%!important;
+    width: 100% !important;
     z-index: 10
 }
 
-#damage>h3:first-child {
-    grid-area: 1/1/1/1!important
+#damage > h3:first-child {
+    grid-area: 1/1/1/1 !important
 }
 
 button:active {
-    color: oklch(.975 .013 244.251deg)!important;
-    outline-width: .4em!important
+    color: oklch(.975 .013 244.251deg) !important;
+    outline-width: .4em !important
 }
 
 label.check:hover {
-    background: linear-gradient(oklch(.289 .145 272.662deg),oklch(.238 .098 29.234deg));
-    color: var(--outline-g)!important;
+    background: linear-gradient(oklch(.289 .145 272.662deg), oklch(.238 .098 29.234deg));
+    color: var(--outline-g) !important;
     cursor: pointer
 }
 
 label.check:active {
     color: oklch(.975 .013 244.251deg);
-    outline-width: .3em!important
+    outline-width: .3em !important
 }
 
-button.blue,button:hover,label.click:checked:hover {
+button.blue, button:hover, label.click:checked:hover {
     color: var(--outline-g);
     z-index: 50
 }
 
-.click,button,img.scroll:hover,input,select {
+.click, button, img.scroll:hover, input, select {
     cursor: pointer
 }
 
 button.close {
     background: oklch(.387 .116 24.365deg);
-    background-image: none!important;
-    border-radius: 50%!important;
+    background-image: none !important;
+    border-radius: 50% !important;
     display: grid;
     font: icon;
     height: 1.4em;
@@ -1416,9 +1426,9 @@ button.close {
 }
 
 #dropSkills {
-    gap: 1.5em!important;
-    margin-top: 1.2em!important;
-    min-width: 19em!important
+    gap: 1.5em !important;
+    margin-top: 1.2em !important;
+    min-width: 19em !important
 }
 
 .skillInput {
@@ -1427,26 +1437,26 @@ button.close {
     min-width: 2vw
 }
 
-input.inputs,td.a {
-    max-width: 100%!important
+input.inputs, td.a {
+    max-width: 100% !important
 }
 
 td.a {
     background: oklch(.182 0 89.876deg);
-    border: 0!important;
-    color: oklch(0 0 0deg)!important;
+    border: 0 !important;
+    color: oklch(0 0 0deg) !important;
     grid-template-columns: 1fr;
-    height: 100%!important
+    height: 100% !important
 }
 
 .inputs {
     background-color: oklch(.178 0 89.876deg);
     grid-area: 1/1/1/1;
-    overflow: hidden!important
+    overflow: hidden !important
 }
 
 #inputs {
-    width: 3em!important
+    width: 3em !important
 }
 
 .scroll {
@@ -1460,22 +1470,23 @@ td.a {
     display: grid;
     font-size: var(--step-0);
     font-weight: 700;
-    min-width: fit-content!important;
+    min-width: fit-content !important;
     padding-left: 2px;
     padding-right: 2px
 }
 
 .armorDisplay img:not(.invis,.armorDisplay img:first-of-type) {
-    height: var(--base-h)!important
+    height: var(--base-h) !important
 }
 
-output#extraOutput,output#setOutput {
+output#extraOutput, output#setOutput {
     background-color: oklch(.178 0 89.876deg);
     color: var(--outline-g);
     grid-area: 1/1/2/2;
     left: 2px;
     margin: 0;
-    padding-inline:3px;position: relative;
+    padding-inline: 3px;
+    position: relative;
     width: max-content
 }
 
@@ -1485,41 +1496,41 @@ output#extraOutput,output#setOutput {
 
 tr.tableRowRanged {
     font-size: 12px;
-    gap: 0!important;
-    grid-template-columns: 3fr repeat(7,1fr);
+    gap: 0 !important;
+    grid-template-columns: 3fr repeat(7, 1fr);
     justify-items: stretch;
-    min-height: 100%!important;
-    padding-left: 0!important;
-    padding-right: 0!important
+    min-height: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important
 }
 
-#monTable>tbody>tr:first-child>th:first-child {
+#monTable > tbody > tr:first-child > th:first-child {
     display: grid;
     height: 3.25em
 }
 
 td.inputContainer {
     align-items: center;
-    background-image: var(--gradient-b)!important;
+    background-image: var(--gradient-b) !important;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
-    min-height: 100%!important;
+    min-height: 100% !important;
     place-items: center;
     width: 100%
 }
 
-.tableRowMelee>tr,tr.tableRowMelee {
+.tableRowMelee > tr, tr.tableRowMelee {
     display: flex;
-    grid-template-columns: .85fr 4fr .6fr 1.3fr 1fr 1.3fr .8fr!important;
+    grid-template-columns: .85fr 4fr .6fr 1.3fr 1fr 1.3fr .8fr !important;
     width: 100%;
     z-index: 5
 }
 
-th:not(#monTable tr th),thead>tr {
+th:not(#monTable tr th), thead > tr {
     background-image: var(--gradient-b);
     display: grid;
-    height: 100%!important
+    height: 100% !important
 }
 
 tr {
@@ -1534,9 +1545,9 @@ tr {
 section#charm {
     display: grid;
     grid-area: 3;
-    max-width: 98vw!important;
-    padding-left: .4px;
-    padding-right: .4px
+    /* padding-left: .4px; */
+    /* grid-template-columns: auto 1fr auto 1fr; */
+    /* padding-right: .4px; */
 }
 
 select:not(.weapon select) {
@@ -1544,15 +1555,15 @@ select:not(.weapon select) {
 }
 
 select.armor.charms {
-    grid-area: 1/2/2/3!important;
-    min-width: .3vw!important;
+    grid-area: 1/2/2/3 !important;
+    min-width: .3vw !important;
     outline-width: thin;
     padding: 0;
     right: 0;
     width: 3.5vw
 }
 
-#dpsTable,div#setSearcher {
+#dpsTable, div#setSearcher {
     grid-template-columns: 1fr
 }
 
@@ -1564,21 +1575,21 @@ select.armor.charms {
     grid-area: 3/1/4/2;
     grid-gap: 0;
     justify-items: start;
-    max-width: 99.7%;
+    /* max-width: 99.7%; */
     outline: 0;
     text-transform: capitalize;
     z-index: 50
 }
 
-#dpsTable,.augDiv,.setResult>div,div#setSearcher,select.armor.charms,ul {
+#dpsTable, .augDiv, .setResult > div, div#setSearcher, select.armor.charms, ul {
     display: grid
 }
 
 div#setSearcher {
-    width: 100%!important
+    width: 100% !important
 }
 
-#section1>div,#section1>div>div:not(div.dropContainer,#statsTableDiv) {
+#section1 > div, #section1 > div > div:not(div.dropContainer,#statsTableDiv) {
     gap: 1em
 }
 
@@ -1599,7 +1610,7 @@ div#extraMenus select {
     min-width: 5em
 }
 
-div#boxes,div#raw {
+div#boxes, div#raw {
     display: flex
 }
 
@@ -1610,7 +1621,7 @@ div#raw {
 div#boxes {
     gap: 1.7em 1.3em;
     margin-bottom: 1.5em;
-    max-width: 98.5vw!important;
+    max-width: 98.5vw !important;
     min-width: 98.5vw
 }
 
@@ -1618,36 +1629,36 @@ div#boxes :not(label,select,div) {
     max-height: 21px
 }
 
-button.augButton,button.inputButton {
+button.augButton, button.inputButton {
     border-right: 0;
-    height: 100%!important;
-    text-align: center!important
+    height: 100% !important;
+    text-align: center !important
 }
 
 .augDiv {
     align-content: center;
     align-items: center;
-    gap: .4em!important;
-    grid-gap: .4em!important;
+    gap: .4em !important;
+    grid-gap: .4em !important;
     grid-template-columns: 1fr 1fr;
     justify-content: space-around;
     place-content: center space-around
 }
 
-#skillSelect>div>button.inc {
-    display: grid!important;
-    grid-area: 1/2/2/3!important
+#skillSelect > div > button.inc {
+    display: grid !important;
+    grid-area: 1/2/2/3 !important
 }
 
-#skillSelect>div>button {
+#skillSelect > div > button {
     border-radius: 0;
-    margin: 0!important;
-    width: min(10vw,9em)!important
+    margin: 0 !important;
+    width: min(10vw, 9em) !important
 }
 
-#skillSelect>div>button.dec {
-    grid-area: 1/1/2/2!important;
-    margin: 0!important;
+#skillSelect > div > button.dec {
+    grid-area: 1/1/2/2 !important;
+    margin: 0 !important;
     width: 50%
 }
 
@@ -1665,25 +1676,25 @@ button.augButton,button.inputButton {
 
 .optTitle {
     background: var(--outline-g);
-    color: oklch(.288 .144 272.765deg)!important;
-    font-size: 120%!important;
+    color: oklch(.288 .144 272.765deg) !important;
+    font-size: 120% !important;
     font-weight: 700
 }
 
-tbody>tr:hover {
-    background-image: linear-gradient(90deg,oklch(.178 0 89.876deg),oklch(.2 .071 272.765deg),oklch(.178 0 89.876deg),oklch(.2 .071 272.765deg) 80%,oklch(.178 0 89.876deg))!important;
-    color: var(--outline-g)!important
+tbody > tr:hover {
+    background-image: linear-gradient(90deg, oklch(.178 0 89.876deg), oklch(.2 .071 272.765deg), oklch(.178 0 89.876deg), oklch(.2 .071 272.765deg) 80%, oklch(.178 0 89.876deg)) !important;
+    color: var(--outline-g) !important
 }
 
-.setResult>div {
+.setResult > div {
     grid-template-columns: 2em 1fr;
-    margin: 3px!important;
+    margin: 3px !important;
     width: 94%
 }
 
 .armorCharm {
-    min-width: 100%!important;
-    width: 100%!important
+    min-width: 100% !important;
+    width: 100% !important
 }
 
 ul {
@@ -1703,30 +1714,30 @@ li {
     padding-right: 2em
 }
 
-div#skillSelect,section#searcherSkills {
+div#skillSelect, section#searcherSkills {
     align-items: self-end;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     min-height: 10em
 }
 
 div#skillSelect {
     gap: 2em;
-    margin-bottom: .5em!important;
-    margin-top: .5em!important
+    margin-bottom: .5em !important;
+    margin-top: .5em !important
 }
 
 section#searcherSkills {
     gap: 1em 1em;
     grid-area: 2/1/3/4;
-    grid-template-columns: repeat(auto-fit,minmax(19.5em,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
     margin-left: 1em;
     margin-right: 1em;
     width: 99%
 }
 
-section#searcherSkills>div {
+section#searcherSkills > div {
     display: grid;
     justify-items: baseline;
     max-height: var(--base-h)
@@ -1736,10 +1747,10 @@ div#searcherSkills * {
     height: var(--base-h)
 }
 
-button.dec:not(button:hover),button.inc:not(button:hover) {
+button.dec:not(button:hover), button.inc:not(button:hover) {
     border: 0;
-    box-shadow: none!important;
-    color: transparent!important
+    box-shadow: none !important;
+    color: transparent !important
 }
 
 #searcherSkills button.dec {
@@ -1750,7 +1761,7 @@ button.dec:not(button:hover),button.inc:not(button:hover) {
     z-index: 0
 }
 
-button.dec:hover:not(#skillSelect button),button.inc:hover:not(#skillSelect button) {
+button.dec:hover:not(#skillSelect button), button.inc:hover:not(#skillSelect button) {
     overflow: visible;
     -webkit-text-stroke-width: thick
 }
@@ -1766,18 +1777,18 @@ button.dec:hover:not(#skillSelect button),button.inc:hover:not(#skillSelect butt
     grid-area: 1/1/2/3
 }
 
-div#setReturn>button {
+div#setReturn > button {
     border-radius: 0;
-    margin: .5em .6em!important
+    margin: .5em .6em !important
 }
 
 .grid {
     align-content: start;
-    border-radius: 0!important;
+    border-radius: 0 !important;
     grid-area: 4/1/5/-1;
     grid-gap: .5em;
-    grid-template-columns: repeat(auto-fit,minmax(19em,48%));
-    max-height: 60em!important;
+    grid-template-columns: repeat(auto-fit, minmax(19em, 48%));
+    max-height: 60em !important;
     min-height: 100%
 }
 
@@ -1787,11 +1798,11 @@ div#damageContainer {
     outline: 0
 }
 
-#EquippedSkillDisplay,#damageTable,#skillSelect,.augToggle {
+#EquippedSkillDisplay, #damageTable, #skillSelect, .augToggle {
     will-change: contents
 }
 
-div#damageTable,div#damageTable>:not(#sharpnessContainer) {
+div#damageTable, div#damageTable > :not(#sharpnessContainer) {
     border: 0;
     display: grid;
     gap: .2em;
@@ -1801,7 +1812,7 @@ div#damageTable,div#damageTable>:not(#sharpnessContainer) {
     outline: 0
 }
 
-link,script,style {
+link, script, style {
     display: none;
     outline: 0
 }
@@ -1816,17 +1827,17 @@ div#setReturn {
     display: grid
 }
 
-div#setReturn>div:nth-child(4)>label {
+div#setReturn > div:nth-child(4) > label {
     color: var(--text-g);
-    margin: .4em!important;
+    margin: .4em !important;
     width: 100%
 }
 
 h6 {
     background-image: var(--gradient-h);
-    height: var(--base-h)!important;
+    height: var(--base-h) !important;
     margin: 0;
-    max-height: var(--base-h)!important
+    max-height: var(--base-h) !important
 }
 
 img.armorIcon.NewArmorDisplay {
@@ -1834,37 +1845,37 @@ img.armorIcon.NewArmorDisplay {
 }
 
 #weaponSelects section#augToggle:not(.augInvis) {
-    box-shadow: none!important;
-    column-gap: .5em!important;
+    box-shadow: none !important;
+    column-gap: .5em !important;
     gap: .5em;
-    grid-area: 5/1/6/-1!important;
+    grid-area: 5/1/6/-1 !important;
     grid-template-columns: 1fr 1fr 1fr;
     justify-self: center;
     margin: .5em .35em .35em;
     max-width: 99%
 }
 
-.charm>img.armorImg {
-    grid-area: 1/1/2/2!important;
+.charm > img.armorImg {
+    grid-area: 1/1/2/2 !important;
     z-index: 50
 }
 
 #charm img.armorImg.rampage.armorDeco {
     display: grid;
-    grid-area: auto/1/auto/2!important
+    grid-area: auto / 1 /auto/ 2 !important
 }
 
 button.scroll {
-    grid-area: auto/2/auto/3;
+    grid-area: auto / 2 /auto/ 3;
     min-width: max-content
 }
 
-#setBuilder>section:nth-child(10) {
+#setBuilder > section:nth-child(10) {
     grid-area: 1/1/5
 }
 
-div#trashCan,img.trash {
-    box-shadow: none!important;
+div#trashCan, img.trash {
+    box-shadow: none !important;
     overflow: hidden;
     position: sticky
 }
@@ -1893,59 +1904,59 @@ div#monTableContainer {
 img.trash {
     background-size: contain;
     bottom: 5px;
-    margin: -7em!important;
+    margin: -7em !important;
     right: 3px
 }
 
 button#resetSkills {
-    grid-area: 1/3/auto/auto
+    grid-area: 1 / 3 /auto/ auto
 }
 
 button#startSearch {
-    grid-area: 1/1/auto/auto
+    grid-area: 1 / 1 /auto/ auto
 }
 
-#weaponSelects>section:nth-child(5) {
+#weaponSelects > section:nth-child(5) {
     display: flex
 }
 
 div#augToggle {
-    gap: .6em!important;
+    gap: .6em !important;
     grid-template-columns: 1fr 1fr
 }
 
-#weaponSelects>select {
-    grid-area: auto/2/auto/5
+#weaponSelects > select {
+    grid-area: auto / 2 /auto/ 5
 }
 
-#weaponSelects>div:not(#scrollSwap,#augToggle) {
-    column-gap: 4em!important;
-    grid-template-columns: 1fr!important
+#weaponSelects > div:not(#scrollSwap,#augToggle) {
+    column-gap: 4em !important;
+    grid-template-columns: 1fr !important
 }
 
 div#armorSet {
     display: grid;
     grid-area: 2/1/3/2;
     grid-template-columns: 1fr;
-    min-height: max-content!important
+    min-height: max-content !important
 }
 
 .augInvis {
-    height: 0!important;
-    min-height: 0!important
+    height: 0 !important;
+    min-height: 0 !important
 }
 
 #weaponStats {
     display: grid;
-    grid-template-columns: 3.75em repeat(auto-fit,minmax(4em,1fr));
+    grid-template-columns: 3.75em repeat(auto-fit, minmax(4em, 1fr));
     justify-content: center;
     margin-top: 1em;
     max-width: 98vw;
-    width: max(51.4em,min(45em,98.5vw))
+    width: max(51.4em, min(45em, 98.5vw))
 }
 
 #weaponStats img {
-    box-shadow: none!important;
+    box-shadow: none !important;
     max-height: var(--base-h);
     max-width: var(--base-h)
 }
@@ -1954,7 +1965,7 @@ div#armorSet {
     max-height: var(--base-h)
 }
 
-#weaponStats .augInvis,.switch input,select.augInvis {
+#weaponStats .augInvis, .switch input, select.augInvis {
     display: none
 }
 
@@ -1963,22 +1974,22 @@ div#armorSet {
     visibility: hidden
 }
 
-#weaponSelects>section:nth-child(4)>label:first-child {
+#weaponSelects > section:nth-child(4) > label:first-child {
     background-image: var(--gradient-b);
     grid-area: 1/1/2/2
 }
 
-#weaponSelects>button.click {
+#weaponSelects > button.click {
     position: absolute;
     right: 0
 }
 
-.rampage>div {
+.rampage > div {
     width: 100%
 }
 
 #Qurious {
-    grid-area: 3/auto/4/auto;
+    grid-area: 3 /auto/ 4 / auto;
     padding: 0
 }
 
@@ -1988,16 +1999,16 @@ tr.tableRow {
     flex-direction: column;
     gap: 0;
     justify-items: stretch;
-    margin: 0!important;
+    margin: 0 !important;
     place-items: stretch
 }
 
-section#section1>div#setBuilder {
+section#section1 > div#setBuilder {
     display: grid;
-    grid-area: 2/1/auto/2;
+    grid-area: 2 / 1 /auto/ 2;
     grid-template-columns: 1fr;
     max-width: 98.5vw;
-    width: 88%
+    width: max(51.4em, min(45em, 98.5vw));
 }
 
 div.setResult {
@@ -2005,18 +2016,18 @@ div.setResult {
     height: max-content
 }
 
-.setResult>span {
+.setResult > span {
     background-image: var(--gradient-b);
     width: 100%
 }
 
-table#damageTable:not(.augInvis),table#damageTable:not(.augInvis) * {
-    display: grid!important;
+table#damageTable:not(.augInvis), table#damageTable:not(.augInvis) * {
+    display: grid !important;
     grid-area: 3/1/4/2
 }
 
-#damageContainer,table#ammoTable:not(.augInvis),table#ammoTable:not(.augInvis) * {
-    display: grid!important;
+#damageContainer, table#ammoTable:not(.augInvis), table#ammoTable:not(.augInvis) * {
+    display: grid !important;
     grid-template-columns: 1fr
 }
 
@@ -2027,7 +2038,7 @@ table#damageTable:not(.augInvis),table#damageTable:not(.augInvis) * {
     right: .6%
 }
 
-#resistances label,#searchAgain>button {
+#resistances label, #searchAgain > button {
     min-width: max-content
 }
 
@@ -2038,12 +2049,12 @@ table#damageTable:not(.augInvis),table#damageTable:not(.augInvis) * {
 [data-tooltip]:hover:not(th) {
     font-feature-settings: "titl";
     font-variant-caps: titling-caps;
-    position: relative;
-    z-index: 100
+    position: relative !important;
+    z-index: 100;
 }
 
 [data-tooltip]:hover::after {
-    background-image: var(--gradient-b)!important;
+    background-image: var(--gradient-b) !important;
     bottom: calc(100% + 5px);
     color: var(--outline-g);
     content: attr(data-tooltip);
@@ -2052,7 +2063,7 @@ table#damageTable:not(.augInvis),table#damageTable:not(.augInvis) * {
     max-width: 18em;
     min-width: max-content;
     opacity: 1;
-    overflow: visible!important;
+    overflow: visible !important;
     padding: 3px;
     position: absolute;
     top: auto;
@@ -2060,7 +2071,7 @@ table#damageTable:not(.augInvis),table#damageTable:not(.augInvis) * {
     white-space: pre-line
 }
 
-#searcherSkills output[data-tooltip]:hover::after,#searcherSkills output[data-tooltip]:hover::before {
+#searcherSkills output[data-tooltip]:hover::after, #searcherSkills output[data-tooltip]:hover::before {
     left: -7em
 }
 
@@ -2070,7 +2081,7 @@ button.augButton {
 
 label.switch {
     display: grid;
-    grid-area: auto/1/auto/2!important;
+    grid-area: auto / 1 /auto/ 2 !important;
     height: 100%;
     padding: 0
 }
@@ -2080,51 +2091,51 @@ label.switch {
     position: relative
 }
 
-.currentPoints>output.NewArmorDisplay,button.NewArmorDisplay {
-    background-image: var(--gradient-b)!important;
-    color: var(--outline-g)!important
+.currentPoints > output.NewArmorDisplay, button.NewArmorDisplay {
+    background-image: var(--gradient-b) !important;
+    color: var(--outline-g) !important
 }
 
 button.NewArmorDisplay {
-    border: .0015em ridge var(--outline-g)!important
+    border: .0015em ridge var(--outline-g) !important
 }
 
 .armorIcon.NewArmorDisplay {
     display: grid;
-    gap: 0!important;
+    gap: 0 !important;
     grid-area: 2/1/4/2;
-    height: calc(var(--base-h)*2);
-    margin: 0!important;
-    max-height: 4em!important;
-    max-width: 4em!important
+    height: calc(var(--base-h) * 2);
+    margin: 0 !important;
+    max-height: 4em !important;
+    max-width: 4em !important
 }
 
-:has(>img~select,>select~img)>img:not(#charm img) {
-    grid-area: auto/1/auto/2!important;
-    max-height: var(--base-h)!important
+:has(>img~select,>select~img) > img:not(#charm img) {
+    grid-area: auto / 1 /auto/ 2 !important;
+    max-height: var(--base-h) !important
 }
 
 .armorDisplay select {
-    height: var(--base-h)!important;
+    height: var(--base-h) !important;
     max-height: var(--base-h)
 }
 
-:has(>img~select,>select~img)>select:not(.charm select) {
-    grid-area: auto/2/auto/3!important
+:has(>img~select,>select~img) > select:not(.charm select) {
+    grid-area: auto / 2 /auto/ 3 !important
 }
 
-.armorDisplay img:not(.armorDisplay>img:first-of-type,.decoDisplay img,#charm img),.rampage img {
-    grid-area: 1/auto/2/auto!important
+.armorDisplay img:not(.armorDisplay>img:first-of-type,.decoDisplay img,#charm img), .rampage img {
+    grid-area: 1 /auto/ 2 / auto !important
 }
 
 .armorTitle.NewArmorDisplay {
-    grid-area: 1/1/2/2!important;
-    margin: 0!important
+    grid-area: 1/1/2/2 !important;
+    margin: 0 !important
 }
 
 select.NewArmorDisplay {
-    background-color: #111!important;
-    color: oklch(.791 .061 86.921deg)!important
+    background-color: #111 !important;
+    color: oklch(.791 .061 86.921deg) !important
 }
 
 select.augment.NewArmorDisplay {
@@ -2132,44 +2143,44 @@ select.augment.NewArmorDisplay {
 }
 
 section.armorDisplay.NewArmorDisplay {
-    grid-template-columns: 4.1em 1fr .5fr .5fr 1fr!important
+    grid-template-columns: 4.1em 1fr .5fr .5fr 1fr !important
 }
 
-.armorDisplay,.armorDisplay * {
+.armorDisplay, .armorDisplay * {
     display: grid;
-    gap: 0 .1em
+    /* gap: 0 .1em; */
 }
 
 label.NewArmorDisplay {
-    min-width: max-content!important;
-    padding-left: .5em!important;
-    padding-right: .5em!important
+    min-width: max-content !important;
+    padding-left: .5em !important;
+    padding-right: .5em !important
 }
 
-.currentPoints>output.NewArmorDisplay {
-    grid-area: 1!important
+.currentPoints > output.NewArmorDisplay {
+    grid-area: 1 !important
 }
 
 .armor.NewArmorDisplay {
-    grid-area: 1/span 2!important
+    grid-area: 1/span 2 !important
 }
 
-.armorDisplay>output:not(.eleDiv output).NewArmorDisplay {
-    grid-area: auto/4/auto/auto!important
+.armorDisplay > output:not(.eleDiv output).NewArmorDisplay {
+    grid-area: auto / 4 /auto/ auto !important
 }
 
-.def.NewArmorDisplay,.dragon.NewArmorDisplay,.fire.NewArmorDisplay,.ice.NewArmorDisplay,.thunder.NewArmorDisplay,.water.NewArmorDisplay {
+.def.NewArmorDisplay, .dragon.NewArmorDisplay, .fire.NewArmorDisplay, .ice.NewArmorDisplay, .thunder.NewArmorDisplay, .water.NewArmorDisplay {
     grid-template-columns: var(--base-h) var(--base-h)
 }
 
-section.armorDisplay>#BowGunId.NewArmorDisplay {
-    grid-template-columns: 1fr 1fr!important;
-    height: 100%!important
+section.armorDisplay > #BowGunId.NewArmorDisplay {
+    grid-template-columns: 1fr 1fr !important;
+    height: 100% !important
 }
 
-.rampage .rampage *,.skillDiv.NewArmorDisplay {
-    display: grid!important;
-    grid-template-columns: var(--base-h) 1fr!important
+.rampage .rampage *, .skillDiv.NewArmorDisplay {
+    display: grid !important;
+    grid-template-columns: var(--base-h) 1fr !important
 }
 
 .skillDiv.div8.NewArmorDisplay {
@@ -2177,7 +2188,7 @@ section.armorDisplay>#BowGunId.NewArmorDisplay {
 }
 
 #dropWeapon.NewArmorDisplay {
-    grid-template-columns: 100%!important
+    grid-template-columns: 100% !important
 }
 
 output.augCount {
@@ -2190,12 +2201,12 @@ output.augCount {
 
 .dropContainer.Bow {
     grid-area: 3/2/4/3;
-    grid-template-columns: 1fr 1fr!important
+    grid-template-columns: 1fr 1fr !important
 }
 
 section.eleSection {
     grid-area: 4/1/5/-1;
-    grid-template-columns: 4.1em repeat(5,.25fr) 1.75fr;
+    grid-template-columns: 4.1em repeat(5, .25fr) 1.75fr;
     margin-top: .07em
 }
 
@@ -2209,8 +2220,8 @@ section.decoDisplay {
     gap: .2em .1em
 }
 
-output.currentPoints.NewArmorDisplay,select#dropWeaponType.NewArmorDisplay {
-    width: 100%!important
+output.currentPoints.NewArmorDisplay, select#dropWeaponType.NewArmorDisplay {
+    width: 100% !important
 }
 
 section.eleSection {
@@ -2225,30 +2236,30 @@ section.eleSection {
 
 section.armorDisplay.NewArmorDisplay :not(.armorIcon,.armorAugment,#armorSelects section,.decoDisplay,.armorAugment div) {
     gap: .015em;
-    max-height: var(--base-h)!important
+    max-height: var(--base-h) !important
 }
 
 .def.eleDiv.NewArmorDisplay {
-    grid-template-columns: 1fr 1fr!important
+    grid-template-columns: 1fr 1fr !important
 }
 
 output.NewArmorDisplay {
     max-height: var(--base-h)
 }
 
-#armorSet,#armorSet.NewArmorDisplay,.armorDisplay.NewArmorDisplay {
+#armorSet, #armorSet.NewArmorDisplay, .armorDisplay.NewArmorDisplay {
     justify-self: center;
-    width: max(51.4em,min(45em,98.5vw))
+    width: max(51.4em, min(45em, 98.5vw))
 }
 
-div#armorSet>section.armorDisplay>section.augInvis.NewArmorDisplay {
-    display: none!important;
-    height: 0!important
+div#armorSet > section.armorDisplay > section.augInvis.NewArmorDisplay {
+    display: none !important;
+    height: 0 !important
 }
 
 div#weaponDiv.NewArmorDisplay {
-    gap: 0!important;
-    grid-template-columns: 1fr auto!important;
+    gap: 0 !important;
+    grid-template-columns: 1fr auto !important;
     width: 100%
 }
 
@@ -2259,37 +2270,37 @@ div#weaponDiv.NewArmorDisplay {
 
 section.armorAugment.NewArmorDisplay {
     display: grid;
-    grid-area: 5/1/8/6!important;
+    grid-area: 5/1/8/6 !important;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: .15em
 }
 
-section.armorAugment>.quriousAug.NewArmorDisplay {
+section.armorAugment > .quriousAug.NewArmorDisplay {
     grid-template-columns: 1fr;
     position: relative
 }
 
 .div0 {
-    grid-area: 1/2/2/3!important
+    grid-area: 1/2/2/3 !important
 }
 
 .div1 {
-    grid-area: 2/2/3/3!important
+    grid-area: 2/2/3/3 !important
 }
 
 .div2 {
-    grid-area: 3/2/4/3!important
+    grid-area: 3/2/4/3 !important
 }
 
 .div3 {
-    grid-template-columns: auto 1fr!important;
-    max-height: var(--base-h)!important
+    grid-template-columns: auto 1fr !important;
+    max-height: var(--base-h) !important
 }
 
 #settingsMenuButton {
-    background-image: var(--gradient-b)!important;
+    background-image: var(--gradient-b) !important;
     bottom: 21px;
-    color: var(--outline-g)!important;
+    color: var(--outline-g) !important;
     display: grid;
     min-width: max-content;
     position: fixed;
@@ -2298,7 +2309,7 @@ section.armorAugment>.quriousAug.NewArmorDisplay {
     z-index: 100
 }
 
-.blunt:not(.eleSection *)::before,.dragon:not(.eleSection *)::before,.fire:not(.eleSection *)::before,.ice:not(.eleSection *)::before,.sever:not(.eleSection *)::before,.shot:not(.eleSection *)::before,.thunder:not(.eleSection *)::before,.water:not(.eleSection *)::before {
+.blunt:not(.eleSection *)::before, .dragon:not(.eleSection *)::before, .fire:not(.eleSection *)::before, .ice:not(.eleSection *)::before, .sever:not(.eleSection *)::before, .shot:not(.eleSection *)::before, .thunder:not(.eleSection *)::before, .water:not(.eleSection *)::before {
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -2309,38 +2320,38 @@ section.armorAugment>.quriousAug.NewArmorDisplay {
 }
 
 .sever:not(.eleSection *)::before {
-    background-image: url(icons/attack.webp)!important
+    background-image: url(icons/attack.webp) !important
 }
 
 .blunt:not(.eleSection *)::before {
-    background-image: url(icons/Hammer.webp)!important
+    background-image: url(icons/Hammer.webp) !important
 }
 
 .shot:not(.eleSection *)::before {
-    background-image: url(icons/ammo.webp)!important
+    background-image: url(icons/ammo.webp) !important
 }
 
 .ice:not(.eleSection *)::before {
-    background-image: url(icons/ice.webp)!important
+    background-image: url(icons/ice.webp) !important
 }
 
 .fire:not(.eleSection *)::before {
-    background-image: url(icons/fire.webp)!important
+    background-image: url(icons/fire.webp) !important
 }
 
 .dragon:not(.eleSection *)::before {
-    background-image: url(icons/dragon.webp)!important
+    background-image: url(icons/dragon.webp) !important
 }
 
 .thunder:not(.eleSection *)::before {
-    background-image: url(icons/thunder.webp)!important
+    background-image: url(icons/thunder.webp) !important
 }
 
 .water:not(.eleSection *)::before {
-    background-image: url(icons/water.webp)!important
+    background-image: url(icons/water.webp) !important
 }
 
-#infoSettings,th {
+#infoSettings, th {
     align-items: center
 }
 
@@ -2369,7 +2380,7 @@ section.armorAugment>.quriousAug.NewArmorDisplay {
     margin-bottom: 8px
 }
 
-#infoSettings h2,#infoSettings p,#infoSettings ul {
+#infoSettings h2, #infoSettings p, #infoSettings ul {
     margin-bottom: 16px
 }
 
@@ -2378,21 +2389,21 @@ section.armorAugment>.quriousAug.NewArmorDisplay {
 }
 
 #weapon .div8 {
-    grid-area: 1/4!important
+    grid-area: 1/4 !important
 }
 
 section#weapon {
     grid-area: 1/1/2/-1;
-    grid-template-columns: 4.1em 1fr .5fr .5fr 1fr!important;
-    max-width: 98.5vw!important;
-    width: max(51.4em,min(45em,98.5vw))
+    grid-template-columns: 4.1em 1fr .5fr .5fr 1fr !important;
+    max-width: 98.5vw !important;
+    width: max(51.4em, min(45em, 98.5vw))
 }
 
 #weapon .skillDiv.div6.NewArmorDisplay {
     grid-area: 1/3
 }
 
-section#section2>div {
+section#section2 > div {
     overflow: visible;
     overflow: initial;
     width: 100%;
@@ -2420,7 +2431,7 @@ button#ammoChange {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
-    grid-area: auto/1/auto/-1;
+    grid-area: auto / 1 /auto/ -1;
     justify-content: space-around;
     margin-bottom: 1.5em;
     max-width: 98vw;
@@ -2428,7 +2439,7 @@ button#ammoChange {
 }
 
 #damageContainer * {
-    font-size: 11px!important
+    font-size: 11px !important
 }
 
 #monDisplay {
@@ -2442,7 +2453,7 @@ button#ammoChange {
 }
 
 #monDisplay * {
-    max-height: var(--base-h)!important
+    max-height: var(--base-h) !important
 }
 
 #monDisplay div {
@@ -2456,15 +2467,15 @@ button#ammoChange {
     padding-right: 5px
 }
 
-button#enraged:not(.selected),button#weaponFilter:not(.selected) {
-    color: oklch(.867 0 89.876deg)!important
+button#enraged:not(.selected), button#weaponFilter:not(.selected) {
+    color: oklch(.867 0 89.876deg) !important
 }
 
-section#charmSlots>label:first-child {
+section#charmSlots > label:first-child {
     grid-area: 1/1/2/3
 }
 
-#damageContainer,table#dpsTable,tbody#dpsBody {
+#damageContainer, table#dpsTable, tbody#dpsBody {
     grid-template-columns: 1fr;
     width: 100%
 }
@@ -2473,7 +2484,7 @@ tbody#dpsBody {
     grid-area: 2/1/3/-1
 }
 
-.grid,.grid div,span,table#dpsTable {
+.grid, .grid div, span, table#dpsTable {
     display: grid
 }
 
@@ -2487,7 +2498,7 @@ section#section2 {
 }
 
 .grid {
-    gap: 1em!important;
+    gap: 1em !important;
     margin-bottom: 1em;
     overflow: auto
 }
@@ -2497,11 +2508,11 @@ tbody#ammoBody {
 }
 
 section#section1 {
-    filter: drop-shadow(.5px .5px 0#000);
+    filter: drop-shadow(.5px .5px 0 #000);
     max-width: 98.5vw
 }
 
-#weaponSelects,.dropdown,.grid,.setResult>div,div#augToggle,div#setReturn,div#unique,img.invis:hover {
+#weaponSelects, .dropdown, .grid, .setResult > div, div#augToggle, div#setReturn, div#unique, img.invis:hover {
     position: relative
 }
 
@@ -2510,7 +2521,7 @@ div#setReturn {
     z-index: 100
 }
 
-#armorSet,#armorSet.NewArmorDisplay,.armorDisplay.NewArmorDisplay {
+#armorSet, #armorSet.NewArmorDisplay, .armorDisplay.NewArmorDisplay {
     max-width: 98.5vw
 }
 
@@ -2524,31 +2535,32 @@ button#extendedSearch {
 
 div#loadStateContainer div {
     background: #111;
-    display: grid!important;
-    grid-template-columns: auto 1fr!important;
+    display: grid !important;
+    grid-template-columns: auto 1fr !important;
     margin: .5rem;
     width: 10em
 }
 
 div#loadStateContainer button {
     grid-area: 1/1/2/3;
-    margin-block:.15rem}
+    margin-block: .15rem
+}
 
-button,label {
+button, label {
     height: var(--base-h);
     max-height: var(--base-h)
 }
 
 div#loadStateContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(10em,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
     justify-items: center;
     margin-bottom: 1em;
     width: 98vw
 }
 
 div#loadStateContainer img {
-    height: var(--base-h)!important;
-    max-height: var(--base-h)!important;
-    min-height: var(--base-h)!important
+    height: var(--base-h) !important;
+    max-height: var(--base-h) !important;
+    min-height: var(--base-h) !important
 }
