@@ -1,39 +1,36 @@
-<!doctype html><html lang="en" xmlns="http://www.w3.org/1999/html"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1,maximum-scale=2" name="viewport"/><meta content="strict-origin-when-cross-origin" name="referrer"><meta content="MHR Sunbreak Set Builder & Damage Calculator. Find Builds without setting Charms or Remaining Augments. View in-game damage to easily compare builds." name="description"><meta content="MHR, MHR-S, Monster Hunter Rise, Sunbreak, Set Searcher, Set Builder, Damage, Optimization, Calculations" name="keywords"><meta content="ie=edge" http-equiv="X-UA-Compatible"><link as="script" crossorigin="anonymous" href="loading/loading.js" rel="preload"><link as="script" crossorigin="anonymous" href="main.js" rel="preload"><title>Stone's MHR Sunbreak Set Searcher & Damage Optimization</title><script src="loading/loading.js" type="module"></script><script src="main.js" type="module"></script><link as="style" href="./styles.css" onload="this.rel='stylesheet'" rel="preload"><link href="./favicon.ico" rel="icon" type="image/x-icon"><link href="./apple-touch-icon.png" rel="apple-touch-icon"><script>console.log(performance.now(), 1);
+<!doctype html><html lang="en" xmlns="http://www.w3.org/1999/html"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1,maximum-scale=2" name="viewport"/><meta content="strict-origin-when-cross-origin" name="referrer"><meta content="MHR Sunbreak Set Builder & Damage Calculator. Find Builds without setting Charms or Remaining Augments. View in-game damage to easily compare builds." name="description"><meta content="MHR, MHR-S, Monster Hunter Rise, Sunbreak, Set Searcher, Set Builder, Damage, Optimization, Calculations" name="keywords"><meta content="ie=edge" http-equiv="X-UA-Compatible"><link as="script" crossorigin="anonymous" href="loading/loading.js" rel="preload"><link as="script" crossorigin="anonymous" href="main.js" rel="preload"><title>Stone's MHR Sunbreak Set Searcher & Damage Optimization</title><script src="loading/loading.js" type="module"></script><script src="main.js" type="module"></script><link as="style" href="./styles.css" onload="this.rel='stylesheet'" rel="preload"><link href="./favicon.ico" rel="icon" type="image/x-icon"><link href="./apple-touch-icon.png" rel="apple-touch-icon"><script>/* console.log(performance.now(), 1)*/
+
 
 
    // if (window.location.href.includes("github")) {
-   !function(t, e) {
-      var o, n, p, r;
-      e.__SV || (window.posthog = e, e._i = [], e.init = function(i, s, a) {
-         function g(t, e) {
-            var o = e.split(".");
-            2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function() {
-               t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
-            };
-         }
 
-         (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src =
-            s.api_host + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r);
-         var u = e;
-         for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function(t) {
-            var e = "posthog";
-            return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e;
-         }, u.people.toString = function() {
-            return u.toString(1) + ".people (stub)";
-         }, o =
-            "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys".split(
-               " "), n = 0; n < o.length; n++) g(u, o[n]);
-         e._i.push([i, s, a]);
-      }, e.__SV = 1);
-   }(document, window.posthog || []);
-   posthog.init("phc_NB1UTgHKqhi2mWL2WYus9A1DgFCDUI7msfR9MbBOkQv", { api_host: "https://app.posthog.com" });
-   // } else {
-   //    let verifyBuild = document.createElement("script");
-   //    verifyBuild.setAttribute("src", "../src/setBuilder/verifyBuild.js");
-   //    verifyBuild.setAttribute("defer", true);
-   //    verifyBuild.setAttribute("fetchpriority", "high");
-   //    document.head.appendChild(verifyBuild);
-   // }</script></head><body><h1 class="title" id="title">Stone's MHR Sunbreak Set Searcher & Damage Optimization</h1><div id="containAll"><section id="section1" style="min-height: 756px"><h2>Set Builder</h2><div id="setBuilder"><section id="sideDisplay"><section id="weaponStats"><div id="statsImg"><label>Stats</label> <span><img alt="StatsRawIcon" height="24" src="./icons/attack.webp" width="24"> </span><span><img alt="StatsEleIcon" class="statsEle" height="24" src="./icons/ammo.webp" width="24"></span></div><div data-tooltip="Weapons Base True
+   /*   !function(t, e) {
+         var o, n, p, r;
+         e.__SV || (window.posthog = e, e._i = [], e.init = function(i, s, a) {
+            function g(t, e) {
+               var o = e.split(".");
+               2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function() {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+               };
+            }
+
+            (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src =
+               s.api_host + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r);
+            var u = e;
+            for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function(t) {
+               var e = "posthog";
+               return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e;
+            }, u.people.toString = function() {
+               return u.toString(1) + ".people (stub)";
+            }, o =
+               "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(
+                  " "), n = 0; n < o.length; n++) g(u, o[n]);
+            e._i.push([i, s, a]);
+         }, e.__SV = 1);
+      }(document, window.posthog || []);
+      posthog.init("phc_NB1UTgHKqhi2mWL2WYus9A1DgFCDUI7msfR9MbBOkQv", { api_host: "https://app.posthog.com" })
+      ;*/
+   // } else { // let verifyBuild = document.createElement("script"); // verifyBuild.setAttribute("src", "../src/setBuilder/verifyBuild.js"); // verifyBuild.setAttribute("defer", true); // verifyBuild.setAttribute("fetchpriority", "high"); // document.head.appendChild(verifyBuild); // }</script></head><body><h1 class="title" id="title">Stone's MHR Sunbreak Set Searcher & Damage Optimization</h1><div id="containAll"><section id="section1" style="min-height: 756px"><h2>Set Builder</h2><div id="setBuilder"><section id="sideDisplay"><section id="weaponStats"><div id="statsImg"><label>Stats</label> <span><img alt="StatsRawIcon" height="24" src="./icons/attack.webp" width="24"> </span><span><img alt="StatsEleIcon" class="statsEle" height="24" src="./icons/ammo.webp" width="24"></span></div><div data-tooltip="Weapons Base True
                     Attack Power" id="statsBase"><label>Base</label> <span>330</span> <span>103</span></div><div data-tooltip="Attack Power
                     Seen In-Game" id="statseTrue"><label>eTrue</label> <span>372</span> <span>103</span></div><div data-tooltip="Estimated Average
                     Attack Power" id="statsEffective"><label>Effective</label> <span>427</span> <span>103</span></div><div data-tooltip="Attack Power If
