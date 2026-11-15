@@ -55,3 +55,6 @@ weaponInfo.json
 section1.css
 settings.module.css
 **QuickSort**
+
+# keep the site icons (the svg rules above would otherwise drop them)
+!docs/icons/*.svg

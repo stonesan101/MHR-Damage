@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+    <path d="m32 49 9 9H23z"
+          style="display:inline;fill:silver;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+    <path d="m14 46 7 9H7zM50 46l7 9H43z"
+          style="display:inline;fill:silver;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+
+    <path d="M57 19v5L43 43H21L7 24v-5L17 9h30Z"
+          style="display:inline;fill:#929292;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    <path d="m51 21-2-10 8 8v2z"
+          style="display:inline;fill:#929292;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    <path d="m13 21 7 19L7 24v-3h50v3L44 41l7-19-2-1Z"
+          style="display:inline;fill:#474747;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    <path d="m16 11-3 10H7v-2z"
+          style="display:inline;fill:#929292;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    <path d="M7 21h6l3-11 6 9v1l9-11h2l9 11 6-10 3 11h6z"
+          style="display:inline;fill:#fff;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    <path d="M17 9 7 19v5l14 19h22l14-19v-5L47 9H32z"
+          style="display:inline;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+    <path d="m22 25 9 18h2l9-18 1 18H21z"
+          style="display:inline;fill:#929292;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    <path d="M22 21v5l9 17h2l9-17v-5z"
+          style="display:inline;fill:silver;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    <path d="m42 21 1 22H33l9-18m6-15-6 10-9-11h-1M7 21h50m-35 0-1 22h10l-9-18m-6-15 6 10 9-11h1M48 10l3 11-8 21M16 10l-3 11 8 21"
+          style="display:inline;fill:none;fill-rule:evenodd;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+</svg>

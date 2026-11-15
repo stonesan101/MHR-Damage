@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 .5 10 16">
+    <g transform="translate(0 -280)">
+        <path fill-rule="evenodd" d="M3.6 285.9v1l-.8.8h6.9V286z"/>
+        <path fill="#f4f4f4" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+              d="m4.9 283.2 2.4-1.8h4.2l2.7 2.4v1H4.9Zm6.3 9.8 1.1 1v1.7h-1v-.6H11v.6h-1v-.6h-.3v.6H7.5v-.6h-.2v.6h-1v-.6H6v.6H4.9V294l1-1z"/>
+        <path fill="#f4f4f4" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+              d="M11.2 291.4v2.2h-5v-2.2zm3-6.3v3.4l-3 3h-4v-2.2l2.7-.8L12 286h2z"/>
+        <path fill="#f4f4f4" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+              d="M9.7 285.6v2.1h-7v1.4l3.3 3.1h1.3l4.2-4.2h.5l.8-.8v-2.6H9.7Z"/>
+        <path fill="#f4f4f4" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+              d="M9.7 283.2h-5l-1.1.8v1.9h5.8l.8-.8H12l.8.8h.6l.8-.8v-.5l-2.7-1.4z"/>
+        <circle cx="11.4" cy="286.5" r=".4"/>
+        <path fill="#99999b" fill-rule="evenodd"
+              d="M10.7 293.3v-.5H10v.5zm-1 0v-.5h-.8v.5zm-1.1 0v-.5h-.8v.5zm-1 0v-.5h-.9v.5z"/>
+    </g>
+</svg>

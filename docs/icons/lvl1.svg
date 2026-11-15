@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+    <path d="m15 994.362-11 11v9l15 20h26l15-20v-9l-11-11H15z"
+          style="display:inline;fill:silver;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+          transform="translate(0 -988.362)"/>
+    <path d="m17 997.362-10 10v5.001l14 19h22l14-19v-5l-10-10H32z"
+          style="display:inline;fill:#111;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+          transform="translate(0 -988.362)"/>
+    <path d="m30 999.364-4 10h-6v-3l7-7 5-1 5 1 7 8v2h-6l-4-10-2-1z"
+          style="display:inline;fill:#929292;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          transform="translate(0 -988.362)"/>
+    <path d="m34 999.364 4 10H26l4-10 2-1z"
+          style="display:inline;fill:#fff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          transform="translate(0 -988.362)"/>
+    <path d="m44 1009.364-8 19-4 1-4-1-8-19z"
+          style="display:inline;fill:#929292;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          transform="translate(0 -988.362)"/>
+    <path d="m38 1009.364-4 19-2 1-2-1-4-19z"
+          style="display:inline;fill:silver;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          transform="translate(0 -988.362)"/>
+    <path d="m34 999.364 4 10-4 19m-4-29-4 10 4 19m-10-19h24m-12-11-5 1-7 8v3l8 18 4 1 4-1 8-18v-3l-7-8-5-1z"
+          style="display:inline;fill:none;fill-rule:evenodd;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+          transform="translate(0 -988.362)"/>
+    <path d="m32 1037.363 9 9H23z"
+          style="display:inline;fill:silver;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+          transform="translate(0 -988.362)"/>
+</svg>

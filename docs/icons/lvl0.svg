@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+    <path d="m15 994.362-11 11v9l15 20h26l15-20v-9l-11-11H15z"
+          style="display:inline;fill:111;fill-opacity:.2;fill-rule:evenodd;stroke:#000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:.7"
+          transform="translate(0 -988.362)"/>
+    <path d="m17 997.362-10 10v5.001l14 19h22l14-19v-5l-10-10H32z"
+          style="display:inline;fill:#black;fill-opacity:.2;fill-rule:evenodd;stroke:#000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:.7"
+          transform="translate(0 -988.362)"/>
+
+    <path d="m32 49 9 9H23z"
+          style="display:inline;fill:black;fill-opacity:.1;fill-rule:evenodd;stroke:#000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:.9"/>
+    <path d="m14 46 7 9H7zM50 46l7 9H43z"
+          style="display:inline;fill:black;fill-opacity:.1;fill-rule:evenodd;stroke:#000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:.9"/>
+
+
+</svg>

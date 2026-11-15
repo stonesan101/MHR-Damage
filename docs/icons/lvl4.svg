@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 64 64">
+    <path d="m10 41 7 9H3ZM54 41l7 9H47zM22 48l7 9H15zM42 48l7 9H35zM15 6 4 17v9l15 20h26l15-20v-9L49 6H15Z"
+          style="display:inline;fill:silver;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+    <path d="M7 21v-2l9-9 6 9v1l9-11h2l9 11 6-10 9 9v2z"
+          style="display:inline;fill:#fff;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    <path d="M17 9 7 19v5l14 19h22l14-19v-5L47 9H32Z"
+          style="display:inline;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+    <path d="m22 25 9 18h2l9-18 1 18H21z"
+          style="display:inline;fill:#fff;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    <path d="M22 21v5l9 17h2l9-17v-5z"
+          style="display:inline;fill:silver;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    <path d="m42 21 1 22H33l9-18m6-15-6 10-9-11h-1M7 21h50m-35 0-1 22h10l-9-18m-6-15 6 10 9-11h1"
+          style="display:inline;fill:none;fill-rule:evenodd;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+
+</svg>

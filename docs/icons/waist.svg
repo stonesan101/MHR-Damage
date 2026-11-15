@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 16 16">
+    <g transform="translate(0 -280)">
+        <path d="M7.4 288.8h2.4v1.3H7.4z"/>
+        <path fill="#f4f4f4" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+              d="M11.6 289.6v3.7l1.6 1.6h2.4v-1.3l-2.6-4v-.5h-1.4z"/>
+        <path fill="#99999b" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+              d="M13 289.6v3.2l.8.8h1.8v-3.2l-.8-.8zm-10.4-2.1-.5.5v1.6H4v-.5h1.3v.5h2.1v-.8h2.1v.8h2.1v-.5H13v.5h1.8V288l-.5-.5H8.5Z"/>
+        <path fill="#f4f4f4" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+              d="M2.6 282.2v5.5h11.7v-5.5H8.5Z"/>
+        <path fill="none" stroke="#000" stroke-linejoin="round" stroke-width=".5" d="M12 284.6v3.1"/>
+        <path d="M10.6 285.6h-1v1h1zm3.4 0h-1v1h1z"/>
+        <circle cx="-13.9" cy="283.4" r=".4" transform="scale(-1 1)"/>
+        <circle cx="-12.3" cy="283.4" r=".4" transform="scale(-1 1)"/>
+        <circle cx="-10.7" cy="283.4" r=".4" transform="scale(-1 1)"/>
+        <circle cx="-9.1" cy="283.4" r=".4" transform="scale(-1 1)"/>
+        <path fill="none" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+              d="M15.6 291.7H13m0-4v1.6m-1.4-1.6v1.6m-2-1.6v1.6"/>
+        <path fill="#f4f4f4" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+              d="M6.9 289.6v5.3H10v-5.3H8.5Zm-1.6 0v3.7l-1.6 1.6H1.3v-1.3l2.7-4v-.5h1.3z"/>
+        <path fill="#99999b" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+              d="M4 289.6v3.2l-.8.8H1.3v-3.2l.8-.8z"/>
+        <path fill="none" stroke="#000" stroke-linejoin="round" stroke-width=".5" d="M2.6 284.6h11.7m-9.3 0v3.1"/>
+        <path d="M6.3 285.6h1.1v1h-1zm-3.4 0h1v1H3z"/>
+        <circle cx="3" cy="283.4" r=".4"/>
+        <circle cx="4.6" cy="283.4" r=".4"/>
+        <circle cx="6.2" cy="283.4" r=".4"/>
+        <circle cx="7.8" cy="283.4" r=".4"/>
+        <path fill="none" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+              d="M1.3 291.7H4m0-4v1.6m1.3-1.6v1.6m2.1-1.6v1.6"/>
+        <path fill-rule="evenodd" d="M8 289.9v4.2h1v-4.2z"/>
+        <path fill="#99999b" d="M8.2 290.1h.5v.5h-.5zm0 1.6h.5v.5h-.5zm0 1.3h.5v.6h-.5z"/>
+        <path fill="none" stroke="#000" stroke-linejoin="round" stroke-width=".5" d="M8.5 284.6v3.1"/>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path fill="#99999b" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+          d="M6.3 12.7v2.1s0 1-1 1H2.9v-1.2h.8v-1.9z"/>
+    <path fill="#f4f4f4" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+          d="m6.9 10.6 1 1.6v.5H1.6v-.5l1.3-1.6z"/>
+    <path fill="#99999b" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+          d="M6.9 8H1.6v2.6h5.8V7.9z"/>
+    <path fill="#444" fill-rule="evenodd" d="M4 8.2v1.3H2.6V8.2zm2.6 0v1.3H5.3V8.2z"/>
+    <path fill="#f4f4f4" fill-rule="evenodd" d="m11.6 3.7 3 4.8v3.7l-1.6 2h-2l-2.4-6-1-1.6V5l1.8-.5.8-.8z"/>
+    <path fill="#99999b" fill-rule="evenodd" d="M14.6 8.2h-3v6h-1.3l-1.6-2v-4h3V3.7H13l.8.8 1.8.5v1.6z"/>
+    <path fill="none" stroke="#444" stroke-width=".5" d="M8.7 8.2h5.9"/>
+    <path fill="none" stroke="#444" stroke-linejoin="round" stroke-width=".5" d="M11.6 3.7v10.6"/>
+    <path fill="none" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+          d="m10.3 3.7-.8.8-1.8.5v1.6l1 1.6v4l1.6 2H13l1.6-2v-4l1-1.6V5l-1.8-.5-.8-.8h-1.4z"/>
+    <path fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+          d="M10 6.3v.8h.6v-1H10zm2.7 0v.8h.5v-1h-.5zm-2.6 3.5v.8h.5v-1H10zm2.6 0v.8h.5v-1h-.5z"/>
+    <path fill="#99999b" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+          d="M6 4v4H3.8V4zm0 0h1V2.6H3.7V4z"/>
+    <path fill="#f4f4f4" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width=".5"
+          d="M3.7 2.6V1.1h-.5L1.3 2.4v4h2.4z"/>
+</svg>
